@@ -537,14 +537,14 @@ void RootMap::updateState(GameState & gameState){
 
 void RootMap::enableSound(bool value){
     if(value){
-        if(backSound->isPlaying())
+        /*if(backSound->isPlaying())
             backSound->resume();
-        else
+        else*/
             backSound->play();
     }
     else{
         if(backSound->isPlaying())
-            backSound->pause();
+            backSound->stop();
     }
     hero->enableSound(value);
 }

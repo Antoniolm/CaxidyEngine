@@ -117,6 +117,10 @@ void MainMenu::updateState(GameState & gameState){
         currentTime=time-50;
 
     if(activateMenu && !gameState.optionMenu->isActivate() && !gameState.controlMenu->isActivate()){ //If the menu is activated
+
+        if(!ambientSound->isPlaying())
+            ambientSound->play();
+
         if(controller->checkButton(cUP) && menuDelay<(time-300)){ //If the user push the up move on the menu
             currentOption-=1;
 
@@ -153,6 +157,7 @@ void MainMenu::updateState(GameState & gameState){
             SavedManager * saveManager;
             switch(actionOption[currentOption]){
                 case START: //Start Game
+                    ambientSound->stop();
                     activateMenu=false;
                     if(gameState.rootMap!=0)
                         delete gameState.rootMap;
@@ -161,9 +166,10 @@ void MainMenu::updateState(GameState & gameState){
                     gameState.rootMap=new RootMap("./maps/map00.json",true);
                     checkUserProgress();
                     openSound->play();
-                    ambientSound->stop();
+
                 break;
                 case CONTINUE: //Continue
+                    ambientSound->stop();
                     //Catch the saved progress and load the map
                     saveManager=SavedManager::getInstance();
                     saveManager->load();
@@ -176,7 +182,7 @@ void MainMenu::updateState(GameState & gameState){
 
                     gameState.rootMap=new RootMap(fileLoad,true);
                     openSound->play();
-                    ambientSound->stop();
+
                 break;
                 case CONTROLS: //Controls
                     gameState.controlMenu->activate();
@@ -214,7 +220,6 @@ void MainMenu::activate(){
     activateMenu=true;
     currentOption=0;
     currentMaterial->setTexture(options[currentOption]);
-    ambientSound->play();
 }
 
 //**********************************************************************//
