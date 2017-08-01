@@ -228,6 +228,8 @@
 		<Unit filename="VideoGame/soulcarrier.h" />
 		<Unit filename="VideoGame/spiketrap.cpp" />
 		<Unit filename="VideoGame/spiketrap.h" />
+		<Unit filename="VideoGame/trapdoor.cpp" />
+		<Unit filename="VideoGame/trapdoor.h" />
 		<Unit filename="VideoGame/weapon.cpp" />
 		<Unit filename="VideoGame/weapon.h" />
 		<Unit filename="main.cpp" />
