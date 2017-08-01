@@ -40,6 +40,7 @@ enum SoundIndex{
     HHIT,
     sWALK,
     sJUMP,
+    sFALL,
     sATRAP,
     sNTRAP,
     sREAD,

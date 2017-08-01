@@ -84,7 +84,6 @@ class MovieScreen : public Menu
         //////////////////////////////////////////////////////////////////////////
         void activateAllTexture();
 
-        void enableSound(bool value);
     protected:
 
     private:

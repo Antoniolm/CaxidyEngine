@@ -42,10 +42,11 @@ SoundCollection::SoundCollection()
     collection.addElement(new Effect("sounds/heroHit.wav",20,-1,0));
     collection.addElement(new Effect("sounds/walking.wav",40,-1,-1));
     collection.addElement(new Effect("sounds/jump.wav",20,-1,0));
+    collection.addElement(new Effect("sounds/fall.wav",60,-1,0));
     collection.addElement(new Effect("sounds/trapActivated.wav",40,-1,0));
     collection.addElement(new Effect("sounds/animationTrap.wav",20,-1,0));
     collection.addElement(new Effect("sounds/bookRead.wav",20,-1,0));
-    collection.addElement(new Music("sounds/movieSound.wav",5));
+    collection.addElement(new Music("sounds/movieSound.wav",40));
     collection.addElement(new Music("sounds/mainSound.wav",5));
 
     //Create our map
@@ -59,6 +60,7 @@ SoundCollection::SoundCollection()
     collection.addIndex("HHIT",HHIT);
     collection.addIndex("sWALK",sWALK);
     collection.addIndex("sJUMP",sJUMP);
+    collection.addIndex("sJUMP",sFALL);
     collection.addIndex("sATRAP",sATRAP);
     collection.addIndex("sNTRAP",sNTRAP);
     collection.addIndex("sREAD",sREAD);

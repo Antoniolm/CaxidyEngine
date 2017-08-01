@@ -142,15 +142,3 @@ void MovieScreen::activateAllTexture(){
         currentMaterial->setTexture(options[0]);
     }
 }
-
-//**********************************************************************//
-
-void MovieScreen::enableSound(bool value){
-    if(value){
-        ambientSound->play();
-    }
-    else{
-        ambientSound->stop();
-    }
-}
-

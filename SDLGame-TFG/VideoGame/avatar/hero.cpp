@@ -60,6 +60,7 @@ Hero::Hero(vec3f aPos)
     heroSound.push_back(soundCollect->getSound(SHOOT));
     heroSound.push_back(soundCollect->getSound(sSWORD));
     heroSound.push_back(soundCollect->getSound(sJUMP));
+    heroSound.push_back(soundCollect->getSound(sFALL));
 
     for(unsigned i=0;i<heroSound.size();i++)
         channelSound.push_back(-1);
@@ -532,7 +533,9 @@ void Hero::updateState(GameState & gameState){
     }
     //If the jump is not activate
     else {
+        bool isFallAux=isFalling;
         ObjectScene * object=gravity(time);
+
         if(!isShielded){
             animations.activate(5);
         }
@@ -540,6 +543,9 @@ void Hero::updateState(GameState & gameState){
             takeDamage(object->getDamage());
             dmgDelay=time;
         }
+
+        if(object!=0 && isFallAux)
+            channelSound[6]=heroSound[6]->play();
     }
 
     //If the jump is activate
