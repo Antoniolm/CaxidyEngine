@@ -43,7 +43,8 @@ enum SoundIndex{
     sATRAP,
     sNTRAP,
     sREAD,
-    sMOVIE
+    sMOVIE,
+    sMAIN
 };
 
 class SoundCollection

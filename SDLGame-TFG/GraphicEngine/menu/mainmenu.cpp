@@ -72,13 +72,13 @@ MainMenu::MainMenu(vec3f initPos,string fileName)
     currentTime=SDL_GetTicks();
     menuDelay=currentTime;
 
+    //Get sound
     openSound=soundCollect->getSound(sOpen);
     moveSound=soundCollect->getSound(sCoin);
+    ambientSound=soundCollect->getSound(sMAIN);
 
     //Check if the user has a progress
     checkUserProgress();
-
-
 }
 
 //**********************************************************************//
@@ -161,6 +161,7 @@ void MainMenu::updateState(GameState & gameState){
                     gameState.rootMap=new RootMap("./maps/map00.json",true);
                     checkUserProgress();
                     openSound->play();
+                    ambientSound->stop();
                 break;
                 case CONTINUE: //Continue
                     //Catch the saved progress and load the map
@@ -175,6 +176,7 @@ void MainMenu::updateState(GameState & gameState){
 
                     gameState.rootMap=new RootMap(fileLoad,true);
                     openSound->play();
+                    ambientSound->stop();
                 break;
                 case CONTROLS: //Controls
                     gameState.controlMenu->activate();
@@ -212,6 +214,7 @@ void MainMenu::activate(){
     activateMenu=true;
     currentOption=0;
     currentMaterial->setTexture(options[currentOption]);
+    ambientSound->play();
 }
 
 //**********************************************************************//

@@ -106,6 +106,7 @@ class MainMenu : public Menu
         vector<MainMenuOption> actionOption; // Vector of option of the menu
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
+        Sound * ambientSound;                   // Sound for movement
         bool hasSave;
 };
 
