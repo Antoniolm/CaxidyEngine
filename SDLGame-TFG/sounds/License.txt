@@ -11,3 +11,7 @@ jump.wav by acebrian is licensed under Creative Commons 0.0 http://www.freesound
 Button 05.wav by JarredGibb is licensed under Creative Commons 0.0 http://www.freesound.org/people/JarredGibb/sounds/219476/ -> used in the sound : trapActivated.wav
 Sharpening Knife by LaCezio is licensed under Creative Commons non commercial license http://www.freesound.org/people/LaCezio/sounds/320344/ -> used in the sound : animationTrap.wav
 Snowfall final.mp3 by ShadyDave is licensed under Creative Commons non commercial license http://www.freesound.org/people/ShadyDave/sounds/262259/ -> used in the sound : backSoundLoop.wav
+Book reading by Tristan_Lohengrin is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/Tristan_Lohengrin/sounds/233438/ -> used in the sound : bookRead.wav
+jumping_1.wav by ShaneF91 is licensed under Creative Commons 1.0 Universal license http://freesound.org/people/ShaneF91/sounds/386572/ -> used in the sound : fall.wav
+145 pizzicati strings loop.wav by Thrisk is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/Thirsk/sounds/121040/ -> used in the sound : mainSound.wav
+Soft Piano Loop#2 by ispeakwaves is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/ispeakwaves/sounds/384935/ -> used in the sound : movieSound.wav
