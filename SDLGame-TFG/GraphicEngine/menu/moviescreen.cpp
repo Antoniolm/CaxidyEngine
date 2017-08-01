@@ -61,7 +61,7 @@ MovieScreen::MovieScreen(const Value & movieFeatures)
 
     //Get sound
     actionSound=soundCollect->getSound(sREAD);
-    ambientSound=soundCollect->getSound(sCoin);
+    ambientSound=soundCollect->getSound(sMOVIE);
 }
 
 //**********************************************************************//
@@ -86,7 +86,6 @@ void MovieScreen::visualization(Context & cv){
 
 void MovieScreen::updateState(GameState & gameState){
     float time=gameState.time;
-
     if(time-currentTime>200)
         currentTime=time-50;
 
@@ -137,6 +136,17 @@ void MovieScreen::activateAllTexture(){
         currentMaterial->setSpecular(vec3f(0.5f, 0.5f, 0.5f));
         currentMaterial->setShininess(32.0f);
         currentMaterial->setTexture(options[0]);
+    }
+}
+
+//**********************************************************************//
+
+void MovieScreen::enableSound(bool value){
+    if(value){
+        ambientSound->play();
+    }
+    else{
+        ambientSound->pause();
     }
 }
 

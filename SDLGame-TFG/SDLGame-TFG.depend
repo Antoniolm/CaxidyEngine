@@ -4961,7 +4961,7 @@
 	"structdata.h"
 	"SDL2/SDL.h"
 
-1501580338 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
+1501581377 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
 	"sound/sound.h"
 	"sound/effect.h"
 	"sound/music.h"
@@ -5337,7 +5337,7 @@
 	"collection/materialcollection.h"
 	<string>
 
-1501580528 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.h
+1501583273 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.h
 	"menu.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
@@ -5425,7 +5425,7 @@
 1488043281 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1493582095 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1501585802 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1489961113 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5631,7 +5631,7 @@
 	"region.h"
 	"gamestate.h"
 
-1497693209 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1501585623 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5764,7 +5764,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1496151794 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1501585427 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1491565115 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5795,6 +5795,10 @@
 	"camera.h"
 	"rootmap.h"
 
-1501580378 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
+1501581582 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
 	"soundcollection.h"
+
+1501585742 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.cpp
+	"moviescreen.h"
+	"gamestate.h"
 

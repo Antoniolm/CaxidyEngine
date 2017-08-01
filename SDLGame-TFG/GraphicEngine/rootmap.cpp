@@ -543,7 +543,8 @@ void RootMap::enableSound(bool value){
             backSound->play();
     }
     else{
-        backSound->pause();
+        if(backSound->isPlaying())
+            backSound->pause();
     }
     hero->enableSound(value);
 }

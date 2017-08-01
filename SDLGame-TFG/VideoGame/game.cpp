@@ -211,6 +211,7 @@ void Game::loop(){
                 gameState.initPlay(context.currentShader->getProgram());
                 firstTime=false;
             }
+
             ///////////////////
             // UPDATE STATE
             ///////////////////

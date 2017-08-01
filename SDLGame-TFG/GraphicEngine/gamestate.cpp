@@ -51,8 +51,12 @@ void GameState::initPlay(GLuint shaderID){
     vec3f posH=rootMap->getHero()->getPosition();
 
     movie=rootMap->getMovie();
-    movie->setPosition(vec3f(posH.x,posH.y+6.77,posH.z+11.0));
-    movie->activateAllTexture();
+
+    if(movie->isActivate()){
+        movie->setPosition(vec3f(posH.x,posH.y+6.77,posH.z+11.0));
+        movie->activateAllTexture();
+        //movie->enableSound(true);
+    }
 }
 
 //**********************************************************************//
