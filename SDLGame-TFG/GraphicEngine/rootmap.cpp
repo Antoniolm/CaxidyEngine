@@ -529,7 +529,8 @@ void RootMap::updateState(GameState & gameState){
         gameState.rootMap->enableSound(true);
     }
     else{
-        gameState.rootMap->enableSound(false);
+        if(gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate())
+            gameState.rootMap->enableSound(false);
     }
 }
 
@@ -537,9 +538,6 @@ void RootMap::updateState(GameState & gameState){
 
 void RootMap::enableSound(bool value){
     if(value){
-        /*if(backSound->isPlaying())
-            backSound->resume();
-        else*/
             backSound->play();
     }
     else{

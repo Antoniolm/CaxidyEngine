@@ -90,15 +90,20 @@ void MovieScreen::updateState(GameState & gameState){
         currentTime=time-50;
 
     if(activateMenu){
+        if(!ambientSound->isPlaying())
+            ambientSound->play();
+
         if(gameState.controller->checkButton(cACTION) && menuDelay<(time-500)){ //If the user push the action intro
             currentOption++;
 
             if((unsigned)currentOption==options.size()){
                 activateMenu=false;
                 currentOption=0;
+                ambientSound->stop();
             }
             else {
                 actionSound->play();
+                ambientSound->play();
             }
 
             currentMaterial->setTexture(options[currentOption]);
@@ -107,7 +112,6 @@ void MovieScreen::updateState(GameState & gameState){
             gameState.controller->consumeButtons();
         }
     }
-
     currentTime+=time-currentTime;
 }
 
@@ -146,7 +150,7 @@ void MovieScreen::enableSound(bool value){
         ambientSound->play();
     }
     else{
-        ambientSound->pause();
+        ambientSound->stop();
     }
 }
 
