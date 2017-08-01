@@ -41,7 +41,8 @@ enum SoundIndex{
     sWALK,
     sJUMP,
     sATRAP,
-    sNTRAP
+    sNTRAP,
+    sREAD
 };
 
 class SoundCollection

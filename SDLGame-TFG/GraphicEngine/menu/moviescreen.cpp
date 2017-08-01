@@ -24,6 +24,8 @@ MovieScreen::MovieScreen(const Value & movieFeatures)
 {
     currentOption=0;
     MeshCollection * meshCollect =MeshCollection::getInstance();
+    SoundCollection * soundCollect =SoundCollection::getInstance();
+
     positionMenu=new Matrix4f();
 
     if(movieFeatures.Size()==0){
@@ -56,6 +58,10 @@ MovieScreen::MovieScreen(const Value & movieFeatures)
     }
     currentTime=SDL_GetTicks();
     menuDelay=currentTime;
+
+    //Get sound
+    actionSound=soundCollect->getSound(sREAD);
+    ambientSound=soundCollect->getSound(sCoin);
 }
 
 //**********************************************************************//
@@ -91,6 +97,9 @@ void MovieScreen::updateState(GameState & gameState){
             if((unsigned)currentOption==options.size()){
                 activateMenu=false;
                 currentOption=0;
+            }
+            else {
+                actionSound->play();
             }
 
             currentMaterial->setTexture(options[currentOption]);

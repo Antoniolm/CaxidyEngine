@@ -44,6 +44,7 @@ SoundCollection::SoundCollection()
     collection.addElement(new Effect("sounds/jump.wav",20,-1,0));
     collection.addElement(new Effect("sounds/trapActivated.wav",40,-1,0));
     collection.addElement(new Effect("sounds/animationTrap.wav",20,-1,0));
+    collection.addElement(new Effect("sounds/bookRead.wav",20,-1,0));
 
     //Create our map
     collection.addIndex("sCoin",sCoin);
@@ -58,6 +59,7 @@ SoundCollection::SoundCollection()
     collection.addIndex("sJUMP",sJUMP);
     collection.addIndex("sATRAP",sATRAP);
     collection.addIndex("sNTRAP",sNTRAP);
+    collection.addIndex("sREAD",sREAD);
 }
 
 //**********************************************************************//

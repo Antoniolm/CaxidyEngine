@@ -23,6 +23,7 @@
 #include "menu.h"
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
 #include "../lib/rapidjson/document.h"
 
 using namespace rapidjson;
@@ -87,6 +88,8 @@ class MovieScreen : public Menu
 
     private:
         vector<string> textures;    // Vector of textures of the movie screen
+        Sound * actionSound;        // Action sound of the screen
+        Sound * ambientSound;       // Ambient sound of the screen
 };
 
 #endif // MOVIESCREEN_H
