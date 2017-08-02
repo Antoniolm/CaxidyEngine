@@ -52,7 +52,7 @@ RootMap::~RootMap()
     delete endMapRegion;
     delete movie;
 
-    for(unsigned i=doors.size();i<objs.size();i++)
+    for(unsigned i=doors.size()+traps.size();i<objs.size();i++)
         deleteObject3d(objs[i]);
 
     for(unsigned i=0;i<decorationObjs.size();i++)
@@ -60,7 +60,6 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<objectGroup.size();i++)
         delete objectGroup[i];
-
 
     for(unsigned i=0;i<npcList.size();i++)
         delete npcList[i];
@@ -85,6 +84,9 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<doors.size();i++)
         deleteObject3d(doors[i]);
+
+    for(unsigned i=0;i<traps.size();i++)
+        deleteObject3d(traps[i]);
 
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
@@ -233,7 +235,10 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading traps door >"<< endl;
     const rapidjson::Value & trapFeature=document["trapDoor"];
     for(unsigned currentTrap=0;currentTrap<trapFeature.Size();currentTrap++){
-        traps.push_back(new TrapDoor(trapFeature[currentTrap]));
+        TrapDoor * trapDoor=new TrapDoor(trapFeature[currentTrap]);
+        trapDoor->addLink();trapDoor->addLink();
+        traps.push_back(trapDoor);
+        objs.push_back(trapDoor);
     }
 
     /////////////////////////////////////////
@@ -617,6 +622,24 @@ ObjectScene * RootMap::collision(const vec3f & posFirst, const vec3f & posSecond
 
     return result;
 
+}
+
+//**********************************************************************//
+
+void RootMap::addCollision(vec2f voxelPosition,int objID){
+    /*int tam=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].size();
+
+    vector<int>::iterator it=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].begin();
+    vector<int>::iterator endIt=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].end();
+
+    if(tam!=0 ){
+        while(it!=endIt){ //if There are object in that position (x,z)
+            if((*it)==objID)
+                indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].erase(it);
+            else
+                it++;
+        }
+    }*/
 }
 
 //**********************************************************************//

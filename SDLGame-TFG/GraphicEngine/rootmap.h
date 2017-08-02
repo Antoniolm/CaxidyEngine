@@ -160,6 +160,14 @@ class RootMap : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    The method will add the collision of an object
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void addCollision(vec2f voxelPosition,int objID);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    The method will remove the collision of an object
         *    \return void
         */

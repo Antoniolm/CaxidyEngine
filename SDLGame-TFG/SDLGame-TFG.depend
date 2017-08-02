@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1501667596 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1501685724 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -5632,7 +5632,7 @@
 	"region.h"
 	"gamestate.h"
 
-1501667819 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1501687433 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5756,7 +5756,7 @@
 	"weapon.h"
 	<vector>
 
-1501670820 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\door.cpp
+1501688131 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\door.cpp
 	"door.h"
 
 1495749630 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\enemylist.cpp
@@ -5803,8 +5803,8 @@
 	"moviescreen.h"
 	"gamestate.h"
 
-1501682680 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
-	"../GraphicEngine/object3d.h"
+1501686566 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
+	"../GraphicEngine/objectscene.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
 	"../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -5813,6 +5813,6 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1501685307 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
+1501688361 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
 	"trapdoor.h"
 

@@ -20,7 +20,7 @@
 #ifndef TRAPDOOR_H
 #define TRAPDOOR_H
 
-#include "../GraphicEngine/object3d.h"
+#include "../GraphicEngine/objectscene.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -31,7 +31,7 @@
 
 using namespace rapidjson;
 
-class TrapDoor : public Object3D
+class TrapDoor : public ObjectScene
 {
     public:
         //////////////////////////////////////////////////////////////////////////
@@ -94,7 +94,6 @@ class TrapDoor : public Object3D
         float hitDelay;             // time between hit the hero
         float desactivatedDelay;    // Delay time for its deactivation
         float activatedTime;        // Time for its activation
-        float damage;               // Damage of the spike trap
         bool activated;             // Flag to activation
         bool delayActivated;        // Flag to delay time
         Sound * activatedTrap;      // Sound for its activation

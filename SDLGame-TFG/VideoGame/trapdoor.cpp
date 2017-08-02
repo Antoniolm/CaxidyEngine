@@ -20,7 +20,7 @@
 #include "trapdoor.h"
 
 TrapDoor::TrapDoor(const Value & trapDoorFeatures){
-    position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat(),1.0);
+    position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat()-1.0f,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -30,7 +30,7 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     animationSound=soundCollect->getSound(sNTRAP);
 
     Matrix4f * transObject=new Matrix4f();
-    transObject->translation(position.x,position.y,position.z-0.25f);
+    transObject->translation(position.x,position.y,position.z+0.5f);
 
     Matrix4f * transForRot=new Matrix4f();
     transForRot->translation(0.0f,0.0f,+0.25f);
@@ -72,6 +72,8 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     activated=false;
     delayActivated=false;
 
+    object=root;
+    damage=0.0;
     initAnimation();
 
 }
