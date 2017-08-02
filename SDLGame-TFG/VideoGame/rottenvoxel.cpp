@@ -45,6 +45,7 @@ RottenVoxel::RottenVoxel(const Value & rottenFeatures, int id){
     currentTime=SDL_GetTicks();
     delayTime=currentTime;
     activated=false;
+    disappear=false;
     voxelID=id;
 
     object=root;
@@ -62,7 +63,9 @@ RottenVoxel::~RottenVoxel(){
 //**********************************************************************//
 
 void RottenVoxel::visualization(Context & cv){
-    object->visualization(cv);
+    if(!disappear)
+        object->visualization(cv);
+
 }
 
 //**********************************************************************//
@@ -87,6 +90,7 @@ void RottenVoxel::updateState(GameState & gameState){
 
     if(activated && delayTime<(time-2100)){ //if hero is far of an activated trap
         activated=false;
+        disappear=true;
         animationSound->play(0);
         gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
     }

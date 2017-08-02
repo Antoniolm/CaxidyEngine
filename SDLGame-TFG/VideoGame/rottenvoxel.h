@@ -89,6 +89,7 @@ class RottenVoxel : public ObjectScene
         ScriptLMD * animation;      // Up animation of the rotten voxel
         float delayTime;            // Delay time
         bool activated;             // Flag to activation
+        bool disappear;
         Sound * activatedTrap;      // Sound for its activation
         Sound * animationSound;     // Sound for its up animation
         int voxelID;                // Id of the rotten voxel
