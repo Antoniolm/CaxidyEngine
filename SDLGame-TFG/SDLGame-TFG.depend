@@ -4277,7 +4277,7 @@
 	<vector>
 	<string>
 
-1496069080 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
+1501668749 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
 	"materialcollection.h"
 	"material/material.h"
 
@@ -4313,7 +4313,7 @@
 	<iostream>
 	<fstream>
 
-1493979983 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.cpp
+1501667097 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.cpp
 	"meshcollection.h"
 
 1501667065 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.h
@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1496922292 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1501667596 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4864,6 +4864,7 @@
 	"loaderthread.h"
 	"menu/moviescreen.h"
 	"../VideoGame/spiketrap.h"
+	"../VideoGame/trapdoor.h"
 
 1496919850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
@@ -5631,7 +5632,7 @@
 	"region.h"
 	"gamestate.h"
 
-1501596447 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1501667819 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5801,4 +5802,17 @@
 1501600432 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.cpp
 	"moviescreen.h"
 	"gamestate.h"
+
+1501666701 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
+	"../GraphicEngine/object3d.h"
+	"../GraphicEngine/nodescenegraph.h"
+	"../GraphicEngine/matrix/matrix4f.h"
+	"../GraphicEngine/matrix/matrix4fdynamic.h"
+	"../GraphicEngine/collection/meshcollection.h"
+	"../GraphicEngine/collection/materialcollection.h"
+	"../GraphicEngine/collection/soundcollection.h"
+	"../lib/rapidjson/document.h"
+
+1501667388 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
+	"trapdoor.h"
 

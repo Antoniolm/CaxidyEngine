@@ -228,6 +228,15 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
+    // Add spikes to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading traps door >"<< endl;
+    const rapidjson::Value & trapFeature=document["trapDoor"];
+    for(unsigned currentTrap=0;currentTrap<trapFeature.Size();currentTrap++){
+        traps.push_back(new TrapDoor(trapFeature[currentTrap]));
+    }
+
+    /////////////////////////////////////////
     // Add voxelGroup to our map
     /////////////////////////////////////////
     cout<< "< Game is loading the scene >"<< endl;
@@ -440,6 +449,11 @@ void RootMap::visualization(Context & cv){
         spikes[i]->visualization(cv);
     }
 
+    //Draw spiketrap
+    for(unsigned i=0;i<traps.size();i++){
+        traps[i]->visualization(cv);
+    }
+
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
         position=decorationObjs[i]->getPosition();
@@ -509,6 +523,11 @@ void RootMap::updateState(GameState & gameState){
         //Update spikeTraps
         for(unsigned i=0;i<spikes.size();i++){
             spikes[i]->updateState(gameState);
+        }
+
+        //Update spikeTraps
+        for(unsigned i=0;i<traps.size();i++){
+            traps[i]->updateState(gameState);
         }
 
         //Update title

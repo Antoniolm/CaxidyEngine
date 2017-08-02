@@ -21,7 +21,6 @@
 
 TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat(),1.0);
-    //damage=trapDoorFeatures["damage"].GetFloat();
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -33,6 +32,12 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     Matrix4f * transObject=new Matrix4f();
     transObject->translation(position.x,position.y,position.z);
 
+    Matrix4f * rotObject=new Matrix4f();
+    rotObject->rotation(180.0f,0.0f,1.0f,0.0f);
+
+    Matrix4f * transTrap=new Matrix4f();
+    transTrap->translation(0.0f,0.0f,-0.5f);
+
     transActivate=new Matrix4f();
     transActivate->identity();
 
@@ -40,6 +45,9 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     root->add(transObject);
     root->add(transActivate);
     root->add(materialCollect->getMaterial(mTRAPDOOR));
+    root->add(meshCollect->getMesh(TRAPDOOR));
+    root->add(rotObject);
+    root->add(transTrap);
     root->add(meshCollect->getMesh(TRAPDOOR));
 
     currentTime=SDL_GetTicks();

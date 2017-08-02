@@ -238,6 +238,11 @@
             }
     ],
 
+    "trapDoor":[
+            {   "position":[4,1.0,-7]
+            }
+    ],
+
     "voxelGroup":[
             {   "//":"ROOM 1 - Begin",
                 "position":[1,0.5,1],

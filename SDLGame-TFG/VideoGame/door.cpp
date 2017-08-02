@@ -42,7 +42,6 @@ Door::Door(const Value & doorFeatures,const vector<SoulCarrier*> & soulCarriers,
     if(doorType==1)
         rotateDoor->rotation(90,0.0,1.0,0.0);
 
-
     NodeSceneGraph * root=new NodeSceneGraph();
     root->add(moveDoor);
     root->add(rotateDoor);

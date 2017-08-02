@@ -63,6 +63,7 @@
 #include "loaderthread.h"
 #include "menu/moviescreen.h"
 #include "../VideoGame/spiketrap.h"
+#include "../VideoGame/trapdoor.h"
 
 using namespace std;
 
@@ -82,6 +83,7 @@ class TextRegion;
 class EndMapRegion;
 class Notification;
 class SpikeTrap;
+class TrapDoor;
 class LoaderThread;
 class MovieScreen;
 class RootMap : public Object3D
@@ -257,6 +259,7 @@ class RootMap : public Object3D
         vector<ProjectileSystem *> projectileSystem;// Vector of projectiles systems
         vector<TextRegion *> regions;               // Vector of regions
         vector<SpikeTrap *> spikes;                 // Vector of spikes traps
+        vector<TrapDoor *> traps;                   // Vector of traps door
         vector<Soul *> souls;                       // Vector of souls
         vector<SoulCarrier *> soulCarriers;         // Vector of souls carriers
         vector<Door *> doors;                       // Vector of doors
