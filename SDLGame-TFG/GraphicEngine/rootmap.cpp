@@ -645,14 +645,16 @@ void RootMap::addCollision(vec2f voxelPosition,int objID){
 
 void RootMap::removeCollision(vec2f voxelPosition,int objID){
     int tam=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].size();
+    bool deleted=false;
 
     vector<int>::iterator it=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].begin();
     vector<int>::iterator endIt=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].end();
 
     if(tam!=0 ){
-        while(it!=endIt){ //if There are object in that position (x,z)
+        while(it!=endIt && !deleted){ //if There are object in that position (x,z)
             if((*it)==objID){
                 indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].erase(it);
+                deleted=true;
             }
             else
                 it++;

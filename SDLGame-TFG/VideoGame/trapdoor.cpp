@@ -119,6 +119,7 @@ void TrapDoor::updateState(GameState & gameState){
         activated=false;
         delayActivated=false;
         animationSound->play(0);
+        gameState.rootMap->addCollision(vec2f(position.x,position.z),trapID);
     }
 
     if(activated){ // if is activated

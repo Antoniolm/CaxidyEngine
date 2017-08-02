@@ -81,12 +81,16 @@ void Door::updateState(GameState & gameState ){
         if(!activated){
             switch(doorType){
                 case 0: //Remove in front side
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),doorID);
-                    gameState.rootMap->removeCollision(vec2f(position.x-1.0,position.z),doorID);
+                    for(int i=0;i<3;i++){
+                        gameState.rootMap->removeCollision(vec2f(position.x,position.z),doorID);
+                        gameState.rootMap->removeCollision(vec2f(position.x-1.0,position.z),doorID);
+                    }
                     break;
                 case 1: //Remove in sideAway
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),doorID);
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z+1.0),doorID);
+                    for(int i=0;i<3;i++){
+                        gameState.rootMap->removeCollision(vec2f(position.x,position.z),doorID);
+                        gameState.rootMap->removeCollision(vec2f(position.x,position.z+1.0),doorID);
+                    }
                     break;
 
             }
