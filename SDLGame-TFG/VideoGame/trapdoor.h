@@ -85,18 +85,15 @@ class TrapDoor : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
-        NodeSceneGraph * root;      // Root of the object
-        Matrix4f * transActivateFirst;   // Matrix 4x4 for the activaction of the spiketrap
-        Matrix4f * transActivateSecond;   // Matrix 4x4 for the activaction of the spiketrap
-        ScriptLMD * animationUp;    // Up animation of the spike trap
-        ScriptLMD * animationDown;  // Down animation of the spike trap
+        Matrix4f * transActivateFirst;   // Matrix 4x4 for the activaction of the trap door
+        Matrix4f * transActivateSecond;   // Matrix 4x4 for the activaction of the trap door
+        ScriptLMD * animationUp;    // Up animation of the trap door
+        ScriptLMD * animationDown;  // Down animation of the trap door
         float delayTime;            // Delay time
-        float hitDelay;             // time between hit the hero
         float desactivatedDelay;    // Delay time for its deactivation
         float activatedTime;        // Time for its activation
         bool activated;             // Flag to activation
         bool delayActivated;        // Flag to delay time
-        bool wasActivated;          // Flag to know is if activated and not delay (first time)
         Sound * activatedTrap;      // Sound for its activation
         Sound * animationSound;     // Sound for its up animation
         int trapID;                 // Id of the trap door

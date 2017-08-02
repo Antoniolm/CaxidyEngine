@@ -59,14 +59,13 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures, int id){
     doorSecond->add(transForRot);
     doorSecond->add(meshCollect->getMesh(TRAPDOOR));
 
-    root=new NodeSceneGraph();
+    NodeSceneGraph * root=new NodeSceneGraph();
     root->add(transObject);
     root->add(materialCollect->getMaterial(mTRAPDOOR));
     root->add(doorFirst);
     root->add(doorSecond);
 
     currentTime=SDL_GetTicks();
-    hitDelay=currentTime;
     delayTime=currentTime;
     desactivatedDelay=currentTime;
     activated=false;
@@ -82,13 +81,13 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures, int id){
 //**********************************************************************//
 
 TrapDoor::~TrapDoor(){
-    delete root;
+    delete object;
 }
 
 //**********************************************************************//
 
 void TrapDoor::visualization(Context & cv){
-    root->visualization(cv);
+    object->visualization(cv);
 }
 
 //**********************************************************************//
