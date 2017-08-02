@@ -38,17 +38,27 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     Matrix4f * transTrap=new Matrix4f();
     transTrap->translation(0.0f,0.0f,-0.5f);
 
-    transActivate=new Matrix4f();
-    transActivate->identity();
+    transActivateFirst=new Matrix4f();
+    transActivateFirst->identity();
+
+    transActivateSecond=new Matrix4f();
+    transActivateSecond->identity();
+
+    NodeSceneGraph * doorFirst=new NodeSceneGraph();
+    doorFirst->add(transActivateFirst);
+    doorFirst->add(meshCollect->getMesh(TRAPDOOR));
+
+    NodeSceneGraph * doorSecond=new NodeSceneGraph();
+    doorSecond->add(transActivateSecond);
+    doorSecond->add(rotObject);
+    doorSecond->add(transTrap);
+    doorSecond->add(meshCollect->getMesh(TRAPDOOR));
 
     root=new NodeSceneGraph();
     root->add(transObject);
-    root->add(transActivate);
     root->add(materialCollect->getMaterial(mTRAPDOOR));
-    root->add(meshCollect->getMesh(TRAPDOOR));
-    root->add(rotObject);
-    root->add(transTrap);
-    root->add(meshCollect->getMesh(TRAPDOOR));
+    root->add(doorFirst);
+    root->add(doorSecond);
 
     currentTime=SDL_GetTicks();
     hitDelay=currentTime;
@@ -92,7 +102,7 @@ void TrapDoor::updateState(GameState & gameState){
         desactivatedDelay=time;
         animationUp->resetState();
         animationDown->resetState();
-        transActivate->identity();
+        transActivateFirst->identity();
         activatedTrap->play(0);
     }
 
@@ -105,7 +115,7 @@ void TrapDoor::updateState(GameState & gameState){
     if(activated){ // if is activated
         if(!delayActivated){ //If is not in delayTime
             if(distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y) && hitDelay<(time-400)){
-                hero->takeDamage(damage);
+                //hero->takeDamage(damage);
                 hitDelay=time;
             }
         }
@@ -121,14 +131,14 @@ void TrapDoor::updateState(GameState & gameState){
     // Updated animation
     if(activated && !delayActivated && animationUp->getScriptState(0)!=1){
         animationUp->updateState(time-currentTime);
-        transActivate->product(animationUp->readMatrix(0).getMatrix());
+        transActivateFirst->product(animationUp->readMatrix(0).getMatrix());
     }
     else if(!activated && animationDown->getScriptState(0)!=1){
         animationDown->updateState(time-currentTime);
-        transActivate->product(animationDown->readMatrix(0).getMatrix());
+        transActivateFirst->product(animationDown->readMatrix(0).getMatrix());
     }
     else if(animationDown->getScriptState(0)==1){
-        transActivate->identity();
+        transActivateFirst->identity();
     }
 
     currentTime+=time-currentTime;
@@ -147,12 +157,12 @@ void TrapDoor::initAnimation(){
     //Animation up
     animationUp=new ScriptLMD();
 
-    LinearMovement * movementUp=new LinearMovement(0.0,7.0,0.0);
+    OscillateRotation * oscltDoorFront=new OscillateRotation(true,90,0,1,50,vec3f(1,0,0),1);
     MatrixStatic * notMove=new MatrixStatic();
 
     MatrixScript * scriptUp=new MatrixScript();
 
-    scriptUp->add(0.12,movementUp);
+    scriptUp->add(0.3,oscltDoorFront);
     scriptUp->add(0.5,notMove);
 
     animationUp->add(scriptUp);
@@ -162,11 +172,11 @@ void TrapDoor::initAnimation(){
     //Animation down
     animationDown=new ScriptLMD();
 
-    LinearMovement * movementDown=new LinearMovement(0.0,-7.0,0.0);
+    OscillateRotation * oscltDoorSide=new OscillateRotation(false,0,90,89,100,vec3f(1,0,0),1);
 
     MatrixScript * scriptDown=new MatrixScript();
 
-    scriptDown->add(0.12,movementDown);
+    scriptDown->add(0.3,oscltDoorSide);
     scriptDown->add(0.5,notMove);
 
     animationDown->add(scriptDown);

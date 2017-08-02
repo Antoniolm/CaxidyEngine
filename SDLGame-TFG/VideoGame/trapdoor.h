@@ -86,9 +86,12 @@ class TrapDoor : public Object3D
         void initAnimation();
 
         NodeSceneGraph * root;      // Root of the object
-        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the spiketrap
-        ScriptLMD * animationUp;    // Up animation of the spike trap
-        ScriptLMD * animationDown;  // Down animation of the spike trap
+        Matrix4f * transActivateFirst;   // Matrix 4x4 for the activaction of the spiketrap
+        Matrix4f * transActivateSecond;   // Matrix 4x4 for the activaction of the spiketrap
+        ScriptLMD * animationUpFirst;    // Up animation of the spike trap
+        ScriptLMD * animationUpSecond;    // Up animation of the spike trap
+        ScriptLMD * animationDownFirst;  // Down animation of the spike trap
+        ScriptLMD * animationDownSecond;  // Down animation of the spike trap
         float delayTime;            // Delay time
         float hitDelay;             // time between hit the hero
         float desactivatedDelay;    // Delay time for its deactivation
