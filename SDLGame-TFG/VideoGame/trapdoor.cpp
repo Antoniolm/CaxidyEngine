@@ -30,13 +30,16 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     animationSound=soundCollect->getSound(sNTRAP);
 
     Matrix4f * transObject=new Matrix4f();
-    transObject->translation(position.x,position.y,position.z);
+    transObject->translation(position.x,position.y,position.z-0.25f);
+
+    Matrix4f * transForRot=new Matrix4f();
+    transForRot->translation(0.0f,0.0f,+0.25f);
 
     Matrix4f * rotObject=new Matrix4f();
     rotObject->rotation(180.0f,0.0f,1.0f,0.0f);
 
     Matrix4f * transTrap=new Matrix4f();
-    transTrap->translation(0.0f,0.0f,-0.5f);
+    transTrap->translation(0.0f,0.0f,-1.0f);
 
     transActivateFirst=new Matrix4f();
     transActivateFirst->identity();
@@ -46,12 +49,14 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
 
     NodeSceneGraph * doorFirst=new NodeSceneGraph();
     doorFirst->add(transActivateFirst);
+    doorFirst->add(transForRot);
     doorFirst->add(meshCollect->getMesh(TRAPDOOR));
 
     NodeSceneGraph * doorSecond=new NodeSceneGraph();
     doorSecond->add(rotObject);
     doorSecond->add(transTrap);
     doorSecond->add(transActivateSecond);
+    doorSecond->add(transForRot);
     doorSecond->add(meshCollect->getMesh(TRAPDOOR));
 
     root=new NodeSceneGraph();
