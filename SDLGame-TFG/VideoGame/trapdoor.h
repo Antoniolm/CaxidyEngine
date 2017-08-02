@@ -77,7 +77,27 @@ class TrapDoor : public Object3D
     protected:
 
     private:
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will initialize the animation of our hero
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void initAnimation();
+
         NodeSceneGraph * root;      // Root of the object
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the spiketrap
+        ScriptLMD * animationUp;    // Up animation of the spike trap
+        ScriptLMD * animationDown;  // Down animation of the spike trap
+        float delayTime;            // Delay time
+        float hitDelay;             // time between hit the hero
+        float desactivatedDelay;    // Delay time for its deactivation
+        float activatedTime;        // Time for its activation
+        float damage;               // Damage of the spike trap
+        bool activated;             // Flag to activation
+        bool delayActivated;        // Flag to delay time
+        Sound * activatedTrap;      // Sound for its activation
+        Sound * animationSound;     // Sound for its up animation
 
 };
 
