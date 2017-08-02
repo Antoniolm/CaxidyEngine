@@ -93,9 +93,9 @@ void RottenVoxel::updateState(GameState & gameState){
 
     ////////////////////////////////
     // Updated animation
-    if(activated && animation->getScriptState(0)!=1){
+    if(activated){
         animation->updateState(time-currentTime);
-        transActivate->setMatrix(animation->readMatrix(0).getMatrix());
+        transActivate->product(animation->readMatrix(0).getMatrix());
     }
 
     currentTime+=time-currentTime;
@@ -122,7 +122,6 @@ void RottenVoxel::initAnimation(){
     MatrixScript * scriptUp=new MatrixScript();
 
     scriptUp->add(0.1,movement);
-    scriptUp->add(0.1,notMove);
     scriptUp->add(0.1,movementOpp);
 
     animation->add(scriptUp);

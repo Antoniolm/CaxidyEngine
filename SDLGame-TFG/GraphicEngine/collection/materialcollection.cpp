@@ -37,7 +37,7 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(1.5f, 1.5f, 1.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"./textures/cubeDungeonTrap.png","./textures/cubeDungeonTrapBump.png",mCUBE_SPIKE));
 
-    collection.addElement(new Material(vec3f(1.5f, 1.5f, 1.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"./textures/cubeLand.png","",mCUBE_LAND));
+    collection.addElement(new Material(vec3f(4.0f, 4.0f, 4.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"./textures/cubeLand.png","",mCUBE_LAND));
 
     collection.addElement(new Material(vec3f(1.5f, 1.5f, 1.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"./textures/cubeSteel.png","",mCUBE_STEEL));
 

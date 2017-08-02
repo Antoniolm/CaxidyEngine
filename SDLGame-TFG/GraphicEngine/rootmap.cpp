@@ -555,6 +555,11 @@ void RootMap::updateState(GameState & gameState){
             traps[i]->updateState(gameState);
         }
 
+        //Update rotten voxel
+        for(unsigned i=0;i<rottens.size();i++){
+            rottens[i]->updateState(gameState);
+        }
+
         //Update title
         title->updateState(gameState);
 
