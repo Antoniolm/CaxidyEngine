@@ -52,7 +52,7 @@ RootMap::~RootMap()
     delete endMapRegion;
     delete movie;
 
-    for(unsigned i=doors.size()+traps.size();i<objs.size();i++)
+    for(unsigned i=doors.size()+traps.size()+rottens.size();i<objs.size();i++)
         deleteObject3d(objs[i]);
 
     for(unsigned i=0;i<decorationObjs.size();i++)
@@ -87,6 +87,9 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<traps.size();i++)
         deleteObject3d(traps[i]);
+
+    for(unsigned i=0;i<rottens.size();i++)
+        deleteObject3d(rottens[i]);
 
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
@@ -230,7 +233,7 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
-    // Add spikes to our map
+    // Add traps door to our map
     /////////////////////////////////////////
     cout<< "< Game is loading traps door >"<< endl;
     const rapidjson::Value & trapFeature=document["trapDoor"];
@@ -239,6 +242,18 @@ void RootMap::initialize(string fileMap){
         trapDoor->addLink();trapDoor->addLink();
         traps.push_back(trapDoor);
         objs.push_back(trapDoor);
+    }
+
+    /////////////////////////////////////////
+    // Add rotten voxel to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading rotten voxel >"<< endl;
+    const rapidjson::Value & rottenFeature=document["rottVoxel"];
+    for(unsigned currentRot=0;currentRot<rottenFeature.Size();currentRot++){
+        RottenVoxel * rotten=new RottenVoxel(rottenFeature[currentRot],objs.size()+traps.size()+currentRot);
+        rotten->addLink();rotten->addLink();
+        rottens.push_back(rotten);
+        objs.push_back(rotten);
     }
 
     /////////////////////////////////////////
@@ -454,9 +469,14 @@ void RootMap::visualization(Context & cv){
         spikes[i]->visualization(cv);
     }
 
-    //Draw spiketrap
+    //Draw traps
     for(unsigned i=0;i<traps.size();i++){
         traps[i]->visualization(cv);
+    }
+
+    //Draw rotten
+    for(unsigned i=0;i<rottens.size();i++){
+        rottens[i]->visualization(cv);
     }
 
     //Draw decoration object

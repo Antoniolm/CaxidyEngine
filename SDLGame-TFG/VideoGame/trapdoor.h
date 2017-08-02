@@ -91,7 +91,6 @@ class TrapDoor : public ObjectScene
         ScriptLMD * animationDown;  // Down animation of the trap door
         float delayTime;            // Delay time
         float desactivatedDelay;    // Delay time for its deactivation
-        float activatedTime;        // Time for its activation
         bool activated;             // Flag to activation
         bool delayActivated;        // Flag to delay time
         Sound * activatedTrap;      // Sound for its activation

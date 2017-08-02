@@ -88,8 +88,6 @@ class RottenVoxel : public ObjectScene
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the rotten voxel
         ScriptLMD * animation;      // Up animation of the rotten voxel
         float delayTime;            // Delay time
-        float desactivatedDelay;    // Delay time for its deactivation
-        float activatedTime;        // Time for its activation
         bool activated;             // Flag to activation
         Sound * activatedTrap;      // Sound for its activation
         Sound * animationSound;     // Sound for its up animation

@@ -39,12 +39,11 @@ RottenVoxel::RottenVoxel(const Value & rottenFeatures, int id){
     NodeSceneGraph * root=new NodeSceneGraph();
     root->add(transObject);
     root->add(transActivate);
-    root->add(materialCollect->getMaterial(mTRAPDOOR));
+    root->add(materialCollect->getMaterial(mCUBE_LAND));
     root->add(meshCollect->getMesh(CUBE));
 
     currentTime=SDL_GetTicks();
     delayTime=currentTime;
-    desactivatedDelay=currentTime;
     activated=false;
     voxelID=id;
 
@@ -81,13 +80,12 @@ void RottenVoxel::updateState(GameState & gameState){
     if(!activated && distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)){
         activated=true;
         delayTime=time;
-        desactivatedDelay=time;
         animation->resetState();
         transActivate->identity();
         activatedTrap->play(0);
     }
 
-    if(activated && desactivatedDelay<(time-2100)){ //if hero is far of an activated trap
+    if(activated && delayTime<(time-2100)){ //if hero is far of an activated trap
         activated=false;
         animationSound->play(0);
         gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);

@@ -35,6 +35,8 @@ enum MaterialIndex{
     mINVICUBE_WALL, //5
     mCUBE_TRAP,     //6
     mCUBE_SPIKE,    //7
+    mCUBE_LAND,    //7
+    mCUBE_STEEL,    //7
     mDWATER,        //8
     mVOID,          //9
     mCRYSTAL,       //10
@@ -78,7 +80,6 @@ enum MaterialIndex{
     mLIFE100,
     mCRYSDRAW,
     mTRAPDOOR
-
 };
 
 class Material;
