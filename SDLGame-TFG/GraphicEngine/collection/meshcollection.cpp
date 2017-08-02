@@ -279,6 +279,10 @@ MeshCollection::MeshCollection()
     element->addLink();
     collection.addElement(element);
 
+    element=new Mesh("geometries/trapDoor.obj");
+    element->addLink();
+    collection.addElement(element);
+
     //Create our map
     collection.addIndex("CUBE",CUBE);
     collection.addIndex("SPHERE",SPHERE);
@@ -336,6 +340,7 @@ MeshCollection::MeshCollection()
     collection.addIndex("DOOR",DOOR);
     collection.addIndex("GLYPH",GLYPH);
     collection.addIndex("SOUL",SOUL);
+    collection.addIndex("TRAPDOOR",TRAPDOOR);
 }
 
 //**********************************************************************//
