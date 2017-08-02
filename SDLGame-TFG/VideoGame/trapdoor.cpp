@@ -19,7 +19,7 @@
 
 #include "trapdoor.h"
 
-TrapDoor::TrapDoor(const Value & trapDoorFeatures){
+TrapDoor::TrapDoor(const Value & trapDoorFeatures, int id){
     position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat()+0.1f,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -71,6 +71,7 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     desactivatedDelay=currentTime;
     activated=false;
     delayActivated=false;
+    trapID=id;
 
     object=root;
     damage=0.0;
@@ -121,15 +122,10 @@ void TrapDoor::updateState(GameState & gameState){
     }
 
     if(activated){ // if is activated
-        if(!delayActivated){ //If is not in delayTime
-            if(distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y) && hitDelay<(time-400)){
-                //hero->takeDamage(damage);
-                hitDelay=time;
-            }
-        }
-        else { //If is in delayTime
+        if(delayActivated){ //If is not in delayTime
             if(delayTime<(time-600)){
                 delayActivated=false;
+                gameState.rootMap->removeCollision(vec2f(position.x,position.z),trapID);
                 animationSound->play(0);
             }
         }

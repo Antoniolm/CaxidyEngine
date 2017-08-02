@@ -235,7 +235,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading traps door >"<< endl;
     const rapidjson::Value & trapFeature=document["trapDoor"];
     for(unsigned currentTrap=0;currentTrap<trapFeature.Size();currentTrap++){
-        TrapDoor * trapDoor=new TrapDoor(trapFeature[currentTrap]);
+        TrapDoor * trapDoor=new TrapDoor(trapFeature[currentTrap],objs.size()+currentTrap);
         trapDoor->addLink();trapDoor->addLink();
         traps.push_back(trapDoor);
         objs.push_back(trapDoor);
@@ -627,19 +627,18 @@ ObjectScene * RootMap::collision(const vec3f & posFirst, const vec3f & posSecond
 //**********************************************************************//
 
 void RootMap::addCollision(vec2f voxelPosition,int objID){
-    /*int tam=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].size();
 
-    vector<int>::iterator it=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].begin();
-    vector<int>::iterator endIt=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].end();
+    //Create our indexMap for our collision system
+    vec3f pos=objs[objID]->getPosition();
+    BoundingBox bounding=objs[objID]->getBoundingBox();
+    bounding.minValue.z+=0.1;
+    bounding.minValue.x-=0.1;
 
-    if(tam!=0 ){
-        while(it!=endIt){ //if There are object in that position (x,z)
-            if((*it)==objID)
-                indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].erase(it);
-            else
-                it++;
+    for(int x=bounding.minValue.x;x<bounding.maxValue.x;x++){
+        for(int z=bounding.minValue.z;z<bounding.maxValue.z;z++){
+            indexMap[(int)(pos.x+x)][(int)((pos.z+z)*(-1))].push_back(objID);
         }
-    }*/
+    }
 }
 
 //**********************************************************************//
@@ -652,8 +651,9 @@ void RootMap::removeCollision(vec2f voxelPosition,int objID){
 
     if(tam!=0 ){
         while(it!=endIt){ //if There are object in that position (x,z)
-            if((*it)==objID)
+            if((*it)==objID){
                 indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].erase(it);
+            }
             else
                 it++;
         }

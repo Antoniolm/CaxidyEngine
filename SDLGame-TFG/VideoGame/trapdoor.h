@@ -40,7 +40,7 @@ class TrapDoor : public ObjectScene
         *   @param trapDoorFeatures -> the value json that contain all the information of our trapDoor object
         */
         //////////////////////////////////////////////////////////////////////////
-        TrapDoor(const Value & trapDoorFeatures);
+        TrapDoor(const Value & trapDoorFeatures, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -96,8 +96,10 @@ class TrapDoor : public ObjectScene
         float activatedTime;        // Time for its activation
         bool activated;             // Flag to activation
         bool delayActivated;        // Flag to delay time
+        bool wasActivated;          // Flag to know is if activated and not delay (first time)
         Sound * activatedTrap;      // Sound for its activation
         Sound * animationSound;     // Sound for its up animation
+        int trapID;                 // Id of the trap door
 
 };
 
