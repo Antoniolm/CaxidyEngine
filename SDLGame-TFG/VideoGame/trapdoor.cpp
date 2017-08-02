@@ -49,9 +49,9 @@ TrapDoor::TrapDoor(const Value & trapDoorFeatures){
     doorFirst->add(meshCollect->getMesh(TRAPDOOR));
 
     NodeSceneGraph * doorSecond=new NodeSceneGraph();
-    doorSecond->add(transActivateSecond);
     doorSecond->add(rotObject);
     doorSecond->add(transTrap);
+    doorSecond->add(transActivateSecond);
     doorSecond->add(meshCollect->getMesh(TRAPDOOR));
 
     root=new NodeSceneGraph();
@@ -100,10 +100,8 @@ void TrapDoor::updateState(GameState & gameState){
         delayActivated=true;
         delayTime=time;
         desactivatedDelay=time;
-        animationUpFirst->resetState();
-        animationUpSecond->resetState();
-        animationDownFirst->resetState();
-        animationDownSecond->resetState();
+        animationUp->resetState();
+        animationDown->resetState();
         transActivateFirst->identity();
         transActivateSecond->identity();
         activatedTrap->play(0);
@@ -132,20 +130,18 @@ void TrapDoor::updateState(GameState & gameState){
 
     ////////////////////////////////
     // Updated animation
-    if(activated && !delayActivated && animationUpFirst->getScriptState(0)!=1){
-        animationUpFirst->updateState(time-currentTime);
-        animationUpSecond->updateState(time-currentTime);
-        transActivateFirst->setMatrix(animationUpFirst->readMatrix(0).getMatrix());
-        transActivateSecond->setMatrix(animationUpSecond->readMatrix(0).getMatrix());
+    if(activated && !delayActivated && animationUp->getScriptState(0)!=1){
+        animationUp->updateState(time-currentTime);
+        transActivateFirst->setMatrix(animationUp->readMatrix(0).getMatrix());
+        transActivateSecond->setMatrix(animationUp->readMatrix(0).getMatrix());
     }
-    else if(!activated && animationDownFirst->getScriptState(0)!=1){
-        animationDownFirst->updateState(time-currentTime);
-        animationDownSecond->updateState(time-currentTime);
-        transActivateFirst->setMatrix(animationDownFirst->readMatrix(0).getMatrix());
-        transActivateSecond->setMatrix(animationDownSecond->readMatrix(0).getMatrix());
+    else if(!activated && animationDown->getScriptState(0)!=1){
+        animationDown->updateState(time-currentTime);
+        transActivateFirst->setMatrix(animationDown->readMatrix(0).getMatrix());
+        transActivateSecond->setMatrix(animationDown->readMatrix(0).getMatrix());
 
     }
-    else if(animationDownFirst->getScriptState(0)==1){
+    else if(animationDown->getScriptState(0)==1){
         transActivateFirst->identity();
         transActivateSecond->identity();
     }
@@ -164,7 +160,7 @@ bool TrapDoor::isActivated(){
 void TrapDoor::initAnimation(){
     //////////////////////////////////////
     //Animation up first
-    animationUpFirst=new ScriptLMD();
+    animationUp=new ScriptLMD();
 
     OscillateRotation * oscltDoorUpFirst=new OscillateRotation(false,0,-90,1,300,vec3f(1,0,0),1);
 
@@ -177,11 +173,11 @@ void TrapDoor::initAnimation(){
     scriptUp->add(0.3,oscltDoorUpFirst);
     scriptUp->add(0.5,rotStatic);
 
-    animationUpFirst->add(scriptUp);
+    animationUp->add(scriptUp);
 
     /////////////////////////////////////////
     // Animation Down first
-    animationDownFirst=new ScriptLMD();
+    animationDown=new ScriptLMD();
     OscillateRotation * oscltDoorDownFirst=new OscillateRotation(true,0,-90,-89,300,vec3f(1,0,0),1);
     MatrixStatic * notMove=new MatrixStatic();
 
@@ -190,27 +186,5 @@ void TrapDoor::initAnimation(){
     script->add(0.3,oscltDoorDownFirst);
     script->add(0.5,notMove);
 
-    animationDownFirst->add(script);
-
-    /////////////////////////////
-    //Animation up second
-    animationUpSecond=new ScriptLMD();
-
-    OscillateRotation * oscltDoorSide=new OscillateRotation(false,0,90,89,300,vec3f(1,0,0),1);
-
-    MatrixScript * scriptDown=new MatrixScript();
-
-    //scriptDown->add(0.3,oscltDoorSide);
-    scriptDown->add(0.5,notMove);
-
-    animationUpSecond->add(scriptDown);
-
-    /////////////////////////////
-    //Animation down second
-    animationDownSecond=new ScriptLMD();
-
-    MatrixScript * scriptDS=new MatrixScript();
-    scriptDS->add(0.5,notMove);
-
-    animationDownSecond->add(scriptDS);
+    animationDown->add(script);
 }
