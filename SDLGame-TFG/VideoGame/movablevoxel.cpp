@@ -75,10 +75,7 @@ void MovableVoxel::updateState(GameState & gameState){
         gameState.controller->consumeButtons();
         activated=true;
 
-        animationFront->resetState();
-        animationBack->resetState();
-        animationLeft->resetState();
-        animationRight->resetState();
+        animation->resetState();
 
         // Case FRONT
         if(/*hero->getDirection()== &&*/position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
@@ -103,37 +100,37 @@ void MovableVoxel::updateState(GameState & gameState){
 
         switch(currentDir){
         case FORWARD:
-            animationFront->updateState(time-currentTime);
-            transActivate->product(animationFront->readMatrix(0).getMatrix());
+            animation->updateState(time-currentTime);
+            transActivate->product(animation->readMatrix(0).getMatrix());
 
-            if(animationFront->getScriptState(0)==1)
+            if(animation->getScriptState(0)==1)
                 activated=false;
 
             break;
 
         case BACKWARD:
-            animationBack->updateState(time-currentTime);
-            transActivate->product(animationBack->readMatrix(0).getMatrix());
+            animation->updateState(time-currentTime);
+            transActivate->product(animation->readMatrix(1).getMatrix());
 
-            if(animationBack->getScriptState(0)==1)
+            if(animation->getScriptState(1)==1)
                 activated=false;
 
             break;
 
         case LEFTWARD:
-            animationLeft->updateState(time-currentTime);
-            transActivate->product(animationLeft->readMatrix(0).getMatrix());
+            animation->updateState(time-currentTime);
+            transActivate->product(animation->readMatrix(2).getMatrix());
 
-            if(animationLeft->getScriptState(0)==1)
+            if(animation->getScriptState(2)==1)
                 activated=false;
 
             break;
 
         case RIGHTWARD:
-            animationRight->updateState(time-currentTime);
-            transActivate->product(animationRight->readMatrix(0).getMatrix());
+            animation->updateState(time-currentTime);
+            transActivate->product(animation->readMatrix(3).getMatrix());
 
-            if(animationRight->getScriptState(0)==1)
+            if(animation->getScriptState(3)==1)
                 activated=false;
 
             break;
@@ -178,7 +175,6 @@ void MovableVoxel::updateState(GameState & gameState){
                     break;
             }
 
-
         }
 
     }
@@ -198,7 +194,7 @@ bool MovableVoxel::isActivated(){
 void MovableVoxel::initAnimation(){
     //////////////////////////////////////
     //Animation Front
-    animationFront=new ScriptLMD();
+    animation=new ScriptLMD();
 
     LinearMovement * movementFront=new LinearMovement(0.0f,0.0f,3.0f);
     MatrixStatic * notMove=new MatrixStatic();
@@ -208,12 +204,10 @@ void MovableVoxel::initAnimation(){
     scriptFront->add(0.3,movementFront);
     scriptFront->add(0.05,notMove);
 
-    animationFront->add(scriptFront);
+    animation->add(scriptFront);
 
     //////////////////////////////////////
     //Animation Back
-    animationBack=new ScriptLMD();
-
     LinearMovement * movementBack=new LinearMovement(0.0f,0.0f,-3.0f);
 
     MatrixScript * scriptBack=new MatrixScript();
@@ -221,11 +215,10 @@ void MovableVoxel::initAnimation(){
     scriptBack->add(0.3,movementBack);
     scriptBack->add(0.05,notMove);
 
-    animationBack->add(scriptBack);
+    animation->add(scriptBack);
 
     //////////////////////////////////////
     //Animation Left
-    animationLeft=new ScriptLMD();
 
     LinearMovement * movementLeft=new LinearMovement(-3.0f,0.0f,0.0f);
 
@@ -234,12 +227,10 @@ void MovableVoxel::initAnimation(){
     scriptLeft->add(0.3,movementLeft);
     scriptLeft->add(0.05,notMove);
 
-    animationLeft->add(scriptLeft);
+    animation->add(scriptLeft);
 
     //////////////////////////////////////
     //Animation Right
-    animationRight=new ScriptLMD();
-
     LinearMovement * movementRight=new LinearMovement(3.0f,0.0f,0.0f);
 
     MatrixScript * scriptRight=new MatrixScript();
@@ -247,5 +238,5 @@ void MovableVoxel::initAnimation(){
     scriptRight->add(0.3,movementRight);
     scriptRight->add(0.05,notMove);
 
-    animationRight->add(scriptRight);
+    animation->add(scriptRight);
 }
