@@ -77,19 +77,30 @@ void MovableVoxel::updateState(GameState & gameState){
     if(gameState.controller->checkButton(cACTION) && distance<=1.3 /*&&
        (position.y>posHero.y-1 && position.y<posHero.y+1)*/){
         gameState.controller->consumeButtons();
-        cout<< "yep"<<endl;
 
-        if(position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
+        if(position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             transActivate->translation(0.0f,0.0f,1.0f);
+            gameState.rootMap->addCollision(vec2f(position.x,position.z+1.0f),voxelID);
+            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+        }
 
-        if(position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
+        if(position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             transActivate->translation(0.0f,0.0f,-1.0f);
+            gameState.rootMap->addCollision(vec2f(position.x,position.z-1.0f),voxelID);
+            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+        }
 
-        if(position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4))
-            transActivate->translation(1.0f,0.0f,0.0f);
-
-        if(position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4))
+        if(position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             transActivate->translation(-1.0f,0.0f,0.0f);
+            gameState.rootMap->addCollision(vec2f(position.x-1.0f,position.z),voxelID);
+            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+        }
+
+        if(position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
+            transActivate->translation(1.0f,0.0f,0.0f);
+            gameState.rootMap->addCollision(vec2f(position.x+1.0f,position.z),voxelID);
+            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+        }
     }
 
 }
