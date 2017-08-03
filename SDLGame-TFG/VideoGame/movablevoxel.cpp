@@ -73,25 +73,32 @@ void MovableVoxel::updateState(GameState & gameState){
     if( !activated && gameState.controller->checkButton(cACTION) && distance<=1.3 /*&&
        (position.y>posHero.y-1 && position.y<posHero.y+1)*/){
         gameState.controller->consumeButtons();
-        activated=true;
 
         animation->resetState();
 
         // Case FRONT
-        if(/*hero->getDirection()== &&*/position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
+        if(hero->getDirection()==FORWARD && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             currentDir=FORWARD;
+            activated=true;
+        }
 
         // Case BACK
-        if(position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
+        if(hero->getDirection()==BACKWARD && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             currentDir=BACKWARD;
+            activated=true;
+        }
 
         // Case LEFT
-        if(position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4))
+        if(hero->getDirection()==LEFTWARD && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             currentDir=LEFTWARD;
+            activated=true;
+        }
 
         // Case RIGHT
-        if(position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4))
+        if(hero->getDirection()==RIGHTWARD && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             currentDir=RIGHTWARD;
+            activated=true;
+        }
     }
 
     ////////////////////////////////
@@ -174,7 +181,6 @@ void MovableVoxel::updateState(GameState & gameState){
 
                     break;
             }
-
         }
 
     }
