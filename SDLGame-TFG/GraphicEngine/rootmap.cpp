@@ -556,8 +556,16 @@ void RootMap::updateState(GameState & gameState){
         }
 
         //Update rotten voxel
-        for(unsigned i=0;i<rottens.size();i++){
-            rottens[i]->updateState(gameState);
+        vector<RottenVoxel * >::iterator it=rottens.begin();
+
+        while(it!=rottens.end()){
+            (*it)->updateState(gameState);
+            if((*it)->isDisappear()){
+                delete (*it);
+                rottens.erase(it);
+            }
+            else
+                it++;
         }
 
         //Update title

@@ -222,6 +222,8 @@
 		<Unit filename="VideoGame/projectile.h" />
 		<Unit filename="VideoGame/projectilesystem.cpp" />
 		<Unit filename="VideoGame/projectilesystem.h" />
+		<Unit filename="VideoGame/rottenvoxel.cpp" />
+		<Unit filename="VideoGame/rottenvoxel.h" />
 		<Unit filename="VideoGame/soul.cpp" />
 		<Unit filename="VideoGame/soul.h" />
 		<Unit filename="VideoGame/soulcarrier.cpp" />

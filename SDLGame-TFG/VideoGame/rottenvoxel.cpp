@@ -63,9 +63,7 @@ RottenVoxel::~RottenVoxel(){
 //**********************************************************************//
 
 void RottenVoxel::visualization(Context & cv){
-    if(!disappear)
-        object->visualization(cv);
-
+    object->visualization(cv);
 }
 
 //**********************************************************************//
@@ -80,7 +78,7 @@ void RottenVoxel::updateState(GameState & gameState){
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
     //if hero is near of a disactivated trap
-    if(!activated && distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)){
+    if(!activated && !disappear && distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)){
         activated=true;
         delayTime=time;
         animation->resetState();
@@ -110,6 +108,12 @@ void RottenVoxel::updateState(GameState & gameState){
 
 bool RottenVoxel::isActivated(){
     return activated;
+}
+
+//**********************************************************************//
+
+bool RottenVoxel::isDisappear(){
+    return disappear;
 }
 
 //**********************************************************************//
