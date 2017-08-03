@@ -48,6 +48,7 @@ SoundCollection::SoundCollection()
     collection.addElement(new Effect("sounds/bookRead.wav",20,-1,0));
     collection.addElement(new Music("sounds/movieSound.wav",40));
     collection.addElement(new Music("sounds/mainSound.wav",5));
+    collection.addElement(new Effect("sounds/rotBlock.wav",20,-1,0));
 
     //Create our map
     collection.addIndex("sCoin",sCoin);
@@ -66,6 +67,7 @@ SoundCollection::SoundCollection()
     collection.addIndex("sREAD",sREAD);
     collection.addIndex("sMOVIE",sMOVIE);
     collection.addIndex("sMAIN",sMAIN);
+    collection.addIndex("sROT",sROT);
 }
 
 //**********************************************************************//

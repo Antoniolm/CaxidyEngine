@@ -26,8 +26,7 @@ RottenVoxel::RottenVoxel(const Value & rottenFeatures, int id){
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
     SoundCollection * soundCollect= SoundCollection::getInstance();
 
-    activatedTrap=soundCollect->getSound(sATRAP);
-    animationSound=soundCollect->getSound(sNTRAP);
+    activatedVoxel=soundCollect->getSound(sROT);
 
     Matrix4f * transObject=new Matrix4f();
     transObject->translation(position.x,position.y,position.z-0.5f);
@@ -83,13 +82,12 @@ void RottenVoxel::updateState(GameState & gameState){
         delayTime=time;
         animation->resetState();
         transActivate->identity();
-        activatedTrap->play(0);
+        activatedVoxel->play(0);
     }
 
-    if(activated && delayTime<(time-2100)){ //if hero is far of an activated trap
+    if(activated && delayTime<(time-1600)){ //if hero is far of an activated trap
         activated=false;
         disappear=true;
-        animationSound->play(0);
         gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
     }
 

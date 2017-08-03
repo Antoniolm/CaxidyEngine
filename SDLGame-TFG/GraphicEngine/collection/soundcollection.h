@@ -45,7 +45,8 @@ enum SoundIndex{
     sNTRAP,
     sREAD,
     sMOVIE,
-    sMAIN
+    sMAIN,
+    sROT
 };
 
 class SoundCollection
