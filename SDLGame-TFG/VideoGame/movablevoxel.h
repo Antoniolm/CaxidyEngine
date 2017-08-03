@@ -86,12 +86,16 @@ class MovableVoxel : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
-        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the rotten voxel
-        ScriptLMD * animation;      // Up animation of the rotten voxel
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the movable voxel
+        ScriptLMD * animationFront; // Front animation of the movable voxel
+        ScriptLMD * animationBack;  // Back animation of the movable voxel
+        ScriptLMD * animationLeft;  // Left animation of the movable voxel
+        ScriptLMD * animationRight; // Right animation of the movable voxel
         float delayTime;            // Delay time
         bool activated;             // Flag to activation
-        Sound * activatedVoxel;      // Sound for its activation
-        int voxelID;                // Id of the rotten voxel
+        avatarDirection currentDir;
+        Sound * activatedVoxel;     // Sound for its activation
+        int voxelID;                // Id of the movable voxel
 };
 
 #endif // MOVABLEVOXEL_H

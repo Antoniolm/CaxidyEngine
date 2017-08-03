@@ -28,14 +28,10 @@ MovableVoxel::MovableVoxel(const Value & movableFeatures, int id){
 
     activatedVoxel=soundCollect->getSound(sROT);
 
-    Matrix4f * transObject=new Matrix4f();
-    transObject->translation(position.x,position.y,position.z);
-
     transActivate=new Matrix4f();
-    transActivate->identity();
+    transActivate->translation(position.x,position.y,position.z);
 
     NodeSceneGraph * root=new NodeSceneGraph();
-    root->add(transObject);
     root->add(transActivate);
     root->add(materialCollect->getMaterial(mCUBE_STEEL));
     root->add(meshCollect->getMesh(CUBE));
@@ -74,34 +70,120 @@ void MovableVoxel::updateState(GameState & gameState){
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
     //if hero is near of a movable voxel and he push E -> Hero push the voxel in his arms
-    if(gameState.controller->checkButton(cACTION) && distance<=1.3 /*&&
+    if( !activated && gameState.controller->checkButton(cACTION) && distance<=1.3 /*&&
        (position.y>posHero.y-1 && position.y<posHero.y+1)*/){
         gameState.controller->consumeButtons();
+        activated=true;
 
-        if(position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
-            transActivate->translation(0.0f,0.0f,1.0f);
-            gameState.rootMap->addCollision(vec2f(position.x,position.z+1.0f),voxelID);
-            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-        }
+        animationFront->resetState();
+        animationBack->resetState();
+        animationLeft->resetState();
+        animationRight->resetState();
 
-        if(position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
-            transActivate->translation(0.0f,0.0f,-1.0f);
-            gameState.rootMap->addCollision(vec2f(position.x,position.z-1.0f),voxelID);
-            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-        }
+        // Case FRONT
+        if(/*hero->getDirection()== &&*/position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
+            currentDir=FORWARD;
 
-        if(position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
-            transActivate->translation(-1.0f,0.0f,0.0f);
-            gameState.rootMap->addCollision(vec2f(position.x-1.0f,position.z),voxelID);
-            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-        }
+        // Case BACK
+        if(position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4))
+            currentDir=BACKWARD;
 
-        if(position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
-            transActivate->translation(1.0f,0.0f,0.0f);
-            gameState.rootMap->addCollision(vec2f(position.x+1.0f,position.z),voxelID);
-            gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-        }
+        // Case LEFT
+        if(position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4))
+            currentDir=LEFTWARD;
+
+        // Case RIGHT
+        if(position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4))
+            currentDir=RIGHTWARD;
     }
+
+    ////////////////////////////////
+    // Updated animation
+    if(activated){
+
+        switch(currentDir){
+        case FORWARD:
+            animationFront->updateState(time-currentTime);
+            transActivate->product(animationFront->readMatrix(0).getMatrix());
+
+            if(animationFront->getScriptState(0)==1)
+                activated=false;
+
+            break;
+
+        case BACKWARD:
+            animationBack->updateState(time-currentTime);
+            transActivate->product(animationBack->readMatrix(0).getMatrix());
+
+            if(animationBack->getScriptState(0)==1)
+                activated=false;
+
+            break;
+
+        case LEFTWARD:
+            animationLeft->updateState(time-currentTime);
+            transActivate->product(animationLeft->readMatrix(0).getMatrix());
+
+            if(animationLeft->getScriptState(0)==1)
+                activated=false;
+
+            break;
+
+        case RIGHTWARD:
+            animationRight->updateState(time-currentTime);
+            transActivate->product(animationRight->readMatrix(0).getMatrix());
+
+            if(animationRight->getScriptState(0)==1)
+                activated=false;
+
+            break;
+
+        }
+
+        if(!activated){
+            switch(currentDir){
+                case FORWARD:
+                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+
+                    position.z=position.z+1.0f;
+                    transActivate->translation(position.x,position.y,position.z);
+                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
+                    break;
+
+                case BACKWARD:
+                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+
+                    position.z=position.z-1.0f;
+                    transActivate->translation(position.x,position.y,position.z);
+                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
+
+                    break;
+
+                case LEFTWARD:
+                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+
+                    position.x=position.x-1.0f;
+                    transActivate->translation(position.x,position.y,position.z);
+                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
+
+                    break;
+
+                case RIGHTWARD:
+                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+
+                    position.x=position.x+1.0f;
+                    transActivate->translation(position.x,position.y,position.z);
+                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
+
+                    break;
+            }
+
+
+        }
+
+    }
+
+    currentTime+=time-currentTime;
 
 }
 
@@ -114,5 +196,56 @@ bool MovableVoxel::isActivated(){
 //**********************************************************************//
 
 void MovableVoxel::initAnimation(){
+    //////////////////////////////////////
+    //Animation Front
+    animationFront=new ScriptLMD();
 
+    LinearMovement * movementFront=new LinearMovement(0.0f,0.0f,3.0f);
+    MatrixStatic * notMove=new MatrixStatic();
+
+    MatrixScript * scriptFront=new MatrixScript();
+
+    scriptFront->add(0.3,movementFront);
+    scriptFront->add(0.05,notMove);
+
+    animationFront->add(scriptFront);
+
+    //////////////////////////////////////
+    //Animation Back
+    animationBack=new ScriptLMD();
+
+    LinearMovement * movementBack=new LinearMovement(0.0f,0.0f,-3.0f);
+
+    MatrixScript * scriptBack=new MatrixScript();
+
+    scriptBack->add(0.3,movementBack);
+    scriptBack->add(0.05,notMove);
+
+    animationBack->add(scriptBack);
+
+    //////////////////////////////////////
+    //Animation Left
+    animationLeft=new ScriptLMD();
+
+    LinearMovement * movementLeft=new LinearMovement(-3.0f,0.0f,0.0f);
+
+    MatrixScript * scriptLeft=new MatrixScript();
+
+    scriptLeft->add(0.3,movementLeft);
+    scriptLeft->add(0.05,notMove);
+
+    animationLeft->add(scriptLeft);
+
+    //////////////////////////////////////
+    //Animation Right
+    animationRight=new ScriptLMD();
+
+    LinearMovement * movementRight=new LinearMovement(3.0f,0.0f,0.0f);
+
+    MatrixScript * scriptRight=new MatrixScript();
+
+    scriptRight->add(0.3,movementRight);
+    scriptRight->add(0.05,notMove);
+
+    animationRight->add(scriptRight);
 }
