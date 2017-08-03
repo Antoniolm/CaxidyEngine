@@ -70,8 +70,8 @@ void MovableVoxel::updateState(GameState & gameState){
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
     //if hero is near of a movable voxel and he push E -> Hero push the voxel in his arms
-    if( !activated && gameState.controller->checkButton(cACTION) && distance<=1.3 /*&&
-       (position.y>posHero.y-1 && position.y<posHero.y+1)*/){
+    if( !activated && gameState.controller->checkButton(cACTION) && distance<=1.3&&
+       (position.y>posHero.y-0.5 && position.y<posHero.y+0.5)){
         gameState.controller->consumeButtons();
 
         animation->resetState();

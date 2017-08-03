@@ -15,3 +15,4 @@ Book reading by Tristan_Lohengrin is licensed under Creative Commons Unported 3.
 jumping_1.wav by ShaneF91 is licensed under Creative Commons 1.0 Universal license http://freesound.org/people/ShaneF91/sounds/386572/ -> used in the sound : fall.wav
 145 pizzicati strings loop.wav by Thrisk is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/Thirsk/sounds/121040/ -> used in the sound : mainSound.wav
 Soft Piano Loop#2 by ispeakwaves is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/ispeakwaves/sounds/384935/ -> used in the sound : movieSound.wav
+Cracking Earthquake by uagadugu is licensed under Creative Commons 0 1.0 Universal license https://freesound.org/people/uagadugu/sounds/222521/ -> used in the sound : rotBlock.wav
