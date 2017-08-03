@@ -155,7 +155,7 @@ class RootMap : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will check if between the position first and position seoncd there is collision with
+        *    The method will check if between the position first and position second there is collision with
         *    a objectScene
         *    \return ObjectScene *
         */

@@ -77,25 +77,29 @@ void MovableVoxel::updateState(GameState & gameState){
         animation->resetState();
 
         // Case FRONT
-        if(hero->getDirection()==FORWARD && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
+        if(hero->getDirection()==FORWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z+1.0f))==0
+           && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             currentDir=FORWARD;
             activated=true;
         }
 
         // Case BACK
-        if(hero->getDirection()==BACKWARD && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
+        if(hero->getDirection()==BACKWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z-1.0f))==0
+           && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             currentDir=BACKWARD;
             activated=true;
         }
 
         // Case LEFT
-        if(hero->getDirection()==LEFTWARD && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
+        if(hero->getDirection()==LEFTWARD && gameState.rootMap->collision(vec3f(position.x-1.0f,position.y,position.z))==0
+           && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             currentDir=LEFTWARD;
             activated=true;
         }
 
         // Case RIGHT
-        if(hero->getDirection()==RIGHTWARD && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
+        if(hero->getDirection()==RIGHTWARD && gameState.rootMap->collision(vec3f(position.x+1.0f,position.y,position.z))==0
+           && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             currentDir=RIGHTWARD;
             activated=true;
         }
