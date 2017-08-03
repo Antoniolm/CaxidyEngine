@@ -17,8 +17,8 @@
 // **
 // *********************************************************************
 
-#ifndef TRAPDOOR_H
-#define TRAPDOOR_H
+#ifndef MOVABLEVOXEL_H
+#define MOVABLEVOXEL_H
 
 #include "../GraphicEngine/objectscene.h"
 #include "../GraphicEngine/nodescenegraph.h"
@@ -31,22 +31,22 @@
 
 using namespace rapidjson;
 
-class TrapDoor : public ObjectScene
+class MovableVoxel : public ObjectScene
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /**
         *   Constructor
-        *   @param trapDoorFeatures -> the value json that contain all the information of our trapDoor object
-        *    @param ID -> ID of the trapDoor
+        *   @param movableFeatures -> the value json that contain all the information of our movable voxel object
+        *    @param ID -> ID of the movable voxel
         */
         //////////////////////////////////////////////////////////////////////////
-        TrapDoor(const Value & trapDoorFeatures, int id);
+        MovableVoxel(const Value & movableFeatures, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~TrapDoor();
+        virtual ~MovableVoxel();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -69,7 +69,7 @@ class TrapDoor : public ObjectScene
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return if the trap is activated or not
+        *    It will return if the movable voxel is activated or not
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
@@ -80,24 +80,18 @@ class TrapDoor : public ObjectScene
     private:
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will initialize the animation of our hero
+        *    It will initialize the animation of the movable voxel
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
-        Matrix4f * transActivateFirst;   // Matrix 4x4 for the activaction of the trap door
-        Matrix4f * transActivateSecond;   // Matrix 4x4 for the activaction of the trap door
-        ScriptLMD * animationUp;    // Up animation of the trap door
-        ScriptLMD * animationDown;  // Down animation of the trap door
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the rotten voxel
+        ScriptLMD * animation;      // Up animation of the rotten voxel
         float delayTime;            // Delay time
-        float desactivatedDelay;    // Delay time for its deactivation
         bool activated;             // Flag to activation
-        bool delayActivated;        // Flag to delay time
-        Sound * activatedTrap;      // Sound for its activation
-        Sound * animationSound;     // Sound for its up animation
-        int trapID;                 // Id of the trap door
-
+        Sound * activatedVoxel;      // Sound for its activation
+        int voxelID;                // Id of the rotten voxel
 };
 
-#endif // TRAPDOOR_H
+#endif // MOVABLEVOXEL_H

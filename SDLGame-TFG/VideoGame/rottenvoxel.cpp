@@ -121,14 +121,14 @@ void RottenVoxel::initAnimation(){
     //Animation up
     animation=new ScriptLMD();
 
-    LinearMovement * movement=new LinearMovement(0.0f,0.0f,0.5f);
-    LinearMovement * movementOpp=new LinearMovement(0.0f,0.0f,-0.5f);
+    LinearMovement * movement=new LinearMovement(0.0f,0.0f,1.5f);
+    LinearMovement * movementOpp=new LinearMovement(0.0f,0.0f,-1.5f);
     MatrixStatic * notMove=new MatrixStatic();
 
     MatrixScript * scriptUp=new MatrixScript();
 
-    scriptUp->add(0.1,movement);
-    scriptUp->add(0.1,movementOpp);
+    scriptUp->add(0.05,movement);
+    scriptUp->add(0.05,movementOpp);
 
     animation->add(scriptUp);
 }

@@ -218,6 +218,8 @@
 		<Unit filename="VideoGame/item.h" />
 		<Unit filename="VideoGame/itemlist.cpp" />
 		<Unit filename="VideoGame/itemlist.h" />
+		<Unit filename="VideoGame/movablevoxel.cpp" />
+		<Unit filename="VideoGame/movablevoxel.h" />
 		<Unit filename="VideoGame/projectile.cpp" />
 		<Unit filename="VideoGame/projectile.h" />
 		<Unit filename="VideoGame/projectilesystem.cpp" />

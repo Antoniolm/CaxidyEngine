@@ -37,7 +37,8 @@ class RottenVoxel : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         /**
         *   Constructor
-        *   @param trapDoorFeatures -> the value json that contain all the information of our trapDoor object
+        *   @param rottenFeatures -> the value json that contain all the information of the rotten voxel object
+        *   @param ID -> ID of the rotten voxel
         */
         //////////////////////////////////////////////////////////////////////////
         RottenVoxel(const Value & rottenFeatures, int id);
@@ -68,7 +69,7 @@ class RottenVoxel : public ObjectScene
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return if the trap is activated or not
+        *    It will return if the rotten voxel is activated or not
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
@@ -76,7 +77,7 @@ class RottenVoxel : public ObjectScene
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return if the trap was disappear or not
+        *    It will return if the rotten voxel was disappear or not
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
@@ -87,7 +88,7 @@ class RottenVoxel : public ObjectScene
     private:
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will initialize the animation of our hero
+        *    It will initialize the animation of the rotten voxel
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -97,8 +98,8 @@ class RottenVoxel : public ObjectScene
         ScriptLMD * animation;      // Up animation of the rotten voxel
         float delayTime;            // Delay time
         bool activated;             // Flag to activation
-        bool disappear;
-        Sound * activatedVoxel;      // Sound for its activation
+        bool disappear;             // Flag to know if the rotten voxel was disappear
+        Sound * activatedVoxel;     // Sound for its activation
         int voxelID;                // Id of the rotten voxel
 };
 
