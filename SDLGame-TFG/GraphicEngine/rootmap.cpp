@@ -52,7 +52,8 @@ RootMap::~RootMap()
     delete endMapRegion;
     delete movie;
 
-    for(unsigned i=doors.size()+traps.size()+rottens.size();i<objs.size();i++)
+    for(unsigned i=doors.size()+traps.size()+rottens.size()
+        +movables.size();i<objs.size();i++)
         deleteObject3d(objs[i]);
 
     for(unsigned i=0;i<decorationObjs.size();i++)
@@ -90,6 +91,9 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<rottens.size();i++)
         deleteObject3d(rottens[i]);
+
+    for(unsigned i=0;i<movables.size();i++)
+        deleteObject3d(movables[i]);
 
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
@@ -254,6 +258,18 @@ void RootMap::initialize(string fileMap){
         rotten->addLink();rotten->addLink();
         rottens.push_back(rotten);
         objs.push_back(rotten);
+    }
+
+    /////////////////////////////////////////
+    // Add movable voxels to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading movable voxels >"<< endl;
+    const rapidjson::Value & movFeature=document["movVoxel"];
+    for(unsigned currentMov=0;currentMov<movFeature.Size();currentMov++){
+        MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],objs.size()+currentMov);
+        movVox->addLink();movVox->addLink();
+        movables.push_back(movVox);
+        objs.push_back(movVox);
     }
 
     /////////////////////////////////////////
@@ -479,6 +495,11 @@ void RootMap::visualization(Context & cv){
         rottens[i]->visualization(cv);
     }
 
+    //Draw rotten
+    for(unsigned i=0;i<movables.size();i++){
+        movables[i]->visualization(cv);
+    }
+
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
         position=decorationObjs[i]->getPosition();
@@ -566,6 +587,11 @@ void RootMap::updateState(GameState & gameState){
             }
             else
                 it++;
+        }
+
+        //Update spikeTraps
+        for(unsigned i=0;i<movables.size();i++){
+            movables[i]->updateState(gameState);
         }
 
         //Update title

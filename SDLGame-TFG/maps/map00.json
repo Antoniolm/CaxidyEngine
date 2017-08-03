@@ -244,7 +244,12 @@
     ],
 
     "rottVoxel":[
-            {   "position":[5.5,2.0,-4.5]
+            {   "position":[5.5,1.5,-4.5]
+            }
+    ],
+
+    "movVoxel":[
+            {   "position":[4.5,1.5,-4.5]
             }
     ],
 

@@ -29,7 +29,7 @@ RottenVoxel::RottenVoxel(const Value & rottenFeatures, int id){
     activatedVoxel=soundCollect->getSound(sROT);
 
     Matrix4f * transObject=new Matrix4f();
-    transObject->translation(position.x,position.y,position.z-0.5f);
+    transObject->translation(position.x,position.y,position.z);
 
     transActivate=new Matrix4f();
     transActivate->identity();

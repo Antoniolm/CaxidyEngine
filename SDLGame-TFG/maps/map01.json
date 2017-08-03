@@ -297,6 +297,10 @@
     "rottVoxel":[
     ],
 
+    "movVoxel":[
+    ],
+    
+
     "voxelGroup":[
             {   "//":"ROOM 1 - Begin",
                 "position":[200,0.5,1],
