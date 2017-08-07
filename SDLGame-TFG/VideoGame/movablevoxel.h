@@ -24,6 +24,7 @@
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
+#include "../GraphicEngine/matrix/acceleratedmovement.h"
 #include "../GraphicEngine/collection/meshcollection.h"
 #include "../GraphicEngine/collection/materialcollection.h"
 #include "../GraphicEngine/collection/soundcollection.h"
@@ -94,11 +95,21 @@ class MovableVoxel : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         bool checkEnemies(vec3f newPos,vector<Enemy *> &enemies);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will create the gravity for the movable voxel
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        ObjectScene * gravity(GameState & gameState);
+
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the movable voxel
         ScriptLMD * animation;      // animation of the movable voxel
         float delayTime;            // Delay time
         bool activated;             // Flag to activation
+        bool isFalling;
         avatarDirection currentDir;
+        AcceleratedMovement * acceleratedMove;  // Accelerated movement
         Sound * activatedVoxel;     // Sound for its activation
         int voxelID;                // Id of the movable voxel
 };

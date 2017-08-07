@@ -31,6 +31,9 @@ MovableVoxel::MovableVoxel(const Value & movableFeatures, int id){
     transActivate=new Matrix4f();
     transActivate->translation(position.x,position.y,position.z);
 
+    acceleratedMove=new AcceleratedMovement();
+    acceleratedMove->resetState();
+
     NodeSceneGraph * root=new NodeSceneGraph();
     root->add(transActivate);
     root->add(materialCollect->getMaterial(mCUBE_STEEL));
@@ -39,6 +42,7 @@ MovableVoxel::MovableVoxel(const Value & movableFeatures, int id){
     currentTime=SDL_GetTicks();
     delayTime=currentTime;
     activated=false;
+    isFalling=false;
     voxelID=id;
 
     object=root;
@@ -68,6 +72,11 @@ void MovableVoxel::updateState(GameState & gameState){
 
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
+
+    gravity(gameState);
+
+    vec4f pos=transActivate->product(vec4f());
+    position.y=pos.y;
 
     //if hero is near of a movable voxel and he push E -> Hero push the voxel in his arms
     if( !activated && gameState.controller->checkButton(cACTION) && distance<=1.3&&
@@ -192,6 +201,7 @@ void MovableVoxel::updateState(GameState & gameState){
 
                     break;
             }
+
         }
 
     }
@@ -275,4 +285,41 @@ bool MovableVoxel::checkEnemies(vec3f newPos,vector<Enemy *> &enemies){
     }
 
     return result;
+}
+
+//**********************************************************************//
+ObjectScene * MovableVoxel::gravity(GameState & gameState){
+    ObjectScene * hasCollision=0;
+
+    float time=gameState.time;
+
+    vec3f posVoxel=vec3f(position);
+    posVoxel.y-=0.6;
+
+    GLfloat * moveGravity=acceleratedMove->updateState(time-currentTime).getMatrix();
+    if(moveGravity[13]<-0.5)
+        moveGravity[13]=-0.5;
+
+    //Check the collision in the center
+    hasCollision=gameState.rootMap->collision(vec3f(posVoxel.x,posVoxel.y,posVoxel.z));
+
+    if(hasCollision==0){ //if not collision
+        transActivate->product(moveGravity);
+        isFalling=true;
+    }
+    else {
+        if(isFalling){
+            vec3f positionObs=hasCollision->getPosition();
+            BoundingBox box=hasCollision->getBoundingBox();
+            if((positionObs.y+box.maxValue.y)-(posVoxel.y)>0.1 && (positionObs.y+box.maxValue.y)-(posVoxel.y)<0.5){
+                Matrix4f trans;
+                trans.translation(0.0,(positionObs.y+box.maxValue.y)-(posVoxel.y),0.0);
+                transActivate->product(trans.getMatrix());
+            }
+        }
+        isFalling=false;
+        acceleratedMove->resetState();
+    }
+
+    return hasCollision;
 }
