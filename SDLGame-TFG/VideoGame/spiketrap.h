@@ -21,6 +21,8 @@
 #define SPIKETRAP_H
 
 #include "../GraphicEngine/object3d.h"
+#include "enemylist.h"
+#include "avatar/enemy.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -100,6 +102,8 @@ class SpikeTrap : public Object3D
         */
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
+
+        std::vector<int> checkEnemies(std::vector<Enemy *> & enemies);
 
         NodeSceneGraph * root;      // Root of the object
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the spiketrap
