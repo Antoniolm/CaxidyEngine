@@ -242,7 +242,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading traps door >"<< endl;
     const rapidjson::Value & trapFeature=document["trapDoor"];
     for(unsigned currentTrap=0;currentTrap<trapFeature.Size();currentTrap++){
-        TrapDoor * trapDoor=new TrapDoor(trapFeature[currentTrap],objs.size()+currentTrap);
+        TrapDoor * trapDoor=new TrapDoor(trapFeature[currentTrap],objs.size());
         trapDoor->addLink();trapDoor->addLink();
         traps.push_back(trapDoor);
         objs.push_back(trapDoor);
@@ -254,7 +254,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading rotten voxel >"<< endl;
     const rapidjson::Value & rottenFeature=document["rottVoxel"];
     for(unsigned currentRot=0;currentRot<rottenFeature.Size();currentRot++){
-        RottenVoxel * rotten=new RottenVoxel(rottenFeature[currentRot],objs.size()+currentRot);
+        RottenVoxel * rotten=new RottenVoxel(rottenFeature[currentRot],objs.size());
         rotten->addLink();rotten->addLink();
         rottens.push_back(rotten);
         objs.push_back(rotten);
@@ -266,7 +266,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading movable voxels >"<< endl;
     const rapidjson::Value & movFeature=document["movVoxel"];
     for(unsigned currentMov=0;currentMov<movFeature.Size();currentMov++){
-        MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],objs.size()+currentMov);
+        MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],objs.size());
         movVox->addLink();movVox->addLink();
         movables.push_back(movVox);
         objs.push_back(movVox);

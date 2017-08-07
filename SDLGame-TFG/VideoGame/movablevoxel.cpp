@@ -72,7 +72,6 @@ void MovableVoxel::updateState(GameState & gameState){
     //if hero is near of a movable voxel and he push E -> Hero push the voxel in his arms
     if( !activated && gameState.controller->checkButton(cACTION) && distance<=1.3&&
        (position.y>posHero.y-0.5 && position.y<posHero.y+0.5)){
-        gameState.controller->consumeButtons();
 
         animation->resetState();
 
@@ -107,6 +106,8 @@ void MovableVoxel::updateState(GameState & gameState){
             currentDir=RIGHTWARD;
             activated=true;
         }
+        if(activated)
+            gameState.controller->consumeButtons();
     }
 
     ////////////////////////////////
@@ -265,13 +266,9 @@ bool MovableVoxel::checkEnemies(vec3f newPos,vector<Enemy *> &enemies){
     for(int i=0;i<enemies.size();i++){
         posEnemy=enemies[i]->getPosition();
 
-        cout<< "posEnemy ("<< (int)posEnemy.x<< ","<< (int)posEnemy.z<< ")"<< endl;
-        cout<< "pos ("<< (int)newPos.x<< ","<< (int)newPos.z<< ")"<< endl;
-
         if((int)posEnemy.x == (int)newPos.x && (int)posEnemy.z == (int)newPos.z
            && (newPos.y>posEnemy.y-1 && newPos.y<posEnemy.y+1)){
             result=true;
-            cout<< "yep"<< endl;
         }
     }
 
