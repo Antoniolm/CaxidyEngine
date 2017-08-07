@@ -115,7 +115,7 @@ void SpikeTrap::updateState(GameState & gameState ){
                 updateHitDelay=true;
 
                 for(int i=0;i<enemiesIn.size();i++){
-                    enemies[enemiesIn[i]]->takeDamage(damage);
+                    enemies[enemiesIn[i]]->takeDamage(damage,posHero);
                 }
             }
 

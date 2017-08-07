@@ -130,10 +130,11 @@ class Enemy: public AvatarMove
         /**
         *    Enemy will take damage when he is on an objectScene with damage
         *    @param value -> the value of the damage
+        *    @param posHero -> the position of the hero
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void takeDamage(float value);
+        void takeDamage(float value,vec3f posHero);
 
     protected:
         vector<Matrix4f *> moveMatrix;              // Vector of movement matrix

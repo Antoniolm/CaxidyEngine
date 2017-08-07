@@ -111,7 +111,7 @@ vec3f Enemy::getRadioActivity(){
 
  //**********************************************************************//
 
-void Enemy::takeDamage(float value){
+void Enemy::takeDamage(float value,vec3f posHero){
     addLife(value);
 
     stringstream convert;
@@ -130,6 +130,6 @@ void Enemy::takeDamage(float value){
     currentText->setMessage(convert.str());
     currentText->init();
 
-    enemySound[1]->play();
+    enemySound[1]->play(sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0)));
  }
 
