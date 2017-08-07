@@ -91,13 +91,13 @@ void SpikeTrap::updateState(GameState & gameState ){
         animationUp->resetState();
         animationDown->resetState();
         transActivate->identity();
-        activatedTrap->play(0);
+        activatedTrap->play(distance);
     }
 
     if(activated && desactivatedDelay<(time-2100) && (distance>0.75 || !enemiesIn.empty() )){ //if hero is far of an activated trap
         activated=false;
         delayActivated=false;
-        animationSound->play(0);
+        animationSound->play(distance);
     }
 
     bool updateHitDelay=false;
@@ -125,7 +125,7 @@ void SpikeTrap::updateState(GameState & gameState ){
         else { //If is in delayTime
             if(delayTime<(time-600)){
                 delayActivated=false;
-                animationSound->play(0);
+                animationSound->play(distance);
             }
         }
     }

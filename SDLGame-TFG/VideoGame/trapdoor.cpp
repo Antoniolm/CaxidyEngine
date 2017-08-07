@@ -113,13 +113,13 @@ void TrapDoor::updateState(GameState & gameState){
         animationDown->resetState();
         transActivateFirst->identity();
         transActivateSecond->identity();
-        activatedTrap->play(0);
+        activatedTrap->play(distance);
     }
 
     if(activated && desactivatedDelay<(time-2100) && (distance>0.75 || !enemyIn )){ //if hero is far of an activated trap
         activated=false;
         delayActivated=false;
-        animationSound->play(0);
+        animationSound->play(distance);
         gameState.rootMap->addCollision(vec2f(position.x,position.z),trapID);
     }
 
@@ -128,7 +128,7 @@ void TrapDoor::updateState(GameState & gameState){
             if(delayTime<(time-600)){
                 delayActivated=false;
                 gameState.rootMap->removeCollision(vec2f(position.x,position.z),trapID);
-                animationSound->play(0);
+                animationSound->play(distance);
             }
         }
     }
