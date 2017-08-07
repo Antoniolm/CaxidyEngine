@@ -86,6 +86,14 @@ class MovableVoxel : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    Check the enemies that can be obstruct the movable voxel movement
+        *    \return bool
+        */
+        //////////////////////////////////////////////////////////////////////////
+        bool checkEnemies(vec3f newPos,vector<Enemy *> &enemies);
+
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the movable voxel
         ScriptLMD * animation;      // animation of the movable voxel
         float delayTime;            // Delay time

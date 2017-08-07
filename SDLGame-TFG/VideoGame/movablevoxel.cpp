@@ -78,6 +78,7 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case FRONT
         if(hero->getDirection()==FORWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z+1.0f))==0
+           && !checkEnemies(vec3f(position.x,position.y,position.z+1.0f),gameState.rootMap->getEnemyList()->getEnemies())
            && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             currentDir=FORWARD;
             activated=true;
@@ -85,6 +86,7 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case BACK
         if(hero->getDirection()==BACKWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z-1.0f))==0
+           && !checkEnemies(vec3f(position.x,position.y,position.z-1.0f),gameState.rootMap->getEnemyList()->getEnemies())
            && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
             currentDir=BACKWARD;
             activated=true;
@@ -92,6 +94,7 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case LEFT
         if(hero->getDirection()==LEFTWARD && gameState.rootMap->collision(vec3f(position.x-1.0f,position.y,position.z))==0
+           && !checkEnemies(vec3f(position.x-1.0f,position.y,position.z),gameState.rootMap->getEnemyList()->getEnemies())
            && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             currentDir=LEFTWARD;
             activated=true;
@@ -99,6 +102,7 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case RIGHT
         if(hero->getDirection()==RIGHTWARD && gameState.rootMap->collision(vec3f(position.x+1.0f,position.y,position.z))==0
+           && !checkEnemies(vec3f(position.x+1.0f,position.y,position.z),gameState.rootMap->getEnemyList()->getEnemies())
            && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
             currentDir=RIGHTWARD;
             activated=true;
@@ -249,4 +253,27 @@ void MovableVoxel::initAnimation(){
     scriptRight->add(0.05,notMove);
 
     animation->add(scriptRight);
+}
+
+//**********************************************************************//
+
+bool MovableVoxel::checkEnemies(vec3f newPos,vector<Enemy *> &enemies){
+    vec3f posEnemy;
+
+    bool result=false;
+
+    for(int i=0;i<enemies.size();i++){
+        posEnemy=enemies[i]->getPosition();
+
+        cout<< "posEnemy ("<< (int)posEnemy.x<< ","<< (int)posEnemy.z<< ")"<< endl;
+        cout<< "pos ("<< (int)newPos.x<< ","<< (int)newPos.z<< ")"<< endl;
+
+        if((int)posEnemy.x == (int)newPos.x && (int)posEnemy.z == (int)newPos.z
+           && (newPos.y>posEnemy.y-1 && newPos.y<posEnemy.y+1)){
+            result=true;
+            cout<< "yep"<< endl;
+        }
+    }
+
+    return result;
 }
