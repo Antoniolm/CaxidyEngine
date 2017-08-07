@@ -113,8 +113,9 @@ void SpikeTrap::updateState(GameState & gameState ){
             //Check enemy
             if(!enemiesIn.empty() && hitDelay<(time-400)){
                 updateHitDelay=true;
+
                 for(int i=0;i<enemiesIn.size();i++){
-                    enemies[i]->takeDamage(damage);
+                    enemies[enemiesIn[i]]->takeDamage(damage);
                 }
             }
 
