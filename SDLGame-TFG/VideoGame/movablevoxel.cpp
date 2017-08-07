@@ -161,7 +161,6 @@ void MovableVoxel::updateState(GameState & gameState){
                 activated=false;
 
             break;
-
         }
 
         if(!activated){

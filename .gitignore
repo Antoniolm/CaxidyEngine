@@ -2,3 +2,4 @@
 *.exe
 *.exe
 SDLGame-TFG/VideoGame/movablevoxel.cpp.save-failed
+*.save-failed
