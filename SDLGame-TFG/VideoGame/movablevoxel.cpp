@@ -26,7 +26,7 @@ MovableVoxel::MovableVoxel(const Value & movableFeatures, int id){
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
     SoundCollection * soundCollect= SoundCollection::getInstance();
 
-    activatedVoxel=soundCollect->getSound(sROT);
+    activatedVoxel=soundCollect->getSound(sMOV);
 
     transActivate=new Matrix4f();
     transActivate->translation(position.x,position.y,position.z);
@@ -106,8 +106,10 @@ void MovableVoxel::updateState(GameState & gameState){
             currentDir=RIGHTWARD;
             activated=true;
         }
-        if(activated)
+        if(activated){
             gameState.controller->consumeButtons();
+            activatedVoxel->play();
+        }
     }
 
     ////////////////////////////////

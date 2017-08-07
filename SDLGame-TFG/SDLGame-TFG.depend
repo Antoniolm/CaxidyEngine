@@ -4964,7 +4964,7 @@
 	"structdata.h"
 	"SDL2/SDL.h"
 
-1501751934 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
+1502109159 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
 	"sound/sound.h"
 	"sound/effect.h"
 	"sound/music.h"
@@ -5636,7 +5636,7 @@
 	"region.h"
 	"gamestate.h"
 
-1501757340 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1502108049 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5800,7 +5800,7 @@
 	"camera.h"
 	"rootmap.h"
 
-1501752183 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
+1502109811 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
 	"soundcollection.h"
 
 1501600432 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.cpp
@@ -5833,7 +5833,7 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502106294 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
+1502109205 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
 	"movablevoxel.h"
 
 1502104726 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
