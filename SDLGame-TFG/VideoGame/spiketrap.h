@@ -103,6 +103,12 @@ class SpikeTrap : public Object3D
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    Check the enemies that can activate the spikeTrap
+        *    \return vector<Int> -> Enemies on top it
+        */
+        //////////////////////////////////////////////////////////////////////////
         std::vector<int> checkEnemies(std::vector<Enemy *> & enemies);
 
         NodeSceneGraph * root;      // Root of the object

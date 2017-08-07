@@ -86,6 +86,14 @@ class TrapDoor : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    Check the enemies that can activate the trapDoor
+        *    \return bool
+        */
+        //////////////////////////////////////////////////////////////////////////
+        bool checkEnemies(std::vector<Enemy *> & enemies);
+
         Matrix4f * transActivateFirst;   // Matrix 4x4 for the activaction of the trap door
         Matrix4f * transActivateSecond;   // Matrix 4x4 for the activaction of the trap door
         ScriptLMD * animationUp;    // Up animation of the trap door
