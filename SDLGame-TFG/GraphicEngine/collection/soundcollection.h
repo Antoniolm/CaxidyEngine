@@ -47,7 +47,8 @@ enum SoundIndex{
     sMOVIE,
     sMAIN,
     sROT,
-    sMOV
+    sMOV,
+    sFBLOCK
 };
 
 class SoundCollection

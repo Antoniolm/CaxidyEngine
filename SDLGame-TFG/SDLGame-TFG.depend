@@ -4964,7 +4964,7 @@
 	"structdata.h"
 	"SDL2/SDL.h"
 
-1502109159 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
+1502189024 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
 	"sound/sound.h"
 	"sound/effect.h"
 	"sound/music.h"
@@ -5800,7 +5800,7 @@
 	"camera.h"
 	"rootmap.h"
 
-1502109811 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
+1502189035 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
 	"soundcollection.h"
 
 1501600432 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.cpp
@@ -5820,7 +5820,7 @@
 1502125187 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
 	"trapdoor.h"
 
-1501760353 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.cpp
+1502141272 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.cpp
 	"rottenvoxel.h"
 
 1501755090 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.h
@@ -5833,10 +5833,10 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502135088 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
+1502189464 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
 	"movablevoxel.h"
 
-1502128440 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
+1502189368 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
 	"../GraphicEngine/objectscene.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5846,4 +5846,9 @@
 	"../GraphicEngine/collection/materialcollection.h"
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
+
+1502143416 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
+	"respawnvoxel.h"
+
+1502142710 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.h
 

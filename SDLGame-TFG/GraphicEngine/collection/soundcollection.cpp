@@ -50,6 +50,7 @@ SoundCollection::SoundCollection()
     collection.addElement(new Music("sounds/mainSound.wav",5));
     collection.addElement(new Effect("sounds/rotBlock.wav",20,-1,0));
     collection.addElement(new Effect("sounds/moveBlock.wav",20,-1,0));
+    collection.addElement(new Effect("sounds/fallBlock.wav",20,-1,0));
 
     //Create our map
     collection.addIndex("sCoin",sCoin);
@@ -70,6 +71,7 @@ SoundCollection::SoundCollection()
     collection.addIndex("sMAIN",sMAIN);
     collection.addIndex("sROT",sROT);
     collection.addIndex("sMOV",sMOV);
+    collection.addIndex("sFBLOCK",sFBLOCK);
 }
 
 //**********************************************************************//
