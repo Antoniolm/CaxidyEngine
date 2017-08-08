@@ -30,15 +30,22 @@ RespawnVoxel::RespawnVoxel(const Value & respawnFeatures){
 
     Matrix4f * transObject=new Matrix4f();
     transObject->translation(position.x,position.y,position.z);
+    Matrix4f * transButton=new Matrix4f();
+    transButton->translation(0.0f,0.08f,0.0f);
 
     transActivate=new Matrix4f();
     transActivate->identity();
 
+    NodeSceneGraph * button=new NodeSceneGraph();
+    button->add(transActivate);
+    button->add(transButton);
+    button->add(meshCollect->getMesh(BUTTON));
+
     root=new NodeSceneGraph();
     root->add(transObject);
-    root->add(transActivate);
-    root->add(materialCollect->getMaterial(mSPIKE));
-    root->add(meshCollect->getMesh(SPIKE));
+    root->add(materialCollect->getMaterial(mBUTTON));
+    root->add(button);
+    root->add(meshCollect->getMesh(BUTTONB));
 
     currentTime=SDL_GetTicks();
     activated=false;
@@ -114,12 +121,12 @@ void RespawnVoxel::initAnimation(){
     //Animation up
     animationUp=new ScriptLMD();
 
-    LinearMovement * movementUp=new LinearMovement(0.0,7.0,0.0);
+    LinearMovement * movementUp=new LinearMovement(0.0,1.0,0.0);
     MatrixStatic * notMove=new MatrixStatic();
 
     MatrixScript * scriptUp=new MatrixScript();
 
-    scriptUp->add(0.12,movementUp);
+    scriptUp->add(0.08,movementUp);
     scriptUp->add(0.5,notMove);
 
     animationUp->add(scriptUp);
@@ -129,11 +136,11 @@ void RespawnVoxel::initAnimation(){
     //Animation down
     animationDown=new ScriptLMD();
 
-    LinearMovement * movementDown=new LinearMovement(0.0,-7.0,0.0);
+    LinearMovement * movementDown=new LinearMovement(0.0,-1.0,0.0);
 
     MatrixScript * scriptDown=new MatrixScript();
 
-    scriptDown->add(0.12,movementDown);
+    scriptDown->add(0.08,movementDown);
     scriptDown->add(0.5,notMove);
 
     animationDown->add(scriptDown);
