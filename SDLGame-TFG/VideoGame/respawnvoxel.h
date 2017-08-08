@@ -87,8 +87,9 @@ class RespawnVoxel : public Object3D
         void initAnimation();
 
         NodeSceneGraph * root;      // Root of the object
-        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the spiketrap
-        ScriptLMD * animation;      // Up animation of the spike trap
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the respawn voxel
+        ScriptLMD * animationUp;    // Up animation of the respawn voxel
+        ScriptLMD * animationDown;  // Down animation of the respawn voxel
         bool activated;             // Flag to activation
         Sound * activatedButton;      // Sound for its activation
 };

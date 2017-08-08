@@ -73,7 +73,8 @@ void RespawnVoxel::updateState(GameState & gameState){
     if(!activated && (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z
        && (position.y>posHero.y-1 && position.y<posHero.y)){
         activated=true;
-        animation->resetState();
+        animationDown->resetState();
+        animationUp->resetState();
         transActivate->identity();
         activatedButton->play(distance);
     }
@@ -85,13 +86,16 @@ void RespawnVoxel::updateState(GameState & gameState){
 
     ////////////////////////////////
     // Updated animation
-    if(activated && animation->getScriptState(0)!=1){
-        animation->updateState(time-currentTime);
-        transActivate->product(animation->readMatrix(0).getMatrix());
+    if(activated && animationDown->getScriptState(0)!=1){
+        animationDown->updateState(time-currentTime);
+        transActivate->product(animationDown->readMatrix(0).getMatrix());
     }
-    else if(!activated && animation->getScriptState(1)!=1){
-        animation->updateState(time-currentTime);
-        transActivate->product(animation->readMatrix(1).getMatrix());
+    else if(!activated && animationUp->getScriptState(0)!=1){
+        animationUp->updateState(time-currentTime);
+        transActivate->product(animationUp->readMatrix(0).getMatrix());
+    }
+    else if(animationUp->getScriptState(0)==1){
+        transActivate->identity();
     }
 
     currentTime+=time-currentTime;
@@ -107,22 +111,31 @@ bool RespawnVoxel::isActivated(){
 
 void RespawnVoxel::initAnimation(){
     //////////////////////////////////////
-    //Animation
-    animation=new ScriptLMD();
+    //Animation up
+    animationUp=new ScriptLMD();
 
-    Matrix4f * trans=new Matrix4f();
-    trans->translation(0.0f,-2.0f,0.0f);
+    LinearMovement * movementUp=new LinearMovement(0.0,7.0,0.0);
+    MatrixStatic * notMove=new MatrixStatic();
 
     MatrixScript * scriptUp=new MatrixScript();
+
+    scriptUp->add(0.12,movementUp);
+    scriptUp->add(0.5,notMove);
+
+    animationUp->add(scriptUp);
+
+
+    /////////////////////////////
+    //Animation down
+    animationDown=new ScriptLMD();
+
+    LinearMovement * movementDown=new LinearMovement(0.0,-7.0,0.0);
+
     MatrixScript * scriptDown=new MatrixScript();
 
-    scriptUp->add(0.12,new LinearMovement(0.0,7.0,0.0));
-    scriptUp->add(0.3,new MatrixStatic());
+    scriptDown->add(0.12,movementDown);
+    scriptDown->add(0.5,notMove);
 
-    scriptDown->add(0.12,new LinearMovement(0.0,-7.0,0.0));
-    scriptDown->add(0.3,new MatrixStatic(*trans));
-
-    animation->add(scriptDown);
-    animation->add(scriptUp);
+    animationDown->add(scriptDown);
 
 }

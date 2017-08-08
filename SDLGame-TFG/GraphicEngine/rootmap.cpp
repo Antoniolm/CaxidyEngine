@@ -95,6 +95,9 @@ RootMap::~RootMap()
     for(unsigned i=0;i<movables.size();i++)
         deleteObject3d(movables[i]);
 
+    for(unsigned i=0;i<respawns.size();i++)
+        delete respawns[i];
+
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
 
