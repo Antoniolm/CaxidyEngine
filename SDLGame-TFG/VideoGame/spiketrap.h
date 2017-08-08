@@ -97,7 +97,7 @@ class SpikeTrap : public Object3D
     private:
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will initialize the animation of our hero
+        *    It will initialize the animation of the spike trap
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////

@@ -19,14 +19,62 @@
 
 #include "respawnvoxel.h"
 
-RespawnVoxel::RespawnVoxel()
-{
-    //ctor
+RespawnVoxel::RespawnVoxel(const Value & respawnFeatures){
+    position=vec4f(respawnFeatures["position"][0].GetFloat(),respawnFeatures["position"][1].GetFloat(),respawnFeatures["position"][2].GetFloat(),1.0);
+
+    MeshCollection * meshCollect= MeshCollection::getInstance();
+    MaterialCollection * materialCollect= MaterialCollection::getInstance();
+    SoundCollection * soundCollect= SoundCollection::getInstance();
+
+    activatedButton=soundCollect->getSound(sATRAP);
+
+    Matrix4f * transObject=new Matrix4f();
+    transObject->translation(position.x,position.y,position.z);
+
+    transActivate=new Matrix4f();
+    transActivate->identity();
+
+    root=new NodeSceneGraph();
+    root->add(transObject);
+    root->add(transActivate);
+    root->add(materialCollect->getMaterial(mSPIKE));
+    root->add(meshCollect->getMesh(SPIKE));
+
+    currentTime=SDL_GetTicks();
+    delayTime=currentTime;
+    desactivatedDelay=currentTime;
+    activated=false;
+    delayActivated=false;
+
+    initAnimation();
 }
 
 //**********************************************************************//
 
-RespawnVoxel::~RespawnVoxel()
-{
-    //dtor
+RespawnVoxel::~RespawnVoxel(){
+    delete root;
+}
+
+//**********************************************************************//
+
+void RespawnVoxel::visualization(Context & cv){
+    root->visualization(cv)
+}
+
+//**********************************************************************//
+
+void RespawnVoxel::updateState(GameState & gameState){
+
+}
+
+//**********************************************************************//
+
+bool RespawnVoxel::isActivated(){
+
+}
+
+//**********************************************************************//
+
+void RespawnVoxel::initAnimation(){
+
 }
