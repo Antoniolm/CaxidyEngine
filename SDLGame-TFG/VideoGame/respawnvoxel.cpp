@@ -41,10 +41,7 @@ RespawnVoxel::RespawnVoxel(const Value & respawnFeatures){
     root->add(meshCollect->getMesh(SPIKE));
 
     currentTime=SDL_GetTicks();
-    delayTime=currentTime;
-    desactivatedDelay=currentTime;
     activated=false;
-    delayActivated=false;
 
     initAnimation();
 }
@@ -58,23 +55,74 @@ RespawnVoxel::~RespawnVoxel(){
 //**********************************************************************//
 
 void RespawnVoxel::visualization(Context & cv){
-    root->visualization(cv)
+    root->visualization(cv);
 }
 
 //**********************************************************************//
 
 void RespawnVoxel::updateState(GameState & gameState){
+    float time=gameState.time;
+    Hero * hero=gameState.rootMap->getHero();
 
+    if(time-currentTime>200) currentTime=time-50;
+
+    vec3f posHero=hero->getPosition();
+    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
+
+    //if hero is near of a disactivated trap
+    if(!activated && (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z
+       && (position.y>posHero.y-1 && position.y<posHero.y)){
+        activated=true;
+        animation->resetState();
+        transActivate->identity();
+        activatedButton->play(distance);
+    }
+
+    if(activated && ((int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z) ){ //if hero is far of an activated trap
+        activated=false;
+        activatedButton->play(distance);
+    }
+
+    ////////////////////////////////
+    // Updated animation
+    if(activated && animation->getScriptState(0)!=1){
+        animation->updateState(time-currentTime);
+        transActivate->product(animation->readMatrix(0).getMatrix());
+    }
+    else if(!activated && animation->getScriptState(1)!=1){
+        animation->updateState(time-currentTime);
+        transActivate->product(animation->readMatrix(1).getMatrix());
+    }
+
+    currentTime+=time-currentTime;
 }
 
 //**********************************************************************//
 
 bool RespawnVoxel::isActivated(){
-
+    return activated;
 }
 
 //**********************************************************************//
 
 void RespawnVoxel::initAnimation(){
+    //////////////////////////////////////
+    //Animation
+    animation=new ScriptLMD();
+
+    Matrix4f * trans=new Matrix4f();
+    trans->translation(0.0f,-2.0f,0.0f);
+
+    MatrixScript * scriptUp=new MatrixScript();
+    MatrixScript * scriptDown=new MatrixScript();
+
+    scriptUp->add(0.12,new LinearMovement(0.0,7.0,0.0));
+    scriptUp->add(0.3,new MatrixStatic());
+
+    scriptDown->add(0.12,new LinearMovement(0.0,-7.0,0.0));
+    scriptDown->add(0.3,new MatrixStatic(*trans));
+
+    animation->add(scriptDown);
+    animation->add(scriptUp);
 
 }

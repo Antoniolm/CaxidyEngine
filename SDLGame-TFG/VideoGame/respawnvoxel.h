@@ -89,11 +89,8 @@ class RespawnVoxel : public Object3D
         NodeSceneGraph * root;      // Root of the object
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the spiketrap
         ScriptLMD * animation;      // Up animation of the spike trap
-        float delayTime;            // Delay time
-        float desactivatedDelay;    // Delay time for its deactivation
         bool activated;             // Flag to activation
-        bool delayActivated;        // Flag to delay time
-        Sound * activatedTrap;      // Sound for its activation
+        Sound * activatedButton;      // Sound for its activation
 };
 
 #endif // RESPAWNVOXEL_H

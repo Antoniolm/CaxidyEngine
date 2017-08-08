@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1501774662 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1502204616 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4867,6 +4867,7 @@
 	"../VideoGame/trapdoor.h"
 	"../VideoGame/rottenvoxel.h"
 	"../VideoGame/movablevoxel.h"
+	"../VideoGame/respawnvoxel.h"
 
 1496919850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
@@ -5636,7 +5637,7 @@
 	"region.h"
 	"gamestate.h"
 
-1502108049 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1502204833 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5850,5 +5851,15 @@
 1502143416 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
 	"respawnvoxel.h"
 
-1502142710 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.h
+1502207972 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.h
+	"../GraphicEngine/object3d.h"
+	"enemylist.h"
+	"avatar/enemy.h"
+	"../GraphicEngine/nodescenegraph.h"
+	"../GraphicEngine/matrix/matrix4f.h"
+	"../GraphicEngine/matrix/matrix4fdynamic.h"
+	"../GraphicEngine/collection/meshcollection.h"
+	"../GraphicEngine/collection/materialcollection.h"
+	"../GraphicEngine/collection/soundcollection.h"
+	"../lib/rapidjson/document.h"
 

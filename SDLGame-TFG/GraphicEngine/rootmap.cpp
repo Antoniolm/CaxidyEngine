@@ -261,6 +261,16 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
+    // Add respawn voxels to the map
+    /////////////////////////////////////////
+    cout<< "< Game is loading respawn voxels >"<< endl;
+    const rapidjson::Value & resFeature=document["resVoxel"];
+    for(unsigned currentRes=0;currentRes<resFeature.Size();currentRes++){
+        RespawnVoxel * resVox=new RespawnVoxel(resFeature[currentRes]);
+        respawns.push_back(resVox);
+    }
+
+    /////////////////////////////////////////
     // Add movable voxels to our map
     /////////////////////////////////////////
     cout<< "< Game is loading movable voxels >"<< endl;
@@ -500,6 +510,11 @@ void RootMap::visualization(Context & cv){
         movables[i]->visualization(cv);
     }
 
+    //Draw rotten
+    for(unsigned i=0;i<respawns.size();i++){
+        respawns[i]->visualization(cv);
+    }
+
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
         position=decorationObjs[i]->getPosition();
@@ -592,6 +607,11 @@ void RootMap::updateState(GameState & gameState){
         //Update spikeTraps
         for(unsigned i=0;i<movables.size();i++){
             movables[i]->updateState(gameState);
+        }
+
+        //Update Respawn
+        for(unsigned i=0;i<respawns.size();i++){
+            respawns[i]->updateState(gameState);
         }
 
         //Update title
