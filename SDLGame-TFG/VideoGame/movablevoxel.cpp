@@ -27,6 +27,7 @@ MovableVoxel::MovableVoxel(const Value & movableFeatures, int id){
     SoundCollection * soundCollect= SoundCollection::getInstance();
 
     activatedVoxel=soundCollect->getSound(sMOV);
+    fallSound=soundCollect->getSound(sFBLOCK);
 
     transActivate=new Matrix4f();
     transActivate->translation(position.x,position.y,position.z);
@@ -73,7 +74,12 @@ void MovableVoxel::updateState(GameState & gameState){
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
+    bool auxFalling=isFalling;
     gravity(gameState);
+
+    //If the flag change its state of fallen
+    if(auxFalling && !isFalling)
+        fallSound->play(distance);
 
     vec4f pos=transActivate->product(vec4f());
     position.y=pos.y;

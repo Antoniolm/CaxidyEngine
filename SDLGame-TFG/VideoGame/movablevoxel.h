@@ -111,6 +111,7 @@ class MovableVoxel : public ObjectScene
         avatarDirection currentDir;
         AcceleratedMovement * acceleratedMove;  // Accelerated movement
         Sound * activatedVoxel;     // Sound for its activation
+        Sound * fallSound;     // Sound for its falling
         int voxelID;                // Id of the movable voxel
 };
 

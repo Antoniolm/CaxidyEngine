@@ -24,6 +24,8 @@ RespawnVoxel::RespawnVoxel()
     //ctor
 }
 
+//**********************************************************************//
+
 RespawnVoxel::~RespawnVoxel()
 {
     //dtor
