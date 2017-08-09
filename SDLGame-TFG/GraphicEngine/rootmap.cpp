@@ -53,7 +53,7 @@ RootMap::~RootMap()
     delete movie;
 
     for(unsigned i=doors.size()+traps.size()+rottens.size()
-        +movables.size();i<objs.size();i++)
+        +movables.size()+slides.size();i<objs.size();i++)
         deleteObject3d(objs[i]);
 
     for(unsigned i=0;i<decorationObjs.size();i++)
@@ -94,6 +94,9 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<movables.size();i++)
         deleteObject3d(movables[i]);
+
+    for(unsigned i=0;i<slides.size();i++)
+        deleteObject3d(slides[i]);
 
     for(unsigned i=0;i<respawns.size();i++)
         delete respawns[i];
@@ -283,6 +286,18 @@ void RootMap::initialize(string fileMap){
         movVox->addLink();movVox->addLink();
         movables.push_back(movVox);
         objs.push_back(movVox);
+    }
+
+    /////////////////////////////////////////
+    // Add slide traps to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading slide traps >"<< endl;
+    const rapidjson::Value & slideFeature=document["slideTrap"];
+    for(unsigned currentSlide=0;currentSlide<slideFeature.Size();currentSlide++){
+        SlideTrap * slidTrap=new SlideTrap(slideFeature[currentSlide],objs.size());
+        slidTrap->addLink();slidTrap->addLink();
+        slides.push_back(slidTrap);
+        objs.push_back(slidTrap);
     }
 
     /////////////////////////////////////////
@@ -508,14 +523,19 @@ void RootMap::visualization(Context & cv){
         rottens[i]->visualization(cv);
     }
 
-    //Draw rotten
+    //Draw movables voxels
     for(unsigned i=0;i<movables.size();i++){
         movables[i]->visualization(cv);
     }
 
-    //Draw rotten
+    //Draw respawn
     for(unsigned i=0;i<respawns.size();i++){
         respawns[i]->visualization(cv);
+    }
+
+    //Draw slide traps
+    for(unsigned i=0;i<slides.size();i++){
+        slides[i]->visualization(cv);
     }
 
     //Draw decoration object
@@ -607,7 +627,7 @@ void RootMap::updateState(GameState & gameState){
                 it++;
         }
 
-        //Update spikeTraps
+        //Update movables
         for(unsigned i=0;i<movables.size();i++){
             movables[i]->updateState(gameState);
         }
@@ -615,6 +635,11 @@ void RootMap::updateState(GameState & gameState){
         //Update Respawn
         for(unsigned i=0;i<respawns.size();i++){
             respawns[i]->updateState(gameState);
+        }
+
+        //Update slides
+        for(unsigned i=0;i<slides.size();i++){
+            slides[i]->updateState(gameState);
         }
 
         //Update title

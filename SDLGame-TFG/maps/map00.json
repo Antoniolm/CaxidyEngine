@@ -273,6 +273,11 @@
 
     ],
 
+    "slideTrap":[
+            {   "position":[4.5,1.5,-4.5]
+            }
+    ],
+
     "voxelGroup":[
             {   "//":"ROOM 1 - Begin",
                 "position":[1,0.5,1],

@@ -67,6 +67,8 @@
 #include "../VideoGame/rottenvoxel.h"
 #include "../VideoGame/movablevoxel.h"
 #include "../VideoGame/respawnvoxel.h"
+#include "../VideoGame/slidetrap.h"
+
 
 using namespace std;
 
@@ -90,6 +92,7 @@ class TrapDoor;
 class RottenVoxel;
 class MovableVoxel;
 class RespawnVoxel;
+class SlideTrap;
 class LoaderThread;
 class MovieScreen;
 
@@ -275,9 +278,10 @@ class RootMap : public Object3D
         vector<TextRegion *> regions;               // Vector of regions
         vector<SpikeTrap *> spikes;                 // Vector of spikes traps
         vector<TrapDoor *> traps;                   // Vector of traps door
-        vector<RottenVoxel *> rottens;              // Vector of traps rotten voxels
-        vector<MovableVoxel *> movables;            // Vector of traps movable voxels
-        vector<RespawnVoxel *> respawns;            // Vector of traps respawn voxels
+        vector<RottenVoxel *> rottens;              // Vector of rotten voxels
+        vector<MovableVoxel *> movables;            // Vector of movable voxels
+        vector<RespawnVoxel *> respawns;            // Vector of respawn voxels
+        vector<SlideTrap *> slides;                 // Vector of slide traps
         vector<Soul *> souls;                       // Vector of souls
         vector<SoulCarrier *> soulCarriers;         // Vector of souls carriers
         vector<Door *> doors;                       // Vector of doors

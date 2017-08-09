@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1502204616 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1502279228 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4868,6 +4868,7 @@
 	"../VideoGame/rottenvoxel.h"
 	"../VideoGame/movablevoxel.h"
 	"../VideoGame/respawnvoxel.h"
+	"../VideoGame/slidetrap.h"
 
 1496919850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
@@ -5637,7 +5638,7 @@
 	"region.h"
 	"gamestate.h"
 
-1502273062 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1502280307 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5834,10 +5835,10 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502189464 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
+1502278835 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
 	"movablevoxel.h"
 
-1502273830 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
+1502278854 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
 	"../GraphicEngine/objectscene.h"
 	"respawnvoxel.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5863,4 +5864,19 @@
 	"../GraphicEngine/collection/materialcollection.h"
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
+
+1502281123 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.h
+	"../GraphicEngine/objectscene.h"
+	"respawnvoxel.h"
+	"../GraphicEngine/nodescenegraph.h"
+	"../GraphicEngine/matrix/matrix4f.h"
+	"../GraphicEngine/matrix/matrix4fdynamic.h"
+	"../GraphicEngine/matrix/acceleratedmovement.h"
+	"../GraphicEngine/collection/meshcollection.h"
+	"../GraphicEngine/collection/materialcollection.h"
+	"../GraphicEngine/collection/soundcollection.h"
+	"../lib/rapidjson/document.h"
+
+1502279125 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.cpp
+	"slidetrap.h"
 
