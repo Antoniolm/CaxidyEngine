@@ -37,6 +37,7 @@ enum MaterialIndex{
     mCUBE_SPIKE,    //7
     mCUBE_LAND,    //7
     mCUBE_STEEL,    //7
+    mCUBE_ROCK,    //7
     mDWATER,        //8
     mVOID,          //9
     mCRYSTAL,       //10
