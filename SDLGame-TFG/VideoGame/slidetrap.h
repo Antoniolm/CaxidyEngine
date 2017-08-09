@@ -84,6 +84,7 @@ class SlideTrap : public ObjectScene
         ScriptLMD * animation;      // animation of the slide trap
         float delayTime;            // Delay time
         bool activated;             // Flag to activation
+        bool soundActivation;       // Flag to activate sound
         avatarDirection currentDir; // Current direction of the movement
         Sound * activatedVoxel;     // Sound for its activation
         int voxelID;                // Id of the slide trap

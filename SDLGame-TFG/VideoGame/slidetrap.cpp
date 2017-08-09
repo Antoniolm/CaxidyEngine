@@ -39,6 +39,7 @@ SlideTrap::SlideTrap(const Value & slideFeatures, int id){
     currentTime=SDL_GetTicks();
     delayTime=currentTime;
     activated=false;
+    soundActivation=false;
     currentDir=FORWARD;
     voxelID=id;
 
@@ -75,7 +76,12 @@ void SlideTrap::updateState(GameState & gameState){
     ////////////////////////////////
     // Updated animation
     if(delayTime<(time-3000)){
-        activatedVoxel->play(distance);
+
+        if(!soundActivation){
+            activatedVoxel->play(distance);
+            soundActivation=true;
+        }
+
         switch(currentDir){
         case FORWARD:
             animation->updateState(time-currentTime);
@@ -117,6 +123,7 @@ void SlideTrap::updateState(GameState & gameState){
         if(!activated){
             delayTime=currentTime;
             animation->resetState();
+            soundActivation=false;
 
             switch(currentDir){
                 case FORWARD:
