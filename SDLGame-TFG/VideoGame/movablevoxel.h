@@ -21,6 +21,7 @@
 #define MOVABLEVOXEL_H
 
 #include "../GraphicEngine/objectscene.h"
+#include "respawnvoxel.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -42,7 +43,7 @@ class MovableVoxel : public ObjectScene
         *    @param ID -> ID of the movable voxel
         */
         //////////////////////////////////////////////////////////////////////////
-        MovableVoxel(const Value & movableFeatures, int id);
+        MovableVoxel(const Value & movableFeatures,const vector<RespawnVoxel*> & respawns, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -103,12 +104,14 @@ class MovableVoxel : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         ObjectScene * gravity(GameState & gameState);
 
+        vec4f defaultPosition;      // The initial position of the movable voxel
+        RespawnVoxel * respawn;     // Respawn Voxel linked with the Movable voxel
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the movable voxel
         ScriptLMD * animation;      // animation of the movable voxel
         float delayTime;            // Delay time
         bool activated;             // Flag to activation
-        bool isFalling;
-        avatarDirection currentDir;
+        bool isFalling;             // Flag to know if is falling or not
+        avatarDirection currentDir; // Current direction of the movement
         AcceleratedMovement * acceleratedMove;  // Accelerated movement
         Sound * activatedVoxel;     // Sound for its activation
         Sound * fallSound;     // Sound for its falling

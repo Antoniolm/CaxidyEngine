@@ -279,7 +279,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading movable voxels >"<< endl;
     const rapidjson::Value & movFeature=document["movVoxel"];
     for(unsigned currentMov=0;currentMov<movFeature.Size();currentMov++){
-        MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],objs.size());
+        MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],respawns,objs.size());
         movVox->addLink();movVox->addLink();
         movables.push_back(movVox);
         objs.push_back(movVox);

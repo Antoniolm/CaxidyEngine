@@ -19,8 +19,10 @@
 
 #include "movablevoxel.h"
 
-MovableVoxel::MovableVoxel(const Value & movableFeatures, int id){
+MovableVoxel::MovableVoxel(const Value & movableFeatures, const vector<RespawnVoxel*> & respawns , int id){
     position=vec4f(movableFeatures["position"][0].GetFloat(),movableFeatures["position"][1].GetFloat(),movableFeatures["position"][2].GetFloat()+0.1f,1.0);
+    defaultPosition=position;
+    respawn=respawns[movableFeatures["respawn"].GetFloat()];
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -83,6 +85,16 @@ void MovableVoxel::updateState(GameState & gameState){
 
     vec4f pos=transActivate->product(vec4f());
     position.y=pos.y;
+
+    //If the hero repawn the movable voxel
+    if(respawn->isActivated() && ((int)position.x!=(int)defaultPosition.x || (int)position.z!=(int)defaultPosition.z)){
+        gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
+
+        position=defaultPosition;
+
+        transActivate->translation(position.x,position.y,position.z);
+        gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
+    }
 
     //if hero is near of a movable voxel and he push E -> Hero push the voxel in his arms
     if( !activated && !hero->isFall() && !hero->isJump() && gameState.controller->checkButton(cACTION) && distance<=1.3&&
