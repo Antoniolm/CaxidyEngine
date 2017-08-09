@@ -33,6 +33,7 @@
 
 using namespace rapidjson;
 
+class RespawnVoxel;
 class MovableVoxel : public ObjectScene
 {
     public:
