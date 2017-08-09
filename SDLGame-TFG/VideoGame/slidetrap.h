@@ -83,6 +83,7 @@ class SlideTrap : public ObjectScene
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the slide trap
         ScriptLMD * animation;      // animation of the slide trap
         float delayTime;            // Delay time
+        float timeState;            // Time between states
         bool activated;             // Flag to activation
         bool soundActivation;       // Flag to activate sound
         avatarDirection currentDir; // Current direction of the movement

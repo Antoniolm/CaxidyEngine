@@ -21,6 +21,8 @@
 
 SlideTrap::SlideTrap(const Value & slideFeatures, int id){
     position=vec4f(slideFeatures["position"][0].GetFloat(),slideFeatures["position"][1].GetFloat(),slideFeatures["position"][2].GetFloat()+0.1f,1.0);
+    timeState=slideFeatures["delay"].GetFloat();
+    currentDir=(avatarDirection)slideFeatures["direction"].GetFloat();
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -40,7 +42,6 @@ SlideTrap::SlideTrap(const Value & slideFeatures, int id){
     delayTime=currentTime;
     activated=false;
     soundActivation=false;
-    currentDir=FORWARD;
     voxelID=id;
 
     object=root;
@@ -75,7 +76,7 @@ void SlideTrap::updateState(GameState & gameState){
 
     ////////////////////////////////
     // Updated animation
-    if(delayTime<(time-3000)){
+    if(delayTime<(time-timeState)){
 
         if(!soundActivation){
             activatedVoxel->play(distance);
