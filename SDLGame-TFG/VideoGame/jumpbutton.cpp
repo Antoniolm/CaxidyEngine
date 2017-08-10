@@ -19,12 +19,36 @@
 
 #include "jumpbutton.h"
 
-JumpButton::JumpButton()
-{
-    //ctor
+JumpButton::JumpButton(const Value & buttonFeatures){
+
 }
 
-JumpButton::~JumpButton()
-{
-    //dtor
+//**********************************************************************//
+
+JumpButton::~JumpButton(){
+
+}
+
+//**********************************************************************//
+
+void JumpButton::visualization(Context & cv){
+
+}
+
+//**********************************************************************//
+
+void JumpButton::updateState(GameState & gameState){
+
+}
+
+//**********************************************************************//
+
+bool JumpButton::isActivated(){
+
+}
+
+//**********************************************************************//
+
+void JumpButton::initAnimation(){
+
 }

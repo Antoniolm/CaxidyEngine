@@ -21,8 +21,6 @@
 #define RESPAWNVOXEL_H
 
 #include "../GraphicEngine/object3d.h"
-#include "enemylist.h"
-#include "avatar/enemy.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
