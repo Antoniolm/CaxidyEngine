@@ -85,6 +85,8 @@ class JumpButton : public Object3D
         void initAnimation();
 
         NodeSceneGraph * root;      // Root of the object
+        vec3f velocity;             // Initial velocity of the jump
+        vec3f acceleration;         // Initial acceleration of the jump
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the respawn voxel
         ScriptLMD * animationUp;    // Up animation of the respawn voxel
         ScriptLMD * animationDown;  // Down animation of the respawn voxel
