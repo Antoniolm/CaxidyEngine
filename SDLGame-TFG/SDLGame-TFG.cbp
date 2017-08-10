@@ -228,6 +228,8 @@
 		<Unit filename="VideoGame/respawnvoxel.h" />
 		<Unit filename="VideoGame/rottenvoxel.cpp" />
 		<Unit filename="VideoGame/rottenvoxel.h" />
+		<Unit filename="VideoGame/slidetrap.cpp" />
+		<Unit filename="VideoGame/slidetrap.h" />
 		<Unit filename="VideoGame/soul.cpp" />
 		<Unit filename="VideoGame/soul.h" />
 		<Unit filename="VideoGame/soulcarrier.cpp" />
