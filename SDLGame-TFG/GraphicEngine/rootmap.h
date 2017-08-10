@@ -68,6 +68,7 @@
 #include "../VideoGame/movablevoxel.h"
 #include "../VideoGame/respawnvoxel.h"
 #include "../VideoGame/slidetrap.h"
+#include "../VideoGame/jumpbutton.h"
 
 
 using namespace std;
@@ -93,6 +94,7 @@ class RottenVoxel;
 class MovableVoxel;
 class RespawnVoxel;
 class SlideTrap;
+class JumpButton;
 class LoaderThread;
 class MovieScreen;
 
@@ -282,6 +284,7 @@ class RootMap : public Object3D
         vector<MovableVoxel *> movables;            // Vector of movable voxels
         vector<RespawnVoxel *> respawns;            // Vector of respawn voxels
         vector<SlideTrap *> slides;                 // Vector of slide traps
+        vector<JumpButton *> jumps;                 // Vector of jump button
         vector<Soul *> souls;                       // Vector of souls
         vector<SoulCarrier *> soulCarriers;         // Vector of souls carriers
         vector<Door *> doors;                       // Vector of doors

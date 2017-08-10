@@ -101,6 +101,9 @@ RootMap::~RootMap()
     for(unsigned i=0;i<respawns.size();i++)
         delete respawns[i];
 
+    for(unsigned i=0;i<jumps.size();i++)
+        delete jumps[i];
+
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
 
@@ -298,6 +301,16 @@ void RootMap::initialize(string fileMap){
         slidTrap->addLink();slidTrap->addLink();
         slides.push_back(slidTrap);
         objs.push_back(slidTrap);
+    }
+
+    /////////////////////////////////////////
+    // Add jump button to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading jump button >"<< endl;
+    const rapidjson::Value & jumpFeature=document["jumpButton"];
+    for(unsigned currentButton=0;currentButton<jumpFeature.Size();currentButton++){
+        JumpButton * jump=new JumpButton(jumpFeature[currentButton]);
+        jumps.push_back(jump);
     }
 
     /////////////////////////////////////////
@@ -538,6 +551,11 @@ void RootMap::visualization(Context & cv){
         slides[i]->visualization(cv);
     }
 
+    //Draw jump buttons
+    for(unsigned i=0;i<jumps.size();i++){
+        jumps[i]->visualization(cv);
+    }
+
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
         position=decorationObjs[i]->getPosition();
@@ -609,7 +627,7 @@ void RootMap::updateState(GameState & gameState){
             spikes[i]->updateState(gameState);
         }
 
-        //Update spikeTraps
+        //Update jump buttons
         for(unsigned i=0;i<traps.size();i++){
             traps[i]->updateState(gameState);
         }
@@ -640,6 +658,11 @@ void RootMap::updateState(GameState & gameState){
         //Update slides
         for(unsigned i=0;i<slides.size();i++){
             slides[i]->updateState(gameState);
+        }
+
+        //Update slides
+        for(unsigned i=0;i<jumps.size();i++){
+            jumps[i]->updateState(gameState);
         }
 
         //Update title
