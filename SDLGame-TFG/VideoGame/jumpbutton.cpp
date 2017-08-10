@@ -74,11 +74,37 @@ void JumpButton::updateState(GameState & gameState){
 //**********************************************************************//
 
 bool JumpButton::isActivated(){
-
+    return activated;
 }
 
 //**********************************************************************//
 
 void JumpButton::initAnimation(){
+    //////////////////////////////////////
+    //Animation up
+    animationUp=new ScriptLMD();
 
+    LinearMovement * movementUp=new LinearMovement(0.0,1.0,0.0);
+    MatrixStatic * notMove=new MatrixStatic();
+
+    MatrixScript * scriptUp=new MatrixScript();
+
+    scriptUp->add(0.08,movementUp);
+    scriptUp->add(0.5,notMove);
+
+    animationUp->add(scriptUp);
+
+
+    /////////////////////////////
+    //Animation down
+    animationDown=new ScriptLMD();
+
+    LinearMovement * movementDown=new LinearMovement(0.0,-1.0,0.0);
+
+    MatrixScript * scriptDown=new MatrixScript();
+
+    scriptDown->add(0.08,movementDown);
+    scriptDown->add(0.5,notMove);
+
+    animationDown->add(scriptDown);
 }
