@@ -5639,7 +5639,7 @@
 	"region.h"
 	"gamestate.h"
 
-1502280307 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1502370156 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5719,7 +5719,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1502368012 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1502369894 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"weapon.h"
 	"projectile.h"
@@ -5851,7 +5851,7 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502220961 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
+1502380105 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
 	"respawnvoxel.h"
 
 1502363917 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.h
@@ -5888,4 +5888,7 @@
 	"../GraphicEngine/collection/materialcollection.h"
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
+
+1502370006 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
+	"jumpbutton.h"
 

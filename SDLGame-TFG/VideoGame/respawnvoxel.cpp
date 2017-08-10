@@ -86,7 +86,8 @@ void RespawnVoxel::updateState(GameState & gameState){
         activatedButton->play(distance);
     }
 
-    if(activated && ((int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z) ){ //if hero is far of an activated trap
+    if(activated && ( (int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z
+        || position.y>posHero.y+1 || position.y<posHero.y-1)){ //if hero is far of an activated trap
         activated=false;
         activatedButton->play(distance);
     }

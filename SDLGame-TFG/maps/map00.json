@@ -281,7 +281,7 @@
     ],
 
     "jumpButton":[
-            {   "position":[4.5,1.5,-4.5],
+            {   "position":[4.5,1.1,-4.5],
                 "velocity":[0.0,15.0,0.0],
                 "acceleration":[0.0,5.0,0.0]
             }
