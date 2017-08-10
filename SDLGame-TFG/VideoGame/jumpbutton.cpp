@@ -20,7 +20,7 @@
 #include "jumpbutton.h"
 
 JumpButton::JumpButton(const Value & buttonFeatures){
-    position=vec4f(respawnFeatures["position"][0].GetFloat(),respawnFeatures["position"][1].GetFloat(),respawnFeatures["position"][2].GetFloat(),1.0);
+    position=vec4f(buttonFeatures["position"][0].GetFloat(),buttonFeatures["position"][1].GetFloat(),buttonFeatures["position"][2].GetFloat(),1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -68,7 +68,48 @@ void JumpButton::visualization(Context & cv){
 //**********************************************************************//
 
 void JumpButton::updateState(GameState & gameState){
+    float time=gameState.time;
+    Hero * hero=gameState.rootMap->getHero();
 
+    if(time-currentTime>200) currentTime=time-50;
+
+    vec3f posHero=hero->getPosition();
+    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
+
+    //if hero is near of a disactivated trap
+    if(!activated && (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z
+       && (position.y>posHero.y-1 && position.y<posHero.y)){
+        activated=true;
+        animationDown->resetState();
+        animationUp->resetState();
+        transActivate->identity();
+        activatedButton->play(distance);
+    }
+
+    if(activated && ((int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z) ){ //if hero is far of an activated trap
+        activated=false;
+        activatedButton->play(distance);
+    }
+
+    if(activated && gameState.controller->checkButton(cJUMP)){
+        hero->activeJump(vec3f(0.0f,15.0,0.0f),vec3f(0.0f,5.0f,0.0f));
+    }
+
+    ////////////////////////////////
+    // Updated animation
+    if(activated && animationDown->getScriptState(0)!=1){
+        animationDown->updateState(time-currentTime);
+        transActivate->product(animationDown->readMatrix(0).getMatrix());
+    }
+    else if(!activated && animationUp->getScriptState(0)!=1){
+        animationUp->updateState(time-currentTime);
+        transActivate->product(animationUp->readMatrix(0).getMatrix());
+    }
+    else if(animationUp->getScriptState(0)==1){
+        transActivate->identity();
+    }
+
+    currentTime+=time-currentTime;
 }
 
 //**********************************************************************//

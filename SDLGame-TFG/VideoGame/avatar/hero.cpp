@@ -363,7 +363,7 @@ void Hero::updateState(GameState & gameState){
     bool hasMove=true;
 
     avatarDirection heroDir=direction;
-    vec3f moveHero,velocityHero,accelerationHero;
+    vec3f moveHero;
     currentMap=gameState.rootMap;
     ControllerManager * controller=gameState.controller;
 
@@ -464,7 +464,7 @@ void Hero::updateState(GameState & gameState){
 
     //Case-> Push S bottom to jump
     if(controller->checkButton(cJUMP) && !isJumping && !isFalling && !isImpacted && !isShielded && jumpDelay<(time-600) ){
-        activeJump(vec3f(velocityHero.x,15.0,velocityHero.y),vec3f(accelerationHero.x,5.0,accelerationHero.z));
+        activeJump(vec3f(0.0f,15.0,0.0f),vec3f(0.0f,5.0f,0.0f));
         jumpDelay=time;
         channelSound[5]=heroSound[5]->play();
     }

@@ -89,7 +89,8 @@ class JumpButton : public Object3D
         ScriptLMD * animationUp;    // Up animation of the respawn voxel
         ScriptLMD * animationDown;  // Down animation of the respawn voxel
         bool activated;             // Flag to activation
-        Sound * activatedButton;      // Sound for its activation
+        bool jumping;               // Flag to know if the hero is jumping
+        Sound * activatedButton;    // Sound for its activation
 };
 
 #endif // JUMPBUTTON_H
