@@ -80,7 +80,7 @@ void JumpButton::updateState(GameState & gameState){
 
     //if hero is near of a disactivated trap
     if(!activated && (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z
-       && (position.y>posHero.y-1 && position.y<posHero.y)){
+       && !hero->isJump() && !hero->isFall()){
         activated=true;
         animationDown->resetState();
         animationUp->resetState();
@@ -88,13 +88,14 @@ void JumpButton::updateState(GameState & gameState){
         activatedButton->play(distance);
     }
 
-    if(activated && ((int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z) ){ //if hero is far of an activated trap
-        activated=false;
-        activatedButton->play(distance);
+    if(activated && gameState.controller->checkButton(cJUMP) && !hero->isFall() && !hero->isJump()){
+        hero->activeJump(velocity,acceleration);
     }
 
-    if(activated && gameState.controller->checkButton(cJUMP)){
-        hero->activeJump(velocity,acceleration);
+    if(activated && ((int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z
+        || hero->isJump() || hero->isFall()) ){ //if hero is far of an activated trap
+        activated=false;
+        activatedButton->play(distance);
     }
 
     ////////////////////////////////
