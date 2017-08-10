@@ -20,19 +20,49 @@
 #include "jumpbutton.h"
 
 JumpButton::JumpButton(const Value & buttonFeatures){
+    position=vec4f(respawnFeatures["position"][0].GetFloat(),respawnFeatures["position"][1].GetFloat(),respawnFeatures["position"][2].GetFloat(),1.0);
 
+    MeshCollection * meshCollect= MeshCollection::getInstance();
+    MaterialCollection * materialCollect= MaterialCollection::getInstance();
+    SoundCollection * soundCollect= SoundCollection::getInstance();
+
+    activatedButton=soundCollect->getSound(sATRAP);
+
+    Matrix4f * transObject=new Matrix4f();
+    transObject->translation(position.x,position.y,position.z);
+    Matrix4f * transButton=new Matrix4f();
+    transButton->translation(0.0f,0.08f,0.0f);
+
+    transActivate=new Matrix4f();
+    transActivate->identity();
+
+    NodeSceneGraph * button=new NodeSceneGraph();
+    button->add(transActivate);
+    button->add(transButton);
+    button->add(meshCollect->getMesh(BUTTON));
+
+    root=new NodeSceneGraph();
+    root->add(transObject);
+    root->add(materialCollect->getMaterial(mBUTTON));
+    root->add(button);
+    root->add(meshCollect->getMesh(BUTTONB));
+
+    currentTime=SDL_GetTicks();
+    activated=false;
+
+    initAnimation();
 }
 
 //**********************************************************************//
 
 JumpButton::~JumpButton(){
-
+    delete root;
 }
 
 //**********************************************************************//
 
 void JumpButton::visualization(Context & cv){
-
+    root->visualization(cv);
 }
 
 //**********************************************************************//
