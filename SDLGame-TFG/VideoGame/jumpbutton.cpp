@@ -88,7 +88,7 @@ void JumpButton::updateState(GameState & gameState){
         activatedButton->play(distance);
     }
 
-    if(activated && gameState.controller->checkButton(cJUMP) && !hero->isFall() && !hero->isJump()){
+    if(activated && gameState.controller->checkButton(cJUMP) && !hero->isFall()){
         hero->activeJump(velocity,acceleration);
     }
 
