@@ -485,8 +485,11 @@ void RootMap::visualization(Context & cv){
     hero->visualization(cv);
 
     //Draw ncps
-    for(unsigned i=0;i<npcList.size();i++)
-        npcList[i]->visualization(cv);
+    for(unsigned i=0;i<npcList.size();i++){
+        position=npcList[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            npcList[i]->visualization(cv);
+    }
 
     //Draw enemies
     enemyList->visualization(cv);
@@ -503,57 +506,79 @@ void RootMap::visualization(Context & cv){
 
     //Draw projectile system
     for(unsigned i=0;i<projectileSystem.size();i++){
-        projectileSystem[i]->visualization(cv);
+        position=projectileSystem[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            projectileSystem[i]->visualization(cv);
     }
 
     //Draw souls
     for(unsigned i=0;i<souls.size();i++){
-        souls[i]->visualization(cv);
+        position=souls[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            souls[i]->visualization(cv);
     }
 
     //Draw soulCarriers
     for(unsigned i=0;i<soulCarriers.size();i++){
-        soulCarriers[i]->visualization(cv);
+        position=soulCarriers[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            soulCarriers[i]->visualization(cv);
     }
 
     //Draw doors
     for(unsigned i=0;i<doors.size();i++){
-        doors[i]->visualization(cv);
+        position=doors[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            doors[i]->visualization(cv);
     }
 
     //Draw spiketrap
     for(unsigned i=0;i<spikes.size();i++){
-        spikes[i]->visualization(cv);
+        position=spikes[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            spikes[i]->visualization(cv);
     }
 
     //Draw traps
     for(unsigned i=0;i<traps.size();i++){
-        traps[i]->visualization(cv);
+        position=traps[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            traps[i]->visualization(cv);
     }
 
     //Draw rotten
     for(unsigned i=0;i<rottens.size();i++){
-        rottens[i]->visualization(cv);
+        position=rottens[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            rottens[i]->visualization(cv);
     }
 
     //Draw movables voxels
     for(unsigned i=0;i<movables.size();i++){
-        movables[i]->visualization(cv);
+        position=movables[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            movables[i]->visualization(cv);
     }
 
     //Draw respawn
     for(unsigned i=0;i<respawns.size();i++){
-        respawns[i]->visualization(cv);
+        position=respawns[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            respawns[i]->visualization(cv);
     }
 
     //Draw slide traps
     for(unsigned i=0;i<slides.size();i++){
-        slides[i]->visualization(cv);
+        position=slides[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            slides[i]->visualization(cv);
     }
 
     //Draw jump buttons
     for(unsigned i=0;i<jumps.size();i++){
-        jumps[i]->visualization(cv);
+        position=jumps[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            jumps[i]->visualization(cv);
     }
 
     //Draw decoration object
@@ -574,6 +599,7 @@ void RootMap::visualization(Context & cv){
 
 void RootMap::updateState(GameState & gameState){
     float time=gameState.time;
+    vec3f position,posHero=hero->getPosition();
 
     if(time-currentTime>200)
         currentTime=time-50;
