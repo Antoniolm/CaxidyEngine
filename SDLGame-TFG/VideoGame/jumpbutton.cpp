@@ -51,6 +51,7 @@ JumpButton::JumpButton(const Value & buttonFeatures){
 
     currentTime=SDL_GetTicks();
     activated=false;
+    jumping=false;
 
     initAnimation();
 }
@@ -82,6 +83,7 @@ void JumpButton::updateState(GameState & gameState){
     if(!activated && (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z
        && !hero->isJump() && !hero->isFall()){
         activated=true;
+        jumping=false;
         animationDown->resetState();
         animationUp->resetState();
         transActivate->identity();
@@ -90,6 +92,7 @@ void JumpButton::updateState(GameState & gameState){
 
     if(activated && gameState.controller->checkButton(cJUMP) && !hero->isFall()){
         hero->activeJump(velocity,acceleration);
+        jumping=true;
     }
 
     if(activated && ((int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z
@@ -103,6 +106,10 @@ void JumpButton::updateState(GameState & gameState){
     if(activated && animationDown->getScriptState(0)!=1){
         animationDown->updateState(time-currentTime);
         transActivate->product(animationDown->readMatrix(0).getMatrix());
+    }
+    else if(jumping && animationUp->getScriptState(1)!=1){
+        animationUp->updateState(time-currentTime);
+        transActivate->product(animationUp->readMatrix(1).getMatrix());
     }
     else if(!activated && animationUp->getScriptState(0)!=1){
         animationUp->updateState(time-currentTime);
@@ -128,26 +135,28 @@ void JumpButton::initAnimation(){
     //Animation up
     animationUp=new ScriptLMD();
 
-    LinearMovement * movementUp=new LinearMovement(0.0,1.0,0.0);
     MatrixStatic * notMove=new MatrixStatic();
 
     MatrixScript * scriptUp=new MatrixScript();
+    MatrixScript * scriptUpJump=new MatrixScript();
 
-    scriptUp->add(0.08,movementUp);
+    scriptUp->add(0.08,new LinearMovement(0.0,1.0,0.0));
     scriptUp->add(0.5,notMove);
 
+    scriptUpJump->add(0.4,new LinearMovement(0.0,1.0,0.0));
+    scriptUpJump->add(0.5,notMove);
+
     animationUp->add(scriptUp);
+    animationUp->add(scriptUpJump);
 
 
     /////////////////////////////
     //Animation down
     animationDown=new ScriptLMD();
 
-    LinearMovement * movementDown=new LinearMovement(0.0,-1.0,0.0);
-
     MatrixScript * scriptDown=new MatrixScript();
 
-    scriptDown->add(0.08,movementDown);
+    scriptDown->add(0.08,new LinearMovement(0.0,-1.0,0.0));
     scriptDown->add(0.5,notMove);
 
     animationDown->add(scriptDown);
