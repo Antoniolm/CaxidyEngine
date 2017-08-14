@@ -4362,7 +4362,7 @@
 	"controller/controllermanager.h"
 	"SDL2/SDL.h"
 
-1496932096 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.h
+1502728025 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.h
 	"SDL2/SDL.h"
 
 1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl.h
@@ -5184,7 +5184,7 @@
 1496921945 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\region.h
 	"matrix/structdata.h"
 
-1496919514 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.h
+1502728512 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.h
 	"controller/controllermanager.h"
 	"./menu/menu.h"
 	"./menu/pausemenu.h"
@@ -5195,6 +5195,7 @@
 	"./menu/controlmenu.h"
 	"./menu/loadingscreen.h"
 	"./menu/moviescreen.h"
+	"./menu/inventorymenu.h"
 	"rootmap.h"
 	"camera.h"
 
@@ -5415,16 +5416,16 @@
 1494419236 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\shader.cpp
 	"shader.h"
 
-1493665929 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.cpp
+1502727878 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.cpp
 	"controller.h"
 
 1487356004 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controllermanager.cpp
 	"controllermanager.h"
 
-1496402446 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\gamepadcontroller.cpp
+1502728011 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\gamepadcontroller.cpp
 	"gamepadcontroller.h"
 
-1487173833 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.cpp
+1502728143 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.cpp
 	"keyboardcontroller.h"
 
 1491243060 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.cpp
@@ -5433,7 +5434,7 @@
 1488043281 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1501591871 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1502729113 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1489961113 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5591,7 +5592,7 @@
 1491827443 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
 	"optionmenu.h"
 
-1493582075 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
+1502729924 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
 	"pausemenu.h"
 
 1491388290 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.cpp
@@ -5772,7 +5773,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1502725025 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1502729067 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1491565115 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5891,4 +5892,22 @@
 
 1502455315 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
+
+1502729633 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+	"savedmanager.h"
+	"object3d.h"
+	"rootmap.h"
+	"context/context.h"
+	"mesh/mesh.h"
+	"nodescenegraph.h"
+	"material/texture.h"
+	"material/material.h"
+	"sound/sound.h"
+	"menu.h"
+	"profile.h"
+	"mainmenu.h"
+	"collection/meshcollection.h"
+	"collection/materialcollection.h"
+	"collection/soundcollection.h"
+	<string>
 

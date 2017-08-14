@@ -27,7 +27,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,string fileName){
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
 
-    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"selectItem.png");
+    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
@@ -97,8 +97,8 @@ void InventoryMenu::visualization(Context & cv){
 
 void InventoryMenu::updateState(GameState & gameState){
     vec3f posHero;
-
-    if(!gameState.movie->isActivated() && !gameState.deadMenu->isActivate() && !gameState.camera->isViewMode()){
+    if(!gameState.movie->isActivated() && !gameState.deadMenu->isActivate() && !gameState.pauseMenu->isActivate()
+       && !gameState.camera->isViewMode()){
         float time=gameState.time;
         ControllerManager * controller=gameState.controller;
 
@@ -113,10 +113,4 @@ void InventoryMenu::updateState(GameState & gameState){
 
         currentTime+=time-currentTime;
     }
-}
-
-//**********************************************************************//
-
-void InventoryMenu::activate(){
-
 }

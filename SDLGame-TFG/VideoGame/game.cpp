@@ -271,6 +271,7 @@ void Game::loop(){
             gameState.camera->activateOrthoProjection(context.currentShader->getProgram());
             heroState->visualization(context);
             gameState.pauseMenu->visualization(context);
+            gameState.inventoryMenu->visualization(context);
             gameState.deadMenu->visualization(context);
             gameState.movie->visualization(context);
             notiGamePad->visualization(context);

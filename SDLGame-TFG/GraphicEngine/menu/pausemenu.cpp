@@ -87,7 +87,8 @@ void PauseMenu::visualization(Context & cv){
 void PauseMenu::updateState(GameState & gameState){
     vec3f position;
 
-    if(!gameState.movie->isActivated() && !gameState.deadMenu->isActivate() && !gameState.camera->isViewMode()){
+    if(!gameState.movie->isActivated() && !gameState.deadMenu->isActivate() && !gameState.inventoryMenu->isActivate()
+       && !gameState.camera->isViewMode()){
         float time=gameState.time;
         ControllerManager * controller=gameState.controller;
 
