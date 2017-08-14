@@ -605,7 +605,7 @@ void RootMap::updateState(GameState & gameState){
         currentTime=time-50;
 
     if(!gameState.movie->isActivated() && !gameState.mainMenu->isActivate() && !gameState.pauseMenu->isActivate()
-       && !gameState.deadMenu->isActivate() && !gameState.camera->isViewMode()){
+       && !gameState.deadMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.camera->isViewMode()){
         //Update the hero
         hero->updateState(gameState);
 
@@ -709,7 +709,7 @@ void RootMap::updateState(GameState & gameState){
         gameState.rootMap->enableSound(true);
     }
     else{
-        if(gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate())
+        if(gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate() || gameState.inventoryMenu->isActivate())
             gameState.rootMap->enableSound(false);
     }
 }
