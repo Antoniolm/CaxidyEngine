@@ -80,6 +80,9 @@ class InventoryMenu : public Menu
     protected:
 
     private:
+        vec3f initialPosition;               // Initial position of the menu
+        Matrix4f * selectedPosition;         // The position of the current selected item
+        Material * materialBack;
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
 };
