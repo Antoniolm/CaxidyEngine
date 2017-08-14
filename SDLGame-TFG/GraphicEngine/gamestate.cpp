@@ -37,6 +37,7 @@ GameState::~GameState(){
     delete loadScreen;
     delete optionMenu;
     delete controlMenu;
+    delete InventoryMenu;
     delete camera;
 }
 
@@ -63,6 +64,7 @@ void GameState::initPlay(GLuint shaderID){
 void GameState::updatePlay(){
     movie->updateState(*this);
     pauseMenu->updateState(*this);
+    inventoryMenu->updateState(*this);
     deadMenu->updateState(*this);
     rootMap->updateState(*this);
 }

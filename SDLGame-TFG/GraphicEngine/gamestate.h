@@ -30,6 +30,7 @@
 #include "./menu/controlmenu.h"
 #include "./menu/loadingscreen.h"
 #include "./menu/moviescreen.h"
+#include "./menu/inventorymenu.h"
 #include "rootmap.h"
 #include "camera.h"
 
@@ -41,6 +42,7 @@ class PauseMenu;
 class OptionMenu;
 class ControlMenu;
 class MovieScreen;
+class InventoryMenu;
 class Camera;
 class GameState
 {
@@ -111,6 +113,7 @@ class GameState
         ControlMenu * controlMenu;      // Menu of controls
         LoadingScreen * loadScreen;     // Screen of load
         MovieScreen * movie;            // Screen of movie
+        InventoryMenu * inventoryMenu;  // Inventory menu
         Camera * camera;                // Camera of the video game
 
 

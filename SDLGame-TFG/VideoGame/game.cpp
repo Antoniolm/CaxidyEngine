@@ -75,8 +75,15 @@ Game::Game(){
     gameState.loadScreen->add("./textures/loading2.png");
     gameState.loadScreen->add("./textures/loading3.png");
 
+    //Create optionMenu
     gameState.optionMenu=new OptionMenu();
+
+    //Create controlMenu
     gameState.controlMenu=new ControlMenu(vec3f(0.0,6.70,11.0),"./textures/mainBackMenu.png");
+
+    //Create inventoryMenu
+    gameState.inventoryMenu=new InventoryMenu(vec3f(0.0,6.70,11.0),"./textures/inventory.png");
+
     heroState=new HeroState();
 
     isClosing=false;
@@ -225,7 +232,8 @@ void Game::loop(){
 
             //Update the camera, lifeText, coinText, profile
             gameState.camera->update(gameState,context.currentShader->getProgram(),
-                          (gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate() || gameState.mainMenu->isActivate()));
+                          (gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate() || gameState.mainMenu->isActivate()
+                           || gameState.inventoryMenu->isActivate()));
 
             notiGamePad->updateState(gameState);
 
