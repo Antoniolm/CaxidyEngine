@@ -31,7 +31,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,string fileName){
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
-    positionMenu->translation(initPos.x,initPos.y,initPos.z);
+    positionMenu->identity();
 
     Matrix4f * betweenMenu=new Matrix4f();
     betweenMenu->translation(0.0,0.0,-0.2);
@@ -89,8 +89,11 @@ InventoryMenu::~InventoryMenu(){
 //**********************************************************************//
 
 void InventoryMenu::visualization(Context & cv){
-    if(activateMenu)
+    if(activateMenu){
+        cout<< "----"<<endl;
         root->visualization(cv);
+        cout<< "yep";
+    }
 }
 
 //**********************************************************************//
@@ -109,6 +112,15 @@ void InventoryMenu::updateState(GameState & gameState){
             activateMenu=!activateMenu;
             menuDelay=time;
             openSound->play();
+            if(activateMenu){
+                posHero=gameState.rootMap->getHero()->getPosition();
+                positionMenu->translation(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
+
+                //Consume the current events -> User has to push again the buttons
+                controller->setState(false,cUP);
+                controller->setState(false,cDOWN);
+                controller->setState(false,cINVENTORY);
+            }
         }
 
         currentTime+=time-currentTime;

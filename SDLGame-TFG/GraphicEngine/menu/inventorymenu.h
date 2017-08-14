@@ -20,6 +20,7 @@
 #ifndef INVENTORYMENU_H
 #define INVENTORYMENU_H
 
+#include <iostream>
 #include "savedmanager.h"
 #include "object3d.h"
 #include "rootmap.h"
