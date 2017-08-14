@@ -42,10 +42,10 @@ InventoryMenu::InventoryMenu(vec3f initPos,string fileName){
     ///////////////////////
     //Text
     selectedPosition=new Matrix4f();
-    selectedPosition->translation(0.725,0.5,0.8);
+    selectedPosition->translation(-0.275,0.442,0.8);
 
     Matrix4f * scaleMenu=new Matrix4f();
-    scaleMenu->scale(0.35,1.8,0.5);
+    scaleMenu->scale(0.088,0.535,0.1);
 
     NodeSceneGraph * nodeText=new NodeSceneGraph(false,true);
     nodeText->add(selectedPosition);
@@ -89,11 +89,8 @@ InventoryMenu::~InventoryMenu(){
 //**********************************************************************//
 
 void InventoryMenu::visualization(Context & cv){
-    if(activateMenu){
-        cout<< "----"<<endl;
+    if(activateMenu)
         root->visualization(cv);
-        cout<< "yep";
-    }
 }
 
 //**********************************************************************//
@@ -119,6 +116,8 @@ void InventoryMenu::updateState(GameState & gameState){
                 //Consume the current events -> User has to push again the buttons
                 controller->setState(false,cUP);
                 controller->setState(false,cDOWN);
+                controller->setState(false,cLEFT);
+                controller->setState(false,cRIGHT);
                 controller->setState(false,cINVENTORY);
             }
         }

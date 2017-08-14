@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="GraphicEngine" />
 					<Add directory="VideoGame" />
+					<Add directory="GraphicEngine/menu" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="GraphicEngine" />
 					<Add directory="VideoGame" />
+					<Add directory="GraphicEngine/menu" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -132,6 +134,8 @@
 		<Unit filename="GraphicEngine/menu/creditscreen.h" />
 		<Unit filename="GraphicEngine/menu/deadmenu.cpp" />
 		<Unit filename="GraphicEngine/menu/deadmenu.h" />
+		<Unit filename="GraphicEngine/menu/inventorymenu.cpp" />
+		<Unit filename="GraphicEngine/menu/inventorymenu.h" />
 		<Unit filename="GraphicEngine/menu/loadingscreen.cpp" />
 		<Unit filename="GraphicEngine/menu/loadingscreen.h" />
 		<Unit filename="GraphicEngine/menu/mainmenu.cpp" />
