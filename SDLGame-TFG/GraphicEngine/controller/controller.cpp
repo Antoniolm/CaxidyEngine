@@ -89,6 +89,10 @@ bool Controller::checkButton(ControllerIndex button){
             result=buttons[cVIEW];
             resultState=stateButtons[cVIEW];
         break;
+        case cINVENTORY:
+            result=buttons[cINVENTORY];
+            resultState=stateButtons[cINVENTORY];
+        break;
 
     }
 

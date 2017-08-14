@@ -21,7 +21,7 @@
 
 KeyboardController::KeyboardController()
 {
-    for(int i=0;i<11;i++)
+    for(int i=0;i<12;i++)
         stateButtons[i]=false;
 }
 
@@ -95,5 +95,10 @@ void KeyboardController::catchKeyBoardState(const Uint8* currentKeyStates){
     else {
         buttons[cVIEW]=false;
         stateButtons[cVIEW]=true;
+    }
+    if(currentKeyStates[SDL_GetScancodeFromKey(SDLK_r)]) buttons[cINVENTORY]=true;
+    else {
+        buttons[cINVENTORY]=false;
+        stateButtons[cINVENTORY]=true;
     }
 }

@@ -33,7 +33,8 @@ enum ControllerIndex{
     cSHIELD,
     cSWAPWEAPON,
     cPAUSE,
-    cVIEW
+    cVIEW,
+    cINVENTORY
 };
 
 class Controller
@@ -90,8 +91,8 @@ class Controller
         void consumeButtons();
 
     protected:
-        bool buttons[11];       // Buttons of the system
-        bool stateButtons[11];  // check if the button has been consumed for one object.
+        bool buttons[12];       // Buttons of the system
+        bool stateButtons[12];  // check if the button has been consumed for one object.
     private:
 
 };

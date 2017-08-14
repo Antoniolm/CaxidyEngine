@@ -105,7 +105,7 @@ void InventoryMenu::updateState(GameState & gameState){
         if(time-currentTime>200)
             currentTime=time-50;
 
-        if(controller->checkButton(cPAUSE) && menuDelay<(time-600)){
+        if(controller->checkButton(cINVENTORY) && menuDelay<(time-600)){
             activateMenu=!activateMenu;
             menuDelay=time;
             openSound->play();

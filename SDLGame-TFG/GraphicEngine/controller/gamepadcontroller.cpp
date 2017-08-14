@@ -21,7 +21,7 @@
 
 GamepadController::GamepadController()
 {
-    for(int i=0;i<11;i++){
+    for(int i=0;i<12;i++){
         buttons[i]=false;
         stateButtons[i]=false;
     }
@@ -90,6 +90,10 @@ void GamepadController::setButton(bool value,Uint8 button){
         case SDL_CONTROLLER_BUTTON_Y:
             buttons[cSWAPWEAPON]=value;
             stateButtons[cSWAPWEAPON]=value;
+            break;
+        case SDL_CONTROLLER_BUTTON_X:
+            buttons[cINVENTORY]=value;
+            stateButtons[cINVENTORY]=value;
             break;
         case SDL_CONTROLLER_BUTTON_DPAD_UP:
             buttons[cUP]=value;
