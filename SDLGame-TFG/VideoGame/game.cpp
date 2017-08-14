@@ -49,7 +49,7 @@ Game::Game(){
     MaterialCollection::getInstance();
 
     //Create MainMenu
-    gameState.mainMenu=new MainMenu(vec3f(0.0,6.77,11.0),"./textures/mainBackMenu.png");
+    gameState.mainMenu=new MainMenu(vec3f(0.0,6.70,11.0),"./textures/mainBackMenu.png");
     gameState.mainMenu->add("./textures/mainMenuStart.png",START);
     gameState.mainMenu->add("./textures/mainMenuCont.png",CONTINUE);
     gameState.mainMenu->add("./textures/mainMenuControl.png",CONTROLS);

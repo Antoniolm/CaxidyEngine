@@ -31,7 +31,7 @@ MainMenu::MainMenu(vec3f initPos,string fileName)
     Material * materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
-    positionMenu->translation(0.0,6.70,11.0);
+    positionMenu->translation(initPos.x,initPos.y,initPos.z);
 
     Matrix4f * betweenMenu=new Matrix4f();
     betweenMenu->translation(0.0,0.0,-0.2);
