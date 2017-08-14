@@ -20,18 +20,68 @@
 #ifndef INVENTORYMENU_H
 #define INVENTORYMENU_H
 
+#include "savedmanager.h"
+#include "object3d.h"
+#include "rootmap.h"
+#include "context/context.h"
+#include "mesh/mesh.h"
+#include "nodescenegraph.h"
+#include "material/texture.h"
+#include "material/material.h"
+#include "sound/sound.h"
+#include "menu.h"
+#include "profile.h"
+#include "mainmenu.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
+#include <string>
 
-class InventoryMenu
+using namespace std;
+
+class InventoryMenu : public Menu
 {
     public:
-        /** Default constructor */
-        InventoryMenu();
-        /** Default destructor */
+        //////////////////////////////////////////////////////////////////////////
+        /** Constructor */
+        //////////////////////////////////////////////////////////////////////////
+        InventoryMenu(vec3f initPos,string fileName);
+
+        //////////////////////////////////////////////////////////////////////////
+        /** Destructor */
+        //////////////////////////////////////////////////////////////////////////
         virtual ~InventoryMenu();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will show the object in our interface
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual void visualization(Context & cv);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will update the state of the object. That change need the
+        *    current time in our application
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual void updateState(GameState & gameState);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will activate our menu
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void activate();
 
     protected:
 
     private:
+        Sound * openSound;                   // Sound for open an option
+        Sound * moveSound;                   // Sound for movement
 };
 
 #endif // INVENTORYMENU_H
