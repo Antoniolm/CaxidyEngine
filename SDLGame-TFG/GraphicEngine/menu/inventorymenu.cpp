@@ -19,13 +19,17 @@
 
 #include "inventorymenu.h"
 
-InventoryMenu::InventoryMenu(vec3f initPos,string fileName){
+InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory & inv){
 
     currentOption=0;
+    currentItemX=0;
+    currentItemY=0;
     activateMenu=false;
     MeshCollection * meshCollect =MeshCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
+    distItem=dItem;
+    inventory=&inv;
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
@@ -120,6 +124,39 @@ void InventoryMenu::updateState(GameState & gameState){
                 controller->setState(false,cRIGHT);
                 controller->setState(false,cINVENTORY);
             }
+        }
+
+        if(activateMenu){
+            Matrix4f * auxMatrix=new Matrix4f();
+            if(controller->checkButton(cUP) && menuDelay<(time-300)){ //If the user push the action move on the menu
+                currentItemY-=1;
+                menuDelay=time;
+                auxMatrix->translation(0.0f,distItem.y,0.0f);
+                selectedPosition->product(auxMatrix->getMatrix());
+                moveSound->play();
+            }
+            if(controller->checkButton(cDOWN) && menuDelay<(time-300)){ //If the user push the action move on the menu
+                currentItemY+=1;
+                menuDelay=time;
+                auxMatrix->translation(0.0f,-distItem.y,0.0f);
+                selectedPosition->product(auxMatrix->getMatrix());
+                moveSound->play();
+            }
+            if(controller->checkButton(cLEFT) && menuDelay<(time-300)){ //If the user push the action move on the menu
+                currentItemX-=1;
+                menuDelay=time;
+                auxMatrix->translation(-distItem.x,0.0,0.0f);
+                selectedPosition->product(auxMatrix->getMatrix());
+                moveSound->play();
+            }
+            if(controller->checkButton(cRIGHT) && menuDelay<(time-300)){ //If the user push the action move on the menu
+                currentItemX+=1;
+                menuDelay=time;
+                auxMatrix->translation(distItem.x,0.0,0.0f);
+                selectedPosition->product(auxMatrix->getMatrix());
+                moveSound->play();
+            }
+
         }
 
         currentTime+=time-currentTime;

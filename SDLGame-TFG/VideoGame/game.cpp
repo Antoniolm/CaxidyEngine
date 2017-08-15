@@ -63,15 +63,15 @@ Game::Game(){
     gameState.pauseMenu->add("./textures/menuPauseQuit.png",pQUIT);
 
     //Create deadMenu
-    gameState.deadMenu = new DeadMenu(vec3f(0.0,6.77,11.0),"./textures/menuBack.png");
+    gameState.deadMenu = new DeadMenu(vec3f(0.0f,6.77f,11.0f),"./textures/menuBack.png");
     gameState.deadMenu->add("./textures/dieMenu.png");
 
     //Create creditScreen
-    gameState.creditScreen= new CreditScreen(vec3f(0.0,6.77,11.0),"./textures/menuBack.png");
+    gameState.creditScreen= new CreditScreen(vec3f(0.0f,6.77f,11.0f),"./textures/menuBack.png");
     gameState.creditScreen->add("./textures/creditScreen.png");
 
     //Create LoadingScreen
-    gameState.loadScreen=new LoadingScreen(vec3f(0.0,6.77,11.0),250,"./textures/loading1.png");
+    gameState.loadScreen=new LoadingScreen(vec3f(0.0f,6.77f,11.0f),250,"./textures/loading1.png");
     gameState.loadScreen->add("./textures/loading2.png");
     gameState.loadScreen->add("./textures/loading3.png");
 
@@ -79,10 +79,10 @@ Game::Game(){
     gameState.optionMenu=new OptionMenu();
 
     //Create controlMenu
-    gameState.controlMenu=new ControlMenu(vec3f(0.0,6.70,11.0),"./textures/mainBackMenu.png");
+    gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"./textures/mainBackMenu.png");
 
     //Create inventoryMenu
-    gameState.inventoryMenu=new InventoryMenu(vec3f(0.0,6.70,11.0),"./textures/inventory.png");
+    gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,6.70f,11.0f),vec3f(0.208f,0.288f,0.0f),"./textures/inventory.png",*(new Inventory()));
 
     heroState=new HeroState();
 

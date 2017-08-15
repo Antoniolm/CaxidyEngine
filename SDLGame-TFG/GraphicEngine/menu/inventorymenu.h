@@ -36,6 +36,7 @@
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
+#include "../VideoGame/inventory.h"
 #include <string>
 
 using namespace std;
@@ -46,7 +47,7 @@ class InventoryMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        InventoryMenu(vec3f initPos,string fileName);
+        InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory & inv);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -75,9 +76,13 @@ class InventoryMenu : public Menu
     private:
         vec3f initialPosition;               // Initial position of the menu
         Matrix4f * selectedPosition;         // The position of the current selected item
-        Material * materialBack;
+        Material * materialBack;             // The texture in background
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
+        vec3f distItem;                      // Distance between items
+        int currentItemX;
+        int currentItemY;
+        Inventory * inventory;               // Logistic inventory of the interface
 };
 
 #endif // INVENTORYMENU_H
