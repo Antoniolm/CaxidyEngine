@@ -19,14 +19,24 @@
 
 #include "inventory.h"
 
-Inventory::Inventory()
-{
-    //ctor
+Inventory::Inventory(){
+
 }
 
 //**********************************************************************//
 
-Inventory::~Inventory()
-{
-    //dtor
+Inventory::~Inventory(){
+
+}
+
+//**********************************************************************//
+
+unsigned Inventory::getSizeX(){
+    return sizeX;
+}
+
+//**********************************************************************//
+
+unsigned Inventory::getSizeY(){
+    return sizeY;
 }
