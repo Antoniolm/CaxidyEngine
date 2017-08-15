@@ -20,8 +20,7 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
-#include "../GraphicEngine/object3d.h"
-#include "../GraphicEngine/nodescenegraph.h"
+#include "equipment.h"
 #include "../GraphicEngine/material/material.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -35,7 +34,7 @@ enum WeaponType{
     MELEE
 };
 
-class Weapon : public Object3D
+class Weapon : public Equipment
 {
     public:
         //////////////////////////////////////////////////////////////////////////
@@ -62,7 +61,7 @@ class Weapon : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void visualization(Context & cv);
+        virtual void visualization(Context & cv);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -72,7 +71,7 @@ class Weapon : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void updateState(GameState & gameState);
+        virtual void updateState(GameState & gameState);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -112,7 +111,6 @@ class Weapon : public Object3D
 
     private:
         float damage;           // Damage of the weapon
-        NodeSceneGraph * root;  // Root of the weapon
         WeaponType type;        // Type of the weapon
 };
 
