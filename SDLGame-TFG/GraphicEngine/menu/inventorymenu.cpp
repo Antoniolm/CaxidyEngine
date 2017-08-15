@@ -140,6 +140,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 }
                 else
                     auxMatrix->translation(0.0f,distItem.y,0.0f);
+
                 hasMovement=true;
             }
             if(controller->checkButton(cDOWN) && menuDelay<(time-300)){ //If the user push the action move on the menu
@@ -158,13 +159,27 @@ void InventoryMenu::updateState(GameState & gameState){
             if(controller->checkButton(cLEFT) && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemX-=1;
                 menuDelay=time;
-                auxMatrix->translation(-distItem.x,0.0,0.0f);
+
+                if(currentItemX<0){
+                    auxMatrix->translation(distItem.x*(inventory->getSizeX()-1),0.0f,0.0f);
+                    currentItemX=inventory->getSizeX()-1;
+                }
+                else
+                    auxMatrix->translation(-distItem.x,0.0,0.0f);
+
                 hasMovement=true;
             }
             if(controller->checkButton(cRIGHT) && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemX+=1;
                 menuDelay=time;
-                auxMatrix->translation(distItem.x,0.0,0.0f);
+
+                if(currentItemX==inventory->getSizeX()){
+                    auxMatrix->translation(-distItem.x*(inventory->getSizeX()-1),0.0f,0.0f);
+                    currentItemX=0;
+                }
+                else
+                    auxMatrix->translation(distItem.x,0.0,0.0f);
+
                 hasMovement=true;
             }
 
