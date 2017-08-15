@@ -128,31 +128,47 @@ void InventoryMenu::updateState(GameState & gameState){
 
         if(activateMenu){
             Matrix4f * auxMatrix=new Matrix4f();
+            bool hasMovement=false;
+
             if(controller->checkButton(cUP) && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemY-=1;
                 menuDelay=time;
-                auxMatrix->translation(0.0f,distItem.y,0.0f);
-                selectedPosition->product(auxMatrix->getMatrix());
-                moveSound->play();
+
+                if(currentItemY<0){
+                    auxMatrix->translation(0.0f,-distItem.y*(inventory->getSizeY()-1),0.0f);
+                    currentItemY=inventory->getSizeY()-1;
+                }
+                else
+                    auxMatrix->translation(0.0f,distItem.y,0.0f);
+                hasMovement=true;
             }
             if(controller->checkButton(cDOWN) && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemY+=1;
                 menuDelay=time;
-                auxMatrix->translation(0.0f,-distItem.y,0.0f);
-                selectedPosition->product(auxMatrix->getMatrix());
-                moveSound->play();
+
+                if(currentItemY==inventory->getSizeY()){
+                    auxMatrix->translation(0.0f,distItem.y*(inventory->getSizeY()-1),0.0f);
+                    currentItemY=0;
+                }
+                else
+                    auxMatrix->translation(0.0f,-distItem.y,0.0f);
+
+                hasMovement=true;
             }
             if(controller->checkButton(cLEFT) && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemX-=1;
                 menuDelay=time;
                 auxMatrix->translation(-distItem.x,0.0,0.0f);
-                selectedPosition->product(auxMatrix->getMatrix());
-                moveSound->play();
+                hasMovement=true;
             }
             if(controller->checkButton(cRIGHT) && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemX+=1;
                 menuDelay=time;
                 auxMatrix->translation(distItem.x,0.0,0.0f);
+                hasMovement=true;
+            }
+
+            if(hasMovement){
                 selectedPosition->product(auxMatrix->getMatrix());
                 moveSound->play();
             }
