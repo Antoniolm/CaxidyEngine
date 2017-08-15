@@ -5916,12 +5916,14 @@
 1502799020 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 
-1502798565 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
+1502813968 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
+	<iostream>
+	"equipment.h"
 
 1502792627 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1502810868 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1502812558 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 

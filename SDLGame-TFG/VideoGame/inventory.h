@@ -20,6 +20,10 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
+#include <iostream>
+#include "equipment.h"
+
+using namespace std;
 
 class Inventory
 {
@@ -55,6 +59,9 @@ class Inventory
     private:
         static const unsigned sizeX = 6;
         static const unsigned sizeY = 3;
+
+        vector< vector<Equipment *> > items;
+
 };
 
 #endif // INVENTORY_H
