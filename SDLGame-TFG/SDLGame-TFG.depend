@@ -5656,16 +5656,8 @@
 	<vector>
 	"../lib/rapidjson/document.h"
 
-1502883431 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
+1502885636 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
-	"../GraphicEngine/nodescenegraph.h"
-	"../GraphicEngine/material/material.h"
-	"../GraphicEngine/matrix/matrix4f.h"
-	"../GraphicEngine/matrix/matrix4fdynamic.h"
-	"../GraphicEngine/collection/meshcollection.h"
-	"../GraphicEngine/collection/soundcollection.h"
-	"../GraphicEngine/matrix/axisrotation.h"
-	"../GraphicEngine/sound/sound.h"
 
 1488053514 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
 	"savedmanager.h"
@@ -5778,10 +5770,10 @@
 1502797801 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
-1491565115 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
+1502885642 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
 	"item.h"
 
-1491565671 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\itemlist.cpp
+1502885862 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\itemlist.cpp
 	"itemlist.h"
 
 1491569533 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.cpp
@@ -5932,7 +5924,7 @@
 1502810612 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
-1502884439 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
+1502885419 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
 	"item.h"
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5943,4 +5935,7 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
+
+1502883087 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.cpp
+	"potion.h"
 

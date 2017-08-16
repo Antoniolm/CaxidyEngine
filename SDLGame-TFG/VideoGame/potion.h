@@ -70,6 +70,7 @@ class Potion : public Item
     protected:
 
     private:
+
 };
 
 #endif // POTION_H

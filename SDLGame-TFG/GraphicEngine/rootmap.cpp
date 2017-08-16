@@ -107,6 +107,9 @@ RootMap::~RootMap()
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
 
+    for(unsigned i=0;i<items.size();i++)
+        delete items[i];
+
 }
 
 //**********************************************************************//
@@ -275,8 +278,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading respawn voxels >"<< endl;
     const rapidjson::Value & resFeature=document["resVoxel"];
     for(unsigned currentRes=0;currentRes<resFeature.Size();currentRes++){
-        RespawnVoxel * resVox=new RespawnVoxel(resFeature[currentRes]);
-        respawns.push_back(resVox);
+        respawns.push_back(new RespawnVoxel(resFeature[currentRes]));
     }
 
     /////////////////////////////////////////
@@ -309,8 +311,16 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading jump button >"<< endl;
     const rapidjson::Value & jumpFeature=document["jumpButton"];
     for(unsigned currentButton=0;currentButton<jumpFeature.Size();currentButton++){
-        JumpButton * jump=new JumpButton(jumpFeature[currentButton]);
-        jumps.push_back(jump);
+        jumps.push_back(new JumpButton(jumpFeature[currentButton]));
+    }
+
+    /////////////////////////////////////////
+    // Add potion to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading potions >"<< endl;
+    const rapidjson::Value & potionFeature=document["potion"];
+    for(unsigned currentPotion=0;currentPotion<potionFeature.Size();currentPotion++){
+        items.push_back(new Potion(potionFeature[currentPotion]));
     }
 
     /////////////////////////////////////////
@@ -581,6 +591,13 @@ void RootMap::visualization(Context & cv){
             jumps[i]->visualization(cv);
     }
 
+    //Draw potions
+    for(unsigned i=0;i<items.size();i++){
+        position=items[i]->getPosition();
+        if(position.x>posHero.x-11 && position.x<posHero.x+11)
+            items[i]->visualization(cv);
+    }
+
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
         position=decorationObjs[i]->getPosition();
@@ -689,6 +706,19 @@ void RootMap::updateState(GameState & gameState){
         //Update slides
         for(unsigned i=0;i<jumps.size();i++){
             jumps[i]->updateState(gameState);
+        }
+
+        //Update items
+        vector<Item * >::iterator itItem=items.begin();
+
+        while(itItem!=items.end()){
+            (*itItem)->updateState(gameState);
+            if((*itItem)->isTake()){
+                delete (*itItem);
+                items.erase(itItem);
+            }
+            else
+                itItem++;
         }
 
         //Update title

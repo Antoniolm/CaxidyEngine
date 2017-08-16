@@ -69,6 +69,8 @@
 #include "../VideoGame/respawnvoxel.h"
 #include "../VideoGame/slidetrap.h"
 #include "../VideoGame/jumpbutton.h"
+#include "../VideoGame/item.h"
+#include "../VideoGame/potion.h"
 
 
 using namespace std;
@@ -97,6 +99,8 @@ class SlideTrap;
 class JumpButton;
 class LoaderThread;
 class MovieScreen;
+class Item;
+class Potion;
 
 class RootMap : public Object3D
 {
@@ -274,6 +278,7 @@ class RootMap : public Object3D
         vector<ObjectScene *> objs;                 // Vector of objects scene
         vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
         vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
+        vector<Item *> items;                       // Vector of items
         vector<Npc *> npcList;                      // Vector of npcs
         vector<ParticleSystem *> particleSystem;    // Vector of particles systems
         vector<ProjectileSystem *> projectileSystem;// Vector of projectiles systems
