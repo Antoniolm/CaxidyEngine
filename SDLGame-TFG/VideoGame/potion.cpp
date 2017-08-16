@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -16,12 +16,14 @@
 // ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // **
 // *********************************************************************
-#include "item.h"
 
-Item::Item(vec3f aPosition,int aValue,ItemIndex aType){
+#include "potion.h"
+
+Potion::Potion()
+{
     value=aValue;
     notTake=true;
-    type=aType;
+    type=iPOTION;
     position=vec4f(aPosition.x,aPosition.y,aPosition.z,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -62,24 +64,21 @@ Item::Item(vec3f aPosition,int aValue,ItemIndex aType){
     soundTake=soundCollect->getSound(sCoin);
 }
 
-//**********************************************************************//
-
-Item::~Item(){
-    delete root;
-    delete rotation;
+Potion::~Potion()
+{
+    //dtor
 }
 
-//**********************************************************************//
+Potion(vec3f aPosition,int aValue,ItemIndex aType){
 
-void Item::visualization(Context & cv){
-    if(position.x>cv.minVisualPosition.x && position.x<cv.maxVisualPosition.x
-       && position.y>cv.minVisualPosition.y && position.y<cv.maxVisualPosition.y)
-        root->visualization(cv);
 }
 
-//**********************************************************************//
 
-void Item::updateState(GameState & gameState){
+void Potion::visualization(Context & cv){
+
+}
+
+void Potion::updateState(GameState & gameState){
     float time=gameState.time;
     Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
@@ -88,47 +87,15 @@ void Item::updateState(GameState & gameState){
     if(distance<=0.4){
         notTake=false;
 
-        //check his type
-        switch(type){
-        case iCOIN:
-            hero->addCoin(value);
+        if(hero->getLife()!=hero->getMaxLite()){
+            hero->addLife(value);
             soundTake->play();
-        break;
-        case iPOTION:
-            if(hero->getLife()!=hero->getMaxLite()){
-                hero->addLife(value);
-                soundTake->play();
-            }
-            else
-                notTake=true;
-        break;
         }
+        else
+            notTake=true;
     }
 
     //Animation
     animationMatrix->setMatrix(rotation->updateState(time-currentTime).getMatrix());
     currentTime+=time-currentTime;
-}
-//**********************************************************************//
-
-void Item::setValue(int aValue){
-    value=aValue;
-}
-
-//**********************************************************************//
-
-int Item::getValue(){
-    return value;
-}
-
-//**********************************************************************//
-
-bool Item::isTake(){
-    return !notTake;
-}
-
-//**********************************************************************//
-
-ItemIndex Item::getType(){
-    return type;
 }

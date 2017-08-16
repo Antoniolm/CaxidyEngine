@@ -25,9 +25,6 @@ Inventory::Inventory(){
     for(int i=0;i<items.size();i++){
         items[i].resize(sizeX);
     }
-
-    if(items[1][1]==0)
-        cout<< "yeeep"<<endl;
 }
 
 //**********************************************************************//

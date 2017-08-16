@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -17,27 +17,12 @@
 // **
 // *********************************************************************
 
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef POTION_H
+#define POTION_H
 
-#include "../GraphicEngine/object3d.h"
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/material/material.h"
-#include "../GraphicEngine/matrix/matrix4f.h"
-#include "../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../GraphicEngine/collection/meshcollection.h"
-#include "../GraphicEngine/collection/soundcollection.h"
-#include "../GraphicEngine/matrix/axisrotation.h"
-#include "../GraphicEngine/sound/sound.h"
+#include "item.h"
 
-enum ItemIndex{
-    iCOIN,
-    iPOTION,
-    iWEAPON,
-    iARMOUR
-};
-
-class Item : public Object3D
+class Potion : public Item
 {
     public:
         //////////////////////////////////////////////////////////////////////////
@@ -47,12 +32,12 @@ class Item : public Object3D
         *    @param aType -> the type of item that our item will be
         */
         //////////////////////////////////////////////////////////////////////////
-        Item(vec3f aPosition,int aValue,ItemIndex aType);
+        Potion(vec3f aPosition,int aValue);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~Item();
+        virtual ~Potion();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -73,43 +58,9 @@ class Item : public Object3D
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
 
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will set the value of our coin
-        *    @param aValue -> the new contain of our value
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setValue(int aValue);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will return the value of our coin
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getValue();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will return if the hero took that coin or not
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool isTake();
-
-        ItemIndex getType();
-
     protected:
 
     private:
-        int value;                  // Value of the item
-        NodeSceneGraph * root;      // Root of the object
-        Matrix4f * animationMatrix; // Matrix 4x4 of the animation
-        AxisRotation * rotation;    // Rotation movement
-        Sound * soundTake;          // Sound of taken coin
-        bool notTake;               // Flag to not taken coin
-        ItemIndex type;             // Type of the item( potion or crystal )
 };
 
-#endif // ITEM_H
+#endif // POTION_H

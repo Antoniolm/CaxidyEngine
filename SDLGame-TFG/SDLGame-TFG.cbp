@@ -216,6 +216,8 @@
 		<Unit filename="VideoGame/door.h" />
 		<Unit filename="VideoGame/enemylist.cpp" />
 		<Unit filename="VideoGame/enemylist.h" />
+		<Unit filename="VideoGame/equipment.cpp" />
+		<Unit filename="VideoGame/equipment.h" />
 		<Unit filename="VideoGame/game.cpp" />
 		<Unit filename="VideoGame/game.h" />
 		<Unit filename="VideoGame/inventory.cpp" />
