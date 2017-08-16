@@ -27,7 +27,7 @@ OptionMenu::OptionMenu()
     SoundCollection * soundCollect =SoundCollection::getInstance();
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/optionResol.png");
-    Material * materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainBackMenu.png");
+    materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainBackMenu.png");
 
     //Initialize text
     TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 15);
@@ -87,7 +87,7 @@ OptionMenu::OptionMenu()
     Matrix4f * scaleMain=new Matrix4f();
     scaleMain->scale(0.35,1.8,0.5);
 
-    Material * material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainMenuOption.png");
+    material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainMenuOption.png");
 
     NodeSceneGraph * nodeMainBack=new NodeSceneGraph(false,true);
     nodeMainBack->add(positionMainBack);
@@ -123,8 +123,14 @@ OptionMenu::~OptionMenu()
 {
     delete root;
 
-    for(unsigned i=0;i<options.size();i++)
-        delete options[i];
+    for(vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
+        if((*it)->getFile()!=currentMaterial->getTexture()->getFile())
+            delete (*it);
+    }
+
+    delete materialBack;
+    delete currentMaterial;
+    delete material;
 }
 
 //**********************************************************************//

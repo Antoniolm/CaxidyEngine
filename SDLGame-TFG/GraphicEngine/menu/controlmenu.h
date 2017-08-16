@@ -83,8 +83,9 @@ class ControlMenu : public Menu
     protected:
 
     private:
-        Sound * openSound;  // Sound for open an option
-        Sound * moveSound;  // Sound for movement
+        Sound * openSound;      // Sound for open an option
+        Sound * moveSound;      // Sound for movement
+        Material * material;    // Material for background
 };
 
 #endif // CONTROLMENU_H

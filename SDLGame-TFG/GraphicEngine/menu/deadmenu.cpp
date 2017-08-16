@@ -28,7 +28,7 @@ DeadMenu::DeadMenu(vec3f initialPos,string fileName)
     SoundCollection * soundCollect =SoundCollection::getInstance();
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"");
-    Material * materialBack=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
+    materialBack=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -67,6 +67,7 @@ DeadMenu::~DeadMenu()
     delete root;
 
     delete currentMaterial;
+    delete materialBack;
 }
 
 //**********************************************************************//

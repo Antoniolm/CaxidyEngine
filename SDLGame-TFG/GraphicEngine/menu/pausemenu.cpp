@@ -28,7 +28,7 @@ PauseMenu::PauseMenu(vec3f initPos,string fileName)
     initialPosition=initPos;
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"");
-    Material * materialBack=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
+    materialBack=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -73,6 +73,7 @@ PauseMenu::~PauseMenu()
     }
 
     delete currentMaterial;
+    delete materialBack;
 }
 
 //**********************************************************************//

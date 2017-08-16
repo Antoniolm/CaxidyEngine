@@ -27,7 +27,7 @@ ControlMenu::ControlMenu(vec3f position,string fileName)
     SoundCollection * soundCollect =SoundCollection::getInstance();
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/controlScreen.png");
-    Material * materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
+    materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
     positionMenu->translation(position.x,position.y,position.z);
@@ -70,7 +70,7 @@ ControlMenu::ControlMenu(vec3f position,string fileName)
     Matrix4f * scaleMain=new Matrix4f();
     scaleMain->scale(0.35,1.8,0.5);
 
-    Material * material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainMenuControl.png");
+    material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainMenuControl.png");
 
     NodeSceneGraph * nodeMainBack=new NodeSceneGraph(false,true);
     nodeMainBack->add(positionMainBack);
@@ -97,6 +97,9 @@ ControlMenu::ControlMenu(vec3f position,string fileName)
 ControlMenu::~ControlMenu()
 {
     delete root;
+    delete currentMaterial;
+    delete materialBack;
+    delete material;
 }
 
 //**********************************************************************//

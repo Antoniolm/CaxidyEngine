@@ -116,6 +116,7 @@ class OptionMenu : public Menu
         Text * volText;         // Text for current volume
         Sound * openSound;      // Sound for open an option
         Sound * moveSound;      // Sound for movement
+        Material * material;    // Material for background
 };
 
 #endif // OPTIONMENU_H

@@ -88,6 +88,7 @@ class Menu : public Object3D
         vector<Texture *> options;  // Vector of options
         int currentOption;          // Current option
         Material * currentMaterial; // Current material
+        Material * materialBack;    // Material back
         float menuDelay;            // Delay between options
 
     private:
