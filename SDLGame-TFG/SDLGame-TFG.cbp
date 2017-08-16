@@ -212,6 +212,8 @@
 		<Unit filename="VideoGame/avatar/npc.h" />
 		<Unit filename="VideoGame/avatar/rangedenemy.cpp" />
 		<Unit filename="VideoGame/avatar/rangedenemy.h" />
+		<Unit filename="VideoGame/coin.cpp" />
+		<Unit filename="VideoGame/coin.h" />
 		<Unit filename="VideoGame/door.cpp" />
 		<Unit filename="VideoGame/door.h" />
 		<Unit filename="VideoGame/enemylist.cpp" />
@@ -230,6 +232,8 @@
 		<Unit filename="VideoGame/jumpbutton.h" />
 		<Unit filename="VideoGame/movablevoxel.cpp" />
 		<Unit filename="VideoGame/movablevoxel.h" />
+		<Unit filename="VideoGame/potion.cpp" />
+		<Unit filename="VideoGame/potion.h" />
 		<Unit filename="VideoGame/projectile.cpp" />
 		<Unit filename="VideoGame/projectile.h" />
 		<Unit filename="VideoGame/projectilesystem.cpp" />

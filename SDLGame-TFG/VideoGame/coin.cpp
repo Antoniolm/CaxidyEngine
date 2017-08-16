@@ -20,23 +20,63 @@
 #include "coin.h"
 
 Coin::Coin(const Value & coinFeatures){
-    //ctor
+    position=vec4f(coinFeatures["position"][0].GetFloat(),coinFeatures["position"][1].GetFloat(),coinFeatures["position"][2].GetFloat(),1.0f);
+    value=coinFeatures["value"].GetInt();
+
+    notTake=true;
+    type=iCOIN;
+
+    MeshCollection * meshCollect= MeshCollection::getInstance();
+    MaterialCollection * materialCollect= MaterialCollection::getInstance();
+    SoundCollection * soundCollect = SoundCollection::getInstance();
+
+    animationMatrix=new Matrix4f();
+    animationMatrix->identity();
+
+    rotation=new AxisRotation(100,0.0,1.0,0.0);
+
+    Matrix4f * transMatrix=new Matrix4f();
+    transMatrix->translation(position.x,position.y,position.z);
+
+    root=new NodeSceneGraph();
+    root->add(transMatrix);
+    root->add(animationMatrix);
+    root->add(materialCollect->getMaterial(coinFeatures["material"].GetString()));
+    root->add(meshCollect->getMesh(coinFeatures["geometry"].GetString()));
+    currentTime=SDL_GetTicks();
+
+    soundTake=soundCollect->getSound(sCoin);
 }
 
 //**********************************************************************//
 
 Coin::~Coin(){
-    //dtor
+    delete root;
+    delete rotation;
 }
 
 //**********************************************************************//
 
 void Coin::visualization(Context & cv){
-
+    root->visualization(cv);
 }
 
 //**********************************************************************//
 
 void Coin::updateState(GameState & gameState){
+    float time=gameState.time;
+    Hero * hero=gameState.rootMap->getHero();
+    vec3f posHero=hero->getPosition();
+    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 
+    if(distance<=0.4){
+        notTake=false;
+
+        hero->addCoin(value);
+        soundTake->play();
+    }
+
+    //Animation
+    animationMatrix->setMatrix(rotation->updateState(time-currentTime).getMatrix());
+    currentTime+=time-currentTime;
 }

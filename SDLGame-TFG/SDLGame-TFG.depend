@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1502884294 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1502890873 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4872,6 +4872,7 @@
 	"../VideoGame/jumpbutton.h"
 	"../VideoGame/item.h"
 	"../VideoGame/potion.h"
+	"../VideoGame/coin.h"
 
 1496919850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
@@ -5643,10 +5644,9 @@
 	"region.h"
 	"gamestate.h"
 
-1502883781 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1502891604 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
-	"../VideoGame/itemlist.h"
 	"mesh/objectgroup.h"
 	<stdlib.h>
 
@@ -5770,7 +5770,7 @@
 1502797801 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
-1502885642 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
+1502889539 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
 	"item.h"
 
 1502885862 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\itemlist.cpp
@@ -5924,7 +5924,7 @@
 1502810612 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
-1502885419 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
+1502887837 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
 	"item.h"
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5936,6 +5936,21 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1502883087 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.cpp
+1502888804 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.cpp
 	"potion.h"
+
+1502888738 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.h
+	"item.h"
+	"../GraphicEngine/object3d.h"
+	"../GraphicEngine/nodescenegraph.h"
+	"../GraphicEngine/material/material.h"
+	"../GraphicEngine/matrix/matrix4f.h"
+	"../GraphicEngine/matrix/matrix4fdynamic.h"
+	"../GraphicEngine/collection/meshcollection.h"
+	"../GraphicEngine/collection/soundcollection.h"
+	"../GraphicEngine/matrix/axisrotation.h"
+	"../GraphicEngine/sound/sound.h"
+
+1502889589 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.cpp
+	"coin.h"
 

@@ -21,14 +21,7 @@
 #define ITEM_H
 
 #include "../GraphicEngine/object3d.h"
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/material/material.h"
-#include "../GraphicEngine/matrix/matrix4f.h"
-#include "../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../GraphicEngine/collection/meshcollection.h"
-#include "../GraphicEngine/collection/soundcollection.h"
-#include "../GraphicEngine/matrix/axisrotation.h"
-#include "../GraphicEngine/sound/sound.h"
+
 
 enum ItemIndex{
     iCOIN,
@@ -37,17 +30,21 @@ enum ItemIndex{
     iARMOUR
 };
 
+class NodeSceneGraph;
+class AxisRotation;
+class GameState;
+class Context;
+class Matrix4f;
+class Material;
+class Sound;
+
 class Item : public Object3D
 {
     public:
         //////////////////////////////////////////////////////////////////////////
-        /** Constructor
-        *    @param aPosition -> The initial position of our item
-        *    @param aValue -> the value of our item
-        *    @param aType -> the type of item that our item will be
-        */
+        /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        Item(vec3f aPosition,int aValue,ItemIndex aType);
+        Item();
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -98,6 +95,12 @@ class Item : public Object3D
         //////////////////////////////////////////////////////////////////////////
         bool isTake();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will return the type of the item
+        *    \return ItemIndex
+        */
+        //////////////////////////////////////////////////////////////////////////
         ItemIndex getType();
 
     protected:
@@ -108,7 +111,6 @@ class Item : public Object3D
         Sound * soundTake;          // Sound of taken coin
         bool notTake;               // Flag to not taken coin
         ItemIndex type;             // Type of the item( potion or crystal )
-
     private:
 
 };
