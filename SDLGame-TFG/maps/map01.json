@@ -167,7 +167,7 @@
                 "value":25}
     ],
 
-    "potion":[
+    "crystal":[
         {   "position":[52.5,5.5,-34.5],
                 "material":"mPOTION", 
                 "geometry":"POTION", 

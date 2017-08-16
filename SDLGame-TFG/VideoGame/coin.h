@@ -17,8 +17,8 @@
 // **
 // *********************************************************************
 
-#ifndef POTION_H
-#define POTION_H
+#ifndef COIN_H
+#define COIN_H
 
 #include "item.h"
 #include "../GraphicEngine/object3d.h"
@@ -31,18 +31,18 @@
 #include "../GraphicEngine/matrix/axisrotation.h"
 #include "../GraphicEngine/sound/sound.h"
 
-class Potion : public Item
+class Coin : public Item
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        Potion(const Value & potionFeatures);
+        Coin(const Value & coinFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~Potion();
+        virtual ~Coin();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -66,7 +66,6 @@ class Potion : public Item
     protected:
 
     private:
-
 };
 
-#endif // POTION_H
+#endif // COIN_H

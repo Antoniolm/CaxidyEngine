@@ -19,8 +19,7 @@
 
 #include "potion.h"
 
-Potion::Potion(const Value & potionFeatures)
-{
+Potion::Potion(const Value & potionFeatures){
     position=vec4f(potionFeatures["position"][0].GetFloat(),potionFeatures["position"][1].GetFloat(),potionFeatures["position"][2].GetFloat(),1.0f);
     value=potionFeatures["value"].GetInt();
 
@@ -59,9 +58,7 @@ Potion::~Potion(){
 //**********************************************************************//
 
 void Potion::visualization(Context & cv){
-    if(position.x>cv.minVisualPosition.x && position.x<cv.maxVisualPosition.x
-       && position.y>cv.minVisualPosition.y && position.y<cv.maxVisualPosition.y)
-        root->visualization(cv);
+    root->visualization(cv);
 }
 
 //**********************************************************************//
