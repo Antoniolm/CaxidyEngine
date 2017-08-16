@@ -45,7 +45,7 @@ class Equipment : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        virtual void visualization(Context & cv);
+        virtual void visualization(Context & cv)=0;
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -55,7 +55,7 @@ class Equipment : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        virtual void updateState(GameState & gameState);
+        virtual void updateState(GameState & gameState)=0;
 
 
     protected:

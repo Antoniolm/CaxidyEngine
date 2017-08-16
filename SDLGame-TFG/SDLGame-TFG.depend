@@ -5656,7 +5656,7 @@
 	<vector>
 	"../lib/rapidjson/document.h"
 
-1502897573 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
+1502900927 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
 1488053514 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
@@ -5917,7 +5917,7 @@
 1502814474 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1502900685 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1502900747 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 
