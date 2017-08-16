@@ -101,8 +101,6 @@ class Item : public Object3D
         ItemIndex getType();
 
     protected:
-
-    private:
         int value;                  // Value of the item
         NodeSceneGraph * root;      // Root of the object
         Matrix4f * animationMatrix; // Matrix 4x4 of the animation
@@ -110,6 +108,9 @@ class Item : public Object3D
         Sound * soundTake;          // Sound of taken coin
         bool notTake;               // Flag to not taken coin
         ItemIndex type;             // Type of the item( potion or crystal )
+
+    private:
+
 };
 
 #endif // ITEM_H

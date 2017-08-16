@@ -159,6 +159,14 @@
             }
     ],
 
+    "potion":[
+        {   "position":[52.5,5.5,-34.5],
+                "material":"mPOTION", 
+                "geometry":"POTION", 
+                "value":25}
+    ],
+
+
     "items":[
             {   "position":[34.5,5.5,-19.5],
                 "value":1, 
@@ -192,11 +200,7 @@
                 "type":0},
             {   "position":[54.5,5.5,-34.5],
                 "value":1, 
-                "type":0},
-            {   "position":[52.5,5.5,-34.5],
-                "value":25, 
-                "type":1}
-
+                "type":0}
     ],
 
     "souls":[

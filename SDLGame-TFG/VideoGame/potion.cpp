@@ -19,12 +19,13 @@
 
 #include "potion.h"
 
-Potion::Potion()
+Potion::Potion(const Value & potionFeatures)
 {
-    value=aValue;
+    position=vec4f(potionFeatures["position"][0].GetFloat(),potionFeatures["position"][1].GetFloat(),potionFeatures["position"][2].GetFloat(),1.0f);
+    value=potionFeatures["value"].GetInt();
+
     notTake=true;
     type=iPOTION;
-    position=vec4f(aPosition.x,aPosition.y,aPosition.z,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -38,45 +39,32 @@ Potion::Potion()
     Matrix4f * transMatrix=new Matrix4f();
     transMatrix->translation(position.x,position.y,position.z);
 
-    //Check type
-    MaterialIndex materialType;
-    MeshIndex meshType;
-
-    switch(type){
-        case iCOIN:
-            materialType=mCRYSTAL;
-            meshType=COIN;
-        break;
-        case iPOTION:
-            materialType=mPOTION;
-            meshType=POTION;
-        break;
-    }
-
-
     root=new NodeSceneGraph();
     root->add(transMatrix);
     root->add(animationMatrix);
-    root->add(materialCollect->getMaterial(materialType));
-    root->add(meshCollect->getMesh(meshType));
+    root->add(materialCollect->getMaterial(potionFeatures["material"].GetString()));
+    root->add(meshCollect->getMesh(potionFeatures["geometry"].GetString()));
     currentTime=SDL_GetTicks();
 
     soundTake=soundCollect->getSound(sCoin);
 }
 
-Potion::~Potion()
-{
-    //dtor
+//**********************************************************************//
+
+Potion::~Potion(){
+    delete root;
+    delete rotation;
 }
 
-Potion(vec3f aPosition,int aValue,ItemIndex aType){
-
-}
-
+//**********************************************************************//
 
 void Potion::visualization(Context & cv){
-
+    if(position.x>cv.minVisualPosition.x && position.x<cv.maxVisualPosition.x
+       && position.y>cv.minVisualPosition.y && position.y<cv.maxVisualPosition.y)
+        root->visualization(cv);
 }
+
+//**********************************************************************//
 
 void Potion::updateState(GameState & gameState){
     float time=gameState.time;

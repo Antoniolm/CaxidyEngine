@@ -21,6 +21,15 @@
 #define POTION_H
 
 #include "item.h"
+#include "../GraphicEngine/object3d.h"
+#include "../GraphicEngine/nodescenegraph.h"
+#include "../GraphicEngine/material/material.h"
+#include "../GraphicEngine/matrix/matrix4f.h"
+#include "../GraphicEngine/matrix/matrix4fdynamic.h"
+#include "../GraphicEngine/collection/meshcollection.h"
+#include "../GraphicEngine/collection/soundcollection.h"
+#include "../GraphicEngine/matrix/axisrotation.h"
+#include "../GraphicEngine/sound/sound.h"
 
 class Potion : public Item
 {
@@ -32,7 +41,7 @@ class Potion : public Item
         *    @param aType -> the type of item that our item will be
         */
         //////////////////////////////////////////////////////////////////////////
-        Potion(vec3f aPosition,int aValue);
+        Potion(const Value & potionFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1502369539 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1502884294 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4870,6 +4870,8 @@
 	"../VideoGame/respawnvoxel.h"
 	"../VideoGame/slidetrap.h"
 	"../VideoGame/jumpbutton.h"
+	"../VideoGame/item.h"
+	"../VideoGame/potion.h"
 
 1496919850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
@@ -5641,7 +5643,7 @@
 	"region.h"
 	"gamestate.h"
 
-1502730615 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1502883781 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"../VideoGame/itemlist.h"
@@ -5654,7 +5656,7 @@
 	<vector>
 	"../lib/rapidjson/document.h"
 
-1496953233 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
+1502883431 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/material/material.h"
@@ -5920,7 +5922,7 @@
 	<iostream>
 	"equipment.h"
 
-1502792627 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
+1502814474 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
 1502812558 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
@@ -5929,4 +5931,16 @@
 
 1502810612 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
+
+1502884439 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
+	"item.h"
+	"../GraphicEngine/object3d.h"
+	"../GraphicEngine/nodescenegraph.h"
+	"../GraphicEngine/material/material.h"
+	"../GraphicEngine/matrix/matrix4f.h"
+	"../GraphicEngine/matrix/matrix4fdynamic.h"
+	"../GraphicEngine/collection/meshcollection.h"
+	"../GraphicEngine/collection/soundcollection.h"
+	"../GraphicEngine/matrix/axisrotation.h"
+	"../GraphicEngine/sound/sound.h"
 
