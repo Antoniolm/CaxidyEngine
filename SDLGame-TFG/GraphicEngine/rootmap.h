@@ -71,6 +71,7 @@
 #include "../VideoGame/jumpbutton.h"
 #include "../VideoGame/item.h"
 #include "../VideoGame/potion.h"
+#include "../VideoGame/coin.h"
 
 
 using namespace std;
@@ -80,7 +81,6 @@ class Mate;
 class Npc;
 class Enemy;
 class EnemyList;
-class ItemList;
 class ParticleSystem;
 class ProjectileSystem;
 class Soul;
@@ -101,6 +101,7 @@ class LoaderThread;
 class MovieScreen;
 class Item;
 class Potion;
+class Coin;
 
 class RootMap : public Object3D
 {
@@ -298,7 +299,6 @@ class RootMap : public Object3D
         Notification * title;                       // Title of the map
         ObjectScene * background;                   // Background of the map
         EnemyList * enemyList;                      // List of enemies in the map
-        ItemList *itemList;                         // List of items in the map
         Sound * backSound;                          // back sound of the map
         Hero * hero;                                // Hero in the map
         Mate * mate;                                // Mate in the map

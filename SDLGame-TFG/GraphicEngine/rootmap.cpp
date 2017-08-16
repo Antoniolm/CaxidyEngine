@@ -19,7 +19,6 @@
 
 #include "rootmap.h"
 #include "../VideoGame/enemylist.h"
-#include "../VideoGame/itemlist.h"
 #include "mesh/objectgroup.h"
 #include <stdlib.h>     /* srand, rand */
 
@@ -45,7 +44,6 @@ RootMap::~RootMap()
     delete loader;
     delete backSound;
     delete enemyList;
-    delete itemList;
     delete hero;
     delete mate;
     delete title;
@@ -324,6 +322,15 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
+    // Add coin to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading coins >"<< endl;
+    const rapidjson::Value & coinFeature=document["coin"];
+    for(unsigned currentCoin=0;currentCoin<coinFeature.Size();currentCoin++){
+        items.push_back(new Coin(coinFeature[currentCoin]));
+    }
+
+    /////////////////////////////////////////
     // Add voxelGroup to our map
     /////////////////////////////////////////
     cout<< "< Game is loading the scene >"<< endl;
@@ -368,14 +375,6 @@ void RootMap::initialize(string fileMap){
     objNode->add(materialCollect->getMaterial(document["bkgdMaterial"].GetString()));
     objNode->add(meshCollect->getMesh(BACKGROUND));
     background= new ObjectScene(objNode);
-
-    /////////////////////////////////////////
-    // Add coins to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading items>"<< endl;
-    const rapidjson::Value & coinValue=document["items"];
-    itemList=new ItemList(coinValue);
-
 
     /////////////////////////////////////////
     // Add npcs of our map
@@ -504,9 +503,6 @@ void RootMap::visualization(Context & cv){
     //Draw enemies
     enemyList->visualization(cv);
 
-    //Draw items
-    itemList->visualization(cv);
-
     //Draw particles system
     for(unsigned i=0;i<particleSystem.size();i++){
         position=vec3f(particleSystem[i]->getPosition());
@@ -632,8 +628,6 @@ void RootMap::updateState(GameState & gameState){
         //Update the Scene
         for(unsigned i=0;i<objectGroup.size();i++)
             objectGroup[i]->updateState(gameState);
-        //Update the Scene
-        itemList->updateState(gameState);
 
         //Update particles system
         for(unsigned i=0;i<particleSystem.size();i++){
