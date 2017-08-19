@@ -93,8 +93,10 @@ void Weapon::updateState(GameState & gameState){
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 
     if(distance<=0.4){
-        notTake=false;
-        soundTake->play();
+        if(gameState.inventoryMenu->addEquip(this)){
+            notTake=false;
+            soundTake->play();
+        }
     }
 
     //Animation
