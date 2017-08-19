@@ -50,6 +50,7 @@ RootMap::~RootMap()
     delete endMapRegion;
     delete movie;
 
+
     for(unsigned i=doors.size()+traps.size()+rottens.size()
         +movables.size()+slides.size();i<objs.size();i++)
         deleteObject3d(objs[i]);
@@ -107,6 +108,7 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<items.size();i++)
         delete items[i];
+    cout<< "its me"<<endl;
 
 }
 

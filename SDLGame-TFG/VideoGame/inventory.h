@@ -70,6 +70,8 @@ class Inventory
         //////////////////////////////////////////////////////////////////////////
         bool removeItem(int x,int y);
 
+        Equipment * getItem(int x,int y);
+
         pair<int,int> emptySlot();
 
     protected:

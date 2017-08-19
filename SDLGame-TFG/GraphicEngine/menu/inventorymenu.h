@@ -34,7 +34,6 @@
 #include "profile.h"
 #include "mainmenu.h"
 #include "collection/meshcollection.h"
-#include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
 #include "../VideoGame/inventory.h"
 #include <string>
@@ -73,6 +72,9 @@ class InventoryMenu : public Menu
 
         bool addEquip(Equipment * aEquip);
 
+        //Add method of change the current info of the equip selected when
+        //the user change the selection
+
     protected:
 
     private:
@@ -85,6 +87,7 @@ class InventoryMenu : public Menu
         int currentItemX;
         int currentItemY;
         Inventory * inventory;               // Logistic inventory of the interface
+        vector< vector< Material * > > itemView;
 };
 
 #endif // INVENTORYMENU_H

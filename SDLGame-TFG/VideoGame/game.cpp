@@ -102,6 +102,7 @@ Game::~Game(){
     delete window;
     delete notiGamePad;
     delete normalShader;
+    delete heroState;
 
     delete shadowManager;
     delete options;
