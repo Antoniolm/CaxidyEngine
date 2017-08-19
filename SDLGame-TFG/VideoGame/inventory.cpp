@@ -67,3 +67,23 @@ bool Inventory::removeItem(int x,int y){
     return result;
 }
 
+//**********************************************************************//
+
+pair<int,int> Inventory::emptySlot(){
+    pair<int,int> result(-1,-1);
+    bool  isEmpty=false;
+
+    for(int i=0;i<items.size() && !isEmpty;i++){
+        for(int j=0;j<items[i].size() && !isEmpty;j++)
+        if(items[i][j]==0){
+            result.first=j;
+            result.second=i;
+            isEmpty=true;
+
+        }
+    }
+
+
+    return result;
+}
+
