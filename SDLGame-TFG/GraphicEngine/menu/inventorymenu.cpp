@@ -193,3 +193,19 @@ void InventoryMenu::updateState(GameState & gameState){
         currentTime+=time-currentTime;
     }
 }
+
+//**********************************************************************//
+
+bool InventoryMenu::addEquip(Equipment * aEquip){
+    bool result=false;
+
+    pair<int,int> positionSlot = inventory->emptySlot();
+    if( positionSlot.first!=-1){
+        result=true;
+        inventory->addItem(positionSlot.first,positionSlot.second,aEquip);
+
+        //Change texture
+    }
+
+    return result;
+}

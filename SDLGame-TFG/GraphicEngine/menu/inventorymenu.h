@@ -71,6 +71,8 @@ class InventoryMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
 
+        bool addEquip(Equipment * aEquip);
+
     protected:
 
     private:
