@@ -5656,7 +5656,7 @@
 	<vector>
 	"../lib/rapidjson/document.h"
 
-1502900927 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
+1503133655 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
 1488053514 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
@@ -5715,13 +5715,14 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1502369894 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1503133937 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"weapon.h"
 	"projectile.h"
 
-1502810872 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
+1503133568 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
 	"equipment.h"
+	"item.h"
 	"../GraphicEngine/material/material.h"
 	"../GraphicEngine/matrix/matrix4f.h"
 	"../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -5770,7 +5771,7 @@
 1502797801 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
-1502897526 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
+1503133659 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
 	"item.h"
 
 1502885862 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\itemlist.cpp
@@ -5791,7 +5792,7 @@
 1502125219 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.cpp
 	"spiketrap.h"
 
-1491993515 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
+1503133551 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
 
 1501081642 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
@@ -5917,9 +5918,8 @@
 1502814474 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1502900747 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
-	"../GraphicEngine/object3d.h"
-	"../GraphicEngine/nodescenegraph.h"
+1503134850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+	"item.h"
 
 1502810612 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"

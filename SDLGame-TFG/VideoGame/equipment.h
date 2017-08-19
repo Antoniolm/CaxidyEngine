@@ -22,10 +22,9 @@
 #ifndef EQUIPMENT_H
 #define EQUIPMENT_H
 
-#include "../GraphicEngine/object3d.h"
-#include "../GraphicEngine/nodescenegraph.h"
+#include "item.h"
 
-class Equipment : public Object3D
+class Equipment : public Item
 {
     public:
         //////////////////////////////////////////////////////////////////////////
@@ -59,7 +58,6 @@ class Equipment : public Object3D
 
 
     protected:
-        NodeSceneGraph * root;  // Root of the weapon
 
     private:
 };

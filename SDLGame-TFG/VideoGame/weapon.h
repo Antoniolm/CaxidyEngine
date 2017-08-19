@@ -21,6 +21,7 @@
 #define WEAPON_H
 
 #include "equipment.h"
+#include "item.h"
 #include "../GraphicEngine/material/material.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -37,6 +38,12 @@ enum WeaponType{
 class Weapon : public Equipment
 {
     public:
+
+        //////////////////////////////////////////////////////////////////////////
+        /** Constructor */
+        //////////////////////////////////////////////////////////////////////////
+        Weapon(const Value & weaponFeatures);
+
         //////////////////////////////////////////////////////////////////////////
         /**
         *    Constructor
@@ -96,7 +103,7 @@ class Weapon : public Equipment
         *    \return WeaponType
         */
         //////////////////////////////////////////////////////////////////////////
-        WeaponType getType();
+        WeaponType getWeaponType();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -111,7 +118,7 @@ class Weapon : public Equipment
 
     private:
         float damage;           // Damage of the weapon
-        WeaponType type;        // Type of the weapon
+        WeaponType typeWeapon;        // Type of the weapon
 };
 
 #endif // WEAPON_H

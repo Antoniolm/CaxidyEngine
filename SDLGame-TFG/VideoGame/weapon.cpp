@@ -19,10 +19,43 @@
 
 #include "weapon.h"
 
+Weapon::Weapon(const Value & weaponFeatures){
+    position=vec4f(weaponFeatures["position"][0].GetFloat(),weaponFeatures["position"][1].GetFloat(),weaponFeatures["position"][2].GetFloat(),1.0f);
+    value=weaponFeatures["value"].GetInt();
+    typeWeapon=(WeaponType)weaponFeatures["type"].GetInt();
+
+    notTake=true;
+    type=iWEAPON;
+
+    MeshCollection * meshCollect= MeshCollection::getInstance();
+    MaterialCollection * materialCollect= MaterialCollection::getInstance();
+    SoundCollection * soundCollect = SoundCollection::getInstance();
+
+    animationMatrix=new Matrix4f();
+    animationMatrix->identity();
+
+    rotation=new AxisRotation(100,0.0,1.0,0.0);
+
+    Matrix4f * transMatrix=new Matrix4f();
+    transMatrix->translation(position.x,position.y,position.z);
+
+    root=new NodeSceneGraph();
+    root->add(transMatrix);
+    root->add(animationMatrix);
+    root->add(materialCollect->getMaterial(weaponFeatures["material"].GetString()));
+    root->add(meshCollect->getMesh(weaponFeatures["geometry"].GetString()));
+    currentTime=SDL_GetTicks();
+
+    soundTake=soundCollect->getSound(sCoin);
+}
+
+//**********************************************************************//
+
 Weapon::Weapon(vec3f aPos,WeaponType atype,float aDamage,MeshIndex mesh,MaterialIndex material)
 {
     damage=aDamage;
-    type=atype;
+    typeWeapon=atype;
+    type=iWEAPON;
     position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -71,15 +104,15 @@ float Weapon::getDamage(){
 
 //**********************************************************************//
 
-WeaponType Weapon::getType(){
-    return type;
+WeaponType Weapon::getWeaponType(){
+    return typeWeapon;
 }
 
 //**********************************************************************//
 
 void Weapon::setWeapon(const Weapon & weapon){
     damage=weapon.damage;
-    type=weapon.type;
+    typeWeapon=weapon.typeWeapon;
     root=weapon.root;
 }
 

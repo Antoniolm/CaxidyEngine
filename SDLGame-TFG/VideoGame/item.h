@@ -101,7 +101,7 @@ class Item : public Object3D
         *    \return ItemIndex
         */
         //////////////////////////////////////////////////////////////////////////
-        ItemIndex getType();
+        ItemIndex getType2();
 
     protected:
         int value;                  // Value of the item
