@@ -331,6 +331,15 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
+    // Add weapon to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading weapons >"<< endl;
+    const rapidjson::Value & weaponFeature=document["weapon"];
+    for(unsigned currentWeapon=0;currentWeapon<weaponFeature.Size();currentWeapon++){
+        items.push_back(new Weapon(weaponFeature[currentWeapon]));
+    }
+
+    /////////////////////////////////////////
     // Add voxelGroup to our map
     /////////////////////////////////////////
     cout<< "< Game is loading the scene >"<< endl;

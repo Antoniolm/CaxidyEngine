@@ -54,7 +54,7 @@ class Weapon : public Equipment
         *    @param material -> the material that will have our weapon
         */
         //////////////////////////////////////////////////////////////////////////
-        Weapon(vec3f aPos,WeaponType atype,float aDamage,MeshIndex mesh,MaterialIndex material);
+        Weapon(vec3f aPos,WeaponType atype,float aDamage,string mesh,string material);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

@@ -72,6 +72,7 @@
 #include "../VideoGame/item.h"
 #include "../VideoGame/potion.h"
 #include "../VideoGame/coin.h"
+#include "../VideoGame/weapon.h"
 
 
 using namespace std;
@@ -102,6 +103,7 @@ class MovieScreen;
 class Item;
 class Potion;
 class Coin;
+class Weapon;
 
 class RootMap : public Object3D
 {

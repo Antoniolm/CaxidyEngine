@@ -230,6 +230,14 @@
                 "value":1}
     ],
 
+     "weapon":[
+        {   "position":[3.5,2.5,-4.5],
+                "type":0,
+                "material":"mSWORD", 
+                "geometry":"SWORD", 
+                "value":-25}
+    ],
+
     "souls":[
             {   "position":[202.5,1.5,-4] },
             {   "position":[175.5,1.5,-14.5] }

@@ -46,9 +46,9 @@ Hero::Hero(vec3f aPos)
     //////////////////////////////////////////////////////
     /////           Initialize weapons               /////
     //////////////////////////////////////////////////////
-    currentWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,SWORD,mSWORD);
-    meleeWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,SWORD,mSWORD);
-    rangedWeapon=new Weapon(vec3f(0.0,-0.4,0.0),RANGED,-20,CBOW,mARCHENEMY);
+    currentWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
+    meleeWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
+    rangedWeapon=new Weapon(vec3f(0.0,-0.4,0.0),RANGED,-20,"CBOW","mARCHENEMY");
 
 
     //////////////////////////////////////////////////////

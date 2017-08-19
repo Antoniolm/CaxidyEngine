@@ -21,7 +21,7 @@
 
 Weapon::Weapon(const Value & weaponFeatures){
     position=vec4f(weaponFeatures["position"][0].GetFloat(),weaponFeatures["position"][1].GetFloat(),weaponFeatures["position"][2].GetFloat(),1.0f);
-    value=weaponFeatures["value"].GetInt();
+    damage=weaponFeatures["value"].GetInt();
     typeWeapon=(WeaponType)weaponFeatures["type"].GetInt();
 
     notTake=true;
@@ -51,7 +51,7 @@ Weapon::Weapon(const Value & weaponFeatures){
 
 //**********************************************************************//
 
-Weapon::Weapon(vec3f aPos,WeaponType atype,float aDamage,MeshIndex mesh,MaterialIndex material)
+Weapon::Weapon(vec3f aPos,WeaponType atype,float aDamage,string mesh,string material)
 {
     damage=aDamage;
     typeWeapon=atype;
@@ -87,7 +87,19 @@ void Weapon::visualization(Context & cv){
 //**********************************************************************//
 
 void Weapon::updateState(GameState & gameState){
+    float time=gameState.time;
+    Hero * hero=gameState.rootMap->getHero();
+    vec3f posHero=hero->getPosition();
+    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 
+    if(distance<=0.4){
+        notTake=false;
+        soundTake->play();
+    }
+
+    //Animation
+    animationMatrix->setMatrix(rotation->updateState(time-currentTime).getMatrix());
+    currentTime+=time-currentTime;
 }
 
 //**********************************************************************//

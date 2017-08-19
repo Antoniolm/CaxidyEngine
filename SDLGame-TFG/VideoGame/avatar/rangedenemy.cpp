@@ -51,7 +51,7 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     //////////////////////////////////////////////////////
     /////           Initialize weapon               /////
     //////////////////////////////////////////////////////
-    weapon=new Weapon(vec3f(0.0,-0.4,0.0),RANGED,-25,CBOW,mARCHENEMY);
+    weapon=new Weapon(vec3f(0.0,-0.4,0.0),RANGED,-25,"CBOW","mARCHENEMY");
 
     //////////////////////////////////////////////////////
     /////              All the sounds                /////
