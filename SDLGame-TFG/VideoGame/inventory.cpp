@@ -44,3 +44,26 @@ unsigned Inventory::getSizeX(){
 unsigned Inventory::getSizeY(){
     return sizeY;
 }
+
+//**********************************************************************//
+
+void Inventory::addItem(int x,int y,Equipment * aEquip){
+    items[y][x]=aEquip;
+}
+
+//**********************************************************************//
+
+bool Inventory::removeItem(int x,int y){
+    bool result=false;
+
+    if(items[y][x]!=0){
+        Equipment * equip=items[y][x];
+
+        items[y][x]=0;
+        delete equip;
+        result=true;
+    }
+
+    return result;
+}
+

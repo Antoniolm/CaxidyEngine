@@ -54,6 +54,10 @@ class Inventory
         //////////////////////////////////////////////////////////////////////////
         unsigned getSizeY();
 
+        void addItem(int x,int y,Equipment * aEquip);
+
+        bool removeItem(int x,int y);
+
     protected:
 
     private:
