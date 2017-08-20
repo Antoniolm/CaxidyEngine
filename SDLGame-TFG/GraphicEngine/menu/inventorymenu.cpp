@@ -225,10 +225,10 @@ NodeSceneGraph * InventoryMenu::createMatrixItems(){
     }
 
     Matrix4f * selectedPositionItem=new Matrix4f();
-    selectedPositionItem->translation(-0.275,0.442,0.8);
+    selectedPositionItem->translation(-0.272,0.437,0.8);
 
     Matrix4f * scaleItem=new Matrix4f();
-    scaleItem->scale(0.075,0.515,0.1);
+    scaleItem->scale(0.074,0.48,0.1);
 
     NodeSceneGraph * items0x0=new NodeSceneGraph(false,true);
     items0x0->add(selectedPositionItem);
@@ -236,16 +236,74 @@ NodeSceneGraph * InventoryMenu::createMatrixItems(){
     items0x0->add(itemView[0][0]);
     items0x0->add(meshCollect->getMesh(TEXT));
 
-    //0.208f,0.288f,0.0f
+    /////////////////////////
+    // Item[0][1]
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(-0.062,0.437,0.8);
+
     NodeSceneGraph * items0x1=new NodeSceneGraph(false,true);
     items0x1->add(selectedPositionItem);
     items0x1->add(scaleItem);
     items0x1->add(itemView[0][1]);
     items0x1->add(meshCollect->getMesh(TEXT));
 
+    /////////////////////////
+    // Item[0][2]
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(0.142,0.437,0.8);
+
+    NodeSceneGraph * items0x2=new NodeSceneGraph(false,true);
+    items0x2->add(selectedPositionItem);
+    items0x2->add(scaleItem);
+    items0x2->add(itemView[0][2]);
+    items0x2->add(meshCollect->getMesh(TEXT));
+
+    /////////////////////////
+    // Item[0][3]
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(0.345,0.437,0.8);
+
+    NodeSceneGraph * items0x3=new NodeSceneGraph(false,true);
+    items0x3->add(selectedPositionItem);
+    items0x3->add(scaleItem);
+    items0x3->add(itemView[0][3]);
+    items0x3->add(meshCollect->getMesh(TEXT));
+
+    /////////////////////////
+    // Item[0][4]
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(0.555,0.437,0.8);
+
+    NodeSceneGraph * items0x4=new NodeSceneGraph(false,true);
+    items0x4->add(selectedPositionItem);
+    items0x4->add(scaleItem);
+    items0x4->add(itemView[0][4]);
+    items0x4->add(meshCollect->getMesh(TEXT));
+
+    /////////////////////////
+    // Item[0][5]
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(0.757,0.437,0.8);
+
+    NodeSceneGraph * items0x5=new NodeSceneGraph(false,true);
+    items0x5->add(selectedPositionItem);
+    items0x5->add(scaleItem);
+    items0x5->add(itemView[0][5]);
+    items0x5->add(meshCollect->getMesh(TEXT));
+
+
     NodeSceneGraph * matrixItems=new NodeSceneGraph(false,true);
     matrixItems->add(items0x0);
     matrixItems->add(items0x1);
+    matrixItems->add(items0x2);
+    matrixItems->add(items0x3);
+    matrixItems->add(items0x4);
+    matrixItems->add(items0x5);
 
     return matrixItems;
 }
