@@ -4222,29 +4222,29 @@
 	"weapon.h"
 	<vector>
 
-1492343281 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\animationlist.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\animationlist.cpp
 	"animationlist.h"
 
-1492343246 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\animationlist.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\animationlist.h
 	<vector>
 	"scriptlmd.h"
 
-1496952287 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptlmd.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptlmd.h
 	"scriptanimation.h"
 	"matrix/matrix4fdynamic.h"
 	"matrix/matrixscript.h"
 	<vector>
 
-1495487126 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptanimation.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptanimation.h
 	"matrix/matrix4f.h"
 
-1496927813 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4f.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4f.h
 	"GL/glew.h"
 	<math.h>
 	<iostream>
 	"structdata.h"
 
-1374505882 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\glew-1.10.0\include\\gl\glew.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\glew-1.10.0\include\\gl\glew.h
 	<stddef.h>
 	<inttypes.h>
 	<stdint.h>
@@ -4252,76 +4252,76 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1489663151 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\structdata.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\structdata.h
 	<math.h>
 	<iostream>
 
-1496927815 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4fdynamic.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4fdynamic.h
 	"matrix4f.h"
 
-1496928067 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixscript.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixscript.h
 	<vector>
 	"matrix4fdynamic.h"
 
-1493668501 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptanimation.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptanimation.cpp
 	"scriptanimation.h"
 
-1491570220 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptlmd.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\animation\scriptlmd.cpp
 	"scriptlmd.h"
 
-1489171897 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.cpp
 	"collection.h"
 
-1496952203 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.h
 	<map>
 	<vector>
 	<string>
 
-1502283075 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
 	"materialcollection.h"
 	"material/material.h"
 
-1502226291 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.h
 	<vector>
 	<map>
 	"collection.h"
 	"collection.cpp"
 	<string>
 
-1489171897 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.cpp
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.cpp
 	"collection.h"
 
-1496928767 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.h
 	"matrix/structdata.h"
 	<string>
 	"./collection/materialcollection.h"
 	"texture.h"
 	"context/shader.h"
 
-1496928442 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.h
 	<string>
 	"GL/glew.h"
 	"stb_image.h"
 	<iostream>
 
-1489867679 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.h
 	<stdio.h>
 
-1496947296 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\shader.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\shader.h
 	"GL/glew.h"
 	<string>
 	<iostream>
 	<fstream>
 
-1502219442 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.cpp
 	"meshcollection.h"
 
-1502219403 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.h
 	"mesh/mesh.h"
 	"collection.h"
 	"collection.cpp"
 
-1496925918 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\mesh.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\mesh.h
 	<vector>
 	<string>
 	"context/context.h"
@@ -4339,7 +4339,7 @@
 	"context/shader.h"
 	"file_obj.h"
 
-1496951493 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\context.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\context.h
 	"matrixstack.h"
 	"matrix/structdata.h"
 	"./collection/materialcollection.h"
@@ -4349,12 +4349,12 @@
 	"shader.h"
 	<vector>
 
-1496951393 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\matrixstack.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\matrixstack.h
 	"matrix/matrix4f.h"
 	<vector>
 	"shader.h"
 
-1496921347 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\object3d.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\object3d.h
 	"context/context.h"
 	"matrix/structdata.h"
 	"controller/controller.h"
@@ -4362,10 +4362,10 @@
 	"controller/controllermanager.h"
 	"SDL2/SDL.h"
 
-1502728025 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.h
 	"SDL2/SDL.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -4396,12 +4396,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_main.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_stdinc.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -4428,26 +4428,26 @@
 	<stdlib.h>
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_config.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_platform.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\begin_code.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\begin_code.h
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\close_code.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\close_code.h
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_assert.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_atomic.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
@@ -4455,7 +4455,7 @@
 	<libkern/OSAtomic.h>
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_audio.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -4465,24 +4465,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_error.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_endian.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_mutex.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_thread.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -4491,18 +4491,18 @@
 	<process.h>
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_rwops.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_clipboard.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_cpuinfo.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -4514,7 +4514,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_events.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -4528,7 +4528,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_video.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -4536,11 +4536,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_pixels.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_pixels.h
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_rect.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -4548,7 +4548,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_surface.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -4557,11 +4557,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_blendmode.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_keyboard.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -4569,38 +4569,38 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_keycode.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_scancode.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_mouse.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_joystick.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_gamecontroller.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_quit.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_gesture.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -4608,60 +4608,60 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_touch.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_filesystem.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_haptic.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_hints.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_loadso.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_log.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_messagebox.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_power.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_render.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_system.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -4669,41 +4669,41 @@
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_timer.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_version.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1486403710 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.h
 	"controller.h"
 
-1496932122 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controllermanager.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controllermanager.h
 	"controller.h"
 	"keyboardcontroller.h"
 	"gamepadcontroller.h"
 
-1496932169 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\gamepadcontroller.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\gamepadcontroller.h
 	"controller.h"
 	<iostream>
 
-1496951408 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\materialstack.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\materialstack.h
 	"material/material.h"
 	<vector>
 
-1496930969 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\light.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\light.h
 	"matrix/structdata.h"
 	"context/shader.h"
 	<string>
 	<cstdlib>
 	"../lib/rapidjson/document.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\document.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\document.h
 	"reader.h"
 	"internal/meta.h"
 	"internal/strfunc.h"
@@ -4714,7 +4714,7 @@
 	<iterator>
 	<utility>
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\reader.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\reader.h
 	"allocators.h"
 	"stream.h"
 	"encodedstream.h"
@@ -4730,10 +4730,10 @@
 	"rapidjson/reader.h"
 	"error/error.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\allocators.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\allocators.h
 	"rapidjson.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\rapidjson.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\rapidjson.h
 	<cstdlib>
 	<cstring>
 	"rapidjson/..."
@@ -4746,67 +4746,67 @@
 	"rapidjson/..."
 	<cassert>
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\msinttypes\stdint.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\msinttypes\stdint.h
 	<stdint.h>
 	<limits.h>
 	<wchar.h>
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\msinttypes\inttypes.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\msinttypes\inttypes.h
 	"stdint.h"
 	<inttypes.h>
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\stream.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\stream.h
 	"rapidjson.h"
 	"encodings.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\encodings.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\encodings.h
 	"rapidjson.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\encodedstream.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\encodedstream.h
 	"stream.h"
 	"memorystream.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\memorystream.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\memorystream.h
 	"stream.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\meta.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\meta.h
 	"../rapidjson.h"
 	<type_traits>
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\stack.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\stack.h
 	"../allocators.h"
 	"swap.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\swap.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\swap.h
 	"../rapidjson.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\strtod.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\strtod.h
 	"ieee754.h"
 	"biginteger.h"
 	"diyfp.h"
 	"pow10.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\ieee754.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\ieee754.h
 	"../rapidjson.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\biginteger.h
-	"../rapidjson.h"
-	<intrin.h>
-
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\diyfp.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\biginteger.h
 	"../rapidjson.h"
 	<intrin.h>
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\pow10.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\diyfp.h
+	"../rapidjson.h"
+	<intrin.h>
+
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\pow10.h
 	"../rapidjson.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\error\error.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\error\error.h
 	"../rapidjson.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\strfunc.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\internal\strfunc.h
 	"../stream.h"
 
-1382591223 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_opengl.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_opengl.h
 	"SDL_config.h"
 	<windows.h>
 	<OpenGL/gl.h>
@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1503136120 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4875,7 +4875,7 @@
 	"../VideoGame/coin.h"
 	"../VideoGame/weapon.h"
 
-1496919850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
 	"context/context.h"
 	"matrix/matrix4fdynamic.h"
@@ -4884,29 +4884,29 @@
 	<vector>
 	"SDL2/SDL.h"
 
-1496928814 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\directionallight.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\directionallight.h
 	"light.h"
 
-1496931004 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\pointlight.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\pointlight.h
 	"light.h"
 
-1496927779 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\linearmovement.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\linearmovement.h
 	"matrix4fdynamic.h"
 	"structdata.h"
 	"SDL2/SDL.h"
 
-1496927748 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\axisrotation.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\axisrotation.h
 	"matrix4fdynamic.h"
 	"structdata.h"
 
-1478959329 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixstatic.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixstatic.h
 	"matrix4fdynamic.h"
 
-1496928201 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\oscillaterotation.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\oscillaterotation.h
 	"matrix4fdynamic.h"
 	"SDL2/SDL.h"
 
-1496921721 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particlesystem.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particlesystem.h
 	"object3d.h"
 	"nodescenegraph.h"
 	"context/context.h"
@@ -4917,7 +4917,7 @@
 	<string>
 	"../lib/rapidjson/document.h"
 
-1496921558 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particle.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particle.h
 	"object3d.h"
 	"mesh/mesh.h"
 	"context/context.h"
@@ -4926,13 +4926,13 @@
 	"collection/materialcollection.h"
 	<stdlib.h>
 
-1496921343 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\objectscene.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\objectscene.h
 	"object3d.h"
 	"matrix/matrix4f.h"
 	"collection/materialcollection.h"
 	"matrix/structdata.h"
 
-1502133976 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
 	"avatar.h"
 	"avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -4954,24 +4954,24 @@
 	<stdlib.h>
 	<vector>
 
-1496954921 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatar.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatar.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
 
-1496955132 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatarmove.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatarmove.h
 	"avatar.h"
 	"../GraphicEngine/matrix/matrix4f.h"
 	"../GraphicEngine/matrix/acceleratedmovement.h"
 	"../GraphicEngine/matrix/linearmovement.h"
 	"../GraphicEngine/objectscene.h"
 
-1496927565 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\acceleratedmovement.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\acceleratedmovement.h
 	"matrix4fdynamic.h"
 	"structdata.h"
 	"SDL2/SDL.h"
 
-1502189024 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.h
 	"sound/sound.h"
 	"sound/effect.h"
 	"sound/music.h"
@@ -4981,13 +4981,13 @@
 	"collection.h"
 	"collection.cpp"
 
-1496925420 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\sound.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\sound.h
 	"SDL2/SDL_mixer.h"
 	<string>
 	<iostream>
 	<unistd.h>
 
-1451805391 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_mixer.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_mixer.h
 	"SDL_stdinc.h"
 	"SDL_rwops.h"
 	"SDL_audio.h"
@@ -4996,15 +4996,15 @@
 	"begin_code.h"
 	"close_code.h"
 
-1496925297 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\effect.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\effect.h
 	"sound.h"
 	<unistd.h>
 
-1496925317 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\music.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\music.h
 	"sound.h"
 	<unistd.h>
 
-1496923975 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\text.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\text.h
 	"object3d.h"
 	"matrix/structdata.h"
 	"context/shader.h"
@@ -5019,12 +5019,12 @@
 	"material/texture.h"
 	"material/material.h"
 
-1454366533 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_ttf.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\sdl2\include\\sdl2\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1496953930 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soul.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soul.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5034,7 +5034,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../lib/rapidjson/document.h"
 
-1496959697 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/material/material.h"
@@ -5048,7 +5048,7 @@
 	"../GraphicEngine/animation/animationlist.h"
 	"avatar.h"
 
-1496959505 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
 	"../GraphicEngine/ia/ianpc.h"
 	"avatar.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -5059,11 +5059,11 @@
 	"../lib/rapidjson/document.h"
 	"SDL2/SDL_ttf.h"
 
-1496932043 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\ianpc.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\ianpc.h
 	<vector>
 	<string>
 
-1502124006 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.h
 	"avatar.h"
 	"avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -5080,7 +5080,7 @@
 	<stdlib.h>
 	<vector>
 
-1496953622 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectilesystem.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectilesystem.h
 	"projectile.h"
 	"../GraphicEngine/nodescenegraph.h"
 	<string>
@@ -5089,7 +5089,7 @@
 	<list>
 	"../lib/rapidjson/document.h"
 
-1496953386 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.h
 	"avatar/avatar.h"
 	"avatar/avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -5109,7 +5109,7 @@
 	"enemylist.h"
 	<vector>
 
-1496952429 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\enemylist.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\enemylist.h
 	"avatar/npc.h"
 	"avatar/hero.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5117,7 +5117,7 @@
 	"../lib/rapidjson/document.h"
 	<vector>
 
-1496954424 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soulcarrier.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soulcarrier.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5128,7 +5128,7 @@
 	"../lib/rapidjson/document.h"
 	"soul.h"
 
-1496952417 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\door.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\door.h
 	"../GraphicEngine/objectscene.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5139,17 +5139,17 @@
 	"soulcarrier.h"
 	"../lib/rapidjson/document.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\stringbuffer.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\stringbuffer.h
 	"stream.h"
 	"internal/stack.h"
 	<utility>
 	"internal/stack.h"
 
-1480306734 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\filereadstream.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\lib\rapidjson\filereadstream.h
 	"stream.h"
 	<cstdio>
 
-1495487229 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.h
 	"objectscene.h"
 	"../lib/rapidjson/document.h"
 	"nodescenegraph.h"
@@ -5158,7 +5158,7 @@
 	"collection/materialcollection.h"
 	"collection/meshcollection.h"
 
-1495487235 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxel.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxel.h
 	"objectscene.h"
 	"../lib/rapidjson/document.h"
 	"nodescenegraph.h"
@@ -5167,7 +5167,7 @@
 	"collection/materialcollection.h"
 	"collection/meshcollection.h"
 
-1495487241 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxelgroup.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxelgroup.h
 	"objectscene.h"
 	"../lib/rapidjson/document.h"
 	"nodescenegraph.h"
@@ -5176,7 +5176,7 @@
 	"collection/materialcollection.h"
 	"collection/meshcollection.h"
 
-1496924240 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\textregion.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\textregion.h
 	"region.h"
 	"matrix/structdata.h"
 	"SDL2/SDL.h"
@@ -5185,10 +5185,10 @@
 	"gamestate.h"
 	"../lib/rapidjson/document.h"
 
-1496921945 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\region.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\region.h
 	"matrix/structdata.h"
 
-1502728512 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.h
 	"controller/controllermanager.h"
 	"./menu/menu.h"
 	"./menu/pausemenu.h"
@@ -5203,10 +5203,10 @@
 	"rootmap.h"
 	"camera.h"
 
-1502896518 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\menu.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\menu.h
 	"object3d.h"
 
-1496926618 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.h
 	"object3d.h"
 	"rootmap.h"
 	"context/context.h"
@@ -5223,11 +5223,11 @@
 	"collection/soundcollection.h"
 	<string>
 
-1496921858 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\profile.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\profile.h
 	<iostream>
 	"SDL2/SDL.h"
 
-1501586194 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.h
 	"savedmanager.h"
 	"object3d.h"
 	"rootmap.h"
@@ -5245,7 +5245,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1496922353 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
 	"../lib/rapidjson/document.h"
 	"../lib/rapidjson/stringbuffer.h"
 	"../lib/rapidjson/filereadstream.h"
@@ -5253,7 +5253,7 @@
 	<fstream>
 	<sstream>
 
-1496926414 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.h
 	"object3d.h"
 	"rootmap.h"
 	"context/context.h"
@@ -5270,7 +5270,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1496926396 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\creditscreen.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\creditscreen.h
 	"object3d.h"
 	"rootmap.h"
 	"context/context.h"
@@ -5287,7 +5287,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1502899865 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.h
 	"object3d.h"
 	"rootmap.h"
 	"context/context.h"
@@ -5306,7 +5306,7 @@
 	"window.h"
 	<cstdlib>
 
-1496921336 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\optionmanager.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\optionmanager.h
 	"../lib/rapidjson/document.h"
 	"../lib/rapidjson/stringbuffer.h"
 	"../lib/rapidjson/filereadstream.h"
@@ -5314,7 +5314,7 @@
 	<fstream>
 	<sstream>
 
-1496925037 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\window.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\window.h
 	"GL/glew.h"
 	"SDL2/SDL.h"
 	"SDL2/SDL_mixer.h"
@@ -5325,7 +5325,7 @@
 	<string>
 	"sound/sound.h"
 
-1502900080 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\controlmenu.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\controlmenu.h
 	"object3d.h"
 	"rootmap.h"
 	"context/context.h"
@@ -5342,20 +5342,20 @@
 	"collection/soundcollection.h"
 	<string>
 
-1496926430 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.h
 	"menu.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
 	<string>
 
-1501600410 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.h
 	"menu.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
 	"collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1496919539 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.h
 	"matrix/structdata.h"
 	"matrix/matrix4f.h"
 	"context/shader.h"
@@ -5364,12 +5364,12 @@
 	"controller/controllermanager.h"
 	"gamestate.h"
 
-1495749892 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.h
 	"region.h"
 	"gamestate.h"
 	"../lib/rapidjson/document.h"
 
-1496920014 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\notification.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\notification.h
 	"object3d.h"
 	"context/context.h"
 	"nodescenegraph.h"
@@ -5378,13 +5378,13 @@
 	"../lib/rapidjson/document.h"
 	"gamestate.h"
 
-1496919727 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.h
 	<thread>
 	"rootmap.h"
 	"context/shader.h"
 	<string>
 
-1502193651 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.h
 	"../GraphicEngine/object3d.h"
 	"enemylist.h"
 	"avatar/enemy.h"
@@ -5396,7 +5396,7 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1496925434 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.h
 	<vector>
 	<string>
 	<fstream>
@@ -5408,93 +5408,93 @@
 	<math.h>
 	"matrix/structdata.h"
 
-1491238547 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\context.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\context.cpp
 	"context.h"
 
-1487457238 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\materialstack.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\materialstack.cpp
 	"materialstack.h"
 
-1487505879 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\matrixstack.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\matrixstack.cpp
 	"matrixstack.h"
 
-1494419236 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\shader.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\context\shader.cpp
 	"shader.h"
 
-1502727878 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controller.cpp
 	"controller.h"
 
-1487356004 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controllermanager.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\controllermanager.cpp
 	"controllermanager.h"
 
-1502728011 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\gamepadcontroller.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\gamepadcontroller.cpp
 	"gamepadcontroller.h"
 
-1502728143 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.cpp
 	"keyboardcontroller.h"
 
-1491243060 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.cpp
 	"decorationobject.h"
 
-1488043281 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1503165656 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
-1489961113 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
 	"herostate.h"
 
-1496919501 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.h
 	"object3d.h"
 	"text.h"
 	"collection/materialcollection.h"
 	"collection/meshcollection.h"
 	<sstream>
 
-1490177665 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.cpp
 	"iaenemy.h"
 
-1495487335 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.h
 	"matrix/structdata.h"
 	<iostream>
 	<math.h>
 	"../VideoGame/enemylist.h"
 
-1490177641 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iameleeenemy.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iameleeenemy.cpp
 	"iameleeenemy.h"
 
-1488037775 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iameleeenemy.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iameleeenemy.h
 	"iaenemy.h"
 	"../VideoGame/enemylist.h"
 
-1483998848 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\ianpc.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\ianpc.cpp
 	"ianpc.h"
 
-1488134193 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iarangedenemy.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iarangedenemy.cpp
 	"iarangedenemy.h"
 
-1485721188 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iarangedenemy.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iarangedenemy.h
 	"iaenemy.h"
 	"../VideoGame/enemylist.h"
 
-1492351382 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\icon.c
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\icon.c
 
-1493558615 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\directionallight.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\directionallight.cpp
 	"directionallight.h"
 
-1493665052 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\light.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\light.cpp
 	"light.h"
 
-1496929043 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\pointlight.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\light\pointlight.cpp
 	"pointlight.h"
 
-1487769737 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.cpp
 	"loaderthread.h"
 
-1491388340 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
 	"material.h"
 
-1418880274 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.c
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.c
 	"stb_image.h"
 	<math.h>
 	<string.h>
@@ -5504,50 +5504,50 @@
 	<assert.h>
 	<stdarg.h>
 
-1491569186 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.cpp
 	"texture.h"
 
-1491572483 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\acceleratedmovement.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\acceleratedmovement.cpp
 	"acceleratedmovement.h"
 
-1491572000 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\axisrotation.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\axisrotation.cpp
 	"axisrotation.h"
 
-1480336420 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\linearmovement.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\linearmovement.cpp
 	"linearmovement.h"
 
-1489794318 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4f.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4f.cpp
 	"matrix4f.h"
 
-1493663086 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4fdynamic.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4fdynamic.cpp
 	"matrix4fdynamic.h"
 
-1487944579 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixscript.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixscript.cpp
 	"matrixscript.h"
 
-1478959438 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixstatic.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixstatic.cpp
 	"matrixstatic.h"
 
-1491573305 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\oscillaterotation.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\oscillaterotation.cpp
 	"oscillaterotation.h"
 
-1502900087 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\controlmenu.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\controlmenu.cpp
 	"controlmenu.h"
 
-1502900303 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\creditscreen.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\creditscreen.cpp
 	"creditscreen.h"
 
-1502900312 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.cpp
 	"deadmenu.h"
 
-1492073772 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
 	"loadingscreen.h"
 
-1502900342 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
 	"mainmenu.h"
 	"game.h"
 
-1502793977 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5573,17 +5573,17 @@
 	"avatar/hero.h"
 	<sstream>
 
-1496923044 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.h
 	"material/texture.h"
 
-1496922419 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.h
 	"shadowtexture.h"
 	"context/shader.h"
 	"matrix/matrix4f.h"
 	"camera.h"
 	"matrix/structdata.h"
 
-1495745929 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\menu.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\menu.cpp
 	"menu.h"
 	"gamestate.h"
 	"context/context.h"
@@ -5594,58 +5594,58 @@
 	"profile.h"
 	"sound/sound.h"
 
-1502899874 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
 	"optionmenu.h"
 
-1502896786 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
 	"pausemenu.h"
 
-1491388290 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.cpp
 	"file_obj.h"
 
-1493843042 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\mesh.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\mesh.cpp
 	"mesh.h"
 
-1495481678 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\objectgroup.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\objectgroup.cpp
 	"objectgroup.h"
 
-1496926011 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\objectgroup.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\objectgroup.h
 	"collection/materialcollection.h"
 	"nodescenegraph.h"
 	"collection/meshcollection.h"
 
-1503168540 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.cpp
 	"nodescenegraph.h"
 
-1492075608 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\notification.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\notification.cpp
 	"notification.h"
 
-1493720466 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\object3d.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\object3d.cpp
 	"object3d.h"
 	"rootmap.h"
 	"gamestate.h"
 
-1492076706 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\objectscene.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\objectscene.cpp
 	"objectscene.h"
 	"gamestate.h"
 
-1489167422 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\optionmanager.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\optionmanager.cpp
 	"optionmanager.h"
 
-1489570904 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particle.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particle.cpp
 	"particle.h"
 
-1492343008 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particlesystem.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particlesystem.cpp
 	"particlesystem.h"
 
-1486828817 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\profile.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\profile.cpp
 	"profile.h"
 
-1493662909 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\region.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\region.cpp
 	"region.h"
 	"gamestate.h"
 
-1503166600 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5657,71 +5657,71 @@
 	<vector>
 	"../lib/rapidjson/document.h"
 
-1503133655 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
-1488053514 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
 	"savedmanager.h"
 
-1491259260 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
 	"shadowmanager.h"
 
-1492075931 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.cpp
 	"shadowtexture.h"
 
-1493322113 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\effect.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\effect.cpp
 	"effect.h"
 
-1493322462 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\music.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\music.cpp
 	"music.h"
 
-1493663204 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\sound.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\sound\sound.cpp
 	"sound.h"
 
-1492027785 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\text.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\text.cpp
 	"text.h"
 
-1491570504 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\textregion.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\textregion.cpp
 	"textregion.h"
 
-1485356534 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxel.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxel.cpp
 	"voxel.h"
 
-1486067167 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxelgroup.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxelgroup.cpp
 	"voxelgroup.h"
 
-1496399888 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\window.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\window.cpp
 	"window.h"
 	"mesh/file_obj.h"
 	"icon.c"
 
-1492351382 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\icon.c
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\icon.c
 
-1491761826 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\main.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\main.cpp
 	<stdio.h>
 	"VideoGame/game.h"
 	<iostream>
 	"SDL2/SDL_mixer.h"
 
-1493667097 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatar.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatar.cpp
 	"avatar.h"
 
-1497729992 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatarmove.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\avatarmove.cpp
 	"avatarmove.h"
 	"../GraphicEngine/rootmap.h"
 	"enemy.h"
 	"projectile.h"
 
-1502123958 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.cpp
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1503137480 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"weapon.h"
 	"projectile.h"
 
-1503136872 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
 	"equipment.h"
 	"item.h"
 	"../GraphicEngine/material/material.h"
@@ -5732,26 +5732,26 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1489590058 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.cpp
 	"mate.h"
 
-1503137931 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.cpp
 	"meleeenemy.h"
 
-1495735847 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.h
 	"enemy.h"
 	"../lib/rapidjson/document.h"
 	"../GraphicEngine/ia/iameleeenemy.h"
 	"enemylist.h"
 	"weapon.h"
 
-1503167071 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.cpp
 	"npc.h"
 
-1503137951 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.cpp
 	"rangedenemy.h"
 
-1496958215 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.h
 	"enemy.h"
 	"../lib/rapidjson/document.h"
 	"../GraphicEngine/ia/iarangedenemy.h"
@@ -5760,54 +5760,54 @@
 	"weapon.h"
 	<vector>
 
-1501697666 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\door.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\door.cpp
 	"door.h"
 
-1495749630 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\enemylist.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\enemylist.cpp
 	"enemylist.h"
 	"avatar/enemy.h"
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1503167363 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1503221785 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
-1503133659 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
 	"item.h"
 
 1502885862 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\itemlist.cpp
 	"itemlist.h"
 
-1491569533 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.cpp
 	"projectile.h"
 
-1492343930 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectilesystem.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectilesystem.cpp
 	"projectilesystem.h"
 
-1491567145 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soul.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soul.cpp
 	"soul.h"
 
-1491244442 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soulcarrier.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soulcarrier.cpp
 	"soulcarrier.h"
 
-1502125219 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.cpp
 	"spiketrap.h"
 
-1503144486 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
 
-1501081642 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
 	"camera.h"
 	"rootmap.h"
 
-1502189035 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\soundcollection.cpp
 	"soundcollection.h"
 
-1501600432 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\moviescreen.cpp
 	"moviescreen.h"
 	"gamestate.h"
 
-1502101324 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
 	"../GraphicEngine/objectscene.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5817,13 +5817,13 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502125187 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
 	"trapdoor.h"
 
-1502141272 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.cpp
 	"rottenvoxel.h"
 
-1501755090 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.h
 	"../GraphicEngine/objectscene.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5833,10 +5833,10 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502278835 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
 	"movablevoxel.h"
 
-1502278854 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
 	"../GraphicEngine/objectscene.h"
 	"respawnvoxel.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5848,10 +5848,10 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502380999 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
 	"respawnvoxel.h"
 
-1502363917 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5861,7 +5861,7 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502283483 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.h
 	"../GraphicEngine/objectscene.h"
 	"respawnvoxel.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5873,10 +5873,10 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502283708 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.cpp
 	"slidetrap.h"
 
-1502369933 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5886,11 +5886,12 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1502455315 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1503167130 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1503224954 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
+	<vector>
 	"savedmanager.h"
 	"object3d.h"
 	"rootmap.h"
@@ -5904,27 +5905,28 @@
 	"profile.h"
 	"mainmenu.h"
 	"collection/meshcollection.h"
+	"collection/materialcollection.h"
 	"collection/soundcollection.h"
 	"../VideoGame/inventory.h"
 	<string>
 
-1503167126 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1503225270 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 
-1503161860 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
+1503220192 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
 	<iostream>
 	"equipment.h"
 
-1503165291 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
+1503220407 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1503134850 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 
-1502810612 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
-1502887837 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
 	"item.h"
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5936,10 +5938,10 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1502888804 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.cpp
 	"potion.h"
 
-1502888738 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.h
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.h
 	"item.h"
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5951,6 +5953,6 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1502889589 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.cpp
+1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.cpp
 	"coin.h"
 
