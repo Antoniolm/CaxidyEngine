@@ -43,43 +43,6 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     Matrix4f * rotationMenu=new Matrix4f();
     rotationMenu->rotation(20,1.0,0.0,0.0);
 
-    //////////////////////////////////
-    //Shape for every item of the inventory
-
-    /*vector<Material *> auxVector;
-
-    for(int i=0;i<inventory->getSizeY();i++){
-        for(int j=0;j<inventory->getSizeX();j++){
-            auxVector.push_back(new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/TEX_crystal.png"));
-        }
-        itemView.push_back(auxVector);
-        auxVector.clear();
-    }
-
-    Matrix4f * selectedPositionItem=new Matrix4f();
-    selectedPositionItem->translation(-0.275,0.442,0.8);
-
-    Matrix4f * scaleItem=new Matrix4f();
-    scaleItem->scale(0.075,0.525,0.1);
-
-    NodeSceneGraph * items0x0=new NodeSceneGraph(false,true);
-    items0x0->add(selectedPositionItem);
-    items0x0->add(scaleItem);
-    items0x0->add(itemView[0][0]);
-    items0x0->add(meshCollect->getMesh(TEXT));
-
-    //0.208f,0.288f,0.0f
-    NodeSceneGraph * items0x1=new NodeSceneGraph(false,true);
-    items0x1->add(selectedPositionItem);
-    items0x1->add(scaleItem);
-    items0x1->add(itemView[0][1]);
-    items0x1->add(meshCollect->getMesh(TEXT));
-
-    NodeSceneGraph * matrixItems=new NodeSceneGraph(false,true);
-    matrixItems->add(items0x0);
-    matrixItems->add(items0x1);*/
-
-
     ///////////////////////
     //Text
     selectedPosition=new Matrix4f();
@@ -110,7 +73,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     root->add(betweenMenu);
     root->add(nodeBack);
     root->add(nodeText);
-    //root->add(matrixItems);
+    root->add(createMatrixItems());
     currentTime=SDL_GetTicks();
     menuDelay=currentTime;
 
@@ -126,8 +89,6 @@ InventoryMenu::~InventoryMenu(){
 
     delete currentMaterial;
     delete materialBack;
-    delete inventory;
-
 }
 
 //**********************************************************************//
@@ -249,3 +210,43 @@ bool InventoryMenu::addEquip(Equipment * aEquip){
 
     return result;
 }
+
+//**********************************************************************//
+
+NodeSceneGraph * InventoryMenu::createMatrixItems(){
+    //////////////////////////////////
+    //Shape for every item of the inventory
+    MeshCollection * meshCollect =MeshCollection::getInstance();
+
+    for(int i=0;i<inventory->getSizeY();i++){
+        for(int j=0;j<inventory->getSizeX();j++){
+            itemView[i][j]=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/TEX_crystal.png");
+        }
+    }
+
+    Matrix4f * selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(-0.275,0.442,0.8);
+
+    Matrix4f * scaleItem=new Matrix4f();
+    scaleItem->scale(0.075,0.515,0.1);
+
+    NodeSceneGraph * items0x0=new NodeSceneGraph(false,true);
+    items0x0->add(selectedPositionItem);
+    items0x0->add(scaleItem);
+    items0x0->add(itemView[0][0]);
+    items0x0->add(meshCollect->getMesh(TEXT));
+
+    //0.208f,0.288f,0.0f
+    NodeSceneGraph * items0x1=new NodeSceneGraph(false,true);
+    items0x1->add(selectedPositionItem);
+    items0x1->add(scaleItem);
+    items0x1->add(itemView[0][1]);
+    items0x1->add(meshCollect->getMesh(TEXT));
+
+    NodeSceneGraph * matrixItems=new NodeSceneGraph(false,true);
+    matrixItems->add(items0x0);
+    matrixItems->add(items0x1);
+
+    return matrixItems;
+}
+

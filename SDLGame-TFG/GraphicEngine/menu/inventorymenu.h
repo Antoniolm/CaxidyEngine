@@ -21,6 +21,7 @@
 #define INVENTORYMENU_H
 
 #include <iostream>
+#include <vector>
 #include "savedmanager.h"
 #include "object3d.h"
 #include "rootmap.h"
@@ -34,6 +35,7 @@
 #include "profile.h"
 #include "mainmenu.h"
 #include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
 #include "../VideoGame/inventory.h"
 #include <string>
@@ -72,12 +74,10 @@ class InventoryMenu : public Menu
 
         bool addEquip(Equipment * aEquip);
 
-        //Add method of change the current info of the equip selected when
-        //the user change the selection
-
     protected:
 
     private:
+        NodeSceneGraph * createMatrixItems();
         vec3f initialPosition;               // Initial position of the menu
         Matrix4f * selectedPosition;         // The position of the current selected item
         Material * materialBack;             // The texture in background
@@ -87,7 +87,7 @@ class InventoryMenu : public Menu
         int currentItemX;
         int currentItemY;
         Inventory * inventory;               // Logistic inventory of the interface
-        vector< vector< Material * > > itemView;
+        Material * itemView[3][6];
 };
 
 #endif // INVENTORYMENU_H
