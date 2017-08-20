@@ -201,11 +201,12 @@ bool InventoryMenu::addEquip(Equipment * aEquip){
     bool result=false;
 
     pair<int,int> positionSlot = inventory->emptySlot();
-    if( positionSlot.first!=-1){
+    if( positionSlot.first!=-1){ //If the inventory is not full
         result=true;
         inventory->addItem(positionSlot.first,positionSlot.second,aEquip);
 
         //Change texture
+        itemView[positionSlot.second][positionSlot.first]->setTexture("./textures/water.png");
     }
 
     return result;
@@ -220,7 +221,7 @@ NodeSceneGraph * InventoryMenu::createMatrixItems(){
 
     for(int i=0;i<inventory->getSizeY();i++){
         for(int j=0;j<inventory->getSizeX();j++){
-            itemView[i][j]=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/TEX_crystal.png");
+            itemView[i][j]=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
         }
     }
 
