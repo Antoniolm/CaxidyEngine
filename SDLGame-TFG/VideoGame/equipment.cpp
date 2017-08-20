@@ -53,3 +53,33 @@ void Equipment::setImageProfile(const string & imageFile){
 string Equipment::getImageProfile(){
     return imageProfile;
 }
+
+//**********************************************************************//
+
+string Equipment::getMesh(){
+    return mesh;
+}
+
+//**********************************************************************//
+
+string Equipment::getMaterial(){
+    return material;
+}
+
+//**********************************************************************//
+
+int Equipment::getDamage(){
+    return damage;
+}
+
+//**********************************************************************//
+
+int Equipment::getArmour(){
+    return armour;
+}
+
+//**********************************************************************//
+
+int Equipment::getLife(){
+    return life;
+}

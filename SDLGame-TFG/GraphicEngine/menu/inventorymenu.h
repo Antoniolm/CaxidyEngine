@@ -74,6 +74,8 @@ class InventoryMenu : public Menu
 
         bool addEquip(Equipment * aEquip);
 
+        Inventory * getInventory();
+
         void clearInventory();
     protected:
 

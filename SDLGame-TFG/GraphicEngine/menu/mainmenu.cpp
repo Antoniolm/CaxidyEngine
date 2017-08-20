@@ -159,10 +159,11 @@ void MainMenu::updateState(GameState & gameState){
                 case START: //Start Game
                     ambientSound->stop();
                     activateMenu=false;
+
                     if(gameState.rootMap!=0)
                         delete gameState.rootMap;
 
-                    SavedManager::getInstance()->save("",0);
+                    SavedManager::getInstance()->save("",gameState,0);
                     gameState.rootMap=new RootMap("./maps/map00.json",true);
                     checkUserProgress();
                     openSound->play();

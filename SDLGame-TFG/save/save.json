@@ -1,1 +1,18 @@
-{ "currentMap":"" ,  "coin":0}
+{ "currentMap":"./maps/map01.json" ,  "coin":11 ,
+"weapon": [
+ { "position":[0.0,0.0,0.0],
+  "type":0,
+  "material":"mSWORD",
+  "geometry":"SWORD",
+  "imgProfile":"./texture/void.png",
+  "value": 25 
+ } 
+ { "position":[0.0,0.0,0.0],
+  "type":0,
+  "material":"mSWORD",
+  "geometry":"SWORD",
+  "imgProfile":"./texture/void.png",
+  "value": 25 
+ } 
+] 
+ }

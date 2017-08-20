@@ -60,9 +60,22 @@ class Equipment : public Item
         void setImageProfile(const string & imageFile);
 
         string getImageProfile();
+        string getMesh();
+        string getMaterial();
+
+        int getDamage();
+        int getArmour();
+        int getLife();
 
     protected:
         string imageProfile;
+        string mesh;
+        string material;
+        //Weapon type
+
+        int damage;
+        int armour;
+        int life;
     private:
 };
 

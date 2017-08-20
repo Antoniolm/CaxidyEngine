@@ -63,7 +63,7 @@ int SavedManager::getCoin(){
 
 //**********************************************************************//
 
-void SavedManager::save(std::string fileMap, int coin){
+void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
     currentMap=fileMap;
     coins=coin;
     std::ostringstream stringCoin ;
@@ -72,6 +72,49 @@ void SavedManager::save(std::string fileMap, int coin){
     std::ofstream savedFile;
     savedFile.open ("./save/save.json");
     savedFile << "{ \"currentMap\":\""+fileMap+"\" ,"+
-                +"  \"coin\":"+stringCoin.str()+"}\n";
+                +"  \"coin\":"+stringCoin.str()+" ,\n";
+    savedFile << "\"weapon\": [\n";
+
+    Inventory * inv=gameState.inventoryMenu->getInventory();
+    Equipment * equip;
+
+    for(int i=0;i<inv->getSizeY();i++){
+        for(int j=0;j<inv->getSizeX();j++){
+            equip=inv->getItem(j,i);
+            if(equip!=0){
+                savedFile << " { \"position\":[0.0,0.0,0.0],\n" <<
+                            "  \"type\":0,\n" <<
+                            "  \"material\":\"mSWORD\",\n" <<
+                            "  \"geometry\":\"SWORD\",\n" <<
+                            "  \"imgProfile\":\"./texture/void.png\",\n"<<
+                            "  \"value\": 25 \n }, \n";
+
+                        //necesito que la ultima no tenga la ultima comilla ,
+            }
+        }
+    }
+    savedFile << "] \n }\n";
+
+    /*
+    "weapon":[
+        {   "position":[3.5,1.5,-4.5],
+                "type":0,
+                "material":"mSWORD",
+                "geometry":"SWORD",
+                "imgProfile":"./textures/TEX_crystal.png",
+                "value":-25},
+        {   "position":[3.5,1.5,-2.5],
+                "type":0,
+                "material":"mSWORD",
+                "geometry":"SWORD",
+                "imgProfile":"./textures/swordTexture.png",
+                "value":-25},
+        {   "position":[4.5,1.5,-2.5],
+                "type":0,
+                "material":"mSWORD",
+                "geometry":"SWORD",
+                "imgProfile":"./textures/shieldTexture.png",
+                "value":-25}
+    ],*/
     savedFile.close();
 }

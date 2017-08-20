@@ -284,7 +284,7 @@ void Game::loop(){
                 //Get the next Map and save the match
                 fileMap=gameState.rootMap->getNextMap();
                 if(fileMap!=""){
-                    SavedManager::getInstance()->save(fileMap,gameState.rootMap->getHero()->getCoin());
+                    SavedManager::getInstance()->save(fileMap,gameState,gameState.rootMap->getHero()->getCoin());
                     gameState.mainMenu->checkUserProgress();
 
                     //Delete the currentMap

@@ -26,6 +26,9 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "gamestate.h"
+#include "../VideoGame/inventory.h"
+#include "../VideoGame/equipment.h"
 
 using namespace rapidjson;
 
@@ -68,7 +71,7 @@ class SavedManager
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void save(std::string fileMap,int coin);
+        void save(std::string fileMap,GameState & gameState,int coin);
 
         static SavedManager * getInstance(){
             if(instance == NULL)

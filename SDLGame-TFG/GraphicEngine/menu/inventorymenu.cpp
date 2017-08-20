@@ -227,6 +227,12 @@ bool InventoryMenu::addEquip(Equipment * aEquip){
 
 //**********************************************************************//
 
+Inventory * InventoryMenu::getInventory(){
+    return inventory;
+}
+
+//**********************************************************************//
+
 void InventoryMenu::clearInventory(){
 
     for(int i=0;i<inventory->getSizeY();i++){

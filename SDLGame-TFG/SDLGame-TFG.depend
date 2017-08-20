@@ -5245,13 +5245,16 @@
 	"collection/soundcollection.h"
 	<string>
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
+1503258598 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
 	"../lib/rapidjson/document.h"
 	"../lib/rapidjson/stringbuffer.h"
 	"../lib/rapidjson/filereadstream.h"
 	<string>
 	<fstream>
 	<sstream>
+	"gamestate.h"
+	"../VideoGame/inventory.h"
+	"../VideoGame/equipment.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.h
 	"object3d.h"
@@ -5543,7 +5546,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
 	"loadingscreen.h"
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
+1503256188 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
 	"mainmenu.h"
 	"game.h"
 
@@ -5769,7 +5772,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1503251963 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1503255952 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5889,7 +5892,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1503247034 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1503257872 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5910,7 +5913,7 @@
 	"../VideoGame/inventory.h"
 	<string>
 
-1503250284 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1503257895 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 
 1503220192 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
@@ -5920,7 +5923,7 @@
 1503220407 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1503253235 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1503264951 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 
 1503253583 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
