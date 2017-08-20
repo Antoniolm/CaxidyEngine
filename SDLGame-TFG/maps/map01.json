@@ -231,7 +231,7 @@
     ],
 
      "weapon":[
-        {   "position":[3.5,2.5,-4.5],
+        {   "position":[3.5,1.0,-4.5],
                 "type":0,
                 "material":"mSWORD", 
                 "geometry":"SWORD", 

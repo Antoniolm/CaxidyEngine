@@ -214,7 +214,17 @@
     ],
 
     "weapon":[
-        {   "position":[3.5,2.5,-4.5],
+        {   "position":[3.5,1.5,-4.5],
+                "type":0,
+                "material":"mSWORD", 
+                "geometry":"SWORD", 
+                "value":-25},
+        {   "position":[3.5,1.5,-2.5],
+                "type":0,
+                "material":"mSWORD", 
+                "geometry":"SWORD", 
+                "value":-25},
+        {   "position":[4.5,1.5,-2.5],
                 "type":0,
                 "material":"mSWORD", 
                 "geometry":"SWORD", 
