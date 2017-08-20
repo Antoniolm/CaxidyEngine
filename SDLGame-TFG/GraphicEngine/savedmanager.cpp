@@ -72,6 +72,6 @@ void SavedManager::save(std::string fileMap, int coin){
     std::ofstream savedFile;
     savedFile.open ("./save/save.json");
     savedFile << "{ \"currentMap\":\""+fileMap+"\" ,"+
-                 +"  \"coin\":"+stringCoin.str()+"}\n";
+                +"  \"coin\":"+stringCoin.str()+"}\n";
     savedFile.close();
 }

@@ -74,9 +74,11 @@ class InventoryMenu : public Menu
 
         bool addEquip(Equipment * aEquip);
 
+        void clearInventory();
     protected:
 
     private:
+
         NodeSceneGraph * createMatrixItems();
         vec3f initialPosition;               // Initial position of the menu
         Matrix4f * selectedPosition;         // The position of the current selected item

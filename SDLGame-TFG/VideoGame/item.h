@@ -110,7 +110,7 @@ class Item : public Object3D
         AxisRotation * rotation;    // Rotation movement
         Sound * soundTake;          // Sound of taken coin
         bool notTake;               // Flag to not taken coin
-        ItemIndex type;             // Type of the item( potion or crystal )
+        ItemIndex type;             // Type of the item( potion , coin, equip)
     private:
 
 };

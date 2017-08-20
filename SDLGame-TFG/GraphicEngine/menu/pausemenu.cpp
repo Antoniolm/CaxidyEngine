@@ -151,6 +151,10 @@ void PauseMenu::updateState(GameState & gameState){
                         (Profile::getInstance())->showResult();
                         gameState.mainMenu->activate();
                         activateMenu=false;
+
+                        //Clear inventory
+                        gameState.inventoryMenu->clearInventory();
+
                     break;
 
                 }

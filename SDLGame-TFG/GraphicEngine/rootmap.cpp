@@ -717,7 +717,6 @@ void RootMap::updateState(GameState & gameState){
         while(itItem!=items.end()){
             (*itItem)->updateState(gameState);
             if((*itItem)->isTake()){
-                delete (*itItem);
                 items.erase(itItem);
             }
             else

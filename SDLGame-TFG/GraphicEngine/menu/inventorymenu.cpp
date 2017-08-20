@@ -222,6 +222,18 @@ bool InventoryMenu::addEquip(Equipment * aEquip){
 
 //**********************************************************************//
 
+void InventoryMenu::clearInventory(){
+
+    for(int i=0;i<inventory->getSizeY();i++){
+        for(int j=0;j<inventory->getSizeX();j++){
+            if(inventory->removeItem(j,i))
+                itemView[i][j]->setTexture("./textures/void.png");
+        }
+    }
+}
+
+//**********************************************************************//
+
 NodeSceneGraph * InventoryMenu::createMatrixItems(){
     //////////////////////////////////
     //Shape for every item of the inventory

@@ -97,6 +97,9 @@ void DeadMenu::updateState(GameState & gameState){
             gameState.mainMenu->activate();
             activateMenu=false;
             gameState.controller->consumeButtons();
+
+            //Clear inventory
+            gameState.inventoryMenu->clearInventory();
         }
     }
 
