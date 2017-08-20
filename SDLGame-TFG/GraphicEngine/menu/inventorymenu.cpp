@@ -184,6 +184,14 @@ void InventoryMenu::updateState(GameState & gameState){
                 hasMovement=true;
             }
 
+            //Remove item
+            if(controller->checkButton(cJUMP) && menuDelay<(time-300)){
+                if(inventory->removeItem(currentItemX,currentItemY)){
+                    itemView[currentItemY][currentItemX]->setTexture("./textures/void.png");
+                    moveSound->play();
+                }
+            }
+
             if(hasMovement){
                 selectedPosition->product(auxMatrix->getMatrix());
                 moveSound->play();
