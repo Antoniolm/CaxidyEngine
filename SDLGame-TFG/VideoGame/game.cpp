@@ -82,7 +82,7 @@ Game::Game(){
     gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"./textures/mainBackMenu.png");
 
     //Create inventoryMenu
-    gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,6.70f,11.0f),vec3f(0.208f,0.288f,0.0f),"./textures/inventory.png",*(new Inventory()));
+    gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,6.70f,11.0f),vec3f(0.207f,0.288f,0.0f),"./textures/inventory.png",*(new Inventory()));
 
     heroState=new HeroState();
 
