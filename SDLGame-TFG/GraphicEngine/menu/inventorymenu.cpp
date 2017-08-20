@@ -46,7 +46,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     ///////////////////////
     //Text
     selectedPosition=new Matrix4f();
-    selectedPosition->translation(-0.275,0.442,0.8);
+    selectedPosition->translation(-0.272,0.439,0.8);
 
     Matrix4f * scaleMenu=new Matrix4f();
     scaleMenu->scale(0.088,0.535,0.1);
@@ -124,6 +124,11 @@ void InventoryMenu::updateState(GameState & gameState){
                 controller->setState(false,cLEFT);
                 controller->setState(false,cRIGHT);
                 controller->setState(false,cINVENTORY);
+            }
+            else{
+                selectedPosition->translation(-0.272,0.439,0.8);
+                currentItemX=0;
+                currentItemY=0;
             }
         }
 
