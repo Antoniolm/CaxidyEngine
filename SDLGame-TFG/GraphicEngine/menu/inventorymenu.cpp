@@ -219,7 +219,7 @@ bool InventoryMenu::addEquip(Equipment * aEquip){
         inventory->addItem(positionSlot.first,positionSlot.second,aEquip);
 
         //Change texture
-        itemView[positionSlot.second][positionSlot.first]->setTexture("./textures/water.png");
+        itemView[positionSlot.second][positionSlot.first]->setTexture(aEquip->getImageProfile());
     }
 
     return result;

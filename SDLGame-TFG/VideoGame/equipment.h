@@ -57,8 +57,12 @@ class Equipment : public Item
         virtual void updateState(GameState & gameState)=0;
 
 
-    protected:
+        void setImageProfile(const string & imageFile);
 
+        string getImageProfile();
+
+    protected:
+        string imageProfile;
     private:
 };
 

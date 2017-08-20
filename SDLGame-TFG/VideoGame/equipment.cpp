@@ -27,15 +27,29 @@ Equipment::Equipment(){
 //**********************************************************************//
 
 Equipment::~Equipment(){
+
 }
 
 //**********************************************************************//
 
 void Equipment::visualization(Context & cv){
+
 }
 
 //**********************************************************************//
 
 void Equipment::updateState(GameState & gameState){
+
 }
 
+//**********************************************************************//
+
+void Equipment::setImageProfile(const string & imageFile){
+    imageProfile=imageFile;
+}
+
+//**********************************************************************//
+
+string Equipment::getImageProfile(){
+    return imageProfile;
+}

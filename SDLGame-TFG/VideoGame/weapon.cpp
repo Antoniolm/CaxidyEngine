@@ -23,6 +23,7 @@ Weapon::Weapon(const Value & weaponFeatures){
     position=vec4f(weaponFeatures["position"][0].GetFloat(),weaponFeatures["position"][1].GetFloat(),weaponFeatures["position"][2].GetFloat(),1.0f);
     damage=weaponFeatures["value"].GetInt();
     typeWeapon=(WeaponType)weaponFeatures["type"].GetInt();
+    imageProfile=weaponFeatures["imgProfile"].GetString();
 
     notTake=true;
     type=iWEAPON;

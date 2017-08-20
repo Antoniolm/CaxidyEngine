@@ -5721,7 +5721,7 @@
 	"weapon.h"
 	"projectile.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
+1503254019 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
 	"equipment.h"
 	"item.h"
 	"../GraphicEngine/material/material.h"
@@ -5769,7 +5769,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1503221785 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1503251963 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5793,7 +5793,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.cpp
 	"spiketrap.h"
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
+1503254064 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
@@ -5920,10 +5920,10 @@
 1503220407 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1503253235 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1503253583 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
