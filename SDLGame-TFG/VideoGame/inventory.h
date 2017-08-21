@@ -72,6 +72,8 @@ class Inventory
 
         Equipment * getItem(int x,int y);
 
+        vector<Equipment *> & getItems();
+
         pair<int,int> emptySlot();
 
     protected:

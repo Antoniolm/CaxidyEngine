@@ -80,6 +80,22 @@ Equipment * Inventory::getItem(int x,int y){
 
 //**********************************************************************//
 
+vector<Equipment *> & Inventory::getItems(){
+    vector<Equipment *> result;
+
+    for(int i=0;i<items.size();i++){
+        for(int j=0;j<items[i].size();j++)
+            if(items[i][j]!=0){
+                result.push_back(items[i][j]);
+            }
+    }
+
+    return result;
+
+}
+
+//**********************************************************************//
+
 pair<int,int> Inventory::emptySlot(){
     pair<int,int> result(-1,-1);
     bool  isEmpty=false;

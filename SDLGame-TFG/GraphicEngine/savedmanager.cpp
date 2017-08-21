@@ -75,21 +75,17 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
                 +"  \"coin\":"+stringCoin.str()+" ,\n";
     savedFile << "\"equip\": [\n";
 
-    Inventory * inv=gameState.inventoryMenu->getInventory();
-    Equipment * equip;
+    vector<Equipment*> items=gameState.inventoryMenu->getInventory()->getItems()
 
-    for(int i=0;i<inv->getSizeY();i++){
-        for(int j=0;j<inv->getSizeX();j++){
-            equip=inv->getItem(j,i);
-            if(equip!=0){
-                savedFile << " { \"position\":[0.0,0.0,0.0],\n" <<
-                            "  \"type\":0,\n" <<
-                            "  \"material\":\"mSWORD\",\n" <<
-                            "  \"geometry\":\"SWORD\",\n" <<
-                            "  \"imgProfile\":\"./texture/void.png\",\n"<<
-                            "  \"value\": 25 \n }, \n";
+    for(int i=0;i<items.size();i++){
+        savedFile << " { \"position\":["+items[i]->getPosition().x+",0.0,0.0],\n" <<
+                    "  \"type\":0,\n" <<
+                    "  \"material\":\"mSWORD\",\n" <<
+                    "  \"geometry\":\"SWORD\",\n" <<
+                    "  \"imgProfile\":\"./texture/void.png\",\n"<<
+                    "  \"value\": 25 \n }, \n";
 
-                        //necesito que la ultima no tenga la ultima comilla ,
+                //necesito que la ultima no tenga la ultima comilla ,
             }
         }
     }
