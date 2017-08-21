@@ -42,7 +42,7 @@ using namespace std;
 class RootMap;
 class Text;
 class IAEnemy;
-class Weapon;
+class Equipment;
 class Enemy: public AvatarMove
 {
     public:
@@ -141,7 +141,7 @@ class Enemy: public AvatarMove
         vector<Sound *> enemySound;                 // Vector of sound
         pair<avatarDirection,vec3f> currentMove;    // Current Move of the enemy
         AnimationList animations;                   // List of animations of the enemy
-        Weapon * weapon;                            // Weapon of the enemy
+        Equipment * weapon;                         // Weapon of the enemy
         vec3f radioActivity;                        // Radio activity of the enemy
         IAEnemy * IA;                               // Ia of the enemy
         bool enemyActivate;                         // Flag for activation

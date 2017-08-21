@@ -37,11 +37,11 @@
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
-#include "../VideoGame/inventory.h"
 #include <string>
 
 using namespace std;
 
+class Inventory;
 class InventoryMenu : public Menu
 {
     public:

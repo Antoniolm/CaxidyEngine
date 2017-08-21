@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "inventorymenu.h"
+#include "../VideoGame/inventory.h"
 
 InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory & inv){
 

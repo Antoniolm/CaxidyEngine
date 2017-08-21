@@ -230,7 +230,7 @@
                 "value":1}
     ],
 
-     "weapon":[
+     "equip":[
         {   "position":[3.5,1.5,-4.5],
                 "type":0,
                 "material":"mSWORD", 

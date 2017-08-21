@@ -46,7 +46,7 @@
 using namespace std;
 class RootMap;
 class Text;
-class Weapon;
+class Equipment;
 class Soul;
 class Projectile;
 class Hero: public AvatarMove
@@ -234,9 +234,9 @@ class Hero: public AvatarMove
         vector<Text *> texts;               // Vector of texts
         vector<bool> activatedTexts;        // Vector of state of texts
         Soul * soul;                        // Soul catch in the arms of the hero
-        Weapon * currentWeapon;             // Current weapon of the hero
-        Weapon * meleeWeapon;               // Close weapon of the hero
-        Weapon * rangedWeapon;              // Ranged weapon of the hero
+        Equipment * currentWeapon;             // Current weapon of the hero
+        Equipment * meleeWeapon;               // Close weapon of the hero
+        Equipment * rangedWeapon;              // Ranged weapon of the hero
 
         //Some delays for action of the hero
         float jumpDelay,hitDelay,coinDelay,shieldDelay,swapDelay,shootDelay,swordDelay;

@@ -73,7 +73,7 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
     savedFile.open ("./save/save.json");
     savedFile << "{ \"currentMap\":\""+fileMap+"\" ,"+
                 +"  \"coin\":"+stringCoin.str()+" ,\n";
-    savedFile << "\"weapon\": [\n";
+    savedFile << "\"equip\": [\n";
 
     Inventory * inv=gameState.inventoryMenu->getInventory();
     Equipment * equip;

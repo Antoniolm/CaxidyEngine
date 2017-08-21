@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "hero.h"
-#include "weapon.h"
+#include "equipment.h"
 #include "projectile.h"
 
 Hero::Hero(vec3f aPos)
@@ -46,9 +46,9 @@ Hero::Hero(vec3f aPos)
     //////////////////////////////////////////////////////
     /////           Initialize weapons               /////
     //////////////////////////////////////////////////////
-    currentWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
-    meleeWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
-    rangedWeapon=new Weapon(vec3f(0.0,-0.4,0.0),RANGED,-20,"CBOW","mARCHENEMY");
+    currentWeapon=new Equipment(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
+    meleeWeapon=new Equipment(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
+    rangedWeapon=new Equipment(vec3f(0.0,-0.4,0.0),RANGED,-20,"CBOW","mARCHENEMY");
 
 
     //////////////////////////////////////////////////////
@@ -320,12 +320,15 @@ Hero::~Hero()
         delete (*it);
     }
 
-    switch(currentWeapon->getWeaponType()){
+    switch(currentWeapon->getEquipType()){
         case RANGED:
             delete meleeWeapon;
         break;
         case MELEE:
             delete rangedWeapon;
+        break;
+        case eSHIELD:
+
         break;
     }
 
@@ -479,11 +482,11 @@ void Hero::updateState(GameState & gameState){
         hitDelay=time;
     }
     else { // If hero is not hitting -> resetAnimation
-        if(hitDelay<(time-250) && currentWeapon->getWeaponType()==MELEE){
+        if(hitDelay<(time-250) && currentWeapon->getEquipType()==MELEE){
             hitDelay=time;
             isHitting=false;
         }
-        else if(hitDelay<(time-750) && currentWeapon->getWeaponType()==RANGED){
+        else if(hitDelay<(time-750) && currentWeapon->getEquipType()==RANGED){
             hitDelay=time;
             isHitting=false;
         }
@@ -503,12 +506,12 @@ void Hero::updateState(GameState & gameState){
 
     //Case-> Push Q bottom to swap weapon
     if(controller->checkButton(cSWAPWEAPON) && !isHitting && swapDelay<(time-500) ){ //If hero is shielding
-        switch(currentWeapon->getWeaponType()){
+        switch(currentWeapon->getEquipType()){
             case MELEE:
-                currentWeapon->setWeapon((*rangedWeapon));
+                currentWeapon->setEquip((*rangedWeapon));
             break;
             case RANGED:
-                currentWeapon->setWeapon((*meleeWeapon));
+                currentWeapon->setEquip((*meleeWeapon));
             break;
         }
         swapDelay=time;
@@ -558,7 +561,7 @@ void Hero::updateState(GameState & gameState){
         vector<Enemy *> enemies=rootMap->getEnemyList()->getEnemies();
         vec3f posEnemy;float distance;
         int currentIndexAnimation;
-        switch(currentWeapon->getWeaponType()){
+        switch(currentWeapon->getEquipType()){
             case MELEE: //If is the sword
 
                 animations.activate(1);
@@ -605,10 +608,12 @@ void Hero::updateState(GameState & gameState){
         animations.activate(-1);
     }
     if(isHitting){
-        switch(currentWeapon->getWeaponType()){
+        switch(currentWeapon->getEquipType()){
             case MELEE: animations.activate(1);
             break;
             case RANGED: animations.activate(6);
+            break;
+            case eSHIELD:
             break;
         }
     }

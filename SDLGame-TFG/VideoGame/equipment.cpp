@@ -121,12 +121,6 @@ void Equipment::setDamage(int dmg){
 
 //**********************************************************************//
 
-float Equipment::getDamage(){
-    return damage;
-}
-
-//**********************************************************************//
-
 EquipmentType Equipment::getEquipType(){
     return equipType;
 }

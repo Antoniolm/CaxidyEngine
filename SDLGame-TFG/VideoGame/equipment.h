@@ -23,6 +23,18 @@
 #define EQUIPMENT_H
 
 #include "item.h"
+#include "../lib/rapidjson/document.h"
+#include "../GraphicEngine/object3d.h"
+#include "../GraphicEngine/nodescenegraph.h"
+#include "../GraphicEngine/material/material.h"
+#include "../GraphicEngine/matrix/matrix4f.h"
+#include "../GraphicEngine/matrix/matrix4fdynamic.h"
+#include "../GraphicEngine/collection/meshcollection.h"
+#include "../GraphicEngine/collection/soundcollection.h"
+#include "../GraphicEngine/matrix/axisrotation.h"
+#include "../GraphicEngine/sound/sound.h"
+
+using namespace rapidjson;
 
 enum EquipmentType{
     RANGED,
@@ -118,14 +130,6 @@ class Equipment : public Item
         */
         //////////////////////////////////////////////////////////////////////////
         string getMaterial();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will return the damage of the equip
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getDamage();
 
         //////////////////////////////////////////////////////////////////////////
         /**

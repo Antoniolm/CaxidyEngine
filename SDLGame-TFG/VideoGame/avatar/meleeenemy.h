@@ -24,7 +24,7 @@
 #include "../lib/rapidjson/document.h"
 #include "../GraphicEngine/ia/iameleeenemy.h"
 #include "enemylist.h"
-#include "weapon.h"
+#include "../equipment.h"
 
 class MeleeEnemy : public Enemy
 {

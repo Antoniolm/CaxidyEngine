@@ -25,7 +25,7 @@
 #include "../GraphicEngine/ia/iarangedenemy.h"
 #include "../GraphicEngine/ia/iameleeenemy.h"
 #include "projectile.h"
-#include "weapon.h"
+#include "../equipment.h"
 #include <vector>
 
 class RangedEnemy : public Enemy
