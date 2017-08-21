@@ -80,12 +80,17 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
 
     ////////////////////////////
     // Confirm material
+
+    Matrix4f * betweenMenuCInt=new Matrix4f();
+    betweenMenuCInt->translation(0.0,0.0,0.1);
+
     Matrix4f * scaleConfMat=new Matrix4f();
     scaleConfMat->scale(0.25,0.5,1.0);
 
     confirmInterface=new NodeSceneGraph(false,true);
     confirmInterface->add(positionMenu);
     confirmInterface->add(rotationMenu);
+    confirmInterface->add(betweenMenuCInt);
     confirmInterface->add(scaleConfMat);
     confirmInterface->add(confirmMaterial);
     confirmInterface->add(meshCollect->getMesh(TEXT));
@@ -222,7 +227,7 @@ void InventoryMenu::updateState(GameState & gameState){
             }
 
             //Remove item
-            if(controller->checkButton(cJUMP) && menuDelay<(time-300)){
+            if(controller->checkButton(cJUMP) && inventory->getItem(currentItemX,currentItemY)!=0 && menuDelay<(time-300)){
                 menuDelay=time;
                 if(!isConfirming)
                     isConfirming=true;
