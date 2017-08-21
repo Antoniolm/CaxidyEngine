@@ -75,18 +75,22 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
                 +"  \"coin\":"+stringCoin.str()+" ,\n";
     savedFile << "\"equip\": [\n";
 
-    vector<Equipment*> items=gameState.inventoryMenu->getInventory()->getItems()
+    vector<Equipment*> items=gameState.inventoryMenu->getInventory()->getItems();
 
     for(int i=0;i<items.size();i++){
-        savedFile << " { \"position\":["+items[i]->getPosition().x+",0.0,0.0],\n" <<
-                    "  \"type\":0,\n" <<
-                    "  \"material\":\"mSWORD\",\n" <<
-                    "  \"geometry\":\"SWORD\",\n" <<
-                    "  \"imgProfile\":\"./texture/void.png\",\n"<<
-                    "  \"value\": 25 \n }, \n";
+        vec3f position=vec3f(items[i]->getPosition());
 
-                //necesito que la ultima no tenga la ultima comilla ,
-            }
+        savedFile << " { \"position\":[0.0,0.0,0.0],\n" <<
+                    "  \"type\":"<< items[i]->getEquipType() <<",\n" <<
+                    "  \"material\":\""<< items[i]->getMaterial() <<"\",\n" <<
+                    "  \"geometry\":\""<< items[i]->getMesh() << "\",\n" <<
+                    "  \"imgProfile\":\""<< items[i]->getImageProfile() << "\",\n"<<
+                    "  \"value\": "<< items[i]->getDamage() <<" \n }";
+
+        if(i+1!=items.size())
+            savedFile<< ",\n";
+        else{
+            savedFile<< " \n";
         }
     }
     savedFile << "] \n }\n";

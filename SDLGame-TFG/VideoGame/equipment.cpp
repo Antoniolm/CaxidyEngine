@@ -25,6 +25,9 @@ Equipment::Equipment(const Value & equipFeatures){
     damage=equipFeatures["value"].GetInt();
     equipType=(EquipmentType)equipFeatures["type"].GetInt();
     imageProfile=equipFeatures["imgProfile"].GetString();
+    material=equipFeatures["material"].GetString();
+    mesh=equipFeatures["geometry"].GetString();
+
 
     notTake=true;
     type=iWEAPON;
@@ -44,8 +47,8 @@ Equipment::Equipment(const Value & equipFeatures){
     root=new NodeSceneGraph();
     root->add(transMatrix);
     root->add(animationMatrix);
-    root->add(materialCollect->getMaterial(equipFeatures["material"].GetString()));
-    root->add(meshCollect->getMesh(equipFeatures["geometry"].GetString()));
+    root->add(materialCollect->getMaterial(material));
+    root->add(meshCollect->getMesh(mesh));
     currentTime=SDL_GetTicks();
 
     soundTake=soundCollect->getSound(sCoin);
@@ -53,12 +56,14 @@ Equipment::Equipment(const Value & equipFeatures){
 
 //**********************************************************************//
 
-Equipment::Equipment(vec3f aPos,EquipmentType atype,float aDamage,string mesh,string material)
+Equipment::Equipment(vec3f aPos,EquipmentType atype,float aDamage,string aMesh,string aMaterial)
 {
     damage=aDamage;
     equipType=atype;
     type=iWEAPON;
     position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
+    mesh=aMesh;
+    material=aMaterial;
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
