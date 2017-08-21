@@ -82,9 +82,11 @@ class InventoryMenu : public Menu
     private:
 
         NodeSceneGraph * createMatrixItems();
+        NodeSceneGraph * confirmInterface;
         vec3f initialPosition;               // Initial position of the menu
         Matrix4f * selectedPosition;         // The position of the current selected item
         Material * materialBack;             // The texture in background
+        Material * confirmMaterial;
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
         vec3f distItem;                      // Distance between items
@@ -92,6 +94,7 @@ class InventoryMenu : public Menu
         int currentItemY;
         Inventory * inventory;               // Logistic inventory of the interface
         Material * itemView[3][6];
+        bool isConfirming;
 };
 
 #endif // INVENTORYMENU_H

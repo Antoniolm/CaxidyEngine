@@ -26,6 +26,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     currentItemX=0;
     currentItemY=0;
     activateMenu=false;
+    isConfirming=false;
     MeshCollection * meshCollect =MeshCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
@@ -34,6 +35,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
+    confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -75,6 +77,19 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     root->add(nodeBack);
     root->add(nodeText);
     root->add(createMatrixItems());
+
+    ////////////////////////////
+    // Confirm material
+    Matrix4f * scaleConfMat=new Matrix4f();
+    scaleConfMat->scale(0.25,0.5,1.0);
+
+    confirmInterface=new NodeSceneGraph(false,true);
+    confirmInterface->add(positionMenu);
+    confirmInterface->add(rotationMenu);
+    confirmInterface->add(scaleConfMat);
+    confirmInterface->add(confirmMaterial);
+    confirmInterface->add(meshCollect->getMesh(TEXT));
+
     currentTime=SDL_GetTicks();
     menuDelay=currentTime;
 
@@ -90,13 +105,19 @@ InventoryMenu::~InventoryMenu(){
 
     delete currentMaterial;
     delete materialBack;
+    delete confirmMaterial;
 }
 
 //**********************************************************************//
 
 void InventoryMenu::visualization(Context & cv){
-    if(activateMenu)
+    if(activateMenu){
         root->visualization(cv);
+
+        if(isConfirming)
+            confirmInterface->visualization(cv);
+    }
+
 }
 
 //**********************************************************************//
@@ -130,6 +151,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 selectedPosition->translation(-0.272,0.439,0.8);
                 currentItemX=0;
                 currentItemY=0;
+                isConfirming=false;
             }
         }
 
@@ -137,7 +159,7 @@ void InventoryMenu::updateState(GameState & gameState){
             Matrix4f * auxMatrix=new Matrix4f();
             bool hasMovement=false;
 
-            if(controller->checkButton(cUP) && menuDelay<(time-300)){ //If the user push the action move on the menu
+            if(controller->checkButton(cUP) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemY-=1;
                 menuDelay=time;
 
@@ -150,7 +172,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 hasMovement=true;
             }
-            if(controller->checkButton(cDOWN) && menuDelay<(time-300)){ //If the user push the action move on the menu
+            if(controller->checkButton(cDOWN) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemY+=1;
                 menuDelay=time;
 
@@ -163,7 +185,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 hasMovement=true;
             }
-            if(controller->checkButton(cLEFT) && menuDelay<(time-300)){ //If the user push the action move on the menu
+            if(controller->checkButton(cLEFT) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemX-=1;
                 menuDelay=time;
 
@@ -176,7 +198,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 hasMovement=true;
             }
-            if(controller->checkButton(cRIGHT) && menuDelay<(time-300)){ //If the user push the action move on the menu
+            if(controller->checkButton(cRIGHT) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
                 currentItemX+=1;
                 menuDelay=time;
 
@@ -190,11 +212,22 @@ void InventoryMenu::updateState(GameState & gameState){
                 hasMovement=true;
             }
 
-            //Remove item
-            if(controller->checkButton(cJUMP) && menuDelay<(time-300)){
+            if(controller->checkButton(cACTION) && isConfirming &&  menuDelay<(time-300)){ //If the user push the action move on the menu
                 if(inventory->removeItem(currentItemX,currentItemY)){
                     itemView[currentItemY][currentItemX]->setTexture("./textures/void.png");
                     moveSound->play();
+                }
+                isConfirming=false;
+                menuDelay=time;
+            }
+
+            //Remove item
+            if(controller->checkButton(cJUMP) && menuDelay<(time-300)){
+                menuDelay=time;
+                if(!isConfirming)
+                    isConfirming=true;
+                else {
+                    isConfirming=false;
                 }
             }
 
