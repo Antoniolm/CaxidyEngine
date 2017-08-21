@@ -331,12 +331,12 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
-    // Add weapon to our map
+    // Add equipment to our map
     /////////////////////////////////////////
-    cout<< "< Game is loading weapons >"<< endl;
-    const rapidjson::Value & weaponFeature=document["weapon"];
-    for(unsigned currentWeapon=0;currentWeapon<weaponFeature.Size();currentWeapon++){
-        items.push_back(new Weapon(weaponFeature[currentWeapon]));
+    cout<< "< Game is loading equipments >"<< endl;
+    const rapidjson::Value & equipFeature=document["weapon"];
+    for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
+        items.push_back(new Equipment(equipFeature[currentEquip]));
     }
 
     /////////////////////////////////////////

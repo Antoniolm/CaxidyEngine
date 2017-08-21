@@ -72,8 +72,6 @@
 #include "../VideoGame/item.h"
 #include "../VideoGame/potion.h"
 #include "../VideoGame/coin.h"
-#include "../VideoGame/weapon.h"
-
 
 using namespace std;
 
