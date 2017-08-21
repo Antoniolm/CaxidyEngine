@@ -82,7 +82,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     // Confirm material
 
     Matrix4f * betweenMenuCInt=new Matrix4f();
-    betweenMenuCInt->translation(0.0,0.0,0.1);
+    betweenMenuCInt->translation(0.2,0.4,0.9);
 
     Matrix4f * scaleConfMat=new Matrix4f();
     scaleConfMat->scale(0.25,0.5,1.0);
