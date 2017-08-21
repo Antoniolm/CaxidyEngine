@@ -75,46 +75,36 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
                 +"  \"coin\":"+stringCoin.str()+" ,\n";
     savedFile << "\"equip\": [\n";
 
-    vector<Equipment*> items=gameState.inventoryMenu->getInventory()->getItems();
+    Inventory * inv=gameState.inventoryMenu->getInventory();
+    int countItems=0;
+    int totalItem=inv->getNumItems();
+    Equipment * equip;
 
-    for(int i=0;i<items.size();i++){
-        vec3f position=vec3f(items[i]->getPosition());
+    for(int i=0;i<inv->getSizeY() && countItems!=totalItem;i++){
+        for(int j=0;j<inv->getSizeX() && countItems!=totalItem;j++){
+            equip=inv->getItem(j,i);
+            if(equip!=0){
+                vec3f position=vec3f(equip->getPosition());
 
-        savedFile << " { \"position\":[0.0,0.0,0.0],\n" <<
-                    "  \"type\":"<< items[i]->getEquipType() <<",\n" <<
-                    "  \"material\":\""<< items[i]->getMaterial() <<"\",\n" <<
-                    "  \"geometry\":\""<< items[i]->getMesh() << "\",\n" <<
-                    "  \"imgProfile\":\""<< items[i]->getImageProfile() << "\",\n"<<
-                    "  \"value\": "<< items[i]->getDamage() <<" \n }";
+                savedFile << " { \"position\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n" <<
+                    "  \"posInv\": ["<< j <<","<< i <<"],\n" <<
+                    "  \"type\":"<< equip->getEquipType() <<",\n" <<
+                    "  \"material\":\""<< equip->getMaterial() <<"\",\n" <<
+                    "  \"geometry\":\""<< equip->getMesh() << "\",\n" <<
+                    "  \"imgProfile\":\""<< equip->getImageProfile() << "\",\n"<<
+                    "  \"value\": "<< equip->getDamage() <<" \n }";
 
-        if(i+1!=items.size())
-            savedFile<< ",\n";
-        else{
-            savedFile<< " \n";
+                countItems++;
+                if(countItems!=totalItem)
+                    savedFile<< ",\n";
+                else{
+                    savedFile<< " \n";
+                }
+            }
         }
     }
+
     savedFile << "] \n }\n";
 
-    /*
-    "weapon":[
-        {   "position":[3.5,1.5,-4.5],
-                "type":0,
-                "material":"mSWORD",
-                "geometry":"SWORD",
-                "imgProfile":"./textures/TEX_crystal.png",
-                "value":-25},
-        {   "position":[3.5,1.5,-2.5],
-                "type":0,
-                "material":"mSWORD",
-                "geometry":"SWORD",
-                "imgProfile":"./textures/swordTexture.png",
-                "value":-25},
-        {   "position":[4.5,1.5,-2.5],
-                "type":0,
-                "material":"mSWORD",
-                "geometry":"SWORD",
-                "imgProfile":"./textures/shieldTexture.png",
-                "value":-25}
-    ],*/
     savedFile.close();
 }

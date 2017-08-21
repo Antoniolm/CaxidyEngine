@@ -96,6 +96,12 @@ vector<Equipment *> & Inventory::getItems(){
 
 //**********************************************************************//
 
+int Inventory::getNumItems(){
+    return getItems().size();
+}
+
+//**********************************************************************//
+
 pair<int,int> Inventory::emptySlot(){
     pair<int,int> result(-1,-1);
     bool  isEmpty=false;

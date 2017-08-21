@@ -74,7 +74,11 @@ class Inventory
 
         vector<Equipment *> & getItems();
 
+        int getNumItems();
+
         pair<int,int> emptySlot();
+
+
 
     protected:
 
