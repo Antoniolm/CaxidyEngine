@@ -92,8 +92,8 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of our weapon
-        *    @param value -> the new value of our damage
+        *    It will set the damage of the weapon
+        *    @param value -> the new value of the damage
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -101,8 +101,8 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of our weapon
-        *    @param value -> the new value of our damage
+        *    It will set the damage of the weapon
+        *    @param value -> the new value of the mesh
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -110,12 +110,21 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of our weapon
-        *    @param value -> the new value of our damage
+        *    It will set the damage of tthe weapon
+        *    @param value -> the new value of the material
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
         void setMaterial(const string & aMaterial);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will set the damage of the weapon
+        *    @param value -> the new value of the name
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setName(const string & aName);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -174,6 +183,14 @@ class Equipment : public Item
         */
         //////////////////////////////////////////////////////////////////////////
         string getMaterial();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return the name of the equip
+        *    \return string
+        */
+        //////////////////////////////////////////////////////////////////////////
+        string getName();
 
         //////////////////////////////////////////////////////////////////////////
         /**

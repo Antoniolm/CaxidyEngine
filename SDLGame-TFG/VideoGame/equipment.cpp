@@ -142,6 +142,12 @@ void Equipment::setMaterial(const string & aMaterial){
 
 //**********************************************************************//
 
+void Equipment::setName(const string & aName){
+    name=aName;
+}
+
+//**********************************************************************//
+
 void Equipment::setArmour(int anArmour){
     armour=anArmour;
 }
@@ -195,6 +201,12 @@ string Equipment::getMesh(){
 
 string Equipment::getMaterial(){
     return material;
+}
+
+//**********************************************************************//
+
+string Equipment::getName(){
+    return name;
 }
 
 //**********************************************************************//

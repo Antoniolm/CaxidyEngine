@@ -107,7 +107,7 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
                 savedFile << " { \"position\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n" <<
                     "  \"posInv\": ["<< j <<","<< i <<"],\n" <<
                     "  \"type\":"<< equip->getEquipType() <<",\n" <<
-                    "  \"name\":\""<< equip->getImageProfile() << "\",\n"<<
+                    "  \"name\":\""<< equip->getName() << "\",\n"<<
                     "  \"material\":\""<< equip->getMaterial() <<"\",\n" <<
                     "  \"geometry\":\""<< equip->getMesh() << "\",\n" <<
                     "  \"imgProfile\":\""<< equip->getImageProfile() << "\",\n"<<

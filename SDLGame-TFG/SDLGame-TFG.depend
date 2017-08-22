@@ -5922,7 +5922,7 @@
 1503330355 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 
-1503421731 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1503427659 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 	"../lib/rapidjson/document.h"
 	"../GraphicEngine/object3d.h"
