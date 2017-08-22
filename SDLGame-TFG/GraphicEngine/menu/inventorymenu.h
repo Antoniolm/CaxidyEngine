@@ -72,6 +72,8 @@ class InventoryMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
 
+        void setInventory(const vector<Equipment*> & equipVec, const vector<vec2f> & posVec);
+
         bool addEquip(Equipment * aEquip);
 
         Inventory * getInventory();

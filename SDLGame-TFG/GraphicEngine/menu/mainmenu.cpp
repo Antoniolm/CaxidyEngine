@@ -175,6 +175,8 @@ void MainMenu::updateState(GameState & gameState){
                     saveManager=SavedManager::getInstance();
                     saveManager->load();
 
+                    gameState.inventoryMenu->setInventory(saveManager->getInv(),saveManager->getPosInv());
+
                     fileLoad=saveManager->getMap();
                     activateMenu=false;
 

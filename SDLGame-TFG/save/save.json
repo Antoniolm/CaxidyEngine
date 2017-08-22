@@ -1,4 +1,20 @@
-{ "currentMap":"" ,  "coin":0 ,
+{ "currentMap":"./maps/map01.json" ,  "coin":8 ,
 "equip": [
+ { "position":[4.5,1.5,-2.5],
+  "posInv": [1,0],
+  "type":0,
+  "material":"mSWORD",
+  "geometry":"SWORD",
+  "imgProfile":"./textures/shieldTexture.png",
+  "value": -25 
+ },
+ { "position":[3.5,1.5,-2.5],
+  "posInv": [2,0],
+  "type":0,
+  "material":"mSWORD",
+  "geometry":"SWORD",
+  "imgProfile":"./textures/swordTexture.png",
+  "value": -25 
+ } 
 ] 
  }

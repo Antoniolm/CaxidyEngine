@@ -249,6 +249,18 @@ void InventoryMenu::updateState(GameState & gameState){
 
 //**********************************************************************//
 
+void InventoryMenu::setInventory(const vector<Equipment*> & equipVec, const vector<vec2f> & posVec){
+
+    for(int i=0;i<equipVec.size();i++){
+        inventory->addItem(posVec[i].x,posVec[i].y,equipVec[i]);
+
+        //Change texture
+        itemView[(int)posVec[i].y][(int)posVec[i].x]->setTexture(equipVec[i]->getImageProfile());
+    }
+}
+
+//**********************************************************************//
+
 bool InventoryMenu::addEquip(Equipment * aEquip){
     bool result=false;
 
