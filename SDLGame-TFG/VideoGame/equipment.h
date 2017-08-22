@@ -101,6 +101,50 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    It will set the damage of our weapon
+        *    @param value -> the new value of our damage
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setMesh(const string & aMesh);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will set the damage of our weapon
+        *    @param value -> the new value of our damage
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setMaterial(const string & aMaterial);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will set the damage of our weapon
+        *    @param value -> the new value of our damage
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setArmour(int anArmour);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will set the damage of our weapon
+        *    @param value -> the new value of our damage
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setLife(int aLife);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return the equipment type of the equip
+        *    \return EquipmentType
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setEquipType(EquipmentType aTypeEquip);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    It will return the damage of the equipment
         *    \return int
         */

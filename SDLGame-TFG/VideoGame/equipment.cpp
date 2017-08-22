@@ -117,11 +117,40 @@ void Equipment::setImageProfile(const string & imageFile){
     imageProfile=imageFile;
 }
 
-
 //**********************************************************************//
 
 void Equipment::setDamage(int dmg){
     damage=dmg;
+}
+
+//**********************************************************************//
+
+void Equipment::setMesh(const string & aMesh){
+    mesh=aMesh;
+}
+
+//**********************************************************************//
+
+void Equipment::setMaterial(const string & aMaterial){
+    material=aMaterial;
+}
+
+//**********************************************************************//
+
+void Equipment::setArmour(int anArmour){
+    armour=anArmour;
+}
+
+//**********************************************************************//
+
+void Equipment::setLife(int aLife){
+    life=aLife;
+}
+
+//**********************************************************************//
+
+void Equipment::setEquipType(EquipmentType aTypeEquip){
+    equipType=aTypeEquip;
 }
 
 //**********************************************************************//
