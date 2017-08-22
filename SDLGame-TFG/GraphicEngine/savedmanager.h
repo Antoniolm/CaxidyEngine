@@ -65,6 +65,11 @@ class SavedManager
         //////////////////////////////////////////////////////////////////////////
         int getCoin();
 
+        vector<Equipment *> & getInv();
+        vector<vec2f> & getPosInv();
+
+
+
         //////////////////////////////////////////////////////////////////////////
         /**
         *    The method will save the currentMap in the user save
@@ -90,6 +95,8 @@ class SavedManager
         static SavedManager* instance;  //Instance of saved manager
         std::string currentMap;         //Current Map of the user progress
         int coins;                      //Current coins of the user progress
+        vector<Equipment *> equip;
+        vector<vec2f> equipPosition;
 
 };
 

@@ -46,6 +46,12 @@ void SavedManager::load(){
     currentMap=document["currentMap"].GetString();
     coins=document["coin"].GetFloat();
 
+    const rapidjson::Value & equipFeature=document["equip"];
+    for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
+        equip.push_back(new Equipment(equipFeature[currentEquip]));
+        equipPosition.push_back(vec2f(equipFeature[currentEquip]["posInv"][0].GetInt(),equipFeature[currentEquip]["posInv"][1].GetInt()));
+    }
+
     fclose(fp);
 }
 
@@ -59,6 +65,18 @@ std::string SavedManager::getMap(){
 
 int SavedManager::getCoin(){
     return coins;
+}
+
+//**********************************************************************//
+
+vector<Equipment *> & SavedManager::getInv(){
+    return equip;
+}
+
+//**********************************************************************//
+
+vector<vec2f> & SavedManager::getPosInv(){
+    return equipPosition;
 }
 
 //**********************************************************************//
