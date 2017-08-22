@@ -22,12 +22,17 @@
 
 Equipment::Equipment(const Value & equipFeatures){
     position=vec4f(equipFeatures["position"][0].GetFloat(),equipFeatures["position"][1].GetFloat(),equipFeatures["position"][2].GetFloat(),1.0f);
-    damage=equipFeatures["value"].GetInt();
+
     equipType=(EquipmentType)equipFeatures["type"].GetInt();
+
     imageProfile=equipFeatures["imgProfile"].GetString();
     material=equipFeatures["material"].GetString();
     mesh=equipFeatures["geometry"].GetString();
+    name=equipFeatures["name"].GetString();
 
+    damage=equipFeatures["damage"].GetInt();
+    life=equipFeatures["life"].GetInt();
+    armour=equipFeatures["armour"].GetInt();
 
     notTake=true;
     type=iWEAPON;

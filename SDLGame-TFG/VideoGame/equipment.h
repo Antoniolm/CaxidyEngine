@@ -209,6 +209,8 @@ class Equipment : public Item
         void setEquip(const Equipment & equip);
 
     protected:
+
+    private:
         string name;
         string imageProfile;
         string mesh;
@@ -218,7 +220,6 @@ class Equipment : public Item
         int damage;
         int armour;
         int life;
-    private:
 };
 
 #endif // EQUIPMENT_H
