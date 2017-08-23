@@ -36,12 +36,14 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     //////////////////
     // Texts
 
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 10);
-    SDL_Color color= {0,255,0};
+    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf",20);
+    SDL_Color color= {255,255,255};
     damageItemText=new Text(mVOID,font,color,false);
     armourItemText=new Text(mVOID,font,color,false);
     lifeItemText=new Text(mVOID,font,color,false);
     nameItemText=new Text(mVOID,font,color,false);
+
+    changeSelectedItems();
 
     /////////////////
     //Create interface
@@ -165,7 +167,13 @@ void InventoryMenu::updateState(GameState & gameState){
             openSound->play();
             if(activateMenu){
                 posHero=gameState.rootMap->getHero()->getPosition();
+
+                //Adjust the position of the menu and its information text
                 positionMenu->translation(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
+                nameItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.7,posHero.z+initialPosition.z+1.4));
+                lifeItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.6,posHero.z+initialPosition.z+1.4));
+                damageItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.5,posHero.z+initialPosition.z+1.4));
+                armourItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.4,posHero.z+initialPosition.z+1.4));
 
                 //Consume the current events -> User has to push again the buttons
                 controller->setState(false,cUP);
@@ -336,17 +344,18 @@ void InventoryMenu::changeSelectedItems(){
         nameItemText->setMessage(nameText.str());
     }
     else {
-        lifeItemText->setMessage("--");
-        armourItemText->setMessage("--");
-        damageItemText->setMessage("--");
-        nameItemText->setMessage("--");
+        nameItemText->setMessage("Prueba");
+        lifeItemText->setMessage("234");
+        damageItemText->setMessage("2");
+        armourItemText->setMessage("23");
+
+
     }
 
-    lifeItemText->init();
-    armourItemText->init();
-    damageItemText->init();
-    nameItemText->init();
-
+    nameItemText->init(750.0,60.0);
+    lifeItemText->init(750.0,60.0);
+    damageItemText->init(750.0,60.0);
+    armourItemText->init(750.0,60.0);
 }
 
 //**********************************************************************//
