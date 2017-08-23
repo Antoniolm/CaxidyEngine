@@ -170,7 +170,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 //Adjust the position of the menu and its information text
                 positionMenu->translation(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
-                nameItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.7,posHero.z+initialPosition.z+1.4));
+                nameItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.8,posHero.y+initialPosition.y+0.8,posHero.z+initialPosition.z+1.4));
                 lifeItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.6,posHero.z+initialPosition.z+1.4));
                 damageItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.5,posHero.z+initialPosition.z+1.4));
                 armourItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.4,posHero.z+initialPosition.z+1.4));
@@ -269,6 +269,7 @@ void InventoryMenu::updateState(GameState & gameState){
             if(hasMovement){
                 selectedPosition->product(auxMatrix->getMatrix());
                 moveSound->play();
+                changeSelectedItems();
             }
 
         }
@@ -344,15 +345,15 @@ void InventoryMenu::changeSelectedItems(){
         nameItemText->setMessage(nameText.str());
     }
     else {
-        nameItemText->setMessage("Prueba");
-        lifeItemText->setMessage("234");
-        damageItemText->setMessage("2");
-        armourItemText->setMessage("23");
+        nameItemText->setMessage("--");
+        lifeItemText->setMessage("--");
+        damageItemText->setMessage("--");
+        armourItemText->setMessage("--");
 
 
     }
 
-    nameItemText->init(750.0,60.0);
+    nameItemText->init(1250.0,80.0);
     lifeItemText->init(750.0,60.0);
     damageItemText->init(750.0,60.0);
     armourItemText->init(750.0,60.0);
