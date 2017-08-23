@@ -51,6 +51,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
     confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
+    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -75,6 +76,21 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     nodeText->add(currentMaterial);
     nodeText->add(meshCollect->getMesh(TEXT));
 
+    ////////////////////////
+    // Image profile
+    Matrix4f * positionImgItem=new Matrix4f();
+    positionImgItem->translation(-0.826,0.052,0.8);
+
+    scaleMenu=new Matrix4f();
+    scaleMenu->scale(0.042,0.280,0.1);
+
+    NodeSceneGraph * imgItem=new NodeSceneGraph(false,true);
+    imgItem->add(positionImgItem);
+    imgItem->add(scaleMenu);
+    imgItem->add(materialCurrentMaterial);
+    imgItem->add(meshCollect->getMesh(TEXT));
+
+
     ///////////////////////
     //Back
     Matrix4f * scaleMenuBack=new Matrix4f();
@@ -92,6 +108,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     root->add(nodeBack);
     root->add(nodeText);
     root->add(createMatrixItems());
+    root->add(imgItem);
 
     ////////////////////////////
     // Confirm material
@@ -126,6 +143,7 @@ InventoryMenu::~InventoryMenu(){
     delete currentMaterial;
     delete materialBack;
     delete confirmMaterial;
+    delete materialCurrentMaterial;
 
     delete damageItemText;
     delete armourItemText;

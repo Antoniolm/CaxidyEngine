@@ -92,6 +92,7 @@ class InventoryMenu : public Menu
         Matrix4f * selectedPosition;         // The position of the current selected item
         Material * materialBack;             // The texture in background
         Material * confirmMaterial;
+        Material * materialCurrentMaterial;
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
 
