@@ -216,7 +216,7 @@
     "equip":[
         {   "position":[3.5,1.5,-4.5],
                 "type":0,
-                "name":"Prueba1",
+                "name":"Espada valor",
                 "material":"mSWORD", 
                 "geometry":"SWORD", 
                 "imgProfile":"./textures/TEX_crystal.png",
@@ -225,7 +225,7 @@
                 "armour":25},
         {   "position":[3.5,1.5,-2.5],
                 "type":0,
-                "name":"Prueba2",
+                "name":"Espada de viento",
                 "material":"mSWORD", 
                 "geometry":"SWORD",
                 "imgProfile":"./textures/swordTexture.png", 

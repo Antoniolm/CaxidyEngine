@@ -170,7 +170,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 //Adjust the position of the menu and its information text
                 positionMenu->translation(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
-                nameItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.8,posHero.y+initialPosition.y+0.8,posHero.z+initialPosition.z+1.4));
+                nameItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.65,posHero.y+initialPosition.y+0.8,posHero.z+initialPosition.z+1.4));
                 lifeItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.6,posHero.z+initialPosition.z+1.4));
                 damageItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.5,posHero.z+initialPosition.z+1.4));
                 armourItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.4,posHero.z+initialPosition.z+1.4));
@@ -181,6 +181,8 @@ void InventoryMenu::updateState(GameState & gameState){
                 controller->setState(false,cLEFT);
                 controller->setState(false,cRIGHT);
                 controller->setState(false,cINVENTORY);
+
+                changeSelectedItems();
             }
             else{
                 selectedPosition->translation(-0.272,0.439,0.8);
