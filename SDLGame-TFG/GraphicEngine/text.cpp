@@ -105,7 +105,7 @@ void Text::setPosition(vec3f position){
 
 //**********************************************************************//
 
-void Text::init(){
+void Text::init(float factorX, float factorY){
     glGenTextures(1, &textureText);
     glBindTexture(GL_TEXTURE_2D, textureText);
 
@@ -120,7 +120,7 @@ void Text::init(){
                  GL_UNSIGNED_BYTE, surface->pixels);
 
     //Adjust the size of dialog to our text
-    float scaleX=surface->w/250.0,scaleY=surface->h/20.0;
+    float scaleX=surface->w/factorX,scaleY=surface->h/factorY;
     scaleText->scale(scaleX,scaleY*0.3,1.0);
     if(hasDialog)
         scaleBack->scale(scaleX+0.2,scaleY*1.1,1.0);
