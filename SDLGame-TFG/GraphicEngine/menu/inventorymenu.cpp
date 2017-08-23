@@ -43,15 +43,15 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     lifeItemText=new Text(mVOID,font,color,false);
     nameItemText=new Text(mVOID,font,color,false);
 
-    changeSelectedItems();
-
     /////////////////
     //Create interface
 
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
     confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
-    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
+    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
+
+    changeSelectedItems();
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -79,10 +79,10 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     ////////////////////////
     // Image profile
     Matrix4f * positionImgItem=new Matrix4f();
-    positionImgItem->translation(-0.826,0.052,0.8);
+    positionImgItem->translation(-0.827,0.0535,0.8);
 
     scaleMenu=new Matrix4f();
-    scaleMenu->scale(0.042,0.280,0.1);
+    scaleMenu->scale(0.041,0.263,0.1);
 
     NodeSceneGraph * imgItem=new NodeSceneGraph(false,true);
     imgItem->add(positionImgItem);
@@ -363,6 +363,8 @@ void InventoryMenu::changeSelectedItems(){
 
         nameText<< equip->getName();
         nameItemText->setMessage(nameText.str());
+
+        materialCurrentMaterial->setTexture(equip->getImageProfile());
     }
     else {
         nameItemText->setMessage("--");
@@ -370,6 +372,7 @@ void InventoryMenu::changeSelectedItems(){
         damageItemText->setMessage("--");
         armourItemText->setMessage("--");
 
+        materialCurrentMaterial->setTexture("./textures/void.png");
 
     }
 
