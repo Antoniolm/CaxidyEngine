@@ -5662,7 +5662,7 @@
 1503240163 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
-1503425943 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
+1503427729 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
 	"savedmanager.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
@@ -5891,7 +5891,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1503404357 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1503487753 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5905,6 +5905,7 @@
 	"sound/sound.h"
 	"menu.h"
 	"profile.h"
+	"../text.h"
 	"mainmenu.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
@@ -5935,7 +5936,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1503425484 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1503427720 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h

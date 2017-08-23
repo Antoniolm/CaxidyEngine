@@ -33,6 +33,7 @@
 #include "sound/sound.h"
 #include "menu.h"
 #include "profile.h"
+#include "../text.h"
 #include "mainmenu.h"
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
@@ -85,18 +86,29 @@ class InventoryMenu : public Menu
 
         NodeSceneGraph * createMatrixItems();
         NodeSceneGraph * confirmInterface;
+        void changeSelectedItems();
+
         vec3f initialPosition;               // Initial position of the menu
         Matrix4f * selectedPosition;         // The position of the current selected item
         Material * materialBack;             // The texture in background
         Material * confirmMaterial;
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
+
         vec3f distItem;                      // Distance between items
         int currentItemX;
         int currentItemY;
+
         Inventory * inventory;               // Logistic inventory of the interface
         Material * itemView[3][6];
         bool isConfirming;
+
+        //Selected items
+        Text * damageItemText;
+        Text * armourItemText;
+        Text * lifeItemText;
+        Text * nameItemText;
+
 };
 
 #endif // INVENTORYMENU_H
