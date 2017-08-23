@@ -33,6 +33,19 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     distItem=dItem;
     inventory=&inv;
 
+    //////////////////
+    // Texts
+
+    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 10);
+    SDL_Color color= {0,255,0};
+    damageItemText=new Text(mVOID,font,color,false);
+    armourItemText=new Text(mVOID,font,color,false);
+    lifeItemText=new Text(mVOID,font,color,false);
+    nameItemText=new Text(mVOID,font,color,false);
+
+    /////////////////
+    //Create interface
+
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
     confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
@@ -111,6 +124,11 @@ InventoryMenu::~InventoryMenu(){
     delete currentMaterial;
     delete materialBack;
     delete confirmMaterial;
+
+    delete damageItemText;
+    delete armourItemText;
+    delete lifeItemText;
+    delete nameItemText;
 }
 
 //**********************************************************************//
@@ -118,6 +136,10 @@ InventoryMenu::~InventoryMenu(){
 void InventoryMenu::visualization(Context & cv){
     if(activateMenu){
         root->visualization(cv);
+        damageItemText->visualization(cv);
+        armourItemText->visualization(cv);
+        lifeItemText->visualization(cv);
+        nameItemText->visualization(cv);
 
         if(isConfirming)
             confirmInterface->visualization(cv);
@@ -292,6 +314,39 @@ void InventoryMenu::clearInventory(){
                 itemView[i][j]->setTexture("./textures/void.png");
         }
     }
+}
+
+//**********************************************************************//
+
+void InventoryMenu::changeSelectedItems(){
+    Equipment * equip=inventory->getItem(currentItemX,currentItemY);
+    std::stringstream lifeText,armourText,damageText,nameText;
+
+    if(equip!=0){
+        lifeText<< equip->getLife();
+        lifeItemText->setMessage(lifeText.str());
+
+        armourText<< equip->getArmour();
+        armourItemText->setMessage(armourText.str());
+
+        damageText<< equip->getDamage();
+        damageItemText->setMessage(damageText.str());
+
+        nameText<< equip->getName();
+        nameItemText->setMessage(nameText.str());
+    }
+    else {
+        lifeItemText->setMessage("--");
+        armourItemText->setMessage("--");
+        damageItemText->setMessage("--");
+        nameItemText->setMessage("--");
+    }
+
+    lifeItemText->init();
+    armourItemText->init();
+    damageItemText->init();
+    nameItemText->init();
+
 }
 
 //**********************************************************************//
