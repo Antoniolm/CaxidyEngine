@@ -30,7 +30,6 @@ HeroState::HeroState(){
     SDL_Color color= {0,255,0};
     coinText=new Text(mVOID,font,color,false);
 
-
     MeshCollection * meshCollect =MeshCollection::getInstance();
     MaterialCollection * materialCollect =MaterialCollection::getInstance();
 
@@ -82,9 +81,10 @@ HeroState::HeroState(){
 
 //**********************************************************************//
 
-HeroState::~HeroState()
-{
+HeroState::~HeroState(){
     delete root;
+    delete currentMaterialLife;
+    delete coinText;
 }
 
 //**********************************************************************//
