@@ -26,7 +26,7 @@ HeroState::HeroState(){
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 10);
+    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 20);
     SDL_Color color= {0,255,0};
     coinText=new Text(mVOID,font,color,false);
 
@@ -98,7 +98,7 @@ void HeroState::visualization(Context & cv){
 
 void HeroState::updateState(GameState & gameState){
     Hero * hero=gameState.rootMap->getHero();
-    vec3f posHero=hero->getPosition();s
+    vec3f posHero=hero->getPosition();
 
     positionState->translation(posHero.x,posHero.y+7.4,posHero.z+10.6);
     coinText->setPosition(vec3f(posHero.x+0.74,posHero.y+7.4,posHero.z+10.6));
@@ -119,7 +119,7 @@ void HeroState::updateState(GameState & gameState){
         std::stringstream coin;
         coin<< heroCoin;
         coinText->setMessage(coin.str());
-        coinText->init();
+        coinText->init(500.0,40.0);
     }
 
     currentLife=heroLife;
