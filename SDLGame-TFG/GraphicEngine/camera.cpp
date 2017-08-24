@@ -22,6 +22,7 @@
 
 Camera::Camera(){
     viewMode=false;
+    speakMode=false;
     currentTime=SDL_GetTicks();
     viewDelay=currentTime;
 }
@@ -34,6 +35,7 @@ Camera::Camera(vec3f eye,vec3f aTarget,vec3f aUp){
     target=aTarget;
     up=aUp;
     viewMode=false;
+    speakMode=false;
 
     createCamera();
     currentTime=SDL_GetTicks();
@@ -150,7 +152,10 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     }
 
     target=posHero;
-    if(viewMode){ //if viewMode
+
+    //////////////////////
+    // View mode activated
+    if(viewMode){
         if(position.z<posHero.z+35){ //if is not in the max position
             position.y+=0.25*((time-currentTime)/10);
             position.z+=0.5*((time-currentTime)/10);
@@ -165,6 +170,19 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
         position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
     }
 
+    /////////////////////
+    // Speak mode activated
+    if(speakMode){
+        if(position.z<posHero.z-10){ //if is not in the max position
+            position.y-=0.25*((time-currentTime)/10);
+            position.z-=0.5*((time-currentTime)/10);
+        }
+    }
+    else { //else normal mode
+        position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
+    }
+
+    //Assign parameters of the shader
     createCamera();//Create camera
 
     glUniformMatrix4fv(glGetUniformLocation(shaderID,"view"),1,GL_FALSE,camera.getMatrix());
@@ -172,6 +190,12 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     glUniform3f(glGetUniformLocation(shaderID, "viewPosVertex"), position.x, position.y, position.z);
 
     currentTime+=time-currentTime;
+}
+
+//**********************************************************************//
+
+void Camera::setSpeakMode(bool value){
+    speakMode=value;
 }
 
 //**********************************************************************//

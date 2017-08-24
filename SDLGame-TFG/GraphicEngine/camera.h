@@ -137,6 +137,15 @@ class Camera
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *   It will set the value of the speak mode
+        *   @param value -> the new value of the speak mode boolean
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setSpeakMode(bool value);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *   This method will return our matrix camera
         *   \return Matrix4f
         */
@@ -220,6 +229,7 @@ class Camera
         vec3f target;              // Current target of the camera
         vec3f up;                  // Current inclination of the camera
         bool viewMode;             // Flag of the view mode
+        bool speakMode;            // Flag of the speak mode
         float currentTime;         // Current time of the system
         float viewDelay;           // Delay in our view mode
 };

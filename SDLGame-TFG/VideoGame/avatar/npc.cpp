@@ -168,20 +168,20 @@ void Npc::updateState(GameState & gameState){
             gameState.controller->setState(false,cACTION);
         }
         else { //Else Check if hero will start a new conversation.
-                if((distance.x>-1 && distance.x<1)&&(distance.y>-2 && distance.y<2)&&(distance.z>-1 && distance.z<1)){
-                    activateNpc(true);
-                    hero->activateDialog(false,1);
-                    //Check the speaker
-                    if(stateMachine.getCurrentSpeaker()==NPC_DIALOG){ //speaker -> Npc
-                        currentDialog();
-                        hero->activateDialog(false,0);
-                    }
-                    else {//speaker -> Hero
-                        hero->activateDialog(true,0);
-                        hero->setDialog(stateMachine.getCurrentState(),0);
-                    }
-                    gameState.controller->setState(false,cACTION);
+            if((distance.x>-1 && distance.x<1)&&(distance.y>-2 && distance.y<2)&&(distance.z>-1 && distance.z<1)){
+                activateNpc(true);
+                hero->activateDialog(false,1);
+                //Check the speaker
+                if(stateMachine.getCurrentSpeaker()==NPC_DIALOG){ //speaker -> Npc
+                    currentDialog();
+                    hero->activateDialog(false,0);
                 }
+                else {//speaker -> Hero
+                    hero->activateDialog(true,0);
+                    hero->setDialog(stateMachine.getCurrentState(),0);
+                }
+                gameState.controller->setState(false,cACTION);
+            }
         }
         dialogTime=time;
     }
