@@ -136,6 +136,9 @@ void Npc::updateState(GameState & gameState){
     if(heroActivate && ((distance.x<-2 || distance.x>2)||(distance.y<-2 || distance.y>2)||(distance.z<-2 || distance.z>2))){
         heroActivate=false;
         hero->activateDialog(false,1);
+
+        // deactivation speak mode
+        gameState.camera->setSpeakMode(false);
     }
 
     if(npcActivate){ //If hero is talking and he is a good distance
@@ -143,6 +146,9 @@ void Npc::updateState(GameState & gameState){
         if((distance.x<-2 || distance.x>2)||(distance.y<-2 || distance.y>2)||(distance.z<-2 || distance.z>2)){
             activateNpc(false);
             hero->activateDialog(false,0);
+
+            // deactivation speak mode
+            gameState.camera->setSpeakMode(false);
         }
     }
 
@@ -171,6 +177,7 @@ void Npc::updateState(GameState & gameState){
             if((distance.x>-1 && distance.x<1)&&(distance.y>-2 && distance.y<2)&&(distance.z>-1 && distance.z<1)){
                 activateNpc(true);
                 hero->activateDialog(false,1);
+
                 //Check the speaker
                 if(stateMachine.getCurrentSpeaker()==NPC_DIALOG){ //speaker -> Npc
                     currentDialog();
@@ -181,6 +188,9 @@ void Npc::updateState(GameState & gameState){
                     hero->setDialog(stateMachine.getCurrentState(),0);
                 }
                 gameState.controller->setState(false,cACTION);
+
+                // Activation speak mode
+                gameState.camera->setSpeakMode(true);
             }
         }
         dialogTime=time;

@@ -167,14 +167,15 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
         }
     }
     else { //else normal mode
-        position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
+        if(!speakMode)
+            position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
     }
 
     /////////////////////
     // Speak mode activated
     if(speakMode){
-        if(position.z<posHero.z-10){ //if is not in the max position
-            position.y-=0.25*((time-currentTime)/10);
+        if(position.z>posHero.z+7){ //if is not in the max position
+            position.y-=0.5*((time-currentTime)/10);
             position.z-=0.5*((time-currentTime)/10);
         }
     }

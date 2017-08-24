@@ -224,10 +224,12 @@ class Camera
         Matrix4f camera;           // Matrix 4x4 of the camera
         Matrix4f orthoProjection;  // Matrix 4x4 of the orthographic projection
         Matrix4f perspecProjection;// Matrix 4x4 of the perspective projection
+
         vec3f initialPosition;     // Initial position of the camera
         vec3f position;            // Current position of the camera
         vec3f target;              // Current target of the camera
         vec3f up;                  // Current inclination of the camera
+
         bool viewMode;             // Flag of the view mode
         bool speakMode;            // Flag of the speak mode
         float currentTime;         // Current time of the system
