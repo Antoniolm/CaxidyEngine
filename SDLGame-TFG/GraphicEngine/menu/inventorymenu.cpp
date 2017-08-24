@@ -184,7 +184,8 @@ void InventoryMenu::updateState(GameState & gameState){
             menuDelay=time;
             openSound->play();
             if(activateMenu){
-                posHero=gameState.rootMap->getHero()->getPosition();
+                //posHero=gameState.rootMap->getHero()->getPosition();
+                posHero=gameState.camera->getPosition();
 
                 //Adjust the position of the menu and its information text
                 positionMenu->translation(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);

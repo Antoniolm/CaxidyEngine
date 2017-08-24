@@ -175,8 +175,8 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     // Speak mode activated
     if(speakMode){
         if(position.z>posHero.z+7){ //if is not in the max position
-            position.y-=0.5*((time-currentTime)/10);
-            position.z-=0.5*((time-currentTime)/10);
+            position.y-=0.8*((time-currentTime)/20);
+            position.z-=1.3*((time-currentTime)/20);
         }
     }
     else { //else normal mode
