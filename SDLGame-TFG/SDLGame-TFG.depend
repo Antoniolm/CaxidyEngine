@@ -5443,7 +5443,7 @@
 1503408834 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
-1503489069 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
+1503598838 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
 	"herostate.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.h
@@ -5771,7 +5771,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1503587428 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1503598915 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5798,7 +5798,7 @@
 1503254064 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
 
-1503591337 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
+1503593367 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
 	"camera.h"
 	"rootmap.h"
 

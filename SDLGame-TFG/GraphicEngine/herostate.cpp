@@ -98,9 +98,11 @@ void HeroState::visualization(Context & cv){
 
 void HeroState::updateState(GameState & gameState){
     Hero * hero=gameState.rootMap->getHero();
-    vec3f posHero=hero->getPosition();
+    vec3f posHero=hero->getPosition();s
+
     positionState->translation(posHero.x,posHero.y+7.4,posHero.z+10.6);
     coinText->setPosition(vec3f(posHero.x+0.74,posHero.y+7.4,posHero.z+10.6));
+
     int heroLife=hero->getLife();
     int heroCoin=hero->getCoin();
 
