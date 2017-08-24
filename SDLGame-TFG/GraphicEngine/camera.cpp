@@ -23,6 +23,8 @@
 Camera::Camera(){
     viewMode=false;
     speakMode=false;
+    factorZoomY=0.0;
+    factorZoomZ=0.0;
     currentTime=SDL_GetTicks();
     viewDelay=currentTime;
 }
@@ -36,6 +38,9 @@ Camera::Camera(vec3f eye,vec3f aTarget,vec3f aUp){
     up=aUp;
     viewMode=false;
     speakMode=false;
+
+    factorZoomY=0.0;
+    factorZoomZ=0.0;
 
     createCamera();
     currentTime=SDL_GetTicks();
@@ -174,13 +179,24 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     /////////////////////
     // Speak mode activated
     if(speakMode){
-        if(position.z>posHero.z+7){ //if is not in the max position
+        if(position.z>posHero.z+10){ //if is not in the max position
+            factorZoomY-=0.8*((time-currentTime)/20);
+            factorZoomZ-=1.3*((time-currentTime)/20);
+
             position.y-=0.8*((time-currentTime)/20);
             position.z-=1.3*((time-currentTime)/20);
         }
+        else {
+            position.y=posHero.y+initialPosition.y+factorZoomY;
+            position.z=posHero.z+initialPosition.z+factorZoomZ;
+        }
+
+        position.x=posHero.x+initialPosition.x;
     }
     else { //else normal mode
         position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
+        factorZoomY=0.0;
+        factorZoomZ=0.0;
     }
 
     //Assign parameters of the shader

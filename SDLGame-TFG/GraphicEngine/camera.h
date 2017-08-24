@@ -234,6 +234,9 @@ class Camera
         bool speakMode;            // Flag of the speak mode
         float currentTime;         // Current time of the system
         float viewDelay;           // Delay in our view mode
+
+        float factorZoomY;
+        float factorZoomZ;
 };
 
 #endif // CAMERA_H
