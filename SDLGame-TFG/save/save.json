@@ -1,4 +1,4 @@
-{ "currentMap":"" ,  "coin":0 ,
+{ "currentMap":"./maps/map01.json" ,  "coin":7 ,
 "equip": [
 ] 
  }

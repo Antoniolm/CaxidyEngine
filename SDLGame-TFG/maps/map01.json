@@ -118,6 +118,9 @@
 
     "npcs":[
             {   "position":[205.5,2.0,-5.5],
+                "textPosition":[0.0,1.2,0.0],
+                "material":"mBUTLER",
+                "mesh":"BUTLER",
                 "dialog":[{"speaker":0,
                            "string":"You have to drop a soul in the soul carrier"},
                           {"speaker":0,
@@ -127,6 +130,9 @@
                         ]
             },
             {   "position":[140.5,2.0,-20.5],
+                "textPosition":[0.0,1.2,0.0],
+                "material":"mBUTLER",
+                "mesh":"BUTLER",
                 "dialog":[{"speaker":0,
                            "string":"Hello brave warrior"},
                           {"speaker":0,

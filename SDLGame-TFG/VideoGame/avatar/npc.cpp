@@ -30,6 +30,7 @@ Npc::Npc(const Value & npcFeatures)
 
     const Value & dialogs=npcFeatures["dialog"];
 
+    //Create the conversation
     for(unsigned j=0;j<dialogs.Size();j++){
         if(dialogs[j]["speaker"].GetInt()==0) speaker=NPC_DIALOG;
         else speaker=HERO_DIALOG;
@@ -53,12 +54,14 @@ Npc::Npc(const Value & npcFeatures)
     root=new NodeSceneGraph();
     root->add(transNPC);
     root->add(moveMatrix[0]);
-    root->add(materialCollect->getMaterial(mBUTLER));
-    root->add(meshCollect->getMesh(BUTLER));
+    root->add(materialCollect->getMaterial(npcFeatures["material"].GetString()));
+    root->add(meshCollect->getMesh(npcFeatures["mesh"].GetString()));
 
     TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 20);
     currentText=new Text(mBDIALOG,font);
-    currentText->setPosition(vec3f(position.x,position.y+1.5f,position.z));
+    currentText->setPosition(vec3f(position.x+npcFeatures["textPosition"][0].GetFloat(),
+                                   position.y+npcFeatures["textPosition"][1].GetFloat(),
+                                   position.z+npcFeatures["textPosition"][2].GetFloat()));
     currentTime=SDL_GetTicks();
     dialogTime=currentTime;
     initAnimation();

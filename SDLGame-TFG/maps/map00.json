@@ -108,6 +108,9 @@
 
     "npcs":[
             {   "position":[12.5,2.0,-4.5],
+                "textPosition":[0.0,1.2,0.0],
+                "material":"mBUTLER",
+                "mesh":"BUTLER",
                 "dialog":[{"speaker":0,
                            "string":"Oh!! Young warrior, you waked up"},
                           {"speaker":0,
@@ -125,6 +128,9 @@
                         ]
             },
             {   "position":[25.0,5.2,-18.0],
+                "textPosition":[0.0,1.2,0.0],
+                "material":"mBUTLER",
+                "mesh":"BUTLER",
                 "dialog":[{"speaker":0,
                            "string":"You have to be careful with the green water"},
                           {"speaker":0,
