@@ -179,7 +179,14 @@
                 "life":25,
                 "position":[178.5,1.5,-3.5],
                 "radioActivity":[2.0,2.0,2.0],
-                "type":"ranged"
+                "type":"ranged",
+                "textFont":"font/Xolonium-Regular.ttf",
+                "textSize":40,
+                "material":"rENEMY",
+                "head":"RHEAD",
+                "body":"RCHEST",
+                "hand":"RHAND",
+                "leg":"RFOOT"
             }
            
     ],

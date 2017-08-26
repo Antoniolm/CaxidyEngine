@@ -23,7 +23,9 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
 {
     life=enemyFeatures["life"].GetInt();
     maxLife=enemyFeatures["life"].GetInt();
+
     IA=new IAMeleeEnemy();
+
     position=vec4f(enemyFeatures["position"][0].GetFloat(),
                    enemyFeatures["position"][1].GetFloat(),
                    enemyFeatures["position"][2].GetFloat(),1.0);

@@ -28,6 +28,8 @@
 #include "../equipment.h"
 #include <vector>
 
+using namespace rapidjson;
+
 class RangedEnemy : public Enemy
 {
     public:
@@ -37,14 +39,11 @@ class RangedEnemy : public Enemy
         RangedEnemy();
 
         //////////////////////////////////////////////////////////////////////////
-        /**
-        *   Constructor
-        *   @param aLife -> the max life of our enemy
-        *   @param aPosition -> the initial position of our enemy
-        *   @param aRadioActivity -> the radio activity of our enemy
+        /** Constructor with parameters
+        *   @param enemyFeatures -> the value json that contain all the information of the enemy
         */
         //////////////////////////////////////////////////////////////////////////
-        RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity);
+        RangedEnemy(const Value & enemyFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

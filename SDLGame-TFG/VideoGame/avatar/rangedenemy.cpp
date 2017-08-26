@@ -25,14 +25,20 @@ RangedEnemy::RangedEnemy(){
 
 //**********************************************************************//
 
-RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
+RangedEnemy::RangedEnemy(const Value & enemyFeatures)
 {
-    life=aLife;
-    maxLife=aLife;
+    life=enemyFeatures["life"].GetInt();
+    maxLife=enemyFeatures["life"].GetInt();
     IA=new IARangedEnemy();
     secondIA=new IAMeleeEnemy();
-    position=vec4f(aPosition.x,aPosition.y,aPosition.z,1.0);
-    radioActivity=aRadioActivity;
+
+    position=vec4f(enemyFeatures["position"][0].GetFloat(),
+                   enemyFeatures["position"][1].GetFloat(),
+                   enemyFeatures["position"][2].GetFloat(),1.0);
+
+    radioActivity=vec3f(enemyFeatures["radioActivity"][0].GetFloat(),
+                        enemyFeatures["radioActivity"][1].GetFloat(),
+                        enemyFeatures["radioActivity"][2].GetFloat());
 
     acceleratedMove=new AcceleratedMovement();
     acceleratedMove->resetState();
@@ -65,7 +71,7 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 40);
+    TTF_Font *font=TTF_OpenFont( enemyFeatures["textFont"].GetString(), enemyFeatures["textSize"].GetInt());
     SDL_Color color= {255,0,0};
     currentText=new Text(mVOID,font,color,false);
     activatedDialog=false;
@@ -93,13 +99,13 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     NodeSceneGraph * legLeft=new NodeSceneGraph();
     legLeft->add(moveLegLeft);
     legLeft->add(transLeg);
-    legLeft->add(meshCollect->getMesh(RFOOT));
+    legLeft->add(meshCollect->getMesh(enemyFeatures["leg"].GetString()));
 
     //Leg Right
     NodeSceneGraph * legRight=new NodeSceneGraph();
     legRight->add(moveLegRight);
     legRight->add(transLegSecond);
-    legRight->add(meshCollect->getMesh(RFOOT));
+    legRight->add(meshCollect->getMesh(enemyFeatures["leg"].GetString()));
 
     //////////////////////////////////////////////////////
     /////                  Arms                      /////
@@ -158,7 +164,7 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     handRight->add(transElbow);
     handRight->add(moveElbowRight);
     handRight->add(transHand);
-    handRight->add(meshCollect->getMesh(RHAND));
+    handRight->add(meshCollect->getMesh(enemyFeatures["hand"].GetString()));
     handRight->add(weapon);
 
     NodeSceneGraph * handLeft=new NodeSceneGraph();
@@ -166,7 +172,7 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     handLeft->add(moveElbowLeft);
     handLeft->add(transHandLeft);
     handLeft->add(rotateYHand);
-    handLeft->add(meshCollect->getMesh(RHAND));
+    handLeft->add(meshCollect->getMesh(enemyFeatures["hand"].GetString()));
 
     //Arm left
     NodeSceneGraph * ArmLeft=new NodeSceneGraph();
@@ -218,11 +224,11 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
 
     NodeSceneGraph * chestNode=new NodeSceneGraph();
     chestNode->add(transChest);
-    chestNode->add(meshCollect->getMesh(RCHEST));
+    chestNode->add(meshCollect->getMesh(enemyFeatures["body"].GetString()));
 
     NodeSceneGraph * headNode=new NodeSceneGraph();
     headNode->add(transHead);
-    headNode->add(meshCollect->getMesh(RHEAD));
+    headNode->add(meshCollect->getMesh(enemyFeatures["head"].GetString()));
 
     NodeSceneGraph * chest_ArmsNode=new NodeSceneGraph();
     chest_ArmsNode->add(transChestArm);
@@ -233,7 +239,7 @@ RangedEnemy::RangedEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     chest_ArmsNode->add(ArmRight);
 
     root->add(scaleHero);
-    root->add(materialCollect->getMaterial(mARCHENEMY));
+    root->add(materialCollect->getMaterial(enemyFeatures["material"].GetString()));
     root->add(headNode);
     root->add(chest_ArmsNode);
     root->add(transLegSceneI);
