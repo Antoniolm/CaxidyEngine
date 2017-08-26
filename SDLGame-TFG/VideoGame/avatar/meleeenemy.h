@@ -26,18 +26,18 @@
 #include "enemylist.h"
 #include "../equipment.h"
 
+using namespace rapidjson;
+
 class MeleeEnemy : public Enemy
 {
     public:
+
         //////////////////////////////////////////////////////////////////////////
-        /**
-        *   Constructor
-        *   @param aLife -> the max life of our enemy
-        *   @param aPosition -> the initial position of our enemy
-        *   @param aRadioActivity -> the radio activity of our enemy
+        /** Constructor with parameters
+        *   @param enemyFeatures -> the value json that contain all the information of the enemy
         */
         //////////////////////////////////////////////////////////////////////////
-        MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity);
+        MeleeEnemy(const Value & enemyFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

@@ -153,19 +153,27 @@
                 "life":75,
                 "position":[75.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
-                "type":"melee"
+                "type":"melee",
+                "textFont":"font/Xolonium-Regular.ttf",
+                "textSize":40,
+                "material":"mENEMY",
+                "head":"EHEAD",
+                "body":"ECHEST",
+                "hand":"EHAND",
+                "leg":"EFOOT"
             },  
             {   
                 "life":75,
                 "position":[77.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
-                "type":"melee"
-            },
-            {   
-                "life":75,
-                "position":[77.5,5.5,-40.5],
-                "radioActivity":[2.0,2.0,2.0],
-                "type":"melee"
+                "type":"melee",
+                "textFont":"font/Xolonium-Regular.ttf",
+                "textSize":40,
+                "material":"mENEMY",
+                "head":"EHEAD",
+                "body":"ECHEST",
+                "hand":"EHAND",
+                "leg":"EFOOT"
             }
     ],
 

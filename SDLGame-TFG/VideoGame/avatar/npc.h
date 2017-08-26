@@ -43,7 +43,7 @@ class Npc : public Avatar
 
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with parameters
-        *    @param npcFeatures -> the value json that contain all the information of our door object
+        *    @param npcFeatures -> the value json that contain all the information of the npc
         */
         //////////////////////////////////////////////////////////////////////////
         Npc(const Value & npcFeatures);

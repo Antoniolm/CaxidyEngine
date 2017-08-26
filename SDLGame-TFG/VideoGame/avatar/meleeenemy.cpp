@@ -19,13 +19,18 @@
 
 #include "meleeenemy.h"
 
-MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
+MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
 {
-    life=aLife;
-    maxLife=aLife;
+    life=enemyFeatures["life"].GetInt();
+    maxLife=enemyFeatures["life"].GetInt();
     IA=new IAMeleeEnemy();
-    position=vec4f(aPosition.x,aPosition.y,aPosition.z,1.0);
-    radioActivity=aRadioActivity;
+    position=vec4f(enemyFeatures["position"][0].GetFloat(),
+                   enemyFeatures["position"][1].GetFloat(),
+                   enemyFeatures["position"][2].GetFloat(),1.0);
+
+    radioActivity=vec3f(enemyFeatures["radioActivity"][0].GetFloat(),
+                        enemyFeatures["radioActivity"][1].GetFloat(),
+                        enemyFeatures["radioActivity"][2].GetFloat());
 
 
     acceleratedMove=new AcceleratedMovement();
@@ -54,10 +59,11 @@ MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
 
     enemySound.push_back(soundCollect->getSound(sWALK));
     enemySound.push_back(soundCollect->getSound(EHIT));
+
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 40);
+    TTF_Font *font=TTF_OpenFont( enemyFeatures["textFont"].GetString(), enemyFeatures["textSize"].GetInt());
     SDL_Color color= {255,0,0};
     currentText=new Text(mVOID,font,color,false);
     activatedDialog=false;
@@ -85,13 +91,13 @@ MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     NodeSceneGraph * legLeft=new NodeSceneGraph();
     legLeft->add(moveLegLeft);
     legLeft->add(transLeg);
-    legLeft->add(meshCollect->getMesh(EFOOT));
+    legLeft->add(meshCollect->getMesh(enemyFeatures["leg"].GetString()));
 
     //Leg Right
     NodeSceneGraph * legRight=new NodeSceneGraph();
     legRight->add(moveLegRight);
     legRight->add(transLegSecond);
-    legRight->add(meshCollect->getMesh(EFOOT));
+    legRight->add(meshCollect->getMesh(enemyFeatures["leg"].GetString()));
 
     //////////////////////////////////////////////////////
     /////                  Arms                      /////
@@ -150,7 +156,7 @@ MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     handRight->add(transElbow);
     handRight->add(moveElbowRight);
     handRight->add(transHand);
-    handRight->add(meshCollect->getMesh(EHAND));
+    handRight->add(meshCollect->getMesh(enemyFeatures["hand"].GetString()));
     handRight->add(weapon);
 
     NodeSceneGraph * handLeft=new NodeSceneGraph();
@@ -158,7 +164,7 @@ MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     handLeft->add(moveElbowLeft);
     handLeft->add(transHandLeft);
     handLeft->add(rotateYHand);
-    handLeft->add(meshCollect->getMesh(EHAND));
+    handLeft->add(meshCollect->getMesh(enemyFeatures["hand"].GetString()));
 
     //Arm left
     NodeSceneGraph * ArmLeft=new NodeSceneGraph();
@@ -206,12 +212,11 @@ MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     transChest->translation(0.0,0.1,-0.3);
 
     NodeSceneGraph * chestNode=new NodeSceneGraph();
-    chestNode->add(meshCollect->getMesh(ECHEST));
+    chestNode->add(meshCollect->getMesh(enemyFeatures["body"].GetString()));
 
     NodeSceneGraph * headNode=new NodeSceneGraph();
     headNode->add(transHead);
-
-    headNode->add(meshCollect->getMesh(EHEAD));
+    headNode->add(meshCollect->getMesh(enemyFeatures["head"].GetString()));
 
     NodeSceneGraph * chest_ArmsNode=new NodeSceneGraph();
     chest_ArmsNode->add(transChest);
@@ -222,7 +227,7 @@ MeleeEnemy::MeleeEnemy(float aLife,vec3f aPosition,vec3f aRadioActivity)
     chest_ArmsNode->add(ArmRight);
 
     root->add(scaleHero);
-    root->add(materialCollect->getMaterial(mENEMY));
+    root->add(materialCollect->getMaterial(enemyFeatures["material"].GetString()));
     root->add(headNode);
     root->add(chest_ArmsNode);
     root->add(transLegSceneI);
