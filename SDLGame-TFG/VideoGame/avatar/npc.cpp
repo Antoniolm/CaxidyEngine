@@ -57,7 +57,7 @@ Npc::Npc(const Value & npcFeatures)
     root->add(materialCollect->getMaterial(npcFeatures["material"].GetString()));
     root->add(meshCollect->getMesh(npcFeatures["mesh"].GetString()));
 
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 20);
+    TTF_Font *font=TTF_OpenFont( npcFeatures["textFont"].GetString(), npcFeatures["textSize"].GetInt());
     currentText=new Text(mBDIALOG,font);
     currentText->setPosition(vec3f(position.x+npcFeatures["textPosition"][0].GetFloat(),
                                    position.y+npcFeatures["textPosition"][1].GetFloat(),
