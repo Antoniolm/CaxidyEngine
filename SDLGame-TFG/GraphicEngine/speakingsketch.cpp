@@ -19,10 +19,8 @@
 
 #include "speakingsketch.h"
 
-SpeakingSketch::SpeakingSketch(const Value & speakSkFeatures){
-    position=vec4f(speakSkFeatures["position"][0].GetFloat(),
-               speakSkFeatures["position"][1].GetFloat(),
-               speakSkFeatures["position"][2].GetFloat(),1.0);
+SpeakingSketch::SpeakingSketch(vec3f aPos, string material, string mesh){
+    position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -33,15 +31,15 @@ SpeakingSketch::SpeakingSketch(const Value & speakSkFeatures){
     transActivate=new Matrix4f();
     transActivate->identity();
 
-    Matrix4f * scaleMenuBack=new Matrix4f();
-    scaleMenuBack->scale(1.0,4.2,1.0);
+    Matrix4f * scaleSketch=new Matrix4f();
+    scaleSketch->scale(1.0,4.2,1.0);
 
     root=new NodeSceneGraph();
     root->add(transObject);
     root->add(transActivate);
-    root->add(scaleMenuBack);
-    root->add(materialCollect->getMaterial(mBUTTON));
-    root->add(meshCollect->getMesh(BUTTONB));
+    root->add(scaleSketch);
+    root->add(materialCollect->getMaterial(material));
+    root->add(meshCollect->getMesh(mesh));
 
     currentTime=SDL_GetTicks();
     activated=false;
