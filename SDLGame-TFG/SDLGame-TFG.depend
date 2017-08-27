@@ -5970,3 +5970,14 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\coin.cpp
 	"coin.h"
 
+1503854234 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\speakingsketch.cpp
+	"speakingsketch.h"
+
+1503854261 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\speakingsketch.h
+	"object3d.h"
+	"nodescenegraph.h"
+	"./matrix/matrix4f.h"
+	"./matrix/matrix4fdynamic.h"
+	"./collection/meshcollection.h"
+	"./collection/materialcollection.h"
+

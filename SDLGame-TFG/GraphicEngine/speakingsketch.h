@@ -26,6 +26,9 @@
 #include "./matrix/matrix4fdynamic.h"
 #include "./collection/meshcollection.h"
 #include "./collection/materialcollection.h"
+#include "../lib/rapidjson/document.h"
+
+using namespace rapidjson;
 
 class SpeakingSketch : public Object3D
 {
@@ -33,7 +36,7 @@ class SpeakingSketch : public Object3D
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        SpeakingSketch();
+        SpeakingSketch(const Value & speakSkFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

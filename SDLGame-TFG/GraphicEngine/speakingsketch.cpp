@@ -19,20 +19,44 @@
 
 #include "speakingsketch.h"
 
-SpeakingSketch::SpeakingSketch(){
-    //ctor
+SpeakingSketch::SpeakingSketch(const Value & speakSkFeatures){
+    position=vec4f(speakSkFeatures["position"][0].GetFloat(),
+               speakSkFeatures["position"][1].GetFloat(),
+               speakSkFeatures["position"][2].GetFloat(),1.0);
+
+    MeshCollection * meshCollect= MeshCollection::getInstance();
+    MaterialCollection * materialCollect= MaterialCollection::getInstance();
+
+    Matrix4f * transObject=new Matrix4f();
+    transObject->translation(position.x,position.y,position.z);
+
+    transActivate=new Matrix4f();
+    transActivate->identity();
+
+    Matrix4f * scaleMenuBack=new Matrix4f();
+    scaleMenuBack->scale(1.0,4.2,1.0);
+
+    root=new NodeSceneGraph();
+    root->add(transObject);
+    root->add(transActivate);
+    root->add(scaleMenuBack);
+    root->add(materialCollect->getMaterial(mBUTTON));
+    root->add(meshCollect->getMesh(BUTTONB));
+
+    currentTime=SDL_GetTicks();
+    activated=false;
 }
 
 //**********************************************************************//
 
 SpeakingSketch::~SpeakingSketch(){
-    //dtor
+    delete root;
 }
 
 //**********************************************************************//
 
 void SpeakingSketch::visualization(Context & cv){
-
+    root->visualization(cv);
 }
 
 //**********************************************************************//

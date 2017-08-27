@@ -30,6 +30,7 @@ RespawnVoxel::RespawnVoxel(const Value & respawnFeatures){
 
     Matrix4f * transObject=new Matrix4f();
     transObject->translation(position.x,position.y,position.z);
+
     Matrix4f * transButton=new Matrix4f();
     transButton->translation(0.0f,0.08f,0.0f);
 
