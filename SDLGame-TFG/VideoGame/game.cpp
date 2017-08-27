@@ -77,6 +77,11 @@ Game::Game(){
 
     //Create optionMenu
     gameState.optionMenu=new OptionMenu(vec3f(0.0,6.70,11.0),"./textures/mainMenuOption.png","./textures/optionResol.png","./textures/mainBackMenu.png");
+    gameState.optionMenu->add("./textures/optionResol.png");
+    gameState.optionMenu->add("./textures/optionWindow.png");
+    gameState.optionMenu->add("./textures/optionVolume.png");
+    gameState.optionMenu->add("./textures/optionSave.png");
+    gameState.optionMenu->add("./textures/optionQuit.png");
 
     //Create controlMenu
     gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"./textures/mainBackMenu.png");

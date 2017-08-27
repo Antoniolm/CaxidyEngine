@@ -108,12 +108,6 @@ OptionMenu::OptionMenu(vec3f posMenu,string mat,string currentMat, string matBac
     openSound=soundCollect->getSound(sOpen);
     moveSound=soundCollect->getSound(sCoin);
 
-    //Add the options
-    addOption(new Texture("./textures/optionResol.png"));
-    addOption(new Texture("./textures/optionWindow.png"));
-    addOption(new Texture("./textures/optionVolume.png"));
-    addOption(new Texture("./textures/optionSave.png"));
-    addOption(new Texture("./textures/optionQuit.png"));
 }
 
 //**********************************************************************//
@@ -312,6 +306,12 @@ void OptionMenu::activate(){
     activateMenu=true;
     currentOption=0;
     currentMaterial->setTexture(options[currentOption]);
+}
+
+//**********************************************************************//
+
+void OptionMenu::add(string fileName){
+    addOption(new Texture(fileName.c_str()));
 }
 
 //**********************************************************************//
