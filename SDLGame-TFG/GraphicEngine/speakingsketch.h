@@ -20,18 +20,53 @@
 #ifndef SPEAKINGSKETCH_H
 #define SPEAKINGSKETCH_H
 
+#include "object3d.h"
+#include "nodescenegraph.h"
+#include "./matrix/matrix4f.h"
+#include "./matrix/matrix4fdynamic.h"
+#include "./collection/meshcollection.h"
+#include "./collection/materialcollection.h"
 
-class SpeakingSketch
+class SpeakingSketch : public Object3D
 {
     public:
-        /** Default constructor */
+        //////////////////////////////////////////////////////////////////////////
+        /** Constructor */
+        //////////////////////////////////////////////////////////////////////////
         SpeakingSketch();
-        /** Default destructor */
+
+        //////////////////////////////////////////////////////////////////////////
+        /** Destructor */
+        //////////////////////////////////////////////////////////////////////////
         virtual ~SpeakingSketch();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will show the object in our interface
+        *    @param cv -> the context of our visualization
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual void visualization(Context & cv);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will update the state of the object. That change need the
+        *    current time in our application
+        *    @param gameState -> the current state of our game
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual void updateState(GameState & gameState);
 
     protected:
 
     private:
+        NodeSceneGraph * root;      // Root of the object
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the speaking sketch
+        ScriptLMD * animationUp;    // Up animation of the speaking sketch
+        ScriptLMD * animationDown;  // Down animation of the speaking sketch
+        bool activated;             // Flag to activation
 };
 
 #endif // SPEAKINGSKETCH_H

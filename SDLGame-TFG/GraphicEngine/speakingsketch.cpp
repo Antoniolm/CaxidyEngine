@@ -19,12 +19,24 @@
 
 #include "speakingsketch.h"
 
-SpeakingSketch::SpeakingSketch()
-{
+SpeakingSketch::SpeakingSketch(){
     //ctor
 }
 
-SpeakingSketch::~SpeakingSketch()
-{
+//**********************************************************************//
+
+SpeakingSketch::~SpeakingSketch(){
     //dtor
+}
+
+//**********************************************************************//
+
+void SpeakingSketch::visualization(Context & cv){
+
+}
+
+//**********************************************************************//
+
+void SpeakingSketch::updateState(GameState & gameState){
+
 }
