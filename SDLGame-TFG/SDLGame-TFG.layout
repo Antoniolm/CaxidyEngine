@@ -2,314 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="VideoGame\jumpbutton.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4236" topLine="87" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\sound\sound.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5925" topLine="113" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\structdata.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5904" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\ia\iaenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="34" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\potion.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\coin.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\context\materialstack.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1592" topLine="34" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\objectscene.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4836" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\controllermanager.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\inventory.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2693" topLine="76" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\avatarmove.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3303" topLine="293" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\particlesystem.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7269" topLine="139" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\matrixstatic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="32" />
-		</Cursor>
-	</File>
 	<File name="GraphicEngine\ia\iameleeenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="16" />
 		</Cursor>
 	</File>
-	<File name="VideoGame\rottenvoxel.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="VideoGame\projectilesystem.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1417" topLine="11" />
+			<Cursor1 position="4023" topLine="84" />
 		</Cursor>
 	</File>
-	<File name="VideoGame\door.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\rootmap.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3533" topLine="22" />
+			<Cursor1 position="12631" topLine="277" />
 		</Cursor>
 	</File>
-	<File name="GraphicEngine\rootmap.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="VideoGame\avatar\rangedenemy.cpp" open="1" top="1" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2601" topLine="61" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\linearmovement.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3867" topLine="66" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\endmapregion.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1253" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\movablevoxel.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5785" topLine="130" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\animation\scriptanimation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="20" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\controlmenu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3635" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\ia\iameleeenemy.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\enemylist.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4565" topLine="85" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\text.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3807" topLine="73" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\sound\music.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4953" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\mesh\mesh.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7528" topLine="169" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\light\directionallight.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="19" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\jumpbutton.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1305" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\collection\materialcollection.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3700" topLine="29" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\voxel.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1601" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\notification.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4146" topLine="75" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\mainmenu.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1569" topLine="81" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\herostate.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="969" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\soulcarrier.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2099" topLine="42" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\enemy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3687" topLine="103" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\profile.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3035" topLine="60" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\deadmenu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3433" topLine="78" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\projectile.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6611" topLine="129" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\collection\soundcollection.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1413" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\enemy.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1517" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\sound\sound.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\menu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1101" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\deadmenu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3804" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\decorationobject.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1163" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\equipment.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5035" topLine="210" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\collection\materialcollection.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1353" topLine="55" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\window.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3154" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\shadowmanager.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5063" topLine="94" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\moviescreen.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4490" topLine="51" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\material\stb_image.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="75" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\ia\iaenemy.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="36" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\spiketrap.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4864" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\voxelgroup.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1800" topLine="26" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\savedmanager.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3735" topLine="92" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\mainmenu.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6120" topLine="157" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\controller.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3633" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\game.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1876" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\voxelgroup.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1106" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\shadowmanager.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2616" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\moviescreen.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3477" topLine="62" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\matrix4fdynamic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2395" topLine="32" />
+			<Cursor1 position="6218" topLine="438" />
 		</Cursor>
 	</File>
 	<File name="GraphicEngine\light\light.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -322,255 +32,9 @@
 			<Cursor1 position="3245" topLine="77" />
 		</Cursor>
 	</File>
-	<File name="VideoGame\avatar\rangedenemy.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\menu\menu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1930" topLine="24" />
-		</Cursor>
-		<Folding>
-			<Collapse line="28" />
-		</Folding>
-	</File>
-	<File name="GraphicEngine\region.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="992" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\pausemenu.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3580" topLine="91" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\acceleratedmovement.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5528" topLine="94" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\light\pointlight.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1892" topLine="86" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\rottenvoxel.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1915" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\voxel.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1096" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\mesh\objectgroup.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3825" topLine="64" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\mesh\file_obj.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="950" topLine="20" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\controllermanager.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="690" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\npc.cpp" open="1" top="1" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2203" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\context\context.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1958" topLine="29" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\particle.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3596" topLine="47" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\material\material.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1157" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\loaderthread.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1088" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\coin.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\sound\effect.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5723" topLine="107" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\inventorymenu.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6355" topLine="209" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\ia\iarangedenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\movablevoxel.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1517" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\context\matrixstack.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5575" topLine="98" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\objectscene.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5669" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\controller.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3102" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\inventory.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2829" topLine="57" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\camera.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6236" topLine="95" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\meleeenemy.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1786" topLine="24" />
-		</Cursor>
-		<Folding>
-			<Collapse line="253" />
-		</Folding>
-	</File>
-	<File name="GraphicEngine\material\texture.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2926" topLine="52" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\herostate.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3974" topLine="95" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\potion.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="959" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\hero.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="19426" topLine="565" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\collection\collection.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3601" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\gamepadcontroller.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3736" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\trapdoor.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3654" topLine="74" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\respawnvoxel.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3595" topLine="63" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\door.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1232" topLine="11" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\optionmanager.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3760" topLine="69" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\keyboardcontroller.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3514" topLine="72" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\slidetrap.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\animation\animationlist.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="76" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\npc.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6116" topLine="131" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\region.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3458" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\matrixscript.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4015" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\ia\iarangedenemy.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\item.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4224" topLine="74" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\enemylist.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1028" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\matrix4f.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5131" topLine="100" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\soul.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1638" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\context\shader.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4664" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\textregion.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2363" topLine="50" />
+			<Cursor1 position="3588" topLine="65" />
 		</Cursor>
 	</File>
 	<File name="GraphicEngine\particlesystem.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -578,234 +42,14 @@
 			<Cursor1 position="6126" topLine="152" />
 		</Cursor>
 	</File>
-	<File name="VideoGame\soul.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="VideoGame\coin.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4867" topLine="91" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="GraphicEngine\text.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\controller\controller.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4081" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\object3d.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5043" topLine="41" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\pausemenu.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1982" topLine="45" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\gamepadcontroller.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1022" topLine="84" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\spiketrap.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4409" topLine="106" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\avatar.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4285" topLine="36" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\profile.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1697" topLine="38" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\loadingscreen.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\equipment.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4671" topLine="127" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\collection\meshcollection.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8227" topLine="263" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\avatarmove.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8192" topLine="164" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\savedmanager.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2387" topLine="53" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\loadingscreen.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3476" topLine="57" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\controlmenu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3329" topLine="47" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1022" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\projectilesystem.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7199" topLine="145" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\notification.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4240" topLine="98" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\menu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3588" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\loaderthread.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2461" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\decorationobject.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1118" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\projectile.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4039" topLine="82" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\animation\scriptlmd.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3958" topLine="70" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\mate.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5611" topLine="96" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\rootmap.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12631" topLine="277" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\optionmenu.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4211" topLine="342" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\ia\ianpc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4939" topLine="100" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\trapdoor.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6090" topLine="156" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\collection\soundcollection.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2495" topLine="44" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\textregion.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3917" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\optionmanager.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="562" topLine="67" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\mesh\file_obj.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4043" topLine="37" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\axisrotation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4557" topLine="81" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\light\directionallight.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3116" topLine="43" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\item.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1311" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\meleeenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1089" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\shadowtexture.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3360" topLine="35" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\optionmenu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4693" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\matrix\oscillaterotation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6797" topLine="125" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\gamestate.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4642" topLine="93" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\projectilesystem.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4023" topLine="84" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\avatar\rangedenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1139" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\context\context.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\shadowtexture.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4420" topLine="78" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\mesh\mesh.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3703" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\creditscreen.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2594" topLine="38" />
+			<Cursor1 position="3633" topLine="14" />
 		</Cursor>
 	</File>
 	<File name="VideoGame\slidetrap.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -813,9 +57,14 @@
 			<Cursor1 position="988" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="GraphicEngine\window.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\menu\optionmenu.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="7106" topLine="156" />
+			<Cursor1 position="4211" topLine="342" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\shadowmanager.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2616" topLine="39" />
 		</Cursor>
 	</File>
 	<File name="GraphicEngine\camera.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -823,54 +72,229 @@
 			<Cursor1 position="9635" topLine="57" />
 		</Cursor>
 	</File>
+	<File name="VideoGame\inventory.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2693" topLine="76" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\decorationobject.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1163" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\slidetrap.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\menu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1101" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\savedmanager.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3735" topLine="92" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\context\materialstack.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1592" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\enemylist.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4565" topLine="85" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\gamestate.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4642" topLine="93" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\respawnvoxel.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3595" topLine="63" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\inventorymenu.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1473" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\particlesystem.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7269" topLine="139" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\context\matrixstack.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5575" topLine="98" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\inventory.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2829" topLine="57" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\mesh\file_obj.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="950" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\objectscene.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5669" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\game.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1876" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\herostate.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="969" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\sound\music.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4953" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\context\shader.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4664" topLine="65" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\item.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1311" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\ia\iaenemy.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\window.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7106" topLine="156" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\door.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1232" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\material\material.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1157" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\endmapregion.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1253" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\textregion.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2363" topLine="50" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\controlmenu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3329" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\sound\sound.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="65" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\ia\ianpc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4939" topLine="100" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\voxel.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1096" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\oscillaterotation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6797" topLine="125" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\region.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="992" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\material\texture.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2926" topLine="52" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\moviescreen.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3477" topLine="62" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\objectscene.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4836" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\hero.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="19426" topLine="565" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\light\directionallight.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3116" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\voxelgroup.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1800" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\soul.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4867" topLine="91" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\mesh\mesh.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7528" topLine="169" />
+		</Cursor>
+	</File>
 	<File name="GraphicEngine\particle.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1958" topLine="28" />
 		</Cursor>
 	</File>
-	<File name="GraphicEngine\menu\creditscreen.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="VideoGame\potion.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3679" topLine="67" />
+			<Cursor1 position="0" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="GraphicEngine\light\pointlight.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\matrix\linearmovement.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4344" topLine="71" />
+			<Cursor1 position="3867" topLine="66" />
 		</Cursor>
 	</File>
-	<File name="VideoGame\avatar\hero.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\loaderthread.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9936" topLine="216" />
+			<Cursor1 position="1088" topLine="16" />
 		</Cursor>
 	</File>
-	<File name="GraphicEngine\nodescenegraph.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GraphicEngine\window.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6160" topLine="133" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\gamestate.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2315" topLine="45" />
-		</Cursor>
-	</File>
-	<File name="VideoGame\game.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5115" topLine="124" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\nodescenegraph.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1808" topLine="72" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\menu\inventorymenu.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3466" topLine="73" />
-		</Cursor>
-	</File>
-	<File name="GraphicEngine\controller\keyboardcontroller.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1906" topLine="1" />
+			<Cursor1 position="3154" topLine="7" />
 		</Cursor>
 	</File>
 	<File name="VideoGame\soulcarrier.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -878,9 +302,234 @@
 			<Cursor1 position="3590" topLine="56" />
 		</Cursor>
 	</File>
+	<File name="GraphicEngine\menu\optionmenu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4693" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\collection\collection.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3601" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\nodescenegraph.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1808" topLine="72" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\equipment.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5035" topLine="210" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\controllermanager.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="690" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\avatarmove.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3303" topLine="293" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\soul.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1638" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\pausemenu.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3580" topLine="91" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\collection\materialcollection.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1353" topLine="55" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\profile.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3035" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\projectile.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4039" topLine="82" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\keyboardcontroller.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1906" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\enemy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3687" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\mesh\mesh.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3703" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\shadowtexture.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3360" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\potion.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="959" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\controllermanager.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1022" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="GraphicEngine\collection\meshcollection.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2298" topLine="64" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\npc.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1794" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\herostate.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3974" topLine="92" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\creditscreen.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2594" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\optionmanager.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3760" topLine="69" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\ia\iaenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\soulcarrier.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2099" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\collection\soundcollection.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2495" topLine="44" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\loadingscreen.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\profile.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1697" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\meleeenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1104" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\ia\iarangedenemy.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\creditscreen.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3679" topLine="67" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\object3d.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5043" topLine="41" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\enemylist.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1433" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\light\pointlight.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4344" topLine="71" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\rottenvoxel.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1417" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\mainmenu.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1569" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\savedmanager.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2387" topLine="53" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\collection\soundcollection.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1413" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\game.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5115" topLine="124" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\gamepadcontroller.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3736" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\structdata.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5904" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\shadowmanager.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5063" topLine="94" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\context\context.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\coin.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\ia\iameleeenemy.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\controlmenu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3635" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="GraphicEngine\object3d.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -888,9 +537,354 @@
 			<Cursor1 position="1019" topLine="15" />
 		</Cursor>
 	</File>
+	<File name="VideoGame\equipment.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4671" topLine="127" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\matrix4f.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5131" topLine="100" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\moviescreen.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4490" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\particle.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3596" topLine="47" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\animation\scriptlmd.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3958" topLine="70" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\door.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3533" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\matrix4fdynamic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2395" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\sound\effect.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5723" topLine="107" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\animation\animationlist.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="76" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\hero.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9936" topLine="216" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\gamepadcontroller.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1022" topLine="84" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\sound\sound.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5925" topLine="113" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\camera.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6236" topLine="95" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\item.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4224" topLine="74" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\axisrotation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4557" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\controller.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3102" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\textregion.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3917" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\jumpbutton.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4236" topLine="87" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\text.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4081" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\spiketrap.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4409" topLine="106" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\mesh\file_obj.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4043" topLine="37" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\nodescenegraph.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6160" topLine="133" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\material\stb_image.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\ia\iarangedenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\voxelgroup.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1106" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\matrixstatic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\rootmap.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2601" topLine="61" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\meleeenemy.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="981" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\acceleratedmovement.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5528" topLine="94" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\light\directionallight.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\voxel.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1601" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\trapdoor.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6090" topLine="156" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\matrix\matrixscript.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4015" topLine="65" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\animation\scriptanimation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\mesh\objectgroup.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3825" topLine="64" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\movablevoxel.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1517" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\loaderthread.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2461" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\light\pointlight.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1892" topLine="86" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\text.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3807" topLine="73" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\trapdoor.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3654" topLine="74" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\deadmenu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3433" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\notification.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4146" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\rangedenemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1200" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\controller\keyboardcontroller.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3514" topLine="72" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\avatar.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4285" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\spiketrap.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4864" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\loadingscreen.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3476" topLine="57" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\collection\materialcollection.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3700" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\notification.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4240" topLine="98" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\jumpbutton.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1305" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\avatarmove.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8192" topLine="164" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\rottenvoxel.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1915" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\pausemenu.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1982" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\collection\meshcollection.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8744" topLine="257" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\region.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3458" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\projectile.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6611" topLine="129" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\decorationobject.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1118" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\enemy.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1517" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\inventorymenu.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6355" topLine="209" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\shadowtexture.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4420" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\movablevoxel.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5785" topLine="130" />
+		</Cursor>
+	</File>
 	<File name="GraphicEngine\endmapregion.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2058" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\context\context.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1958" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\mainmenu.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6120" topLine="157" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\mate.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5611" topLine="96" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\gamestate.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2315" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\projectilesystem.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7199" topLine="145" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\menu\deadmenu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3804" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="GraphicEngine\optionmanager.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="562" topLine="67" />
+		</Cursor>
+	</File>
+	<File name="VideoGame\avatar\npc.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1184" topLine="15" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

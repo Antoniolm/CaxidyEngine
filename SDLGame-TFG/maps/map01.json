@@ -160,7 +160,17 @@
                 "head":"EHEAD",
                 "body":"ECHEST",
                 "hand":"EHAND",
-                "leg":"EFOOT"
+                "leg":"EFOOT",
+                "weapon":{  "position":[0.0,-0.1,0.4],
+                            "type":1,
+                            "name":"WeaponEnemy",
+                            "material":"mENEMY", 
+                            "geometry":"CLUB", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-25,
+                            "life":25,
+                            "armour":25
+                        }
             },  
             {   
                 "life":75,
@@ -173,7 +183,17 @@
                 "head":"EHEAD",
                 "body":"ECHEST",
                 "hand":"EHAND",
-                "leg":"EFOOT"
+                "leg":"EFOOT",
+                "weapon":{  "position":[0.0,-0.1,0.4],
+                            "type":1,
+                            "name":"WeaponEnemy",
+                            "material":"mENEMY", 
+                            "geometry":"CLUB", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-25,
+                            "life":25,
+                            "armour":25
+                        }
             },
             {   
                 "life":25,
@@ -182,11 +202,21 @@
                 "type":"ranged",
                 "textFont":"font/Xolonium-Regular.ttf",
                 "textSize":40,
-                "material":"rENEMY",
+                "material":"mARCHENEMY",
                 "head":"RHEAD",
                 "body":"RCHEST",
                 "hand":"RHAND",
-                "leg":"RFOOT"
+                "leg":"RFOOT",
+                "weapon":{  "position":[0.0,-0.4,0.0],
+                            "type":0,
+                            "name":"WeaponEnemy",
+                            "material":"mARCHENEMY", 
+                            "geometry":"CBOW", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-25,
+                            "life":25,
+                            "armour":25
+                        }
             }
            
     ],

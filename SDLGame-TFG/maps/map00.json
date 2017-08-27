@@ -3,7 +3,8 @@
     "bkgdPosition":[0.0,0.0,0.0],
     "sound":"sounds/backSoundLoop.wav",
     "volSound":30.0,
-    "heroPosition":[4,2.0,-10],
+    "heroPosition":[76,5.5,-45.5],
+    "heroPosition2":[4,2.0,-10],
     "nextMap":"./maps/map01.json",
 
     "title": {
@@ -160,7 +161,17 @@
                 "head":"EHEAD",
                 "body":"ECHEST",
                 "hand":"EHAND",
-                "leg":"EFOOT"
+                "leg":"EFOOT",
+                "weapon":{  "position":[0.0,-0.1,0.4],
+                            "type":1,
+                            "name":"WeaponEnemy",
+                            "material":"mENEMY", 
+                            "geometry":"CLUB", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-25,
+                            "life":25,
+                            "armour":25
+                        }
             },  
             {   
                 "life":75,
@@ -173,7 +184,17 @@
                 "head":"EHEAD",
                 "body":"ECHEST",
                 "hand":"EHAND",
-                "leg":"EFOOT"
+                "leg":"EFOOT",
+                "weapon":{  "position":[0.0,-0.1,0.4],
+                            "type":1,
+                            "name":"WeaponEnemy",
+                            "material":"mENEMY", 
+                            "geometry":"CLUB", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-25,
+                            "life":25,
+                            "armour":25
+                        }
             }
     ],
 

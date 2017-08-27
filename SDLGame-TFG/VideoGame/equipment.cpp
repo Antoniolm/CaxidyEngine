@@ -21,6 +21,7 @@
 #include "equipment.h"
 
 Equipment::Equipment(const Value & equipFeatures){
+
     position=vec4f(equipFeatures["position"][0].GetFloat(),equipFeatures["position"][1].GetFloat(),equipFeatures["position"][2].GetFloat(),1.0f);
 
     equipType=(EquipmentType)equipFeatures["type"].GetInt();

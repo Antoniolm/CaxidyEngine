@@ -52,7 +52,7 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
     //////////////////////////////////////////////////////
     /////           Initialize weapon               /////
     //////////////////////////////////////////////////////
-    weapon=new Equipment(vec3f(0.0,-0.1,0.4),MELEE,-25,"CLUB","mENEMY");
+    weapon=new Equipment(enemyFeatures["weapon"]);
 
     //////////////////////////////////////////////////////
     /////              All the sounds                /////

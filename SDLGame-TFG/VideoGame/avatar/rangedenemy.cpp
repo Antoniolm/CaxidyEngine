@@ -57,7 +57,7 @@ RangedEnemy::RangedEnemy(const Value & enemyFeatures)
     //////////////////////////////////////////////////////
     /////           Initialize weapon               /////
     //////////////////////////////////////////////////////
-    weapon=new Equipment(vec3f(0.0,-0.4,0.0),RANGED,-25,"CBOW","mARCHENEMY");
+    weapon=new Equipment(enemyFeatures["weapon"]);
 
     //////////////////////////////////////////////////////
     /////              All the sounds                /////
@@ -255,6 +255,7 @@ RangedEnemy::RangedEnemy(const Value & enemyFeatures)
     currentMove.second=vec3f();
 
     initAnimation();
+
 }
 
 //**********************************************************************//
