@@ -142,7 +142,14 @@
                         }
             },
 
-
+    "mate":{    
+        "position":[4,3.0,-8],
+        "textFont":"font/Xolonium-Regular.ttf",
+        "textSize":20,
+        "material":"mMATE",
+        "head":"MATEHEAD",
+        "hand":"MATEHAND"  
+    },
     "npcs":[
             {   "position":[12.5,2.0,-4.5],
                 "textPosition":[0.0,1.2,0.0],

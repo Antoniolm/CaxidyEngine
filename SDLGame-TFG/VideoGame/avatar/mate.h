@@ -31,7 +31,10 @@
 #include "../GraphicEngine/sound/sound.h"
 #include "../GraphicEngine/text.h"
 #include "../GraphicEngine/animation/animationlist.h"
+#include "../lib/rapidjson/document.h"
 #include "avatar.h"
+
+using namespace rapidjson;
 
 class Mate : public Avatar
 {
@@ -41,7 +44,7 @@ class Mate : public Avatar
         *    @param aPosition -> the initial position of our mate
         */
         //////////////////////////////////////////////////////////////////////////
-        Mate(vec3f aPosition);
+        Mate(const Value & mateFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

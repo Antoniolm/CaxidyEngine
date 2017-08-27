@@ -140,7 +140,7 @@ void RootMap::initialize(string fileMap){
 
     //Print a message for check
     cout<< "< Game is loading our mate >"<< endl;
-    mate=new Mate(positionHero);
+    mate=new Mate(document["mate"]);
 
     /////////////////////////////////////////
     // Add Light to our map

@@ -115,7 +115,7 @@
             "mesh":"ARROW"
         }
     ],
-    
+
     "hero":{    "life":100,
                 "position":[4,2.0,-10],
                 "textFont":"font/Xolonium-Regular.ttf",
@@ -149,6 +149,15 @@
                             "armour":25
                         }
             },
+
+    "mate":{    
+        "position":[4,3.0,-8],
+        "textFont":"font/Xolonium-Regular.ttf",
+        "textSize":20,
+        "material":"mMATE",
+        "head":"MATEHEAD",
+        "hand":"MATEHAND"  
+    },
 
     "npcs":[
             {   "position":[205.5,2.0,-5.5],

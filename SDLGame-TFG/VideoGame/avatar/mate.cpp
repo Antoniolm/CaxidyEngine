@@ -19,13 +19,13 @@
 
 #include "mate.h"
 
-Mate::Mate(vec3f aPosition)
+Mate::Mate(const Value & mateFeatures)
 {
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
     //Dialog for speak
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 20);
+    TTF_Font *font=TTF_OpenFont(mateFeatures["textFont"].GetString(), mateFeatures["textSize"].GetInt());
     currentText=new Text(mBDIALOG,font);
 
 
@@ -34,7 +34,8 @@ Mate::Mate(vec3f aPosition)
     moveHand->identity();
     moveMatrix.push_back(moveHand);
 
-    position=vec4f(aPosition.x,aPosition.y+1.0,aPosition.z-2.0,1.0);
+    position=vec4f(mateFeatures["position"][0].GetFloat(),mateFeatures["position"][1].GetFloat(),mateFeatures["position"][2].GetFloat()
+                   ,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -50,13 +51,13 @@ Mate::Mate(vec3f aPosition)
 
     root=new NodeSceneGraph();
     root->add(moveAvatar);
-    root->add(materialCollect->getMaterial(mMATE));
-    root->add(meshCollect->getMesh(MATEHEAD));
+    root->add(materialCollect->getMaterial(mateFeatures["material"].GetString()));
+    root->add(meshCollect->getMesh(mateFeatures["head"].GetString()));
     root->add(transOtherHand);
     root->add(moveHand); // node for animation
-    root->add(meshCollect->getMesh(MATEHAND));
+    root->add(meshCollect->getMesh(mateFeatures["hand"].GetString()));
     root->add(transHand);
-    root->add(meshCollect->getMesh(MATEHAND));
+    root->add(meshCollect->getMesh(mateFeatures["hand"].GetString()));
     currentTime=SDL_GetTicks();
 
     initAnimation();

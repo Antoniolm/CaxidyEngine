@@ -5033,7 +5033,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../lib/rapidjson/document.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.h
+1503845795 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/material/material.h"
@@ -5045,6 +5045,7 @@
 	"../GraphicEngine/sound/sound.h"
 	"../GraphicEngine/text.h"
 	"../GraphicEngine/animation/animationlist.h"
+	"../lib/rapidjson/document.h"
 	"avatar.h"
 
 1503761661 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
@@ -5647,7 +5648,7 @@
 	"region.h"
 	"gamestate.h"
 
-1503834245 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1503846411 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5718,7 +5719,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1503313944 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1503836849 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"equipment.h"
 	"projectile.h"
@@ -5734,7 +5735,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.cpp
+1503846497 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.cpp
 	"mate.h"
 
 1503831907 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.cpp
