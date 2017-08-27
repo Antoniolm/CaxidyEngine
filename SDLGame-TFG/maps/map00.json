@@ -107,6 +107,39 @@
         }
     ],
 
+
+    "hero":{    "life":100,
+                "position":[4,2.0,-10],
+                "textFont":"font/Xolonium-Regular.ttf",
+                "textSize":40,
+                "material":"mENEMY",
+                "head":"EHEAD",
+                "body":"ECHEST",
+                "hand":"EHAND",
+                "leg":"EFOOT",
+                "weaponMelee":{  "position":[0.05,-0.1,0.68],
+                            "type":1,
+                            "name":"melee",
+                            "material":"mSWORD", 
+                            "geometry":"SWORD", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-25,
+                            "life":25,
+                            "armour":25
+                        },
+                "weaponRanged":{  "position":[0.0,-0.4,0.0],
+                            "type":0,
+                            "name":"ranged",
+                            "material":"mARCHENEMY", 
+                            "geometry":"CBOW", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":-20,
+                            "life":25,
+                            "armour":25
+                        }
+            },
+
+
     "npcs":[
             {   "position":[12.5,2.0,-4.5],
                 "textPosition":[0.0,1.2,0.0],

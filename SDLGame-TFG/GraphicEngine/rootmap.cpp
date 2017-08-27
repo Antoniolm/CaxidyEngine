@@ -136,7 +136,7 @@ void RootMap::initialize(string fileMap){
 
     //Print a message for check
     cout<< "< Game is loading our hero >"<< endl;
-    hero=new Hero(positionHero);
+    hero=new Hero(document["hero"]);
 
     //Print a message for check
     cout<< "< Game is loading our mate >"<< endl;

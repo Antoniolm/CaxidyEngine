@@ -21,7 +21,7 @@
 #include "equipment.h"
 #include "projectile.h"
 
-Hero::Hero(vec3f aPos)
+Hero::Hero(const rapidjson::Value & heroFeatures)
 {
     acceleratedMove=new AcceleratedMovement();
     acceleratedMove->resetState();
@@ -36,7 +36,7 @@ Hero::Hero(vec3f aPos)
     isShielded=false;
     life=100;
     maxLife=100;
-    position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
+    position=vec4f(heroFeatures["position"][0].GetFloat(),heroFeatures["position"][1].GetFloat(),heroFeatures["position"][2].GetFloat(),1.0);
     limitBottom=0.5;
     currentCoin=0;
     MeshCollection * meshCollect =MeshCollection::getInstance();
@@ -46,9 +46,9 @@ Hero::Hero(vec3f aPos)
     //////////////////////////////////////////////////////
     /////           Initialize weapons               /////
     //////////////////////////////////////////////////////
-    currentWeapon=new Equipment(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
-    meleeWeapon=new Equipment(vec3f(0.05,-0.1,0.68),MELEE,-25,"SWORD","mSWORD");
-    rangedWeapon=new Equipment(vec3f(0.0,-0.4,0.0),RANGED,-20,"CBOW","mARCHENEMY");
+    currentWeapon=new Equipment(heroFeatures["weaponMelee"]);
+    meleeWeapon=new Equipment(heroFeatures["weaponMelee"]);
+    rangedWeapon=new Equipment(heroFeatures["weaponRanged"]);
 
 
     //////////////////////////////////////////////////////

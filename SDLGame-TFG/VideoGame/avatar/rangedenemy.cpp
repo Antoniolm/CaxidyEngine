@@ -255,7 +255,6 @@ RangedEnemy::RangedEnemy(const Value & enemyFeatures)
     currentMove.second=vec3f();
 
     initAnimation();
-
 }
 
 //**********************************************************************//
