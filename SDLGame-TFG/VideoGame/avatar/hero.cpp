@@ -109,15 +109,13 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     NodeSceneGraph * legLeft=new NodeSceneGraph();
     legLeft->add(moveLegLeft);
     legLeft->add(transLeg);
-    legLeft->add(materialCollect->getMaterial(mHERO));
-    legLeft->add(meshCollect->getMesh(KNEE2));
+    legLeft->add(meshCollect->getMesh(heroFeatures["legLeft"].GetString()));
 
     //Leg Right
     NodeSceneGraph * legRight=new NodeSceneGraph();
     legRight->add(moveLegRight);
     legRight->add(transLegSecond);
-    legRight->add(materialCollect->getMaterial(mHERO));
-    legRight->add(meshCollect->getMesh(KNEE));
+    legRight->add(meshCollect->getMesh(heroFeatures["legRight"].GetString()));
 
     //////////////////////////////////////////////////////
     /////                  Arms                      /////
@@ -195,7 +193,7 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     handRight->add(moveElbowRight);
     handRight->add(moveElbowTRight);
     handRight->add(transHand);
-    handRight->add(meshCollect->getMesh(HAND));
+    handRight->add(meshCollect->getMesh(heroFeatures["handRight"].GetString()));
     handRight->add(currentWeapon);
 
     NodeSceneGraph * handLeft=new NodeSceneGraph();
@@ -204,18 +202,18 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     handLeft->add(moveElbowTLeft);
     handLeft->add(transHandLeft);
     handLeft->add(rotateYHand);
-    handLeft->add(meshCollect->getMesh(HANDS));
+    handLeft->add(meshCollect->getMesh(heroFeatures["handLeft"].GetString()));
     handLeft->add(tranShield);
     handLeft->add(materialCollect->getMaterial(mSHIELD));
     handLeft->add(meshCollect->getMesh(SHIELD));
 
     //Shoulder
     NodeSceneGraph * shoulderLeft=new NodeSceneGraph();
-    shoulderLeft->add(meshCollect->getMesh(TOPARM));
+    shoulderLeft->add(meshCollect->getMesh(heroFeatures["arm"].GetString()));
 
     NodeSceneGraph * shoulderRight=new NodeSceneGraph();
     shoulderRight->add(rotateShoulder);
-    shoulderRight->add(meshCollect->getMesh(TOPARM));
+    shoulderRight->add(meshCollect->getMesh(heroFeatures["arm"].GetString()));
 
     //Arm left
     NodeSceneGraph * ArmLeft=new NodeSceneGraph();
@@ -275,21 +273,21 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
 
     NodeSceneGraph * headNode=new NodeSceneGraph();
     headNode->add(transHead);
-    headNode->add(meshCollect->getMesh(HEAD));
+    headNode->add(meshCollect->getMesh(heroFeatures["head"].GetString()));
 
     NodeSceneGraph * chest_Arms_HeadNode=new NodeSceneGraph();
     chest_Arms_HeadNode->add(transChest);
     chest_Arms_HeadNode->add(moveTBodyHead);
     chest_Arms_HeadNode->add(moveBodyHead);
     chest_Arms_HeadNode->add(headNode);
-    chest_Arms_HeadNode->add(meshCollect->getMesh(CHEST));
+    chest_Arms_HeadNode->add(meshCollect->getMesh(heroFeatures["body"].GetString()));
     chest_Arms_HeadNode->add(trasnArmsI);
     chest_Arms_HeadNode->add(ArmLeft);
     chest_Arms_HeadNode->add(trasnArms);
     chest_Arms_HeadNode->add(ArmRight);
 
     root->add(scaleHero);
-    root->add(materialCollect->getMaterial(mHERO));
+    root->add(materialCollect->getMaterial(heroFeatures["material"].GetString()));
     root->add(chest_Arms_HeadNode);
     root->add(transLegSceneI);
     root->add(legLeft);
