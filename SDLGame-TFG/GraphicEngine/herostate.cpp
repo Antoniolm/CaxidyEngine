@@ -90,8 +90,10 @@ HeroState::~HeroState(){
 //**********************************************************************//
 
 void HeroState::visualization(Context & cv){
-    root->visualization(cv);
-    coinText->visualization(cv);
+    if(visibleState){
+        root->visualization(cv);
+        coinText->visualization(cv);
+    }
 }
 
 //**********************************************************************//
@@ -99,6 +101,7 @@ void HeroState::visualization(Context & cv){
 void HeroState::updateState(GameState & gameState){
     Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
+    visibleState=true;
 
     positionState->translation(posHero.x,posHero.y+7.4,posHero.z+10.6);
     coinText->setPosition(vec3f(posHero.x+0.74,posHero.y+7.4,posHero.z+10.6));
@@ -106,6 +109,8 @@ void HeroState::updateState(GameState & gameState){
     int heroLife=hero->getLife();
     int heroCoin=hero->getCoin();
 
+    if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate())
+        visibleState=false;
 
     //if the life was changed
     if(currentLife!=heroLife && heroLife>=0){

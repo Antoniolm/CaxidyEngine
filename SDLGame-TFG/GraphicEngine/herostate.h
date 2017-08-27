@@ -66,6 +66,7 @@ class HeroState : public Object3D
         Matrix4f * positionState;       // Matrix 4x4 with the position of the object
         int currentLife;                // Current life of the hero
         int currentCoin;                // Current coins of the hero
+        bool visibleState;              // Visible state of the hero information
 };
 
 #endif // HEROSTATE_H
