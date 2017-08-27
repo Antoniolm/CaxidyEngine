@@ -76,7 +76,7 @@ Game::Game(){
     gameState.loadScreen->add("./textures/loading3.png");
 
     //Create optionMenu
-    gameState.optionMenu=new OptionMenu();
+    gameState.optionMenu=new OptionMenu(vec3f(0.0,6.70,11.0),"./textures/mainMenuOption.png","./textures/optionResol.png","./textures/mainBackMenu.png");
 
     //Create controlMenu
     gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"./textures/mainBackMenu.png");

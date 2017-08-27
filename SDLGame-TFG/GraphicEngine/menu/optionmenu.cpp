@@ -19,15 +19,15 @@
 
 #include "optionmenu.h"
 
-OptionMenu::OptionMenu()
+OptionMenu::OptionMenu(vec3f posMenu,string mat,string currentMat, string matBack)
 {
     currentOption=0;
     activateMenu=false;
     MeshCollection * meshCollect =MeshCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
 
-    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/optionResol.png");
-    materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainBackMenu.png");
+    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,currentMat);
+    materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,matBack);
 
     //Initialize text
     TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 15);
@@ -35,7 +35,6 @@ OptionMenu::OptionMenu()
     resolText=new Text(mVOID,font);
     windText=new Text(mVOID,font);
     volText=new Text(mVOID,font);
-
 
     //Initialize options
     resolution.push_back(pair<int,int> (800,600));
@@ -47,7 +46,7 @@ OptionMenu::OptionMenu()
 
     //Transformation
     positionMenu=new Matrix4f();
-    positionMenu->translation(0.0,6.70,11.0);
+    positionMenu->translation(posMenu.x,posMenu.y,posMenu.z);
 
     Matrix4f * betweenMenu=new Matrix4f();
     betweenMenu->translation(0.0,0.0,-0.2);
@@ -87,7 +86,7 @@ OptionMenu::OptionMenu()
     Matrix4f * scaleMain=new Matrix4f();
     scaleMain->scale(0.35,1.8,0.5);
 
-    material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainMenuOption.png");
+    material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,mat);
 
     NodeSceneGraph * nodeMainBack=new NodeSceneGraph(false,true);
     nodeMainBack->add(positionMainBack);
