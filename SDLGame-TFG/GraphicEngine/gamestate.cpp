@@ -39,6 +39,7 @@ GameState::~GameState(){
     delete controlMenu;
     delete inventoryMenu;
     delete camera;
+    delete speakingSketch;
 }
 
 //**********************************************************************//
@@ -67,6 +68,7 @@ void GameState::updatePlay(){
     inventoryMenu->updateState(*this);
     deadMenu->updateState(*this);
     rootMap->updateState(*this);
+    speakingSketch->updateState(*this);
 }
 
 //**********************************************************************//

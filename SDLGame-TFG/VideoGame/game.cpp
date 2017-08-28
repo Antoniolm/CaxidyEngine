@@ -89,6 +89,9 @@ Game::Game(){
     //Create inventoryMenu
     gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"./textures/inventory.png",*(new Inventory()));
 
+    //Create speakingSketch
+    gameState.speakingSketch=new SpeakingSketch(vec3f(0.0f,-1.23,-2.0),"mSPEAK");
+
     heroState=new HeroState();
 
     isClosing=false;
@@ -279,6 +282,7 @@ void Game::loop(){
             gameState.pauseMenu->visualization(context);
             gameState.inventoryMenu->visualization(context);
             gameState.deadMenu->visualization(context);
+            gameState.speakingSketch->visualization(context);
             gameState.movie->visualization(context);
             notiGamePad->visualization(context);
 

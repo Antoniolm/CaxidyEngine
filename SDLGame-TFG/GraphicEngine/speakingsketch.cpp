@@ -19,13 +19,14 @@
 
 #include "speakingsketch.h"
 
-SpeakingSketch::SpeakingSketch(vec3f aPos, string material, string mesh){
+SpeakingSketch::SpeakingSketch(vec3f aPos, string material){
+
     initialPosition=aPos;
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
 
     Matrix4f * transObject=new Matrix4f();
-    transObject->identity
+    transObject->identity();
 
     transActivate=new Matrix4f();
     transActivate->identity();
@@ -38,10 +39,11 @@ SpeakingSketch::SpeakingSketch(vec3f aPos, string material, string mesh){
     root->add(transActivate);
     root->add(scaleSketch);
     root->add(materialCollect->getMaterial(material));
-    root->add(meshCollect->getMesh(mesh));
+    root->add(meshCollect->getMesh(TEXT));
 
     currentTime=SDL_GetTicks();
     activated=false;
+
 }
 
 //**********************************************************************//
@@ -60,7 +62,11 @@ void SpeakingSketch::visualization(Context & cv){
 //**********************************************************************//
 
 void SpeakingSketch::updateState(GameState & gameState){
-
+    vec3f posCamera;
+    if(activated){
+        posCamera=gameState.camera->getPosition();
+        transActivate->translation(posCamera.x+initialPosition.x,posCamera.y+initialPosition.y,posCamera.z+initialPosition.z);
+    }
 }
 
 //**********************************************************************//

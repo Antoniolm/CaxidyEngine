@@ -31,6 +31,7 @@
 #include "./menu/loadingscreen.h"
 #include "./menu/moviescreen.h"
 #include "./menu/inventorymenu.h"
+#include "speakingsketch.h"
 #include "rootmap.h"
 #include "camera.h"
 
@@ -44,6 +45,7 @@ class ControlMenu;
 class MovieScreen;
 class InventoryMenu;
 class Camera;
+class SpeakingSketch;
 class GameState
 {
     public:
@@ -114,6 +116,7 @@ class GameState
         LoadingScreen * loadScreen;     // Screen of load
         MovieScreen * movie;            // Screen of movie
         InventoryMenu * inventoryMenu;  // Inventory menu
+        SpeakingSketch * speakingSketch;// SpeakingSketch
         Camera * camera;                // Camera of the video game
 
 
