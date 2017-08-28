@@ -74,3 +74,9 @@ void SpeakingSketch::updateState(GameState & gameState){
 void SpeakingSketch::setActivate(bool value){
     activated=value;
 }
+
+//**********************************************************************//
+
+bool SpeakingSketch::isActivated(){
+    return activated;
+}

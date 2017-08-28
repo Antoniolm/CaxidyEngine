@@ -142,6 +142,7 @@ void Npc::updateState(GameState & gameState){
 
         // deactivation speak mode
         gameState.camera->setSpeakMode(false);
+        gameState.speakingSketch->setActivate(false);
     }
 
     if(npcActivate){ //If hero is talking and he is a good distance
@@ -152,6 +153,7 @@ void Npc::updateState(GameState & gameState){
 
             // deactivation speak mode
             gameState.camera->setSpeakMode(false);
+            gameState.speakingSketch->setActivate(false);
         }
     }
 
@@ -194,6 +196,7 @@ void Npc::updateState(GameState & gameState){
 
                 // Activation speak mode
                 gameState.camera->setSpeakMode(true);
+                gameState.speakingSketch->setActivate(true);
             }
         }
         dialogTime=time;
