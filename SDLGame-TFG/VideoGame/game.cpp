@@ -90,7 +90,8 @@ Game::Game(){
     gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"./textures/inventory.png",*(new Inventory()));
 
     //Create speakingSketch
-    gameState.speakingSketch=new SpeakingSketch(vec3f(0.0f,-1.23,-2.0),"mSPEAK");
+    //gameState.speakingSketch=new SpeakingSketch(vec3f(0.0f,-1.25,-2.0),"mSPEAK");
+    gameState.speakingSketch=new SpeakingSketch(vec3f(0.0f,6.70f,11.0f),"mSPEAK");
 
     heroState=new HeroState();
 

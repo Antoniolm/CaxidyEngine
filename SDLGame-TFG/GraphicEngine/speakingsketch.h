@@ -85,6 +85,7 @@ class SpeakingSketch : public Object3D
         ScriptLMD * animationDown;  // Down animation of the speaking sketch
         vec3f initialPosition;
         bool activated;             // Flag to activation
+        bool visibleState;
 };
 
 #endif // SPEAKINGSKETCH_H

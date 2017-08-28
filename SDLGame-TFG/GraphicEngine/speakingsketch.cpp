@@ -32,7 +32,7 @@ SpeakingSketch::SpeakingSketch(vec3f aPos, string material){
     transActivate->identity();
 
     Matrix4f * scaleSketch=new Matrix4f();
-    scaleSketch->scale(1.0,4.2,1.0);
+    scaleSketch->scale(1.0,4.6,1.0);
 
     root=new NodeSceneGraph();
     root->add(transObject);
@@ -55,7 +55,7 @@ SpeakingSketch::~SpeakingSketch(){
 //**********************************************************************//
 
 void SpeakingSketch::visualization(Context & cv){
-    if(activated)
+    if(activated && visibleState)
         root->visualization(cv);
 }
 
@@ -63,8 +63,14 @@ void SpeakingSketch::visualization(Context & cv){
 
 void SpeakingSketch::updateState(GameState & gameState){
     vec3f posCamera;
+    visibleState=false;
+
+
     if(activated){
-        posCamera=gameState.camera->getPosition();
+        if(!gameState.pauseMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.deadMenu->isActivate())
+            visibleState=true;
+
+        posCamera=gameState.rootMap->getHero()->getPosition();
         transActivate->translation(posCamera.x+initialPosition.x,posCamera.y+initialPosition.y,posCamera.z+initialPosition.z);
     }
 }
