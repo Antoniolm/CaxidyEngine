@@ -65,7 +65,6 @@ void SpeakingSketch::updateState(GameState & gameState){
     vec3f posCamera;
     visibleState=false;
 
-
     if(activated){
         if(!gameState.pauseMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.deadMenu->isActivate())
             visibleState=true;

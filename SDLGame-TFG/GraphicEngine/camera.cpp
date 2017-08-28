@@ -171,10 +171,10 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
                 controller->setState(false,cVIEW);
         }
     }
-    else { //else normal mode
+    /*else { //else normal mode
         if(!speakMode)
             position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
-    }
+    }*/
 
     /////////////////////
     // Speak mode activated
@@ -194,9 +194,15 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
         position.x=posHero.x+initialPosition.x;
     }
     else { //else normal mode
-        position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
-        factorZoomY=0.0;
-        factorZoomZ=0.0;
+        if(position.z<posHero.z+initialPosition.z-0.5){
+            position.y+=0.8*((time-currentTime)/20);
+            position.z+=1.3*((time-currentTime)/20);
+        }
+        else{
+            position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
+            factorZoomY=0.0;
+            factorZoomZ=0.0;
+        }
     }
 
     //Assign parameters of the shader
