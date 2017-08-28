@@ -161,7 +161,10 @@ void Npc::updateState(GameState & gameState){
     if(gameState.controller->checkButton(cACTION) && dialogTime<(time-400.0)){
 
         if(npcActivate){ //If hero is talking -> nextDialog
+
+            bool finishSpeak=stateMachine.isLastState();
             nextDialog();
+
             //Check the speaker
             if(stateMachine.getCurrentSpeaker()==NPC_DIALOG){ //speaker -> Npc
                 currentDialog();
@@ -177,6 +180,12 @@ void Npc::updateState(GameState & gameState){
                 }
             }
             gameState.controller->setState(false,cACTION);
+
+            if(finishSpeak){
+                // deactivation speak mode
+                gameState.camera->setSpeakMode(false);
+                gameState.speakingSketch->setActivate(false);
+            }
         }
         else { //Else Check if hero will start a new conversation.
             if((distance.x>-1 && distance.x<1)&&(distance.y>-2 && distance.y<2)&&(distance.z>-1 && distance.z<1)){
