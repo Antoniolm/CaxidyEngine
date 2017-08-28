@@ -59,6 +59,15 @@ class SpeakingSketch : public Object3D
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will activate or deactivate the sketch object
+        *    @param value -> The new value of its activation
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setActivate(bool value);
+
     protected:
 
     private:
@@ -66,6 +75,7 @@ class SpeakingSketch : public Object3D
         Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the speaking sketch
         ScriptLMD * animationUp;    // Up animation of the speaking sketch
         ScriptLMD * animationDown;  // Down animation of the speaking sketch
+        vec3f initialPosition;
         bool activated;             // Flag to activation
 };
 

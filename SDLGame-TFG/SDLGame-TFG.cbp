@@ -186,6 +186,8 @@
 		<Unit filename="GraphicEngine/sound/music.h" />
 		<Unit filename="GraphicEngine/sound/sound.cpp" />
 		<Unit filename="GraphicEngine/sound/sound.h" />
+		<Unit filename="GraphicEngine/speakingsketch.cpp" />
+		<Unit filename="GraphicEngine/speakingsketch.h" />
 		<Unit filename="GraphicEngine/text.cpp" />
 		<Unit filename="GraphicEngine/text.h" />
 		<Unit filename="GraphicEngine/textregion.cpp" />

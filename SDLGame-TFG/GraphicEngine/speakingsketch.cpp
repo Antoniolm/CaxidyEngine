@@ -20,13 +20,12 @@
 #include "speakingsketch.h"
 
 SpeakingSketch::SpeakingSketch(vec3f aPos, string material, string mesh){
-    position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
-
+    initialPosition=aPos;
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
 
     Matrix4f * transObject=new Matrix4f();
-    transObject->translation(position.x,position.y,position.z);
+    transObject->identity
 
     transActivate=new Matrix4f();
     transActivate->identity();
@@ -54,11 +53,18 @@ SpeakingSketch::~SpeakingSketch(){
 //**********************************************************************//
 
 void SpeakingSketch::visualization(Context & cv){
-    root->visualization(cv);
+    if(activated)
+        root->visualization(cv);
 }
 
 //**********************************************************************//
 
 void SpeakingSketch::updateState(GameState & gameState){
 
+}
+
+//**********************************************************************//
+
+void SpeakingSketch::setActivate(bool value){
+    activated=value;
 }
