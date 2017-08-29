@@ -182,7 +182,7 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
 
     /////////////////////
     // Speak mode activated
-    else if(speakMode){
+    else if(speakMode){ // movement zoom in
         if(position.z>posHero.z+10){ //if is not in the max position
             factorZoomY-=0.8*((time-currentTime)/20);
             factorZoomZ-=1.3*((time-currentTime)/20);
@@ -190,20 +190,20 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
             position.y-=0.8*((time-currentTime)/20);
             position.z-=1.3*((time-currentTime)/20);
         }
-        else {
+        else { //Camera is in the Z axis position
             position.y=posHero.y+initialPosition.y+factorZoomY;
             position.z=posHero.z+initialPosition.z+factorZoomZ;
         }
 
         position.x=posHero.x+initialPosition.x;
     }
-    else { //else normal mode
-        if(position.z<posHero.z+initialPosition.z-0.5){
+    else if(finishSpeakMode){ //else movement zoom out
+        if(position.z<posHero.z+initialPosition.z-0.5){ //
             position.y+=0.8*((time-currentTime)/20);
             position.z+=1.3*((time-currentTime)/20);
-            cout<< "yep"<<endl;
         }
         else{
+            finishSpeakMode=false;
             factorZoomY=0.0;
             factorZoomZ=0.0;
         }
@@ -223,6 +223,8 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
 
 void Camera::setSpeakMode(bool value){
     speakMode=value;
+    if(!speakMode)
+        finishSpeakMode=true;
 }
 
 //**********************************************************************//
