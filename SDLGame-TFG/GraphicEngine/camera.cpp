@@ -194,6 +194,9 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
 
             position.y-=currentZoomYFactor;
             position.z-=currentZoomZFactor;
+
+            if(factorZoomZ<-3.0)
+                gameState.speakingSketch->setActivate(true);
         }
         else { //Camera is in the Z axis position
             position.y=posHero.y+initialPosition.y+factorZoomY;
@@ -204,6 +207,7 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     }
     else if(finishSpeakMode){ //else movement zoom out
         if(position.z<posHero.z+initialPosition.z-0.5){ //
+            gameState.speakingSketch->setActivate(false);
             position.y+=0.8*((time-currentTime)/80);
             position.z+=1.3*((time-currentTime)/80);
             position.x=posHero.x+initialPosition.x;
@@ -228,9 +232,10 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
 //**********************************************************************//
 
 void Camera::setSpeakMode(bool value){
-    speakMode=value;
-    if(!speakMode)
+    if(speakMode && !value)
         finishSpeakMode=true;
+
+    speakMode=value;
 }
 
 //**********************************************************************//
@@ -279,6 +284,18 @@ vec3f Camera::getUp(){
 
 bool Camera::isViewMode(){
     return viewMode;
+}
+
+//**********************************************************************//
+
+bool Camera::isSpeakMode(){
+    return speakMode;
+}
+
+//**********************************************************************//
+
+bool Camera::isMoveSpeakMode(){
+    return finishSpeakMode;
 }
 
 //**********************************************************************//

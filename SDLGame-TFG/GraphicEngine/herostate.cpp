@@ -110,7 +110,7 @@ void HeroState::updateState(GameState & gameState){
     int heroCoin=hero->getCoin();
 
     if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
-       || gameState.speakingSketch->isActivated())
+       || gameState.camera->isSpeakMode() || gameState.camera->isMoveSpeakMode())
         visibleState=false;
 
     //if the life was changed
