@@ -231,7 +231,9 @@ class Camera
         vec3f up;                  // Current inclination of the camera
 
         bool viewMode;             // Flag of the view mode
+        bool finishViewMode;       // Flag of the finish view mode
         bool speakMode;            // Flag of the speak mode
+        bool finishSpeakMode;      // Flag of the finish speak mode
         float currentTime;         // Current time of the system
         float viewDelay;           // Delay in our view mode
 

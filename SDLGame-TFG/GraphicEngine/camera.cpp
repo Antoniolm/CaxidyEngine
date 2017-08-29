@@ -22,7 +22,10 @@
 
 Camera::Camera(){
     viewMode=false;
+    finishViewMode=false;
     speakMode=false;
+    finishSpeakMode=false;
+
     factorZoomY=0.0;
     factorZoomZ=0.0;
     currentTime=SDL_GetTicks();
@@ -37,7 +40,9 @@ Camera::Camera(vec3f eye,vec3f aTarget,vec3f aUp){
     target=aTarget;
     up=aUp;
     viewMode=false;
+    finishViewMode=false;
     speakMode=false;
+    finishSpeakMode=false;
 
     factorZoomY=0.0;
     factorZoomZ=0.0;
@@ -150,13 +155,16 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     if(time-currentTime>200)
         currentTime=time-50;
 
-    if(controller->checkButton(cVIEW) && !activateMenu && viewDelay<(time-600)){
+    if(controller->checkButton(cVIEW) && !activateMenu && !speakMode && viewDelay<(time-600)){
         viewMode=!viewMode;
         viewDelay=time;
         controller->setState(false,cVIEW);
     }
 
     target=posHero;
+
+    if(!viewMode && !speakMode && !finishSpeakMode && !finishViewMode)
+        position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
 
     //////////////////////
     // View mode activated
@@ -171,14 +179,10 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
                 controller->setState(false,cVIEW);
         }
     }
-    /*else { //else normal mode
-        if(!speakMode)
-            position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
-    }*/
 
     /////////////////////
     // Speak mode activated
-    if(speakMode){
+    else if(speakMode){
         if(position.z>posHero.z+10){ //if is not in the max position
             factorZoomY-=0.8*((time-currentTime)/20);
             factorZoomZ-=1.3*((time-currentTime)/20);
@@ -197,9 +201,9 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
         if(position.z<posHero.z+initialPosition.z-0.5){
             position.y+=0.8*((time-currentTime)/20);
             position.z+=1.3*((time-currentTime)/20);
+            cout<< "yep"<<endl;
         }
         else{
-            position=vec3f(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
             factorZoomY=0.0;
             factorZoomZ=0.0;
         }
