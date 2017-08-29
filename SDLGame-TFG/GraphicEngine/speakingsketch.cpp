@@ -32,7 +32,7 @@ SpeakingSketch::SpeakingSketch(vec3f aPos, string material){
     transActivate->identity();
 
     Matrix4f * scaleSketch=new Matrix4f();
-    scaleSketch->scale(1.0,4.6,1.0);
+    scaleSketch->scale(1.0,4.8,1.0);
 
     root=new NodeSceneGraph();
     root->add(transObject);

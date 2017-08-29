@@ -185,7 +185,7 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     /////////////////////
     // Speak mode activated
     else if(speakMode){ // movement zoom in
-        if(factorZoomZ>-3.0/*position.z>posHero.z+10*/){ //if is not in the max position
+        if(factorZoomZ>-3.0){ //if is not in the max position
             currentZoomYFactor=0.8*((time-currentTime)/80);
             currentZoomZFactor=1.3*((time-currentTime)/80);
 
