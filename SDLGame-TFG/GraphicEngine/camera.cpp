@@ -186,16 +186,11 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     // Speak mode activated
     else if(speakMode){ // movement zoom in
         if(factorZoomZ>-3.0/*position.z>posHero.z+10*/){ //if is not in the max position
-            currentZoomYFactor=0.8*((time-currentTime)/20);
-            currentZoomZFactor=1.3*((time-currentTime)/20);
+            currentZoomYFactor=0.8*((time-currentTime)/80);
+            currentZoomZFactor=1.3*((time-currentTime)/80);
 
             factorZoomY-=currentZoomYFactor;
             factorZoomZ-=currentZoomZFactor;
-
-            /*if(factorZoomZ>-3.0){
-                currentZoomYFactor-=1.8-factorZoomY;
-                currentZoomZFactor-=3.0-factorZoomZ;
-            }*/
 
             position.y-=currentZoomYFactor;
             position.z-=currentZoomZFactor;
@@ -209,8 +204,9 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     }
     else if(finishSpeakMode){ //else movement zoom out
         if(position.z<posHero.z+initialPosition.z-0.5){ //
-            position.y+=0.8*((time-currentTime)/20);
-            position.z+=1.3*((time-currentTime)/20);
+            position.y+=0.8*((time-currentTime)/80);
+            position.z+=1.3*((time-currentTime)/80);
+            position.x=posHero.x+initialPosition.x;
         }
         else{
             finishSpeakMode=false;
