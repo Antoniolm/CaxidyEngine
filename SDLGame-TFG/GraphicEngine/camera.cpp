@@ -150,6 +150,8 @@ void Camera::activatePerspecProjection(GLuint shaderID){
 void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     vec3f posHero=gameState.rootMap->getHero()->getPosition();
     ControllerManager * controller=gameState.controller;
+    float currentZoomZFactor=0.0;
+    float currentZoomYFactor=0.0;
 
     float time=gameState.time;
     if(time-currentTime>200)
@@ -183,12 +185,20 @@ void Camera::update(GameState & gameState,GLuint shaderID,bool activateMenu){
     /////////////////////
     // Speak mode activated
     else if(speakMode){ // movement zoom in
-        if(position.z>posHero.z+10){ //if is not in the max position
-            factorZoomY-=0.8*((time-currentTime)/20);
-            factorZoomZ-=1.3*((time-currentTime)/20);
+        if(factorZoomZ>-3.0/*position.z>posHero.z+10*/){ //if is not in the max position
+            currentZoomYFactor=0.8*((time-currentTime)/20);
+            currentZoomZFactor=1.3*((time-currentTime)/20);
 
-            position.y-=0.8*((time-currentTime)/20);
-            position.z-=1.3*((time-currentTime)/20);
+            factorZoomY-=currentZoomYFactor;
+            factorZoomZ-=currentZoomZFactor;
+
+            /*if(factorZoomZ>-3.0){
+                currentZoomYFactor-=1.8-factorZoomY;
+                currentZoomZFactor-=3.0-factorZoomZ;
+            }*/
+
+            position.y-=currentZoomYFactor;
+            position.z-=currentZoomZFactor;
         }
         else { //Camera is in the Z axis position
             position.y=posHero.y+initialPosition.y+factorZoomY;
