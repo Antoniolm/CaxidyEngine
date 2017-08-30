@@ -33,8 +33,6 @@ HeroState::HeroState(){
     MeshCollection * meshCollect =MeshCollection::getInstance();
     MaterialCollection * materialCollect =MaterialCollection::getInstance();
 
-    currentMaterialLife=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
-
     position=vec4f(0.0,6.70,11.0,1.0);
 
     positionState=new Matrix4f();
@@ -47,10 +45,18 @@ HeroState::HeroState(){
     //Life Node
 
     Matrix4f * positionLife=new Matrix4f();
-    positionLife->translation(0.0,0.025,0.05);
+    positionLife->translation(-0.2,0.025,0.05);
+
+    scaleLife=new Matrix4f();
+    scaleLife->scale(1.0,1.0,1.0);
+
+    Matrix4f * positiontoScale=new Matrix4f();
+    positiontoScale->translation(0.2,0.0,0.0);
 
     NodeSceneGraph * nodeLife=new NodeSceneGraph(false,true);
     nodeLife->add(positionLife);
+    nodeLife->add(scaleLife);
+    nodeLife->add(positiontoScale);
     nodeLife->add(materialCollect->getMaterial(mLIFE25));
     nodeLife->add(meshCollect->getMesh(TEXT));
 
@@ -93,7 +99,6 @@ HeroState::HeroState(){
 
 HeroState::~HeroState(){
     delete root;
-    delete currentMaterialLife;
     delete coinText;
 }
 

@@ -62,8 +62,8 @@ class HeroState : public Object3D
     private:
         NodeSceneGraph * root;          // Root of the scene graph of hero state
         Text * coinText;                // Text that show the coin score
-        Material * currentMaterialLife; // Texture of the current life of the hero
         Matrix4f * positionState;       // Matrix 4x4 with the position of the object
+        Matrix4f * scaleLife;           // Matrix 4x4 with the scale of the life
 
         int currentLife;                // Current life of the hero
         int currentCoin;                // Current coins of the hero
