@@ -120,15 +120,9 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/soulTexture.png","",mSOUL));
 
-    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBar.png","",mLIFE0));
+    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBar.png","",mLIFEBAR));
 
-    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBarBlack.png","",mLIFE25));
-
-    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBar50.png","",mLIFE50));
-
-    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBar75.png","",mLIFE75));
-
-    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBar100.png","",mLIFE100));
+    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBarBlack.png","",mLIFE));
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/crystal.png","",mCRYSDRAW));
 
@@ -184,11 +178,8 @@ MaterialCollection::MaterialCollection()
     collection.addIndex("mDOOR",mDOOR);
     collection.addIndex("mGLYPH",mGLYPH);
     collection.addIndex("mSOUL",mSOUL);
-    collection.addIndex("mLIFE0",mLIFE0);
-    collection.addIndex("mLIFE25",mLIFE25);
-    collection.addIndex("mLIFE50",mLIFE50);
-    collection.addIndex("mLIFE75",mLIFE75);
-    collection.addIndex("mLIFE100",mLIFE100);
+    collection.addIndex("mLIFEBAR",mLIFEBAR);
+    collection.addIndex("mLIFE",mLIFE);
     collection.addIndex("mCRYSDRAW",mCRYSDRAW);
     collection.addIndex("mTRAPDOOR",mTRAPDOOR);
     collection.addIndex("mBUTTON",mBUTTON);
