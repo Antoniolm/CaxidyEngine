@@ -540,7 +540,7 @@ void Hero::updateState(GameState & gameState){
         if(!isShielded){
             animations.activate(5);
         }
-        if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-200)){ //If the object do damage
+        if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-400)){ //If the object do damage
             takeDamage(object->getDamage());
             dmgDelay=time;
         }

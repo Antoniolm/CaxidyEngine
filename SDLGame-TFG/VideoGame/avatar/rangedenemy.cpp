@@ -341,7 +341,7 @@ void RangedEnemy::updateState(GameState & gameState){
         }
         else{
             ObjectScene * object=gravity(time);
-            if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-200)){ //If the object do damage
+            if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-400)){ //If the object do damage
                 takeDamage(object->getDamage(),posHero);
                 dmgDelay=time;
             }
