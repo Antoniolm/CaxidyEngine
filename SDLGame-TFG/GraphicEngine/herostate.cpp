@@ -57,7 +57,7 @@ HeroState::HeroState(){
     nodeLife->add(positionLife);
     nodeLife->add(scaleLife);
     nodeLife->add(positiontoScale);
-    nodeLife->add(materialCollect->getMaterial(mLIFE25));
+    nodeLife->add(materialCollect->getMaterial(mLIFE));
     nodeLife->add(meshCollect->getMesh(TEXT));
 
     Matrix4f * positionText=new Matrix4f();
@@ -69,7 +69,7 @@ HeroState::HeroState(){
     NodeSceneGraph * nodeLifeBar=new NodeSceneGraph(false,true);
     nodeLifeBar->add(positionText);
     nodeLifeBar->add(scaleMenu);
-    nodeLifeBar->add(materialCollect->getMaterial(mLIFE0));
+    nodeLifeBar->add(materialCollect->getMaterial(mLIFEBAR));
     nodeLifeBar->add(meshCollect->getMesh(TEXT));
     nodeLifeBar->add(nodeLife);
 
