@@ -68,7 +68,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     selectedPosition->translation(-0.272,0.439,0.8);
 
     Matrix4f * scaleMenu=new Matrix4f();
-    scaleMenu->scale(0.088,0.535,0.1);
+    scaleMenu->scale(0.085,0.535,0.1);
 
     NodeSceneGraph * nodeText=new NodeSceneGraph(false,true);
     nodeText->add(selectedPosition);

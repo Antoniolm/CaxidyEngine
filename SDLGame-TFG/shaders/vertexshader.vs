@@ -34,8 +34,7 @@
 		vec3 N = normalize(vec3(transform * vec4(normal,0.0)));
 		T=normalize(T- dot(T,N) *N);
     	vec3 B = cross(N,T);
-    	
-    
+
     	mat3 TBN = transpose(mat3(T, B, N));  
     	TangentLightPos = TBN * lightPosVertex;
     	TangentViewPos  = TBN * viewPosVertex;

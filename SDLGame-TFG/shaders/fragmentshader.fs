@@ -121,14 +121,14 @@ else {
 
         // Calculate shadow
         float shadow = calculateShadow(FragPosLightSpace,norm,lightDir);       
-        vec3 lighting = (ambient * material.ambient  + (1.0 - shadow) * (diffuse* material.diffuse  + specular  * material.specular)) * texColor.rgb; 
+        vec3 lighting = (ambient * material.ambient  + (1.0 - shadow) * (diffuse * material.diffuse  + specular  * material.specular)) * texColor.rgb; 
     
         //Added point Light
         result=vec3(0.0);
         for(int i = 0; i < numActivateLight; i++)
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
-        color=texColor * (vec4(lighting, 1.0f) + vec4(result,1.0));
+        color= texColor * (vec4(lighting, 1.0f) + vec4(result,1.0));
      }
 
      //If is a menu or text in the scene
