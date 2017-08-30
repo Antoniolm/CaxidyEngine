@@ -72,7 +72,7 @@ void Potion::updateState(GameState & gameState){
     if(distance<=0.4){
         notTake=false;
 
-        if(hero->getLife()!=hero->getMaxLite()){
+        if(hero->getLife()!=hero->getMaxLife()){
             hero->addLife(value);
             soundTake->play();
         }

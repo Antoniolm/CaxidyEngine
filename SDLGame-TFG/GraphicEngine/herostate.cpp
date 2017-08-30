@@ -45,13 +45,13 @@ HeroState::HeroState(){
     //Life Node
 
     Matrix4f * positionLife=new Matrix4f();
-    positionLife->translation(-0.2,0.025,0.05);
+    positionLife->translation(-0.125,0.025,0.05);
 
     scaleLife=new Matrix4f();
     scaleLife->scale(1.0,1.0,1.0);
 
     Matrix4f * positiontoScale=new Matrix4f();
-    positiontoScale->translation(0.2,0.0,0.0);
+    positiontoScale->translation(0.125,0.0,0.0);
 
     NodeSceneGraph * nodeLife=new NodeSceneGraph(false,true);
     nodeLife->add(positionLife);
@@ -129,11 +129,12 @@ void HeroState::updateState(GameState & gameState){
         visibleState=false;
 
     //if the life was changed
-    /*if(currentLife!=heroLife && heroLife>=0){
-        std::stringstream life;
-        life<<  "mLIFE" << heroLife;
-        currentMaterialLife->setTexture(MaterialCollection::getInstance()->getMaterial(life.str())->getTexture());
-    }*/
+    if(currentLife!=heroLife && heroLife>=0){
+        float maxLife=hero->getMaxLife();
+        float scaleX=((float)heroLife/(float)maxLife);
+
+        scaleLife->scale(scaleX,1.0,1.0);
+    }
 
     //if the value of coin was changed
     if(currentCoin!=heroCoin){
