@@ -45,17 +45,27 @@ HeroState::HeroState(){
 
     ///////////////////////
     //Life Node
+
+    Matrix4f * positionLife=new Matrix4f();
+    positionLife->translation(0.0,0.025,0.05);
+
+    NodeSceneGraph * nodeLife=new NodeSceneGraph(false,true);
+    nodeLife->add(positionLife);
+    nodeLife->add(materialCollect->getMaterial(mLIFE25));
+    nodeLife->add(meshCollect->getMesh(TEXT));
+
     Matrix4f * positionText=new Matrix4f();
     positionText->translation(-0.65,0.0,0.0);
 
     Matrix4f * scaleMenu=new Matrix4f();
     scaleMenu->scale(0.3,0.4,1.0);
 
-    NodeSceneGraph * nodeLife=new NodeSceneGraph(false,true);
-    nodeLife->add(positionText);
-    nodeLife->add(scaleMenu);
-    nodeLife->add(currentMaterialLife);
-    nodeLife->add(meshCollect->getMesh(TEXT));
+    NodeSceneGraph * nodeLifeBar=new NodeSceneGraph(false,true);
+    nodeLifeBar->add(positionText);
+    nodeLifeBar->add(scaleMenu);
+    nodeLifeBar->add(materialCollect->getMaterial(mLIFE0));
+    nodeLifeBar->add(meshCollect->getMesh(TEXT));
+    nodeLifeBar->add(nodeLife);
 
     ///////////////////////
     //Coin Node
@@ -75,7 +85,7 @@ HeroState::HeroState(){
     root->add(positionState);
     root->add(rotationMenu);
     root->add(nodeCrystal);
-    root->add(nodeLife);
+    root->add(nodeLifeBar);
     currentTime=SDL_GetTicks();
 }
 
@@ -114,11 +124,11 @@ void HeroState::updateState(GameState & gameState){
         visibleState=false;
 
     //if the life was changed
-    if(currentLife!=heroLife && heroLife>=0){
+    /*if(currentLife!=heroLife && heroLife>=0){
         std::stringstream life;
         life<<  "mLIFE" << heroLife;
         currentMaterialLife->setTexture(MaterialCollection::getInstance()->getMaterial(life.str())->getTexture());
-    }
+    }*/
 
     //if the value of coin was changed
     if(currentCoin!=heroCoin){

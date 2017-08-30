@@ -4277,7 +4277,7 @@
 	<vector>
 	<string>
 
-1503855577 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
+1504088690 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
 	"materialcollection.h"
 	"material/material.h"
 
@@ -5448,7 +5448,7 @@
 1504023329 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
 	"herostate.h"
 
-1503852106 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.h
+1504087800 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.h
 	"object3d.h"
 	"text.h"
 	"collection/materialcollection.h"
@@ -5800,7 +5800,7 @@
 1503254064 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
 
-1504028283 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
+1504030711 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
 	"camera.h"
 	"rootmap.h"
 

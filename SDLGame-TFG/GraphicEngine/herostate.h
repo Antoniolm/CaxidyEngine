@@ -64,6 +64,7 @@ class HeroState : public Object3D
         Text * coinText;                // Text that show the coin score
         Material * currentMaterialLife; // Texture of the current life of the hero
         Matrix4f * positionState;       // Matrix 4x4 with the position of the object
+
         int currentLife;                // Current life of the hero
         int currentCoin;                // Current coins of the hero
         bool visibleState;              // Visible state of the hero information
