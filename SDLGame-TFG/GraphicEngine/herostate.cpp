@@ -162,13 +162,25 @@ void HeroState::updateState(GameState & gameState){
     if(currentExp!=heroExp){
         expAnimation=currentExp;
         maxExpAnimation=heroExp;
-        if(currentExp>0 && heroExp!=0)
-            currentMaxExp=hero->getMaxExp();
+        endAnimation=false;
+
+        if(heroExp==0)
+            maxExpAnimation=currentMaxExp;
+
+        currentMaxExp=hero->getMaxExp();
     }
 
-    if(expAnimation<maxExpAnimation){
+    if(expAnimation<maxExpAnimation && !endAnimation){
         expAnimation+=5;
-        scaleExp->scale((float)expAnimation/(float)currentMaxExp,0.7,1.0);
+        if(heroExp==0 && expAnimation==maxExpAnimation){
+            expAnimation=0;
+            endAnimation=true;
+        }
+
+        if(heroExp==0)
+            scaleExp->scale((float)expAnimation/(float)maxExpAnimation,0.7,1.0);
+        else
+            scaleExp->scale((float)expAnimation/(float)currentMaxExp,0.7,1.0);
     }
 
 

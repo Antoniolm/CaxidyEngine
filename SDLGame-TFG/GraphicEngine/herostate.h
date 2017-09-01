@@ -75,6 +75,7 @@ class HeroState : public Object3D
         int maxExpAnimation;            // Max experience of the animation
 
         bool visibleState;              // Visible state of the hero information
+        bool endAnimation;
 };
 
 #endif // HEROSTATE_H
