@@ -46,6 +46,11 @@ void SavedManager::load(){
     currentMap=document["currentMap"].GetString();
     coins=document["coin"].GetFloat();
 
+    currentExp=document["currentExp"].GetInt();
+    maxExp=document["maxExp"].GetInt();
+    level=document["level"].GetInt();
+
+
     const rapidjson::Value & equipFeature=document["equip"];
     for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
         equip.push_back(new Equipment(equipFeature[currentEquip]));
@@ -77,6 +82,23 @@ vector<Equipment *> & SavedManager::getInv(){
 
 vector<vec2f> & SavedManager::getPosInv(){
     return equipPosition;
+}
+
+//**********************************************************************//
+
+int SavedManager::getCurrentExp(){
+    return currentExp;
+}
+
+//**********************************************************************//
+int SavedManager::getMaxExp(){
+    return maxExp;
+}
+
+//**********************************************************************//
+
+int SavedManager::getLevel(){
+    return level;
 }
 
 //**********************************************************************//

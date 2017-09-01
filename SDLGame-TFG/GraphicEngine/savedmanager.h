@@ -68,7 +68,9 @@ class SavedManager
         vector<Equipment *> & getInv();
         vector<vec2f> & getPosInv();
 
-
+        int getCurrentExp();
+        int getMaxExp();
+        int getLevel();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -95,9 +97,13 @@ class SavedManager
         static SavedManager* instance;  //Instance of saved manager
         std::string currentMap;         //Current Map of the user progress
         int coins;                      //Current coins of the user progress
+
+        int currentExp;
+        int maxExp;
+        int level;
+
         vector<Equipment *> equip;
         vector<vec2f> equipPosition;
-
 };
 
 #endif // SAVEDMANAGER_H
