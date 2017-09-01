@@ -5445,7 +5445,7 @@
 1503923132 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
-1504270882 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
+1504273335 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
 	"herostate.h"
 
 1504270731 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.h
@@ -5720,7 +5720,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1504269522 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1504273440 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"equipment.h"
 	"projectile.h"

@@ -160,10 +160,10 @@ void HeroState::updateState(GameState & gameState){
     //If the experience value was changes
     if(currentExp!=heroExp){
         float maxExp=hero->getMaxExp();
-        float scaleX=((float)heroLife/(float)maxLife);
+        float scaleExpX=((float)heroExp/(float)maxExp);
+        cout<< "-)"<< scaleExpX<< "(-"<<endl;
 
-        scaleLife->scale(scaleX,1.0,1.0);
-
+        scaleExp->scale(scaleExpX,1.0,1.0);
     }
 
     //if the value of coin was changed
@@ -175,5 +175,6 @@ void HeroState::updateState(GameState & gameState){
     }
 
     currentLife=heroLife;
+    currentExp=heroExp;
     currentCoin=heroCoin;
 }

@@ -36,6 +36,7 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     isShielded=false;
     life=100;
     maxLife=100;
+    currentExp=0;
     position=vec4f(heroFeatures["position"][0].GetFloat(),heroFeatures["position"][1].GetFloat(),heroFeatures["position"][2].GetFloat(),1.0);
     limitBottom=0.5;
     currentCoin=0;
