@@ -180,7 +180,31 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will get if the hero take a soul in his arm
+        *    It will get return the current experience of the hero
+        *    \return int
+        */
+        //////////////////////////////////////////////////////////////////////////
+        int getExp();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will get return the max experience of the current level
+        *    \return int
+        */
+        //////////////////////////////////////////////////////////////////////////
+        int getMaxExp();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will get return the current level of the hero
+        *    \return int
+        */
+        //////////////////////////////////////////////////////////////////////////
+        int getLevel();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will get the soul that the hero take in his arm
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
@@ -214,6 +238,7 @@ class Hero: public AvatarMove
         */
         //////////////////////////////////////////////////////////////////////////
         void takeDamage(float value);
+
     protected:
 
     private:
@@ -227,19 +252,28 @@ class Hero: public AvatarMove
 
         vector<Projectile *> projectiles;   // Vector of projectiles
         vector<Matrix4f *> moveMatrix;      // Vector of movements
+
         vector<Sound *> heroSound;          // Vector of sounds
         vector<int> channelSound;           // Vector of channels for the sound
+
         AnimationList animations;           // List of animations of the hero
         vector<Text *> texts;               // Vector of texts
         vector<bool> activatedTexts;        // Vector of state of texts
         Soul * soul;                        // Soul catch in the arms of the hero
-        Equipment * currentWeapon;             // Current weapon of the hero
-        Equipment * meleeWeapon;               // Close weapon of the hero
-        Equipment * rangedWeapon;              // Ranged weapon of the hero
+
+        Equipment * currentWeapon;          // Current weapon of the hero
+        Equipment * meleeWeapon;            // Close weapon of the hero
+        Equipment * rangedWeapon;           // Ranged weapon of the hero
 
         //Some delays for action of the hero
         float jumpDelay,hitDelay,coinDelay,shieldDelay,swapDelay,shootDelay,swordDelay;
         int currentCoin;    //Current coin of the hero
+
+        int currentExp;
+        int maxExperience;
+        int level;
+
+
 };
 
 #endif // HERO_H
