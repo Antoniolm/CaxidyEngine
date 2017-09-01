@@ -705,6 +705,17 @@ void Hero::setSoul(Soul * aSoul){
 
 //**********************************************************************//
 
+void Hero::addExperience(int value){
+    currentExp+=value;
+    if(currentExp>=maxExperience){
+        level++;
+        maxExperience=level*100;
+        currentExp=0;
+    }
+}
+
+//**********************************************************************//
+
 void Hero::noMove(){
     animations.resetAnimation(0);
     for(unsigned i=0;i<moveMatrix.size();i++)

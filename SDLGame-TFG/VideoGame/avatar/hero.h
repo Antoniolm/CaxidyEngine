@@ -116,7 +116,7 @@ class Hero: public AvatarMove
         /**
         *    The method will set the coins of our hero
         *    @param value -> The new value of our coins.
-        *    \return int
+        *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
         void setCoin(int value);
@@ -129,6 +129,14 @@ class Hero: public AvatarMove
         */
         //////////////////////////////////////////////////////////////////////////
         void setSoul(Soul * aSoul);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will add experience to the current experience of the hero
+        *    @param value -> The value added to the current experience
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void addExperience(int value);
 
         //////////////////////////////////////////////////////////////////////////
         /**
