@@ -110,6 +110,10 @@ class InventoryMenu : public Menu
         Text * lifeItemText;
         Text * nameItemText;
 
+        //Info of the hero
+        Text * levelText;
+        int currentLevel;
+
 };
 
 #endif // INVENTORYMENU_H

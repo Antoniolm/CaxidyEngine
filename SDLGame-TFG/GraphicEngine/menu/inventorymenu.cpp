@@ -25,6 +25,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     currentOption=0;
     currentItemX=0;
     currentItemY=0;
+    currentLevel=0;
     activateMenu=false;
     isConfirming=false;
     MeshCollection * meshCollect =MeshCollection::getInstance();
@@ -42,6 +43,8 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     armourItemText=new Text(mVOID,font,color,false);
     lifeItemText=new Text(mVOID,font,color,false);
     nameItemText=new Text(mVOID,font,color,false);
+
+    levelText=new Text(mVOID,font,color,false);
 
     /////////////////
     //Create interface
@@ -149,6 +152,8 @@ InventoryMenu::~InventoryMenu(){
     delete armourItemText;
     delete lifeItemText;
     delete nameItemText;
+
+    delete levelText;
 }
 
 //**********************************************************************//
@@ -160,6 +165,7 @@ void InventoryMenu::visualization(Context & cv){
         armourItemText->visualization(cv);
         lifeItemText->visualization(cv);
         nameItemText->visualization(cv);
+        levelText->visualization(cv);
 
         if(isConfirming)
             confirmInterface->visualization(cv);
@@ -193,6 +199,18 @@ void InventoryMenu::updateState(GameState & gameState){
                 lifeItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.6,posHero.z+initialPosition.z+1.4));
                 damageItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.5,posHero.z+initialPosition.z+1.4));
                 armourItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.4,posHero.z+initialPosition.z+1.4));
+
+                levelText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.507,posHero.z+initialPosition.z+1.4));
+
+                //Current Level
+                if(gameState.rootMap->getHero()->getLevel()!=currentLevel){
+                    currentLevel=gameState.rootMap->getHero()->getLevel();
+
+                    std::stringstream levelStream;
+                    levelStream<< currentLevel;
+                    levelText->setMessage(levelStream.str());
+                    levelText->init(750.0,60.0);
+                }
 
                 //Consume the current events -> User has to push again the buttons
                 controller->setState(false,cUP);

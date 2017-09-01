@@ -158,13 +158,15 @@ void HeroState::updateState(GameState & gameState){
         scaleLife->scale((float)heroLife/(float)maxLife,1.0,1.0);
     }
 
+    ///////Fix
+
     //If the experience value was changes
     if(currentExp!=heroExp){
         expAnimation=currentExp;
         maxExpAnimation=heroExp;
         endAnimation=false;
 
-        if(heroExp==0)
+        if(heroExp<currentExp)
             maxExpAnimation=currentMaxExp;
 
         currentMaxExp=hero->getMaxExp();
@@ -172,16 +174,20 @@ void HeroState::updateState(GameState & gameState){
 
     if(expAnimation<maxExpAnimation && !endAnimation){
         expAnimation+=5;
-        if(heroExp==0 && expAnimation==maxExpAnimation){
+        if(heroExp<currentExp && expAnimation==maxExpAnimation){
             expAnimation=0;
-            endAnimation=true;
+            maxExpAnimation=heroExp;
+            if(heroExp==0)
+                endAnimation=true;
         }
 
-        if(heroExp==0)
+        if(heroExp<currentExp)
             scaleExp->scale((float)expAnimation/(float)maxExpAnimation,0.7,1.0);
         else
             scaleExp->scale((float)expAnimation/(float)currentMaxExp,0.7,1.0);
     }
+
+    //// FIX
 
 
     //if the value of coin was changed
