@@ -57,6 +57,7 @@ class HeroState : public Object3D
         */
         //////////////////////////////////////////////////////////////////////////
         void updateState(GameState & gameState);
+
     protected:
 
     private:
@@ -64,9 +65,11 @@ class HeroState : public Object3D
         Text * coinText;                // Text that show the coin score
         Matrix4f * positionState;       // Matrix 4x4 with the position of the object
         Matrix4f * scaleLife;           // Matrix 4x4 with the scale of the life
+        Matrix4f * scaleExp;            // Matrix 4x4 with the scale of the experience
 
         int currentLife;                // Current life of the hero
         int currentCoin;                // Current coins of the hero
+        int currentExp;                 // Current experience of the hero
         bool visibleState;              // Visible state of the hero information
 };
 

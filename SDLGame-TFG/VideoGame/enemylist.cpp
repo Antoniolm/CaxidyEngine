@@ -68,6 +68,8 @@ void EnemyList::updateState(GameState & gameState){
     while(it!=enemies.end()){ //loop for enemies
         (*it)->updateState(gameState);
         if((*it)->getLife()<=0.0){ //if the enemy is dead
+            //added the experience of its enemy to the hero
+            gameState.rootMap->getHero()->addExperience((*it)->getExp());
             enemies.erase(it);
         }
         else //if not dead it++;

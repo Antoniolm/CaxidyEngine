@@ -22,6 +22,7 @@
 HeroState::HeroState(){
     currentCoin=-10;
     currentLife=110;
+    currentExp=-10;
 
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
@@ -41,6 +42,24 @@ HeroState::HeroState(){
     Matrix4f * rotationMenu=new Matrix4f();
     rotationMenu->rotation(20,1.0,0.0,0.0);
 
+    ////////////////////////
+    // Exp Node
+    Matrix4f * positionExp=new Matrix4f();
+    positionExp->translation(-0.125,0.025,0.05);
+
+    scaleExp=new Matrix4f();
+    scaleExp->scale(1.0,1.0,1.0);
+
+    Matrix4f * positiontoScale=new Matrix4f();
+    positiontoScale->translation(0.125,0.0,0.0);
+
+    NodeSceneGraph * nodeExp=new NodeSceneGraph(false,true);
+    nodeExp->add(positionExp);
+    nodeExp->add(scaleExp);
+    nodeExp->add(positiontoScale);
+    nodeExp->add(materialCollect->getMaterial(mEXP));
+    nodeExp->add(meshCollect->getMesh(TEXT));
+
     ///////////////////////
     //Life Node
 
@@ -50,7 +69,7 @@ HeroState::HeroState(){
     scaleLife=new Matrix4f();
     scaleLife->scale(1.0,1.0,1.0);
 
-    Matrix4f * positiontoScale=new Matrix4f();
+    positiontoScale=new Matrix4f();
     positiontoScale->translation(0.125,0.0,0.0);
 
     NodeSceneGraph * nodeLife=new NodeSceneGraph(false,true);
@@ -72,6 +91,7 @@ HeroState::HeroState(){
     nodeLifeBar->add(materialCollect->getMaterial(mLIFEBAR));
     nodeLifeBar->add(meshCollect->getMesh(TEXT));
     nodeLifeBar->add(nodeLife);
+    nodeLifeBar->add(nodeExp);
 
     ///////////////////////
     //Coin Node
@@ -122,6 +142,7 @@ void HeroState::updateState(GameState & gameState){
     coinText->setPosition(vec3f(posHero.x+0.74,posHero.y+7.4,posHero.z+10.6));
 
     int heroLife=hero->getLife();
+    int heroExp=hero->getExp();
     int heroCoin=hero->getCoin();
 
     if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
@@ -134,6 +155,15 @@ void HeroState::updateState(GameState & gameState){
         float scaleX=((float)heroLife/(float)maxLife);
 
         scaleLife->scale(scaleX,1.0,1.0);
+    }
+
+    //If the experience value was changes
+    if(currentExp!=heroExp){
+        float maxExp=hero->getMaxExp();
+        float scaleX=((float)heroLife/(float)maxLife);
+
+        scaleLife->scale(scaleX,1.0,1.0);
+
     }
 
     //if the value of coin was changed
