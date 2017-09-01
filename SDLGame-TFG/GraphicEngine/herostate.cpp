@@ -22,8 +22,9 @@
 HeroState::HeroState(){
     currentCoin=-10;
     currentLife=110;
-    currentExp=-10;
-    currentLevel=1;
+    currentExp=0;
+    expAnimation=0;
+    maxExpAnimation=0;
 
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
@@ -46,10 +47,10 @@ HeroState::HeroState(){
     ////////////////////////
     // Exp Node
     Matrix4f * positionExp=new Matrix4f();
-    positionExp->translation(-0.125,0.025,0.05);
+    positionExp->translation(-0.125,-0.04,0.05);
 
     scaleExp=new Matrix4f();
-    scaleExp->scale(1.0,0.9,1.0);
+    scaleExp->scale(0.0,0.7,1.0);
 
     Matrix4f * positiontoScale=new Matrix4f();
     positiontoScale->translation(0.125,0.0,0.0);
@@ -144,7 +145,6 @@ void HeroState::updateState(GameState & gameState){
 
     int heroLife=hero->getLife();
     int heroExp=hero->getExp();
-    int heroLevel=hero->getLevel();
     int heroCoin=hero->getCoin();
 
     if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
@@ -159,22 +159,18 @@ void HeroState::updateState(GameState & gameState){
     }
 
     //If the experience value was changes
-    /*if(heroLevel==currentLevel)
-        currentMaxExp=hero->getMaxExp();
-
-    if(currentExp<heroExp || heroLevel!=currentLevel){
-        currentExp+=5;
-
-        if(currentExp>=currentMaxExp){
-            currentExp=0;
-            currentLevel=heroLevel;
-        }
-
-        scaleExp->scale((float)currentExp/(float)currentMaxExp,0.9,1.0);
+    if(currentExp!=heroExp){
+        expAnimation=currentExp;
+        maxExpAnimation=heroExp;
+        if(currentExp>0 && heroExp!=0)
+            currentMaxExp=hero->getMaxExp();
     }
-    else {
-        currentExp=heroExp;
-    }*/
+
+    if(expAnimation<maxExpAnimation){
+        expAnimation+=5;
+        scaleExp->scale((float)expAnimation/(float)currentMaxExp,0.7,1.0);
+    }
+
 
     //if the value of coin was changed
     if(currentCoin!=heroCoin){
@@ -185,5 +181,6 @@ void HeroState::updateState(GameState & gameState){
     }
 
     currentLife=heroLife;
+    currentExp=heroExp;
     currentCoin=heroCoin;
 }

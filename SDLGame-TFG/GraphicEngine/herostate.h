@@ -71,7 +71,8 @@ class HeroState : public Object3D
         int currentCoin;                // Current coins of the hero
         int currentExp;                 // Current experience of the hero
         int currentMaxExp;              // Current total exp of the current level of the hero
-        int currentLevel;               // Current level of the hero
+        int expAnimation;               // Current experiente of animation
+        int maxExpAnimation;            // Max experience of the animation
 
         bool visibleState;              // Visible state of the hero information
 };
