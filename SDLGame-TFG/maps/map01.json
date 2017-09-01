@@ -194,6 +194,7 @@
     "enemies":[
             {   
                 "life":75,
+                "exp":50,
                 "position":[194.5,1.5,-5.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
@@ -217,6 +218,7 @@
             },  
             {   
                 "life":75,
+                "exp":50,
                 "position":[196.5,1.5,-5.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
@@ -240,6 +242,7 @@
             },
             {   
                 "life":25,
+                "exp":50,
                 "position":[178.5,1.5,-3.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"ranged",

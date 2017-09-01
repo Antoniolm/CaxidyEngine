@@ -75,6 +75,12 @@ vec3f Enemy::getRadioActivity(){
 
  //**********************************************************************//
 
+ int Enemy::getExp(){
+    return experience;
+ }
+
+ //**********************************************************************//
+
  void Enemy::takeDamage(vec3f posAvatar,avatarDirection dirAvatar,vec3f posHero,float value,const vector<Enemy *> & enemies){
     //check Distance
     float distance=sqrt(pow(position.x-posAvatar.x,2.0)+pow(position.z-posAvatar.z,2.0));

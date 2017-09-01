@@ -23,6 +23,7 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
 {
     life=enemyFeatures["life"].GetInt();
     maxLife=enemyFeatures["life"].GetInt();
+    experience=enemyFeatures["exp"].GetInt();
 
     IA=new IAMeleeEnemy();
 

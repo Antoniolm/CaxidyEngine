@@ -76,6 +76,7 @@ enum MaterialIndex{
     mSOUL,
     mLIFEBAR,
     mLIFE,
+    mEXP,
     mCRYSDRAW,
     mTRAPDOOR,
     mBUTTON,

@@ -99,7 +99,7 @@ class Enemy: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will get radioActivity of our enemy
+        *    The method will get radioActivity of the enemy
         *    \return vec3f
         */
         //////////////////////////////////////////////////////////////////////////
@@ -107,11 +107,19 @@ class Enemy: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will get the life of our hero
+        *    The method will get the life of the enemy
         *    \return float
         */
         //////////////////////////////////////////////////////////////////////////
         float getLife();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will get the exp of our hero
+        *    \return float
+        */
+        //////////////////////////////////////////////////////////////////////////
+        int getExp();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -140,14 +148,17 @@ class Enemy: public AvatarMove
         vector<Matrix4f *> moveMatrix;              // Vector of movement matrix
         vector<Sound *> enemySound;                 // Vector of sound
         pair<avatarDirection,vec3f> currentMove;    // Current Move of the enemy
+
         AnimationList animations;                   // List of animations of the enemy
         Equipment * weapon;                         // Weapon of the enemy
         vec3f radioActivity;                        // Radio activity of the enemy
         IAEnemy * IA;                               // Ia of the enemy
+
         bool enemyActivate;                         // Flag for activation
         bool activatedDialog;                       // Flag for activation
         Text * currentText;                         // Text for the damage
         float jumpDelay,hitDelay,IADelay;           // Some delay between action
+        int experience;                             // Experience that the hero gain when the enemy die
     private:
 
 };

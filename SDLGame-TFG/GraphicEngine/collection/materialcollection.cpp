@@ -124,6 +124,8 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/lifeBarBlack.png","",mLIFE));
 
+    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/barExp.png","",mEXP));
+
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/crystal.png","",mCRYSDRAW));
 
     collection.addElement(new Material(vec3f(8.0f, 8.0f, 8.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/textureTrap.png","",mTRAPDOOR));
@@ -180,6 +182,7 @@ MaterialCollection::MaterialCollection()
     collection.addIndex("mSOUL",mSOUL);
     collection.addIndex("mLIFEBAR",mLIFEBAR);
     collection.addIndex("mLIFE",mLIFE);
+    collection.addIndex("mEXP,",mEXP);
     collection.addIndex("mCRYSDRAW",mCRYSDRAW);
     collection.addIndex("mTRAPDOOR",mTRAPDOOR);
     collection.addIndex("mBUTTON",mBUTTON);

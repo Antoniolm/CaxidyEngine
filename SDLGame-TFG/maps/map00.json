@@ -109,7 +109,7 @@
 
 
     "hero":{    "life":100,
-                "position":[4,2.0,-10],
+                "position":[9.5,2.0,-4.5],
                 "textFont":"font/Xolonium-Regular.ttf",
                 "textSize":40,
                 "material":"mHERO",
@@ -195,6 +195,7 @@
     "enemies":[
             {   
                 "life":75,
+                "exp":50,
                 "position":[75.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
@@ -218,6 +219,7 @@
             },  
             {   
                 "life":75,
+                "exp":50,
                 "position":[77.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
