@@ -276,7 +276,6 @@ void Game::loop(){
             gameState.camera->activatePerspecProjection(context.currentShader->getProgram());
             gameState.rootMap->visualization(context);
 
-
             gameState.camera->activateOrthoProjection(context.currentShader->getProgram());
             heroState->visualization(context);
             gameState.pauseMenu->visualization(context);
