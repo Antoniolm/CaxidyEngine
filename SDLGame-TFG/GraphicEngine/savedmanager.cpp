@@ -81,7 +81,7 @@ vector<vec2f> & SavedManager::getPosInv(){
 
 //**********************************************************************//
 
-void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
+void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int cExp,int MExp,int level){
     currentMap=fileMap;
     coins=coin;
     std::ostringstream stringCoin ;
@@ -89,8 +89,12 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin){
 
     std::ofstream savedFile;
     savedFile.open ("./save/save.json");
-    savedFile << "{ \"currentMap\":\""+fileMap+"\" ,"+
-                +"  \"coin\":"+stringCoin.str()+" ,\n";
+    savedFile << "{ \"currentMap\":\""+ fileMap +"\" ,"+
+                 "  \"coin\":"+ stringCoin.str() +" ,\n";
+    savedFile << " \"currentExp\":"<< cExp <<", \n";
+    savedFile << " \"maxExp\":"<< MExp <<", \n";
+    savedFile << " \"level\":"<< level <<", \n";
+
     savedFile << "\"equip\": [\n";
 
     Inventory * inv=gameState.inventoryMenu->getInventory();

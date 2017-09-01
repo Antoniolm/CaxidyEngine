@@ -76,7 +76,7 @@ class SavedManager
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void save(std::string fileMap,GameState & gameState,int coin);
+        void save(std::string fileMap,GameState & gameState,int coin,int cExp=0,int MExp =100 ,int level=1);
 
         static SavedManager * getInstance(){
             if(instance == NULL)

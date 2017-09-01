@@ -714,9 +714,9 @@ void Hero::setSoul(Soul * aSoul){
 void Hero::addExperience(int value){
     currentExp+=value;
     if(currentExp>=maxExperience){
+        currentExp=currentExp%maxExperience;
         level++;
         maxExperience=level*100;
-        currentExp=0;
     }
 }
 
