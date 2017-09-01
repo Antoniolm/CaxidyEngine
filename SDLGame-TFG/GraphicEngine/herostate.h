@@ -70,6 +70,9 @@ class HeroState : public Object3D
         int currentLife;                // Current life of the hero
         int currentCoin;                // Current coins of the hero
         int currentExp;                 // Current experience of the hero
+        int currentMaxExp;              // Current total exp of the current level of the hero
+        int currentLevel;               // Current level of the hero
+
         bool visibleState;              // Visible state of the hero information
 };
 

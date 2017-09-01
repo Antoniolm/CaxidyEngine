@@ -23,6 +23,7 @@ HeroState::HeroState(){
     currentCoin=-10;
     currentLife=110;
     currentExp=-10;
+    currentLevel=1;
 
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
@@ -48,7 +49,7 @@ HeroState::HeroState(){
     positionExp->translation(-0.125,0.025,0.05);
 
     scaleExp=new Matrix4f();
-    scaleExp->scale(1.0,1.0,1.0);
+    scaleExp->scale(1.0,0.9,1.0);
 
     Matrix4f * positiontoScale=new Matrix4f();
     positiontoScale->translation(0.125,0.0,0.0);
@@ -143,6 +144,7 @@ void HeroState::updateState(GameState & gameState){
 
     int heroLife=hero->getLife();
     int heroExp=hero->getExp();
+    int heroLevel=hero->getLevel();
     int heroCoin=hero->getCoin();
 
     if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
@@ -152,19 +154,27 @@ void HeroState::updateState(GameState & gameState){
     //if the life was changed
     if(currentLife!=heroLife && heroLife>=0){
         float maxLife=hero->getMaxLife();
-        float scaleX=((float)heroLife/(float)maxLife);
 
-        scaleLife->scale(scaleX,1.0,1.0);
+        scaleLife->scale((float)heroLife/(float)maxLife,1.0,1.0);
     }
 
     //If the experience value was changes
-    if(currentExp!=heroExp){
-        float maxExp=hero->getMaxExp();
-        float scaleExpX=((float)heroExp/(float)maxExp);
-        cout<< "-)"<< scaleExpX<< "(-"<<endl;
+    /*if(heroLevel==currentLevel)
+        currentMaxExp=hero->getMaxExp();
 
-        scaleExp->scale(scaleExpX,1.0,1.0);
+    if(currentExp<heroExp || heroLevel!=currentLevel){
+        currentExp+=5;
+
+        if(currentExp>=currentMaxExp){
+            currentExp=0;
+            currentLevel=heroLevel;
+        }
+
+        scaleExp->scale((float)currentExp/(float)currentMaxExp,0.9,1.0);
     }
+    else {
+        currentExp=heroExp;
+    }*/
 
     //if the value of coin was changed
     if(currentCoin!=heroCoin){
@@ -175,6 +185,5 @@ void HeroState::updateState(GameState & gameState){
     }
 
     currentLife=heroLife;
-    currentExp=heroExp;
     currentCoin=heroCoin;
 }
