@@ -33,6 +33,10 @@ HeroState::HeroState(){
     SDL_Color color= {0,255,0};
     coinText=new Text(mVOID,font,color,false);
 
+    levelUp=new Text(mVOID,font,color,false);
+    levelUp->setMessage("¡Level Up!");
+    levelUp->init(1000.0,80.0);
+
     MeshCollection * meshCollect =MeshCollection::getInstance();
     MaterialCollection * materialCollect =MaterialCollection::getInstance();
 
@@ -122,6 +126,7 @@ HeroState::HeroState(){
 HeroState::~HeroState(){
     delete root;
     delete coinText;
+    delete levelUp;
 }
 
 //**********************************************************************//
@@ -130,6 +135,7 @@ void HeroState::visualization(Context & cv){
     if(visibleState){
         root->visualization(cv);
         coinText->visualization(cv);
+        levelUp->visualization(cv);
     }
 }
 
@@ -142,6 +148,7 @@ void HeroState::updateState(GameState & gameState){
 
     positionState->translation(posHero.x,posHero.y+7.4,posHero.z+10.6);
     coinText->setPosition(vec3f(posHero.x+0.74,posHero.y+7.4,posHero.z+10.6));
+    levelUp->setPosition(vec3f(posHero.x-0.59,posHero.y+7.3,posHero.z+10.65));
 
     int heroLife=hero->getLife();
     int heroExp=hero->getExp();
@@ -174,9 +181,11 @@ void HeroState::updateState(GameState & gameState){
 
     if(expAnimation<maxExpAnimation && !endAnimation){
         expAnimation+=5;
-        if(heroExp<currentExp && expAnimation==maxExpAnimation){
+
+        if(heroExp<currentExp && expAnimation>=maxExpAnimation){
             expAnimation=0;
             maxExpAnimation=heroExp;
+
             if(heroExp==0)
                 endAnimation=true;
         }
@@ -201,4 +210,10 @@ void HeroState::updateState(GameState & gameState){
     currentLife=heroLife;
     currentExp=heroExp;
     currentCoin=heroCoin;
+}
+
+//**********************************************************************//
+
+void HeroState::animationBarExp(int cExp,int mAnimation, int maxExpLevel){
+
 }

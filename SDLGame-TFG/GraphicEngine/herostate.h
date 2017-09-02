@@ -61,11 +61,15 @@ class HeroState : public Object3D
     protected:
 
     private:
+        void animationBarExp(int cExp,int mAnimation, int maxExpLevel);
+
         NodeSceneGraph * root;          // Root of the scene graph of hero state
-        Text * coinText;                // Text that show the coin score
         Matrix4f * positionState;       // Matrix 4x4 with the position of the object
         Matrix4f * scaleLife;           // Matrix 4x4 with the scale of the life
         Matrix4f * scaleExp;            // Matrix 4x4 with the scale of the experience
+
+        Text * coinText;                // Text that show the coin score
+        Text * levelUp;                 // Level Up
 
         int currentLife;                // Current life of the hero
         int currentCoin;                // Current coins of the hero
