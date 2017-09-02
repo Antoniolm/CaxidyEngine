@@ -23,8 +23,6 @@ HeroState::HeroState(){
     currentCoin=-10;
     currentLife=110;
     currentExp=0;
-    expAnimation=0;
-    maxExpAnimation=0;
 
     isLevelUp=false;
 
@@ -175,34 +173,15 @@ void HeroState::updateState(GameState & gameState){
 
     //If the experience value was changes
     if(currentExp!=heroExp){
-        expAnimation=currentExp;
-        maxExpAnimation=heroExp;
-        endAnimation=false;
 
         if(heroExp<currentExp){
-            maxExpAnimation=currentMaxExp;
             isLevelUp=true;
             delayTime=currentTime;
         }
 
         currentMaxExp=hero->getMaxExp();
-    }
 
-    if(expAnimation<maxExpAnimation && !endAnimation){
-        expAnimation+=5;
-
-        if(heroExp<currentExp && expAnimation>=maxExpAnimation){
-            expAnimation=0;
-            maxExpAnimation=heroExp;
-
-            if(heroExp==0)
-                endAnimation=true;
-        }
-
-        if(heroExp<currentExp)
-            scaleExp->scale((float)expAnimation/(float)maxExpAnimation,0.7,1.0);
-        else
-            scaleExp->scale((float)expAnimation/(float)currentMaxExp,0.7,1.0);
+        scaleExp->scale((float)heroExp/(float)currentMaxExp,0.7,1.0);
     }
 
      if(delayTime<(time-1500)){
@@ -225,10 +204,4 @@ void HeroState::updateState(GameState & gameState){
     currentCoin=heroCoin;
 
     currentTime+=time-currentTime;
-}
-
-//**********************************************************************//
-
-void HeroState::animationBarExp(int cExp,int mAnimation, int maxExpLevel){
-
 }

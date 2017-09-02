@@ -61,7 +61,6 @@ class HeroState : public Object3D
     protected:
 
     private:
-        void animationBarExp(int cExp,int mAnimation, int maxExpLevel);
 
         NodeSceneGraph * root;          // Root of the scene graph of hero state
         Matrix4f * positionState;       // Matrix 4x4 with the position of the object
@@ -75,13 +74,10 @@ class HeroState : public Object3D
         int currentCoin;                // Current coins of the hero
         int currentExp;                 // Current experience of the hero
         int currentMaxExp;              // Current total exp of the current level of the hero
-        int expAnimation;               // Current experiente of animation
-        int maxExpAnimation;            // Max experience of the animation
 
         float delayTime;
 
         bool visibleState;              // Visible state of the hero information
-        bool endAnimation;
         bool isLevelUp;                 // Flag to know if the hero was level up or not
 };
 
