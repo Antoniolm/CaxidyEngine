@@ -715,6 +715,17 @@ void Hero::setLevelParameters(int cExp, int maxExp,int lvl){
     currentExp=cExp;
     maxExperience=maxExp;
     level=lvl;
+    life+=level-1;
+    damage+=level-1;
+    armour+=level-1;
+}
+
+//**********************************************************************//
+
+void Hero::setInfoParameters(int clife, int cDamage,int cArmour){
+    maxLife=clife;
+    damage=cDamage;
+    armour=cArmour;
 }
 
 //**********************************************************************//
@@ -784,6 +795,18 @@ int Hero::getMaxExp(){
 
 int Hero::getLevel(){
     return level;
+}
+
+//**********************************************************************//
+
+int Hero::getDamage(){
+    return damage;
+}
+
+//**********************************************************************//
+
+int Hero::getArmour(){
+    return armour;
 }
 
 //**********************************************************************//

@@ -104,9 +104,8 @@ class InventoryMenu : public Menu
         Material * itemView[3][6];
         bool isConfirming;
 
-        Equipment * lastSelection;              // Pointer to know the last selected
-                                            // position was empty or has an equip
-
+        Equipment * lastSelection;           // Pointer to know the last selected
+                                             // position was empty or has an equip
         //Selected items
         Text * damageItemText;
         Text * armourItemText;
@@ -115,7 +114,15 @@ class InventoryMenu : public Menu
 
         //Info of the hero
         Text * levelText;
+        Text * lifeText;
+        Text * damageText;
+        Text * armourText;
+
         int currentLevel;
+        int currentLife;
+        int currentDmg;
+        int currentArmour;
+
 
 };
 

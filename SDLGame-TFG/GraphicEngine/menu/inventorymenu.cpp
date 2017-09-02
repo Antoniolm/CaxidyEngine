@@ -26,6 +26,11 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     currentItemX=0;
     currentItemY=0;
     currentLevel=0;
+
+    currentLife=0;
+    currentDmg=0;
+    currentArmour=0;
+
     activateMenu=false;
     isConfirming=false;
     MeshCollection * meshCollect =MeshCollection::getInstance();
@@ -45,6 +50,9 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     nameItemText=new Text(mVOID,font,color,false);
 
     levelText=new Text(mVOID,font,color,false);
+    lifeText=new Text(mVOID,font,color,false);
+    damageText=new Text(mVOID,font,color,false);
+    armourText=new Text(mVOID,font,color,false);
 
     /////////////////
     //Create interface
@@ -154,6 +162,9 @@ InventoryMenu::~InventoryMenu(){
     delete nameItemText;
 
     delete levelText;
+    delete lifeText;
+    delete damageText;
+    delete armourText;
 }
 
 //**********************************************************************//
@@ -161,11 +172,16 @@ InventoryMenu::~InventoryMenu(){
 void InventoryMenu::visualization(Context & cv){
     if(activateMenu){
         root->visualization(cv);
+
         damageItemText->visualization(cv);
         armourItemText->visualization(cv);
         lifeItemText->visualization(cv);
         nameItemText->visualization(cv);
+
         levelText->visualization(cv);
+        lifeText->visualization(cv);
+        damageText->visualization(cv);
+        armourText->visualization(cv);
 
         if(isConfirming)
             confirmInterface->visualization(cv);
@@ -201,6 +217,9 @@ void InventoryMenu::updateState(GameState & gameState){
                 armourItemText->setPosition(vec3f(posHero.x+initialPosition.x-0.7,posHero.y+initialPosition.y+0.4,posHero.z+initialPosition.z+1.4));
 
                 levelText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.507,posHero.z+initialPosition.z+1.4));
+                lifeText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.4,posHero.z+initialPosition.z+1.4));
+                damageText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.3,posHero.z+initialPosition.z+1.4));
+                armourText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.18,posHero.z+initialPosition.z+1.4));
 
                 //Current Level
                 if(gameState.rootMap->getHero()->getLevel()!=currentLevel){
@@ -211,6 +230,37 @@ void InventoryMenu::updateState(GameState & gameState){
                     levelText->setMessage(levelStream.str());
                     levelText->init(750.0,60.0);
                 }
+
+                //Current Life
+                if(gameState.rootMap->getHero()->getLife()!=currentLife){
+                    currentLife=gameState.rootMap->getHero()->getLife();
+
+                    std::stringstream lifeStream;
+                    lifeStream<< currentLife;
+                    lifeText->setMessage(lifeStream.str());
+                    lifeText->init(750.0,60.0);
+                }
+
+                //Current Damage
+                if(gameState.rootMap->getHero()->getDamage()!=currentDmg){
+                    currentDmg=gameState.rootMap->getHero()->getDamage();
+
+                    std::stringstream dmgStream;
+                    dmgStream<< currentDmg;
+                    damageText->setMessage(dmgStream.str());
+                    damageText->init(750.0,60.0);
+                }
+
+                //Current Armour
+                if(gameState.rootMap->getHero()->getArmour()!=currentArmour){
+                    currentArmour=gameState.rootMap->getHero()->getArmour();
+
+                    std::stringstream armourStream;
+                    armourStream<< currentArmour;
+                    armourText->setMessage(armourStream.str());
+                    armourText->init(750.0,60.0);
+                }
+
 
                 //Consume the current events -> User has to push again the buttons
                 controller->setState(false,cUP);

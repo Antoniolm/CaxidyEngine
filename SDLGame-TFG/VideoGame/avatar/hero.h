@@ -143,6 +143,17 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    The method will set the variable of the information of the hero
+        *    @param clife -> the life of the hero
+        *    @param cDamage -> the damage of the hero
+        *    @param cArmour -> the armour of the hero
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setInfoParameters(int clife, int cDamage,int cArmour);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    The method will add experience to the current experience of the hero
         *    @param value -> The value added to the current experience
         */
@@ -223,6 +234,22 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    It will get return the damage of the hero
+        *    \return int
+        */
+        //////////////////////////////////////////////////////////////////////////
+        int getDamage();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will get return the armour of the hero
+        *    \return int
+        */
+        //////////////////////////////////////////////////////////////////////////
+        int getArmour();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    The method will get the soul that the hero take in his arm
         *    \return bool
         */
@@ -291,6 +318,8 @@ class Hero: public AvatarMove
         int currentExp;
         int maxExperience;
         int level;
+        int damage;
+        int armour;
 
 };
 
