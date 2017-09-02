@@ -643,7 +643,7 @@ void Hero::updateState(GameState & gameState){
     ////////////////////////////
     for(unsigned i=0;i<texts.size();i++)
         if(activatedTexts[i])
-            texts[i]->setPosition(vec3f(position.x,position.y+2.0f,position.z));
+            texts[i]->setPosition(vec3f(position.x,position.y+1.75f,position.z));
 
     //If hero does not take a coin in the last 300 ms
     if(coinDelay<time-700)
@@ -683,7 +683,7 @@ void Hero::enableSound(bool value){
 //**********************************************************************//
 
 void Hero::setDialog(string message,int index){
-    texts[index]->setPosition(vec3f(position.x,position.y+2.0f,position.z));
+    texts[index]->setPosition(vec3f(position.x,position.y+1.75f,position.z));
     texts[index]->setMessage(message);
     texts[index]->init();
 
