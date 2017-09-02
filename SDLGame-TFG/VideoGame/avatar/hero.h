@@ -292,7 +292,6 @@ class Hero: public AvatarMove
         int maxExperience;
         int level;
 
-
 };
 
 #endif // HERO_H

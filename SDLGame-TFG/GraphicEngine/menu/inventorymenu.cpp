@@ -386,19 +386,22 @@ void InventoryMenu::changeSelectedItems(){
         materialCurrentMaterial->setTexture(equip->getImageProfile());
     }
     else {
-        nameItemText->setMessage("--");
-        lifeItemText->setMessage("--");
-        damageItemText->setMessage("--");
-        armourItemText->setMessage("--");
+        if(lastSelection!=0){
+            nameItemText->setMessage("--");
+            lifeItemText->setMessage("--");
+            damageItemText->setMessage("--");
+            armourItemText->setMessage("--");
 
-        materialCurrentMaterial->setTexture("./textures/void.png");
-
+            materialCurrentMaterial->setTexture("./textures/void.png");
+        }
     }
 
     nameItemText->init(1250.0,80.0);
     lifeItemText->init(750.0,60.0);
     damageItemText->init(750.0,60.0);
     armourItemText->init(750.0,60.0);
+
+    lastSelection=equip;
 }
 
 //**********************************************************************//
