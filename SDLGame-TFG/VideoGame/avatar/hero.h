@@ -132,6 +132,17 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    The method will set the variable of the level system in the hero
+        *    @param cExp -> the current experience of the hero
+        *    @param MaxExp -> the total experience of the level
+        *    @param lvl -> the level of the hero
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setLevelParameters(int cExp, int maxExp,int lvl);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    The method will add experience to the current experience of the hero
         *    @param value -> The value added to the current experience
         */

@@ -711,6 +711,14 @@ void Hero::setSoul(Soul * aSoul){
 
 //**********************************************************************//
 
+void Hero::setLevelParameters(int cExp, int maxExp,int lvl){
+    currentExp=cExp;
+    maxExperience=maxExp;
+    level=lvl;
+}
+
+//**********************************************************************//
+
 void Hero::addExperience(int value){
     currentExp+=value;
     if(currentExp>=maxExperience){

@@ -54,6 +54,11 @@ void GameState::initPlay(GLuint shaderID){
 
     movie=rootMap->getMovie();
 
+    SavedManager * saveManager=SavedManager::getInstance();
+                   saveManager->load();
+
+    rootMap->getHero()->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
+
     if(movie->isActivate()){
         movie->setPosition(vec3f(posH.x,posH.y+6.77,posH.z+11.0));
         movie->activateAllTexture();
