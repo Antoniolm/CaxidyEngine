@@ -164,12 +164,8 @@ void HeroState::updateState(GameState & gameState){
 
     //if the life was changed
     if(currentLife!=heroLife && heroLife>=0){
-        float maxLife=hero->getMaxLife();
-
-        scaleLife->scale((float)heroLife/(float)maxLife,1.0,1.0);
+        scaleLife->scale((float)heroLife/(float)hero->getMaxLife(),1.0,1.0);
     }
-
-    ///////Fix
 
     //If the experience value was changes
     if(currentExp!=heroExp){
@@ -187,9 +183,6 @@ void HeroState::updateState(GameState & gameState){
      if(delayTime<(time-1500)){
         isLevelUp=false;
      }
-
-    //// FIX
-
 
     //if the value of coin was changed
     if(currentCoin!=heroCoin){
