@@ -78,8 +78,11 @@ class HeroState : public Object3D
         int expAnimation;               // Current experiente of animation
         int maxExpAnimation;            // Max experience of the animation
 
+        float delayTime;
+
         bool visibleState;              // Visible state of the hero information
         bool endAnimation;
+        bool isLevelUp;                 // Flag to know if the hero was level up or not
 };
 
 #endif // HEROSTATE_H

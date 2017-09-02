@@ -26,6 +26,8 @@ HeroState::HeroState(){
     expAnimation=0;
     maxExpAnimation=0;
 
+    isLevelUp=false;
+
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
@@ -119,6 +121,7 @@ HeroState::HeroState(){
     root->add(nodeCrystal);
     root->add(nodeLifeBar);
     currentTime=SDL_GetTicks();
+    delayTime=currentTime;
 }
 
 //**********************************************************************//
@@ -135,6 +138,8 @@ void HeroState::visualization(Context & cv){
     if(visibleState){
         root->visualization(cv);
         coinText->visualization(cv);
+    }
+    if(isLevelUp){
         levelUp->visualization(cv);
     }
 }
@@ -145,6 +150,7 @@ void HeroState::updateState(GameState & gameState){
     Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
     visibleState=true;
+    float time=gameState.time;
 
     positionState->translation(posHero.x,posHero.y+7.4,posHero.z+10.6);
     coinText->setPosition(vec3f(posHero.x+0.74,posHero.y+7.4,posHero.z+10.6));
@@ -173,8 +179,11 @@ void HeroState::updateState(GameState & gameState){
         maxExpAnimation=heroExp;
         endAnimation=false;
 
-        if(heroExp<currentExp)
+        if(heroExp<currentExp){
             maxExpAnimation=currentMaxExp;
+            isLevelUp=true;
+            delayTime=currentTime;
+        }
 
         currentMaxExp=hero->getMaxExp();
     }
@@ -196,6 +205,10 @@ void HeroState::updateState(GameState & gameState){
             scaleExp->scale((float)expAnimation/(float)currentMaxExp,0.7,1.0);
     }
 
+     if(delayTime<(time-1500)){
+        isLevelUp=false;
+     }
+
     //// FIX
 
 
@@ -210,6 +223,8 @@ void HeroState::updateState(GameState & gameState){
     currentLife=heroLife;
     currentExp=heroExp;
     currentCoin=heroCoin;
+
+    currentTime+=time-currentTime;
 }
 
 //**********************************************************************//
