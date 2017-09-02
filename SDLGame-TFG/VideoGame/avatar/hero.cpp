@@ -717,6 +717,10 @@ void Hero::setLevelParameters(int cExp, int maxExp,int lvl){
     currentExp=cExp;
     maxExperience=maxExp;
     level=lvl;
+
+    maxLife+=(level-1)*10;
+    damage+=(level-1)*2;
+    armour+=(level-1)*2;
 }
 
 //**********************************************************************//
@@ -736,6 +740,9 @@ void Hero::addExperience(int value){
         level++;
         maxExperience=level*100;
 
+        maxLife+=10;
+        damage+=2;
+        armour+=2;
     }
 }
 
