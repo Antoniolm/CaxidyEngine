@@ -232,8 +232,8 @@ void InventoryMenu::updateState(GameState & gameState){
                 }
 
                 //Current Life
-                if(gameState.rootMap->getHero()->getLife()!=currentLife){
-                    currentLife=gameState.rootMap->getHero()->getLife();
+                if(gameState.rootMap->getHero()->getMaxLife()!=currentLife){
+                    currentLife=gameState.rootMap->getHero()->getMaxLife();
 
                     std::stringstream lifeStream;
                     lifeStream<< currentLife;

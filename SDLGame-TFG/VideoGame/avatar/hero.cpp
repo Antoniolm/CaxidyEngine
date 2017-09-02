@@ -35,8 +35,10 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     isImpacted=false;
     isShielded=false;
 
-    life=100;
-    maxLife=100;
+    life=heroFeatures["life"].GetFloat();
+    maxLife=heroFeatures["life"].GetFloat();
+    damage=heroFeatures["damage"].GetFloat();
+    armour=heroFeatures["armour"].GetFloat();
 
     currentExp=0;
     level=1;
@@ -715,9 +717,6 @@ void Hero::setLevelParameters(int cExp, int maxExp,int lvl){
     currentExp=cExp;
     maxExperience=maxExp;
     level=lvl;
-    life+=level-1;
-    damage+=level-1;
-    armour+=level-1;
 }
 
 //**********************************************************************//
@@ -736,6 +735,7 @@ void Hero::addExperience(int value){
         currentExp=currentExp%maxExperience;
         level++;
         maxExperience=level*100;
+
     }
 }
 
