@@ -17,7 +17,6 @@
 // **
 // *********************************************************************
 
-
 #include "equipment.h"
 
 Equipment::Equipment(const Value & equipFeatures){

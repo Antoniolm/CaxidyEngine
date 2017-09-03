@@ -80,7 +80,8 @@ enum MaterialIndex{
     mCRYSDRAW,
     mTRAPDOOR,
     mBUTTON,
-    mSPEAK
+    mSPEAK,
+    mEQUIPPED
 };
 
 class Material;

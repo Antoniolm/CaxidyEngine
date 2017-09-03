@@ -78,8 +78,6 @@ class Inventory
 
         pair<int,int> emptySlot();
 
-
-
     protected:
 
     private:
