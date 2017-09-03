@@ -403,12 +403,18 @@ void InventoryMenu::updateState(GameState & gameState){
             }
 
             //Remove item
-            if(controller->checkButton(cJUMP) && inventory->getItem(currentItemX,currentItemY)!=0 && menuDelay<(time-300)){
-                menuDelay=time;
-                if(!isConfirming)
-                    isConfirming=true;
-                else {
-                    isConfirming=false;
+            if(controller->checkButton(cJUMP) && menuDelay<(time-300)){
+                Equipment * equip=inventory->getItem(currentItemX,currentItemY);
+
+                //If the equip is not Null and if it is not equipped
+                if(equip!=0 && !equip->isEquipped()){
+                    menuDelay=time;
+
+                    if(!isConfirming)
+                        isConfirming=true;
+                    else {
+                        isConfirming=false;
+                    }
                 }
             }
 
