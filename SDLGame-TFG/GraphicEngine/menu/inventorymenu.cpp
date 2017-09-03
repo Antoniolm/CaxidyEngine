@@ -61,6 +61,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
     confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
     materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
+    materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/equipItem.png");
 
     changeSelectedItems();
 
@@ -86,6 +87,39 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     nodeText->add(scaleMenu);
     nodeText->add(currentMaterial);
     nodeText->add(meshCollect->getMesh(TEXT));
+
+    ////////////////////////
+    // Equipped item
+    Matrix4f * selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(-0.272,0.455,0.9);
+
+    Matrix4f * scaleItem=new Matrix4f();
+    scaleItem->scale(0.074,0.48,0.1);
+
+    NodeSceneGraph * equippedx0=new NodeSceneGraph(false,true);
+    equippedx0->add(selectedPositionItem);
+    equippedx0->add(scaleItem);
+    equippedx0->add(materialEquipped);
+    equippedx0->add(meshCollect->getMesh(TEXT));
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(-0.062,0.455,0.9);
+
+    NodeSceneGraph * equippedx1=new NodeSceneGraph(false,true);
+    equippedx1->add(selectedPositionItem);
+    equippedx1->add(scaleItem);
+    equippedx1->add(materialEquipped);
+    equippedx1->add(meshCollect->getMesh(TEXT));
+
+    selectedPositionItem=new Matrix4f();
+    selectedPositionItem->translation(0.142,0.455,0.9);
+
+    NodeSceneGraph * equippedx2=new NodeSceneGraph(false,true);
+    equippedx2->add(selectedPositionItem);
+    equippedx2->add(scaleItem);
+    equippedx2->add(materialEquipped);
+    equippedx2->add(meshCollect->getMesh(TEXT));
+
 
     ////////////////////////
     // Image profile
@@ -120,6 +154,9 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     root->add(nodeText);
     root->add(createMatrixItems());
     root->add(imgItem);
+    root->add(equippedx0);
+    root->add(equippedx1);
+    root->add(equippedx2);
 
     ////////////////////////////
     // Confirm material
@@ -155,6 +192,7 @@ InventoryMenu::~InventoryMenu(){
     delete materialBack;
     delete confirmMaterial;
     delete materialCurrentMaterial;
+    delete materialEquipped;
 
     delete damageItemText;
     delete armourItemText;

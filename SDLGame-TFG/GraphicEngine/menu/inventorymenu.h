@@ -93,6 +93,7 @@ class InventoryMenu : public Menu
         Material * materialBack;             // The texture in background
         Material * confirmMaterial;
         Material * materialCurrentMaterial;
+        Material * materialEquipped;
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
 
@@ -102,6 +103,8 @@ class InventoryMenu : public Menu
 
         Inventory * inventory;               // Logistic inventory of the interface
         Material * itemView[3][6];
+        vector<Matrix4f *> equippedItem;
+
         bool isConfirming;
 
         Equipment * lastSelection;           // Pointer to know the last selected
