@@ -80,7 +80,7 @@ class Inventory
 
         bool equipItem(int x,int y,bool value);
 
-        bool unEquipItem(EquipmentType typeEquip);
+        bool unequipItem(int typeEquip);
 
     protected:
 

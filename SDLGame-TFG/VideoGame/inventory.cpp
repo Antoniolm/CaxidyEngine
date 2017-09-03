@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "inventory.h"
+#include "equipment.h"
 
 Inventory::Inventory(){
     items.resize(sizeY);
@@ -124,7 +125,7 @@ bool Inventory::equipItem(int x,int y,bool value){
     bool result=false;
 
     if(items[y][x]!=0){
-        unEquipItem(items[y][x]->getEquipType());
+        unequipItem(items[y][x]->getEquipType());
 
         items[y][x]->setEquipped(value);
         result=true;
@@ -135,7 +136,7 @@ bool Inventory::equipItem(int x,int y,bool value){
 
 //**********************************************************************//
 
-bool Inventory::unEquipItem(EquipmentType typeEquip){
+bool Inventory::unequipItem(int typeEquip){
     bool result=false;
 
     for(int i=0;i<items.size() && !result;i++){

@@ -62,14 +62,24 @@ Equipment::Equipment(const Value & equipFeatures){
 
 //**********************************************************************//
 
-Equipment::Equipment(vec3f aPos,EquipmentType atype,float aDamage,string aMesh,string aMaterial)
+Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int aLife, int aArmour,string aImg,string aMesh,string aMaterial,string aName)
 {
-    damage=aDamage;
-    equipType=atype;
-    type=iWEAPON;
     position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
-    mesh=aMesh;
+
+    equipType=atype;
+
+    imageProfile=aImg;
     material=aMaterial;
+    mesh=aMesh;
+    name=aName;
+
+    damage=aDmg;
+    life=aLife;
+    armour=aArmour;
+
+    notTake=false;
+    type=iWEAPON;
+    equipped=aEquipped;
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
