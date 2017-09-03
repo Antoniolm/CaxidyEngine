@@ -36,6 +36,7 @@ Equipment::Equipment(const Value & equipFeatures){
     armour=equipFeatures["armour"].GetInt();
 
     notTake=true;
+    equipped=false;
     type=iWEAPON;
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -167,8 +168,8 @@ void Equipment::setEquipType(EquipmentType aTypeEquip){
 
 //**********************************************************************//
 
-EquipmentType Equipment::getEquipType(){
-    return equipType;
+void Equipment::setEquipped(bool isEquip){
+    equipped=isEquip;
 }
 
 //**********************************************************************//
@@ -226,4 +227,16 @@ int Equipment::getArmour(){
 
 int Equipment::getLife(){
     return life;
+}
+
+//**********************************************************************//
+
+EquipmentType Equipment::getEquipType(){
+    return equipType;
+}
+
+//**********************************************************************//
+
+bool Equipment::isEquipped(){
+    return equipped;
 }

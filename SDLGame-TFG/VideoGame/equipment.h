@@ -152,6 +152,8 @@ class Equipment : public Item
         //////////////////////////////////////////////////////////////////////////
         void setEquipType(EquipmentType aTypeEquip);
 
+        void setEquipped(bool isEquip);
+
         //////////////////////////////////////////////////////////////////////////
         /**
         *    It will return the damage of the equipment
@@ -216,6 +218,8 @@ class Equipment : public Item
         //////////////////////////////////////////////////////////////////////////
         EquipmentType getEquipType();
 
+        bool isEquipped();
+
         //////////////////////////////////////////////////////////////////////////
         /**
         *    It will set our equipment like another equipment
@@ -237,6 +241,8 @@ class Equipment : public Item
         int damage;
         int armour;
         int life;
+
+        bool equipped;
 };
 
 #endif // EQUIPMENT_H
