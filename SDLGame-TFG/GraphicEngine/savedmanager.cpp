@@ -25,6 +25,7 @@ SavedManager::SavedManager()
 {
     coins=0;
     currentMap="";
+    wasLoaded=false;
 }
 
 //**********************************************************************//
@@ -36,28 +37,32 @@ SavedManager::~SavedManager()
 //**********************************************************************//
 
 void SavedManager::load(){
-    //Open file
-    FILE * fp = fopen("./save/save.json", "rb"); // non-Windows use "r"
-    char readBuffer[65536];
-    rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
-    rapidjson::Document document;
-    document.ParseStream(is);
+    if(!wasLoaded){
+        wasLoaded=true;
 
-    currentMap=document["currentMap"].GetString();
-    coins=document["coin"].GetFloat();
+        //Open file
+        FILE * fp = fopen("./save/save.json", "rb"); // non-Windows use "r"
+        char readBuffer[65536];
+        rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
+        rapidjson::Document document;
+        document.ParseStream(is);
 
-    currentExp=document["currentExp"].GetInt();
-    maxExp=document["maxExp"].GetInt();
-    level=document["level"].GetInt();
+        currentMap=document["currentMap"].GetString();
+        coins=document["coin"].GetFloat();
+
+        currentExp=document["currentExp"].GetInt();
+        maxExp=document["maxExp"].GetInt();
+        level=document["level"].GetInt();
 
 
-    const rapidjson::Value & equipFeature=document["equip"];
-    for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
-        equip.push_back(new Equipment(equipFeature[currentEquip]));
-        equipPosition.push_back(vec2f(equipFeature[currentEquip]["posInv"][0].GetInt(),equipFeature[currentEquip]["posInv"][1].GetInt()));
+        const rapidjson::Value & equipFeature=document["equip"];
+        for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
+            equip.push_back(new Equipment(equipFeature[currentEquip]));
+            equipPosition.push_back(vec2f(equipFeature[currentEquip]["posInv"][0].GetInt(),equipFeature[currentEquip]["posInv"][1].GetInt()));
+        }
+
+        fclose(fp);
     }
-
-    fclose(fp);
 }
 
 //**********************************************************************//
@@ -104,7 +109,10 @@ int SavedManager::getLevel(){
 //**********************************************************************//
 
 void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int cExp,int MExp,int level){
+
+    wasLoaded=false;
     currentMap=fileMap;
+
     coins=coin;
     std::ostringstream stringCoin ;
     stringCoin << coin;
@@ -132,8 +140,14 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
 
                 savedFile << " { \"position\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n" <<
                     "  \"posInv\": ["<< j <<","<< i <<"],\n" <<
-                    "  \"type\":"<< equip->getEquipType() <<",\n" <<
-                    "  \"name\":\""<< equip->getName() << "\",\n"<<
+                    "  \"type\":"<< equip->getEquipType() <<",\n";
+
+                if(equip->isEquipped())
+                    savedFile << "  \"equipped\":true ,\n";
+                else
+                    savedFile << "  \"equipped\":false ,\n";
+
+                savedFile<< "  \"name\":\""<< equip->getName() << "\",\n"<<
                     "  \"material\":\""<< equip->getMaterial() <<"\",\n" <<
                     "  \"geometry\":\""<< equip->getMesh() << "\",\n" <<
                     "  \"imgProfile\":\""<< equip->getImageProfile() << "\",\n"<<

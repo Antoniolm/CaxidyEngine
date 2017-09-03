@@ -104,6 +104,8 @@ class SavedManager
 
         vector<Equipment *> equip;
         vector<vec2f> equipPosition;
+
+        bool wasLoaded; // Variable to know if the current information was loaded
 };
 
 #endif // SAVEDMANAGER_H

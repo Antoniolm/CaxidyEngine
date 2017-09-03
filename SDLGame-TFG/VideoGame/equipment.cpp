@@ -35,7 +35,7 @@ Equipment::Equipment(const Value & equipFeatures){
     armour=equipFeatures["armour"].GetInt();
 
     notTake=true;
-    equipped=false;
+    equipped=equipFeatures["equipped"].GetBool();
     type=iWEAPON;
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
