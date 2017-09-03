@@ -90,32 +90,32 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
 
     ////////////////////////
     // Equipped item
-    Matrix4f * selectedPositionItem=new Matrix4f();
-    selectedPositionItem->translation(-0.272,0.455,0.9);
+    equippedItem.push_back(new Matrix4f());
+    equippedItem[0]->translation(-0.272,0.455,0.9);
 
     Matrix4f * scaleItem=new Matrix4f();
     scaleItem->scale(0.074,0.48,0.1);
 
     NodeSceneGraph * equippedx0=new NodeSceneGraph(false,true);
-    equippedx0->add(selectedPositionItem);
+    equippedx0->add(equippedItem[0]);
     equippedx0->add(scaleItem);
     equippedx0->add(materialEquipped);
     equippedx0->add(meshCollect->getMesh(TEXT));
 
-    selectedPositionItem=new Matrix4f();
-    selectedPositionItem->translation(-0.062,0.455,0.9);
+    equippedItem.push_back(new Matrix4f());
+    equippedItem[1]->translation(-0.062,0.455,0.9);
 
     NodeSceneGraph * equippedx1=new NodeSceneGraph(false,true);
-    equippedx1->add(selectedPositionItem);
+    equippedx1->add(equippedItem[1]);
     equippedx1->add(scaleItem);
     equippedx1->add(materialEquipped);
     equippedx1->add(meshCollect->getMesh(TEXT));
 
-    selectedPositionItem=new Matrix4f();
-    selectedPositionItem->translation(0.142,0.455,0.9);
+    equippedItem.push_back(new Matrix4f());
+    equippedItem[2]->translation(0.142,0.455,0.9);
 
     NodeSceneGraph * equippedx2=new NodeSceneGraph(false,true);
-    equippedx2->add(selectedPositionItem);
+    equippedx2->add(equippedItem[2]);
     equippedx2->add(scaleItem);
     equippedx2->add(materialEquipped);
     equippedx2->add(meshCollect->getMesh(TEXT));
@@ -243,6 +243,7 @@ void InventoryMenu::updateState(GameState & gameState){
             activateMenu=!activateMenu;
             menuDelay=time;
             openSound->play();
+
             if(activateMenu){
                 //posHero=gameState.rootMap->getHero()->getPosition();
                 posHero=gameState.camera->getPosition();
@@ -317,11 +318,13 @@ void InventoryMenu::updateState(GameState & gameState){
             }
         }
 
+        // If the menu is activated
         if(activateMenu){
             Matrix4f * auxMatrix=new Matrix4f();
             bool hasMovement=false;
 
-            if(controller->checkButton(cUP) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
+            //If the user push the action move on the menu
+            if(controller->checkButton(cUP) && !isConfirming && menuDelay<(time-300)){
                 currentItemY-=1;
                 menuDelay=time;
 
@@ -334,7 +337,9 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 hasMovement=true;
             }
-            if(controller->checkButton(cDOWN) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
+
+            //If the user push the action move on the menu
+            if(controller->checkButton(cDOWN) && !isConfirming && menuDelay<(time-300)){
                 currentItemY+=1;
                 menuDelay=time;
 
@@ -347,7 +352,9 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 hasMovement=true;
             }
-            if(controller->checkButton(cLEFT) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
+
+            //If the user push the action move on the menu
+            if(controller->checkButton(cLEFT) && !isConfirming && menuDelay<(time-300)){
                 currentItemX-=1;
                 menuDelay=time;
 
@@ -360,7 +367,9 @@ void InventoryMenu::updateState(GameState & gameState){
 
                 hasMovement=true;
             }
-            if(controller->checkButton(cRIGHT) && !isConfirming && menuDelay<(time-300)){ //If the user push the action move on the menu
+
+            //If the user push the action move on the menu
+            if(controller->checkButton(cRIGHT) && !isConfirming && menuDelay<(time-300)){
                 currentItemX+=1;
                 menuDelay=time;
 
@@ -374,7 +383,17 @@ void InventoryMenu::updateState(GameState & gameState){
                 hasMovement=true;
             }
 
-            if(controller->checkButton(cACTION) && isConfirming &&  menuDelay<(time-300)){ //If the user push the action move on the menu
+             if(controller->checkButton(cACTION) && !isConfirming &&  menuDelay<(time-300)){
+                if(inventory->equipItem(currentItemX,currentItemY,true)){
+                    Equipment * equip=inventory->getItem(currentItemX,currentItemY);
+                    equippedItem[equip->getEquipType()]->translation(-0.272+(currentItemX*0.207f),0.439+(currentItemY*0.288f),0.9f);
+                    moveSound->play();
+                }
+                menuDelay=time;
+            }
+
+            //If the user push the action move on the menu
+            if(controller->checkButton(cACTION) && isConfirming &&  menuDelay<(time-300)){
                 if(inventory->removeItem(currentItemX,currentItemY)){
                     itemView[currentItemY][currentItemX]->setTexture("./textures/void.png");
                     moveSound->play();

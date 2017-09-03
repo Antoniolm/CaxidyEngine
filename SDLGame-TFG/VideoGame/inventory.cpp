@@ -115,6 +115,18 @@ pair<int,int> Inventory::emptySlot(){
             }
     }
 
+    return result;
+}
+
+//**********************************************************************//
+
+bool Inventory::equipItem(int x,int y,bool value){
+    bool result=false;
+
+    if(items[y][x]!=0){
+        items[y][x]->setEquipped(value);
+        result=true;
+    }
 
     return result;
 }
