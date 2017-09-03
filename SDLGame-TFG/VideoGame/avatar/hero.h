@@ -310,6 +310,7 @@ class Hero: public AvatarMove
         Equipment * currentWeapon;          // Current weapon of the hero
         Equipment * meleeWeapon;            // Close weapon of the hero
         Equipment * rangedWeapon;           // Ranged weapon of the hero
+        Equipment * shieldEquipment;           // Shield equipment of the hero
 
         //Some delays for action of the hero
         float jumpDelay,hitDelay,coinDelay,shieldDelay,swapDelay,shootDelay,swordDelay;

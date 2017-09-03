@@ -154,6 +154,18 @@
                             "damage":-20,
                             "life":25,
                             "armour":25
+                        },
+
+                "shield":{  "position":[-0.275,0.0,0.0],
+                            "type":2,
+                            "equipped":false,
+                            "name":"shield",
+                            "material":"mSHIELD", 
+                            "geometry":"SHIELD", 
+                            "imgProfile":"./textures/void.png",
+                            "damage":0,
+                            "life":0,
+                            "armour":25
                         }
             },
 

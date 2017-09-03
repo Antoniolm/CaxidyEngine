@@ -57,6 +57,7 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     currentWeapon=new Equipment(heroFeatures["weaponMelee"]);
     meleeWeapon=new Equipment(heroFeatures["weaponMelee"]);
     rangedWeapon=new Equipment(heroFeatures["weaponRanged"]);
+    shieldEquipment=new Equipment(heroFeatures["shield"]);
 
 
     //////////////////////////////////////////////////////
@@ -189,12 +190,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     Matrix4f * transArmsSecond=new Matrix4f();
     transArmsSecond->translation(0.0,-0.5,-0.2);
 
-    Matrix4f * tranSword=new Matrix4f();
-    tranSword->translation(0.05,-0.1,0.68);
-
-    Matrix4f * tranShield=new Matrix4f();
-    tranShield->translation(-0.275,0.0,0.0);
-
     //Arms
     NodeSceneGraph * handRight=new NodeSceneGraph();
     handRight->add(transElbow);
@@ -211,9 +206,7 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     handLeft->add(transHandLeft);
     handLeft->add(rotateYHand);
     handLeft->add(meshCollect->getMesh(heroFeatures["handLeft"].GetString()));
-    handLeft->add(tranShield);
-    handLeft->add(materialCollect->getMaterial(mSHIELD));
-    handLeft->add(meshCollect->getMesh(SHIELD));
+    handLeft->add(shieldEquipment);
 
     //Shoulder
     NodeSceneGraph * shoulderLeft=new NodeSceneGraph();
@@ -337,7 +330,7 @@ Hero::~Hero()
 
         break;
     }
-
+    delete shieldEquipment;
     delete root;
 }
 
