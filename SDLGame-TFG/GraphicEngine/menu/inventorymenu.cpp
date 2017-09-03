@@ -383,11 +383,10 @@ void InventoryMenu::updateState(GameState & gameState){
                 hasMovement=true;
             }
 
-             if(controller->checkButton(cACTION) && !isConfirming &&  menuDelay<(time-300)){
+            //If the user push the action move on the menu
+            if(controller->checkButton(cACTION) && !isConfirming &&  menuDelay<(time-300)){
                 if(inventory->equipItem(currentItemX,currentItemY,true)){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
-
-                    //Check all item to unequipped the equip with getEquipType of the new equippedItem
 
                     equippedItem[equip->getEquipType()]->translation(-0.272+(currentItemX*0.207f),0.455+(currentItemY*0.288f),0.9f);
                     moveSound->play();

@@ -124,10 +124,29 @@ bool Inventory::equipItem(int x,int y,bool value){
     bool result=false;
 
     if(items[y][x]!=0){
+        unEquipItem(items[y][x]->getEquipType());
+
         items[y][x]->setEquipped(value);
         result=true;
     }
 
     return result;
+}
+
+//**********************************************************************//
+
+bool Inventory::unEquipItem(EquipmentType typeEquip){
+    bool result=false;
+
+    for(int i=0;i<items.size() && !result;i++){
+        for(int j=0;j<items[i].size() && !result;j++)
+            if(items[i][j]!=0 && items[i][j]->isEquipped() && items[i][j]->getEquipType()==typeEquip){
+                items[i][j]->setEquipped(false);
+                result=true;
+            }
+    }
+
+    result=false;
+
 }
 

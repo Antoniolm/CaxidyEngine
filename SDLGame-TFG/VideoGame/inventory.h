@@ -80,9 +80,13 @@ class Inventory
 
         bool equipItem(int x,int y,bool value);
 
+        bool unEquipItem(EquipmentType typeEquip);
+
     protected:
 
     private:
+
+
         static const unsigned sizeX = 6;
         static const unsigned sizeY = 3;
 
