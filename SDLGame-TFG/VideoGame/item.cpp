@@ -55,6 +55,6 @@ bool Item::isTake(){
 
 //**********************************************************************//
 
-ItemIndex Item::getType2(){
+ItemIndex Item::getType(){
     return type;
 }

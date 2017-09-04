@@ -160,6 +160,8 @@ class Hero: public AvatarMove
         //////////////////////////////////////////////////////////////////////////
         void addExperience(int value);
 
+        void setEquipment(Equipment * anEquip);
+
         //////////////////////////////////////////////////////////////////////////
         /**
         *    The method will reset animations because the hero isn't in movement

@@ -388,7 +388,8 @@ void InventoryMenu::updateState(GameState & gameState){
                 if(inventory->equipItem(currentItemX,currentItemY,true)){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
 
-                    equippedItem[equip->getEquipType()]->translation(-0.272+(currentItemX*0.207f),0.455+(currentItemY*0.288f),0.9f);
+                    gameState.rootMap->getHero()->setEquipment(equip);
+                    equippedItem[equip->getEquipType()]->translation(-0.272+(currentItemX*0.207f),0.455-(currentItemY*0.288f),0.9f);
                     moveSound->play();
                 }
                 menuDelay=time;
