@@ -133,13 +133,13 @@ pair<int,int> Inventory::emptySlot(){
 
 //**********************************************************************//
 
-bool Inventory::equipItem(int x,int y,bool value){
+bool Inventory::equipItem(int x,int y){
     bool result=false;
 
-    if(items[y][x]!=0){
+    if(items[y][x]!=0 && !items[y][x]->isEquipped()){
         unequipItem(items[y][x]->getEquipType());
 
-        items[y][x]->setEquipped(value);
+        items[y][x]->setEquipped(true);
         result=true;
     }
 

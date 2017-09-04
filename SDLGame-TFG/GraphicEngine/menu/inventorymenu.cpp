@@ -206,6 +206,8 @@ InventoryMenu::~InventoryMenu(){
     delete lifeText;
     delete damageText;
     delete armourText;
+
+    delete inventory;
 }
 
 //**********************************************************************//
@@ -388,7 +390,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
             //If the user push the action move on the menu
             if(controller->checkButton(cACTION) && !isConfirming &&  menuDelay<(time-300)){
-                if(inventory->equipItem(currentItemX,currentItemY,true)){
+                if(inventory->equipItem(currentItemX,currentItemY)){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
 
                     gameState.rootMap->getHero()->setEquipment(equip);
