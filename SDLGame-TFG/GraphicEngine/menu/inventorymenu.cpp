@@ -34,6 +34,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     activateMenu=false;
     isConfirming=false;
     MeshCollection * meshCollect =MeshCollection::getInstance();
+    materialCollect =MaterialCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
     distItem=dItem;
@@ -60,10 +61,12 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
     confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
-    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
+    materialCurrentMaterial=materialCollect->getMaterial(mVOID);
     materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/equipItem.png");
 
+    cout<< "prueba"<<endl;
     changeSelectedItems();
+    cout<< "prueba"<<endl;
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -191,7 +194,6 @@ InventoryMenu::~InventoryMenu(){
     delete currentMaterial;
     delete materialBack;
     delete confirmMaterial;
-    delete materialCurrentMaterial;
     delete materialEquipped;
 
     delete damageItemText;
@@ -441,7 +443,7 @@ void InventoryMenu::setInventory(const vector<Equipment*> & equipVec, const vect
         inventory->addItem(posVec[i].x,posVec[i].y,equipVec[i]);
 
         //Change texture
-        itemView[(int)posVec[i].y][(int)posVec[i].x]->setTexture(equipVec[i]->getImageProfile());
+        itemView[(int)posVec[i].y][(int)posVec[i].x]->setMaterial(*materialCollect->getMaterial(equipVec[i]->getImageProfile()));
     }
 }
 
@@ -456,7 +458,7 @@ bool InventoryMenu::addEquip(Equipment * aEquip){
         inventory->addItem(positionSlot.first,positionSlot.second,aEquip);
 
         //Change texture
-        itemView[positionSlot.second][positionSlot.first]->setTexture(aEquip->getImageProfile());
+        itemView[positionSlot.second][positionSlot.first]->setMaterial(*materialCollect->getMaterial(aEquip->getImageProfile()));
     }
 
     return result;
@@ -475,7 +477,7 @@ void InventoryMenu::clearInventory(){
     for(int i=0;i<inventory->getSizeY();i++){
         for(int j=0;j<inventory->getSizeX();j++){
             if(inventory->removeItem(j,i))
-                itemView[i][j]->setTexture("./textures/void.png");
+                itemView[i][j]->setMaterial(*materialCollect->getMaterial(mVOID));
         }
     }
 }
@@ -499,7 +501,8 @@ void InventoryMenu::changeSelectedItems(){
         nameText<< equip->getName();
         nameItemText->setMessage(nameText.str());
 
-        materialCurrentMaterial->setTexture(equip->getImageProfile());
+        materialCurrentMaterial->setMaterial((*materialCollect->getMaterial(equip->getImageProfile())));
+
     }
     else {
         if(lastSelection!=0){
@@ -508,7 +511,7 @@ void InventoryMenu::changeSelectedItems(){
             damageItemText->setMessage("--");
             armourItemText->setMessage("--");
 
-            materialCurrentMaterial->setTexture("./textures/void.png");
+            materialCurrentMaterial->setMaterial((*materialCollect->getMaterial("mVOID")));
         }
     }
 
@@ -529,9 +532,10 @@ NodeSceneGraph * InventoryMenu::createMatrixItems(){
 
     for(int i=0;i<inventory->getSizeY();i++){
         for(int j=0;j<inventory->getSizeX();j++){
-            itemView[i][j]=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
+            itemView[i][j]=new Material((*materialCollect->getMaterial("mVOID")));
         }
     }
+    cout<< "woop"<<endl;
 
     Matrix4f * selectedPositionItem=new Matrix4f();
     selectedPositionItem->translation(-0.272,0.439,0.8);

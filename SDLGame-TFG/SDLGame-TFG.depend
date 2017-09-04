@@ -4291,14 +4291,14 @@
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.cpp
 	"collection.h"
 
-1504526866 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.h
+1504534026 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.h
 	"matrix/structdata.h"
 	<string>
 	"./collection/materialcollection.h"
 	"texture.h"
 	"context/shader.h"
 
-1504524819 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.h
+1504534917 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.h
 	<string>
 	"GL/glew.h"
 	"stb_image.h"
@@ -5495,7 +5495,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.cpp
 	"loaderthread.h"
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
+1504535034 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
 	"material.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.c
@@ -5508,7 +5508,7 @@
 	<assert.h>
 	<stdarg.h>
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.cpp
+1504534947 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.cpp
 	"texture.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\acceleratedmovement.cpp
@@ -5773,7 +5773,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1504522517 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1504536488 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1504518616 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5893,7 +5893,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1504436490 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1504528219 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5914,7 +5914,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1504519176 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1504534557 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 	"../VideoGame/inventory.h"
 

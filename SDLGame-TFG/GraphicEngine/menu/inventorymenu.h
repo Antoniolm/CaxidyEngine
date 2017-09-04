@@ -94,6 +94,7 @@ class InventoryMenu : public Menu
         Material * confirmMaterial;
         Material * materialCurrentMaterial;
         Material * materialEquipped;
+        MaterialCollection * materialCollect;
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
 

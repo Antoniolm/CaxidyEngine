@@ -25,6 +25,13 @@ Texture::Texture(){
 
 //**********************************************************************//
 
+Texture::Texture(const Texture & aTexture){
+    fileName= aTexture.fileName;
+    texture= aTexture.texture;
+}
+
+//**********************************************************************//
+
 Texture::Texture(const std::string& aFileName)
 {
     std::cout<< "Texture ->"<< aFileName<< std::endl;

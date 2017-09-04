@@ -37,8 +37,14 @@ Material::Material(const Material & aMaterial){
     diffuse=aMaterial.diffuse;
     specular=aMaterial.specular;
     shininess=aMaterial.shininess;
-    texture=aMaterial.texture;
-    bumpTexture=aMaterial.bumpTexture;
+
+    texture=new Texture((*aMaterial.texture));
+
+    if(aMaterial.bumpTexture!=0)
+        bumpTexture=new Texture((*aMaterial.bumpTexture));
+    else
+        bumpTexture=0;
+
     index=aMaterial.index;
 }
 
@@ -176,12 +182,19 @@ MaterialIndex Material::getIndex(){
 //**********************************************************************//
 
 void Material::setMaterial(const Material & material){
+
     ambient=material.ambient;
     diffuse=material.diffuse;
     specular=material.specular;
     shininess=material.shininess;
+
     texture->setTexture((*material.texture));
-    bumpTexture->setTexture((*material.bumpTexture));
+
+    if(material.bumpTexture!=0)
+        bumpTexture=new Texture((*material.bumpTexture));
+    else
+        bumpTexture=0;
+
     index=material.index;
 
 }
