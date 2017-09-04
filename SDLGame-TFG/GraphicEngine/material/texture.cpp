@@ -86,3 +86,10 @@ void Texture::createTexture(){
     stbi_image_free(data);
 
 }
+
+//**********************************************************************//
+
+void Texture::setTexture(const Texture & aTexture){
+    fileName= aTexture.fileName;
+    texture= aTexture.texture;
+}

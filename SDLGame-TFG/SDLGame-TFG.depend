@@ -4291,14 +4291,14 @@
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\collection.cpp
 	"collection.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.h
+1504526866 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.h
 	"matrix/structdata.h"
 	<string>
 	"./collection/materialcollection.h"
 	"texture.h"
 	"context/shader.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.h
+1504524819 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.h
 	<string>
 	"GL/glew.h"
 	"stb_image.h"
@@ -5720,7 +5720,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1504518858 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1504522750 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"equipment.h"
 	"projectile.h"

@@ -172,6 +172,8 @@ class Material
         //////////////////////////////////////////////////////////////////////////
         MaterialIndex getIndex();
 
+        void setMaterial(const Material & material);
+
     protected:
 
     private:

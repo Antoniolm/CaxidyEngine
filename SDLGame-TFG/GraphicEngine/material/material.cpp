@@ -172,3 +172,16 @@ Texture * Material::getBumpTexture(){
 MaterialIndex Material::getIndex(){
     return index;
 }
+
+//**********************************************************************//
+
+void Material::setMaterial(const Material & material){
+    ambient=material.ambient;
+    diffuse=material.diffuse;
+    specular=material.specular;
+    shininess=material.shininess;
+    texture->setTexture((*material.texture));
+    bumpTexture->setTexture((*material.bumpTexture));
+    index=material.index;
+
+}

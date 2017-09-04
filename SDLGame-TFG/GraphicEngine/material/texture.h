@@ -67,6 +67,8 @@ class Texture
         //////////////////////////////////////////////////////////////////////////
     	void bindTexture(int ch=0);
 
+    	void setTexture(const Texture & aTexture);
+
     protected:
         std::string fileName;   //file with the texture
         GLuint texture;         //id of the texture in opengl context
