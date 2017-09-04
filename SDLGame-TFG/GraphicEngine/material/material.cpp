@@ -195,6 +195,7 @@ void Material::setMaterial(const Material & material){
     else
         bumpTexture=0;
 
+
     index=material.index;
 
 }

@@ -35,7 +35,6 @@
 #include "profile.h"
 #include "../text.h"
 #include "mainmenu.h"
-#include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
 #include <string>
@@ -43,6 +42,7 @@
 using namespace std;
 
 class Inventory;
+class MeshCollection;
 class InventoryMenu : public Menu
 {
     public:

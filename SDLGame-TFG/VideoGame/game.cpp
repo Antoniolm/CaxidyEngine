@@ -87,11 +87,6 @@ Game::Game(){
     gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"./textures/mainBackMenu.png");
 
     //Create inventoryMenu
-    Inventory * inv=new Inventory();
-    /*inv->addItem(0,0,new Equipment(vec3f(0.05,-0.1,0.68),MELEE,true,-25,25,25,"mSWORD","SWORD","mSWORD","Sword"));
-    inv->addItem(1,0,new Equipment(vec3f(0.0,-0.4,0.0),RANGED,true,-20,25,25,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
-    inv->addItem(2,0,new Equipment(vec3f(-0.275,0.0,0.0),eSHIELD,true,0,0,25,"mSHIELD","SHIELD","mSHIELD","Shield"));*/
-
     gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"./textures/inventory.png",(*new Inventory()));
     gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.05,-0.1,0.68),MELEE,true,-25,25,25,"mSWORD","SWORD","mSWORD","Sword"));
     gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.0,-0.4,0.0),RANGED,true,-20,25,25,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));

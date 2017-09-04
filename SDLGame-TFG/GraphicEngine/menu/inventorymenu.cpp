@@ -19,6 +19,7 @@
 
 #include "inventorymenu.h"
 #include "../VideoGame/inventory.h"
+#include "collection/meshcollection.h"
 
 InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory & inv){
 
@@ -33,8 +34,8 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
 
     activateMenu=false;
     isConfirming=false;
-    MeshCollection * meshCollect =MeshCollection::getInstance();
-    materialCollect =MaterialCollection::getInstance();
+    MeshCollection * meshCollect=MeshCollection::getInstance();
+    materialCollect=MaterialCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
     distItem=dItem;
@@ -64,9 +65,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     materialCurrentMaterial=materialCollect->getMaterial(mVOID);
     materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/equipItem.png");
 
-    cout<< "prueba"<<endl;
     changeSelectedItems();
-    cout<< "prueba"<<endl;
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -485,10 +484,11 @@ void InventoryMenu::clearInventory(){
 //**********************************************************************//
 
 void InventoryMenu::changeSelectedItems(){
-    Equipment * equip=inventory->getItem(currentItemX,currentItemY);
     std::stringstream lifeText,armourText,damageText,nameText;
 
-    if(equip!=0){
+    if(inventory->getItem(currentItemX,currentItemY)!=0){
+        Equipment * equip=inventory->getItem(currentItemX,currentItemY);
+
         lifeText<< equip->getLife();
         lifeItemText->setMessage(lifeText.str());
 
@@ -502,7 +502,7 @@ void InventoryMenu::changeSelectedItems(){
         nameItemText->setMessage(nameText.str());
 
         materialCurrentMaterial->setMaterial((*materialCollect->getMaterial(equip->getImageProfile())));
-
+        lastSelection=equip;
     }
     else {
         if(lastSelection!=0){
@@ -513,6 +513,7 @@ void InventoryMenu::changeSelectedItems(){
 
             materialCurrentMaterial->setMaterial((*materialCollect->getMaterial("mVOID")));
         }
+        lastSelection=0;
     }
 
     nameItemText->init(1250.0,80.0);
@@ -520,7 +521,7 @@ void InventoryMenu::changeSelectedItems(){
     damageItemText->init(750.0,60.0);
     armourItemText->init(750.0,60.0);
 
-    lastSelection=equip;
+
 }
 
 //**********************************************************************//
@@ -528,14 +529,13 @@ void InventoryMenu::changeSelectedItems(){
 NodeSceneGraph * InventoryMenu::createMatrixItems(){
     //////////////////////////////////
     //Shape for every item of the inventory
-    MeshCollection * meshCollect =MeshCollection::getInstance();
+    MeshCollection * meshCollect=MeshCollection::getInstance();
 
     for(int i=0;i<inventory->getSizeY();i++){
         for(int j=0;j<inventory->getSizeX();j++){
             itemView[i][j]=new Material((*materialCollect->getMaterial("mVOID")));
         }
     }
-    cout<< "woop"<<endl;
 
     Matrix4f * selectedPositionItem=new Matrix4f();
     selectedPositionItem->translation(-0.272,0.439,0.8);
