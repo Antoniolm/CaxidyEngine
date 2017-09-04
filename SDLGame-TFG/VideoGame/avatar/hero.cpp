@@ -743,12 +743,19 @@ void Hero::addExperience(int value){
 //**********************************************************************//
 
 void Hero::setEquipment(Equipment * anEquip){
-    currentWeapon->setEquip(*anEquip);
 
-    if(anEquip->getEquipType()==RANGED)
+    if(anEquip->getEquipType()==RANGED){
         rangedWeapon->setEquip(*anEquip);
-    else
+        currentWeapon->setEquip(*anEquip);
+    }
+
+    else if(anEquip->getEquipType()==MELEE){
         meleeWeapon->setEquip(*anEquip);
+        currentWeapon->setEquip(*anEquip);
+    }
+
+    else
+        shieldEquipment->setEquip(*anEquip);
 }
 
 //**********************************************************************//
