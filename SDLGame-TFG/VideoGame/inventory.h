@@ -76,6 +76,8 @@ class Inventory
 
         int getNumItems();
 
+        bool isEmpty(int x,int y);
+
         pair<int,int> emptySlot();
 
         bool equipItem(int x,int y,bool value);

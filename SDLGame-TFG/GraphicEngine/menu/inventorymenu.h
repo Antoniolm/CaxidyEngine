@@ -49,7 +49,7 @@ class InventoryMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory & inv);
+        InventoryMenu(vec3f initPos,vec3f dItem,string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -83,7 +83,7 @@ class InventoryMenu : public Menu
     protected:
 
     private:
-
+        void initInfoItem();
         NodeSceneGraph * createMatrixItems();
         NodeSceneGraph * confirmInterface;
         void changeSelectedItems();

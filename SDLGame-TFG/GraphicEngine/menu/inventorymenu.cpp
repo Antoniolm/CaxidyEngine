@@ -21,7 +21,7 @@
 #include "../VideoGame/inventory.h"
 #include "collection/meshcollection.h"
 
-InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory & inv){
+InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
 
     currentOption=0;
     currentItemX=0;
@@ -32,6 +32,8 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     currentDmg=0;
     currentArmour=0;
 
+    lastSelection=0;
+
     activateMenu=false;
     isConfirming=false;
     MeshCollection * meshCollect=MeshCollection::getInstance();
@@ -39,7 +41,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
     distItem=dItem;
-    inventory=&inv;
+    inventory=new Inventory();
 
     //////////////////
     // Texts
@@ -65,7 +67,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName,Inventory
     materialCurrentMaterial=materialCollect->getMaterial(mVOID);
     materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/equipItem.png");
 
-    changeSelectedItems();
+    initInfoItem();
 
     positionMenu=new Matrix4f();
     positionMenu->identity();
@@ -483,44 +485,57 @@ void InventoryMenu::clearInventory(){
 
 //**********************************************************************//
 
-void InventoryMenu::changeSelectedItems(){
-    std::stringstream lifeText,armourText,damageText,nameText;
+void InventoryMenu::initInfoItem(){
 
-    if(inventory->getItem(currentItemX,currentItemY)!=0){
-        Equipment * equip=inventory->getItem(currentItemX,currentItemY);
+    nameItemText->setMessage("--");
+    lifeItemText->setMessage("--");
+    damageItemText->setMessage("--");
+    armourItemText->setMessage("--");
 
-        lifeText<< equip->getLife();
-        lifeItemText->setMessage(lifeText.str());
-
-        armourText<< equip->getArmour();
-        armourItemText->setMessage(armourText.str());
-
-        damageText<< equip->getDamage();
-        damageItemText->setMessage(damageText.str());
-
-        nameText<< equip->getName();
-        nameItemText->setMessage(nameText.str());
-
-        materialCurrentMaterial->setMaterial((*materialCollect->getMaterial(equip->getImageProfile())));
-        lastSelection=equip;
-    }
-    else {
-        if(lastSelection!=0){
-            nameItemText->setMessage("--");
-            lifeItemText->setMessage("--");
-            damageItemText->setMessage("--");
-            armourItemText->setMessage("--");
-
-            materialCurrentMaterial->setMaterial((*materialCollect->getMaterial("mVOID")));
-        }
-        lastSelection=0;
-    }
+    materialCurrentMaterial->setMaterial((*materialCollect->getMaterial("mVOID")));
 
     nameItemText->init(1250.0,80.0);
     lifeItemText->init(750.0,60.0);
     damageItemText->init(750.0,60.0);
     armourItemText->init(750.0,60.0);
 
+}
+
+//**********************************************************************//
+
+void InventoryMenu::changeSelectedItems(){
+    std::stringstream lifeText,armourText,damageText,nameText;
+
+    if(!inventory->isEmpty(currentItemX,currentItemY)){
+
+        Equipment * equip=inventory->getItem(currentItemX,currentItemY);
+
+        lifeText<< equip->getLife();
+        lifeItemText->setMessage(lifeText.str());
+        lifeItemText->init(750.0,60.0);
+
+        armourText<< equip->getArmour();
+        armourItemText->setMessage(armourText.str());
+        armourItemText->init(750.0,60.0);
+
+        damageText<< equip->getDamage();
+        damageItemText->setMessage(damageText.str());
+        damageItemText->init(750.0,60.0);
+
+        nameText<< equip->getName();
+        nameItemText->setMessage(nameText.str());
+        nameItemText->init(1250.0,80.0);
+
+        materialCurrentMaterial->setMaterial((*materialCollect->getMaterial(equip->getImageProfile())));
+        lastSelection=equip;
+
+    }
+    else {
+        if(lastSelection!=0){
+            initInfoItem();
+        }
+        lastSelection=0;
+    }
 
 }
 

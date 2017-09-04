@@ -103,6 +103,18 @@ int Inventory::getNumItems(){
 
 //**********************************************************************//
 
+bool Inventory::isEmpty(int x,int y){
+    bool result=false;
+
+    if(items[y][x]==0)
+        result=true;
+
+    return true;
+
+}
+
+//**********************************************************************//
+
 pair<int,int> Inventory::emptySlot(){
     pair<int,int> result(-1,-1);
     bool  isEmpty=false;

@@ -319,7 +319,7 @@ Hero::~Hero()
         delete (*it);
     }
 
-    switch(currentWeapon->getEquipType()){
+    /*switch(currentWeapon->getEquipType()){
         case RANGED:
             delete meleeWeapon;
         break;
@@ -330,7 +330,7 @@ Hero::~Hero()
 
         break;
     }
-    delete shieldEquipment;
+    delete shieldEquipment;*/
     delete root;
 }
 
