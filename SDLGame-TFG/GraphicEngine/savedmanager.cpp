@@ -138,8 +138,10 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
             if(equip!=0){
                 vec3f position=vec3f(equip->getPosition());
 
-                savedFile << " { \"position\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n" <<
-                    "  \"posInv\": ["<< j <<","<< i <<"],\n" <<
+                savedFile << " { \"posInAvatar\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n";
+                savedFile << " \"posInScene\":["<< 0.0<<","<<0.0<<","<< 0.0<<"],\n";
+
+                savedFile << "  \"posInv\": ["<< j <<","<< i <<"],\n" <<
                     "  \"type\":"<< equip->getEquipType() <<",\n";
 
                 if(equip->isEquipped())

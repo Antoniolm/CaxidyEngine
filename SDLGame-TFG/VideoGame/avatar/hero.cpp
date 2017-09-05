@@ -223,7 +223,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     ArmLeft->add(handLeft);
     ArmLeft->add(shoulderLeft);
 
-
     //Arm Right
     NodeSceneGraph * ArmRight=new NodeSceneGraph();
     ArmRight->add(transArmsSecond);

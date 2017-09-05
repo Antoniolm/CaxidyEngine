@@ -243,6 +243,9 @@ class Equipment : public Item
         int life;
 
         bool equipped;
+
+        vec3f posInScene;
+        Matrix4f * transObject;
 };
 
 #endif // EQUIPMENT_H

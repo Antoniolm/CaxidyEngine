@@ -21,7 +21,8 @@
 
 Equipment::Equipment(const Value & equipFeatures){
 
-    position=vec4f(equipFeatures["position"][0].GetFloat(),equipFeatures["position"][1].GetFloat(),equipFeatures["position"][2].GetFloat(),1.0f);
+    position=vec4f(equipFeatures["posInAvatar"][0].GetFloat(),equipFeatures["posInAvatar"][1].GetFloat(),equipFeatures["posInAvatar"][2].GetFloat(),1.0f);
+    //posInScene=vec3f(equipFeatures["posInScene"][0].GetFloat(),equipFeatures["posInScene"][1].GetFloat(),equipFeatures["posInScene"][2].GetFloat());
 
     equipType=(EquipmentType)equipFeatures["type"].GetInt();
 
@@ -47,11 +48,14 @@ Equipment::Equipment(const Value & equipFeatures){
 
     rotation=new AxisRotation(100,0.0,1.0,0.0);
 
-    Matrix4f * transMatrix=new Matrix4f();
-    transMatrix->translation(position.x,position.y,position.z);
+    transObject=new Matrix4f();
+    if(posInScene.x==0 && posInScene.y==0 && posInScene.z==0)
+        transObject->translation(position.x,position.y,position.z);
+    else
+        transObject->translation(posInScene.x,posInScene.y,posInScene.z);
 
     root=new NodeSceneGraph();
-    root->add(transMatrix);
+    root->add(transObject);
     root->add(animationMatrix);
     root->add(materialCollect->getMaterial(material));
     root->add(meshCollect->getMesh(mesh));
@@ -118,6 +122,7 @@ void Equipment::updateState(GameState & gameState){
     if(distance<=0.4){
         if(gameState.inventoryMenu->addEquip(this)){
             notTake=false;
+            transObject->translation(position.x,position.y,position.z);
             soundTake->play();
         }
     }
