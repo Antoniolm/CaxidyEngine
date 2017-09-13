@@ -36,8 +36,8 @@ SavedManager::~SavedManager()
 
 //**********************************************************************//
 
-void SavedManager::load(){
-    if(!wasLoaded){
+void SavedManager::load(bool forceLoad){
+    if(!wasLoaded || forceLoad){
         wasLoaded=true;
 
         //Open file
@@ -56,6 +56,7 @@ void SavedManager::load(){
 
 
         const rapidjson::Value & equipFeature=document["equip"];
+        equip.clear(); equipPosition.clear();
         for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
             equip.push_back(new Equipment(equipFeature[currentEquip]));
             equipPosition.push_back(vec2f(equipFeature[currentEquip]["posInv"][0].GetInt(),equipFeature[currentEquip]["posInv"][1].GetInt()));

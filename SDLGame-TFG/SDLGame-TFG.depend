@@ -5246,7 +5246,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1504453802 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
+1505313712 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
 	"../lib/rapidjson/document.h"
 	"../lib/rapidjson/stringbuffer.h"
 	"../lib/rapidjson/filereadstream.h"
@@ -5442,7 +5442,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1504629561 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1505303221 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1504376046 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5547,7 +5547,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
 	"loadingscreen.h"
 
-1504627986 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
+1505300530 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
 	"mainmenu.h"
 	"game.h"
 
@@ -5601,7 +5601,7 @@
 1503850160 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
 	"optionmenu.h"
 
-1503586456 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
+1505301160 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
 	"pausemenu.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.cpp
@@ -5649,7 +5649,7 @@
 	"region.h"
 	"gamestate.h"
 
-1504634085 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1505303260 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5773,7 +5773,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1505229905 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1505303447 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1504518616 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5893,7 +5893,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1504634638 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1505297189 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5913,7 +5913,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1504634688 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1505301661 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 	"../VideoGame/inventory.h"
 	"collection/meshcollection.h"
@@ -5922,7 +5922,7 @@
 	<iostream>
 	"equipment.h"
 
-1504546744 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
+1505302706 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.cpp
 	"inventory.h"
 	"equipment.h"
 
@@ -5939,7 +5939,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1504627842 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1505302459 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h

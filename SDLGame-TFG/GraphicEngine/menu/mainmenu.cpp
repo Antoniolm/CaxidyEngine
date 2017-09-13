@@ -168,7 +168,7 @@ void MainMenu::updateState(GameState & gameState){
                     gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.0,-0.4,0.0),RANGED,true,-20,25,25,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
                     gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.275,0.0,0.0),eSHIELD,true,0,0,25,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
-                    //SavedManager::getInstance()->save("",gameState,0);
+                    SavedManager::getInstance()->save("",gameState,0);
                     gameState.rootMap=new RootMap("./maps/map00.json",true);
                     checkUserProgress();
                     openSound->play();
@@ -178,7 +178,7 @@ void MainMenu::updateState(GameState & gameState){
                     ambientSound->stop();
                     //Catch the saved progress and load the map
                     saveManager=SavedManager::getInstance();
-                    saveManager->load();
+                    saveManager->load(true);
 
                     gameState.inventoryMenu->setInventory(saveManager->getInv(),saveManager->getPosInv());
 

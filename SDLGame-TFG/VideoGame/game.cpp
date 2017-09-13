@@ -236,9 +236,9 @@ void Game::loop(){
             if(gameState.rootMap->getHero()->getLife()<=0.0){ //check if the hero is dead
                 gameState.deadMenu->activate();
             }
-            cout<< "updadeTest"<<endl;
+
             gameState.updatePlay();
-            cout<< "---updadeTest---"<<endl;
+
             heroState->updateState(gameState);
 
             //Update the camera, lifeText, coinText, profile
