@@ -487,6 +487,27 @@ void InventoryMenu::clearInventory(){
                 itemView[i][j]->setMaterial(*materialCollect->getMaterial(mVOID));
         }
     }
+
+    //Clear equippedItem
+    equippedItem[0]->translation(-0.272,0.455,0.9f);
+    equippedItem[1]->translation(-0.272+0.207f,0.455,0.9f);
+    equippedItem[2]->translation(-0.272+(2*0.207f),0.455,0.9f);
+}
+
+//**********************************************************************//
+
+Equipment * InventoryMenu::getEquippetItem(EquipmentType aType){
+    Equipment * result=0;
+
+    for(int i=0;i<inventory->getSizeY() && result==0 ;i++){
+        for(int j=0;j<inventory->getSizeX() && result==0 ;j++){
+            Equipment * auxEquip=inventory->getItem(j,i);
+            if(auxEquip!=0 && auxEquip->getEquipType()==aType && auxEquip->isEquipped())
+                result=inventory->getItem(j,i);
+        }
+    }
+
+    return result;
 }
 
 //**********************************************************************//

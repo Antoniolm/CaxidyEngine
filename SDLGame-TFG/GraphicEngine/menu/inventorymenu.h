@@ -37,6 +37,7 @@
 #include "mainmenu.h"
 #include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
+#include "../VideoGame/equipment.h"
 #include <string>
 
 using namespace std;
@@ -80,6 +81,8 @@ class InventoryMenu : public Menu
         Inventory * getInventory();
 
         void clearInventory();
+
+        Equipment * getEquippetItem(EquipmentType aType);
     protected:
 
     private:
