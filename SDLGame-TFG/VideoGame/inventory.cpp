@@ -20,7 +20,10 @@
 #include "inventory.h"
 #include "equipment.h"
 
-Inventory::Inventory(){
+Inventory::Inventory(int tamX,int tamY){
+    sizeY=tamY;
+    sizeX=tamX;
+
     items.resize(sizeY);
 
     for(int i=0;i<items.size();i++){
@@ -153,6 +156,8 @@ bool Inventory::unequipItem(int typeEquip){
 
     for(int i=0;i<items.size() && !result;i++){
         for(int j=0;j<items[i].size() && !result;j++)
+
+            //if the items is not null && is equipped && is the same type of the parameter
             if(items[i][j]!=0 && items[i][j]->isEquipped() && items[i][j]->getEquipType()==typeEquip){
                 items[i][j]->setEquipped(false);
                 result=true;

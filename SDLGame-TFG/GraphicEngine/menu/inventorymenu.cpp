@@ -41,7 +41,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     SoundCollection * soundCollect =SoundCollection::getInstance();
     initialPosition=initPos;
     distItem=dItem;
-    inventory=new Inventory();
+    inventory=new Inventory(6,3);
 
     //////////////////
     // Texts

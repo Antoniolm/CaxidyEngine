@@ -4931,7 +4931,7 @@
 	"collection/materialcollection.h"
 	"matrix/structdata.h"
 
-1504518510 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
+1505335443 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
 	"avatar.h"
 	"avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -5442,7 +5442,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1505319637 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1505322229 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1504376046 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5893,7 +5893,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1505318713 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1505337981 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5914,12 +5914,12 @@
 	"../VideoGame/equipment.h"
 	<string>
 
-1505320512 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1505337804 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 	"../VideoGame/inventory.h"
 	"collection/meshcollection.h"
 
-1504546756 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
+1505338034 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
 	<iostream>
 	"equipment.h"
 
@@ -5927,7 +5927,7 @@
 	"inventory.h"
 	"equipment.h"
 
-1504625962 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1505335828 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 	"../lib/rapidjson/document.h"
 	"../GraphicEngine/object3d.h"

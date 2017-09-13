@@ -31,7 +31,7 @@ class Inventory
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        Inventory();
+        Inventory(int tamX,int tamY);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -56,7 +56,10 @@ class Inventory
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will add an item to the inventory
+        *    It will add an item in the inventory
+        *    @param x -> the x position of the item in the inventory
+        *    @param y -> the y position of the item in the inventory
+        *    @param aEquip -> the equipment that will be added to the inventory
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -64,24 +67,75 @@ class Inventory
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will remove an item to the inventory
+        *    It will remove an item of the inventory
+        *    @param x -> the x position of the item in the inventory
+        *    @param y -> the y position of the item in the inventory
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
         bool removeItem(int x,int y);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return an item of the inventory
+        *    @param x -> the x position of the item in the inventory
+        *    @param y -> the y position of the item in the inventory
+        *    \return equipment *
+        */
+        //////////////////////////////////////////////////////////////////////////
         Equipment * getItem(int x,int y);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return all the items in the inventory
+        *    \return vector<Equipment *> &
+        */
+        //////////////////////////////////////////////////////////////////////////
         vector<Equipment *> & getItems();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return the number of items in the inventory
+        *    \return int
+        */
+        //////////////////////////////////////////////////////////////////////////
         int getNumItems();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return if a cell in the inventory is empty or not
+        *    @param x -> the x position of the item in the inventory
+        *    @param y -> the y position of the item in the inventory
+        *    \return bool
+        */
+        //////////////////////////////////////////////////////////////////////////
         bool isEmpty(int x,int y);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return the first cell empty in the inventory
+        *    \return pair<int,int> -> first - x position , second - y position
+        */
+        //////////////////////////////////////////////////////////////////////////
         pair<int,int> emptySlot();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will equip an item of the inventory
+        *    @param x -> the x position of the item in the inventory
+        *    @param y -> the y position of the item in the inventory
+        *    \return bool -> if the item was equipped or not
+        */
+        //////////////////////////////////////////////////////////////////////////
         bool equipItem(int x,int y);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will unequip a type of item in the inventory
+        *    @param typeEquip-> the tpye of the item that will be unequipped
+        *    \return bool -> if the item was unequipped or not
+        */
+        //////////////////////////////////////////////////////////////////////////
         bool unequipItem(int typeEquip);
 
     protected:
@@ -89,10 +143,10 @@ class Inventory
     private:
 
 
-        static const unsigned sizeX = 6;
-        static const unsigned sizeY = 3;
+        unsigned sizeX;                       //The number of items in the X axis of the inventory
+        unsigned sizeY;                       //The number of items in the Y axis of the inventory
 
-        vector< vector<Equipment *> > items;
+        vector< vector<Equipment *> > items;  //The matrix of items
 
 };
 
