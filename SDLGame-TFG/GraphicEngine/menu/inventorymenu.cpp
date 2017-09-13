@@ -447,6 +447,10 @@ void InventoryMenu::setInventory(const vector<Equipment*> & equipVec, const vect
 
         //Change texture
         itemView[(int)posVec[i].y][(int)posVec[i].x]->setMaterial(*materialCollect->getMaterial(equipVec[i]->getImageProfile()));
+
+        //If is equipped changes the mesh of equippedItem
+        if(equipVec[i]->isEquipped())
+            equippedItem[equipVec[i]->getEquipType()]->translation(-0.272+((int)posVec[i].x*0.207f),0.455-((int)posVec[i].y*0.288f),0.9f);
     }
 }
 
