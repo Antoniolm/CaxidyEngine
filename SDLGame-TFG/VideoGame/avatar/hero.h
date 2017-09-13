@@ -160,6 +160,13 @@ class Hero: public AvatarMove
         //////////////////////////////////////////////////////////////////////////
         void addExperience(int value);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will set a new equipment of the hero
+        *    @param anEquip -> the new equipment that the hero will be use
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
         void setEquipment(Equipment * anEquip);
 
         //////////////////////////////////////////////////////////////////////////
@@ -316,13 +323,13 @@ class Hero: public AvatarMove
 
         //Some delays for action of the hero
         float jumpDelay,hitDelay,coinDelay,shieldDelay,swapDelay,shootDelay,swordDelay;
-        int currentCoin;    //Current coin of the hero
+        int currentCoin;                    //Current coin of the hero
 
-        int currentExp;
-        int maxExperience;
-        int level;
-        int damage;
-        int armour;
+        int currentExp;                     // Current experience of the hero
+        int maxExperience;                  // Current maximum experience of the level
+        int level;                          // Current level of the hero
+        int damage;                         // Current damage of the hero
+        int armour;                         // Current armour of the hero
 
 };
 

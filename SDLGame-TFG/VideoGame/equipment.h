@@ -87,22 +87,28 @@ class Equipment : public Item
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
 
-
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will set the image profile of the equipment
+        *    @param imageFile -> the new value of the image profile
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
         void setImageProfile(const string & imageFile);
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of the weapon
-        *    @param value -> the new value of the damage
+        *    It will set the damage of the equipment
+        *    @param dmg -> the new value of the damage
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void setDamage(int value);
+        void setDamage(int dmg);
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of the weapon
-        *    @param value -> the new value of the mesh
+        *    It will set the damage of the equipment
+        *    @param aMesh -> the new value of the mesh
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -110,8 +116,8 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of tthe weapon
-        *    @param value -> the new value of the material
+        *    It will set the damage of the equipment
+        *    @param aMaterial -> the new value of the material
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -119,8 +125,8 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of the weapon
-        *    @param value -> the new value of the name
+        *    It will set the damage of the equipment
+        *    @param aName -> the new value of the name
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -128,8 +134,8 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of our weapon
-        *    @param value -> the new value of our damage
+        *    It will set the damage of our equipment
+        *    @param anArmour -> the new value of our damage
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -137,8 +143,8 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the damage of our weapon
-        *    @param value -> the new value of our damage
+        *    It will set the damage of the equipment
+        *    @param aLife -> the new value of our damage
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
@@ -146,12 +152,20 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the equipment type of the equip
-        *    \return EquipmentType
+        *    It will set the type of the equipment
+        *    @param aTypeEquip -> the new value of the type of the equipment
+        *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
         void setEquipType(EquipmentType aTypeEquip);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will set if the equipment is equipped or not
+        *    @param isEquip -> the new value -> true is equipped - false is not equipped
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
         void setEquipped(bool isEquip);
 
         //////////////////////////////////////////////////////////////////////////
@@ -164,7 +178,7 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the image profile of the equip
+        *    It will return the image profile of the equipment
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
@@ -172,7 +186,7 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the mesh of the equip
+        *    It will return the mesh of the equipment
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
@@ -180,7 +194,7 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the material of the equip
+        *    It will return the material of the equipment
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
@@ -188,7 +202,7 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the name of the equip
+        *    It will return the name of the equipment
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
@@ -196,7 +210,7 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the armour of the equip
+        *    It will return the armour of the equipment
         *    \return int
         */
         //////////////////////////////////////////////////////////////////////////
@@ -204,7 +218,7 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the life of the equip
+        *    It will return the life of the equipment
         *    \return int
         */
         //////////////////////////////////////////////////////////////////////////
@@ -212,12 +226,18 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the equipment type of the equip
+        *    It will return the equipment type of the equipment
         *    \return EquipmentType
         */
         //////////////////////////////////////////////////////////////////////////
         EquipmentType getEquipType();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return if the equipment is equipped or not
+        *    \return bool
+        */
+        //////////////////////////////////////////////////////////////////////////
         bool isEquipped();
 
         //////////////////////////////////////////////////////////////////////////
@@ -232,20 +252,20 @@ class Equipment : public Item
     protected:
 
     private:
-        string name;
-        string imageProfile;
-        string mesh;
-        string material;
-        EquipmentType equipType;
+        string name;                // Name of the equipment
+        string imageProfile;        // Image profile of the equipment
+        string mesh;                // Mesh of the equipment
+        string material;            // Material of the equipment
+        EquipmentType equipType;    // type of the equipment
 
-        int damage;
-        int armour;
-        int life;
+        int damage;                 // Damage of the equipment
+        int armour;                 // Armour of the equipment
+        int life;                   // Life of the equipment
 
-        bool equipped;
+        bool equipped;              // Flag to know if is equipped or not
 
-        vec3f posInScene;
-        Matrix4f * transObject;
+        vec3f posInScene;           // Position on the scene of the equipment
+        Matrix4f * transObject;     // Matrix4f with the position of the equipment
 };
 
 #endif // EQUIPMENT_H
