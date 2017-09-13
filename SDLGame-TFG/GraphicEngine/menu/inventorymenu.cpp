@@ -94,7 +94,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
 
     ////////////////////////
     // Equipped item
-    equippedItem.push_back(new Matrix4f());
+    equippedItem[0]=new Matrix4f();
     equippedItem[0]->translation(-0.272,0.455,0.9);
 
     Matrix4f * scaleItem=new Matrix4f();
@@ -106,7 +106,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     equippedx0->add(materialEquipped);
     equippedx0->add(meshCollect->getMesh(TEXT));
 
-    equippedItem.push_back(new Matrix4f());
+    equippedItem[1]=new Matrix4f();
     equippedItem[1]->translation(-0.062,0.455,0.9);
 
     NodeSceneGraph * equippedx1=new NodeSceneGraph(false,true);
@@ -115,7 +115,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     equippedx1->add(materialEquipped);
     equippedx1->add(meshCollect->getMesh(TEXT));
 
-    equippedItem.push_back(new Matrix4f());
+    equippedItem[2]=new Matrix4f();
     equippedItem[2]->translation(0.142,0.455,0.9);
 
     NodeSceneGraph * equippedx2=new NodeSceneGraph(false,true);

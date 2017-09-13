@@ -108,7 +108,7 @@
     ],
 
 
-    "hero":{    "position":[75.5,5.5,-38.5],
+    "hero":{    "position":[4,3.0,-10],
                 "life":100,
                 "damage":10,
                 "armour":5,
@@ -158,7 +158,7 @@
                             "name":"shield",
                             "material":"mSHIELD", 
                             "geometry":"SHIELD", 
-                            "imgProfile":"mSHIELD",
+                            "imgProfile":"mSHIELDPR",
                             "damage":0,
                             "life":0,
                             "armour":25

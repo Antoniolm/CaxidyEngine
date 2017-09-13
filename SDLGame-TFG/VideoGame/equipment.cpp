@@ -22,7 +22,7 @@
 Equipment::Equipment(const Value & equipFeatures){
 
     position=vec4f(equipFeatures["posInAvatar"][0].GetFloat(),equipFeatures["posInAvatar"][1].GetFloat(),equipFeatures["posInAvatar"][2].GetFloat(),1.0f);
-    //posInScene=vec3f(equipFeatures["posInScene"][0].GetFloat(),equipFeatures["posInScene"][1].GetFloat(),equipFeatures["posInScene"][2].GetFloat());
+    posInScene=vec3f(equipFeatures["posInScene"][0].GetFloat(),equipFeatures["posInScene"][1].GetFloat(),equipFeatures["posInScene"][2].GetFloat());
 
     equipType=(EquipmentType)equipFeatures["type"].GetInt();
 
@@ -69,6 +69,7 @@ Equipment::Equipment(const Value & equipFeatures){
 Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int aLife, int aArmour,string aImg,string aMesh,string aMaterial,string aName)
 {
     position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
+    posInScene=vec3f();
 
     equipType=atype;
 
@@ -88,11 +89,11 @@ Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
 
-    Matrix4f * transMatrix=new Matrix4f();
-    transMatrix->translation(position.x,position.y,position.z);
+    transObject=new Matrix4f();
+    transObject->translation(position.x,position.y,position.z);
 
     root=new NodeSceneGraph();
-    root->add(transMatrix);
+    root->add(transObject);
     root->add(materialCollect->getMaterial(material));
     root->add(meshCollect->getMesh(mesh));
 
@@ -117,7 +118,7 @@ void Equipment::updateState(GameState & gameState){
     float time=gameState.time;
     Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
-    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
+    float distance=sqrt(pow(posInScene.x-posHero.x,2.0)+pow(posInScene.y-posHero.y,2.0)+pow(posInScene.z-posHero.z,2.0));
 
     if(distance<=0.4){
         if(gameState.inventoryMenu->addEquip(this)){
@@ -189,6 +190,9 @@ void Equipment::setEquipped(bool isEquip){
 //**********************************************************************//
 
 void Equipment::setEquip(const Equipment & equip){
+    position=equip.position;
+    posInScene=equip.posInScene;
+
     name=equip.name;
     imageProfile=equip.imageProfile;
     mesh=equip.mesh;

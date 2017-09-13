@@ -104,7 +104,7 @@ class InventoryMenu : public Menu
 
         Inventory * inventory;               // Logistic inventory of the interface
         Material * itemView[3][6];
-        vector<Matrix4f *> equippedItem;
+        Matrix4f * equippedItem[3];
 
         bool isConfirming;
 

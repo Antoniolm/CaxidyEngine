@@ -90,7 +90,7 @@ Game::Game(){
     gameState.inventoryMenu=new InventoryMenu(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"./textures/inventory.png");
     gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.05,-0.1,0.68),MELEE,true,-25,25,25,"mSWORD","SWORD","mSWORD","Sword"));
     gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.0,-0.4,0.0),RANGED,true,-20,25,25,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
-    gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.275,0.0,0.0),eSHIELD,true,0,0,25,"mSHIELD","SHIELD","mSHIELD","Shield"));
+    gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.275,0.0,0.0),eSHIELD,true,0,0,25,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
 
     //Create speakingSketch
@@ -240,7 +240,9 @@ void Game::loop(){
             if(gameState.rootMap->getHero()->getLife()<=0.0){ //check if the hero is dead
                 gameState.deadMenu->activate();
             }
+            cout<< "updadeTest"<<endl;
             gameState.updatePlay();
+            cout<< "---updadeTest---"<<endl;
             heroState->updateState(gameState);
 
             //Update the camera, lifeText, coinText, profile

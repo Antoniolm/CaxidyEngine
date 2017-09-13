@@ -89,11 +89,11 @@ void MovieScreen::updateState(GameState & gameState){
     if(time-currentTime>200)
         currentTime=time-50;
 
-    if(activateMenu){
-        if(!ambientSound->isPlaying())
+    if(activateMenu){ // If is activated
+        if(!ambientSound->isPlaying()) // if the ambient sound is not playing
             ambientSound->play();
 
-        if(gameState.controller->checkButton(cACTION) && menuDelay<(time-500)){ //If the user push the action intro
+        if(gameState.controller->checkButton(cACTION) && menuDelay<(time-500)){ //If the user push the event action
             currentOption++;
 
             if((unsigned)currentOption==options.size()){
