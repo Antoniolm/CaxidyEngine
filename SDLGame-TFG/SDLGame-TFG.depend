@@ -5893,7 +5893,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\jumpbutton.cpp
 	"jumpbutton.h"
 
-1505337981 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1505338218 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5911,6 +5911,7 @@
 	"mainmenu.h"
 	"collection/materialcollection.h"
 	"collection/soundcollection.h"
+	"../VideoGame/inventory.h"
 	"../VideoGame/equipment.h"
 	<string>
 
