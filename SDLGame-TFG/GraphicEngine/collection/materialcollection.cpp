@@ -136,6 +136,8 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/equipItem.png","",mEQUIPPED));
 
+    collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/shieldProfile.png","",mSHIELDPR));
+
     //Create our map
     collection.addIndex("mCUBE_DUNG",mCUBE_DUNG);
     collection.addIndex("mCUBE_DUNGB",mCUBE_DUNGB);
@@ -190,6 +192,7 @@ MaterialCollection::MaterialCollection()
     collection.addIndex("mBUTTON",mBUTTON);
     collection.addIndex("mSPEAK",mSPEAK);
     collection.addIndex("mEQUIPPED",mEQUIPPED);
+    collection.addIndex("mSHIELDPR",mSHIELDPR);
 }
 
 //**********************************************************************//
