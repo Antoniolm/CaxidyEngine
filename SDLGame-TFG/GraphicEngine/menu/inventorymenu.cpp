@@ -64,7 +64,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
     confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
-    materialCurrentMaterial=materialCollect->getMaterial(mVOID);
+    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
     materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/equipItem.png");
 
     initInfoItem();
@@ -81,7 +81,7 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     ///////////////////////
     //Text
     selectedPosition=new Matrix4f();
-    selectedPosition->translation(-0.273,0.44,0.8);
+    selectedPosition->translation(-0.273,0.44,0.82);
 
     Matrix4f * scaleMenu=new Matrix4f();
     scaleMenu->scale(0.083,0.535,0.1);
@@ -128,10 +128,10 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     ////////////////////////
     // Image profile
     Matrix4f * positionImgItem=new Matrix4f();
-    positionImgItem->translation(-0.827,0.0535,0.8);
+    positionImgItem->translation(-0.83,0.054,0.8);
 
     scaleMenu=new Matrix4f();
-    scaleMenu->scale(0.041,0.263,0.1);
+    scaleMenu->scale(0.043,0.264,0.1);
 
     NodeSceneGraph * imgItem=new NodeSceneGraph(false,true);
     imgItem->add(positionImgItem);
@@ -583,7 +583,7 @@ NodeSceneGraph * InventoryMenu::createMatrixItems(){
     selectedPositionItem->translation(-0.272,0.439,0.8);
 
     Matrix4f * scaleItem=new Matrix4f();
-    scaleItem->scale(0.074,0.48,0.1);
+    scaleItem->scale(0.078,0.5,0.1);
 
     NodeSceneGraph * items0x0=new NodeSceneGraph(false,true);
     items0x0->add(selectedPositionItem);

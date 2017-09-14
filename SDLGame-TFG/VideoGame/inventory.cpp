@@ -112,7 +112,7 @@ bool Inventory::isEmpty(int x,int y){
     if(items[y][x]==0)
         result=true;
 
-    return true;
+    return result;
 
 }
 
