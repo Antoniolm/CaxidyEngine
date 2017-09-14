@@ -128,10 +128,10 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     ////////////////////////
     // Image profile
     Matrix4f * positionImgItem=new Matrix4f();
-    positionImgItem->translation(-0.83,0.054,0.8);
+    positionImgItem->translation(-0.83,0.059,0.8);
 
     scaleMenu=new Matrix4f();
-    scaleMenu->scale(0.043,0.264,0.1);
+    scaleMenu->scale(0.044,0.265,0.1);
 
     NodeSceneGraph * imgItem=new NodeSceneGraph(false,true);
     imgItem->add(positionImgItem);
