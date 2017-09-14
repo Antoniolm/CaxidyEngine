@@ -86,7 +86,8 @@ enum MeshIndex{
     SOUL,
     TRAPDOOR,
     BUTTONB,
-    BUTTON
+    BUTTON,
+    JUMP,
 };
 
 class MeshCollection

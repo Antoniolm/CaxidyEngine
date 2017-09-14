@@ -33,7 +33,7 @@ JumpButton::JumpButton(const Value & buttonFeatures){
     Matrix4f * transObject=new Matrix4f();
     transObject->translation(position.x,position.y,position.z);
     Matrix4f * transButton=new Matrix4f();
-    transButton->translation(0.0f,0.08f,0.0f);
+    transButton->translation(0.0f,0.2f,0.0f);
 
     transActivate=new Matrix4f();
     transActivate->identity();
@@ -41,7 +41,7 @@ JumpButton::JumpButton(const Value & buttonFeatures){
     NodeSceneGraph * button=new NodeSceneGraph();
     button->add(transActivate);
     button->add(transButton);
-    button->add(meshCollect->getMesh(BUTTON));
+    button->add(meshCollect->getMesh(JUMP));
 
     root=new NodeSceneGraph();
     root->add(transObject);

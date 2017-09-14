@@ -291,6 +291,10 @@ MeshCollection::MeshCollection()
     element->addLink();
     collection.addElement(element);
 
+    element=new Mesh("geometries/jumpMesh.obj");
+    element->addLink();
+    collection.addElement(element);
+
     //Create our map
     collection.addIndex("CUBE",CUBE);
     collection.addIndex("SPHERE",SPHERE);
@@ -351,6 +355,7 @@ MeshCollection::MeshCollection()
     collection.addIndex("TRAPDOOR",TRAPDOOR);
     collection.addIndex("BUTTONB",BUTTONB);
     collection.addIndex("BUTTON",BUTTON);
+    collection.addIndex("JUMP",JUMP);
 
 }
 
