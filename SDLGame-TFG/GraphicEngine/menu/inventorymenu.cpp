@@ -394,7 +394,7 @@ void InventoryMenu::updateState(GameState & gameState){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
 
                     gameState.rootMap->getHero()->setEquipment(equip);
-                    equippedItem[equip->getEquipType()]->translation(-0.272+(currentItemX*0.207f),0.455-(currentItemY*0.288f),0.9f);
+                    equippedItem[equip->getEquipType()]->translation(-0.273+(currentItemX*distItem.x),0.455-(currentItemY*distItem.y),0.9f);
                     moveSound->play();
                 }
                 menuDelay=time;
@@ -450,7 +450,7 @@ void InventoryMenu::setInventory(const vector<Equipment*> & equipVec, const vect
 
         //If is equipped changes the mesh of equippedItem
         if(equipVec[i]->isEquipped())
-            equippedItem[equipVec[i]->getEquipType()]->translation(-0.272+((int)posVec[i].x*0.207f),0.455-((int)posVec[i].y*0.288f),0.9f);
+            equippedItem[equipVec[i]->getEquipType()]->translation(-0.273+((int)posVec[i].x*distItem.x),0.455-((int)posVec[i].y*distItem.y),0.9f);
     }
 }
 
@@ -489,9 +489,9 @@ void InventoryMenu::clearInventory(){
     }
 
     //Clear equippedItem
-    equippedItem[0]->translation(-0.272,0.455,0.9f);
-    equippedItem[1]->translation(-0.272+0.207f,0.455,0.9f);
-    equippedItem[2]->translation(-0.272+(2*0.207f),0.455,0.9f);
+    equippedItem[0]->translation(-0.273,0.455,0.9f);
+    equippedItem[1]->translation(-0.273+distItem.x,0.455,0.9f);
+    equippedItem[2]->translation(-0.273+(2*distItem.x),0.455,0.9f);
 }
 
 //**********************************************************************//
