@@ -130,6 +130,8 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(8.0f, 8.0f, 8.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/textureTrap.png","",mTRAPDOOR));
 
+    collection.addElement(new Material(vec3f(8.0f, 8.0f, 8.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/jumpTexture.png","",mJUMP));
+
     collection.addElement(new Material(vec3f(8.0f, 8.0f, 8.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/buttonTexture.png","",mBUTTON));
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"textures/speakModeTexture.png","",mSPEAK));
@@ -190,6 +192,7 @@ MaterialCollection::MaterialCollection()
     collection.addIndex("mCRYSDRAW",mCRYSDRAW);
     collection.addIndex("mTRAPDOOR",mTRAPDOOR);
     collection.addIndex("mBUTTON",mBUTTON);
+    collection.addIndex("mJUMP",mJUMP);
     collection.addIndex("mSPEAK",mSPEAK);
     collection.addIndex("mEQUIPPED",mEQUIPPED);
     collection.addIndex("mSHIELDPR",mSHIELDPR);

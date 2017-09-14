@@ -45,7 +45,7 @@ JumpButton::JumpButton(const Value & buttonFeatures){
 
     root=new NodeSceneGraph();
     root->add(transObject);
-    root->add(materialCollect->getMaterial(mBUTTON));
+    root->add(materialCollect->getMaterial(mJUMP));
     root->add(button);
     root->add(meshCollect->getMesh(BUTTONB));
 
