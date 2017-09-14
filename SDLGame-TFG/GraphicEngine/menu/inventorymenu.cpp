@@ -81,10 +81,10 @@ InventoryMenu::InventoryMenu(vec3f initPos,vec3f dItem,string fileName){
     ///////////////////////
     //Text
     selectedPosition=new Matrix4f();
-    selectedPosition->translation(-0.272,0.439,0.8);
+    selectedPosition->translation(-0.273,0.44,0.8);
 
     Matrix4f * scaleMenu=new Matrix4f();
-    scaleMenu->scale(0.085,0.535,0.1);
+    scaleMenu->scale(0.083,0.535,0.1);
 
     NodeSceneGraph * nodeText=new NodeSceneGraph(false,true);
     nodeText->add(selectedPosition);
@@ -496,13 +496,13 @@ void InventoryMenu::clearInventory(){
 
 //**********************************************************************//
 
-Equipment * InventoryMenu::getEquippetItem(EquipmentType aType){
+Equipment * InventoryMenu::getEquippetItem(int aType){
     Equipment * result=0;
 
     for(int i=0;i<inventory->getSizeY() && result==0 ;i++){
         for(int j=0;j<inventory->getSizeX() && result==0 ;j++){
             Equipment * auxEquip=inventory->getItem(j,i);
-            if(auxEquip!=0 && auxEquip->getEquipType()==aType && auxEquip->isEquipped())
+            if(auxEquip!=0 && auxEquip->getEquipType()==(EquipmentType)aType && auxEquip->isEquipped())
                 result=inventory->getItem(j,i);
         }
     }

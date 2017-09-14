@@ -117,7 +117,7 @@ class InventoryMenu : public Menu
         *    \return Equipment *
         */
         //////////////////////////////////////////////////////////////////////////
-        Equipment * getEquippetItem(EquipmentType aType);
+        Equipment * getEquippetItem(int aType);
     protected:
 
     private:
