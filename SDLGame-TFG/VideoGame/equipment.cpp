@@ -21,8 +21,8 @@
 
 Equipment::Equipment(const Value & equipFeatures){
 
-    position=vec4f(equipFeatures["posInAvatar"][0].GetFloat(),equipFeatures["posInAvatar"][1].GetFloat(),equipFeatures["posInAvatar"][2].GetFloat(),1.0f);
-    posInScene=vec3f(equipFeatures["posInScene"][0].GetFloat(),equipFeatures["posInScene"][1].GetFloat(),equipFeatures["posInScene"][2].GetFloat());
+    position=vec4f(equipFeatures["posInScene"][0].GetFloat(),equipFeatures["posInScene"][1].GetFloat(),equipFeatures["posInScene"][2].GetFloat(),1.0f);
+    posInAvatar=vec3f(equipFeatures["posInAvatar"][0].GetFloat(),equipFeatures["posInAvatar"][1].GetFloat(),equipFeatures["posInAvatar"][2].GetFloat());
 
     equipType=(EquipmentType)equipFeatures["type"].GetInt();
 
@@ -49,10 +49,10 @@ Equipment::Equipment(const Value & equipFeatures){
     rotation=new AxisRotation(100,0.0,1.0,0.0);
 
     transObject=new Matrix4f();
-    if(posInScene.x==0 && posInScene.y==0 && posInScene.z==0)
-        transObject->translation(position.x,position.y,position.z);
+    if(position.x==0 && position.y==0 && position.z==0)
+        transObject->translation(posInAvatar.x,posInAvatar.y,posInAvatar.z);
     else
-        transObject->translation(posInScene.x,posInScene.y,posInScene.z);
+        transObject->translation(position.x,position.y,position.z);
 
     root=new NodeSceneGraph();
     root->add(transObject);
@@ -69,7 +69,7 @@ Equipment::Equipment(const Value & equipFeatures){
 Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int aLife, int aArmour,string aImg,string aMesh,string aMaterial,string aName)
 {
     position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
-    posInScene=vec3f();
+    posInAvatar=vec3f();
 
     equipType=atype;
 
@@ -118,12 +118,12 @@ void Equipment::updateState(GameState & gameState){
     float time=gameState.time;
     Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
-    float distance=sqrt(pow(posInScene.x-posHero.x,2.0)+pow(posInScene.y-posHero.y,2.0)+pow(posInScene.z-posHero.z,2.0));
+    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 
     if(distance<=0.4){
         if(gameState.inventoryMenu->addEquip(this)){
             notTake=false;
-            transObject->translation(position.x,position.y,position.z);
+            transObject->translation(posInAvatar.x,posInAvatar.y,posInAvatar.z);
             soundTake->play();
         }
     }
@@ -191,7 +191,7 @@ void Equipment::setEquipped(bool isEquip){
 
 void Equipment::setEquip(const Equipment & equip){
     position=equip.position;
-    posInScene=equip.posInScene;
+    posInAvatar=equip.posInAvatar;
 
     name=equip.name;
     imageProfile=equip.imageProfile;

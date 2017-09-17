@@ -5720,7 +5720,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1504547973 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1505642475 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"equipment.h"
 	"projectile.h"
@@ -5928,7 +5928,7 @@
 	"inventory.h"
 	"equipment.h"
 
-1505335828 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1505644571 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 	"../lib/rapidjson/document.h"
 	"../GraphicEngine/object3d.h"

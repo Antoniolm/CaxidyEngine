@@ -264,7 +264,7 @@ class Equipment : public Item
 
         bool equipped;              // Flag to know if is equipped or not
 
-        vec3f posInScene;           // Position on the scene of the equipment
+        vec3f posInAvatar;          // Position on the avatar of the equipment
         Matrix4f * transObject;     // Matrix4f with the position of the equipment
 };
 
