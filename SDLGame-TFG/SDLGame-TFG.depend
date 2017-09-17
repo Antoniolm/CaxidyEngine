@@ -5720,7 +5720,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1505642475 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1505651291 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"equipment.h"
 	"projectile.h"
@@ -5941,7 +5941,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1505314105 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1505644787 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h

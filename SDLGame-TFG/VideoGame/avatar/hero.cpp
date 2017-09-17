@@ -109,10 +109,10 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     moveMatrix.push_back(moveLegLeft);
 
     Matrix4f *transLeg=new Matrix4f();
-    transLeg->translation(0.0,-0.6,0.0);
+    transLeg->translation(0.0,-0.3,0.0);
 
     Matrix4f *transLegSecond=new Matrix4f();
-    transLegSecond->translation(0.0,-0.6,0.0);
+    transLegSecond->translation(0.0,-0.3,0.0);
 
     //Leg Left
     NodeSceneGraph * legLeft=new NodeSceneGraph();
@@ -164,10 +164,10 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     scaleHandInvert->scale(1.0,1.0,-1.0);
 
     Matrix4f * transHand=new Matrix4f();
-    transHand->translation(-0.15,-0.2,0.0);
+    transHand->translation(-0.075,-0.1,0.0);
 
     Matrix4f * transHandLeft=new Matrix4f();
-    transHandLeft->translation(0.15,-0.2,0.0);
+    transHandLeft->translation(0.075,-0.1,0.0);
 
     Matrix4f * rotateXHand=new Matrix4f();
     rotateXHand->rotation(30,1,0,0);
@@ -179,16 +179,16 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     rotateShoulder->rotation(180,0.0,1.0,0.0);
 
     Matrix4f * transElbow=new Matrix4f();
-    transElbow->translation(0.0,-0.4,0.0);
+    transElbow->translation(0.0,-0.2,0.0);
 
     Matrix4f * transElbowSecond=new Matrix4f();
-    transElbowSecond->translation(0.0,-0.4,0.0);
+    transElbowSecond->translation(0.0,-0.2,0.0);
 
     Matrix4f * transArms=new Matrix4f();
-    transArms->translation(0.0,-0.5,-0.2);
+    transArms->translation(0.0,-0.25,-0.1);
 
     Matrix4f * transArmsSecond=new Matrix4f();
-    transArmsSecond->translation(0.0,-0.5,-0.2);
+    transArmsSecond->translation(0.0,-0.25,-0.1);
 
     //Arms
     NodeSceneGraph * handRight=new NodeSceneGraph();
@@ -251,25 +251,25 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     root->add(moveAvatar);
 
     Matrix4f *transLegScene=new Matrix4f();
-    transLegScene->translation(-0.5,0.0,0.0);
+    transLegScene->translation(-0.25,0.0,0.0);
 
     Matrix4f *transLegSceneI=new Matrix4f();
-    transLegSceneI->translation(0.25,0.0,0.0);
+    transLegSceneI->translation(0.125,0.0,0.0);
 
     Matrix4f * scaleHero=new Matrix4f();
     scaleHero->scale(0.5,0.5,0.5);
 
     Matrix4f * trasnArms=new Matrix4f();
-    trasnArms->translation(-1.0,0.0,0.0);
+    trasnArms->translation(-0.5,0.0,0.0);
 
     Matrix4f *trasnArmsI=new Matrix4f();
-    trasnArmsI->translation(0.5,0.83,0.2);
+    trasnArmsI->translation(0.25,0.415,0.1);
 
     Matrix4f *transHead=new Matrix4f();
-    transHead->translation(0.0,1.4,0.0);
+    transHead->translation(0.0,0.7,0.0);
 
     Matrix4f *transChest=new Matrix4f();
-    transChest->translation(0.0,0.1,0.0);
+    transChest->translation(0.0,0.05,0.0);
 
     NodeSceneGraph * headNode=new NodeSceneGraph();
     headNode->add(transHead);
@@ -286,7 +286,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     chest_Arms_HeadNode->add(trasnArms);
     chest_Arms_HeadNode->add(ArmRight);
 
-    root->add(scaleHero);
     root->add(materialCollect->getMaterial(heroFeatures["material"].GetString()));
     root->add(chest_Arms_HeadNode);
     root->add(transLegSceneI);
