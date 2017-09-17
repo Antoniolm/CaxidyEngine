@@ -85,10 +85,10 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
     moveMatrix.push_back(moveLegLeft);
 
     Matrix4f *transLeg=new Matrix4f();
-    transLeg->translation(0.0,-0.6,0.0);
+    transLeg->translation(0.0,-0.3,0.0);
 
     Matrix4f *transLegSecond=new Matrix4f();
-    transLegSecond->translation(0.0,-0.6,0.0);
+    transLegSecond->translation(0.0,-0.3,0.0);
 
     //Leg Left
     NodeSceneGraph * legLeft=new NodeSceneGraph();
@@ -128,10 +128,10 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
     scaleHandInvert->scale(1.0,1.0,-1.0);
 
     Matrix4f * transHand=new Matrix4f();
-    transHand->translation(-0.15,-0.2,0.0);
+    transHand->translation(-0.075,-0.1,0.0);
 
     Matrix4f * transHandLeft=new Matrix4f();
-    transHandLeft->translation(0.15,-0.2,0.0);
+    transHandLeft->translation(0.075,-0.1,0.0);
 
     Matrix4f * rotateXHand=new Matrix4f();
     rotateXHand->rotation(30,1,0,0);
@@ -143,16 +143,16 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
     rotateShoulder->rotation(180,0.0,1.0,0.0);
 
     Matrix4f * transElbow=new Matrix4f();
-    transElbow->translation(0.0,-0.4,0.0);
+    transElbow->translation(0.0,-0.2,0.0);
 
     Matrix4f * transElbowSecond=new Matrix4f();
-    transElbowSecond->translation(0.0,-0.4,0.0);
+    transElbowSecond->translation(0.0,-0.2,0.0);
 
     Matrix4f * transArms=new Matrix4f();
-    transArms->translation(0.0,-0.3,-0.2);
+    transArms->translation(0.0,-0.15,-0.1);
 
     Matrix4f * transArmsSecond=new Matrix4f();
-    transArmsSecond->translation(0.0,-0.3,-0.2);
+    transArmsSecond->translation(0.0,-0.15,-0.1);
 
     //Arms
     NodeSceneGraph * handRight=new NodeSceneGraph();
@@ -194,25 +194,25 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
     root->add(moveAvatar);
 
     Matrix4f *transLegScene=new Matrix4f();
-    transLegScene->translation(-0.4,0.0,0.0);
+    transLegScene->translation(-0.2,0.0,0.0);
 
     Matrix4f *transLegSceneI=new Matrix4f();
-    transLegSceneI->translation(0.2,0.0,0.0);
+    transLegSceneI->translation(0.1,0.0,0.0);
 
     Matrix4f * scaleHero=new Matrix4f();
     scaleHero->scale(0.5,0.5,0.5);
 
     Matrix4f * trasnArms=new Matrix4f();
-    trasnArms->translation(-0.6,0.0,0.0);
+    trasnArms->translation(-0.3,0.0,0.0);
 
     Matrix4f *trasnArmsI=new Matrix4f();
-    trasnArmsI->translation(0.3,0.3,0.3);
+    trasnArmsI->translation(0.15,0.15,0.15);
 
     Matrix4f *transHead=new Matrix4f();
-    transHead->translation(0.0,0.7,0.0);
+    transHead->translation(0.0,0.35,0.0);
 
     Matrix4f *transChest=new Matrix4f();
-    transChest->translation(0.0,0.1,-0.3);
+    transChest->translation(0.0,0.05,-0.15);
 
     NodeSceneGraph * chestNode=new NodeSceneGraph();
     chestNode->add(meshCollect->getMesh(enemyFeatures["body"].GetString()));
@@ -229,7 +229,7 @@ MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
     chest_ArmsNode->add(trasnArms);
     chest_ArmsNode->add(ArmRight);
 
-    root->add(scaleHero);
+    //root->add(scaleHero);
     root->add(materialCollect->getMaterial(enemyFeatures["material"].GetString()));
     root->add(headNode);
     root->add(chest_ArmsNode);
