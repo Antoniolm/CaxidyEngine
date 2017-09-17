@@ -745,16 +745,19 @@ void Hero::setEquipment(Equipment * anEquip){
 
     if(anEquip->getEquipType()==RANGED){
         rangedWeapon->setEquip(*anEquip);
-        currentWeapon->setEquip(*anEquip);
     }
 
     else if(anEquip->getEquipType()==MELEE){
         meleeWeapon->setEquip(*anEquip);
-        currentWeapon->setEquip(*anEquip);
     }
-
     else
         shieldEquipment->setEquip(*anEquip);
+
+
+    if(currentWeapon->getEquipType()==anEquip->getEquipType())
+        currentWeapon->setEquip(*anEquip);
+
+
 }
 
 //**********************************************************************//
