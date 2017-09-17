@@ -267,6 +267,15 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    It will return the equipment that has the same type of the parameter
+        *    @param aType -> type of equipment that the hero will return
+        *    \return Equipment *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Equipment * getEquip(EquipmentType aType);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    The method will add a new coin to our current coins
         *    @param value -> Adding to our courrent coint the value
         *    \return void

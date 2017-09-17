@@ -523,7 +523,7 @@ void Hero::updateState(GameState & gameState){
         if(isShielded)
             changeDirection(lastDir);
     }
-    //heroSound[0]->updateVolume(channelSound[0],2.0);
+
     //If the jump is activate
     if(isJumping){
         jump(time);
@@ -553,24 +553,28 @@ void Hero::updateState(GameState & gameState){
         impactMove(time);
     }
 
-    //Check enemies
+    //Check enemies for attack
     if(isHitting){
         vector<Enemy *> enemies=rootMap->getEnemyList()->getEnemies();
         vec3f posEnemy;float distance;
         int currentIndexAnimation;
+
+        //Check the type of weapon
         switch(currentWeapon->getEquipType()){
             case MELEE: //If is the sword
 
                 animations.activate(1);
                 currentIndexAnimation=(animations.getAnimation())->getScriptState(7);
                 if((currentIndexAnimation==0 || currentIndexAnimation==2 || currentIndexAnimation==4) && swordDelay<(time-250)){
+
                     //if the hero is in a hit animation not a rest animation
                     for(unsigned i=0;i<enemies.size();i++){ //Loop for all the enemies
                         posEnemy=enemies[i]->getPosition(); //Calculate the distance
                         distance=sqrt(pow(position.x-posEnemy.x,2.0)+pow(position.z-posEnemy.z,2.0));
 
                         if(distance<=1.0 && (position.y>posEnemy.y-1 && position.y<posEnemy.y+1)){//If is near
-                            enemies[i]->takeDamage(position,direction,position,currentWeapon->getDamage(),enemies); //Hit enemy
+                            enemies[i]->takeDamage(position,direction,position,damage+currentWeapon->getDamage()
+                                                                               +shieldEquipment->getDamage(),enemies); //Hit enemy
                         }
                     }
                     channelSound[4]=heroSound[4]->play();
@@ -578,13 +582,15 @@ void Hero::updateState(GameState & gameState){
                 }
 
             break;
+
             case RANGED: //if is the crossbow
 
                 animations.activate(6);
                 ScriptLMD * animationHit=animations.getAnimation();
                 if(animationHit->getScriptState(6)==1 && shootDelay<(time-700)){
                     shootDelay=time;
-                    projectiles.push_back(createProjectile(currentWeapon->getDamage()));
+                    projectiles.push_back(createProjectile(damage+currentWeapon->getDamage()
+                                                           +shieldEquipment->getDamage()));
                     channelSound[3]=heroSound[3]->play();
                 }
             break;
@@ -834,6 +840,32 @@ int Hero::getArmour(){
 Soul * Hero::getSoul(){
     return soul;
  }
+
+//**********************************************************************//
+
+ Equipment * Hero::getEquip(EquipmentType aType){
+    Equipment * equip=0;
+
+    switch(aType){
+        case RANGED:
+            equip=rangedWeapon;
+            break;
+
+        case MELEE:
+            equip=meleeWeapon;
+            break;
+
+        case eSHIELD:
+            equip=shieldEquipment;
+            break;
+    }
+
+    return equip;
+
+ }
+
+
+
 //**********************************************************************//
 
  void Hero::addCoin(int value){
@@ -865,7 +897,10 @@ Soul * Hero::getSoul(){
     float distance=sqrt(pow(position.x-posAvatar.x,2.0)+pow(position.z-posAvatar.z,2.0));
 
     if(detectHit(posAvatar,dirAvatar)&& dmgDelay<(currentTime-700) && !canShield && distance<1.0){
-        addLife(value);
+
+        //Calculate the damage that the hero will take
+        addLife(value+(armour+currentWeapon->getArmour()+shieldEquipment->getArmour()));
+
         stringstream convert;
         if(activatedTexts[3]){ //if is activate the text ->//Join values
             int lastValue;
