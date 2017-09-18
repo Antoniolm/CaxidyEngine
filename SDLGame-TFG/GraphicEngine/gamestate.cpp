@@ -58,8 +58,6 @@ void GameState::initPlay(GLuint shaderID){
     SavedManager * saveManager=SavedManager::getInstance();
                    saveManager->load(true);
 
-    //inventoryMenu->setInventory(saveManager->getInv(),saveManager->getPosInv());
-
     //Set the level of the hero
     rootMap->getHero()->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
 

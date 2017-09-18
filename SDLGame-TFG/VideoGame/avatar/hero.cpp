@@ -55,9 +55,16 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     /////           Initialize weapons               /////
     //////////////////////////////////////////////////////
     currentWeapon=new Equipment(heroFeatures["weaponMelee"]);
+    currentWeapon->addLink();
+
     meleeWeapon=new Equipment(heroFeatures["weaponMelee"]);
+    meleeWeapon->addLink();
+
     rangedWeapon=new Equipment(heroFeatures["weaponRanged"]);
+    rangedWeapon->addLink();
+
     shieldEquipment=new Equipment(heroFeatures["shield"]);
+    shieldEquipment->addLink();
 
 
     //////////////////////////////////////////////////////
