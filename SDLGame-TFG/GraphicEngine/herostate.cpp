@@ -23,6 +23,7 @@ HeroState::HeroState(){
     currentCoin=-10;
     currentLife=110;
     currentExp=0;
+    currentLevel=0;
 
     isLevelUp=false;
 
@@ -157,6 +158,7 @@ void HeroState::updateState(GameState & gameState){
     int heroLife=hero->getLife();
     int heroExp=hero->getExp();
     int heroCoin=hero->getCoin();
+    int heroLevel=hero->getLevel();
 
     if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
        || gameState.camera->isSpeakMode() || gameState.camera->isMoveSpeakMode())
@@ -168,9 +170,9 @@ void HeroState::updateState(GameState & gameState){
     }
 
     //If the experience value was changes
-    if(currentExp!=heroExp){
+    if(currentExp!=heroExp || currentLevel!=heroLevel){
 
-        if(heroExp<currentExp){
+        if(currentLevel!=heroLevel){
             isLevelUp=true;
             delayTime=currentTime;
         }
@@ -195,6 +197,7 @@ void HeroState::updateState(GameState & gameState){
     currentLife=heroLife;
     currentExp=heroExp;
     currentCoin=heroCoin;
+    currentLevel=heroLevel;
 
     currentTime+=time-currentTime;
 }
