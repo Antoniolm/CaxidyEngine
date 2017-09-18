@@ -843,10 +843,10 @@ Soul * Hero::getSoul(){
 
 //**********************************************************************//
 
- Equipment * Hero::getEquip(EquipmentType aType){
+ Equipment * Hero::getEquip(int aType){
     Equipment * equip=0;
 
-    switch(aType){
+    switch((EquipmentType)aType){
         case RANGED:
             equip=rangedWeapon;
             break;

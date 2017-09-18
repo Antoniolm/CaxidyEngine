@@ -69,7 +69,7 @@ Equipment::Equipment(const Value & equipFeatures){
 Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int aLife, int aArmour,string aImg,string aMesh,string aMaterial,string aName)
 {
     position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
-    posInAvatar=vec3f();
+    posInAvatar=aPos;
 
     equipType=atype;
 

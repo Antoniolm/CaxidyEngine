@@ -4931,7 +4931,7 @@
 	"collection/materialcollection.h"
 	"matrix/structdata.h"
 
-1505727145 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
+1505730914 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
 	"avatar.h"
 	"avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -5443,7 +5443,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1505729008 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1505729353 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1504376046 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5548,7 +5548,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
 	"loadingscreen.h"
 
-1505729109 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
+1505729361 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
 	"mainmenu.h"
 	"game.h"
 
@@ -5665,7 +5665,7 @@
 1504518608 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
-1505313738 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
+1505729645 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
 	"savedmanager.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
@@ -5721,7 +5721,7 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1505727159 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1505730946 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"../equipment.h"
 	"projectile.h"
@@ -5929,7 +5929,7 @@
 	"inventory.h"
 	"equipment.h"
 
-1505644571 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
+1505729606 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.h
 	"item.h"
 	"../lib/rapidjson/document.h"
 	"../GraphicEngine/object3d.h"
@@ -5942,7 +5942,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1505644787 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1505729636 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h

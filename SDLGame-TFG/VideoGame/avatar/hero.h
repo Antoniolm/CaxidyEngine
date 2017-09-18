@@ -273,7 +273,7 @@ class Hero: public AvatarMove
         *    \return Equipment *
         */
         //////////////////////////////////////////////////////////////////////////
-        Equipment * getEquip(EquipmentType aType);
+        Equipment * getEquip(int aType);
 
         //////////////////////////////////////////////////////////////////////////
         /**
