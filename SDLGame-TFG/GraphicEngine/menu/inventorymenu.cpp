@@ -388,7 +388,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 hasMovement=true;
             }
 
-            //If the user push the action move on the menu
+            //If the user push the action move on the menu and is not removing a equip
             if(controller->checkButton(cACTION) && !isConfirming &&  menuDelay<(time-300)){
                 if(inventory->equipItem(currentItemX,currentItemY)){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
@@ -400,7 +400,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 menuDelay=time;
             }
 
-            //If the user push the action move on the menu
+            //If the user push the action move on the menu and is removing a equip
             if(controller->checkButton(cACTION) && isConfirming &&  menuDelay<(time-300)){
                 if(inventory->removeItem(currentItemX,currentItemY)){
                     itemView[currentItemY][currentItemX]->setTexture("./textures/void.png");
@@ -441,6 +441,8 @@ void InventoryMenu::updateState(GameState & gameState){
 //**********************************************************************//
 
 void InventoryMenu::setInventory(const vector<Equipment*> & equipVec, const vector<vec2f> & posVec){
+    //Clean the current state of the inventory
+    //clearInventory();
 
     for(int i=0;i<equipVec.size();i++){
         inventory->addItem(posVec[i].x,posVec[i].y,equipVec[i]);

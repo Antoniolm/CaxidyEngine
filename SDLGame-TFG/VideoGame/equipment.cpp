@@ -207,6 +207,12 @@ void Equipment::setEquip(const Equipment & equip){
 
 //**********************************************************************//
 
+vec3f Equipment::getPosInAvatar(){
+    return posInAvatar;
+}
+
+//**********************************************************************//
+
 string Equipment::getImageProfile(){
     return imageProfile;
 }

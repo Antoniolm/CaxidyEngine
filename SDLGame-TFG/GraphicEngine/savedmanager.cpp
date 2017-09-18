@@ -137,7 +137,7 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
         for(int j=0;j<inv->getSizeX() && countItems!=totalItem;j++){
             equip=inv->getItem(j,i);
             if(equip!=0){
-                vec3f position=vec3f(equip->getPosition());
+                vec3f position=vec3f(equip->getPosInAvatar());
 
                 savedFile << " { \"posInAvatar\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n";
                 savedFile << " \"posInScene\":["<< 0.0<<","<<0.0<<","<< 0.0<<"],\n";

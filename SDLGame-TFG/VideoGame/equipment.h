@@ -170,6 +170,14 @@ class Equipment : public Item
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    It will return the position of the equipment in the avatar
+        *    \return vec3f
+        */
+        //////////////////////////////////////////////////////////////////////////
+        vec3f getPosInAvatar();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    It will return the damage of the equipment
         *    \return int
         */

@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "hero.h"
-#include "equipment.h"
+#include "../equipment.h"
 #include "projectile.h"
 
 Hero::Hero(const rapidjson::Value & heroFeatures)

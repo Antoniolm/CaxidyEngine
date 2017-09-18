@@ -37,6 +37,7 @@
 #include "../GraphicEngine/animation/animationlist.h"
 #include "../GraphicEngine/controller/controller.h"
 #include "../lib/rapidjson/document.h"
+#include "../equipment.h"
 #include "soul.h"
 #include <stdlib.h>
 
