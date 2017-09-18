@@ -164,9 +164,9 @@ void MainMenu::updateState(GameState & gameState){
                         delete gameState.rootMap;
 
                     //Added the initial equipment of the hero
-                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.025,-0.05,0.34),MELEE,true,-25,25,25,"mSWORD","SWORD","mSWORD","Sword"));
-                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.0,-0.2,0.0),RANGED,true,-20,25,25,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
-                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,25,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
+                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.025,-0.05,0.34),MELEE,true,25,25,5,"mSWORD","SWORD","mSWORD","Sword"));
+                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.0,-0.2,0.0),RANGED,true,20,25,5,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
+                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,10,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
                     SavedManager::getInstance()->save("",gameState,0);
                     gameState.rootMap=new RootMap("./maps/map00.json",true);

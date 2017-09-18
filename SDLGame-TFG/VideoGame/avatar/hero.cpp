@@ -580,8 +580,8 @@ void Hero::updateState(GameState & gameState){
                         distance=sqrt(pow(position.x-posEnemy.x,2.0)+pow(position.z-posEnemy.z,2.0));
 
                         if(distance<=1.0 && (position.y>posEnemy.y-1 && position.y<posEnemy.y+1)){//If is near
-                            enemies[i]->takeDamage(position,direction,position,damage+currentWeapon->getDamage()
-                                                                               +shieldEquipment->getDamage(),enemies); //Hit enemy
+                            enemies[i]->takeDamage(position,direction,position,-(damage+currentWeapon->getDamage()
+                                                                               +shieldEquipment->getDamage()),enemies); //Hit enemy
                         }
                     }
                     channelSound[4]=heroSound[4]->play();
@@ -596,8 +596,8 @@ void Hero::updateState(GameState & gameState){
                 ScriptLMD * animationHit=animations.getAnimation();
                 if(animationHit->getScriptState(6)==1 && shootDelay<(time-700)){
                     shootDelay=time;
-                    projectiles.push_back(createProjectile(damage+currentWeapon->getDamage()
-                                                           +shieldEquipment->getDamage()));
+                    projectiles.push_back(createProjectile(-(damage+currentWeapon->getDamage()
+                                                           +shieldEquipment->getDamage())));
                     channelSound[3]=heroSound[3]->play();
                 }
             break;
@@ -870,8 +870,6 @@ Soul * Hero::getSoul(){
     return equip;
 
  }
-
-
 
 //**********************************************************************//
 
