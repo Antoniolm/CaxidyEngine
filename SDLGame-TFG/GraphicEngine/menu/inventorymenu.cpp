@@ -442,7 +442,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
 void InventoryMenu::setInventory(const vector<Equipment*> & equipVec, const vector<vec2f> & posVec){
     //Clean the current state of the inventory
-    //clearInventory();
+    clearInventory();
 
     for(int i=0;i<equipVec.size();i++){
         inventory->addItem(posVec[i].x,posVec[i].y,equipVec[i]);

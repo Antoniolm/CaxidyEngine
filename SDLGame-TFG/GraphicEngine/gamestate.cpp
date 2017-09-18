@@ -38,6 +38,7 @@ GameState::~GameState(){
     delete optionMenu;
     delete controlMenu;
     delete inventoryMenu;
+
     delete camera;
     delete speakingSketch;
 }
@@ -55,9 +56,17 @@ void GameState::initPlay(GLuint shaderID){
     movie=rootMap->getMovie();
 
     SavedManager * saveManager=SavedManager::getInstance();
-                   saveManager->load();
+                   saveManager->load(true);
 
+    //inventoryMenu->setInventory(saveManager->getInv(),saveManager->getPosInv());
+
+    //Set the level of the hero
     rootMap->getHero()->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
+
+    //Set the equipment of the hero
+    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(0));
+    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(1));
+    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(2));
 
     if(movie->isActivate()){
         movie->setPosition(vec3f(posH.x,posH.y+6.77,posH.z+11.0));
@@ -72,7 +81,9 @@ void GameState::updatePlay(){
     pauseMenu->updateState(*this);
     inventoryMenu->updateState(*this);
     deadMenu->updateState(*this);
+
     rootMap->updateState(*this);
+
     speakingSketch->updateState(*this);
 }
 

@@ -46,6 +46,7 @@ EnemyList::~EnemyList()
     for(vector<Enemy *>::iterator it = enemies.begin() ; it != enemies.end(); ++it){
         delete (*it);
     }
+    enemies.clear();
 }
 
 //**********************************************************************//
@@ -70,7 +71,9 @@ void EnemyList::updateState(GameState & gameState){
         if((*it)->getLife()<=0.0){ //if the enemy is dead
             //added the experience of its enemy to the hero
             gameState.rootMap->getHero()->addExperience((*it)->getExp());
-            enemies.erase(it);
+
+            delete (*it);
+            it = enemies.erase(it);
         }
         else //if not dead it++;
             it++;

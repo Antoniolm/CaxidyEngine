@@ -107,7 +107,6 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<items.size();i++)
         delete items[i];
-
 }
 
 //**********************************************************************//
@@ -685,7 +684,7 @@ void RootMap::updateState(GameState & gameState){
             (*it)->updateState(gameState);
             if((*it)->isDisappear()){
                 delete (*it);
-                rottens.erase(it);
+                it = rottens.erase(it);
             }
             else
                 it++;
@@ -716,8 +715,14 @@ void RootMap::updateState(GameState & gameState){
 
         while(itItem!=items.end()){
             (*itItem)->updateState(gameState);
-            if((*itItem)->isTake()){
-                items.erase(itItem);
+
+            //if is not an equipment
+            if((*itItem)->isTake() && dynamic_cast<const Equipment *>(*itItem) == NULL){
+                delete (*itItem);
+                itItem = items.erase(itItem);
+            }
+            else if((*itItem)->isTake()){ //if is an equipment that was took
+                itItem = items.erase(itItem);
             }
             else
                 itItem++;
