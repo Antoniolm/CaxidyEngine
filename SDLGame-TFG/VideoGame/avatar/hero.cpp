@@ -1220,7 +1220,7 @@ Soul * Hero::getSoul(){
     rotateElbow->rotation(60,0.0,0.0,1.0);
 
     Matrix4f * TransElbow=new Matrix4f();
-    TransElbow->translation(-0.5,-0.3,-0.3);
+    TransElbow->translation(-0.25,-0.15,-0.15);
 
     staticShoulder=new MatrixStatic(*rotateShoulder);
     staticElbow=new MatrixStatic(*rotateElbow);
@@ -1311,7 +1311,7 @@ Soul * Hero::getSoul(){
     rotateElbow->rotation(60,0.0,0.0,1.0);
 
     TransElbow=new Matrix4f();
-    TransElbow->translation(-0.5,-0.3,-0.3);
+    TransElbow->translation(-0.25,-0.15,-0.15);
 
     staticShoulder=new MatrixStatic(*rotateShoulder);
     staticElbow=new MatrixStatic(*rotateElbow);
