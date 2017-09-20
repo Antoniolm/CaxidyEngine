@@ -153,6 +153,7 @@ void Game::loop(){
     else if(resolution.first==1400)
         window->resizeWindow(800,1200);
     ////
+    Shader * pruebShader=new Shader("shaders/celShading.vs","shaders/celShading.fs");
 
     //Show our window.
     window->showScreen();
@@ -259,9 +260,22 @@ void Game::loop(){
             shadowManager->setOrthoProjection(-20.0,20.0,-20.0,20.0,-1,20);
             shadowManager->generateShadow(gameState);
 
-            //2- Normal render of our scene
+            //2- Cel Shading renderer
+            glCullFace(GL_FRONT);
+
             glViewport(0, 0, window->getWidth(), window->getHeight());
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            glUseProgram(pruebShader->getProgram()); //We use the program now
+
+            gameState.camera->activateCamera(pruebShader->getProgram());
+            gameState.camera->activatePerspecProjection(pruebShader->getProgram());
+
+            gameState.rootMap->visualization(context);
+
+            glCullFace(GL_BACK);
+
+            //2- Normal render of our scene
             glUseProgram(context.currentShader->getProgram()); //We use the program now
             gameState.camera->activateCamera(context.currentShader->getProgram());
             gameState.rootMap->activatedLight(context.currentShader->getProgram());
