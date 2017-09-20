@@ -14,5 +14,5 @@ uniform vec3 viewPosVertex;
 //uniform float u_offset1; // offset along normal
 
 void main(void){
-   gl_Position = projection * view * transform * vec4(position * 1.05f,1.0f);//u_offset1,1.0f);
+   gl_Position = projection * view * transform * vec4(position * 1.05,1.0f);//u_offset1,1.0f);
 }

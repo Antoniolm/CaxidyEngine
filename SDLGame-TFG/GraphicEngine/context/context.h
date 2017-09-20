@@ -48,6 +48,7 @@ class Context
         unsigned int visualization_mode;    // Visualization mode
         unsigned camera_mode;               // camera mode
         bool shadow_mode;                   // flag shadow mode
+        bool celShading_mode;               // flag cel shading mode
         MatrixStack matrixStack;            // Stack of matrix
         MaterialStack materialStack;        // Stack of material
         Shader * currentShader;             // Current shader

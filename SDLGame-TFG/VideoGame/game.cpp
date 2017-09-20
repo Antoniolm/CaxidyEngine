@@ -262,6 +262,7 @@ void Game::loop(){
 
             //2- Cel Shading renderer
             glCullFace(GL_FRONT);
+            context.celShading_mode=true;
 
             glViewport(0, 0, window->getWidth(), window->getHeight());
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -274,6 +275,8 @@ void Game::loop(){
             gameState.rootMap->visualization(context);
 
             glCullFace(GL_BACK);
+
+            context.celShading_mode=false;
 
             //2- Normal render of our scene
             glUseProgram(context.currentShader->getProgram()); //We use the program now
