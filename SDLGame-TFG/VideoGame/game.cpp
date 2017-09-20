@@ -38,8 +38,7 @@ Game::Game(){
     SoundCollection::getInstance()->updateVolume((float)options->getVolume()/100.0);
 
     //Create our shader
-    normalShader=new Shader("shaders/vertexshader.vs","shaders/fragmentshader.fs");
-    context.currentShader=normalShader;
+    context.currentShader=new Shader("shaders/vertexshader.vs","shaders/fragmentshader.fs");
     glUseProgram(context.currentShader->getProgram()); //We use the program now
 
     shadowManager=new ShadowManager(new Shader("shaders/depthShader.vs","shaders/depthShader.fs"));
@@ -109,7 +108,6 @@ Game::Game(){
 Game::~Game(){
     delete window;
     delete notiGamePad;
-    delete normalShader;
     delete heroState;
 
     delete shadowManager;

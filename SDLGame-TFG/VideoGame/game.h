@@ -93,7 +93,6 @@ class Game
         GameState gameState;            // State of the game
         HeroState * heroState;          // State of the hero
         Notification * notiGamePad;     // Notification of connected game pad
-        Shader * normalShader;          // Normal shader
         ShadowManager * shadowManager;  // Shadow shader
         Context context;                // OpenGL context
         bool isClosing;                 // Flag to close game
