@@ -250,6 +250,7 @@ void InventoryMenu::updateState(GameState & gameState){
             openSound->play();
 
             if(activateMenu){
+                moveSound->stop();
                 //posHero=gameState.rootMap->getHero()->getPosition();
                 posHero=gameState.camera->getPosition();
 
@@ -417,6 +418,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 //If the equip is not Null and if it is not equipped
                 if(equip!=0 && !equip->isEquipped()){
                     menuDelay=time;
+                    moveSound->play();
 
                     if(!isConfirming)
                         isConfirming=true;

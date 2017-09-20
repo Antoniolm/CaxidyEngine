@@ -873,6 +873,13 @@ Soul * Hero::getSoul(){
 
 //**********************************************************************//
 
+ Equipment * Hero::getCurrentWeapon(){
+    return currentWeapon;
+ }
+
+
+//**********************************************************************//
+
  void Hero::addCoin(int value){
     currentCoin+=value;
     int lastValue;

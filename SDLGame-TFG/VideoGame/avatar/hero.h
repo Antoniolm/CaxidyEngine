@@ -277,6 +277,14 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    It will return the current equipped weapon
+        *    \return Equipment *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Equipment * getCurrentWeapon();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    The method will add a new coin to our current coins
         *    @param value -> Adding to our courrent coint the value
         *    \return void
