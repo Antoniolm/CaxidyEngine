@@ -164,7 +164,7 @@ bool Inventory::unequipItem(int typeEquip){
             }
     }
 
-    result=false;
+    return result;
 
 }
 

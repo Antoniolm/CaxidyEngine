@@ -191,8 +191,8 @@ MaterialCollection::MaterialCollection()
     collection.addIndex("mEXP,",mEXP);
     collection.addIndex("mCRYSDRAW",mCRYSDRAW);
     collection.addIndex("mTRAPDOOR",mTRAPDOOR);
-    collection.addIndex("mBUTTON",mBUTTON);
     collection.addIndex("mJUMP",mJUMP);
+    collection.addIndex("mBUTTON",mBUTTON);
     collection.addIndex("mSPEAK",mSPEAK);
     collection.addIndex("mEQUIPPED",mEQUIPPED);
     collection.addIndex("mSHIELDPR",mSHIELDPR);

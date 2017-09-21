@@ -79,8 +79,8 @@ enum MaterialIndex{
     mEXP,
     mCRYSDRAW,
     mTRAPDOOR,
-    mBUTTON,
     mJUMP,
+    mBUTTON,
     mSPEAK,
     mEQUIPPED,
     mSHIELDPR
