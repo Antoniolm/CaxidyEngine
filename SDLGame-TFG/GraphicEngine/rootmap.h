@@ -279,6 +279,7 @@ class RootMap : public Object3D
         vector<ObjectScene *> objs;                 // Vector of objects scene
         vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
         vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
+        vector<Object3D *> elements;                // Vector with all the elements of the game
         vector<Item *> items;                       // Vector of items
         vector<Npc *> npcList;                      // Vector of npcs
         vector<ParticleSystem *> particleSystem;    // Vector of particles systems

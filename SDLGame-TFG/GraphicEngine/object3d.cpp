@@ -78,3 +78,9 @@ void Object3D::addLink(){
 int Object3D::getCountLink(){
     return countLink;
 }
+
+//**********************************************************************//
+
+bool Object3D::isDeleting(){
+    return false;
+}

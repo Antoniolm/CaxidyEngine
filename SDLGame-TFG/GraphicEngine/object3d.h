@@ -126,6 +126,14 @@ class Object3D
         //////////////////////////////////////////////////////////////////////////
         int getCountLink();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return if the object will be deleted or not
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual bool isDeleting();
+
     protected:
         float currentTime;          // Time of the application
         vec4f position;             // Position of the object

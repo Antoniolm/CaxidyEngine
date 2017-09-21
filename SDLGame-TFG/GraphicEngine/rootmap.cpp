@@ -44,11 +44,14 @@ RootMap::~RootMap()
     delete loader;
     delete backSound;
     delete enemyList;
-    delete hero;
     delete mate;
     delete title;
     delete endMapRegion;
     delete movie;
+
+
+    for(unsigned i=0;i<elements.size();i++)
+        delete elements[i];
 
     for(unsigned i=doors.size()+traps.size()+rottens.size()
         +movables.size()+slides.size();i<objs.size();i++)
@@ -59,9 +62,6 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<objectGroup.size();i++)
         delete objectGroup[i];
-
-    for(unsigned i=0;i<npcList.size();i++)
-        delete npcList[i];
 
     for(unsigned i=0;i<particleSystem.size();i++)
         delete particleSystem[i];
@@ -136,6 +136,7 @@ void RootMap::initialize(string fileMap){
     //Print a message for check
     cout<< "< Game is loading our hero >"<< endl;
     hero=new Hero(document["hero"]);
+    elements.push_back(hero);
 
     //Print a message for check
     cout<< "< Game is loading our mate >"<< endl;
@@ -171,6 +172,17 @@ void RootMap::initialize(string fileMap){
     const rapidjson::Value & titleFeature=document["title"];
     title=new Notification(titleFeature);
     title->addLink();
+
+
+    /////////////////////////////////////////
+    // Add npcs of our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading npcs >"<< endl;
+    const rapidjson::Value & npcValue=document["npcs"];
+    for(unsigned currentNpc=0;currentNpc<npcValue.Size();currentNpc++){
+        elements.push_back(new Npc(npcValue[currentNpc]));
+    }
+
 
     /////////////////////////////////////////
     // Add endMap region to our map
@@ -385,15 +397,6 @@ void RootMap::initialize(string fileMap){
     background= new ObjectScene(objNode);
 
     /////////////////////////////////////////
-    // Add npcs of our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading npcs >"<< endl;
-    const rapidjson::Value & npcValue=document["npcs"];
-    for(unsigned currentNpc=0;currentNpc<npcValue.Size();currentNpc++){
-        npcList.push_back(new Npc(npcValue[currentNpc]));
-    }
-
-    /////////////////////////////////////////
     // Add enemy of our map
     cout<< "< Game is loading enemies >"<< endl;
     const rapidjson::Value & enemies=document["enemies"];
@@ -498,14 +501,11 @@ void RootMap::visualization(Context & cv){
         objectGroup[i]->visualization(cv);
     }
 
-    //Draw hero
-    hero->visualization(cv);
-
-    //Draw ncps
-    for(unsigned i=0;i<npcList.size();i++){
-        position=npcList[i]->getPosition();
+    //Draw elements of the scene
+    for(unsigned i=0;i<elements.size();i++){
+        position=elements[i]->getPosition();
         if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            npcList[i]->visualization(cv);
+            elements[i]->visualization(cv);
     }
 
     //Draw enemies
@@ -627,8 +627,10 @@ void RootMap::updateState(GameState & gameState){
 
     if(!gameState.movie->isActivated() && !gameState.mainMenu->isActivate() && !gameState.pauseMenu->isActivate()
        && !gameState.deadMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.camera->isViewMode()){
-        //Update the hero
-        hero->updateState(gameState);
+
+        //Update elements
+        for(unsigned i=0;i<elements.size();i++)
+            elements[i]->updateState(gameState);
 
         //Update the mate
         mate->updateState(gameState);
@@ -730,11 +732,6 @@ void RootMap::updateState(GameState & gameState){
 
         //Update title
         title->updateState(gameState);
-
-        //Update npcs
-        for(unsigned i=0;i<npcList.size();i++){
-            npcList[i]->updateState(gameState);
-        }
 
         //Update enemies
         enemyList->updateState(gameState);
