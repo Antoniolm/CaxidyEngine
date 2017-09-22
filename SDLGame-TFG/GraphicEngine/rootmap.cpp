@@ -63,9 +63,6 @@ RootMap::~RootMap()
     for(unsigned i=0;i<objectGroup.size();i++)
         delete objectGroup[i];
 
-    for(unsigned i=0;i<particleSystem.size();i++)
-        delete particleSystem[i];
-
     for(unsigned i=0;i<projectileSystem.size();i++)
         delete projectileSystem[i];
 
@@ -197,7 +194,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading particles system >"<< endl;
     const rapidjson::Value & particleFeature=document["particleSystem"];
     for(unsigned currentPSys=0;currentPSys<particleFeature.Size();currentPSys++){
-        particleSystem.push_back(new ParticleSystem(particleFeature[currentPSys]));
+        elements.push_back(new ParticleSystem(particleFeature[currentPSys]));
     }
 
     /////////////////////////////////////////
@@ -511,13 +508,6 @@ void RootMap::visualization(Context & cv){
     //Draw enemies
     enemyList->visualization(cv);
 
-    //Draw particles system
-    for(unsigned i=0;i<particleSystem.size();i++){
-        position=vec3f(particleSystem[i]->getPosition());
-        if(position.x>posHero.x-8 && position.x<posHero.x+8)
-            particleSystem[i]->visualization(cv);
-    }
-
     //Draw projectile system
     for(unsigned i=0;i<projectileSystem.size();i++){
         position=projectileSystem[i]->getPosition();
@@ -638,11 +628,6 @@ void RootMap::updateState(GameState & gameState){
         //Update the Scene
         for(unsigned i=0;i<objectGroup.size();i++)
             objectGroup[i]->updateState(gameState);
-
-        //Update particles system
-        for(unsigned i=0;i<particleSystem.size();i++){
-            particleSystem[i]->updateState(gameState);
-        }
 
         //Update projectile system
         for(unsigned i=0;i<projectileSystem.size();i++){

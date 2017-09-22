@@ -281,9 +281,7 @@ class RootMap : public Object3D
         vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
         vector<Object3D *> elements;                // Vector with all the elements of the game
         vector<Item *> items;                       // Vector of items
-        vector<Npc *> npcList;                      // Vector of npcs
-        vector<ParticleSystem *> particleSystem;    // Vector of particles systems
-        vector<ProjectileSystem *> projectileSystem;// Vector of projectiles systems
+        vector<ProjectileSystem *> projectileSystem;// Vector of projectiles systemsyy
         vector<TextRegion *> regions;               // Vector of regions
         vector<SpikeTrap *> spikes;                 // Vector of spikes traps
         vector<TrapDoor *> traps;                   // Vector of traps door
@@ -292,7 +290,6 @@ class RootMap : public Object3D
         vector<RespawnVoxel *> respawns;            // Vector of respawn voxels
         vector<SlideTrap *> slides;                 // Vector of slide traps
         vector<JumpButton *> jumps;                 // Vector of jump button
-        vector<Soul *> souls;                       // Vector of souls
         vector<SoulCarrier *> soulCarriers;         // Vector of souls carriers
         vector<Door *> doors;                       // Vector of doors
         vector<Light *> lights;                     // Vector of lights
