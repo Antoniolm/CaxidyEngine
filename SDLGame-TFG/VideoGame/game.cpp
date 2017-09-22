@@ -41,7 +41,11 @@ Game::Game(){
     context.currentShader=new Shader("shaders/vertexshader.vs","shaders/fragmentshader.fs");
     glUseProgram(context.currentShader->getProgram()); //We use the program now
 
+    //ShadowManager
     shadowManager=new ShadowManager(new Shader("shaders/depthShader.vs","shaders/depthShader.fs"));
+
+    //CelShading
+    celShading=new CelShading(new Shader("shaders/celShading.vs","shaders/celShading.fs"));
 
     //Create ours menus
     MeshCollection::getInstance();
@@ -111,6 +115,7 @@ Game::~Game(){
     delete heroState;
 
     delete shadowManager;
+    delete celShading;
     delete options;
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -153,7 +158,6 @@ void Game::loop(){
     else if(resolution.first==1400)
         window->resizeWindow(800,1200);
     ////
-    Shader * pruebShader=new Shader("shaders/celShading.vs","shaders/celShading.fs");
 
     //Show our window.
     window->showScreen();
@@ -261,20 +265,13 @@ void Game::loop(){
             shadowManager->generateShadow(gameState);
 
             //2- Cel Shading renderer
-            glCullFace(GL_FRONT);
+
             context.celShading_mode=true;
 
             glViewport(0, 0, window->getWidth(), window->getHeight());
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-            glUseProgram(pruebShader->getProgram()); //We use the program now
-
-            gameState.camera->activateCamera(pruebShader->getProgram());
-            gameState.camera->activatePerspecProjection(pruebShader->getProgram());
-
+            CelShading->activate(gameState);
             gameState.rootMap->visualization(context);
-
-            glCullFace(GL_BACK);
+            CelShading->disactivate();
 
             context.celShading_mode=false;
 

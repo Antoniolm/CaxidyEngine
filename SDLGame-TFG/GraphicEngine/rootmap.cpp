@@ -96,9 +96,6 @@ RootMap::~RootMap()
     for(unsigned i=0;i<respawns.size();i++)
         delete respawns[i];
 
-    for(unsigned i=0;i<jumps.size();i++)
-        delete jumps[i];
-
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
 
@@ -317,7 +314,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading jump button >"<< endl;
     const rapidjson::Value & jumpFeature=document["jumpButton"];
     for(unsigned currentButton=0;currentButton<jumpFeature.Size();currentButton++){
-        jumps.push_back(new JumpButton(jumpFeature[currentButton]));
+        elements.push_back(new JumpButton(jumpFeature[currentButton]));
     }
 
     /////////////////////////////////////////
@@ -578,13 +575,6 @@ void RootMap::visualization(Context & cv){
             slides[i]->visualization(cv);
     }
 
-    //Draw jump buttons
-    for(unsigned i=0;i<jumps.size();i++){
-        position=jumps[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            jumps[i]->visualization(cv);
-    }
-
     //Draw potions
     for(unsigned i=0;i<items.size();i++){
         position=items[i]->getPosition();
@@ -690,11 +680,6 @@ void RootMap::updateState(GameState & gameState){
         //Update slides
         for(unsigned i=0;i<slides.size();i++){
             slides[i]->updateState(gameState);
-        }
-
-        //Update slides
-        for(unsigned i=0;i<jumps.size();i++){
-            jumps[i]->updateState(gameState);
         }
 
         //Update items
