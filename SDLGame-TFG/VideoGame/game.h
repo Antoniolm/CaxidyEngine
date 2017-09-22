@@ -40,6 +40,7 @@
 #include "../GraphicEngine/herostate.h"
 #include "../GraphicEngine/shadowtexture.h"
 #include "../GraphicEngine/shadowmanager.h"
+#include "../GraphicEngine/celshading.h"
 #include "inventory.h"
 #include "projectile.h"
 #include "avatar/hero.h"

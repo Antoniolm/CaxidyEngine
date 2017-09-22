@@ -269,9 +269,8 @@ void Game::loop(){
             context.celShading_mode=true;
 
             glViewport(0, 0, window->getWidth(), window->getHeight());
-            CelShading->activate(gameState);
+            celShading->activate(gameState);
             gameState.rootMap->visualization(context);
-            CelShading->disactivate();
 
             context.celShading_mode=false;
 

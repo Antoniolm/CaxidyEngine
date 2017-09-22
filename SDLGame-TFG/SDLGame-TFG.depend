@@ -5552,7 +5552,7 @@
 	"mainmenu.h"
 	"game.h"
 
-1506094775 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1506095131 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5573,6 +5573,7 @@
 	"../GraphicEngine/herostate.h"
 	"../GraphicEngine/shadowtexture.h"
 	"../GraphicEngine/shadowmanager.h"
+	"../GraphicEngine/celshading.h"
 	"inventory.h"
 	"projectile.h"
 	"avatar/hero.h"
@@ -5985,4 +5986,11 @@
 	"./matrix/matrix4fdynamic.h"
 	"./collection/meshcollection.h"
 	"./collection/materialcollection.h"
+
+1506094914 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.cpp
+	"celshading.h"
+
+1506095685 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.h
+	"context/shader.h"
+	"gamestate.h"
 

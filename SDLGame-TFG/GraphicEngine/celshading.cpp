@@ -24,11 +24,14 @@ CelShading::CelShading(Shader * aShader)
     shader=aShader;
 }
 
+//**********************************************************************//
+
 CelShading::~CelShading()
 {
     delete shader;
 }
 
+//**********************************************************************//
 
 void CelShading::activate(GameState & gameState){
     glCullFace(GL_FRONT);
@@ -38,9 +41,10 @@ void CelShading::activate(GameState & gameState){
 
     gameState.camera->activateCamera(shader->getProgram());
     gameState.camera->activatePerspecProjection(shader->getProgram());
-
 }
 
-void CelShading::disactivate(){
+//**********************************************************************//
+
+void CelShading::deactivate(){
     glCullFace(GL_BACK);
 }
