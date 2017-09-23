@@ -134,3 +134,9 @@ void RottenVoxel::initAnimation(){
 
     animation->add(scriptUp);
 }
+
+//**********************************************************************//
+
+bool RottenVoxel::isDeleting(){
+    return disappear;
+}

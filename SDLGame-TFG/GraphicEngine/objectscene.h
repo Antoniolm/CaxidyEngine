@@ -132,6 +132,14 @@ class ObjectScene : public Object3D
         //////////////////////////////////////////////////////////////////////////
         void obtainPosition(Context vis);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return if the object will be deleted or not
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual bool isDeleting();
+
     protected:
         vec4f position;     // Position of the object scene
         Object3D * object;  // Object of the object scene

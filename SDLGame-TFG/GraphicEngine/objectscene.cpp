@@ -148,3 +148,9 @@ void ObjectScene::setShadow(bool value){
 bool ObjectScene::isShadow(){
     return hasShadow;
 }
+
+//**********************************************************************//
+
+bool ObjectScene::isDeleting(){
+    return false;
+}

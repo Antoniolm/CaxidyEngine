@@ -82,9 +82,6 @@ RootMap::~RootMap()
     for(unsigned i=0;i<traps.size();i++)
         deleteObject3d(traps[i]);
 
-    for(unsigned i=0;i<rottens.size();i++)
-        deleteObject3d(rottens[i]);
-
     for(unsigned i=0;i<movables.size();i++)
         deleteObject3d(movables[i]);
 
@@ -266,7 +263,7 @@ void RootMap::initialize(string fileMap){
     for(unsigned currentRot=0;currentRot<rottenFeature.Size();currentRot++){
         RottenVoxel * rotten=new RottenVoxel(rottenFeature[currentRot],objs.size());
         rotten->addLink();rotten->addLink();
-        rottens.push_back(rotten);
+        elements.push_back(rotten);
         objs.push_back(rotten);
     }
 
@@ -542,13 +539,6 @@ void RootMap::visualization(Context & cv){
             traps[i]->visualization(cv);
     }
 
-    //Draw rotten
-    for(unsigned i=0;i<rottens.size();i++){
-        position=rottens[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            rottens[i]->visualization(cv);
-    }
-
     //Draw movables voxels
     for(unsigned i=0;i<movables.size();i++){
         position=movables[i]->getPosition();
@@ -596,9 +586,18 @@ void RootMap::updateState(GameState & gameState){
     if(!gameState.movie->isActivated() && !gameState.mainMenu->isActivate() && !gameState.pauseMenu->isActivate()
        && !gameState.deadMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.camera->isViewMode()){
 
-        //Update elements
-        for(unsigned i=0;i<elements.size();i++)
-            elements[i]->updateState(gameState);
+        vector<Object3D * >::iterator it=elements.begin();
+
+        while(it!=elements.end()){
+            (*it)->updateState(gameState);
+            if((*it)->isDeleting()){
+                delete (*it);
+                it = elements.erase(it);
+            }
+            else
+                it++;
+        }
+
 
         //Update the mate
         mate->updateState(gameState);
@@ -640,19 +639,6 @@ void RootMap::updateState(GameState & gameState){
         //Update jump buttons
         for(unsigned i=0;i<traps.size();i++){
             traps[i]->updateState(gameState);
-        }
-
-        //Update rotten voxel
-        vector<RottenVoxel * >::iterator it=rottens.begin();
-
-        while(it!=rottens.end()){
-            (*it)->updateState(gameState);
-            if((*it)->isDisappear()){
-                delete (*it);
-                it = rottens.erase(it);
-            }
-            else
-                it++;
         }
 
         //Update movables
