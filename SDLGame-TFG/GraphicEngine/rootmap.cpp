@@ -49,13 +49,11 @@ RootMap::~RootMap()
     delete endMapRegion;
     delete movie;
 
+    for(unsigned i=0;i<objs.size();i++)
+        deleteObject3d(objs[i]);
 
     for(unsigned i=0;i<elements.size();i++)
         delete elements[i];
-
-    for(unsigned i=doors.size()+traps.size()+rottens.size()
-        +movables.size()+slides.size();i<objs.size();i++)
-        deleteObject3d(objs[i]);
 
     for(unsigned i=0;i<decorationObjs.size();i++)
         delete decorationObjs[i];
@@ -89,9 +87,6 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<movables.size();i++)
         deleteObject3d(movables[i]);
-
-    for(unsigned i=0;i<slides.size();i++)
-        deleteObject3d(slides[i]);
 
     for(unsigned i=0;i<respawns.size();i++)
         delete respawns[i];
@@ -304,7 +299,7 @@ void RootMap::initialize(string fileMap){
     for(unsigned currentSlide=0;currentSlide<slideFeature.Size();currentSlide++){
         SlideTrap * slidTrap=new SlideTrap(slideFeature[currentSlide],objs.size());
         slidTrap->addLink();slidTrap->addLink();
-        slides.push_back(slidTrap);
+        elements.push_back(slidTrap);
         objs.push_back(slidTrap);
     }
 
@@ -568,13 +563,6 @@ void RootMap::visualization(Context & cv){
             respawns[i]->visualization(cv);
     }
 
-    //Draw slide traps
-    for(unsigned i=0;i<slides.size();i++){
-        position=slides[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            slides[i]->visualization(cv);
-    }
-
     //Draw potions
     for(unsigned i=0;i<items.size();i++){
         position=items[i]->getPosition();
@@ -675,11 +663,6 @@ void RootMap::updateState(GameState & gameState){
         //Update Respawn
         for(unsigned i=0;i<respawns.size();i++){
             respawns[i]->updateState(gameState);
-        }
-
-        //Update slides
-        for(unsigned i=0;i<slides.size();i++){
-            slides[i]->updateState(gameState);
         }
 
         //Update items

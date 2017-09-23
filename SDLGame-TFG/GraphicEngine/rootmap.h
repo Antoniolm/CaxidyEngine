@@ -289,7 +289,6 @@ class RootMap : public Object3D
         vector<RottenVoxel *> rottens;              // Vector of rotten voxels
         vector<MovableVoxel *> movables;            // Vector of movable voxels
         vector<RespawnVoxel *> respawns;            // Vector of respawn voxels
-        vector<SlideTrap *> slides;                 // Vector of slide traps
         vector<SoulCarrier *> soulCarriers;         // Vector of souls carriers
         vector<Door *> doors;                       // Vector of doors
         vector<Light *> lights;                     // Vector of lights

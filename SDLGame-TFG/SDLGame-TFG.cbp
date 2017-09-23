@@ -52,6 +52,8 @@
 		<Unit filename="GraphicEngine/animation/scriptlmd.h" />
 		<Unit filename="GraphicEngine/camera.cpp" />
 		<Unit filename="GraphicEngine/camera.h" />
+		<Unit filename="GraphicEngine/celshading.cpp" />
+		<Unit filename="GraphicEngine/celshading.h" />
 		<Unit filename="GraphicEngine/collection/collection.cpp" />
 		<Unit filename="GraphicEngine/collection/collection.h" />
 		<Unit filename="GraphicEngine/collection/materialcollection.cpp" />
