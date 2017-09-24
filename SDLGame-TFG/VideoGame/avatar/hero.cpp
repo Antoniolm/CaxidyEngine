@@ -324,18 +324,6 @@ Hero::~Hero()
         delete (*it);
     }
 
-    /*switch(currentWeapon->getEquipType()){
-        case RANGED:
-            delete meleeWeapon;
-        break;
-        case MELEE:
-            delete rangedWeapon;
-        break;
-        case eSHIELD:
-
-        break;
-    }
-    delete shieldEquipment;*/
     delete root;
 }
 

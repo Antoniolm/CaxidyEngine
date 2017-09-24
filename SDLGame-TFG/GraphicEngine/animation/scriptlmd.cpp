@@ -26,11 +26,7 @@ ScriptLMD::ScriptLMD()
 
 //**********************************************************************//
 
-ScriptLMD::~ScriptLMD()
-{
-    /*for(vector<MatrixScript *>::iterator it = script.begin() ; it != script.end(); ++it){
-        delete (*it);
-    }*/ //Fix
+ScriptLMD::~ScriptLMD(){
 }
 
 //**********************************************************************//

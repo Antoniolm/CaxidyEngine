@@ -63,7 +63,9 @@ RespawnVoxel::~RespawnVoxel(){
 //**********************************************************************//
 
 void RespawnVoxel::visualization(Context & cv){
-    root->visualization(cv);
+    if(position.x>cv.minVisualPosition.x && position.x<cv.maxVisualPosition.x
+       && position.y>cv.minVisualPosition.y && position.y<cv.maxVisualPosition.y)
+            root->visualization(cv);
 }
 
 //**********************************************************************//

@@ -50,6 +50,7 @@ Soul::Soul(const Value & soulFeatures)
 Soul::~Soul()
 {
     delete root;
+    delete rotation;
 }
 
 //**********************************************************************//

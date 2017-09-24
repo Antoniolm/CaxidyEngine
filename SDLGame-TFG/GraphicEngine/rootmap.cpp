@@ -43,7 +43,6 @@ RootMap::~RootMap()
 {
     delete loader;
     delete backSound;
-    delete mate;
     delete title;
     delete endMapRegion;
     delete movie;
@@ -60,23 +59,8 @@ RootMap::~RootMap()
     for(unsigned i=0;i<objectGroup.size();i++)
         delete objectGroup[i];
 
-   for(unsigned i=0;i<regions.size();i++)
+    for(unsigned i=0;i<regions.size();i++)
         delete regions[i];
-
-    for(unsigned i=0;i<souls.size();i++)
-        delete souls[i];
-
-    for(unsigned i=0;i<soulCarriers.size();i++)
-        delete soulCarriers[i];
-
-    for(unsigned i=0;i<doors.size();i++)
-        deleteObject3d(doors[i]);
-
-    for(unsigned i=0;i<movables.size();i++)
-        deleteObject3d(movables[i]);
-
-    for(unsigned i=0;i<respawns.size();i++)
-        delete respawns[i];
 
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
@@ -110,10 +94,6 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading our hero >"<< endl;
     hero=new Hero(document["hero"]);
     elements.push_back(hero);
-
-    //Print a message for check
-    cout<< "< Game is loading our mate >"<< endl;
-    mate=new Mate(document["mate"]);
 
     /////////////////////////////////////////
     // Add Light to our map
@@ -192,21 +172,24 @@ void RootMap::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
+    // Add soulCarriers to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading soul carriers >"<< endl;
+    vector<SoulCarrier *> soulCarriers; // Vector of souls carriers
+    const rapidjson::Value & soulCarrierFeature=document["soulCarrier"];
+    for(unsigned currentSoulC=0;currentSoulC<soulCarrierFeature.Size();currentSoulC++){
+        SoulCarrier * soulC=new SoulCarrier(soulCarrierFeature[currentSoulC]);
+        soulCarriers.push_back(soulC);
+        elements.push_back(soulC);
+    }
+
+    /////////////////////////////////////////
     // Add souls to our map
     /////////////////////////////////////////
     cout<< "< Game is loading souls >"<< endl;
     const rapidjson::Value & soulFeature=document["souls"];
     for(unsigned currentSoul=0;currentSoul<soulFeature.Size();currentSoul++){
-        souls.push_back(new Soul(soulFeature[currentSoul]));
-    }
-
-    /////////////////////////////////////////
-    // Add soulCarriers to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading soul carriers >"<< endl;
-    const rapidjson::Value & soulCarrierFeature=document["soulCarrier"];
-    for(unsigned currentSoulC=0;currentSoulC<soulCarrierFeature.Size();currentSoulC++){
-        soulCarriers.push_back(new SoulCarrier(soulCarrierFeature[currentSoulC]));
+        elements.push_back(new Soul(soulFeature[currentSoul]));
     }
 
     /////////////////////////////////////////
@@ -217,9 +200,10 @@ void RootMap::initialize(string fileMap){
     for(unsigned currentDoor=0;currentDoor<doorFeature.Size();currentDoor++){
         Door * door=new Door(doorFeature[currentDoor],soulCarriers,currentDoor);
         door->addLink();door->addLink();
-        doors.push_back(door);
+        elements.push_back(door);
         objs.push_back(door);
     }
+    soulCarriers.clear();
 
     /////////////////////////////////////////
     // Add spikes to our map
@@ -258,9 +242,12 @@ void RootMap::initialize(string fileMap){
     // Add respawn voxels to the map
     /////////////////////////////////////////
     cout<< "< Game is loading respawn voxels >"<< endl;
+    vector<RespawnVoxel *> respawns; // Vector of respawn voxels
     const rapidjson::Value & resFeature=document["resVoxel"];
     for(unsigned currentRes=0;currentRes<resFeature.Size();currentRes++){
-        respawns.push_back(new RespawnVoxel(resFeature[currentRes]));
+        RespawnVoxel * respVox=new RespawnVoxel(resFeature[currentRes]);
+        respawns.push_back(respVox);
+        elements.push_back(respVox);
     }
 
     /////////////////////////////////////////
@@ -271,9 +258,10 @@ void RootMap::initialize(string fileMap){
     for(unsigned currentMov=0;currentMov<movFeature.Size();currentMov++){
         MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],respawns,objs.size());
         movVox->addLink();movVox->addLink();
-        movables.push_back(movVox);
+        elements.push_back(movVox);
         objs.push_back(movVox);
     }
+    respawns.clear();
 
     /////////////////////////////////////////
     // Add slide traps to our map
@@ -353,6 +341,13 @@ void RootMap::initialize(string fileMap){
 
         }
     }
+
+    /////////////////////////////////////////
+    // Add mate to our map
+    /////////////////////////////////////////
+    cout<< "< Game is loading our mate >"<< endl;
+    mate=new Mate(document["mate"]);
+    elements.push_back(mate);
 
     ////////////////////////////////////////////
     // Background
@@ -480,50 +475,12 @@ void RootMap::visualization(Context & cv){
         elements[i]->visualization(cv);
     }
 
-    //Draw souls
-    for(unsigned i=0;i<souls.size();i++){
-        position=souls[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            souls[i]->visualization(cv);
-    }
-
-    //Draw soulCarriers
-    for(unsigned i=0;i<soulCarriers.size();i++){
-        position=soulCarriers[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            soulCarriers[i]->visualization(cv);
-    }
-
-    //Draw doors
-    for(unsigned i=0;i<doors.size();i++){
-        position=doors[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            doors[i]->visualization(cv);
-    }
-
-    //Draw movables voxels
-    for(unsigned i=0;i<movables.size();i++){
-        position=movables[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            movables[i]->visualization(cv);
-    }
-
-    //Draw respawn
-    for(unsigned i=0;i<respawns.size();i++){
-        position=respawns[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            respawns[i]->visualization(cv);
-    }
-
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
         position=decorationObjs[i]->getPosition();
         if(position.x>posHero.x-11 && position.x<posHero.x+11)
             decorationObjs[i]->visualization(cv);
     }
-
-    //Draw mate
-    mate->visualization(cv);
 
     //Draw title
     title->visualization(cv);
@@ -553,10 +510,6 @@ void RootMap::updateState(GameState & gameState){
                 it++;
         }
 
-
-        //Update the mate
-        mate->updateState(gameState);
-
         //Update the Scene
         for(unsigned i=0;i<objectGroup.size();i++)
             objectGroup[i]->updateState(gameState);
@@ -564,31 +517,6 @@ void RootMap::updateState(GameState & gameState){
         //Update textregions
         for(unsigned i=0;i<regions.size();i++){
             regions[i]->updateState(gameState);
-        }
-
-        //Update soulCarriers
-        for(unsigned i=0;i<soulCarriers.size();i++){
-            soulCarriers[i]->updateState(gameState);
-        }
-
-        //Update doors
-        for(unsigned i=0;i<doors.size();i++){
-            doors[i]->updateState(gameState);
-        }
-
-        //Update souls
-        for(unsigned i=0;i<souls.size();i++){
-            souls[i]->updateState(gameState);
-        }
-
-        //Update movables
-        for(unsigned i=0;i<movables.size();i++){
-            movables[i]->updateState(gameState);
-        }
-
-        //Update Respawn
-        for(unsigned i=0;i<respawns.size();i++){
-            respawns[i]->updateState(gameState);
         }
 
         //Update title
