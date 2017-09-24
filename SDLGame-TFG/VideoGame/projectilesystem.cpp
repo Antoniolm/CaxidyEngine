@@ -80,6 +80,7 @@ void ProjectileSystem::updateState(GameState & gameState){
     while(it!=projectiles.end()){
         (*it)->updateState(gameState);
         if(!(*it)->isLive()){
+            delete (*it);
             it=projectiles.erase(it);
         }
         else

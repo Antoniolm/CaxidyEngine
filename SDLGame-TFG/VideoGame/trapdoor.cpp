@@ -87,7 +87,9 @@ TrapDoor::~TrapDoor(){
 //**********************************************************************//
 
 void TrapDoor::visualization(Context & cv){
-    object->visualization(cv);
+    if(position.x>cv.minVisualPosition.x && position.x<cv.maxVisualPosition.x
+       && position.y>cv.minVisualPosition.y && position.y<cv.maxVisualPosition.y)
+        object->visualization(cv);
 }
 
 //**********************************************************************//

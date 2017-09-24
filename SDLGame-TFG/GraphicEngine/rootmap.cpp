@@ -43,7 +43,6 @@ RootMap::~RootMap()
 {
     delete loader;
     delete backSound;
-    delete enemyList;
     delete mate;
     delete title;
     delete endMapRegion;
@@ -78,9 +77,6 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<doors.size();i++)
         deleteObject3d(doors[i]);
-
-    for(unsigned i=0;i<traps.size();i++)
-        deleteObject3d(traps[i]);
 
     for(unsigned i=0;i<movables.size();i++)
         deleteObject3d(movables[i]);
@@ -192,7 +188,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading proyectile system >"<< endl;
     const rapidjson::Value & projectileFeature=document["projectileSystem"];
     for(unsigned currentPSys=0;currentPSys<projectileFeature.Size();currentPSys++){
-        projectileSystem.push_back(new ProjectileSystem(projectileFeature[currentPSys]));
+        elements.push_back(new ProjectileSystem(projectileFeature[currentPSys]));
     }
 
     /////////////////////////////////////////
@@ -251,7 +247,7 @@ void RootMap::initialize(string fileMap){
     for(unsigned currentTrap=0;currentTrap<trapFeature.Size();currentTrap++){
         TrapDoor * trapDoor=new TrapDoor(trapFeature[currentTrap],objs.size());
         trapDoor->addLink();trapDoor->addLink();
-        traps.push_back(trapDoor);
+        elements.push_back(trapDoor);
         objs.push_back(trapDoor);
     }
 
@@ -388,6 +384,7 @@ void RootMap::initialize(string fileMap){
     const rapidjson::Value & enemies=document["enemies"];
 
     enemyList=new EnemyList(enemies);
+    elements.push_back(enemyList);
 
     ////////////////////////////////////////
     //Create the indexMap;
@@ -489,13 +486,8 @@ void RootMap::visualization(Context & cv){
 
     //Draw elements of the scene
     for(unsigned i=0;i<elements.size();i++){
-        position=elements[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
             elements[i]->visualization(cv);
     }
-
-    //Draw enemies
-    enemyList->visualization(cv);
 
     //Draw projectile system
     for(unsigned i=0;i<projectileSystem.size();i++){
@@ -530,13 +522,6 @@ void RootMap::visualization(Context & cv){
         position=spikes[i]->getPosition();
         if(position.x>posHero.x-11 && position.x<posHero.x+11)
             spikes[i]->visualization(cv);
-    }
-
-    //Draw traps
-    for(unsigned i=0;i<traps.size();i++){
-        position=traps[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            traps[i]->visualization(cv);
     }
 
     //Draw movables voxels
@@ -636,11 +621,6 @@ void RootMap::updateState(GameState & gameState){
             spikes[i]->updateState(gameState);
         }
 
-        //Update jump buttons
-        for(unsigned i=0;i<traps.size();i++){
-            traps[i]->updateState(gameState);
-        }
-
         //Update movables
         for(unsigned i=0;i<movables.size();i++){
             movables[i]->updateState(gameState);
@@ -671,9 +651,6 @@ void RootMap::updateState(GameState & gameState){
 
         //Update title
         title->updateState(gameState);
-
-        //Update enemies
-        enemyList->updateState(gameState);
 
         //Update endMapRegion
         endMapRegion->updateState(gameState);
