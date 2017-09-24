@@ -60,14 +60,8 @@ RootMap::~RootMap()
     for(unsigned i=0;i<objectGroup.size();i++)
         delete objectGroup[i];
 
-    for(unsigned i=0;i<projectileSystem.size();i++)
-        delete projectileSystem[i];
-
    for(unsigned i=0;i<regions.size();i++)
         delete regions[i];
-
-    for(unsigned i=0;i<spikes.size();i++)
-        delete spikes[i];
 
     for(unsigned i=0;i<souls.size();i++)
         delete souls[i];
@@ -86,9 +80,6 @@ RootMap::~RootMap()
 
     for(unsigned i=0;i<lights.size();i++)
         delete lights[i];
-
-    for(unsigned i=0;i<items.size();i++)
-        delete items[i];
 }
 
 //**********************************************************************//
@@ -236,7 +227,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading spike traps >"<< endl;
     const rapidjson::Value & spikeFeature=document["spikes"];
     for(unsigned currentSpike=0;currentSpike<spikeFeature.Size();currentSpike++){
-        spikes.push_back(new SpikeTrap(spikeFeature[currentSpike]));
+        elements.push_back(new SpikeTrap(spikeFeature[currentSpike]));
     }
 
     /////////////////////////////////////////
@@ -311,7 +302,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading potions >"<< endl;
     const rapidjson::Value & potionFeature=document["potion"];
     for(unsigned currentPotion=0;currentPotion<potionFeature.Size();currentPotion++){
-        items.push_back(new Potion(potionFeature[currentPotion]));
+        elements.push_back(new Potion(potionFeature[currentPotion]));
     }
 
     /////////////////////////////////////////
@@ -320,7 +311,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading coins >"<< endl;
     const rapidjson::Value & coinFeature=document["coin"];
     for(unsigned currentCoin=0;currentCoin<coinFeature.Size();currentCoin++){
-        items.push_back(new Coin(coinFeature[currentCoin]));
+        elements.push_back(new Coin(coinFeature[currentCoin]));
     }
 
     /////////////////////////////////////////
@@ -329,7 +320,7 @@ void RootMap::initialize(string fileMap){
     cout<< "< Game is loading equipments >"<< endl;
     const rapidjson::Value & equipFeature=document["equip"];
     for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
-        items.push_back(new Equipment(equipFeature[currentEquip]));
+        elements.push_back(new Equipment(equipFeature[currentEquip]));
     }
 
     /////////////////////////////////////////
@@ -486,14 +477,7 @@ void RootMap::visualization(Context & cv){
 
     //Draw elements of the scene
     for(unsigned i=0;i<elements.size();i++){
-            elements[i]->visualization(cv);
-    }
-
-    //Draw projectile system
-    for(unsigned i=0;i<projectileSystem.size();i++){
-        position=projectileSystem[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            projectileSystem[i]->visualization(cv);
+        elements[i]->visualization(cv);
     }
 
     //Draw souls
@@ -517,13 +501,6 @@ void RootMap::visualization(Context & cv){
             doors[i]->visualization(cv);
     }
 
-    //Draw spiketrap
-    for(unsigned i=0;i<spikes.size();i++){
-        position=spikes[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            spikes[i]->visualization(cv);
-    }
-
     //Draw movables voxels
     for(unsigned i=0;i<movables.size();i++){
         position=movables[i]->getPosition();
@@ -536,13 +513,6 @@ void RootMap::visualization(Context & cv){
         position=respawns[i]->getPosition();
         if(position.x>posHero.x-11 && position.x<posHero.x+11)
             respawns[i]->visualization(cv);
-    }
-
-    //Draw potions
-    for(unsigned i=0;i<items.size();i++){
-        position=items[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            items[i]->visualization(cv);
     }
 
     //Draw decoration object
@@ -591,11 +561,6 @@ void RootMap::updateState(GameState & gameState){
         for(unsigned i=0;i<objectGroup.size();i++)
             objectGroup[i]->updateState(gameState);
 
-        //Update projectile system
-        for(unsigned i=0;i<projectileSystem.size();i++){
-            projectileSystem[i]->updateState(gameState);
-        }
-
         //Update textregions
         for(unsigned i=0;i<regions.size();i++){
             regions[i]->updateState(gameState);
@@ -616,11 +581,6 @@ void RootMap::updateState(GameState & gameState){
             souls[i]->updateState(gameState);
         }
 
-        //Update spikeTraps
-        for(unsigned i=0;i<spikes.size();i++){
-            spikes[i]->updateState(gameState);
-        }
-
         //Update movables
         for(unsigned i=0;i<movables.size();i++){
             movables[i]->updateState(gameState);
@@ -629,24 +589,6 @@ void RootMap::updateState(GameState & gameState){
         //Update Respawn
         for(unsigned i=0;i<respawns.size();i++){
             respawns[i]->updateState(gameState);
-        }
-
-        //Update items
-        vector<Item * >::iterator itItem=items.begin();
-
-        while(itItem!=items.end()){
-            (*itItem)->updateState(gameState);
-
-            //if is not an equipment
-            if((*itItem)->isTake() && dynamic_cast<const Equipment *>(*itItem) == NULL){
-                delete (*itItem);
-                itItem = items.erase(itItem);
-            }
-            else if((*itItem)->isTake()){ //if is an equipment that was took
-                itItem = items.erase(itItem);
-            }
-            else
-                itItem++;
         }
 
         //Update title

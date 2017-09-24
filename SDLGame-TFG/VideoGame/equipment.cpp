@@ -19,6 +19,16 @@
 
 #include "equipment.h"
 
+Equipment::Equipment(){
+    notTake=true;
+    type=iWEAPON;
+    equipped=false;
+    rotation=0;
+    currentTime=SDL_GetTicks();
+}
+
+//**********************************************************************//
+
 Equipment::Equipment(const Value & equipFeatures){
 
     position=vec4f(equipFeatures["posInScene"][0].GetFloat(),equipFeatures["posInScene"][1].GetFloat(),equipFeatures["posInScene"][2].GetFloat(),1.0f);
@@ -85,6 +95,7 @@ Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int
     notTake=false;
     type=iWEAPON;
     equipped=aEquipped;
+    rotation=0;
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
@@ -103,7 +114,14 @@ Equipment::Equipment(vec3f aPos,EquipmentType atype, bool aEquipped,int aDmg,int
 //**********************************************************************//
 
 Equipment::~Equipment(){
-    delete root;
+
+    root->removeLink();
+    if(root->getCountLink()==0){
+        delete root;
+    }
+
+    if(rotation!=0)
+        delete rotation;
 }
 
 //**********************************************************************//
@@ -120,8 +138,14 @@ void Equipment::updateState(GameState & gameState){
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 
-    if(distance<=0.4){
-        if(gameState.inventoryMenu->addEquip(this)){
+    if(distance<=0.4){ //Catch the new equipement
+
+        Equipment * newEquip=new Equipment();
+        newEquip->setEquip((*this));
+        root->addLink();
+        root->addLink();
+
+        if(gameState.inventoryMenu->addEquip(newEquip)){
             notTake=false;
             transObject->translation(posInAvatar.x,posInAvatar.y,posInAvatar.z);
             soundTake->play();

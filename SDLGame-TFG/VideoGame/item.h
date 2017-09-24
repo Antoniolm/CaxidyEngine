@@ -103,6 +103,14 @@ class Item : public Object3D
         //////////////////////////////////////////////////////////////////////////
         ItemIndex getType();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return if the object will be deleted or not
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual bool isDeleting();
+
     protected:
         int value;                  // Value of the item
         NodeSceneGraph * root;      // Root of the object

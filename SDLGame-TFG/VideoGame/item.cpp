@@ -58,3 +58,9 @@ bool Item::isTake(){
 ItemIndex Item::getType(){
     return type;
 }
+
+//**********************************************************************//
+
+bool Item::isDeleting(){
+    return !notTake;
+}

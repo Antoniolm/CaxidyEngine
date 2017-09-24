@@ -280,9 +280,7 @@ class RootMap : public Object3D
         vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
         vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
         vector<Object3D *> elements;                // Vector with all the elements of the game
-        vector<Item *> items;                       // Vector of items
         vector<TextRegion *> regions;               // Vector of regions
-        vector<SpikeTrap *> spikes;                 // Vector of spikes traps
         vector<Soul *> souls;                       // Vector of spikes traps
         vector<MovableVoxel *> movables;            // Vector of movable voxels
         vector<RespawnVoxel *> respawns;            // Vector of respawn voxels
@@ -292,10 +290,10 @@ class RootMap : public Object3D
         EndMapRegion * endMapRegion;                // End region of the map
         Notification * title;                       // Title of the map
         ObjectScene * background;                   // Background of the map
-        EnemyList * enemyList;                      // List of enemies in the map
         Sound * backSound;                          // back sound of the map
         Hero * hero;                                // Hero in the map
         Mate * mate;                                // Mate in the map
+        EnemyList * enemyList;                      // List of enemies in the map
         MovieScreen * movie;                        // Screen of movie of the map
         string nextMapFile;                         // Next map
         LoaderThread * loader;                      // Loader of map
