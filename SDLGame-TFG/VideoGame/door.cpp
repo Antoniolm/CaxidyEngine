@@ -113,6 +113,12 @@ void Door::updateState(GameState & gameState ){
 
 //**********************************************************************//
 
+bool Door::isDeleting(){
+    return false;
+}
+
+//**********************************************************************//
+
 void Door::initAnimation(){
     animation=new ScriptLMD();
 

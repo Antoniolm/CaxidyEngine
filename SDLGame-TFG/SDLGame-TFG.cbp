@@ -50,6 +50,10 @@
 		<Unit filename="GraphicEngine/animation/scriptanimation.h" />
 		<Unit filename="GraphicEngine/animation/scriptlmd.cpp" />
 		<Unit filename="GraphicEngine/animation/scriptlmd.h" />
+		<Unit filename="GraphicEngine/avatar/avatar.cpp" />
+		<Unit filename="GraphicEngine/avatar/avatar.h" />
+		<Unit filename="GraphicEngine/avatar/avatarmove.cpp" />
+		<Unit filename="GraphicEngine/avatar/avatarmove.h" />
 		<Unit filename="GraphicEngine/camera.cpp" />
 		<Unit filename="GraphicEngine/camera.h" />
 		<Unit filename="GraphicEngine/celshading.cpp" />
@@ -200,10 +204,6 @@
 		<Unit filename="GraphicEngine/voxelgroup.h" />
 		<Unit filename="GraphicEngine/window.cpp" />
 		<Unit filename="GraphicEngine/window.h" />
-		<Unit filename="VideoGame/avatar/avatar.cpp" />
-		<Unit filename="VideoGame/avatar/avatar.h" />
-		<Unit filename="VideoGame/avatar/avatarmove.cpp" />
-		<Unit filename="VideoGame/avatar/avatarmove.h" />
 		<Unit filename="VideoGame/avatar/enemy.cpp" />
 		<Unit filename="VideoGame/avatar/enemy.h" />
 		<Unit filename="VideoGame/avatar/hero.cpp" />

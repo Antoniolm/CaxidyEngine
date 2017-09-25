@@ -19,8 +19,6 @@
 
 #include "avatarmove.h"
 #include "../GraphicEngine/rootmap.h"
-#include "../../VideoGame/avatar/enemy.h"
-#include "projectile.h"
 
 AvatarMove::~AvatarMove(){
 }
@@ -521,49 +519,6 @@ void AvatarMove::activeImpact(avatarDirection dirAvatar){
     isImpacted=true;
 }
 
-
-bool AvatarMove::canImpact(avatarDirection dirAvatar,const vector<Enemy *> & enemies){
-    bool result=true;
-    vec3f newPosition; //will be the next position that will go our enemy when he will be impacted
-    float distance;
-
-    switch(dirAvatar){
-    case FORWARD:
-        newPosition=vec3f(position.x,position.y,position.z+1.0);
-        break;
-    case BACKWARD:
-        newPosition=vec3f(position.x,position.y,position.z-1.0);
-        break;
-    case LEFTWARD:
-        newPosition=vec3f(position.x-1.0,position.y,position.z);
-        break;
-    case RIGHTWARD:
-        newPosition=vec3f(position.x+1.0,position.y,position.z);
-        break;
-    case FOR_LEFTWARD:
-        newPosition=vec3f(position.x-0.5,position.y,position.z+0.5);
-        break;
-    case FOR_RIGHTWARD:
-        newPosition=vec3f(position.x+0.5,position.y,position.z+0.5);
-        break;
-    case BACK_LEFTWARD:
-        newPosition=vec3f(position.x-0.5,position.y,position.z-0.5);
-        break;
-    case BACK_RIGHTWARD:
-        newPosition=vec3f(position.x+0.5,position.y,position.z-0.5);
-        break;
-    }
-
-    for(unsigned i=0;i<enemies.size();i++){
-        vec3f posEnemy=enemies[i]->getPosition();
-        distance=sqrt(pow(newPosition.x-posEnemy.x,2.0)+pow(newPosition.z-posEnemy.z,2.0));
-        if(distance<1.0) result=false;
-    }
-
-    return result;
-
-
-}
 //**********************************************************************//
 
 void AvatarMove::impactMove(float time){
@@ -601,60 +556,6 @@ void AvatarMove::changeDirection(avatarDirection aDir){
     moveAvatar->product(transHero.getMatrix());
 
     direction=aDir;
-}
-
-//**********************************************************************//
-
-Projectile * AvatarMove::createProjectile(float damage){
-    vec3f posProject;
-    vec3f velocityProject;
-    avatarDirection dirProject=RIGHTWARD;
-
-    switch(direction){
-        case FORWARD:
-                posProject=vec3f(position.x,position.y,position.z+0.5);
-                velocityProject=vec3f(0.0,0.0,4.0);
-                dirProject=FORWARD;
-            break;
-        case BACKWARD:
-                posProject=vec3f(position.x,position.y,position.z-0.5);
-                velocityProject=vec3f(0.0,0.0,-4.0);
-                dirProject=BACKWARD;
-            break;
-        case LEFTWARD:
-                posProject=vec3f(position.x-0.5,position.y,position.z);
-                velocityProject=vec3f(-4.0,0.0,0.0);
-                dirProject=LEFTWARD;
-            break;
-        case RIGHTWARD:
-                posProject=vec3f(position.x+0.5,position.y,position.z);
-                velocityProject=vec3f(4.0,0.0,0.0);
-                dirProject=RIGHTWARD;
-            break;
-        case FOR_LEFTWARD:
-                posProject=vec3f(position.x-0.5,position.y,position.z+0.5);
-                velocityProject=vec3f(-4.0,0.0,4.0);
-                dirProject=FOR_LEFTWARD;
-            break;
-        case FOR_RIGHTWARD:
-                posProject=vec3f(position.x+0.5,position.y,position.z+0.5);
-                velocityProject=vec3f(4.0,0.0,4.0);
-                dirProject=FOR_RIGHTWARD;
-            break;
-        case BACK_LEFTWARD:
-                posProject=vec3f(position.x-0.5,position.y,position.z-0.5);
-                velocityProject=vec3f(-4.0,0.0,-4.0);
-                dirProject=BACK_LEFTWARD;
-            break;
-        case BACK_RIGHTWARD:
-                posProject=vec3f(position.x+0.5,position.y,position.z-0.5);
-                velocityProject=vec3f(4.0,0.0,-4.0);
-                dirProject=BACK_RIGHTWARD;
-
-            break;
-    }
-
-    return new Projectile(posProject,velocityProject,dirProject,damage,"ARROW","mARCHENEMY");
 }
 
 //**********************************************************************//

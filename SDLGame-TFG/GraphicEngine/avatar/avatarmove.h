@@ -27,8 +27,6 @@
 #include "../GraphicEngine/objectscene.h"
 
 class RootMap;
-class Enemy;
-class Projectile;
 class AvatarMove: public Avatar
 {
     public:
@@ -141,16 +139,6 @@ class AvatarMove: public Avatar
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will manage the activated of an impact movement
-        *    @param dirAvatar -> The direction of the avatar that did the hit
-        *    @param enemies -> List of enemies that the avatar can't go through them
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool canImpact(avatarDirection dirAvatar,const vector<Enemy *> & enemies);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    It will manage an impactMove that was activated in our avatar
         *    @param time -> The time of our application
         *    \return void
@@ -166,15 +154,6 @@ class AvatarMove: public Avatar
         */
         //////////////////////////////////////////////////////////////////////////
         void changeDirection(avatarDirection aDir);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will create a projectile
-        *    @param damage -> the damage of the created projectile
-        *    \return Projectile *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Projectile * createProjectile(float damage);
 
     protected:
         RootMap * currentMap;                   // Current Map

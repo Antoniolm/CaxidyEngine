@@ -37,8 +37,6 @@ enum doorDirection{
     dSideWays
 };
 
-
-
 class SoulCarrier;
 class Door : public ObjectScene
 {
@@ -76,6 +74,14 @@ class Door : public ObjectScene
         */
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return if the object will be deleted or not
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual bool isDeleting();
     protected:
 
     private:
