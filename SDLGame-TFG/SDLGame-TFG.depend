@@ -4820,6 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
+1506360818 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -5547,11 +5548,11 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
 	"loadingscreen.h"
 
-1505989505 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
+1506361470 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
 	"mainmenu.h"
 	"game.h"
 
-1506095131 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1506361521 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5560,6 +5561,7 @@
 	"../GraphicEngine/matrix/linearmovement.h"
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/rootmap.h"
+	"rootmapgame.h"
 	"../GraphicEngine/camera.h"
 	"../GraphicEngine/matrix/structdata.h"
 	"../GraphicEngine/text.h"
@@ -5650,6 +5652,7 @@
 	"region.h"
 	"gamestate.h"
 
+1506360469 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5773,7 +5776,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1506180362 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1506361547 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1506269154 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -6011,9 +6014,10 @@
 	"avatarmove.h"
 	"../GraphicEngine/rootmap.h"
 
-1506358280 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
+1506361201 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
 	"rootmapgame.h"
+	"../GraphicEngine/mesh/objectgroup.h"
 
-1506360016 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
+1506361202 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
 	"../GraphicEngine/rootmap.h"
 

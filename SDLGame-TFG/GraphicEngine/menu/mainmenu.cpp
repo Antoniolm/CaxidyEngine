@@ -169,7 +169,7 @@ void MainMenu::updateState(GameState & gameState){
                     gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,10,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
                     SavedManager::getInstance()->save("",gameState,0);
-                    gameState.rootMap=new RootMap("./maps/map00.json",true);
+                    gameState.rootMap=new RootMapGame("./maps/map00.json",true);
                     checkUserProgress();
                     openSound->play();
 
@@ -188,7 +188,7 @@ void MainMenu::updateState(GameState & gameState){
                     if(gameState.rootMap!=0)
                         delete gameState.rootMap;
 
-                    gameState.rootMap=new RootMap(fileLoad,true);
+                    gameState.rootMap=new RootMapGame(fileLoad,true);
                     openSound->play();
 
                 break;

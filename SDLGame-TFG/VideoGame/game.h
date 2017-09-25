@@ -28,6 +28,7 @@
 #include "../GraphicEngine/matrix/linearmovement.h"
 #include "../GraphicEngine/matrix/axisrotation.h"
 #include "../GraphicEngine/rootmap.h"
+#include "rootmapgame.h"
 #include "../GraphicEngine/camera.h"
 #include "../GraphicEngine/matrix/structdata.h"
 #include "../GraphicEngine/text.h"

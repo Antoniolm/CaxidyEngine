@@ -317,7 +317,7 @@ void Game::loop(){
                     delete gameState.rootMap;
 
                     //Save the progress and create the new map
-                    gameState.rootMap=new RootMap(fileMap,true);
+                    gameState.rootMap=new RootMapGame(fileMap,true);
                 }
                 else
                     gameState.creditScreen->activate();
