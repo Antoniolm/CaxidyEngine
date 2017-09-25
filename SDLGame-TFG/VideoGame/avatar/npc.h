@@ -21,7 +21,7 @@
 #define NPC_H
 
 #include "../GraphicEngine/ia/ianpc.h"
-#include "avatar.h"
+#include "../../GraphicEngine/avatar/avatar.h"
 #include "../GraphicEngine/mesh/mesh.h"
 #include "../GraphicEngine/collection/meshcollection.h"
 #include "../GraphicEngine/text.h"

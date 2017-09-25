@@ -20,8 +20,8 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
-#include "avatar/avatar.h"
-#include "avatar/avatarmove.h"
+#include "../../GraphicEngine/avatar/avatar.h"
+#include "../../GraphicEngine/avatar/avatarmove.h"
 #include "../GraphicEngine/mesh/mesh.h"
 #include "../GraphicEngine/material/material.h"
 #include "../GraphicEngine/collection/meshcollection.h"

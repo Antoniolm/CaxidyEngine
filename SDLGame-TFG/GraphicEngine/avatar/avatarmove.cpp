@@ -19,7 +19,7 @@
 
 #include "avatarmove.h"
 #include "../GraphicEngine/rootmap.h"
-#include "enemy.h"
+#include "../../VideoGame/avatar/enemy.h"
 #include "projectile.h"
 
 AvatarMove::~AvatarMove(){

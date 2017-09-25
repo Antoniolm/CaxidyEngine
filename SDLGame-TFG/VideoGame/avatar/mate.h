@@ -32,7 +32,7 @@
 #include "../GraphicEngine/text.h"
 #include "../GraphicEngine/animation/animationlist.h"
 #include "../lib/rapidjson/document.h"
-#include "avatar.h"
+#include "../../GraphicEngine/avatar/avatar.h"
 
 using namespace rapidjson;
 

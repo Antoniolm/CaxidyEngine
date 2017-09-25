@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506282003 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506288924 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4931,9 +4931,9 @@
 	"collection/materialcollection.h"
 	"matrix/structdata.h"
 
-1505834213 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
-	"avatar.h"
-	"avatarmove.h"
+1506336623 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
+	"../../GraphicEngine/avatar/avatar.h"
+	"../../GraphicEngine/avatar/avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
 	"../GraphicEngine/collection/meshcollection.h"
 	"../GraphicEngine/collection/materialcollection.h"
@@ -5034,7 +5034,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../lib/rapidjson/document.h"
 
-1503845795 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.h
+1506336630 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.h
 	"../GraphicEngine/object3d.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/material/material.h"
@@ -5047,11 +5047,11 @@
 	"../GraphicEngine/text.h"
 	"../GraphicEngine/animation/animationlist.h"
 	"../lib/rapidjson/document.h"
-	"avatar.h"
+	"../../GraphicEngine/avatar/avatar.h"
 
-1503761661 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
+1506336638 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
 	"../GraphicEngine/ia/ianpc.h"
-	"avatar.h"
+	"../../GraphicEngine/avatar/avatar.h"
 	"../GraphicEngine/mesh/mesh.h"
 	"../GraphicEngine/collection/meshcollection.h"
 	"../GraphicEngine/text.h"
@@ -5064,9 +5064,9 @@
 	<vector>
 	<string>
 
-1504264217 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.h
-	"avatar.h"
-	"avatarmove.h"
+1506336606 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.h
+	"../../GraphicEngine/avatar/avatar.h"
+	"../../GraphicEngine/avatar/avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
 	"../GraphicEngine/collection/meshcollection.h"
 	"../GraphicEngine/animation/scriptlmd.h"
@@ -5090,9 +5090,9 @@
 	<list>
 	"../lib/rapidjson/document.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.h
-	"avatar/avatar.h"
-	"avatar/avatarmove.h"
+1506336659 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.h
+	"../../GraphicEngine/avatar/avatar.h"
+	"../../GraphicEngine/avatar/avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
 	"../GraphicEngine/material/material.h"
 	"../GraphicEngine/collection/meshcollection.h"
@@ -5527,7 +5527,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrix4fdynamic.cpp
 	"matrix4fdynamic.h"
 
-1506280598 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixscript.cpp
+1506282229 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixscript.cpp
 	"matrixscript.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\matrixstatic.cpp
@@ -5651,7 +5651,7 @@
 	"region.h"
 	"gamestate.h"
 
-1506279828 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1506282493 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5993,4 +5993,19 @@
 1506095685 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.h
 	"context/shader.h"
 	"gamestate.h"
+
+1504091520 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\avatar\avatar.h
+	"../GraphicEngine/object3d.h"
+	"../GraphicEngine/context/context.h"
+	"../GraphicEngine/nodescenegraph.h"
+
+1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\avatar\avatarmove.h
+	"avatar.h"
+	"../GraphicEngine/matrix/matrix4f.h"
+	"../GraphicEngine/matrix/acceleratedmovement.h"
+	"../GraphicEngine/matrix/linearmovement.h"
+	"../GraphicEngine/objectscene.h"
+
+1504091516 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\avatar\avatar.cpp
+	"avatar.h"
 

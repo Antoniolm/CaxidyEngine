@@ -21,8 +21,8 @@
 #define ENEMY_H
 
 
-#include "avatar.h"
-#include "avatarmove.h"
+#include "../../GraphicEngine/avatar/avatar.h"
+#include "../../GraphicEngine/avatar/avatarmove.h"
 #include "../GraphicEngine/mesh/mesh.h"
 #include "../GraphicEngine/collection/meshcollection.h"
 #include "../GraphicEngine/animation/scriptlmd.h"
