@@ -123,6 +123,16 @@ class Enemy: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    The method will manage the activated of an impact movement
+        *    @param dirAvatar -> The direction of the avatar that did the hit
+        *    @param enemies -> List of enemies that the avatar can't go through them
+        *    \return bool
+        */
+        //////////////////////////////////////////////////////////////////////////
+        bool canImpact(avatarDirection dirAvatar,const vector<Enemy *> & enemies);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    Enemy will take damage when the hero use that method(but depend of some conditions)
         *    @param posAvatar -> the position of our avatar
         *    @param dirAvatar -> the direction of our avatar

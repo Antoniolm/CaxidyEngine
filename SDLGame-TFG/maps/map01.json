@@ -116,7 +116,7 @@
         }
     ],
 
-    "hero":{    "position":[4,2.0,-10],
+    "hero":{    "position":[205.5,2.0,-5.5],
                 "life":100,
                 "damage":10,
                 "armour":5,
@@ -143,7 +143,7 @@
                             "imgProfile":"mSWORD",
                             "damage":-25,
                             "life":25,
-                            "armour":25
+                            "armour":5
                         },
                 "weaponRanged":{  "posInAvatar":[0.0,-0.4,0.0],
                             "posInScene":[0.0,0.0,0.0],
@@ -155,7 +155,7 @@
                             "imgProfile":"mARCHENEMY",
                             "damage":-20,
                             "life":25,
-                            "armour":25
+                            "armour":5
                         },
 
                 "shield":{  "posInAvatar":[-0.275,0.0,0.0],
@@ -167,8 +167,8 @@
                             "geometry":"SHIELD", 
                             "imgProfile":"mSHIELD",
                             "damage":0,
-                            "life":0,
-                            "armour":25
+                            "life":25,
+                            "armour":10
                         }
             },
 
@@ -227,7 +227,7 @@
                 "body":"ECHEST",
                 "hand":"EHAND",
                 "leg":"EFOOT",
-                "weapon":{  "posInAvatar":[0.0,-0.1,0.4],
+                "weapon":{  "posInAvatar":[0.0,-0.05,0.2],
                             "posInScene":[0.0,0.0,0.0],
                             "type":1,
                             "equipped":false,
@@ -253,7 +253,7 @@
                 "body":"ECHEST",
                 "hand":"EHAND",
                 "leg":"EFOOT",
-                "weapon":{  "posInAvatar":[0.0,-0.1,0.4],
+                "weapon":{  "posInAvatar":[0.0,-0.05,0.2],
                             "posInScene":[0.0,0.0,0.0],
                             "type":1,
                             "equipped":false,
@@ -279,7 +279,7 @@
                 "body":"RCHEST",
                 "hand":"RHAND",
                 "leg":"RFOOT",
-                "weapon":{  "posInAvatar":[0.0,-0.4,0.0],
+                "weapon":{  "posInAvatar":[0.0,-0.2,0.0],
                             "posInScene":[0.0,0.0,0.0],
                             "type":0,
                             "equipped":false,

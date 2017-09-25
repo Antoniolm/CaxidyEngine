@@ -312,6 +312,15 @@ class Hero: public AvatarMove
         //////////////////////////////////////////////////////////////////////////
         void takeDamage(float value);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will create a projectile
+        *    @param damage -> the damage of the created projectile
+        *    \return Projectile *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Projectile * createProjectile(float damage);
+
     protected:
 
     private:
