@@ -413,3 +413,20 @@ void RootMapGame::initialize(string fileMap){
     loading=false;
 }
 
+//**********************************************************************//
+
+Hero * RootMapGame::getHero(){
+    return hero;
+}
+
+//**********************************************************************//
+
+Mate * RootMapGame::getMate(){
+    return mate;
+}
+//**********************************************************************//
+
+EnemyList * RootMapGame::getEnemyList(){
+    return enemyList;
+}
+
