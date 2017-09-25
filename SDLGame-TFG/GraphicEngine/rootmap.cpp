@@ -28,7 +28,7 @@ RootMap::RootMap(){
 //**********************************************************************//
 
 RootMap::RootMap(string fileMap,bool flagThread){
-    RootMap::loading=true;
+    loading=true;
     hero=0;
     if(flagThread){
         loader=new LoaderThread(this,fileMap);
@@ -433,12 +433,6 @@ void RootMap::initialize(string fileMap){
     currentTime=SDL_GetTicks();
 
     loading=false;
-}
-
-//**********************************************************************//
-
-void RootMap::setHero(Hero * theHero){
-    hero=theHero;
 }
 
 //**********************************************************************//

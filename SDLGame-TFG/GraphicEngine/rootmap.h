@@ -101,7 +101,6 @@ class MovieScreen;
 class Item;
 class Potion;
 class Coin;
-class Weapon;
 
 class RootMap : public Object3D
 {
@@ -127,7 +126,7 @@ class RootMap : public Object3D
         *    \return void
         */
         /////////////////////////////////////////////////////////////////////////
-        void initialize(string fileMap);
+        virtual void initialize(string fileMap);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -136,7 +135,7 @@ class RootMap : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void visualization(Context & vis);
+        virtual void visualization(Context & vis);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -146,7 +145,7 @@ class RootMap : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void updateState(GameState & gameState);
+        virtual void updateState(GameState & gameState);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -190,14 +189,6 @@ class RootMap : public Object3D
         */
         //////////////////////////////////////////////////////////////////////////
         void removeCollision(vec2f voxelPosition,int objID);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will set the hero to our map
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setHero(Hero * theHero);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -273,8 +264,6 @@ class RootMap : public Object3D
 
     protected:
 
-    private:
-        void deleteObject3d(Object3D * obj);
         vector<int> indexMap[500][500];             // Array of vector for spacial indexation
         vector<ObjectScene *> objs;                 // Vector of objects scene
         vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
@@ -293,6 +282,9 @@ class RootMap : public Object3D
         string nextMapFile;                         // Next map
         LoaderThread * loader;                      // Loader of map
         bool loading;                               // Flag the map is loading
+
+    private:
+        void deleteObject3d(Object3D * obj);
 };
 
 #endif // ROOTMAP_H
