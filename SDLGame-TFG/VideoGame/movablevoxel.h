@@ -30,6 +30,8 @@
 #include "../GraphicEngine/collection/materialcollection.h"
 #include "../GraphicEngine/collection/soundcollection.h"
 #include "../lib/rapidjson/document.h"
+#include "avatar/enemy.h"
+#include "enemylist.h"
 
 using namespace rapidjson;
 

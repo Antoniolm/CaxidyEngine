@@ -39,12 +39,7 @@
 #include "objectscene.h"
 #include "../VideoGame/avatar/hero.h"
 #include "../VideoGame/avatar/mate.h"
-#include "../VideoGame/avatar/npc.h"
 #include "../VideoGame/avatar/enemy.h"
-#include "../VideoGame/projectilesystem.h"
-#include "../VideoGame/soul.h"
-#include "../VideoGame/soulcarrier.h"
-#include "../VideoGame/door.h"
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "../lib/rapidjson/document.h"
@@ -62,45 +57,19 @@
 #include "notification.h"
 #include "loaderthread.h"
 #include "menu/moviescreen.h"
-#include "../VideoGame/spiketrap.h"
-#include "../VideoGame/trapdoor.h"
-#include "../VideoGame/rottenvoxel.h"
-#include "../VideoGame/movablevoxel.h"
-#include "../VideoGame/respawnvoxel.h"
-#include "../VideoGame/slidetrap.h"
-#include "../VideoGame/jumpbutton.h"
-#include "../VideoGame/item.h"
-#include "../VideoGame/potion.h"
-#include "../VideoGame/coin.h"
 
 using namespace std;
 
 class Hero;
 class Mate;
-class Npc;
 class Enemy;
 class EnemyList;
-class ParticleSystem;
-class ProjectileSystem;
-class Soul;
-class SoulCarrier;
-class Door;
 class ObjectGroup;
 class TextRegion;
 class EndMapRegion;
 class Notification;
-class SpikeTrap;
-class TrapDoor;
-class RottenVoxel;
-class MovableVoxel;
-class RespawnVoxel;
-class SlideTrap;
-class JumpButton;
 class LoaderThread;
 class MovieScreen;
-class Item;
-class Potion;
-class Coin;
 
 class RootMap : public Object3D
 {

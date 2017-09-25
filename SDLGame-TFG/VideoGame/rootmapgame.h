@@ -21,8 +21,40 @@
 #define ROOTMAPGAME_H
 
 #include "../GraphicEngine/rootmap.h"
+#include "avatar/npc.h"
+#include "avatar/enemy.h"
+#include "projectilesystem.h"
+#include "soul.h"
+#include "soulcarrier.h"
+#include "door.h"
+#include "spiketrap.h"
+#include "trapdoor.h"
+#include "rottenvoxel.h"
+#include "movablevoxel.h"
+#include "respawnvoxel.h"
+#include "slidetrap.h"
+#include "jumpbutton.h"
+#include "item.h"
+#include "potion.h"
+#include "coin.h"
 
 class ObjectGroup;
+class Npc;
+class ProjectileSystem;
+class Soul;
+class SoulCarrier;
+class Door;
+class SpikeTrap;
+class TrapDoor;
+class RottenVoxel;
+class MovableVoxel;
+class RespawnVoxel;
+class SlideTrap;
+class JumpButton;
+class Item;
+class Potion;
+class Coin;
+
 class RootMapGame : public RootMap
 {
     public:

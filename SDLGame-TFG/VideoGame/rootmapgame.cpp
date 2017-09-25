@@ -19,6 +19,7 @@
 
 #include "rootmapgame.h"
 #include "../GraphicEngine/mesh/objectgroup.h"
+#include "enemylist.h"
 
 RootMapGame::RootMapGame()
 {

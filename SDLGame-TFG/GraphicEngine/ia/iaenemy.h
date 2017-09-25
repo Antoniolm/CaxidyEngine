@@ -24,6 +24,7 @@
 #include <iostream>
 #include <math.h>
 #include "../VideoGame/enemylist.h"
+#include "../VideoGame/avatar/enemy.h"
 
 using namespace std;
 

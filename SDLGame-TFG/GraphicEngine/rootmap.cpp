@@ -20,7 +20,7 @@
 #include "rootmap.h"
 #include "../VideoGame/enemylist.h"
 #include "mesh/objectgroup.h"
-#include <stdlib.h>     /* srand, rand */
+#include <stdlib.h>
 
 RootMap::RootMap(){
 }
