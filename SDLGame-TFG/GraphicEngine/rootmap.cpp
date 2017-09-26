@@ -18,7 +18,6 @@
 // *********************************************************************
 
 #include "rootmap.h"
-#include "../VideoGame/enemylist.h"
 #include "mesh/objectgroup.h"
 #include <stdlib.h>
 

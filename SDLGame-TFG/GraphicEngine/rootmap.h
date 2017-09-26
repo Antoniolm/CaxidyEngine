@@ -62,7 +62,6 @@
 using namespace std;
 
 class Hero;
-class EnemyList;
 class ObjectGroup;
 class ParticleSystem;
 class TextRegion;
@@ -224,7 +223,6 @@ class RootMap : public Object3D
         ObjectScene * background;                   // Background of the map
         Sound * backSound;                          // back sound of the map
         Hero * hero;                                // Hero in the map
-        EnemyList * enemyList;                      // List of enemies in the map
         MovieScreen * movie;                        // Screen of movie of the map
         string nextMapFile;                         // Next map
         LoaderThread * loader;                      // Loader of map

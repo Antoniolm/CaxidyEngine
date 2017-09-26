@@ -40,6 +40,7 @@
 #include "coin.h"
 
 class ObjectGroup;
+class EnemyList;
 class Npc;
 class ProjectileSystem;
 class Soul;
@@ -119,6 +120,7 @@ class RootMapGame : public RootMap
 
     private:
         Mate * mate;                                // Mate in the map
+        EnemyList * enemyList;                      // List of enemies in the map
 };
 
 #endif // ROOTMAPGAME_H
