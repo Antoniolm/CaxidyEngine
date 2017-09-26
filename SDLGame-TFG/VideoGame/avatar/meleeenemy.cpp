@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "meleeenemy.h"
+#include "../rootmapgame.h"
 
 MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
 {
@@ -279,7 +280,7 @@ void MeleeEnemy::updateState(GameState & gameState){
 
     if(enemyActivate){ //If enemy is activated
         if(IADelay<(time-100)){ //Delay IA
-            currentMove=IA->nextPosition(vec3f(position.x,position.y,position.z),posHero,rootMap->getEnemyList());
+            currentMove=IA->nextPosition(vec3f(position.x,position.y,position.z),posHero,dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList());
             IADelay=time;
         }
         if((currentMove.second.x!=0.0 || currentMove.second.y!=0.0 || currentMove.second.z!=0.0)&& !isImpacted && !isHitting){ //IA-> is not near of our hero

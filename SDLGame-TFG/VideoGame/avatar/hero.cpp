@@ -19,7 +19,8 @@
 
 #include "hero.h"
 #include "../equipment.h"
-#include "projectile.h"
+#include "../rootmapgame.h"
+#include "../projectile.h"
 
 Hero::Hero(const rapidjson::Value & heroFeatures)
 {
@@ -550,7 +551,7 @@ void Hero::updateState(GameState & gameState){
 
     //Check enemies for attack
     if(isHitting){
-        vector<Enemy *> enemies=rootMap->getEnemyList()->getEnemies();
+        vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
         vec3f posEnemy;float distance;
         int currentIndexAnimation;
 

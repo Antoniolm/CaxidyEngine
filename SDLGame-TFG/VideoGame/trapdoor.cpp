@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "trapdoor.h"
+#include "rootmapgame.h"
 
 TrapDoor::TrapDoor(const Value & trapDoorFeatures, int id){
     position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat()+0.1f,1.0);
@@ -103,7 +104,7 @@ void TrapDoor::updateState(GameState & gameState){
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
-    bool enemyIn=checkEnemies(gameState.rootMap->getEnemyList()->getEnemies());
+    bool enemyIn=checkEnemies(dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies());
 
     //if hero is near of a disactivated trap
     if(!activated && ((distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)) || enemyIn ) ){

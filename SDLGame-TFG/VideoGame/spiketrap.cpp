@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "spiketrap.h"
+#include "rootmapgame.h"
 
 SpikeTrap::SpikeTrap(const Value & spikeFeatures)
 {
@@ -81,7 +82,7 @@ void SpikeTrap::updateState(GameState & gameState ){
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
-    vector<Enemy *> enemies=gameState.rootMap->getEnemyList()->getEnemies();
+    vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
     std::vector<int> enemiesIn=checkEnemies(enemies);
 
     //if hero is near of a disactivated trap

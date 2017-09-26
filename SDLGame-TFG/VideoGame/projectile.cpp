@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "projectile.h"
+#include "rootmapgame.h"
 
 Projectile::Projectile(vec3f aPosition,vec3f aVelocity,avatarDirection aDir,float aDamage,string mesh,string material)
 {
@@ -94,7 +95,7 @@ void Projectile::updateState(GameState & gameState){
 
 
     //Check if the projectile has hit with some enemy
-    vector<Enemy *> enemies=rootMap->getEnemyList()->getEnemies();
+    vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
     vec3f posEnemy;
     float enemyDistance;
     for(unsigned i=0;i<enemies.size() && live;i++){

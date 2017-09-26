@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506450873 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506452831 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4914,7 +4914,7 @@
 	"collection/materialcollection.h"
 	"matrix/structdata.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
+1506453042 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.h
 	"../../GraphicEngine/avatar/avatar.h"
 	"../../GraphicEngine/avatar/avatarmove.h"
 	"../GraphicEngine/mesh/mesh.h"
@@ -5638,7 +5638,7 @@
 	"region.h"
 	"gamestate.h"
 
-1506449104 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1506452817 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5709,10 +5709,11 @@
 	"enemy.h"
 	"../GraphicEngine/ia/iaenemy.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
+1506453229 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
 	"../equipment.h"
-	"projectile.h"
+	"../rootmapgame.h"
+	"../projectile.h"
 
 1503254019 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.h
 	"equipment.h"
@@ -5728,8 +5729,9 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\mate.cpp
 	"mate.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.cpp
+1506453347 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.cpp
 	"meleeenemy.h"
+	"../rootmapgame.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.h
 	"enemy.h"
@@ -5741,8 +5743,9 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.cpp
 	"npc.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.cpp
+1506453427 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.cpp
 	"rangedenemy.h"
+	"../rootmapgame.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.h
 	"enemy.h"
@@ -5771,8 +5774,9 @@
 1502885862 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\itemlist.cpp
 	"itemlist.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.cpp
+1506453721 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectile.cpp
 	"projectile.h"
+	"rootmapgame.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\projectilesystem.cpp
 	"projectilesystem.h"
@@ -5783,8 +5787,9 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soulcarrier.cpp
 	"soulcarrier.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.cpp
+1506453891 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\spiketrap.cpp
 	"spiketrap.h"
+	"rootmapgame.h"
 
 1503254064 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
@@ -5812,8 +5817,9 @@
 	"avatar/enemy.h"
 	"enemylist.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
+1506453976 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
 	"trapdoor.h"
+	"rootmapgame.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rottenvoxel.cpp
 	"rottenvoxel.h"
@@ -5828,8 +5834,9 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
+1506453697 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
 	"movablevoxel.h"
+	"rootmapgame.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
 	"../GraphicEngine/objectscene.h"

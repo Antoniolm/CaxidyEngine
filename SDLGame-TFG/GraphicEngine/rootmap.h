@@ -164,14 +164,6 @@ class RootMap : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will return the enemyList of our map
-        *    \return EnemyList *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        EnemyList * getEnemyList();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    It will activate the light of our map
         *    \return void
         */

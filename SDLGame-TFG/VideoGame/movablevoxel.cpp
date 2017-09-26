@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "movablevoxel.h"
+#include "rootmapgame.h"
 
 MovableVoxel::MovableVoxel(const Value & movableFeatures, const vector<RespawnVoxel*> & respawns , int id){
     position=vec4f(movableFeatures["position"][0].GetFloat(),movableFeatures["position"][1].GetFloat(),movableFeatures["position"][2].GetFloat()+0.1f,1.0);
@@ -87,6 +88,8 @@ void MovableVoxel::updateState(GameState & gameState){
     position.y=pos.y;
 
     //If the hero repawn the movable voxel
+    vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
+
     if(respawn->isActivated() && ((int)position.x!=(int)defaultPosition.x || (int)position.z!=(int)defaultPosition.z)){
         gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
 
@@ -104,34 +107,38 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case FRONT
         if(hero->getDirection()==FORWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z+1.0f))==0
-           && !checkEnemies(vec3f(position.x,position.y,position.z+1.0f),gameState.rootMap->getEnemyList()->getEnemies())
+           && !checkEnemies(vec3f(position.x,position.y,position.z+1.0f),enemies)
            && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
-            currentDir=FORWARD;
-            activated=true;
+
+                currentDir=FORWARD;
+                activated=true;
         }
 
         // Case BACK
         if(hero->getDirection()==BACKWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z-1.0f))==0
-           && !checkEnemies(vec3f(position.x,position.y,position.z-1.0f),gameState.rootMap->getEnemyList()->getEnemies())
+           && !checkEnemies(vec3f(position.x,position.y,position.z-1.0f),enemies)
            && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
-            currentDir=BACKWARD;
-            activated=true;
+
+                currentDir=BACKWARD;
+                activated=true;
         }
 
         // Case LEFT
         if(hero->getDirection()==LEFTWARD && gameState.rootMap->collision(vec3f(position.x-1.0f,position.y,position.z))==0
-           && !checkEnemies(vec3f(position.x-1.0f,position.y,position.z),gameState.rootMap->getEnemyList()->getEnemies())
+           && !checkEnemies(vec3f(position.x-1.0f,position.y,position.z),enemies)
            && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
-            currentDir=LEFTWARD;
-            activated=true;
+
+                currentDir=LEFTWARD;
+                activated=true;
         }
 
         // Case RIGHT
         if(hero->getDirection()==RIGHTWARD && gameState.rootMap->collision(vec3f(position.x+1.0f,position.y,position.z))==0
-           && !checkEnemies(vec3f(position.x+1.0f,position.y,position.z),gameState.rootMap->getEnemyList()->getEnemies())
+           && !checkEnemies(vec3f(position.x+1.0f,position.y,position.z),enemies)
            && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
-            currentDir=RIGHTWARD;
-            activated=true;
+
+                currentDir=RIGHTWARD;
+                activated=true;
         }
         if(activated){
             gameState.controller->consumeButtons();

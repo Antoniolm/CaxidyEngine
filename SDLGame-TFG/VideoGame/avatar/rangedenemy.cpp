@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "rangedenemy.h"
+#include "../rootmapgame.h"
 
 RangedEnemy::RangedEnemy(){
 
@@ -311,10 +312,10 @@ void RangedEnemy::updateState(GameState & gameState){
     if(enemyActivate){ //If enemy is activated
         if(IADelay<(time-50)){ //Delay IA
             if(sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0))>4.0) //if enemy escape from the hero
-                currentMove=secondIA->nextPosition(vec3f(position.x,position.y,position.z),posHero,rootMap->getEnemyList());
+                currentMove=secondIA->nextPosition(vec3f(position.x,position.y,position.z),posHero,dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList());
 
             else //if enemy follow the hero
-                currentMove=IA->nextPosition(vec3f(position.x,position.y,position.z),posHero,rootMap->getEnemyList());
+                currentMove=IA->nextPosition(vec3f(position.x,position.y,position.z),posHero,dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList());
 
             IADelay=time;
         }
