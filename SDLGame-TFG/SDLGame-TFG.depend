@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506362746 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506418606 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4840,12 +4840,6 @@
 	"objectscene.h"
 	"../VideoGame/avatar/hero.h"
 	"../VideoGame/avatar/mate.h"
-	"../VideoGame/avatar/npc.h"
-	"../VideoGame/avatar/enemy.h"
-	"../VideoGame/projectilesystem.h"
-	"../VideoGame/soul.h"
-	"../VideoGame/soulcarrier.h"
-	"../VideoGame/door.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
 	"../lib/rapidjson/document.h"
@@ -4863,16 +4857,6 @@
 	"notification.h"
 	"loaderthread.h"
 	"menu/moviescreen.h"
-	"../VideoGame/spiketrap.h"
-	"../VideoGame/trapdoor.h"
-	"../VideoGame/rottenvoxel.h"
-	"../VideoGame/movablevoxel.h"
-	"../VideoGame/respawnvoxel.h"
-	"../VideoGame/slidetrap.h"
-	"../VideoGame/jumpbutton.h"
-	"../VideoGame/item.h"
-	"../VideoGame/potion.h"
-	"../VideoGame/coin.h"
 
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\nodescenegraph.h
 	"object3d.h"
@@ -4925,7 +4909,7 @@
 	"collection/materialcollection.h"
 	<stdlib.h>
 
-1506183752 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\objectscene.h
+1506420615 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\objectscene.h
 	"object3d.h"
 	"matrix/matrix4f.h"
 	"collection/materialcollection.h"
@@ -5150,7 +5134,7 @@
 	"stream.h"
 	<cstdio>
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.h
+1506420451 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.h
 	"objectscene.h"
 	"../lib/rapidjson/document.h"
 	"nodescenegraph.h"
@@ -5437,7 +5421,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\controller\keyboardcontroller.cpp
 	"keyboardcontroller.h"
 
-1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.cpp
+1506421156 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\decorationobject.cpp
 	"decorationobject.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
@@ -5459,11 +5443,12 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.cpp
 	"iaenemy.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.h
+1506376974 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iaenemy.h
 	"matrix/structdata.h"
 	<iostream>
 	<math.h>
 	"../VideoGame/enemylist.h"
+	"../VideoGame/avatar/enemy.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\ia\iameleeenemy.cpp
 	"iameleeenemy.h"
@@ -5652,7 +5637,7 @@
 	"region.h"
 	"gamestate.h"
 
-1506362007 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1506419715 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -5803,7 +5788,7 @@
 1503254064 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\weapon.cpp
 	"weapon.h"
 
-1504030711 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
+1506362848 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\camera.cpp
 	"camera.h"
 	"rootmap.h"
 
@@ -5814,7 +5799,7 @@
 	"moviescreen.h"
 	"gamestate.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
+1506377420 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.h
 	"../GraphicEngine/objectscene.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
@@ -5823,6 +5808,8 @@
 	"../GraphicEngine/collection/materialcollection.h"
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
+	"avatar/enemy.h"
+	"enemylist.h"
 
 1506266688 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\trapdoor.cpp
 	"trapdoor.h"
@@ -5843,7 +5830,7 @@
 1504209911 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.cpp
 	"movablevoxel.h"
 
-1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
+1506377296 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\movablevoxel.h
 	"../GraphicEngine/objectscene.h"
 	"respawnvoxel.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5854,6 +5841,8 @@
 	"../GraphicEngine/collection/materialcollection.h"
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
+	"avatar/enemy.h"
+	"enemylist.h"
 
 1506279813 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\respawnvoxel.cpp
 	"respawnvoxel.h"
@@ -6014,10 +6003,27 @@
 	"avatarmove.h"
 	"../GraphicEngine/rootmap.h"
 
-1506361201 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
+1506375386 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
 	"rootmapgame.h"
 	"../GraphicEngine/mesh/objectgroup.h"
+	"enemylist.h"
 
-1506362699 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
+1506376608 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
 	"../GraphicEngine/rootmap.h"
+	"avatar/npc.h"
+	"avatar/enemy.h"
+	"projectilesystem.h"
+	"soul.h"
+	"soulcarrier.h"
+	"door.h"
+	"spiketrap.h"
+	"trapdoor.h"
+	"rottenvoxel.h"
+	"movablevoxel.h"
+	"respawnvoxel.h"
+	"slidetrap.h"
+	"jumpbutton.h"
+	"item.h"
+	"potion.h"
+	"coin.h"
 

@@ -348,8 +348,8 @@ void Hero::visualization(Context & cv){
     }
 
     //Update visual range
-    cv.minVisualPosition=vec3f(position.x-8,position.y-8,position.z);
-    cv.maxVisualPosition=vec3f(position.x+8,position.y+8,position.z);
+    cv.minVisualPosition=vec3f(position.x-11,position.y-11,position.z);
+    cv.maxVisualPosition=vec3f(position.x+11,position.y+11,position.z);
 }
 
 //**********************************************************************//

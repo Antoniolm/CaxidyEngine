@@ -80,7 +80,6 @@ EnemyList * RootMap::getEnemyList(){
 //**********************************************************************//
 
 void RootMap::visualization(Context & cv){
-    vec3f position,posHero=hero->getPosition();
     //Draw background
     background->visualization(cv);
 
@@ -96,9 +95,7 @@ void RootMap::visualization(Context & cv){
 
     //Draw decoration object
     for(unsigned i=0;i<decorationObjs.size();i++){
-        position=decorationObjs[i]->getPosition();
-        if(position.x>posHero.x-11 && position.x<posHero.x+11)
-            decorationObjs[i]->visualization(cv);
+        decorationObjs[i]->visualization(cv);
     }
 
     //Draw title
@@ -109,7 +106,6 @@ void RootMap::visualization(Context & cv){
 
 void RootMap::updateState(GameState & gameState){
     float time=gameState.time;
-    vec3f position,posHero=hero->getPosition();
 
     if(time-currentTime>200)
         currentTime=time-50;
@@ -306,6 +302,6 @@ void RootMap::activatedObjectGroup(){
 void RootMap::deleteObject3d(Object3D * obj){
     obj->removeLink();
     if(obj->getCountLink()==0){
-        delete obj; //testing
+        delete obj;
     }
 }

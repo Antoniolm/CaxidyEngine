@@ -84,3 +84,13 @@ DecorationObject::~DecorationObject()
 {
     //dtor
 }
+
+//**********************************************************************//
+
+void DecorationObject::visualization(Context & vis){
+    if((!vis.shadow_mode || (vis.shadow_mode && hasShadow))&& position.x>vis.minVisualPosition.x && position.x<vis.maxVisualPosition.x
+       && position.y>vis.minVisualPosition.y && position.y<vis.maxVisualPosition.y){
+        object->visualization(vis);
+    }
+
+}

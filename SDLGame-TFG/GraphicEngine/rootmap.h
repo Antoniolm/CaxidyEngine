@@ -37,9 +37,10 @@
 #include "particle.h"
 #include "mesh/mesh.h"
 #include "objectscene.h"
+
 #include "../VideoGame/avatar/hero.h"
 #include "../VideoGame/avatar/mate.h"
-#include "../VideoGame/avatar/enemy.h"
+
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "../lib/rapidjson/document.h"
@@ -58,13 +59,14 @@
 #include "loaderthread.h"
 #include "menu/moviescreen.h"
 
+
 using namespace std;
 
 class Hero;
 class Mate;
-class Enemy;
 class EnemyList;
 class ObjectGroup;
+class ParticleSystem;
 class TextRegion;
 class EndMapRegion;
 class Notification;

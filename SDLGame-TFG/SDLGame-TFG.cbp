@@ -242,6 +242,8 @@
 		<Unit filename="VideoGame/projectilesystem.h" />
 		<Unit filename="VideoGame/respawnvoxel.cpp" />
 		<Unit filename="VideoGame/respawnvoxel.h" />
+		<Unit filename="VideoGame/rootmapgame.cpp" />
+		<Unit filename="VideoGame/rootmapgame.h" />
 		<Unit filename="VideoGame/rottenvoxel.cpp" />
 		<Unit filename="VideoGame/rottenvoxel.h" />
 		<Unit filename="VideoGame/slidetrap.cpp" />

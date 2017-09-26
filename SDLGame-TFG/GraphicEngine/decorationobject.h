@@ -49,6 +49,14 @@ class DecorationObject : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         DecorationObject(const rapidjson::Value & DOFeature,vec3f posDecoration);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will show the object in our interface
+        *    @param cv -> the context of our visualization
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        virtual void visualization(Context & vis);
     protected:
 
     private:
