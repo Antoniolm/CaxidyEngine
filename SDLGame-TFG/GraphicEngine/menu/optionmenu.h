@@ -22,6 +22,7 @@
 
 #include "object3d.h"
 #include "rootmap.h"
+#include "text.h"
 #include "context/context.h"
 #include "mesh/mesh.h"
 #include "nodescenegraph.h"

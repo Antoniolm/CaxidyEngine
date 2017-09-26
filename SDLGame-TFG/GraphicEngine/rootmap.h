@@ -39,7 +39,6 @@
 #include "objectscene.h"
 
 #include "../VideoGame/avatar/hero.h"
-#include "../VideoGame/avatar/mate.h"
 
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
@@ -63,7 +62,6 @@
 using namespace std;
 
 class Hero;
-class Mate;
 class EnemyList;
 class ObjectGroup;
 class ParticleSystem;
@@ -234,7 +232,6 @@ class RootMap : public Object3D
         ObjectScene * background;                   // Background of the map
         Sound * backSound;                          // back sound of the map
         Hero * hero;                                // Hero in the map
-        Mate * mate;                                // Mate in the map
         EnemyList * enemyList;                      // List of enemies in the map
         MovieScreen * movie;                        // Screen of movie of the map
         string nextMapFile;                         // Next map

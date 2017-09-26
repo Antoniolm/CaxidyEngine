@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506449092 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506450873 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4839,7 +4839,6 @@
 	"mesh/mesh.h"
 	"objectscene.h"
 	"../VideoGame/avatar/hero.h"
-	"../VideoGame/avatar/mate.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
 	"../lib/rapidjson/document.h"
@@ -5276,9 +5275,10 @@
 	"collection/soundcollection.h"
 	<string>
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.h
+1506451097 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.h
 	"object3d.h"
 	"rootmap.h"
+	"text.h"
 	"context/context.h"
 	"mesh/mesh.h"
 	"nodescenegraph.h"
@@ -5970,11 +5970,12 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\speakingsketch.cpp
 	"speakingsketch.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\speakingsketch.h
+1506451257 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\speakingsketch.h
 	"object3d.h"
 	"nodescenegraph.h"
 	"./matrix/matrix4f.h"
 	"./matrix/matrix4fdynamic.h"
+	"./animation/scriptlmd.h"
 	"./collection/meshcollection.h"
 	"./collection/materialcollection.h"
 
@@ -6009,10 +6010,11 @@
 	"../GraphicEngine/mesh/objectgroup.h"
 	"enemylist.h"
 
-1506448536 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
+1506450865 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
 	"../GraphicEngine/rootmap.h"
 	"avatar/npc.h"
 	"avatar/enemy.h"
+	"avatar/mate.h"
 	"projectilesystem.h"
 	"soul.h"
 	"soulcarrier.h"
@@ -6052,6 +6054,7 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\herostate.cpp
 	"herostate.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.cpp
+1506449854 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.cpp
 	"textregion.h"
+	"rootmapgame.h"
 

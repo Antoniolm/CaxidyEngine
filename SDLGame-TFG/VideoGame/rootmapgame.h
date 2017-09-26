@@ -23,6 +23,7 @@
 #include "../GraphicEngine/rootmap.h"
 #include "avatar/npc.h"
 #include "avatar/enemy.h"
+#include "avatar/mate.h"
 #include "projectilesystem.h"
 #include "soul.h"
 #include "soulcarrier.h"
@@ -117,6 +118,7 @@ class RootMapGame : public RootMap
     protected:
 
     private:
+        Mate * mate;                                // Mate in the map
 };
 
 #endif // ROOTMAPGAME_H
