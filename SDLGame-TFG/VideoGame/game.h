@@ -29,6 +29,7 @@
 #include "../GraphicEngine/matrix/axisrotation.h"
 #include "../GraphicEngine/rootmap.h"
 #include "rootmapgame.h"
+#include "gamestatechild.h"
 #include "../GraphicEngine/camera.h"
 #include "../GraphicEngine/matrix/structdata.h"
 #include "../GraphicEngine/text.h"
@@ -92,7 +93,7 @@ class Game
         static Game* instance;          // Instance of game
         Window * window;                // Window object
         OptionManager * options;        // Option Manager
-        GameState gameState;            // State of the game
+        GameStateChild gameState;       // State of the game
         HeroState * heroState;          // State of the hero
         Notification * notiGamePad;     // Notification of connected game pad
         ShadowManager * shadowManager;  // Shadow shader

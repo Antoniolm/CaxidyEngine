@@ -43,7 +43,7 @@ class GameStateChild : public GameState
         *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void initPlay(GLuint shaderID);
+        virtual void initPlay(GLuint shaderID);
 
     protected:
 

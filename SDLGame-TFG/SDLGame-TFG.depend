@@ -5173,7 +5173,7 @@
 1503112554 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\region.h
 	"matrix/structdata.h"
 
-1503923103 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.h
+1506429305 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.h
 	"controller/controllermanager.h"
 	"./menu/menu.h"
 	"./menu/pausemenu.h"
@@ -5427,7 +5427,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1506429098 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1506429861 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1505753697 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5537,7 +5537,7 @@
 	"mainmenu.h"
 	"game.h"
 
-1506361521 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1506430048 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5547,6 +5547,7 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/rootmap.h"
 	"rootmapgame.h"
+	"gamestatechild.h"
 	"../GraphicEngine/camera.h"
 	"../GraphicEngine/matrix/structdata.h"
 	"../GraphicEngine/text.h"
@@ -5761,7 +5762,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1506425483 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1506430014 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1506269154 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -6026,4 +6027,10 @@
 	"item.h"
 	"potion.h"
 	"coin.h"
+
+1506429300 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\gamestatechild.h
+	"../GraphicEngine/gamestate.h"
+
+1506429882 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\gamestatechild.cpp
+	"gamestatechild.h"
 
