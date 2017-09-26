@@ -88,8 +88,6 @@
 		<Unit filename="GraphicEngine/endmapregion.h" />
 		<Unit filename="GraphicEngine/gamestate.cpp" />
 		<Unit filename="GraphicEngine/gamestate.h" />
-		<Unit filename="GraphicEngine/herostate.cpp" />
-		<Unit filename="GraphicEngine/herostate.h" />
 		<Unit filename="GraphicEngine/ia/iaenemy.cpp" />
 		<Unit filename="GraphicEngine/ia/iaenemy.h" />
 		<Unit filename="GraphicEngine/ia/iameleeenemy.cpp" />
@@ -196,8 +194,6 @@
 		<Unit filename="GraphicEngine/speakingsketch.h" />
 		<Unit filename="GraphicEngine/text.cpp" />
 		<Unit filename="GraphicEngine/text.h" />
-		<Unit filename="GraphicEngine/textregion.cpp" />
-		<Unit filename="GraphicEngine/textregion.h" />
 		<Unit filename="GraphicEngine/voxel.cpp" />
 		<Unit filename="GraphicEngine/voxel.h" />
 		<Unit filename="GraphicEngine/voxelgroup.cpp" />
@@ -226,6 +222,10 @@
 		<Unit filename="VideoGame/equipment.h" />
 		<Unit filename="VideoGame/game.cpp" />
 		<Unit filename="VideoGame/game.h" />
+		<Unit filename="VideoGame/gamestatechild.cpp" />
+		<Unit filename="VideoGame/gamestatechild.h" />
+		<Unit filename="VideoGame/herostate.cpp" />
+		<Unit filename="VideoGame/herostate.h" />
 		<Unit filename="VideoGame/inventory.cpp" />
 		<Unit filename="VideoGame/inventory.h" />
 		<Unit filename="VideoGame/item.cpp" />
@@ -254,6 +254,8 @@
 		<Unit filename="VideoGame/soulcarrier.h" />
 		<Unit filename="VideoGame/spiketrap.cpp" />
 		<Unit filename="VideoGame/spiketrap.h" />
+		<Unit filename="VideoGame/textregion.cpp" />
+		<Unit filename="VideoGame/textregion.h" />
 		<Unit filename="VideoGame/trapdoor.cpp" />
 		<Unit filename="VideoGame/trapdoor.h" />
 		<Unit filename="main.cpp" />

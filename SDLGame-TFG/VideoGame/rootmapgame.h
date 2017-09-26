@@ -105,6 +105,14 @@ class RootMapGame : public RootMap
         //////////////////////////////////////////////////////////////////////////
         EnemyList * getEnemyList();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will enable the sound of our rootmap.That will use when the game
+        *    will be pause.
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void enableSound(bool value);
 
     protected:
 
