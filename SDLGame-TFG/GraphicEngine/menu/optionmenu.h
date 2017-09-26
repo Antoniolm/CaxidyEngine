@@ -40,6 +40,7 @@
 
 using namespace std;
 
+class Text;
 class OptionMenu : public Menu
 {
     public:

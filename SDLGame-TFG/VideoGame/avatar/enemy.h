@@ -35,6 +35,7 @@
 #include "../GraphicEngine/sound/sound.h"
 #include "../GraphicEngine/text.h"
 #include <stdlib.h>
+#include "../rootmapgame.h"
 
 #include <vector>
 

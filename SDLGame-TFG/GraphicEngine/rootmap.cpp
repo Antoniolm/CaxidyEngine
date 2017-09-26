@@ -135,14 +135,6 @@ void RootMap::updateState(GameState & gameState){
 //**********************************************************************//
 
 void RootMap::enableSound(bool value){
-    if(value){
-            backSound->play();
-    }
-    else{
-        if(backSound->isPlaying())
-            backSound->stop();
-    }
-    hero->enableSound(value);
 }
 
 //**********************************************************************//

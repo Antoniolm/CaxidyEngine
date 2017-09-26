@@ -21,6 +21,8 @@
 #define ROOTMAPGAME_H
 
 #include "../GraphicEngine/rootmap.h"
+#include "avatar/hero.h"
+#include "avatar/mate.h"
 #include "avatar/npc.h"
 #include "avatar/enemy.h"
 #include "projectilesystem.h"
@@ -37,9 +39,11 @@
 #include "item.h"
 #include "potion.h"
 #include "coin.h"
-
+#include "textregion.h"
 class ObjectGroup;
+class Hero;
 class Npc;
+class Mate;
 class ProjectileSystem;
 class Soul;
 class SoulCarrier;
@@ -54,6 +58,7 @@ class JumpButton;
 class Item;
 class Potion;
 class Coin;
+class TextRegion;
 
 class RootMapGame : public RootMap
 {
@@ -105,10 +110,21 @@ class RootMapGame : public RootMap
         //////////////////////////////////////////////////////////////////////////
         EnemyList * getEnemyList();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will enable the sound of our rootmap.That will use when the game
+        *    will be pause.
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void enableSound(bool value);
+
 
     protected:
 
     private:
+        Hero * hero;      // Hero in the map
+        Mate * mate;      // Mate in the map
 };
 
 #endif // ROOTMAPGAME_H

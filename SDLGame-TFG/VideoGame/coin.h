@@ -30,6 +30,7 @@
 #include "../GraphicEngine/collection/soundcollection.h"
 #include "../GraphicEngine/matrix/axisrotation.h"
 #include "../GraphicEngine/sound/sound.h"
+#include "rootmapgame.h"
 
 class Coin : public Item
 {

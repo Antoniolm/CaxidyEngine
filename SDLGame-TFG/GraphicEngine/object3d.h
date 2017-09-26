@@ -28,7 +28,6 @@
 #include "SDL2/SDL.h"
 
 class Context;
-class RootMap;
 class GameState;
 
 struct BoundingBox{

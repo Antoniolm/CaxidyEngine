@@ -20,12 +20,12 @@
 #ifndef TEXTREGION_H
 #define TEXTREGION_H
 
-#include "region.h"
+#include "../GraphicEngine/region.h"
 #include "matrix/structdata.h"
 #include "SDL2/SDL.h"
-#include "ia/ianpc.h"
-#include "rootmap.h"
-#include "gamestate.h"
+#include "../GraphicEngine/ia/ianpc.h"
+#include "rootmapgame.h"
+#include "gamestatechild.h"
 #include "../lib/rapidjson/document.h"
 
 using namespace rapidjson;
