@@ -69,7 +69,7 @@ void SpeakingSketch::updateState(GameState & gameState){
         if(!gameState.pauseMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.deadMenu->isActivate())
             visibleState=true;
 
-        posCamera=gameState.rootMap->getHero()->getPosition();
+        posCamera=gameState.camera->getPosition();
         transActivate->translation(posCamera.x+initialPosition.x,posCamera.y+initialPosition.y,posCamera.z+initialPosition.z);
     }
 }

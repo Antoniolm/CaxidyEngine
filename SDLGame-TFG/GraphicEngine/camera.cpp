@@ -147,6 +147,7 @@ void Camera::activatePerspecProjection(GLuint shaderID){
 
 //**********************************************************************//
 
+void Camera::update(GameState & gameState, GLuint shaderID,bool activateMenu){
     ControllerManager * controller=gameState.controller;
     float currentZoomZFactor=0.0;
     float currentZoomYFactor=0.0;
@@ -161,12 +162,15 @@ void Camera::activatePerspecProjection(GLuint shaderID){
         controller->setState(false,cVIEW);
     }
 
+    target=gameState.refPoint;
 
     if(!viewMode && !speakMode && !finishSpeakMode && !finishViewMode)
+        position=vec3f(gameState.refPoint.x+initialPosition.x,gameState.refPoint.y+initialPosition.y,gameState.refPoint.z+initialPosition.z);
 
     //////////////////////
     // View mode activated
     if(viewMode){
+        if(position.z<gameState.refPoint.z+35){ //if is not in the max position
             position.y+=0.25*((time-currentTime)/10);
             position.z+=0.5*((time-currentTime)/10);
         }
@@ -194,13 +198,18 @@ void Camera::activatePerspecProjection(GLuint shaderID){
                 gameState.speakingSketch->setActivate(true);
         }
         else { //Camera is in the Z axis position
+            position.y=gameState.refPoint.y+initialPosition.y+factorZoomY;
+            position.z=gameState.refPoint.z+initialPosition.z+factorZoomZ;
         }
 
+        position.x=gameState.refPoint.x+initialPosition.x;
     }
     else if(finishSpeakMode){ //else movement zoom out
+        if(position.z<gameState.refPoint.z+initialPosition.z-0.5){ //
             gameState.speakingSketch->setActivate(false);
             position.y+=0.8*((time-currentTime)/80);
             position.z+=1.3*((time-currentTime)/80);
+            position.x=gameState.refPoint.x+initialPosition.x;
         }
         else{
             finishSpeakMode=false;

@@ -20,10 +20,11 @@
 #ifndef HEROSTATE_H
 #define HEROSTATE_H
 
-#include "object3d.h"
-#include "text.h"
+#include "../GraphicEngine/object3d.h"
+#include "../GraphicEngine/text.h"
 #include "collection/materialcollection.h"
 #include "collection/meshcollection.h"
+#include "rootmapgame.h"
 #include <sstream>
 
 class HeroState : public Object3D

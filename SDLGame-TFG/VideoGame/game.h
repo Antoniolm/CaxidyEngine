@@ -39,7 +39,7 @@
 #include "../GraphicEngine/gamestate.h"
 #include "../GraphicEngine/savedmanager.h"
 #include "../GraphicEngine/optionmanager.h"
-#include "../GraphicEngine/herostate.h"
+#include "herostate.h"
 #include "../GraphicEngine/shadowtexture.h"
 #include "../GraphicEngine/shadowmanager.h"
 #include "../GraphicEngine/celshading.h"
