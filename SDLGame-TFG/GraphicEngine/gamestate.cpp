@@ -46,30 +46,6 @@ GameState::~GameState(){
 //**********************************************************************//
 
 void GameState::initPlay(GLuint shaderID){
-    rootMap->activatedLight(shaderID);
-    rootMap->activatedObjectGroup();
-
-    rootMap->getHero()->setCoin(SavedManager::getInstance()->getCoin());
-
-    vec3f posH=rootMap->getHero()->getPosition();
-
-    movie=rootMap->getMovie();
-
-    SavedManager * saveManager=SavedManager::getInstance();
-                   saveManager->load(true);
-
-    //Set the level of the hero
-    rootMap->getHero()->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
-
-    //Set the equipment of the hero
-    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(0));
-    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(1));
-    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(2));
-
-    if(movie->isActivate()){
-        movie->setPosition(vec3f(posH.x,posH.y+6.77,posH.z+11.0));
-        movie->activateAllTexture();
-    }
 }
 
 //**********************************************************************//

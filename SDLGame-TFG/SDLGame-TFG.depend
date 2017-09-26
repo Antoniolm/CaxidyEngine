@@ -5427,7 +5427,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\endmapregion.cpp
 	"endmapregion.h"
 
-1505740690 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
+1506429098 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\gamestate.cpp
 	"gamestate.h"
 
 1505753697 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\herostate.cpp
@@ -5527,7 +5527,7 @@
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\creditscreen.cpp
 	"creditscreen.h"
 
-1503249170 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.cpp
+1506425498 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.cpp
 	"deadmenu.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
@@ -5589,7 +5589,7 @@
 1503850160 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
 	"optionmenu.h"
 
-1505314083 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
+1506424997 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
 	"pausemenu.h"
 
 1503112554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\mesh\file_obj.cpp
@@ -5761,7 +5761,7 @@
 	"avatar/rangedenemy.h"
 	"avatar/meleeenemy.h"
 
-1506361547 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1506425483 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 
 1506269154 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.cpp
@@ -5907,7 +5907,7 @@
 	"../VideoGame/equipment.h"
 	<string>
 
-1505989631 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1506426354 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 	"../VideoGame/inventory.h"
 	"collection/meshcollection.h"

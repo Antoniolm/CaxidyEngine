@@ -235,7 +235,7 @@ void InventoryMenu::visualization(Context & cv){
 //**********************************************************************//
 
 void InventoryMenu::updateState(GameState & gameState){
-    vec3f posHero;
+
     if(!gameState.movie->isActivated() && !gameState.deadMenu->isActivate() && !gameState.pauseMenu->isActivate()
        && !gameState.camera->isViewMode()){
         float time=gameState.time;
@@ -251,8 +251,7 @@ void InventoryMenu::updateState(GameState & gameState){
 
             if(activateMenu){
                 moveSound->stop();
-                //posHero=gameState.rootMap->getHero()->getPosition();
-                posHero=gameState.camera->getPosition();
+                vec3f posHero=gameState.camera->getPosition();
 
                 //Adjust the position of the menu and its information text
                 positionMenu->translation(posHero.x+initialPosition.x,posHero.y+initialPosition.y,posHero.z+initialPosition.z);
