@@ -134,9 +134,8 @@ void Equipment::visualization(Context & cv){
 
 void Equipment::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
-    vec3f posHero=hero->getPosition();
-    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
+    vec3f posRefPoint=gameState.refPoint;
+    float distance=sqrt(pow(position.x-posRefPoint.x,2.0)+pow(position.y-posRefPoint.y,2.0)+pow(position.z-posRefPoint.z,2.0));
 
     if(distance<=0.4){ //Catch the new equipement
 

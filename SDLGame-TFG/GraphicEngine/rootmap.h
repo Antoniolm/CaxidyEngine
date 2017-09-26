@@ -64,7 +64,6 @@ using namespace std;
 class Hero;
 class ObjectGroup;
 class ParticleSystem;
-class TextRegion;
 class EndMapRegion;
 class Notification;
 class LoaderThread;

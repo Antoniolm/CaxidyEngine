@@ -87,7 +87,7 @@ void ProjectileSystem::updateState(GameState & gameState){
             it++;
     }
 
-    vec3f posHero=gameState.rootMap->getHero()->getPosition();
+    vec3f posHero=gameState.refPoint;
     vec3f distance=vec3f(position.x,position.y,position.z)-posHero;
     if(projectileDelay<(time-timeBWprojectile) && (distance.x>-radioActivity.x && distance.x<radioActivity.x)&&(distance.y>-radioActivity.y && distance.y<radioActivity.y)&&(distance.z>-radioActivity.z && distance.z<radioActivity.z)){
         projectiles.push_back(new Projectile(position,velocity,direction,-25,mesh,material));

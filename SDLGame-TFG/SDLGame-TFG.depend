@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506454412 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506460004 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -5638,9 +5638,8 @@
 	"region.h"
 	"gamestate.h"
 
-1506452817 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1506454442 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
-	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
 	<stdlib.h>
 
@@ -6012,7 +6011,7 @@
 	"avatarmove.h"
 	"../GraphicEngine/rootmap.h"
 
-1506448371 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
+1506454447 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
 	"rootmapgame.h"
 	"../GraphicEngine/mesh/objectgroup.h"
 	"enemylist.h"

@@ -72,16 +72,15 @@ void RespawnVoxel::visualization(Context & cv){
 
 void RespawnVoxel::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 
-    vec3f posHero=hero->getPosition();
-    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
+    vec3f posRef=gameState.refPoint;
+    float distance=sqrt(pow(position.x-posRef.x,2.0)+pow(position.z-posRef.z,2.0));
 
     //if hero is near of a disactivated trap
-    if(!activated && (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z
-       && (position.y>posHero.y-1 && position.y<posHero.y)){
+    if(!activated && (int)position.x==(int)posRef.x && (int)position.z==(int)posRef.z
+       && (position.y>posRef.y-1 && position.y<posRef.y)){
         activated=true;
         animationDown->resetState();
         animationUp->resetState();
@@ -89,8 +88,8 @@ void RespawnVoxel::updateState(GameState & gameState){
         activatedButton->play(distance);
     }
 
-    if(activated && ( (int)position.x!=(int)posHero.x || (int)position.z!=(int)posHero.z
-        || position.y>posHero.y+1 || position.y<posHero.y-1)){ //if hero is far of an activated trap
+    if(activated && ( (int)position.x!=(int)posRef.x || (int)position.z!=(int)posRef.z
+        || position.y>posRef.y+1 || position.y<posRef.y-1)){ //if hero is far of an activated trap
         activated=false;
         activatedButton->play(distance);
     }
