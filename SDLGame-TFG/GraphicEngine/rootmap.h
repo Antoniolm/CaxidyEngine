@@ -166,14 +166,6 @@ class RootMap : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will return the mate of our game
-        *    \return hero *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Mate * getMate();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    The method will return the enemyList of our map
         *    \return EnemyList *
         */

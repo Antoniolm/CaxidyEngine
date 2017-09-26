@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506448387 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506449092 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -5638,7 +5638,7 @@
 	"region.h"
 	"gamestate.h"
 
-1506446129 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
+1506449104 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.cpp
 	"rootmap.h"
 	"../VideoGame/enemylist.h"
 	"mesh/objectgroup.h"
@@ -6004,12 +6004,12 @@
 	"avatarmove.h"
 	"../GraphicEngine/rootmap.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
+1506448371 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.cpp
 	"rootmapgame.h"
 	"../GraphicEngine/mesh/objectgroup.h"
 	"enemylist.h"
 
-1506448405 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
+1506448536 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
 	"../GraphicEngine/rootmap.h"
 	"avatar/npc.h"
 	"avatar/enemy.h"
@@ -6034,13 +6034,11 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\gamestatechild.cpp
 	"gamestatechild.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.h
+1506449538 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.h
 	"region.h"
 	"matrix/structdata.h"
 	"SDL2/SDL.h"
-	"ia/ianpc.h"
-	"rootmap.h"
-	"gamestate.h"
+	"../GraphicEngine/ia/ianpc.h"
 	"../lib/rapidjson/document.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\herostate.h

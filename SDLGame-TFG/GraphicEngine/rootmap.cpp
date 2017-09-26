@@ -68,11 +68,6 @@ Hero * RootMap::getHero(){
 
 //**********************************************************************//
 
-Mate * RootMap::getMate(){
-    return mate;
-}
-//**********************************************************************//
-
 EnemyList * RootMap::getEnemyList(){
     return enemyList;
 }

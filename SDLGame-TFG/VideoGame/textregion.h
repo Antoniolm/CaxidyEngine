@@ -23,11 +23,10 @@
 #include "region.h"
 #include "matrix/structdata.h"
 #include "SDL2/SDL.h"
-#include "ia/ianpc.h"
-#include "rootmap.h"
-#include "gamestate.h"
+#include "../GraphicEngine/ia/ianpc.h"
 #include "../lib/rapidjson/document.h"
 
+class RootMap;
 using namespace rapidjson;
 
 class TextRegion : public Region

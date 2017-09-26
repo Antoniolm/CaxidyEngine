@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "textregion.h"
+#include "rootmapgame.h"
 
 TextRegion::TextRegion(const Value & regionFeatures){
     speakerMessage speaker;
@@ -51,7 +52,7 @@ TextRegion::~TextRegion()
 //**********************************************************************//
 
 void TextRegion::updateState(GameState & gameState){
-    RootMap * rootMap=gameState.rootMap;
+    RootMapGame * rootMap=dynamic_cast<RootMapGame*>(gameState.rootMap);
     float time=gameState.time;
 
     Hero * hero =rootMap->getHero();
