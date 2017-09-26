@@ -29,7 +29,7 @@
 #include "../GraphicEngine/animation/scriptlmd.h"
 #include "../GraphicEngine/context/context.h"
 #include "../GraphicEngine/matrix/matrixscript.h"
-#include "../rootmapgame.h"
+#include "../GraphicEngine/rootmap.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/acceleratedmovement.h"
 #include "../GraphicEngine/sound/sound.h"
@@ -46,7 +46,6 @@
 
 using namespace std;
 class RootMap;
-class RootMapGame;
 class Text;
 class Equipment;
 class Soul;

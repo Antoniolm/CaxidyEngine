@@ -24,7 +24,6 @@
 #include "nodescenegraph.h"
 #include "./matrix/matrix4f.h"
 #include "./matrix/matrix4fdynamic.h"
-#include "./animation/scriptlmd.h"
 #include "./collection/meshcollection.h"
 #include "./collection/materialcollection.h"
 

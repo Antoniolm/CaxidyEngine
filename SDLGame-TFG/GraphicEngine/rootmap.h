@@ -38,6 +38,9 @@
 #include "mesh/mesh.h"
 #include "objectscene.h"
 
+#include "../VideoGame/avatar/hero.h"
+#include "../VideoGame/avatar/mate.h"
+
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "../lib/rapidjson/document.h"
@@ -50,6 +53,7 @@
 #include "sound/music.h"
 #include "controller/controller.h"
 #include "controller/keyboardcontroller.h"
+#include "textregion.h"
 #include "endmapregion.h"
 #include "notification.h"
 #include "loaderthread.h"
@@ -58,9 +62,12 @@
 
 using namespace std;
 
+class Hero;
+class Mate;
 class EnemyList;
 class ObjectGroup;
 class ParticleSystem;
+class TextRegion;
 class EndMapRegion;
 class Notification;
 class LoaderThread;
@@ -113,7 +120,7 @@ class RootMap : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        virtual void enableSound(bool value);
+        void enableSound(bool value);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -148,6 +155,30 @@ class RootMap : public Object3D
         */
         //////////////////////////////////////////////////////////////////////////
         void removeCollision(vec2f voxelPosition,int objID);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will return the hero of our game
+        *    \return hero *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Hero * getHero();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will return the mate of our game
+        *    \return hero *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Mate * getMate();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    The method will return the enemyList of our map
+        *    \return EnemyList *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        EnemyList * getEnemyList();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -204,12 +235,14 @@ class RootMap : public Object3D
         vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
         vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
         vector<Object3D *> elements;                // Vector with all the elements of the game
-        vector<Region *> regions;                   // Vector of regions
+        vector<Region *> regions;               // Vector of regions
         vector<Light *> lights;                     // Vector of lights
         EndMapRegion * endMapRegion;                // End region of the map
         Notification * title;                       // Title of the map
         ObjectScene * background;                   // Background of the map
         Sound * backSound;                          // back sound of the map
+        Hero * hero;                                // Hero in the map
+        Mate * mate;                                // Mate in the map
         EnemyList * enemyList;                      // List of enemies in the map
         MovieScreen * movie;                        // Screen of movie of the map
         string nextMapFile;                         // Next map

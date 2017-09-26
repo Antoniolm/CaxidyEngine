@@ -18,7 +18,6 @@
 // *********************************************************************
 
 #include "loaderthread.h"
-#include "rootmap.h"
 
 RootMap* LoaderThread::rootMap;
 string LoaderThread::fileMap="";

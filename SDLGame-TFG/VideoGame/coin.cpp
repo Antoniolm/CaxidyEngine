@@ -65,7 +65,7 @@ void Coin::visualization(Context & cv){
 
 void Coin::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=dynamic_cast<RootMapGame *>(gameState.rootMap)->getHero();
+    Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 

@@ -26,7 +26,7 @@
 #include <string>
 
 using namespace std;
-class RootMap;
+
 class LoaderThread
 {
     public:

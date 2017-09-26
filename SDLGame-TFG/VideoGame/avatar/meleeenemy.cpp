@@ -262,7 +262,7 @@ MeleeEnemy::~MeleeEnemy()
 void MeleeEnemy::updateState(GameState & gameState){
     vec3f aux;
     currentMap=gameState.rootMap;
-    RootMapGame * rootMap=dynamic_cast<RootMapGame *>(gameState.rootMap);
+    RootMap * rootMap=gameState.rootMap;
     float time=gameState.time;
 
     Hero * hero=rootMap->getHero();

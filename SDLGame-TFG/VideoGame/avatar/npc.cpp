@@ -121,7 +121,7 @@ void Npc::visualization(Context & cv){
 //**********************************************************************//
 
 void Npc::updateState(GameState & gameState){
-    Hero * hero=dynamic_cast<RootMapGame *>(gameState.rootMap)->getHero();
+    Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
     float time=gameState.time;
 

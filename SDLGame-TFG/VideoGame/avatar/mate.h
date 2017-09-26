@@ -33,7 +33,6 @@
 #include "../GraphicEngine/animation/animationlist.h"
 #include "../lib/rapidjson/document.h"
 #include "../../GraphicEngine/avatar/avatar.h"
-#include "../rootmapgame.h"
 
 using namespace rapidjson;
 

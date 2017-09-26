@@ -88,7 +88,7 @@ void Mate::visualization(Context & cv){
 //**********************************************************************//
 
 void Mate::updateState(GameState & gameState){
-    Hero * hero=dynamic_cast<RootMapGame *>(gameState.rootMap)->getHero();
+    Hero * hero=gameState.rootMap->getHero();
     vec3f posHero=hero->getPosition();
     vec3f newMovement;
 

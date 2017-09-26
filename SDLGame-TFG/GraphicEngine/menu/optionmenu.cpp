@@ -18,7 +18,6 @@
 // *********************************************************************
 
 #include "optionmenu.h"
-#include "../text.h"
 
 OptionMenu::OptionMenu(vec3f posMenu,string mat,string currentMat, string matBack)
 {

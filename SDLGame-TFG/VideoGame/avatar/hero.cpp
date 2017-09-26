@@ -363,7 +363,7 @@ void Hero::updateState(GameState & gameState){
     ControllerManager * controller=gameState.controller;
 
     float time=gameState.time;
-    RootMapGame * rootMap=dynamic_cast<RootMapGame *>(gameState.rootMap);
+    RootMap * rootMap=gameState.rootMap;
 
     if(time-currentTime>200)
         currentTime=time-50;

@@ -28,7 +28,6 @@
 #include "../GraphicEngine/matrix/structdata.h"
 #include "../GraphicEngine/animation/scriptlmd.h"
 #include "../lib/rapidjson/document.h"
-#include "../rootmapgame.h"
 #include "SDL2/SDL_ttf.h"
 
 using namespace rapidjson;

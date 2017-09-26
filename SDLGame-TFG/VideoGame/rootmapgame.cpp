@@ -431,16 +431,3 @@ EnemyList * RootMapGame::getEnemyList(){
     return enemyList;
 }
 
-//**********************************************************************//
-
-void RootMapGame::enableSound(bool value){
-    if(value){
-            backSound->play();
-    }
-    else{
-        if(backSound->isPlaying())
-            backSound->stop();
-    }
-    hero->enableSound(value);
-}
-
