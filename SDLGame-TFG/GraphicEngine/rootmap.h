@@ -235,7 +235,7 @@ class RootMap : public Object3D
         vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
         vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
         vector<Object3D *> elements;                // Vector with all the elements of the game
-        vector<TextRegion *> regions;               // Vector of regions
+        vector<Region *> regions;               // Vector of regions
         vector<Light *> lights;                     // Vector of lights
         EndMapRegion * endMapRegion;                // End region of the map
         Notification * title;                       // Title of the map

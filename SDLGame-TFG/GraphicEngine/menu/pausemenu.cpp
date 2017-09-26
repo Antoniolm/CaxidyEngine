@@ -101,7 +101,6 @@ void PauseMenu::updateState(GameState & gameState){
             menuDelay=time;
             if(activateMenu){
                 (Profile::getInstance())->showResult();
-                //position=gameState.rootMap->getHero()->getPosition();
                 position=gameState.camera->getPosition();
                 positionMenu->translation(position.x+initialPosition.x,position.y+initialPosition.y,position.z+initialPosition.z);
 

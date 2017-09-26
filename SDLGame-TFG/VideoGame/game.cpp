@@ -66,7 +66,7 @@ Game::Game(){
     gameState.pauseMenu->add("./textures/menuPauseQuit.png",pQUIT);
 
     //Create deadMenu
-    gameState.deadMenu = new DeadMenu(vec3f(0.0f,6.77f,11.0f),"./textures/menuBack.png");
+    gameState.deadMenu = new DeadMenu(vec3f(0.0,-1.23,-2.0),"./textures/menuBack.png");
     gameState.deadMenu->add("./textures/dieMenu.png");
 
     //Create creditScreen
