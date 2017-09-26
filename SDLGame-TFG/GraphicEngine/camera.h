@@ -133,7 +133,7 @@ class Camera
         *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void update(GameState & gameState,GLuint shaderID,bool activateMenu);
+        virtual void update(GameState & gameState,GLuint shaderID,bool activateMenu);
 
         //////////////////////////////////////////////////////////////////////////
         /**

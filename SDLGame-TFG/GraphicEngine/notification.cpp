@@ -97,7 +97,6 @@ void Notification::visualization(Context & cv){
 //**********************************************************************//
 
 void Notification::updateState(GameState & gameState){
-    vec3f posHero=gameState.rootMap->getHero()->getPosition();
 
     float time=gameState.time;
     if(time-currentTime>200){ //If we have a delay in our time
@@ -105,7 +104,9 @@ void Notification::updateState(GameState & gameState){
         currentTime=time-50;
     }
 
-    transNoti->translation(position.x+posHero.x,position.y+posHero.y,position.z+posHero.z);
+    transNoti->translation(position.x+gameState.refPoint.x,
+                           position.y+gameState.refPoint.y,
+                           position.z+gameState.refPoint.z);
 
     if(currentTime-initialTime>visibleTime) //if the time of our notification is finished
         activatedNoti=false;

@@ -142,6 +142,8 @@ void Game::loop(){
     float time;
     string fileMap;
     bool firstTime=true;
+    vec3f posHero;
+
     int windowH=800,windowW=1200;
     Profile * profile=Profile::getInstance();
 
@@ -240,11 +242,13 @@ void Game::loop(){
                 gameState.deadMenu->activate();
             }
 
+            gameState.refPoint=gameState.rootMap->getHero()->getPosition();
+            heroState->updateState(gameState);
             gameState.updatePlay();
 
-            heroState->updateState(gameState);
-
             //Update the camera, lifeText, coinText, profile
+            posHero=gameState.refPoint;
+
             gameState.camera->update(gameState,context.currentShader->getProgram(),
                           (gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate() || gameState.mainMenu->isActivate()
                            || gameState.inventoryMenu->isActivate()));
@@ -257,10 +261,9 @@ void Game::loop(){
             // VISUALIZATION
             ///////////////////
             time=SDL_GetTicks();
-            vec3f pos=gameState.rootMap->getHero()->getPosition();
 
             //1- Render of our deph map for shadow mapping
-            shadowManager->setCamera(vec3f(pos.x-1.0, pos.y+8.0f,pos.z-2.0),vec3f(pos.x,0.0,pos.z),vec3f(0.0,1.0,0.0));
+            shadowManager->setCamera(vec3f(posHero.x-1.0, posHero.y+8.0f,posHero.z-2.0),vec3f(posHero.x,0.0,posHero.z),vec3f(0.0,1.0,0.0));
             shadowManager->setOrthoProjection(-20.0,20.0,-20.0,20.0,-1,20);
             shadowManager->generateShadow(gameState);
 
@@ -283,7 +286,7 @@ void Game::loop(){
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "ourTexture"), 0);
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "normalMap"), 1);
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "shadowMap"), 2);
-            glUniform3f(glGetUniformLocation(context.currentShader->getProgram(), "lightPosVertex"),pos.x-1.0, pos.y+5.0f,pos.z-2.0);
+            glUniform3f(glGetUniformLocation(context.currentShader->getProgram(), "lightPosVertex"),posHero.x-1.0, posHero.y+5.0f,posHero.z-2.0);
             glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, shadowManager->getLightSpace().getMatrix());
 
             glActiveTexture(GL_TEXTURE2);

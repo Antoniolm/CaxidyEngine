@@ -38,8 +38,7 @@ EndMapRegion::~EndMapRegion()
 
 void EndMapRegion::updateState(GameState & gameState){
 
-    vec3f posHero=gameState.rootMap->getHero()->getPosition();
-    vec3f distance=vec3f(position.x,position.y,position.z)-posHero;
+    vec3f distance=vec3f(position.x,position.y,position.z)-gameState.refPoint;
 
     //check if the region will be activated in this frame
     if((distance.x>-radioActivity.x && distance.x<radioActivity.x)&&

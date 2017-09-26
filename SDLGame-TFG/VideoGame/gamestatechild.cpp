@@ -40,7 +40,7 @@ void GameStateChild::initPlay(GLuint shaderID){
 
     rootMap->getHero()->setCoin(SavedManager::getInstance()->getCoin());
 
-    vec3f posH=rootMap->getHero()->getPosition();
+    refPoint=rootMap->getHero()->getPosition();
     movie=rootMap->getMovie();
 
     SavedManager * saveManager=SavedManager::getInstance();
@@ -55,7 +55,7 @@ void GameStateChild::initPlay(GLuint shaderID){
     rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(2));
 
     if(movie->isActivate()){
-        movie->setPosition(vec3f(posH.x,posH.y+6.77,posH.z+11));
+        movie->setPosition(vec3f(refPoint.x,refPoint.y+6.77,refPoint.z+11));
         movie->activateAllTexture();
     }
 }

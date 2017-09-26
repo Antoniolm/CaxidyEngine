@@ -118,6 +118,7 @@ class GameState
         InventoryMenu * inventoryMenu;  // Inventory menu
         SpeakingSketch * speakingSketch;// SpeakingSketch
         Camera * camera;                // Camera of the video game
+        vec3f refPoint;                 // Point of reference
 
 
     protected:
