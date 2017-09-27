@@ -91,6 +91,13 @@ class Game
         //////////////////////////////////////////////////////////////////////////
         Game();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will create the RootMapGame
+        *    @param option -> new Game or Continue flag
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
         void createRootMap(MainMenuOption option);
 
         static Game* instance;          // Instance of game
