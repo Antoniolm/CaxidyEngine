@@ -5212,7 +5212,7 @@
 	<iostream>
 	"SDL2/SDL.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.h
+1506524779 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.h
 	"savedmanager.h"
 	"object3d.h"
 	"rootmap.h"
@@ -5531,11 +5531,11 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\loadingscreen.cpp
 	"loadingscreen.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
+1506525670 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\mainmenu.cpp
 	"mainmenu.h"
 	"game.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1506524714 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5562,6 +5562,7 @@
 	"inventory.h"
 	"projectile.h"
 	"avatar/hero.h"
+	"../GraphicEngine/Menu/mainmenu.h"
 	<sstream>
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.h
@@ -5704,9 +5705,9 @@
 	"enemy.h"
 	"projectile.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.cpp
+1506515186 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\enemy.cpp
 	"enemy.h"
-	"../GraphicEngine/ia/iaenemy.h"
+	"../ia/iaenemy.h"
 
 1506453229 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\hero.cpp
 	"hero.h"
@@ -5766,7 +5767,7 @@
 	"avatar/meleeenemy.h"
 	"rootmapgame.h"
 
-1506502501 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1506525921 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 	"rootmapgame.h"
 
@@ -6094,4 +6095,16 @@
 1506514424 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iarangedenemy.h
 	"iaenemy.h"
 	"../enemylist.h"
+
+1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iaenemy.cpp
+	"iaenemy.h"
+
+1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iameleeenemy.cpp
+	"iameleeenemy.h"
+
+1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\ianpc.cpp
+	"ianpc.h"
+
+1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iarangedenemy.cpp
+	"iarangedenemy.h"
 

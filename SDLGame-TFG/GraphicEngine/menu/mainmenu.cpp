@@ -160,16 +160,6 @@ void MainMenu::updateState(GameState & gameState){
                     ambientSound->stop();
                     activateMenu=false;
 
-                    if(gameState.rootMap!=0)
-                        delete gameState.rootMap;
-
-                    //Added the initial equipment of the hero
-                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.0,-0.2,0.0),RANGED,true,20,25,5,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
-                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(0.025,-0.05,0.34),MELEE,true,25,25,5,"mSWORD","SWORD","mSWORD","Sword"));
-                    gameState.inventoryMenu->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,10,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
-
-                    SavedManager::getInstance()->save("",gameState,0);
-                    gameState.rootMap=new RootMapGame("./maps/map00.json",true);
                     checkUserProgress();
                     openSound->play();
 
@@ -177,18 +167,9 @@ void MainMenu::updateState(GameState & gameState){
                 case CONTINUE: //Continue
                     ambientSound->stop();
                     //Catch the saved progress and load the map
-                    saveManager=SavedManager::getInstance();
-                    saveManager->load(true);
 
-                    gameState.inventoryMenu->setInventory(saveManager->getInv(),saveManager->getPosInv());
-
-                    fileLoad=saveManager->getMap();
                     activateMenu=false;
 
-                    if(gameState.rootMap!=0)
-                        delete gameState.rootMap;
-
-                    gameState.rootMap=new RootMapGame(fileLoad,true);
                     openSound->play();
 
                 break;

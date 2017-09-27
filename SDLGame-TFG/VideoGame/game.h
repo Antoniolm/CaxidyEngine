@@ -46,6 +46,7 @@
 #include "inventory.h"
 #include "projectile.h"
 #include "avatar/hero.h"
+#include "../GraphicEngine/Menu/mainmenu.h"
 #include <sstream>
 class Game
 {
@@ -89,6 +90,8 @@ class Game
         /** Constructor  */
         //////////////////////////////////////////////////////////////////////////
         Game();
+
+        void createRootMap(MainMenuOption option);
 
         static Game* instance;          // Instance of game
         Window * window;                // Window object
