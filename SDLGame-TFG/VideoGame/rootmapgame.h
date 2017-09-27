@@ -21,6 +21,7 @@
 #define ROOTMAPGAME_H
 
 #include "../GraphicEngine/rootmap.h"
+#include "avatar/hero.h"
 #include "avatar/npc.h"
 #include "avatar/enemy.h"
 #include "avatar/mate.h"
@@ -41,6 +42,7 @@
 
 class ObjectGroup;
 class EnemyList;
+class Hero;
 class Npc;
 class ProjectileSystem;
 class Soul;

@@ -21,6 +21,7 @@
 #define SOUL_H
 
 #include "../GraphicEngine/object3d.h"
+#include "../GraphicEngine/avatar/avatar.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/matrix/matrix4f.h"
 #include "../GraphicEngine/matrix/matrix4fdynamic.h"

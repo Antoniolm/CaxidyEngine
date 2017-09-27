@@ -4820,7 +4820,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1506503531 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
+1506504149 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\rootmap.h
 	"object3d.h"
 	"nodescenegraph.h"
 	<list>
@@ -4838,7 +4838,6 @@
 	"particle.h"
 	"mesh/mesh.h"
 	"objectscene.h"
-	"../VideoGame/avatar/hero.h"
 	"collection/meshcollection.h"
 	"collection/materialcollection.h"
 	"../lib/rapidjson/document.h"
@@ -5007,8 +5006,9 @@
 	"begin_code.h"
 	"close_code.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soul.h
+1506505135 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\soul.h
 	"../GraphicEngine/object3d.h"
+	"../GraphicEngine/avatar/avatar.h"
 	"../GraphicEngine/nodescenegraph.h"
 	"../GraphicEngine/matrix/matrix4f.h"
 	"../GraphicEngine/matrix/matrix4fdynamic.h"
@@ -5230,7 +5230,7 @@
 	"collection/soundcollection.h"
 	<string>
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
+1506505501 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.h
 	"../lib/rapidjson/document.h"
 	"../lib/rapidjson/stringbuffer.h"
 	"../lib/rapidjson/filereadstream.h"
@@ -5239,7 +5239,6 @@
 	<sstream>
 	"gamestate.h"
 	"../VideoGame/inventory.h"
-	"../VideoGame/equipment.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\deadmenu.h
 	"object3d.h"
@@ -5275,10 +5274,9 @@
 	"collection/soundcollection.h"
 	<string>
 
-1506451097 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.h
+1506504934 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.h
 	"object3d.h"
 	"rootmap.h"
-	"text.h"
 	"context/context.h"
 	"mesh/mesh.h"
 	"nodescenegraph.h"
@@ -5587,8 +5585,9 @@
 	"profile.h"
 	"sound/sound.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
+1506504943 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\optionmenu.cpp
 	"optionmenu.h"
+	"../text.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\pausemenu.cpp
 	"pausemenu.h"
@@ -5652,8 +5651,9 @@
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
+1506505527 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
 	"savedmanager.h"
+	"../VideoGame/equipment.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
 	"shadowmanager.h"
@@ -5869,7 +5869,7 @@
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.h
+1506505798 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.h
 	"../GraphicEngine/objectscene.h"
 	"respawnvoxel.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5880,6 +5880,7 @@
 	"../GraphicEngine/collection/materialcollection.h"
 	"../GraphicEngine/collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
+	"../GraphicEngine/avatar/avatar.h"
 
 1506503290 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\slidetrap.cpp
 	"slidetrap.h"
@@ -5898,7 +5899,7 @@
 	"jumpbutton.h"
 	"rootmapgame.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1506504910 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5912,7 +5913,6 @@
 	"sound/sound.h"
 	"menu.h"
 	"profile.h"
-	"../text.h"
 	"mainmenu.h"
 	"collection/materialcollection.h"
 	"collection/soundcollection.h"
@@ -5920,12 +5920,13 @@
 	"../VideoGame/equipment.h"
 	<string>
 
-1506502012 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1506504918 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 	"../VideoGame/inventory.h"
+	"../text.h"
 	"collection/meshcollection.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
+1506505228 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventory.h
 	<iostream>
 	"equipment.h"
 
@@ -6024,8 +6025,9 @@
 	"../GraphicEngine/mesh/objectgroup.h"
 	"enemylist.h"
 
-1506503537 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
+1506504142 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
 	"../GraphicEngine/rootmap.h"
+	"avatar/hero.h"
 	"avatar/npc.h"
 	"avatar/enemy.h"
 	"avatar/mate.h"

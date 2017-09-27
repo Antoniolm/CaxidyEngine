@@ -30,6 +30,7 @@
 #include "../GraphicEngine/collection/materialcollection.h"
 #include "../GraphicEngine/collection/soundcollection.h"
 #include "../lib/rapidjson/document.h"
+#include "../GraphicEngine/avatar/avatar.h"
 
 using namespace rapidjson;
 

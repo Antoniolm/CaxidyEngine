@@ -24,7 +24,7 @@
 #include "equipment.h"
 
 using namespace std;
-
+class Equipment;
 class Inventory
 {
     public:

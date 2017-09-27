@@ -22,7 +22,6 @@
 
 #include "object3d.h"
 #include "rootmap.h"
-#include "text.h"
 #include "context/context.h"
 #include "mesh/mesh.h"
 #include "nodescenegraph.h"
@@ -40,7 +39,7 @@
 #include <cstdlib>
 
 using namespace std;
-
+class Text;
 class OptionMenu : public Menu
 {
     public:

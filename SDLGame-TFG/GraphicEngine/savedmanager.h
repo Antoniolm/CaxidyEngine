@@ -28,10 +28,10 @@
 #include <sstream>
 #include "gamestate.h"
 #include "../VideoGame/inventory.h"
-#include "../VideoGame/equipment.h"
 
 using namespace rapidjson;
 
+class Equipment;
 class SavedManager
 {
     public:

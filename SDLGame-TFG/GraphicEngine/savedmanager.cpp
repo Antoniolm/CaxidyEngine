@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "savedmanager.h"
+#include "../VideoGame/equipment.h"
 
 SavedManager* SavedManager::instance = NULL;
 

@@ -37,9 +37,6 @@
 #include "particle.h"
 #include "mesh/mesh.h"
 #include "objectscene.h"
-
-#include "../VideoGame/avatar/hero.h"
-
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 #include "../lib/rapidjson/document.h"
@@ -61,7 +58,6 @@
 
 using namespace std;
 
-class Hero;
 class ObjectGroup;
 class ParticleSystem;
 class EndMapRegion;
