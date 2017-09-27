@@ -88,8 +88,7 @@ void Mate::visualization(Context & cv){
 //**********************************************************************//
 
 void Mate::updateState(GameState & gameState){
-    Hero * hero=gameState.rootMap->getHero();
-    vec3f posHero=hero->getPosition();
+    vec3f posRefPoint=gameState.refPoint;
     vec3f newMovement;
 
     float time=gameState.time;
@@ -97,15 +96,15 @@ void Mate::updateState(GameState & gameState){
         currentTime=time-50;
 
     //Take our new position
-    currentMove=nextPosition(posHero);
+    currentMove=nextPosition(posRefPoint);
 
     //Check Y position
-    posHero.y+=1.0;
+    posRefPoint.y+=1.0;
 
-    if(position.y>posHero.y+0.1){
+    if(position.y>posRefPoint.y+0.1){
         currentMove.second.y=-2.0;
     }
-    else if(position.y<posHero.y){
+    else if(position.y<posRefPoint.y){
         currentMove.second.y=+2.0;
     }
 

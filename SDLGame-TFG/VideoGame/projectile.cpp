@@ -81,15 +81,15 @@ void Projectile::updateState(GameState & gameState){
         currentTime=time-50;
 
     //Checking the hero
-    RootMap * rootMap=gameState.rootMap;
-    currentMap=rootMap;
-    vec3f posHero=rootMap->getHero()->getPosition();
+    currentMap=gameState.rootMap;
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
+    vec3f posHero=hero->getPosition();
     vec3f posHead=vec3f(vec3f(position)+projectileHead);
     float distance=sqrt(pow(posHead.x-posHero.x,2.0)+pow(posHead.z-posHero.z,2.0));
 
     //Check if the projectile has hit with our hero
     if(distance<=0.4 && live && (position.y>posHero.y-1 && position.y<posHero.y+1)){
-        rootMap->getHero()->takeDamage(position,direction,damage);
+        hero->takeDamage(position,direction,damage);
         live=false;
     }
 

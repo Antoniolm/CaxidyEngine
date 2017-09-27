@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "coin.h"
+#include "rootmapgame.h"
 
 Coin::Coin(const Value & coinFeatures){
     position=vec4f(coinFeatures["position"][0].GetFloat(),coinFeatures["position"][1].GetFloat(),coinFeatures["position"][2].GetFloat(),1.0f);
@@ -65,7 +66,7 @@ void Coin::visualization(Context & cv){
 
 void Coin::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 

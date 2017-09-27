@@ -266,7 +266,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 armourText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.18,posHero.z+initialPosition.z+1.4));
 
                 //Current Level
-                if(gameState.rootMap->getHero()->getLevel()!=currentLevel){
+                /*if(gameState.rootMap->getHero()->getLevel()!=currentLevel){
                     currentLevel=gameState.rootMap->getHero()->getLevel();
 
                     std::stringstream levelStream;
@@ -303,7 +303,7 @@ void InventoryMenu::updateState(GameState & gameState){
                     armourStream<< currentArmour;
                     armourText->setMessage(armourStream.str());
                     armourText->init(750.0,60.0);
-                }
+                }*/
 
 
                 //Consume the current events -> User has to push again the buttons
@@ -393,7 +393,7 @@ void InventoryMenu::updateState(GameState & gameState){
                 if(inventory->equipItem(currentItemX,currentItemY)){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
 
-                    gameState.rootMap->getHero()->setEquipment(equip);
+                    //gameState.rootMap->getHero()->setEquipment(equip);
                     equippedItem[equip->getEquipType()]->translation(-0.273+(currentItemX*distItem.x),0.455-(currentItemY*distItem.y),0.9f);
                     moveSound->play();
                 }

@@ -19,6 +19,7 @@
 ////////////////////////////////////////
 
 #include "game.h"
+#include "rootmapgame.h"
 
 Game* Game::instance = NULL;
 
@@ -237,12 +238,13 @@ void Game::loop(){
             // UPDATE STATE
             ///////////////////
             gameState.time=SDL_GetTicks();
+            Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
-            if(gameState.rootMap->getHero()->getLife()<=0.0){ //check if the hero is dead
+            if(hero->getLife()<=0.0){ //check if the hero is dead
                 gameState.deadMenu->activate();
             }
 
-            gameState.refPoint=gameState.rootMap->getHero()->getPosition();
+            gameState.refPoint=hero->getPosition();
             heroState->updateState(gameState);
             gameState.updatePlay();
 
@@ -310,7 +312,6 @@ void Game::loop(){
                 //Get the next Map and save the match
                 fileMap=gameState.rootMap->getNextMap();
                 if(fileMap!=""){
-                    Hero * hero=gameState.rootMap->getHero();
                     SavedManager::getInstance()->save(fileMap,gameState,hero->getCoin(),
                                                       hero->getExp(),hero->getMaxExp(),hero->getLevel());
 

@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "jumpbutton.h"
+#include "rootmapgame.h"
 
 JumpButton::JumpButton(const Value & buttonFeatures){
     position=vec4f(buttonFeatures["position"][0].GetFloat(),buttonFeatures["position"][1].GetFloat(),buttonFeatures["position"][2].GetFloat(),1.0);
@@ -72,7 +73,7 @@ void JumpButton::visualization(Context & cv){
 
 void JumpButton::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 

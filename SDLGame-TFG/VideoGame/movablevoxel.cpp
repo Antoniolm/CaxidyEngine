@@ -70,7 +70,7 @@ void MovableVoxel::visualization(Context & cv){
 
 void MovableVoxel::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 

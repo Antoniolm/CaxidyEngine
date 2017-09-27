@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "potion.h"
+#include "rootmapgame.h"
 
 Potion::Potion(const Value & potionFeatures){
     position=vec4f(potionFeatures["position"][0].GetFloat(),potionFeatures["position"][1].GetFloat(),potionFeatures["position"][2].GetFloat(),1.0f);
@@ -65,7 +66,7 @@ void Potion::visualization(Context & cv){
 
 void Potion::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.y-posHero.y,2.0)+pow(position.z-posHero.z,2.0));
 

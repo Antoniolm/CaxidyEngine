@@ -154,14 +154,6 @@ class RootMap : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will return the hero of our game
-        *    \return hero *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Hero * getHero();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    It will activate the light of our map
         *    \return void
         */
@@ -221,7 +213,6 @@ class RootMap : public Object3D
         Notification * title;                       // Title of the map
         ObjectScene * background;                   // Background of the map
         Sound * backSound;                          // back sound of the map
-        Hero * hero;                                // Hero in the map
         MovieScreen * movie;                        // Screen of movie of the map
         string nextMapFile;                         // Next map
         LoaderThread * loader;                      // Loader of map

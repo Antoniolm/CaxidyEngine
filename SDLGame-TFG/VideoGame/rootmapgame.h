@@ -119,6 +119,7 @@ class RootMapGame : public RootMap
     protected:
 
     private:
+        Hero * hero;                                // Hero in the map
         Mate * mate;                                // Mate in the map
         EnemyList * enemyList;                      // List of enemies in the map
 };

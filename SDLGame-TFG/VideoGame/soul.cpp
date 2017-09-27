@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "soul.h"
+#include "rootmapgame.h"
 
 Soul::Soul(const Value & soulFeatures)
 {
@@ -62,7 +63,7 @@ void Soul::visualization(Context & cv){
 
 void Soul::updateState(GameState & gameState ){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 

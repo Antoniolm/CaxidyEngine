@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "gamestatechild.h"
+#include "rootmapgame.h"
 
 GameStateChild::GameStateChild()
 {
@@ -38,21 +39,22 @@ void GameStateChild::initPlay(GLuint shaderID){
     rootMap->activatedLight(shaderID);
     rootMap->activatedObjectGroup();
 
-    rootMap->getHero()->setCoin(SavedManager::getInstance()->getCoin());
+    Hero * hero=dynamic_cast<RootMapGame*>(rootMap)->getHero();
+    hero->setCoin(SavedManager::getInstance()->getCoin());
 
-    refPoint=rootMap->getHero()->getPosition();
+    refPoint=hero->getPosition();
     movie=rootMap->getMovie();
 
     SavedManager * saveManager=SavedManager::getInstance();
                    saveManager->load(true);
 
     //Set the level of the hero
-    rootMap->getHero()->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
+    hero->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
 
     //Set the equipment of the hero
-    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(0));
-    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(1));
-    rootMap->getHero()->setEquipment(inventoryMenu->getEquippetItem(2));
+    hero->setEquipment(inventoryMenu->getEquippetItem(0));
+    hero->setEquipment(inventoryMenu->getEquippetItem(1));
+    hero->setEquipment(inventoryMenu->getEquippetItem(2));
 
     if(movie->isActivate()){
         movie->setPosition(vec3f(refPoint.x,refPoint.y+6.77,refPoint.z+11));

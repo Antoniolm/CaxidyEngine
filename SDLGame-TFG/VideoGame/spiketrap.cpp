@@ -75,7 +75,7 @@ void SpikeTrap::visualization(Context & cv){
 
 void SpikeTrap::updateState(GameState & gameState ){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 

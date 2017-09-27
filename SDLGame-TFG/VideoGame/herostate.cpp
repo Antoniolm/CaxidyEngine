@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "herostate.h"
+#include "rootmapgame.h"
 
 HeroState::HeroState(){
     currentCoin=-10;
@@ -146,7 +147,7 @@ void HeroState::visualization(Context & cv){
 //**********************************************************************//
 
 void HeroState::updateState(GameState & gameState){
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
     vec3f posHero=hero->getPosition();
     visibleState=true;
     float time=gameState.time;

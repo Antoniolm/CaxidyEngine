@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "soulcarrier.h"
+#include "rootmapgame.h"
 
 SoulCarrier::SoulCarrier(const Value & soulFeatures)
 {
@@ -61,7 +62,7 @@ void SoulCarrier::visualization(Context & cv){
 
 void SoulCarrier::updateState(GameState & gameState ){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
     Soul * soul=hero->getSoul();
 
     if(time-currentTime>200) currentTime=time-50;

@@ -266,7 +266,7 @@ void MeleeEnemy::updateState(GameState & gameState){
     RootMap * rootMap=gameState.rootMap;
     float time=gameState.time;
 
-    Hero * hero=rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
     vec3f posHero=hero->getPosition();
     vec3f distance=vec3f(position.x,position.y,position.z)-posHero;
 

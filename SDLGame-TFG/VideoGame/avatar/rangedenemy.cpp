@@ -297,7 +297,7 @@ void RangedEnemy::updateState(GameState & gameState){
     float time=gameState.time;
 
     currentMap=rootMap;
-    Hero * hero=rootMap->getHero();
+    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
     vec3f posHero=hero->getPosition();
     vec3f distance=vec3f(position.x,position.y,position.z)-posHero;
 

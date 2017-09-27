@@ -71,11 +71,10 @@ void RottenVoxel::visualization(Context & cv){
 
 void RottenVoxel::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 
-    vec3f posHero=hero->getPosition();
+    vec3f posHero=gameState.refPoint;
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
     //if hero is near of a disactivated trap

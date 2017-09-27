@@ -61,12 +61,6 @@ void RootMap::initialize(string fileMap){
 
 //**********************************************************************//
 
-Hero * RootMap::getHero(){
-    return hero;
-}
-
-//**********************************************************************//
-
 void RootMap::visualization(Context & cv){
     //Draw background
     background->visualization(cv);

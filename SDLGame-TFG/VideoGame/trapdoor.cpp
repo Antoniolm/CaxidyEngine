@@ -97,11 +97,10 @@ void TrapDoor::visualization(Context & cv){
 
 void TrapDoor::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=gameState.rootMap->getHero();
 
     if(time-currentTime>200) currentTime=time-50;
 
-    vec3f posHero=hero->getPosition();
+    vec3f posHero=gameState.refPoint;
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
     bool enemyIn=checkEnemies(dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies());
