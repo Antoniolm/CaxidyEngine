@@ -242,3 +242,9 @@ void MainMenu::checkUserProgress(){
 
 }
 
+//**********************************************************************//
+
+MainMenuOption MainMenu::getOptionSelected(){
+    return actionOption[currentOption];
+}
+

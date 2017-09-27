@@ -100,6 +100,15 @@ class MainMenu : public Menu
         */
         //////////////////////////////////////////////////////////////////////////
         void checkUserProgress();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will return the current option selected in the mainmenu
+        *    \return MainMenuOption
+        */
+        //////////////////////////////////////////////////////////////////////////
+        MainMenuOption getOptionSelected();
+
     protected:
 
     private:

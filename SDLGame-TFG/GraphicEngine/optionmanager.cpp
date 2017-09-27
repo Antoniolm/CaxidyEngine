@@ -36,13 +36,15 @@ OptionManager::~OptionManager()
 //**********************************************************************//
 
 void OptionManager::load(){
+
     //Open file
-    FILE * fp = fopen("./option/options.json", "rb"); // non-Windows use "r"
+    FILE * fp = fopen("./option/options.json", "rb");
     char readBuffer[65536];
     rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
     rapidjson::Document document;
     document.ParseStream(is);
 
+    //Obtain information
     resolution.first=document["resolWidth"].GetFloat();
     resolution.second=document["resolHeight"].GetFloat();
     window=document["window"].GetBool();
@@ -71,6 +73,7 @@ int OptionManager::getVolume(){
 //**********************************************************************//
 
 void OptionManager::save(std::pair<int,int>aResolution,bool wind,int aVolume){
+
     //Resolution transformation
     std::ostringstream stringWidth ;
     stringWidth << aResolution.first;
