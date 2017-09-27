@@ -21,7 +21,7 @@
 #define IARANGEDENEMY_H
 
 #include "iaenemy.h"
-#include "../VideoGame/enemylist.h"
+#include "../enemylist.h"
 
 class IARangedEnemy : public IAEnemy
 {

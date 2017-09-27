@@ -5032,8 +5032,8 @@
 	"../lib/rapidjson/document.h"
 	"../../GraphicEngine/avatar/avatar.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
-	"../GraphicEngine/ia/ianpc.h"
+1506514470 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\npc.h
+	"../ia/ianpc.h"
 	"../../GraphicEngine/avatar/avatar.h"
 	"../GraphicEngine/mesh/mesh.h"
 	"../GraphicEngine/collection/meshcollection.h"
@@ -5621,7 +5621,7 @@
 	"objectscene.h"
 	"gamestate.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\optionmanager.cpp
+1506509665 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\optionmanager.cpp
 	"optionmanager.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\particle.cpp
@@ -5732,10 +5732,10 @@
 	"meleeenemy.h"
 	"../rootmapgame.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.h
+1506514464 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\meleeenemy.h
 	"enemy.h"
 	"../lib/rapidjson/document.h"
-	"../GraphicEngine/ia/iameleeenemy.h"
+	"../ia/iameleeenemy.h"
 	"enemylist.h"
 	"../equipment.h"
 
@@ -5747,11 +5747,11 @@
 	"rangedenemy.h"
 	"../rootmapgame.h"
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.h
+1506514480 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\avatar\rangedenemy.h
 	"enemy.h"
 	"../lib/rapidjson/document.h"
-	"../GraphicEngine/ia/iarangedenemy.h"
-	"../GraphicEngine/ia/iameleeenemy.h"
+	"../ia/iarangedenemy.h"
+	"../ia/iameleeenemy.h"
 	"../projectile.h"
 	"../equipment.h"
 	<vector>
@@ -6053,11 +6053,11 @@
 	"gamestatechild.h"
 	"rootmapgame.h"
 
-1506449538 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.h
+1506514548 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.h
 	"region.h"
 	"matrix/structdata.h"
 	"SDL2/SDL.h"
-	"../GraphicEngine/ia/ianpc.h"
+	"ia/ianpc.h"
 	"../lib/rapidjson/document.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\herostate.h
@@ -6075,4 +6075,23 @@
 1506449854 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\textregion.cpp
 	"textregion.h"
 	"rootmapgame.h"
+
+1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\ianpc.h
+	<vector>
+	<string>
+
+1506514415 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iameleeenemy.h
+	"iaenemy.h"
+	"../enemylist.h"
+
+1506514402 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iaenemy.h
+	"matrix/structdata.h"
+	<iostream>
+	<math.h>
+	"../enemylist.h"
+	"../avatar/enemy.h"
+
+1506514424 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iarangedenemy.h
+	"iaenemy.h"
+	"../enemylist.h"
 

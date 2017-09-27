@@ -23,7 +23,7 @@
 #include "region.h"
 #include "matrix/structdata.h"
 #include "SDL2/SDL.h"
-#include "../GraphicEngine/ia/ianpc.h"
+#include "ia/ianpc.h"
 #include "../lib/rapidjson/document.h"
 
 class RootMap;

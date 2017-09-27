@@ -17,30 +17,24 @@
 // **
 // *********************************************************************
 
-#ifndef IAENEMY_H
-#define IAENEMY_H
+#ifndef IAMELEEENEMY_H
+#define IAMELEEENEMY_H
 
-#include "matrix/structdata.h"
-#include <iostream>
-#include <math.h>
-#include "../VideoGame/enemylist.h"
-#include "../VideoGame/avatar/enemy.h"
+#include "iaenemy.h"
+#include "../enemylist.h"
 
-using namespace std;
-
-class IAEnemy
+class IAMeleeEnemy : public IAEnemy
 {
     public:
-
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        IAEnemy();
+        IAMeleeEnemy();
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~IAEnemy();
+        virtual ~IAMeleeEnemy();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -48,27 +42,11 @@ class IAEnemy
         *    \return pair<avatarDirection,vec3f>
         */
         //////////////////////////////////////////////////////////////////////////
-        virtual pair<avatarDirection,vec3f> nextPosition(vec3f posEnemy,vec3f posHero,EnemyList * enemies);
+        pair<avatarDirection,vec3f> nextPosition(vec3f posEnemy,vec3f posHero,EnemyList * enemies);
 
     protected:
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will obtain the position of all activated enemies and put his position in
-        *   a vector that will be return
-        *    \return vector<vec3f>
-        */
-        //////////////////////////////////////////////////////////////////////////
-        vector<vec3f> obtainPosEnemies(vector<Enemy *> enemies);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will check collision between an enemy and the other
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool checkCollision(vector<vec3f> & posEnemies,vec3f currentEnemy);
 
     private:
 };
 
-#endif // IAENEMY_H
+#endif // IAMELEEENEMY_H

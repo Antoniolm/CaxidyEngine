@@ -22,8 +22,8 @@
 
 #include "enemy.h"
 #include "../lib/rapidjson/document.h"
-#include "../GraphicEngine/ia/iarangedenemy.h"
-#include "../GraphicEngine/ia/iameleeenemy.h"
+#include "../ia/iarangedenemy.h"
+#include "../ia/iameleeenemy.h"
 #include "../projectile.h"
 #include "../equipment.h"
 #include <vector>
