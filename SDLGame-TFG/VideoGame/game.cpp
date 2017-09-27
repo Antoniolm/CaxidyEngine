@@ -46,7 +46,7 @@ Game::Game(){
     shadowManager=new ShadowManager(new Shader("shaders/depthShader.vs","shaders/depthShader.fs"));
 
     //CelShading
-    celShading=new CelShading(new Shader("shaders/celShading.vs","shaders/celShading.fs"));
+    celShading=new CelShading(new Shader("shaders/celShading.vs","shaders/celShading.fs"),1.05f);
 
     //Create ours menus
     MeshCollection::getInstance();

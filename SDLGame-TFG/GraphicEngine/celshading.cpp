@@ -19,9 +19,10 @@
 
 #include "celshading.h"
 
-CelShading::CelShading(Shader * aShader)
+CelShading::CelShading(Shader * aShader,float aOffSet)
 {
     shader=aShader;
+    offSet=aOffSet;
 }
 
 //**********************************************************************//
@@ -41,6 +42,8 @@ void CelShading::activate(GameState & gameState){
 
     gameState.camera->activateCamera(shader->getProgram());
     gameState.camera->activatePerspecProjection(shader->getProgram());
+
+    glUniform1f(glGetUniformLocation(shader->getProgram(), "offSet"), offSet);
 }
 
 //**********************************************************************//

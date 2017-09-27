@@ -29,7 +29,7 @@ class CelShading
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        CelShading(Shader * aShader);
+        CelShading(Shader * aShader,float aOffSet);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -58,6 +58,7 @@ class CelShading
     private:
 
         Shader * shader;
+        float offSet;
 };
 
 #endif // CELSHADING_H
