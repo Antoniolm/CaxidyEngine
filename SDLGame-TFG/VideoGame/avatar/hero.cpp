@@ -900,7 +900,8 @@ Soul * Hero::getSoul(){
     if(detectHit(posAvatar,dirAvatar)&& dmgDelay<(currentTime-700) && !canShield && distance<1.0){
 
         //Calculate the damage that the hero will take
-        addLife(value+(armour+currentWeapon->getArmour()+shieldEquipment->getArmour()));
+        value+=(armour+currentWeapon->getArmour()+shieldEquipment->getArmour());
+        addLife(value);
 
         stringstream convert;
         if(activatedTexts[3]){ //if is activate the text ->//Join values
