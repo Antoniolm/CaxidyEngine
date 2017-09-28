@@ -5653,9 +5653,10 @@
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\item.h
 	"../GraphicEngine/object3d.h"
 
-1506505527 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
+1506618561 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\savedmanager.cpp
 	"savedmanager.h"
 	"../VideoGame/equipment.h"
+	"../VideoGame/InventoryMenuGame.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
 	"shadowmanager.h"
@@ -5949,8 +5950,9 @@
 	"../GraphicEngine/matrix/axisrotation.h"
 	"../GraphicEngine/sound/sound.h"
 
-1506460533 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
+1506620995 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\equipment.cpp
 	"equipment.h"
+	"inventorymenugame.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\potion.h
 	"item.h"

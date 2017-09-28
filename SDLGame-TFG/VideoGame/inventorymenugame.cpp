@@ -236,6 +236,7 @@ void InventoryMenuGame::updateState(GameState & gameState){
        && !gameState.camera->isViewMode()){
         float time=gameState.time;
         ControllerManager * controller=gameState.controller;
+        Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
         if(time-currentTime>200)
             currentTime=time-50;
@@ -261,7 +262,6 @@ void InventoryMenuGame::updateState(GameState & gameState){
                 damageText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.3,posHero.z+initialPosition.z+1.4));
                 armourText->setPosition(vec3f(posHero.x+initialPosition.x-0.677,posHero.y+initialPosition.y+1.18,posHero.z+initialPosition.z+1.4));
 
-                Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
                 //Current Level
                 if(hero->getLevel()!=currentLevel){
                     currentLevel=hero->getLevel();
@@ -390,7 +390,7 @@ void InventoryMenuGame::updateState(GameState & gameState){
                 if(inventory->equipItem(currentItemX,currentItemY)){
                     Equipment * equip=inventory->getItem(currentItemX,currentItemY);
 
-                    //gameState.rootMap->getHero()->setEquipment(equip);
+                    hero->setEquipment(equip);
                     equippedItem[equip->getEquipType()]->translation(-0.273+(currentItemX*distItem.x),0.455-(currentItemY*distItem.y),0.9f);
                     moveSound->play();
                 }
