@@ -19,6 +19,7 @@
 
 #include "gamestatechild.h"
 #include "rootmapgame.h"
+#include "inventorymenugame.h"
 
 GameStateChild::GameStateChild()
 {
@@ -39,6 +40,8 @@ void GameStateChild::initPlay(GLuint shaderID){
     rootMap->activatedLight(shaderID);
     rootMap->activatedObjectGroup();
 
+    InventoryMenuGame * inv=dynamic_cast<InventoryMenuGame*>(inventoryMenu);
+
     Hero * hero=dynamic_cast<RootMapGame*>(rootMap)->getHero();
     hero->setCoin(SavedManager::getInstance()->getCoin());
 
@@ -52,9 +55,9 @@ void GameStateChild::initPlay(GLuint shaderID){
     hero->setLevelParameters(saveManager->getCurrentExp(),saveManager->getMaxExp(),saveManager->getLevel());
 
     //Set the equipment of the hero
-    hero->setEquipment(inventoryMenu->getEquippetItem(0));
-    hero->setEquipment(inventoryMenu->getEquippetItem(1));
-    hero->setEquipment(inventoryMenu->getEquippetItem(2));
+    hero->setEquipment(inv->getEquippetItem(0));
+    hero->setEquipment(inv->getEquippetItem(1));
+    hero->setEquipment(inv->getEquippetItem(2));
 
     if(movie->isActivate()){
         movie->setPosition(vec3f(refPoint.x,refPoint.y+6.77,refPoint.z+11));

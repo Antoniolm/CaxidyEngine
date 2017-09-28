@@ -19,6 +19,7 @@
 
 #include "savedmanager.h"
 #include "../VideoGame/equipment.h"
+#include "../VideoGame/InventoryMenuGame.h"
 
 SavedManager* SavedManager::instance = NULL;
 
@@ -129,7 +130,7 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
 
     savedFile << "\"equip\": [\n";
 
-    Inventory * inv=gameState.inventoryMenu->getInventory();
+    Inventory * inv=dynamic_cast<InventoryMenuGame*>(gameState.inventoryMenu)->getInventory();
     int countItems=0;
     int totalItem=inv->getNumItems();
     Equipment * equip;

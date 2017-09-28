@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "equipment.h"
+#include "inventorymenugame.h"
 
 Equipment::Equipment(){
     notTake=true;
@@ -144,7 +145,7 @@ void Equipment::updateState(GameState & gameState){
         root->addLink();
         root->addLink();
 
-        if(gameState.inventoryMenu->addEquip(newEquip)){
+        if(dynamic_cast<InventoryMenuGame*>(gameState.inventoryMenu)->addEquip(newEquip)){
             notTake=false;
             transObject->translation(posInAvatar.x,posInAvatar.y,posInAvatar.z);
             soundTake->play();

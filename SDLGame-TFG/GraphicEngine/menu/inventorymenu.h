@@ -77,73 +77,13 @@ class InventoryMenu : public Menu
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will set the inventory content
-        *    @param equipVec-> vector with the equipment of the inventory
-        *    @param posVec-> vector with the position of each equipment in the inventory
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setInventory(const vector<Equipment*> & equipVec, const vector<vec2f> & posVec);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will add an equipment in the inventory
-        *    @param aEquip-> the equipment that will be added
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool addEquip(Equipment * aEquip);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will return the inventory
-        *    \return Inventory *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Inventory * getInventory();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    It will be clear the inventory of items
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void clearInventory();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will return the equipped equipment of that type
-        *    @param aType-> type of the equipment
-        *    \return Equipment *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Equipment * getEquippetItem(int aType);
+        virtual void clearInventory();
 
     protected:
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will be initialize the information of the items
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void initInfoItem();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will be create the matrix of items
-        *    \return NodeSceneGraph *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        NodeSceneGraph * createMatrixItems();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will be change the selected items
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void changeSelectedItems();
-
         NodeSceneGraph * confirmInterface;   // NodeSceneGraph of the confirm interface
         vec3f initialPosition;               // Initial position of the menu
         Matrix4f * selectedPosition;         // The position of the current selected item
@@ -167,22 +107,6 @@ class InventoryMenu : public Menu
 
         Equipment * lastSelection;           // Pointer to know the last selected
                                              // position was empty or has an equip
-        //Selected items
-        Text * damageItemText;               // Damage text of the selected item
-        Text * armourItemText;               // Armour text of the selected item
-        Text * lifeItemText;                 // Life text of the selected item
-        Text * nameItemText;                 // Name text of the selected item
-
-        //Info of the hero
-        Text * levelText;                    // Level text of the hero
-        Text * lifeText;                     // Life text of the hero
-        Text * damageText;                   // Damage text of the hero
-        Text * armourText;                   // Armour text of the hero
-
-        int currentLevel;                    // Current level of the hero
-        int currentLife;                     // Current life of the hero
-        int currentDmg;                      // Current damage of the hero
-        int currentArmour;                   // Current armour of the hero
 
     private:
 
