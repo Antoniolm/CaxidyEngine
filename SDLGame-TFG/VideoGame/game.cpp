@@ -60,6 +60,7 @@ Game::Game(){
     gameState.mainMenu->add("./textures/mainMenuOption.png",OPTION);
     gameState.mainMenu->add("./textures/mainMenuQuit.png",EXIT);
     gameState.mainMenu->activate();
+    checkUserProgress();
 
     //Create PauseMenu
     gameState.pauseMenu = new PauseMenu(vec3f(0.0,-1.23,-2.0),"./textures/menuBack.png");
@@ -318,7 +319,7 @@ void Game::loop(){
                     SavedManager::getInstance()->save(fileMap,gameState,hero->getCoin(),
                                                       hero->getExp(),hero->getMaxExp(),hero->getLevel());
 
-                    gameState.mainMenu->checkUserProgress();
+                    checkUserProgress();
 
                     //Delete the currentMap
                     delete gameState.rootMap;
@@ -361,6 +362,7 @@ void Game::createRootMap(MainMenuOption option){
 
             SavedManager::getInstance()->save("",gameState,0);
             gameState.rootMap=new RootMapGame("./maps/map00.json",true);
+            checkUserProgress();
 
         break;
         case CONTINUE: //Continue
@@ -386,6 +388,19 @@ void Game::createRootMap(MainMenuOption option){
         break;
 
     }
+}
 
+//**********************************************************************//
+
+void Game::checkUserProgress(){
+    SavedManager * saveManager=SavedManager::getInstance();
+    saveManager->load();
+
+    bool hasSave=false;
+    if(saveManager->getMap()!="")
+        hasSave=true;
+
+    gameState.mainMenu->setHasSave(hasSave);
 
 }
+

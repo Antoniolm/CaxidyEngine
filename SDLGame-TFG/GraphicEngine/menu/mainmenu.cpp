@@ -76,9 +76,6 @@ MainMenu::MainMenu(vec3f initPos,string fileName)
     openSound=soundCollect->getSound(sOpen);
     moveSound=soundCollect->getSound(sCoin);
     ambientSound=soundCollect->getSound(sMAIN);
-
-    //Check if the user has a progress
-    checkUserProgress();
 }
 
 //**********************************************************************//
@@ -159,17 +156,12 @@ void MainMenu::updateState(GameState & gameState){
                 case START: //Start Game
                     ambientSound->stop();
                     activateMenu=false;
-
-                    checkUserProgress();
                     openSound->play();
 
                 break;
                 case CONTINUE: //Continue
                     ambientSound->stop();
-                    //Catch the saved progress and load the map
-
                     activateMenu=false;
-
                     openSound->play();
 
                 break;
@@ -215,18 +207,6 @@ void MainMenu::activate(){
 
 void MainMenu::setHasSave(bool value){
     hasSave=value;
-}
-
-//**********************************************************************//
-
-void MainMenu::checkUserProgress(){
-    SavedManager * saveManager=SavedManager::getInstance();
-    saveManager->load();
-
-    hasSave=false;
-    if(saveManager->getMap()!="")
-        hasSave=true;
-
 }
 
 //**********************************************************************//

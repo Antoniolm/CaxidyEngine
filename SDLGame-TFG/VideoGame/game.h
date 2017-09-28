@@ -101,6 +101,14 @@ class Game
         //////////////////////////////////////////////////////////////////////////
         void createRootMap(MainMenuOption option);
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    Check if the user has a progress or not
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void checkUserProgress();
+
         static Game* instance;          // Instance of game
         Window * window;                // Window object
         OptionManager * options;        // Option Manager

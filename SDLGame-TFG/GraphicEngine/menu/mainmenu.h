@@ -20,7 +20,6 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
-#include "savedmanager.h"
 #include "object3d.h"
 #include "rootmap.h"
 #include "context/context.h"
@@ -100,14 +99,6 @@ class MainMenu : public Menu
         */
         //////////////////////////////////////////////////////////////////////////
         void setHasSave(bool value);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    Check if the user has a progress or not
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void checkUserProgress();
 
         //////////////////////////////////////////////////////////////////////////
         /**
