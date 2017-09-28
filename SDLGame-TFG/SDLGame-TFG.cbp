@@ -88,14 +88,6 @@
 		<Unit filename="GraphicEngine/endmapregion.h" />
 		<Unit filename="GraphicEngine/gamestate.cpp" />
 		<Unit filename="GraphicEngine/gamestate.h" />
-		<Unit filename="GraphicEngine/ia/iaenemy.cpp" />
-		<Unit filename="GraphicEngine/ia/iaenemy.h" />
-		<Unit filename="GraphicEngine/ia/iameleeenemy.cpp" />
-		<Unit filename="GraphicEngine/ia/iameleeenemy.h" />
-		<Unit filename="GraphicEngine/ia/ianpc.cpp" />
-		<Unit filename="GraphicEngine/ia/ianpc.h" />
-		<Unit filename="GraphicEngine/ia/iarangedenemy.cpp" />
-		<Unit filename="GraphicEngine/ia/iarangedenemy.h" />
 		<Unit filename="GraphicEngine/icon.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -226,6 +218,14 @@
 		<Unit filename="VideoGame/gamestatechild.h" />
 		<Unit filename="VideoGame/herostate.cpp" />
 		<Unit filename="VideoGame/herostate.h" />
+		<Unit filename="VideoGame/ia/iaenemy.cpp" />
+		<Unit filename="VideoGame/ia/iaenemy.h" />
+		<Unit filename="VideoGame/ia/iameleeenemy.cpp" />
+		<Unit filename="VideoGame/ia/iameleeenemy.h" />
+		<Unit filename="VideoGame/ia/ianpc.cpp" />
+		<Unit filename="VideoGame/ia/ianpc.h" />
+		<Unit filename="VideoGame/ia/iarangedenemy.cpp" />
+		<Unit filename="VideoGame/ia/iarangedenemy.h" />
 		<Unit filename="VideoGame/inventory.cpp" />
 		<Unit filename="VideoGame/inventory.h" />
 		<Unit filename="VideoGame/item.cpp" />

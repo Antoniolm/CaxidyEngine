@@ -72,6 +72,9 @@ Material::~Material()
 {
     if(texture!=0)
         delete texture;
+
+    if(bumpTexture!=0)
+        delete bumpTexture;
 }
 
 //**********************************************************************//
