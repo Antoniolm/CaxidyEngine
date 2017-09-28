@@ -228,6 +228,8 @@
 		<Unit filename="VideoGame/ia/iarangedenemy.h" />
 		<Unit filename="VideoGame/inventory.cpp" />
 		<Unit filename="VideoGame/inventory.h" />
+		<Unit filename="VideoGame/inventorymenugame.cpp" />
+		<Unit filename="VideoGame/inventorymenugame.h" />
 		<Unit filename="VideoGame/item.cpp" />
 		<Unit filename="VideoGame/item.h" />
 		<Unit filename="VideoGame/jumpbutton.cpp" />

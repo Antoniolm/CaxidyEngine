@@ -47,6 +47,7 @@
 #include "projectile.h"
 #include "avatar/hero.h"
 #include "../GraphicEngine/Menu/mainmenu.h"
+#include "inventorymenugame.h"
 #include <sstream>
 class Game
 {

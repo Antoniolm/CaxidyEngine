@@ -5479,7 +5479,7 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.cpp
 	"loaderthread.h"
 
-1506536927 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
+1506597135 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
 	"material.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.c
@@ -5535,7 +5535,7 @@
 	"mainmenu.h"
 	"game.h"
 
-1506531301 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1506613611 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5563,6 +5563,7 @@
 	"projectile.h"
 	"avatar/hero.h"
 	"../GraphicEngine/Menu/mainmenu.h"
+	"inventorymenugame.h"
 	<sstream>
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.h
@@ -5767,7 +5768,7 @@
 	"avatar/meleeenemy.h"
 	"rootmapgame.h"
 
-1506530731 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1506613428 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 	"rootmapgame.h"
 
@@ -5900,7 +5901,7 @@
 	"jumpbutton.h"
 	"rootmapgame.h"
 
-1506504910 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
+1506613386 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.h
 	<iostream>
 	<vector>
 	"savedmanager.h"
@@ -5921,7 +5922,7 @@
 	"../VideoGame/equipment.h"
 	<string>
 
-1506504918 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
+1506613959 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\menu\inventorymenu.cpp
 	"inventorymenu.h"
 	"../VideoGame/inventory.h"
 	"../text.h"
@@ -6107,4 +6108,11 @@
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\ia\iarangedenemy.cpp
 	"iarangedenemy.h"
+
+1506613871 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventorymenugame.h
+	"../GraphicEngine/menu/inventorymenu.h"
+	"../GraphicEngine/text.h"
+
+1506613917 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\inventorymenugame.cpp
+	"inventorymenugame.h"
 

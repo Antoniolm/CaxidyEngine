@@ -51,7 +51,7 @@ class InventoryMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        InventoryMenu(vec3f initPos,vec3f dItem,string fileName);
+        InventoryMenu();
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -118,10 +118,8 @@ class InventoryMenu : public Menu
         */
         //////////////////////////////////////////////////////////////////////////
         Equipment * getEquippetItem(int aType);
+
     protected:
-
-    private:
-
         //////////////////////////////////////////////////////////////////////////
         /**
         *    It will be initialize the information of the items
@@ -186,6 +184,7 @@ class InventoryMenu : public Menu
         int currentDmg;                      // Current damage of the hero
         int currentArmour;                   // Current armour of the hero
 
+    private:
 
 };
 
