@@ -213,6 +213,12 @@ void MainMenu::activate(){
 
 //**********************************************************************//
 
+void MainMenu::setHasSave(bool value){
+    hasSave=value;
+}
+
+//**********************************************************************//
+
 void MainMenu::checkUserProgress(){
     SavedManager * saveManager=SavedManager::getInstance();
     saveManager->load();

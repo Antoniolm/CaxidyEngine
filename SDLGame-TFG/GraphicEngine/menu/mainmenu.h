@@ -95,6 +95,14 @@ class MainMenu : public Menu
 
         //////////////////////////////////////////////////////////////////////////
         /**
+        *    It will set if the user was a saved progress or not
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setHasSave(bool value);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
         *    Check if the user has a progress or not
         *    \return void
         */
