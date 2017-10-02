@@ -66,8 +66,10 @@ void Texture::bindTexture(int ch){
         glActiveTexture(GL_TEXTURE0);
     else if(ch==1)
         glActiveTexture(GL_TEXTURE1);
-    else
+    else if(ch==2)
         glActiveTexture(GL_TEXTURE2);
+    else
+        glActiveTexture(GL_TEXTURE3);
 
     glBindTexture(GL_TEXTURE_2D, texture);
 }
