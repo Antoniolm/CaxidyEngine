@@ -21,12 +21,15 @@
 
 Material::Material()
 {
-    texture=0;
     ambient=vec3f();
     diffuse=vec3f();
     specular=vec3f();
     shininess=0;
+
+    texture=0;
     bumpTexture=0;
+    parallaxTexture=0;
+
     index=mVOID;
 }
 
@@ -45,12 +48,17 @@ Material::Material(const Material & aMaterial){
     else
         bumpTexture=0;
 
+    if(aMaterial.parallaxTexture!=0)
+        parallaxTexture=new Texture((*aMaterial.parallaxTexture));
+    else
+        parallaxTexture=0;
+
     index=aMaterial.index;
 }
 
 //**********************************************************************//
 
-Material::Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const string & aFileTextur,const string & aFileBumpTextur,MaterialIndex aIndex){
+Material::Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const string & aFileTextur,const string & aFileBumpTextur,const string & aFileParallaxTextur,MaterialIndex aIndex){
     ambient=anAmbient;
     diffuse=aDiffuse;
     specular=aSpecular;
@@ -64,6 +72,10 @@ Material::Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &a
     texture=0;
     if(aFileTextur!="")
         texture=new Texture(aFileTextur);
+
+    parallaxTexture=0;
+    if(aFileParallaxTextur!="")
+        parallaxTexture=new Texture(aFileParallaxTextur);
 }
 
 //**********************************************************************//
@@ -75,6 +87,9 @@ Material::~Material()
 
     if(bumpTexture!=0)
         delete bumpTexture;
+
+    if(parallaxTexture!=0)
+        delete parallaxTexture;
 }
 
 //**********************************************************************//
@@ -93,6 +108,12 @@ void Material::activate(GLuint shaderID){
     if(bumpTexture!=0){
         glUniform1i(glGetUniformLocation(shaderID, "normalMapping"), true);
         bumpTexture->bindTexture(1);
+    }
+
+    glUniform1i(glGetUniformLocation(shaderID, "parallaxMapping"), false);
+    if(parallaxTexture!=0){
+        glUniform1i(glGetUniformLocation(shaderID, "parallaxMapping"), true);
+        parallaxTexture->bindTexture(3);
     }
 }
 
@@ -197,6 +218,11 @@ void Material::setMaterial(const Material & material){
         bumpTexture=new Texture((*material.bumpTexture));
     else
         bumpTexture=0;
+
+    if(material.parallaxTexture!=0)
+        parallaxTexture=new Texture((*material.parallaxTexture));
+    else
+        parallaxTexture=0;
 
 
     index=material.index;

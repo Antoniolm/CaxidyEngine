@@ -45,7 +45,7 @@ class Material
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with parameters*/
         //////////////////////////////////////////////////////////////////////////
-        Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const string & aFileTextur,const string & aFileBumpTextur="",MaterialIndex aIndex=mVOID);
+        Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const string & aFileTextur,const string & aFileBumpTextur="",const string & aFileParallaxTextur="",MaterialIndex aIndex=mVOID);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -177,13 +177,16 @@ class Material
     protected:
 
     private:
-        vec3f ambient;          // Ambient component
-        vec3f diffuse;          // Diffuse component
-        vec3f specular;         // Specular component
-        float shininess;        // Shininess component
-        Texture * texture;      // Texture of the material
-        Texture * bumpTexture;  // bump texture of the material
-        MaterialIndex index;    // Index of the material
+        vec3f ambient;              // Ambient component
+        vec3f diffuse;              // Diffuse component
+        vec3f specular;             // Specular component
+        float shininess;            // Shininess component
+
+        Texture * texture;          // Texture of the material
+        Texture * bumpTexture;      // bump texture of the material
+        Texture * parallaxTexture;  // bump texture of the material
+
+        MaterialIndex index;        // Index of the material
 };
 
 #endif // MATERIAL_H
