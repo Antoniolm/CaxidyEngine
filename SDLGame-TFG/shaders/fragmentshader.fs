@@ -44,18 +44,27 @@ in vec4 FragPosLightSpace;
 // Uniform variable
 uniform DirLight dirLight;
 uniform Material material;
+
 uniform vec3 viewPos;
 uniform int invertNormal;
+
 uniform int noLight;
 uniform int numActivateLight;
 uniform PointLight pointLights[numLight];
 uniform bool normalMapping;
+uniform bool parallaxMapping;
 
-uniform sampler2D ourTexture;
+uniform float heightScale;
+
+    
+uniform sampler2D diffuseMap;
 uniform sampler2D normalMap; 
-uniform sampler2D shadowMap; 
+uniform sampler2D shadowMap;
+uniform sampler2D depthMap;
+
 
 //Definition of our functions
+vec2 calculateParallaxMapping(vec2 texCoords, vec3 viewDir);
 vec3 calculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir,vec3 lightDir);
 float calculateShadow(vec4 fragPosLightSpace,vec3 normal, vec3 lightDir);
 
@@ -65,11 +74,11 @@ void main()
  vec3 norm = normalize(Normal);
 
 //Calculate color of our texture
- vec4 texColor = texture(ourTexture,TextCoord);
+ vec4 texColor = texture(diffuseMap,TextCoord);
  if(texColor.a < 0.1)
     discard;
 
-if(normalMapping){  
+if(normalMapping && !parallaxMapping){  
     norm = texture(normalMap, TextCoord).rgb;
     norm = normalize(norm * 2.0 - 1.0);
 
@@ -98,6 +107,48 @@ if(normalMapping){
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
     color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);   
+}
+
+else if(normalMapping && parallaxMapping){
+    // offset texture coordinates with Parallax Mapping
+    vec3 viewDir = normalize(TangentViewPos - TangentFragPos);
+    vec2 parallaxCoords = TextCoord;
+    
+    parallaxCoords = calculateParallaxMapping(TextCoord,  viewDir);       
+    //if(parallaxCoords.x > 1.0 || parallaxCoords.y > 1.0 || parallaxCoords.x < 0.0 || parallaxCoords.y < 0.0)
+      //  discard;
+
+    // obtain normal from normal map
+    vec3 normal = texture(normalMap, parallaxCoords).rgb;
+    normal = normalize(normal * 2.0 - 1.0);   
+   
+    // get diffuse color
+    vec3 parallaxColor = texture(diffuseMap, parallaxCoords).rgb;
+    // ambient
+    vec3 ambient = parallaxColor;
+    // diffuse
+    vec3 lightDir = normalize(TangentLightPos - TangentFragPos);
+    float diff = max(dot(lightDir, normal), 0.0);
+    vec3 diffuse = diff * parallaxColor;
+    // specular    
+    vec3 reflectDir = reflect(-lightDir, normal);
+    vec3 halfwayDir = normalize(lightDir + viewDir);  
+    float spec = pow(max(dot(normal, halfwayDir), 0.0), 32.0);
+
+    vec3 specular = vec3(0.2) * spec;
+
+    // Calculate shadow
+    float shadow = calculateShadow(FragPosLightSpace,norm,lightDir);       
+    vec3 lighting = (ambient + (0.8 - shadow) * (diffuse + specular)) * texColor.rgb;
+
+    //Calculate the point light
+    result=vec3(0.0);
+    for(int i = 0; i < numActivateLight; i++)
+            result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
+
+    color = vec4(lighting* (result+(ambient * dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);   
+    //color = vec4(ambient + diffuse + specular, 1.0);
+
 }
 else {
     //If is a object in the scene
@@ -137,6 +188,49 @@ else {
  }
 
 }
+
+vec2 calculateParallaxMapping(vec2 texCoords, vec3 viewDir)
+{ 
+    // number of depth layers
+    const float minLayers = 8;
+    const float maxLayers = 32;
+    float numLayers = mix(maxLayers, minLayers, abs(dot(vec3(0.0, 0.0, 1.0), viewDir)));  
+    // calculate the size of each layer
+    float layerDepth = 1.0 / numLayers;
+    // depth of current layer
+    float currentLayerDepth = 0.0;
+    // the amount to shift the texture coordinates per layer (from vector P)
+    vec2 P = viewDir.xy / viewDir.z * heightScale; 
+    vec2 deltaTexCoords = P / numLayers;
+  
+    // get initial values
+    vec2  currentTexCoords     = texCoords;
+    float currentDepthMapValue = texture(depthMap, currentTexCoords).r;
+      
+    while(currentLayerDepth < currentDepthMapValue)
+    {
+        // shift texture coordinates along direction of P
+        currentTexCoords -= deltaTexCoords;
+        // get depthmap value at current texture coordinates
+        currentDepthMapValue = texture(depthMap, currentTexCoords).r;  
+        // get depth of next layer
+        currentLayerDepth += layerDepth;  
+    }
+    
+    // get texture coordinates before collision (reverse operations)
+    vec2 prevTexCoords = currentTexCoords + deltaTexCoords;
+
+    // get depth after and before collision for linear interpolation
+    float afterDepth  = currentDepthMapValue - currentLayerDepth;
+    float beforeDepth = texture(depthMap, prevTexCoords).r - currentLayerDepth + layerDepth;
+ 
+    // interpolation of texture coordinates
+    float weight = afterDepth / (afterDepth - beforeDepth);
+    vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
+
+    return finalTexCoords;     
+}
+
 
 vec3 calculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir,vec3 lightDir)
 {
