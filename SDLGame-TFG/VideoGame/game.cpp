@@ -289,9 +289,12 @@ void Game::loop(){
             glUseProgram(context.currentShader->getProgram()); //We use the program now
             gameState.camera->activateCamera(context.currentShader->getProgram());
             gameState.rootMap->activatedLight(context.currentShader->getProgram());
-            glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "ourTexture"), 0);
+
+            glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "diffuseMap"), 0);
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "normalMap"), 1);
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "shadowMap"), 2);
+            glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "depthMap"), 3);
+
             glUniform3f(glGetUniformLocation(context.currentShader->getProgram(), "lightPosVertex"),posHero.x-1.0, posHero.y+5.0f,posHero.z-2.0);
             glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, shadowManager->getLightSpace().getMatrix());
 

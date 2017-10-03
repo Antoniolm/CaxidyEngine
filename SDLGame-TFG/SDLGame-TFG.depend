@@ -4277,7 +4277,7 @@
 	<vector>
 	<string>
 
-1506968102 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
+1507025554 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
 	"materialcollection.h"
 	"material/material.h"
 
@@ -4313,7 +4313,7 @@
 	<iostream>
 	<fstream>
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.cpp
+1506980890 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.cpp
 	"meshcollection.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\meshcollection.h
@@ -5478,7 +5478,7 @@
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\loaderthread.cpp
 	"loaderthread.h"
 
-1506969230 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
+1506980535 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\material.cpp
 	"material.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\stb_image.c
@@ -5491,7 +5491,7 @@
 	<assert.h>
 	<stdarg.h>
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.cpp
+1506980227 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\material\texture.cpp
 	"texture.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\matrix\acceleratedmovement.cpp
@@ -5768,7 +5768,7 @@
 	"avatar/meleeenemy.h"
 	"rootmapgame.h"
 
-1506624717 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1506980249 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 	"rootmapgame.h"
 

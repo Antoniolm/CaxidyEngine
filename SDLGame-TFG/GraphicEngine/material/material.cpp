@@ -102,7 +102,7 @@ void Material::activate(GLuint shaderID){
     glUniform3f(glGetUniformLocation(shaderID, "material.ambient"),  ambient.x,  ambient.y, ambient.z);
     glUniform3f(glGetUniformLocation(shaderID, "material.diffuse"),  diffuse.x,  diffuse.y, diffuse.z);
     glUniform3f(glGetUniformLocation(shaderID, "material.specular"), specular.x,  specular.y, specular.z);
-    glUniform1f(glGetUniformLocation(shaderID, "material.shininess"),    shininess);
+    glUniform1f(glGetUniformLocation(shaderID, "material.shininess"),shininess);
 
     glUniform1i(glGetUniformLocation(shaderID, "normalMapping"), false);
     if(bumpTexture!=0){
@@ -113,6 +113,7 @@ void Material::activate(GLuint shaderID){
     glUniform1i(glGetUniformLocation(shaderID, "parallaxMapping"), false);
     if(parallaxTexture!=0){
         glUniform1i(glGetUniformLocation(shaderID, "parallaxMapping"), true);
+        glUniform1f(glGetUniformLocation(shaderID, "heightScale"), 0.1);
         parallaxTexture->bindTexture(3);
     }
 }
