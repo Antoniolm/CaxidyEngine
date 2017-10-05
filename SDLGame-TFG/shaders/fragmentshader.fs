@@ -115,8 +115,8 @@ else if(normalMapping && parallaxMapping){
     vec2 parallaxCoords = TextCoord;
     
     parallaxCoords = calculateParallaxMapping(TextCoord,  viewDir);       
-    //if(parallaxCoords.x > 1.0 || parallaxCoords.y > 1.0 || parallaxCoords.x < 0.0 || parallaxCoords.y < 0.0)
-      //  discard;
+    /*if(parallaxCoords.x > 1.0 || parallaxCoords.y > 1.0 || parallaxCoords.x < 0.0 || parallaxCoords.y < 0.0)
+        discard;*/
 
     // obtain normal from normal map
     vec3 normal = texture(normalMap, parallaxCoords).rgb;
@@ -228,7 +228,9 @@ vec2 calculateParallaxMapping(vec2 texCoords, vec3 viewDir)
     float weight = afterDepth / (afterDepth - beforeDepth);
     vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
 
-    return finalTexCoords;     
+    return finalTexCoords; 
+    /*float height =  texture(depthMap, texCoords).r;     
+    return texCoords - viewDir.xy * (height * heightScale); */    
 }
 
 

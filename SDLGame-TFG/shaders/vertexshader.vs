@@ -30,12 +30,18 @@
 		TextCoord=textCoord;
 
 		mat3 NormalShadow=transpose(inverse(mat3(transform)));
-		vec3 T = normalize(vec3(transform * vec4(tangent,0.0)));
-		vec3 N = normalize(vec3(transform * vec4(normal,0.0)));
+		/*vec3 T = normalize(mat3(transform) * tangent);
+		vec3 N = normalize(mat3(transform) * normal);
 		T=normalize(T- dot(T,N) *N);
     	vec3 B = cross(N,T);
 
-    	mat3 TBN = transpose(mat3(T, B, N));  
+    	mat3 TBN = transpose(mat3(T, B, N));  */
+
+    	vec3 T = normalize(mat3(transform) * tangent);
+    	vec3 B = normalize(mat3(transform) * bitangent);
+    	vec3 N = normalize(mat3(transform) * normal);
+    	mat3 TBN = transpose(mat3(T, B, N));
+
     	TangentLightPos = TBN * lightPosVertex;
     	TangentViewPos  = TBN * viewPosVertex;
     	TangentFragPos  = TBN * FragPos;
