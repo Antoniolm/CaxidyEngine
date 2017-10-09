@@ -4277,7 +4277,7 @@
 	<vector>
 	<string>
 
-1507043517 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
+1507545197 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\collection\materialcollection.cpp
 	"materialcollection.h"
 	"material/material.h"
 
@@ -5534,7 +5534,7 @@
 	"mainmenu.h"
 	"game.h"
 
-1506635906 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
+1507547121 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.h
 	"../GraphicEngine/window.h"
 	"../GraphicEngine/context/context.h"
 	"../GraphicEngine/nodescenegraph.h"
@@ -5565,7 +5565,7 @@
 	"inventorymenugame.h"
 	<sstream>
 
-1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.h
+1507547494 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.h
 	"material/texture.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.h
@@ -5657,7 +5657,7 @@
 	"../VideoGame/equipment.h"
 	"../VideoGame/InventoryMenuGame.h"
 
-1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
+1507544628 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowmanager.cpp
 	"shadowmanager.h"
 
 1506407564 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\shadowtexture.cpp
@@ -5768,7 +5768,7 @@
 	"avatar/meleeenemy.h"
 	"rootmapgame.h"
 
-1506980249 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1507547402 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 	"rootmapgame.h"
 
@@ -5997,12 +5997,16 @@
 	"./collection/meshcollection.h"
 	"./collection/materialcollection.h"
 
-1506969009 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.cpp
+1507547371 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.cpp
 	"celshading.h"
 
-1506530667 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.h
-	"context/shader.h"
+1507547314 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.h
 	"gamestate.h"
+	"shadowtexture.h"
+	"context/shader.h"
+	"matrix/matrix4f.h"
+	"camera.h"
+	"matrix/structdata.h"
 
 1506407564 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\avatar\avatar.h
 	"../GraphicEngine/object3d.h"
