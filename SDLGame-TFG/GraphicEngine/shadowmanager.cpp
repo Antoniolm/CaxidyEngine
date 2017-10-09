@@ -84,6 +84,7 @@ void ShadowManager::generateShadow(GameState & gameState){
 //**********************************************************************//
 
 void ShadowManager::activateShadowTexture(){
+    glActiveTexture(GL_TEXTURE2);
     depthTexture->bindTexture();
 }
 

@@ -62,14 +62,24 @@ const std::string & Texture::getFile(){
 //**********************************************************************//
 
 void Texture::bindTexture(int ch){
-    if(ch==0)
-        glActiveTexture(GL_TEXTURE0);
-    else if(ch==1)
-        glActiveTexture(GL_TEXTURE1);
-    else if(ch==2)
-        glActiveTexture(GL_TEXTURE2);
-    else
-        glActiveTexture(GL_TEXTURE3);
+
+    switch(ch){
+        case 0:
+            glActiveTexture(GL_TEXTURE0);
+        break;
+        case 1:
+            glActiveTexture(GL_TEXTURE1);
+        break;
+        case 2:
+            glActiveTexture(GL_TEXTURE2);
+        break;
+        case 3:
+            glActiveTexture(GL_TEXTURE3);
+        break;
+        case 4:
+            glActiveTexture(GL_TEXTURE4);
+        break;
+    }
 
     glBindTexture(GL_TEXTURE_2D, texture);
 }

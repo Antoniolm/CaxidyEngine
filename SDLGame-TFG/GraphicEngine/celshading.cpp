@@ -87,6 +87,7 @@ void CelShading::generateShadow(GameState & gameState){
 //**********************************************************************//
 
 void CelShading::activateShadowTexture(){
+    glActiveTexture(GL_TEXTURE4);
     depthTexture->bindTexture();
 }
 

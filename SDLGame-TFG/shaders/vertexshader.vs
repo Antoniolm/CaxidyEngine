@@ -14,12 +14,15 @@
 	out vec3 TangentFragPos;
 	out vec4 FragPosLightSpace;
 
+	out vec4 FragPosCameraSpace;
+
 	uniform mat4 transform;
 	uniform mat4 view;
 	uniform mat4 projection;
 	uniform vec3 lightPosVertex;
 	uniform vec3 viewPosVertex;
 	uniform mat4 lightSpaceMatrix;
+	uniform mat4 spaceMatrix;
 
 	void main(void)
 	{
@@ -30,13 +33,6 @@
 		TextCoord=textCoord;
 
 		mat3 NormalShadow=transpose(inverse(mat3(transform)));
-		/*vec3 T = normalize(mat3(transform) * tangent);
-		vec3 N = normalize(mat3(transform) * normal);
-		T=normalize(T- dot(T,N) *N);
-    	vec3 B = cross(N,T);
-
-    	mat3 TBN = transpose(mat3(T, B, N));  */
-
     	vec3 T = normalize(mat3(transform) * tangent);
     	vec3 B = normalize(mat3(transform) * bitangent);
     	vec3 N = normalize(mat3(transform) * normal);
@@ -47,4 +43,5 @@
     	TangentFragPos  = TBN * FragPos;
     	
 		FragPosLightSpace= lightSpaceMatrix * vec4(FragPos,1.0);
+		FragPosCameraSpace= spaceMatrix * vec4(FragPos,1.0);
 	}
