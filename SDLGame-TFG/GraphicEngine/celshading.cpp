@@ -19,35 +19,79 @@
 
 #include "celshading.h"
 
-CelShading::CelShading(Shader * aShader,float aOffSet)
+CelShading::CelShading(Shader * aShader)
 {
     shader=aShader;
-    offSet=aOffSet;
+    camera=new Camera();
+    shader=aShader;
+    depthTexture=new ShadowTexture(2048,2048);
 }
 
 //**********************************************************************//
 
 CelShading::~CelShading()
 {
+    delete camera;
     delete shader;
+    delete depthTexture;
 }
 
 //**********************************************************************//
 
-void CelShading::activate(GameState & gameState){
-    glCullFace(GL_FRONT);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    glUseProgram(shader->getProgram()); //We use the program now
-
-    gameState.camera->activateCamera(shader->getProgram());
-    gameState.camera->activatePerspecProjection(shader->getProgram());
-
-    glUniform1f(glGetUniformLocation(shader->getProgram(), "offSet"), offSet);
+void CelShading::setOrthoProjection(float left,float right,float bottom,float top,float nearPro,float farPro){
+    camera->setOrthographicProjection(left,right,bottom,top,nearPro,farPro);
 }
 
 //**********************************************************************//
 
-void CelShading::deactivate(){
-    glCullFace(GL_BACK);
+void CelShading::setCamera(vec3f posLight,vec3f targetLight, vec3f upLight){
+    camera->setCamera(posLight,targetLight,upLight);
+    camera->createCamera();
+}
+
+//**********************************************************************//
+
+Camera * CelShading::getCamera(){
+    return camera;
+}
+
+//**********************************************************************//
+
+void CelShading::setShader(Shader * aShader){
+    shader=aShader;
+}
+
+//**********************************************************************//
+
+Shader * CelShading::getShader(){
+    return shader;
+}
+
+//**********************************************************************//
+
+void CelShading::generateShadow(GameState & gameState){
+    cameraSpace.setMatrix(camera->getView());
+    cameraSpace.product(camera->getOrthoProyection().getMatrix());
+
+    Context context;
+    context.shadow_mode=true;
+    context.currentShader=shader;
+    glUseProgram(context.currentShader->getProgram());
+    glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, cameraSpace.getMatrix());
+
+    depthTexture->setShadowBuffer(true);
+    gameState.rootMap->visualization(context);
+    depthTexture->setShadowBuffer(false);
+}
+
+//**********************************************************************//
+
+void CelShading::activateShadowTexture(){
+    depthTexture->bindTexture();
+}
+
+//**********************************************************************//
+
+Matrix4f & CelShading::getCameraSpace(){
+    return cameraSpace;
 }

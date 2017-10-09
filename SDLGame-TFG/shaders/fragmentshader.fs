@@ -67,6 +67,7 @@ uniform sampler2D depthMap;
 vec2 calculateParallaxMapping(vec2 texCoords, vec3 viewDir);
 vec3 calculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir,vec3 lightDir);
 float calculateShadow(vec4 fragPosLightSpace,vec3 normal, vec3 lightDir);
+float celShading(vec4 fragPosLightSpace);
 
 void main()
 { 
@@ -97,8 +98,15 @@ if(normalMapping && !parallaxMapping){
     float spec = pow(max(dot(norm, halfwayDir), 0.0), 32.0);
     vec3 specular = vec3(0.2) * spec;
     
+    //TIPS -> Cel Shading
     // Calculate shadow
-    float shadow = calculateShadow(FragPosLightSpace,norm,lightDir);       
+    float shadow = celShading(FragPosLightSpace);       
+    //color=vec4(shadow * texColor.r ,shadow * texColor.g ,shadow * texColor.b,1.0f);
+    color=vec4(shadow ,shadow,shadow,1.0f);
+    
+    //TIPS -> SHADOW 
+    //Calculate shadow
+    /*float shadow = calculateShadow(FragPosLightSpace,norm,lightDir);       
     vec3 lighting = (ambient + (0.8 - shadow) * (diffuse + specular)) * texColor.rgb;
 
     //Calculate the point light
@@ -106,7 +114,7 @@ if(normalMapping && !parallaxMapping){
     for(int i = 0; i < numActivateLight; i++)
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
-    color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);   
+    color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);   */
 }
 
 else if(normalMapping && parallaxMapping){
@@ -147,7 +155,6 @@ else if(normalMapping && parallaxMapping){
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
     color = vec4(lighting* (result+(ambient * dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);   
-    //color = vec4(ambient + diffuse + specular, 1.0);
 
 }
 else {
@@ -228,9 +235,7 @@ vec2 calculateParallaxMapping(vec2 texCoords, vec3 viewDir)
     float weight = afterDepth / (afterDepth - beforeDepth);
     vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
 
-    return finalTexCoords; 
-    /*float height =  texture(depthMap, texCoords).r;     
-    return texCoords - viewDir.xy * (height * heightScale); */    
+    return finalTexCoords;    
 }
 
 
@@ -288,6 +293,30 @@ float calculateShadow(vec4 fragPosLightSpace,vec3 normal, vec3 lightDir)
 
     if(projCoords.z>1.0)
         shadow=0.0;
+
+    return shadow;
+}
+
+float celShading(vec4 fragPosLightSpace){
+    // Calculate fragment light space in range [-1,1]
+    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+    
+    // transform fragment light space in range[-1,1] to [0,1]
+    projCoords = projCoords * 0.5 + 0.5;
+
+    // Obtain the depth of our current fragment
+    float currentDepth = projCoords.z;
+    
+    //Soft the shadow using PCF ( using four samples )
+    float shadow = 1.0;
+    vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
+    for(int x = -1; x <= 1 ; ++x){
+        for(int y = -1; y <= 1 ; ++y){
+            float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * (texelSize/6) ).r;
+            if(abs(currentDepth-pcfDepth) >0.00055)
+                return shadow = 0.0;         
+        }    
+    }
 
     return shadow;
 }

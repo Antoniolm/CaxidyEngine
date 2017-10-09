@@ -20,8 +20,12 @@
 #ifndef CELSHADING_H
 #define CELSHADING_H
 
-#include "context/shader.h"
 #include "gamestate.h"
+#include "shadowtexture.h"
+#include "context/shader.h"
+#include "matrix/matrix4f.h"
+#include "camera.h"
+#include "matrix/structdata.h"
 
 class CelShading
 {
@@ -29,7 +33,7 @@ class CelShading
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        CelShading(Shader * aShader,float aOffSet);
+        CelShading(Shader * aShader);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -38,27 +42,86 @@ class CelShading
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It method will activate the cel shading visualization
-        *    @param gameState -> the current state of our game
-        *    \return void
+        *   Set the value for the light projection of the cel shading
+        *   \param left
+        *   \param right
+        *   \param bottom
+        *   \param top
+        *   \param near
+        *   \param far
+        *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void activate(GameState & gameState);
+        void setOrthoProjection(float left,float right,float bottom,float top,float nearPro,float farPro);
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It method will deactivate the cel shading visualization
-        *    @param gameState -> the current state of our game
-        *    \return void
+        *   Set the light camera of the cel shading
+        *   \param posLight -> Position of the camera
+        *   \param targetLight -> Target of the camera
+        *   \param upLight -> The inclination of the camera
+        *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void deactivate();
+        void setCamera(vec3f posLight,vec3f targetLight, vec3f upLight);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will get the light camera of the cel shading
+        *   \return camera *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Camera * getCamera();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will set the shader that will use the cel shading
+        *   \param * aShader
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setShader(Shader * aShader);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will get the shader that will use the cel shading
+        *   \return Shader *
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Shader * getShader();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will generate the shadow of our scene
+        *   \param & gameState
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void generateShadow(GameState & gameState);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will activate the shadow texture of our scene
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void activateShadowTexture();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will get the light space of the cel shading
+        *   \return Matrix4f &
+        */
+        //////////////////////////////////////////////////////////////////////////
+        Matrix4f & getCameraSpace();
+
     protected:
 
     private:
-
-        Shader * shader;
-        float offSet;
+        Shader * shader;               //Shader for shadow generation
+        Camera * camera;               //Camera of the light to generate shadow
+        Matrix4f cameraSpace;          //Space of the light to generate shadow
+        ShadowTexture * depthTexture;  //Texture with the depth of the scene
 };
 
 #endif // CELSHADING_H
