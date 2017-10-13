@@ -84,8 +84,7 @@ void ObjectGroup::init(){
 
 void ObjectGroup::visualization(Context & vis){
     //Draw our objects
-    if(!vis.celShading_mode)
-        root->visualization(vis);
+    root->visualization(vis);
 }
 
 //**********************************************************************//
