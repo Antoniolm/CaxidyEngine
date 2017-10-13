@@ -6030,7 +6030,7 @@
 	"../GraphicEngine/mesh/objectgroup.h"
 	"enemylist.h"
 
-1506504142 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
+1507896862 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\rootmapgame.h
 	"../GraphicEngine/rootmap.h"
 	"avatar/hero.h"
 	"avatar/npc.h"
@@ -6041,11 +6041,11 @@
 	"soulcarrier.h"
 	"door.h"
 	"spiketrap.h"
-	"trapdoor.h"
-	"rottenvoxel.h"
+	"../GraphicEngine/voxels/trapdoor.h"
+	"../GraphicEngine/voxels/rottenvoxel.h"
+	"../GraphicEngine/voxels/slidetrap.h"
 	"movablevoxel.h"
 	"respawnvoxel.h"
-	"slidetrap.h"
 	"jumpbutton.h"
 	"item.h"
 	"potion.h"
@@ -6150,4 +6150,27 @@
 	"../collection/soundcollection.h"
 	"../lib/rapidjson/document.h"
 	"../avatar/avatar.h"
+
+1507895058 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxels\rottenvoxel.cpp
+	"rottenvoxel.h"
+
+1507896245 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxels\rottenvoxel.h
+	"../objectscene.h"
+	"../nodescenegraph.h"
+	"../matrix/matrix4f.h"
+	"../matrix/matrix4fdynamic.h"
+	"../collection/meshcollection.h"
+	"../collection/materialcollection.h"
+	"../collection/soundcollection.h"
+	"../lib/rapidjson/document.h"
+
+1507896671 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxels\trapdoor.h
+	"../objectscene.h"
+	"../nodescenegraph.h"
+	"../matrix/matrix4f.h"
+	"../matrix/matrix4fdynamic.h"
+	"../collection/meshcollection.h"
+	"../collection/materialcollection.h"
+	"../collection/soundcollection.h"
+	"../lib/rapidjson/document.h"
 

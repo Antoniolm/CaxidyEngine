@@ -20,16 +20,14 @@
 #ifndef TRAPDOOR_H
 #define TRAPDOOR_H
 
-#include "../GraphicEngine/objectscene.h"
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/matrix/matrix4f.h"
-#include "../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../GraphicEngine/collection/meshcollection.h"
-#include "../GraphicEngine/collection/materialcollection.h"
-#include "../GraphicEngine/collection/soundcollection.h"
+#include "../objectscene.h"
+#include "../nodescenegraph.h"
+#include "../matrix/matrix4f.h"
+#include "../matrix/matrix4fdynamic.h"
+#include "../collection/meshcollection.h"
+#include "../collection/materialcollection.h"
+#include "../collection/soundcollection.h"
 #include "../lib/rapidjson/document.h"
-#include "avatar/enemy.h"
-#include "enemylist.h"
 
 using namespace rapidjson;
 
@@ -87,14 +85,6 @@ class TrapDoor : public ObjectScene
         */
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    Check the enemies that can activate the trapDoor
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool checkEnemies(std::vector<Enemy *> & enemies);
 
         Matrix4f * transActivateFirst;   // Matrix 4x4 for the activaction of the trap door
         Matrix4f * transActivateSecond;   // Matrix 4x4 for the activaction of the trap door

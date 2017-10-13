@@ -103,10 +103,8 @@ void TrapDoor::updateState(GameState & gameState){
     vec3f posHero=gameState.refPoint;
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
-    bool enemyIn=checkEnemies(dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies());
-
     //if hero is near of a disactivated trap
-    if(!activated && ((distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)) || enemyIn ) ){
+    if(!activated && ((distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)) ) ){
         activated=true;
         delayActivated=true;
         delayTime=time;
@@ -118,7 +116,7 @@ void TrapDoor::updateState(GameState & gameState){
         activatedTrap->play(distance);
     }
 
-    if(activated && desactivatedDelay<(time-2100) && (distance>0.75 || !enemyIn )){ //if hero is far of an activated trap
+    if(activated && desactivatedDelay<(time-2100) && (distance>0.75)){ //if hero is far of an activated trap
         activated=false;
         delayActivated=false;
         animationSound->play(distance);
@@ -194,24 +192,4 @@ void TrapDoor::initAnimation(){
     script->add(0.5,notMove);
 
     animationDown->add(script);
-}
-
-//**********************************************************************//
-
-bool TrapDoor::checkEnemies(std::vector<Enemy *> & enemies){
-    float distance;
-    vec3f posEnemy;
-
-    bool result=false;
-
-    for(int i=0;i<enemies.size();i++){
-        posEnemy=enemies[i]->getPosition();
-        distance=sqrt(pow(position.x-posEnemy.x,2.0)+pow(position.z-posEnemy.z,2.0));
-
-        if(distance<=0.75 && (position.y>posEnemy.y-1 && position.y<posEnemy.y)){
-            result=true;
-        }
-    }
-
-    return result;
 }

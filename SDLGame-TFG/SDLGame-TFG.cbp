@@ -192,6 +192,8 @@
 		<Unit filename="GraphicEngine/voxels/rottenvoxel.h" />
 		<Unit filename="GraphicEngine/voxels/slidetrap.cpp" />
 		<Unit filename="GraphicEngine/voxels/slidetrap.h" />
+		<Unit filename="GraphicEngine/voxels/trapdoor.cpp" />
+		<Unit filename="GraphicEngine/voxels/trapdoor.h" />
 		<Unit filename="GraphicEngine/window.cpp" />
 		<Unit filename="GraphicEngine/window.h" />
 		<Unit filename="VideoGame/avatar/enemy.cpp" />
@@ -258,8 +260,6 @@
 		<Unit filename="VideoGame/spiketrap.h" />
 		<Unit filename="VideoGame/textregion.cpp" />
 		<Unit filename="VideoGame/textregion.h" />
-		<Unit filename="VideoGame/trapdoor.cpp" />
-		<Unit filename="VideoGame/trapdoor.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
