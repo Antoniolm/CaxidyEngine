@@ -188,6 +188,10 @@
 		<Unit filename="GraphicEngine/voxel.h" />
 		<Unit filename="GraphicEngine/voxelgroup.cpp" />
 		<Unit filename="GraphicEngine/voxelgroup.h" />
+		<Unit filename="GraphicEngine/voxels/rottenvoxel.cpp" />
+		<Unit filename="GraphicEngine/voxels/rottenvoxel.h" />
+		<Unit filename="GraphicEngine/voxels/slidetrap.cpp" />
+		<Unit filename="GraphicEngine/voxels/slidetrap.h" />
 		<Unit filename="GraphicEngine/window.cpp" />
 		<Unit filename="GraphicEngine/window.h" />
 		<Unit filename="VideoGame/avatar/enemy.cpp" />
@@ -244,12 +248,8 @@
 		<Unit filename="VideoGame/respawnvoxel.h" />
 		<Unit filename="VideoGame/rootmapgame.cpp" />
 		<Unit filename="VideoGame/rootmapgame.h" />
-		<Unit filename="VideoGame/rottenvoxel.cpp" />
-		<Unit filename="VideoGame/rottenvoxel.h" />
 		<Unit filename="VideoGame/savedmanager.cpp" />
 		<Unit filename="VideoGame/savedmanager.h" />
-		<Unit filename="VideoGame/slidetrap.cpp" />
-		<Unit filename="VideoGame/slidetrap.h" />
 		<Unit filename="VideoGame/soul.cpp" />
 		<Unit filename="VideoGame/soul.h" />
 		<Unit filename="VideoGame/soulcarrier.cpp" />

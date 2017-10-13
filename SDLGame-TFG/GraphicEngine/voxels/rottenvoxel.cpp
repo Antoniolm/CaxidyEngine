@@ -78,7 +78,6 @@ void RottenVoxel::updateState(GameState & gameState){
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
     //if hero is near of a disactivated trap
-    //&& (int)position.x==(int)posHero.x && (int)position.z==(int)posHero.z &&
     if(!activated && !disappear && distance<=0.8f &&
         (position.y>posHero.y-1 && position.y<posHero.y)){
         activated=true;

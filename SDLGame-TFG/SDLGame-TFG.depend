@@ -6136,3 +6136,18 @@
 	"../VideoGame/equipment.h"
 	"../VideoGame/InventoryMenuGame.h"
 
+1506503290 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxels\slidetrap.cpp
+	"slidetrap.h"
+
+1507895556 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxels\slidetrap.h
+	"../objectscene.h"
+	"../nodescenegraph.h"
+	"../matrix/matrix4f.h"
+	"../matrix/matrix4fdynamic.h"
+	"../matrix/acceleratedmovement.h"
+	"../collection/meshcollection.h"
+	"../collection/materialcollection.h"
+	"../collection/soundcollection.h"
+	"../lib/rapidjson/document.h"
+	"../avatar/avatar.h"
+
