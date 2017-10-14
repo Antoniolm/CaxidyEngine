@@ -22,37 +22,15 @@
 CelShading::CelShading(Shader * aShader)
 {
     shader=aShader;
-    camera=new Camera();
-    shader=aShader;
-    depthTexture=new ShadowTexture(2048,2048);
+    celTexture=new CelTexture(2048,2048);
 }
 
 //**********************************************************************//
 
 CelShading::~CelShading()
 {
-    delete camera;
     delete shader;
-    delete depthTexture;
-}
-
-//**********************************************************************//
-
-void CelShading::setOrthoProjection(float left,float right,float bottom,float top,float nearPro,float farPro){
-    camera->setOrthographicProjection(left,right,bottom,top,nearPro,farPro);
-}
-
-//**********************************************************************//
-
-void CelShading::setCamera(vec3f posLight,vec3f targetLight, vec3f upLight){
-    camera->setCamera(posLight,targetLight,upLight);
-    camera->createCamera();
-}
-
-//**********************************************************************//
-
-Camera * CelShading::getCamera(){
-    return camera;
+    delete celTexture;
 }
 
 //**********************************************************************//
@@ -69,9 +47,9 @@ Shader * CelShading::getShader(){
 
 //**********************************************************************//
 
-void CelShading::generateShadow(GameState & gameState){
-    cameraSpace.setMatrix(camera->getView());
-    cameraSpace.product(camera->getOrthoProyection().getMatrix());
+void CelShading::generateCelTexture(GameState & gameState){
+    cameraSpace.setMatrix(gameState.camera->getView());
+    cameraSpace.product(gameState.camera->getPersProyection().getMatrix());
 
     Context context;
     context.shadow_mode=true;
@@ -79,16 +57,16 @@ void CelShading::generateShadow(GameState & gameState){
     glUseProgram(context.currentShader->getProgram());
     glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, cameraSpace.getMatrix());
 
-    depthTexture->setShadowBuffer(true);
+    celTexture->setBuffer(true);
     gameState.rootMap->visualization(context);
-    depthTexture->setShadowBuffer(false);
+    celTexture->setBuffer(false);
 }
 
 //**********************************************************************//
 
-void CelShading::activateShadowTexture(){
+void CelShading::activateTexture(){
     glActiveTexture(GL_TEXTURE4);
-    depthTexture->bindTexture();
+    celTexture->bindTexture();
 }
 
 //**********************************************************************//

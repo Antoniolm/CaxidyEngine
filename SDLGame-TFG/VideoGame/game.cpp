@@ -46,7 +46,7 @@ Game::Game(){
     shadowManager=new ShadowManager(new Shader("shaders/depthShader.vs","shaders/depthShader.fs"));
 
     //CelShading
-    celShading=new CelShading(new Shader("shaders/depthShader.vs","shaders/depthShader.fs"));
+    celShading=new CelShading(new Shader("shaders/celShading.vs","shaders/celShading.fs"));
 
     //Create ours menus
     MeshCollection::getInstance();
@@ -279,9 +279,7 @@ void Game::loop(){
             context.celShading_mode=true;
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            celShading->setCamera(gameState.camera->getPosition(),gameState.camera->getTarget(),gameState.camera->getUp());
-            celShading->setOrthoProjection(-20.0,20.0,-20.0,20.0,-1,30);
-            celShading->generateShadow(gameState);
+            celShading->generateCelTexture(gameState);
 
             context.celShading_mode=false;
 
@@ -300,10 +298,10 @@ void Game::loop(){
 
             glUniform3f(glGetUniformLocation(context.currentShader->getProgram(), "lightPosVertex"),posHero.x-1.0, posHero.y+5.0f,posHero.z-2.0);
             glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, shadowManager->getLightSpace().getMatrix());
-            glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "spaceMatrix"), 1, GL_FALSE, celShading->getCameraSpace().getMatrix());
+            glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "spaceMatrix"), 1, GL_FALSE,  celShading->getCameraSpace().getMatrix());
 
             shadowManager->activateShadowTexture();
-            celShading->activateShadowTexture();
+            celShading->activateTexture();
             gameState.camera->activatePerspecProjection(context.currentShader->getProgram());
             gameState.rootMap->visualization(context);
 

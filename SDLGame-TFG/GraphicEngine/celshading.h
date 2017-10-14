@@ -21,7 +21,7 @@
 #define CELSHADING_H
 
 #include "gamestate.h"
-#include "shadowtexture.h"
+#include "celtexture.h"
 #include "context/shader.h"
 #include "matrix/matrix4f.h"
 #include "camera.h"
@@ -39,39 +39,6 @@ class CelShading
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
         virtual ~CelShading();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *   Set the value for the light projection of the cel shading
-        *   \param left
-        *   \param right
-        *   \param bottom
-        *   \param top
-        *   \param near
-        *   \param far
-        *   \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setOrthoProjection(float left,float right,float bottom,float top,float nearPro,float farPro);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *   Set the light camera of the cel shading
-        *   \param posLight -> Position of the camera
-        *   \param targetLight -> Target of the camera
-        *   \param upLight -> The inclination of the camera
-        *   \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setCamera(vec3f posLight,vec3f targetLight, vec3f upLight);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *   It will get the light camera of the cel shading
-        *   \return camera *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Camera * getCamera();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -97,7 +64,7 @@ class CelShading
         *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void generateShadow(GameState & gameState);
+        void generateCelTexture(GameState & gameState);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -105,7 +72,7 @@ class CelShading
         *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void activateShadowTexture();
+        void activateTexture();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -119,9 +86,8 @@ class CelShading
 
     private:
         Shader * shader;               //Shader for shadow generation
-        Camera * camera;               //Camera of the light to generate shadow
         Matrix4f cameraSpace;          //Space of the light to generate shadow
-        ShadowTexture * depthTexture;  //Texture with the depth of the scene
+        CelTexture * celTexture;  //Texture with the depth of the scene
 };
 
 #endif // CELSHADING_H

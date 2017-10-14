@@ -56,7 +56,6 @@ uniform bool normalMapping;
 uniform bool parallaxMapping;
 
 uniform float heightScale;
-
     
 uniform sampler2D diffuseMap;
 uniform sampler2D normalMap; 
@@ -109,10 +108,10 @@ if(normalMapping && !parallaxMapping){
     for(int i = 0; i < numActivateLight; i++)
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
-    if(celShading(FragPosCameraSpace)==0.0)
-        color=vec4(1.0,1.0,1.0,1.0f);
-        //color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);
-    else color=vec4(0.0,0.0,0.0,1.0f);
+    //if(celShading(FragPosCameraSpace)==0.0)
+        //color=vec4(1.0,1.0,1.0,1.0f);
+        color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);
+    //else color=vec4(0.0,0.0,0.0,1.0f);
 }
 
 else if(normalMapping && parallaxMapping){
@@ -152,10 +151,10 @@ else if(normalMapping && parallaxMapping){
     for(int i = 0; i < numActivateLight; i++)
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
-    if(celShading(FragPosCameraSpace)==0.0)
-        color=vec4(1.0,1.0,1.0,1.0f);
-        //color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);
-    else color=vec4(0.0,0.0,0.0,1.0f);
+    //if(celShading(FragPosCameraSpace)==0.0)
+      //  color=vec4(1.0,1.0,1.0,1.0f);
+        color = vec4(lighting* (result+(dirLight.ambient * material.ambient + diffuse * dirLight.diffuse * material.diffuse + specular * dirLight.specular * material.specular)), 1.0f);
+    //else color=vec4(0.0,0.0,0.0,1.0f);
 
 }
 else {
@@ -187,10 +186,10 @@ else {
         for(int i = 0; i < numActivateLight; i++)
             result += calculatePointLight(pointLights[i], norm, FragPos, viewDir,lightDir); 
 
-        if(celShading(FragPosCameraSpace)==0.0)
-            color=vec4(1.0,1.0,1.0,1.0f);
-            //color= texColor * (vec4(lighting, 1.0f) + vec4(result,1.0));
-        else color=vec4(0.0,0.0,0.0,1.0f);
+        //if(celShading(FragPosCameraSpace)==0.0)
+            //color=vec4(1.0,1.0,1.0,1.0f);
+            color= texColor * (vec4(lighting, 1.0f) + vec4(result,1.0));
+        //else color=vec4(0.0,0.0,0.0,1.0f);
         
      }
 
@@ -317,7 +316,7 @@ float celShading(vec4 FragPosCameraSpace){
     for(int x = -1; x <= 1 ; ++x){
         for(int y = -1; y <= 1 ; ++y){
             float pcfDepth = texture(celMap, projCoords.xy + vec2(x, y) * (texelSize/6) ).r;
-            if(abs(currentDepth-pcfDepth) >0.00255)
+            if(abs(currentDepth-pcfDepth) >0.00055)
                 return shadow = 1.0;         
         }    
     }
