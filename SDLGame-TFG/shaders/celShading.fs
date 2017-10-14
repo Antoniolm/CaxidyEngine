@@ -1,10 +1,17 @@
 #version 330 core
 
-//uniform vec3 u_color1;
+layout(location = 0) out vec4 color;
 
-out vec4 color;
+uniform sampler2D normalMap; 
 
 void main(void){
-   //color = vec4(u_color1, 1.0);
+	vec3 norm = normalize(Normal); 
+
+	if(normalMapping){  	
+	    norm = texture(normalMap, TextCoord).rgb;
+	    norm = normalize(norm * 2.0 - 1.0);
+	}
+	
 	color = vec4(0.0,0.0,0.0,1.0);
+	
 }

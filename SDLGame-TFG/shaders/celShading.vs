@@ -11,8 +11,10 @@ uniform mat4 view;
 uniform mat4 projection;
 uniform vec3 viewPosVertex;
 
-uniform float offSet; 
+out vec3 Normal;
+out vec2 TextCoord;
 
 void main(void){
-   gl_Position = projection * view * transform * vec4(position * offSet,1.0f);//u_offset1,1.0f);
+   gl_Position = projection * view * transform * vec4(position,1.0f);
+   TextCoord=textCoord;
 }
