@@ -19,9 +19,11 @@
 
 #include "celtexture.h"
 
-CelTexture::CelTexture()
+CelTexture::CelTexture(GLuint aWidth,GLuint aHeight)
 {
-    //ctor
+    width=aWidth;
+    height=aHeight;
+    createTexture();
 }
 
 CelTexture::~CelTexture()
@@ -38,7 +40,7 @@ void CelTexture::createTexture(){
     glGenTextures(1, &celMap);
     glBindTexture(GL_TEXTURE_2D, celMap);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, shadowWidth, shadowHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     //glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -54,3 +56,47 @@ void CelTexture::createTexture(){
 
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 }
+
+//**********************************************************************//
+
+void CelTexture::setBuffer(bool value){
+    if(value){
+        glViewport(0, 0, width, height);
+        glBindFramebuffer(GL_FRAMEBUFFER, celMapFBO);
+    }
+    else{
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
+}
+
+//**********************************************************************//
+
+GLuint CelTexture::getFrameBuffer(){
+    return celMapFBO;
+}
+
+//**********************************************************************//
+
+GLuint CelTexture::getTexture(){
+    return celMap;
+}
+
+//**********************************************************************//
+
+void CelTexture::setSize(GLuint aWidth,GLuint aHeight){
+    width=aWidth;
+    height=aHeight;
+}
+
+//**********************************************************************//
+
+GLuint CelTexture::getHeight(){
+    return height;
+}
+
+//**********************************************************************//
+
+GLuint CelTexture::getWidth(){
+    return width;
+}
+

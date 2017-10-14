@@ -28,7 +28,7 @@ class CelTexture : public Texture
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        CelTexture();
+        CelTexture(GLuint aWidth = 1024,GLuint aHeight = 1024);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -43,13 +43,63 @@ class CelTexture : public Texture
         //////////////////////////////////////////////////////////////////////////
         void createTexture();
 
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will indicate if the user will use or not our frame buffer
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setBuffer(bool value);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return our frame buffer
+        *   \return GLuint
+        */
+        //////////////////////////////////////////////////////////////////////////
+        GLuint getFrameBuffer();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return the id of our cel texture
+        *   \return GLuint
+        */
+        //////////////////////////////////////////////////////////////////////////
+        GLuint getTexture();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will set the size of our cel texture
+        *   @param width -> the width of the texture
+        *   @param height -> the height of the texture
+        *   \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void setSize(GLuint aWidth = 1024,GLuint aHeight = 1024);
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return the height of the texture
+        *   \return GLuint
+        */
+        //////////////////////////////////////////////////////////////////////////
+        GLuint getHeight();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   It will return the width of the texture
+        *   \return GLuint
+        */
+        //////////////////////////////////////////////////////////////////////////
+        GLuint getWidth();
+
     protected:
 
     private:
         GLuint celMapFBO;   // Frame buffer of depth texture
         GLuint celMap;      // Texture of depth
-        GLuint shadowHeight;  // Height of shadow texture
-        GLuint shadowWidth;   // Width of shadow texture
+        GLuint height;  // Height of shadow texture
+        GLuint width;   // Width of shadow texture
 };
 
 #endif // CELTEXTURE_H
