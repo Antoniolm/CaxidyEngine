@@ -5768,7 +5768,7 @@
 	"avatar/meleeenemy.h"
 	"rootmapgame.h"
 
-1507716041 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
+1507994665 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\videogame\game.cpp
 	"game.h"
 	"rootmapgame.h"
 
@@ -5995,12 +5995,12 @@
 	"./collection/meshcollection.h"
 	"./collection/materialcollection.h"
 
-1507717933 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.cpp
+1507994454 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.cpp
 	"celshading.h"
 
-1507547314 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.h
+1507994375 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celshading.h
 	"gamestate.h"
-	"shadowtexture.h"
+	"celtexture.h"
 	"context/shader.h"
 	"matrix/matrix4f.h"
 	"camera.h"
@@ -6177,4 +6177,10 @@
 1507894754 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\voxels\trapdoor.cpp
 	"trapdoor.h"
 	"rootmapgame.h"
+
+1507993949 source:c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celtexture.cpp
+	"celtexture.h"
+
+1507993811 c:\users\lenovo\documents\github\tfm-napmare\sdlgame-tfg\graphicengine\celtexture.h
+	"material/texture.h"
 

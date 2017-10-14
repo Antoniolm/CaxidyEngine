@@ -13,8 +13,10 @@ uniform vec3 viewPosVertex;
 
 out vec3 Normal;
 out vec2 TextCoord;
+out vec4 posFigure;
 
 void main(void){
    gl_Position = projection * view * transform * vec4(position,1.0f);
+   posFigure=gl_Position;
    TextCoord=textCoord;
 }
