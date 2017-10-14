@@ -19,5 +19,4 @@ void main(void){
 	}
 
 	color = vec4(norm.x,norm.y,norm.z,posFigure.z);
-	
 }

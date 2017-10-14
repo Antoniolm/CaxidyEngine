@@ -55,6 +55,7 @@ void CelShading::generateCelTexture(GameState & gameState){
     context.shadow_mode=true;
     context.currentShader=shader;
     glUseProgram(context.currentShader->getProgram());
+    glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "normalMap"), 1);
     glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, cameraSpace.getMatrix());
 
     celTexture->setBuffer(true);

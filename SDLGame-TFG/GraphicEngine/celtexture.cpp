@@ -33,6 +33,12 @@ CelTexture::~CelTexture()
 
 //**********************************************************************//
 
+void CelTexture::bindTexture(){
+    glBindTexture(GL_TEXTURE_2D,celMap);
+}
+
+//**********************************************************************//
+
 void CelTexture::createTexture(){
     glGenFramebuffers(1, &celMapFBO);
 
