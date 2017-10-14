@@ -58,6 +58,8 @@
 		<Unit filename="GraphicEngine/camera.h" />
 		<Unit filename="GraphicEngine/celshading.cpp" />
 		<Unit filename="GraphicEngine/celshading.h" />
+		<Unit filename="GraphicEngine/celtexture.cpp" />
+		<Unit filename="GraphicEngine/celtexture.h" />
 		<Unit filename="GraphicEngine/collection/collection.cpp" />
 		<Unit filename="GraphicEngine/collection/collection.h" />
 		<Unit filename="GraphicEngine/collection/materialcollection.cpp" />
