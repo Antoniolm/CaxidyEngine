@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ ControlMenu::ControlMenu(vec3f position,string fileName)
     MeshCollection * meshCollect =MeshCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
 
-    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/controlScreen.png");
+    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/controlScreen.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
 
     positionMenu=new Matrix4f();
@@ -70,7 +70,7 @@ ControlMenu::ControlMenu(vec3f position,string fileName)
     Matrix4f * scaleMain=new Matrix4f();
     scaleMain->scale(0.35,1.8,0.5);
 
-    material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/mainMenuControl.png");
+    material=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/mainMenuControl.png");
 
     NodeSceneGraph * nodeMainBack=new NodeSceneGraph(false,true);
     nodeMainBack->add(positionMainBack);

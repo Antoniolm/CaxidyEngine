@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@ LoadingScreen::LoadingScreen(vec3f initPosition,float delay,string fileName)
     animationDelay=delay;
     MeshCollection * meshCollect =MeshCollection::getInstance();
 
-    currentMaterial=new Material(vec3f(1.0,1.0,1.0),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/loading1.png");
-    addOption(new Texture("./textures/loading1.png"));
+    currentMaterial=new Material(vec3f(1.0,1.0,1.0),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/loading1.png");
+    addOption(new Texture("resources/textures/loading1.png"));
 
     positionMenu=new Matrix4f();
     positionMenu->translation(initPosition.x,initPosition.y,initPosition.z);

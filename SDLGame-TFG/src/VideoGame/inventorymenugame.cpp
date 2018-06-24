@@ -50,7 +50,7 @@ InventoryMenuGame::InventoryMenuGame(vec3f initPos,vec3f dItem,string fileName){
     //////////////////
     // Texts
 
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf",20);
+    TTF_Font *font=TTF_OpenFont( "resources/font/Xolonium-Regular.ttf",20);
     SDL_Color color= {255,255,255};
     damageItemText=new Text(mVOID,font,color,false);
     armourItemText=new Text(mVOID,font,color,false);
@@ -65,11 +65,11 @@ InventoryMenuGame::InventoryMenuGame(vec3f initPos,vec3f dItem,string fileName){
     /////////////////
     //Create interface
 
-    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/selectItem.png");
+    currentMaterial=new Material(vec3f(0.6f, 0.6f, 0.6f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/selectItem.png");
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,fileName.c_str());
-    confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/cfmDelete.png");
-    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/void.png");
-    materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"./textures/equipItem.png");
+    confirmMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/cfmDelete.png");
+    materialCurrentMaterial=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/void.png");
+    materialEquipped=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,"resources/textures/equipItem.png");
 
     initInfoItem();
 
@@ -399,7 +399,7 @@ void InventoryMenuGame::updateState(GameState & gameState){
             //If the user push the action move on the menu and is removing a equip
             if(controller->checkButton(cACTION) && isConfirming &&  menuDelay<(time-300)){
                 if(inventory->removeItem(currentItemX,currentItemY)){
-                    itemView[currentItemY][currentItemX]->setTexture("./textures/void.png");
+                    itemView[currentItemY][currentItemX]->setTexture("resources/textures/void.png");
                     moveSound->play();
                 }
                 isConfirming=false;

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ OptionManager::~OptionManager()
 void OptionManager::load(){
 
     //Open file
-    FILE * fp = fopen("./option/options.json", "rb");
+    FILE * fp = fopen("resources/option/options.json", "rb");
     char readBuffer[65536];
     rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
     rapidjson::Document document;
@@ -92,7 +92,7 @@ void OptionManager::save(std::pair<int,int>aResolution,bool wind,int aVolume){
 
     //Save information in the file
     std::ofstream savedFile;
-    savedFile.open ("./option/options.json");
+    savedFile.open ("resources/option/options.json");
     savedFile << "{ \"resolWidth\":"+stringWidth.str()+","+
                  +" \"resolHeight\":"+stringHeight.str()+","+
                  +" \"window\":"+stringWindow+","+

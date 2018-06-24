@@ -1,7 +1,7 @@
-{ "currentMap":"./maps/map01.json" ,  "coin":4 ,
- "currentExp":100, 
- "maxExp":200, 
- "level":2, 
+{ "currentMap":"" ,  "coin":0 ,
+ "currentExp":0, 
+ "maxExp":100, 
+ "level":1, 
 "equip": [
  { "posInAvatar":[0,-0.2,0],
  "posInScene":[0,0,0],

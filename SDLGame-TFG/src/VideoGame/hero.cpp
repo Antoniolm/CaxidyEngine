@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -68,12 +68,12 @@ Hero::Hero(vec3f aPos)
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
     //Dialog for speak
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 20);
+    TTF_Font *font=TTF_OpenFont( "resources/font/Xolonium-Regular.ttf", 20);
     texts.push_back(new Text(mDIALOG,font));
     activatedTexts.push_back(false);
 
     //Dialog for actions
-    font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 40);
+    font=TTF_OpenFont( "resources/font/Xolonium-Regular.ttf", 40);
     texts.push_back(new Text(mADIALOG,font));
     activatedTexts.push_back(false);
 

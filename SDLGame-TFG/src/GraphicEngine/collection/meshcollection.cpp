@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -26,272 +26,272 @@ MeshCollection::MeshCollection()
 {
     cout<< "Game is loading -> geometries"<< endl;
     //Mesh 0
-    Mesh * element=new Mesh("geometries/cube.obj",true);
+    Mesh * element=new Mesh("resources/geometries/cube.obj",true);
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/sphere.obj");
+    element=new Mesh("resources/geometries/sphere.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 6
-    element=new Mesh("geometries/sphereBackground.obj");
+    element=new Mesh("resources/geometries/sphereBackground.obj");
     element->addLink();
     collection.addElement(element);
 
     //Hero-Enemy mesh
     //Mesh 7
-    element=new Mesh("geometries/knightFoot.obj");
+    element=new Mesh("resources/geometries/knightFoot.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 8
-    element=new Mesh("geometries/knightFootInv.obj");
+    element=new Mesh("resources/geometries/knightFootInv.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 9
-    element=new Mesh("geometries/sword.obj");
+    element=new Mesh("resources/geometries/sword.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 10
-    element=new Mesh("geometries/shield.obj");
+    element=new Mesh("resources/geometries/shield.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 11
-    element=new Mesh("geometries/knightHand.obj");
+    element=new Mesh("resources/geometries/knightHand.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/knightHandShield.obj");
+    element=new Mesh("resources/geometries/knightHandShield.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 12
-    element=new Mesh("geometries/knightArm.obj");
+    element=new Mesh("resources/geometries/knightArm.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 13
-    element=new Mesh("geometries/knightBody.obj");
+    element=new Mesh("resources/geometries/knightBody.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 16
-    element=new Mesh("geometries/knightHead.obj");
+    element=new Mesh("resources/geometries/knightHead.obj");
     element->addLink();
     collection.addElement(element);
 
     //Text-menu mesh
     //Mesh 18
-    element=new Mesh("geometries/text.obj");
+    element=new Mesh("resources/geometries/text.obj");
     element->addLink();
     collection.addElement(element);
 
     //Coin mesh
     //Mesh 19
-    element=new Mesh("geometries/crystal.obj");
+    element=new Mesh("resources/geometries/crystal.obj");
     element->addLink();
     collection.addElement(element);
 
     //Enemy Melee mesh
     //Mesh 19
-    element=new Mesh("geometries/enemyHead.obj");
+    element=new Mesh("resources/geometries/enemyHead.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 19
-    element=new Mesh("geometries/enemyBody.obj");
+    element=new Mesh("resources/geometries/enemyBody.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 19
-    element=new Mesh("geometries/enemyHand.obj");
+    element=new Mesh("resources/geometries/enemyHand.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 19
-    element=new Mesh("geometries/enemyFoot.obj");
+    element=new Mesh("resources/geometries/enemyFoot.obj");
     element->addLink();
     collection.addElement(element);
 
     //Enemy Ranged mesh
     //Mesh 19
-    element=new Mesh("geometries/rangedHead.obj");
+    element=new Mesh("resources/geometries/rangedHead.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 19
-    element=new Mesh("geometries/rangedBody.obj");
+    element=new Mesh("resources/geometries/rangedBody.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 19
-    element=new Mesh("geometries/rangedHand.obj");
+    element=new Mesh("resources/geometries/rangedHand.obj");
     element->addLink();
     collection.addElement(element);
 
     //Mesh 19
-    element=new Mesh("geometries/rangedFoot.obj");
+    element=new Mesh("resources/geometries/rangedFoot.obj");
     element->addLink();
     collection.addElement(element);
 
 
     //NPC mesh
     //Mesh 19
-    element=new Mesh("geometries/ghostButler.obj");
+    element=new Mesh("resources/geometries/ghostButler.obj");
     element->addLink();
     collection.addElement(element);
 
     //scene mesh
     //Mesh 19
-    element=new Mesh("geometries/bed.obj");
+    element=new Mesh("resources/geometries/bed.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/cupBoard.obj");
+    element=new Mesh("resources/geometries/cupBoard.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/bedsideTable.obj");
+    element=new Mesh("resources/geometries/bedsideTable.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/arrow.obj");
+    element=new Mesh("resources/geometries/arrow.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/bookShelf.obj");
+    element=new Mesh("resources/geometries/bookShelf.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/smallTable.obj");
+    element=new Mesh("resources/geometries/smallTable.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/chair.obj");
+    element=new Mesh("resources/geometries/chair.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/rug.obj");
+    element=new Mesh("resources/geometries/rug.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/window.obj");
+    element=new Mesh("resources/geometries/window.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/pillar.obj");
+    element=new Mesh("resources/geometries/pillar.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/crossbow.obj");
+    element=new Mesh("resources/geometries/crossbow.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/club.obj");
+    element=new Mesh("resources/geometries/club.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/torch.obj");
+    element=new Mesh("resources/geometries/torch.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/chandelier.obj");
+    element=new Mesh("resources/geometries/chandelier.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/barrel.obj");
+    element=new Mesh("resources/geometries/barrel.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/candleHolder.obj");
+    element=new Mesh("resources/geometries/candleHolder.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/flag.obj");
+    element=new Mesh("resources/geometries/flag.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/bench.obj");
+    element=new Mesh("resources/geometries/bench.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/column.obj");
+    element=new Mesh("resources/geometries/column.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/potion.obj");
+    element=new Mesh("resources/geometries/potion.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/mateHead.obj");
+    element=new Mesh("resources/geometries/mateHead.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/mateHand.obj");
+    element=new Mesh("resources/geometries/mateHand.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/books.obj");
+    element=new Mesh("resources/geometries/books.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/trunk.obj");
+    element=new Mesh("resources/geometries/trunk.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/ladder.obj");
+    element=new Mesh("resources/geometries/ladder.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/spikes.obj");
+    element=new Mesh("resources/geometries/spikes.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/invisibleWallRight.obj");
+    element=new Mesh("resources/geometries/invisibleWallRight.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/invisibleWallLeft.obj");
+    element=new Mesh("resources/geometries/invisibleWallLeft.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/pot.obj");
+    element=new Mesh("resources/geometries/pot.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/pot2.obj");
+    element=new Mesh("resources/geometries/pot2.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/door.obj");
+    element=new Mesh("resources/geometries/door.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/glyph.obj");
+    element=new Mesh("resources/geometries/glyph.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/soul.obj");
+    element=new Mesh("resources/geometries/soul.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/trapDoor.obj");
+    element=new Mesh("resources/geometries/trapDoor.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/buttonBase.obj");
+    element=new Mesh("resources/geometries/buttonBase.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/button.obj");
+    element=new Mesh("resources/geometries/button.obj");
     element->addLink();
     collection.addElement(element);
 
-    element=new Mesh("geometries/jumpMesh.obj");
+    element=new Mesh("resources/geometries/jumpMesh.obj");
     element->addLink();
     collection.addElement(element);
 

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -31,12 +31,12 @@ HeroState::HeroState(){
     //////////////////////////////////////////////////////
     /////             Initialize text                /////
     //////////////////////////////////////////////////////
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 20);
+    TTF_Font *font=TTF_OpenFont( "resources/font/Xolonium-Regular.ttf", 20);
     SDL_Color color= {0,255,0};
     coinText=new Text(mVOID,font,color,false);
 
     levelUp=new Text(mVOID,font,color,false);
-    levelUp->setMessage("¡Level Up!");
+    levelUp->setMessage("ï¿½Level Up!");
     levelUp->init(1000.0,80.0);
 
     MeshCollection * meshCollect =MeshCollection::getInstance();

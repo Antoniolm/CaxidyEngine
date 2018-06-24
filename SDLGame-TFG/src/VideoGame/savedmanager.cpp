@@ -43,7 +43,7 @@ void SavedManager::load(bool forceLoad){
         wasLoaded=true;
 
         //Open file
-        FILE * fp = fopen("./save/save.json", "rb"); // non-Windows use "r"
+        FILE * fp = fopen("resources/save/save.json", "rb"); // non-Windows use "r"
         char readBuffer[65536];
         rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
         rapidjson::Document document;
@@ -121,7 +121,7 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
     stringCoin << coin;
 
     std::ofstream savedFile;
-    savedFile.open ("./save/save.json");
+    savedFile.open ("resources/save/save.json");
     savedFile << "{ \"currentMap\":\""+ fileMap +"\" ,"+
                  "  \"coin\":"+ stringCoin.str() +" ,\n";
     savedFile << " \"currentExp\":"<< cExp <<", \n";

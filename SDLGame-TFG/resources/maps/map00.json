@@ -1,11 +1,11 @@
 {
     "bkgdMaterial":"mCUBE_DUNGB",
     "bkgdPosition":[0.0,0.0,0.0],
-    "sound":"sounds/backSoundLoop.wav",
+    "sound":"resources/sounds/backSoundLoop.wav",
     "volSound":30.0,
     "heroPosition":[76,5.5,-45.5],
     "heroPosition2":[4,2.0,-10],
-    "nextMap":"./maps/map01.json",
+    "nextMap":"resources/maps/map01.json",
 
     "title": {
         "position":[0.0,5.75,8.0],
@@ -15,9 +15,9 @@
     },
 
     "movie": [
-        {"texture":"./textures/movieScreen1.png"},
-        {"texture":"./textures/movieScreen2.png"},
-        {"texture":"./textures/movieScreen3.png"}
+        {"texture":"resources/textures/movieScreen1.png"},
+        {"texture":"resources/textures/movieScreen2.png"},
+        {"texture":"resources/textures/movieScreen3.png"}
     ],
 
     "endMapRegion":{
@@ -113,7 +113,7 @@
                 "damage":10,
                 "armour":5,
 
-                "textFont":"font/Xolonium-Regular.ttf",
+                "textFont":"resources/font/Xolonium-Regular.ttf",
                 "textSize":40,
 
                 "material":"mHERO",
@@ -167,7 +167,7 @@
 
     "mate":{    
         "position":[4,3.0,-8],
-        "textFont":"font/Xolonium-Regular.ttf",
+        "textFont":"resources/font/Xolonium-Regular.ttf",
         "textSize":20,
         "material":"mMATE",
         "head":"MATEHEAD",
@@ -179,7 +179,7 @@
                 "material":"mBUTLER",
                 "mesh":"BUTLER",
                 "textSize":20,
-                "textFont":"font/Xolonium-Regular.ttf",
+                "textFont":"resources/font/Xolonium-Regular.ttf",
                 "dialog":[{"speaker":0,
                            "string":"Oh!! Young warrior, you waked up"},
                           {"speaker":1,
@@ -201,7 +201,7 @@
                 "material":"mBUTLER",
                 "mesh":"BUTLER",
                 "textSize":20,
-                "textFont":"font/Xolonium-Regular.ttf",
+                "textFont":"resources/font/Xolonium-Regular.ttf",
                 "dialog":[{"speaker":0,
                            "string":"You have to be careful with the green water"},
                           {"speaker":0,
@@ -222,7 +222,7 @@
                 "position":[75.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
-                "textFont":"font/Xolonium-Regular.ttf",
+                "textFont":"resources/font/Xolonium-Regular.ttf",
                 "textSize":40,
                 "material":"mENEMY",
                 "head":"EHEAD",
@@ -248,7 +248,7 @@
                 "position":[77.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
-                "textFont":"font/Xolonium-Regular.ttf",
+                "textFont":"resources/font/Xolonium-Regular.ttf",
                 "textSize":40,
                 "material":"mENEMY",
                 "head":"EHEAD",
@@ -274,7 +274,7 @@
                 "position":[79.5,5.5,-40.5],
                 "radioActivity":[2.0,2.0,2.0],
                 "type":"melee",
-                "textFont":"font/Xolonium-Regular.ttf",
+                "textFont":"resources/font/Xolonium-Regular.ttf",
                 "textSize":40,
                 "material":"mENEMY",
                 "head":"EHEAD",

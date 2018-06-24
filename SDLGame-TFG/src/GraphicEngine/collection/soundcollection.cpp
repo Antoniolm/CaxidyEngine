@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -26,31 +26,25 @@ SoundCollection* SoundCollection::instance = NULL;
 SoundCollection::SoundCollection()
 {
     cout<< "Game is loading -> sounds"<< endl;
-    collection.addElement(new Effect("sounds/coin.wav",30,-1,0));
-
-    collection.addElement(new Effect("sounds/openSound.wav",40,-1,0));
-
-    collection.addElement(new Effect("sounds/enemyHit.wav",50,-1,0));
-
-    collection.addElement(new Effect("sounds/shoot.wav",50,-1,0));
-
-    collection.addElement(new Effect("sounds/sword.wav",5,-1,0));
-
-    collection.addElement(new Effect("sounds/arrowHit.wav",20,-1,0));
-
-    collection.addElement(new Effect("sounds/shield.wav",40,-1,0));
-    collection.addElement(new Effect("sounds/heroHit.wav",20,-1,0));
-    collection.addElement(new Effect("sounds/walking.wav",40,-1,-1));
-    collection.addElement(new Effect("sounds/jump.wav",20,-1,0));
-    collection.addElement(new Effect("sounds/fall.wav",60,-1,0));
-    collection.addElement(new Effect("sounds/trapActivated.wav",40,-1,0));
-    collection.addElement(new Effect("sounds/animationTrap.wav",20,-1,0));
-    collection.addElement(new Effect("sounds/bookRead.wav",20,-1,0));
-    collection.addElement(new Music("sounds/movieSound.wav",40));
-    collection.addElement(new Music("sounds/mainSound.wav",5));
-    collection.addElement(new Effect("sounds/rotBlock.wav",20,-1,0));
-    collection.addElement(new Effect("sounds/moveBlock.wav",20,-1,0));
-    collection.addElement(new Effect("sounds/fallBlock.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/coin.wav",30,-1,0));
+    collection.addElement(new Effect("resources/sounds/openSound.wav",40,-1,0));
+    collection.addElement(new Effect("resources/sounds/enemyHit.wav",50,-1,0));
+    collection.addElement(new Effect("resources/sounds/shoot.wav",50,-1,0));
+    collection.addElement(new Effect("resources/sounds/sword.wav",5,-1,0));
+    collection.addElement(new Effect("resources/sounds/arrowHit.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/shield.wav",40,-1,0));
+    collection.addElement(new Effect("resources/sounds/heroHit.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/walking.wav",40,-1,-1));
+    collection.addElement(new Effect("resources/sounds/jump.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/fall.wav",60,-1,0));
+    collection.addElement(new Effect("resources/sounds/trapActivated.wav",40,-1,0));
+    collection.addElement(new Effect("resources/sounds/animationTrap.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/bookRead.wav",20,-1,0));
+    collection.addElement(new Music("resources/sounds/movieSound.wav",40));
+    collection.addElement(new Music("resources/sounds/mainSound.wav",5));
+    collection.addElement(new Effect("resources/sounds/rotBlock.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/moveBlock.wav",20,-1,0));
+    collection.addElement(new Effect("resources/sounds/fallBlock.wav",20,-1,0));
 
     //Create our map
     collection.addIndex("sCoin",sCoin);

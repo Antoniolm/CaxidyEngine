@@ -39,62 +39,62 @@ Game::Game(){
     SoundCollection::getInstance()->updateVolume((float)options->getVolume()/100.0);
 
     //Create our shader
-    context.currentShader=new Shader("shaders/vertexshader.vs","shaders/fragmentshader.fs");
+    context.currentShader=new Shader("resources/shaders/vertexshader.vs","resources/shaders/fragmentshader.fs");
     glUseProgram(context.currentShader->getProgram()); //We use the program now
 
     //ShadowManager
-    shadowManager=new ShadowManager(new Shader("shaders/depthShader.vs","shaders/depthShader.fs"));
+    shadowManager=new ShadowManager(new Shader("resources/shaders/depthShader.vs","resources/shaders/depthShader.fs"));
 
     //CelShading
-    celShading=new CelShading(new Shader("shaders/celShading.vs","shaders/celShading.fs"));
+    celShading=new CelShading(new Shader("resources/shaders/celShading.vs","resources/shaders/celShading.fs"));
 
     //Create ours menus
     MeshCollection::getInstance();
     MaterialCollection::getInstance();
     
     //Create MainMenu
-    gameState.mainMenu=new MainMenu(vec3f(0.0,6.70,11.0),"./textures/mainBackMenu.png");
-    gameState.mainMenu->add("./textures/mainMenuStart.png",START);
-    gameState.mainMenu->add("./textures/mainMenuCont.png",CONTINUE);
-    gameState.mainMenu->add("./textures/mainMenuControl.png",CONTROLS);
-    gameState.mainMenu->add("./textures/mainMenuOption.png",OPTION);
-    gameState.mainMenu->add("./textures/mainMenuQuit.png",EXIT);
+    gameState.mainMenu=new MainMenu(vec3f(0.0,6.70,11.0),"resources/textures/mainBackMenu.png");
+    gameState.mainMenu->add("resources/textures/mainMenuStart.png",START);
+    gameState.mainMenu->add("resources/textures/mainMenuCont.png",CONTINUE);
+    gameState.mainMenu->add("resources/textures/mainMenuControl.png",CONTROLS);
+    gameState.mainMenu->add("resources/textures/mainMenuOption.png",OPTION);
+    gameState.mainMenu->add("resources/textures/mainMenuQuit.png",EXIT);
     gameState.mainMenu->activate();
     checkUserProgress();
     
     //Create PauseMenu
-    gameState.pauseMenu = new PauseMenu(vec3f(0.0,-1.23,-2.0),"./textures/menuBack.png");
-    gameState.pauseMenu->add("./textures/menuPauseResume.png",pRESUME);
-    gameState.pauseMenu->add("./textures/menuPauseQuit.png",pQUIT);
+    gameState.pauseMenu = new PauseMenu(vec3f(0.0,-1.23,-2.0),"resources/textures/menuBack.png");
+    gameState.pauseMenu->add("resources/textures/menuPauseResume.png",pRESUME);
+    gameState.pauseMenu->add("resources/textures/menuPauseQuit.png",pQUIT);
 
     
     //Create deadMenu
-    gameState.deadMenu = new DeadMenu(vec3f(0.0,-1.23,-2.0),"./textures/menuBack.png");
-    gameState.deadMenu->add("./textures/dieMenu.png");
+    gameState.deadMenu = new DeadMenu(vec3f(0.0,-1.23,-2.0),"resources/textures/menuBack.png");
+    gameState.deadMenu->add("resources/textures/dieMenu.png");
 
     //Create creditScreen
-    gameState.creditScreen= new CreditScreen(vec3f(0.0f,6.77f,11.0f),"./textures/menuBack.png");
-    gameState.creditScreen->add("./textures/creditScreen.png");
+    gameState.creditScreen= new CreditScreen(vec3f(0.0f,6.77f,11.0f),"resources/textures/menuBack.png");
+    gameState.creditScreen->add("resources/textures/creditScreen.png");
 
     //Create LoadingScreen
-    gameState.loadScreen=new LoadingScreen(vec3f(0.0f,6.77f,11.0f),250,"./textures/loading1.png");
-    gameState.loadScreen->add("./textures/loading2.png");
-    gameState.loadScreen->add("./textures/loading3.png");
+    gameState.loadScreen=new LoadingScreen(vec3f(0.0f,6.77f,11.0f),250,"resources/textures/loading1.png");
+    gameState.loadScreen->add("resources/textures/loading2.png");
+    gameState.loadScreen->add("resources/textures/loading3.png");
 
     //Create optionMenu
-    gameState.optionMenu=new OptionMenu(vec3f(0.0,6.70,11.0),"./textures/mainMenuOption.png","./textures/optionResol.png","./textures/mainBackMenu.png");
-    gameState.optionMenu->add("./textures/optionResol.png");
-    gameState.optionMenu->add("./textures/optionWindow.png");
-    gameState.optionMenu->add("./textures/optionVolume.png");
-    gameState.optionMenu->add("./textures/optionSave.png");
-    gameState.optionMenu->add("./textures/optionQuit.png");
+    gameState.optionMenu=new OptionMenu(vec3f(0.0,6.70,11.0),"resources/textures/mainMenuOption.png","resources/textures/optionResol.png","resources/textures/mainBackMenu.png");
+    gameState.optionMenu->add("resources/textures/optionResol.png");
+    gameState.optionMenu->add("resources/textures/optionWindow.png");
+    gameState.optionMenu->add("resources/textures/optionVolume.png");
+    gameState.optionMenu->add("resources/textures/optionSave.png");
+    gameState.optionMenu->add("resources/textures/optionQuit.png");
 
     
     //Create controlMenu
-    gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"./textures/mainBackMenu.png");
+    gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"resources/textures/mainBackMenu.png");
 
     //Create inventoryMenu
-    gameState.inventoryMenu=new InventoryMenuGame(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"./textures/inventory.png");
+    gameState.inventoryMenu=new InventoryMenuGame(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"resources/textures/inventory.png");
 
     //Create speakingSketch
     gameState.speakingSketch=new SpeakingSketch(vec3f(0.0f,-1.23,-2.0),"mSPEAK");
@@ -368,7 +368,7 @@ void Game::createRootMap(MainMenuOption option){
             inv->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,10,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
             SavedManager::getInstance()->save("",gameState,0);
-            gameState.rootMap=new RootMapGame("./maps/map00.json",true);
+            gameState.rootMap=new RootMapGame("resources/maps/map00.json",true);
             checkUserProgress();
 
         break;

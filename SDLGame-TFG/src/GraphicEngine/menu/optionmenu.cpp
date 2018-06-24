@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ OptionMenu::OptionMenu(vec3f posMenu,string mat,string currentMat, string matBac
     materialBack=new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(1.0f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),32.0f,matBack);
 
     //Initialize text
-    TTF_Font *font=TTF_OpenFont( "font/Xolonium-Regular.ttf", 15);
+    TTF_Font *font=TTF_OpenFont( "resources/font/Xolonium-Regular.ttf", 15);
 
     resolText=new Text(mVOID,font);
     windText=new Text(mVOID,font);
