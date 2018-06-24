@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -85,17 +85,16 @@ Equipment * Inventory::getItem(int x,int y){
 //**********************************************************************//
 
 vector<Equipment *> & Inventory::getItems(){
-    vector<Equipment *> result;
+    auxItems.clear();
 
     for(int i=0;i<items.size();i++){
         for(int j=0;j<items[i].size();j++)
             if(items[i][j]!=0){
-                result.push_back(items[i][j]);
+                auxItems.push_back(items[i][j]);
             }
     }
 
-    return result;
-
+    return auxItems;
 }
 
 //**********************************************************************//
