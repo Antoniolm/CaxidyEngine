@@ -21,7 +21,7 @@
 #define VOXEL_H
 
 #include "objectscene.h"
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 #include "nodescenegraph.h"
 #include "object3d.h"
 #include "matrix/matrix4f.h"

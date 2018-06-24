@@ -121,7 +121,6 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
     stringCoin << coin;
 
     std::ofstream savedFile;
-    cout<< "boomSave0" <<endl;
     savedFile.open ("./save/save.json");
     savedFile << "{ \"currentMap\":\""+ fileMap +"\" ,"+
                  "  \"coin\":"+ stringCoin.str() +" ,\n";
@@ -131,13 +130,11 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
 
     savedFile << "\"equip\": [\n";
 
-    cout<< "boomSave1" <<endl;
     Inventory * inv=(dynamic_cast<InventoryMenuGame*>(gameState.inventoryMenu))->getInventory();
-    cout<< "boomSaveEnd" <<endl;
     int countItems=0;
     int totalItem=inv->getNumItems();
     Equipment * equip;
-    cout<< "boomSaveEnd1" <<endl;
+    
     for(int i=0;i<inv->getSizeY() && countItems!=totalItem;i++){
         for(int j=0;j<inv->getSizeX() && countItems!=totalItem;j++){
             equip=inv->getItem(j,i);

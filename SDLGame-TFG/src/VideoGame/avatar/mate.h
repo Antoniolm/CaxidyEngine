@@ -31,7 +31,7 @@
 #include "../../GraphicEngine/sound/sound.h"
 #include "../../GraphicEngine/text.h"
 #include "../../GraphicEngine/animation/animationlist.h"
-#include "../../../lib/rapidjson/document.h"
+#include "../../../resources/lib/rapidjson/document.h"
 #include "../../GraphicEngine/avatar/avatar.h"
 
 using namespace rapidjson;

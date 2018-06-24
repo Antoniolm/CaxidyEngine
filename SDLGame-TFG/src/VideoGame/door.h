@@ -28,7 +28,7 @@
 #include "../GraphicEngine/collection/meshcollection.h"
 #include "../GraphicEngine/collection/materialcollection.h"
 #include "soulcarrier.h"
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 
 using namespace rapidjson;
 

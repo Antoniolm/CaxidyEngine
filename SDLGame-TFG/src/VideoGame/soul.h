@@ -28,7 +28,7 @@
 #include "../GraphicEngine/collection/meshcollection.h"
 #include "../GraphicEngine/collection/materialcollection.h"
 #include "../GraphicEngine/matrix/axisrotation.h"
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 
 using namespace rapidjson;
 

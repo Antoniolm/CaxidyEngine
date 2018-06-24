@@ -28,7 +28,7 @@
 #include "../collection/meshcollection.h"
 #include "../collection/materialcollection.h"
 #include "../collection/soundcollection.h"
-#include "../../../lib/rapidjson/document.h"
+#include "../../../resources/lib/rapidjson/document.h"
 #include "../avatar/avatar.h"
 
 using namespace rapidjson;

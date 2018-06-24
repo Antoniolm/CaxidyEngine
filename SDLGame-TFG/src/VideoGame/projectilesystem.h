@@ -26,7 +26,7 @@
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/rootmap.h"
 #include <list>
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 
 
 class Projectile;

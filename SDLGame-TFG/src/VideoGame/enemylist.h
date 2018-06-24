@@ -26,7 +26,7 @@
 #include "avatar/hero.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/object3d.h"
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 
 #include <vector>
 

@@ -24,7 +24,7 @@
 #include "../context/shader.h"
 #include <string>
 #include <cstdlib>
-#include "../../../lib/rapidjson/document.h"
+#include "../../../resources/lib/rapidjson/document.h"
 
 class Light
 {

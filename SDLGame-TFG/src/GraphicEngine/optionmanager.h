@@ -20,9 +20,9 @@
 #ifndef OPTIONMANAGER_H
 #define OPTIONMANAGER_H
 
-#include "../../lib/rapidjson/document.h"
-#include "../../lib/rapidjson/stringbuffer.h"
-#include "../../lib/rapidjson/filereadstream.h"
+#include "../../resources/lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/stringbuffer.h"
+#include "../../resources/lib/rapidjson/filereadstream.h"
 #include <string>
 #include <fstream>
 #include <sstream>

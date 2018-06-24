@@ -24,7 +24,7 @@
 #include "../GraphicEngine/matrix/structdata.h"
 #include "SDL2/SDL.h"
 #include "ia/ianpc.h"
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 
 class RootMap;
 using namespace rapidjson;

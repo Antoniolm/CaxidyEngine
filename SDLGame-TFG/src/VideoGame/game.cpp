@@ -60,9 +60,7 @@ Game::Game(){
     gameState.mainMenu->add("./textures/mainMenuOption.png",OPTION);
     gameState.mainMenu->add("./textures/mainMenuQuit.png",EXIT);
     gameState.mainMenu->activate();
-    cout<<"boom"<<endl;
     checkUserProgress();
-    cout<<"boom2"<<endl;
     
     //Create PauseMenu
     gameState.pauseMenu = new PauseMenu(vec3f(0.0,-1.23,-2.0),"./textures/menuBack.png");
@@ -369,9 +367,7 @@ void Game::createRootMap(MainMenuOption option){
             inv->addEquip(new Equipment(vec3f(0.025,-0.05,0.34),MELEE,true,25,25,5,"mSWORD","SWORD","mSWORD","Sword"));
             inv->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,10,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
-            cout<< "Saving"<< endl;
             SavedManager::getInstance()->save("",gameState,0);
-            cout<< "Saved"<< endl;
             gameState.rootMap=new RootMapGame("./maps/map00.json",true);
             checkUserProgress();
 

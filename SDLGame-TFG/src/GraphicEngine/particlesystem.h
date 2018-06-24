@@ -28,7 +28,7 @@
 #include <list>
 #include "particle.h"
 #include <string>
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 
 class Particle;
 class ParticleSystem : public Object3D

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 #define RANGEDENEMY_H
 
 #include "enemy.h"
-#include "../lib/rapidjson/document.h"
+#include "../resources/lib/rapidjson/document.h"
 #include "../ia/iarangedenemy.h"
 #include "../ia/iameleeenemy.h"
 #include "../projectile.h"

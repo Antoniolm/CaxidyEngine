@@ -21,7 +21,7 @@
 #define MELEEENEMY_H
 
 #include "enemy.h"
-#include "../lib/rapidjson/document.h"
+#include "../resources/lib/rapidjson/document.h"
 #include "../ia/iameleeenemy.h"
 #include "../enemylist.h"
 #include "../equipment.h"

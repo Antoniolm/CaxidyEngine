@@ -23,7 +23,7 @@
 #define EQUIPMENT_H
 
 #include "item.h"
-#include "../../lib/rapidjson/document.h"
+#include "../../resources/lib/rapidjson/document.h"
 #include "../GraphicEngine/object3d.h"
 #include "../GraphicEngine/nodescenegraph.h"
 #include "../GraphicEngine/material/material.h"
