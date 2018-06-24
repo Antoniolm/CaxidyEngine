@@ -1,3 +1,0 @@
-/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/build/CMakeFiles/rebuild_cache.dir
-/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/build/CMakeFiles/main.dir
-/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/build/CMakeFiles/edit_cache.dir
