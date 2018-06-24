@@ -1,0 +1,20 @@
+Pop sound effect by Debsound. is licensed under the Attribution Noncommercial. http://www.freesound.org/people/debsound/sounds/320549/ -> Used in the sound : openSound.wav
+8-bit Video Game Sounds » Coins 1 by ProjectsU012 is licensed under CC Attribution http://www.freesound.org/people/ProjectsU012/sounds/341695/ -> used in the sound:coin.wav
+Zombie by Under7dude is licensed under CC Attribution http://www.freesound.org/people/Under7dude/sounds/163447/  -> used in the sound: enemyHit.wav
+Getting hit - Eeeh 01 (Mouth Fx) man voice by Flying_Deer_Fx  is licensed under CC Attribution http://www.freesound.org/people/Flying_Deer_Fx/sounds/369003/ -> used in the sound heroHit.wav
+Shield Hit 1 by Liam Gilchrist is licensed under the Creative Commons http://www.freesound.org/people/CTCollab/sounds/223630/ -> used in the sound: shield.wav
+Bow01.wav by Erdie is licensed under Creative Commons 3 (https://creativecommons.org/licenses/by/3.0/) http://www.freesound.org/people/Erdie/sounds/65733/  -> used in the sound: shoot.wav
+sword_02.wav by dermotte is licensed under Creative Commons 3.0 http://www.freesound.org/people/dermotte/sounds/263011/ -> used in the sound : sword.wav
+Footsteps of soldier on ground.wav by Iberian_Runa is licensed under Creative Commons 3.0 http://www.freesound.org/people/Iberian_Runa/sounds/243794/ -> used in the sound : walking.wav
+arrow_damage.wav by braqoon is licensed under Creative Commons 0.0 http://www.freesound.org/people/braqoon/sounds/161098/ -> used in the sound : arrowHit.wav
+jump.wav by acebrian is licensed under Creative Commons 0.0 http://www.freesound.org/people/acebrian/sounds/380471/ -> used in the sound : jump.wav
+Button 05.wav by JarredGibb is licensed under Creative Commons 0.0 http://www.freesound.org/people/JarredGibb/sounds/219476/ -> used in the sound : trapActivated.wav
+Sharpening Knife by LaCezio is licensed under Creative Commons non commercial license http://www.freesound.org/people/LaCezio/sounds/320344/ -> used in the sound : animationTrap.wav
+Snowfall final.mp3 by ShadyDave is licensed under Creative Commons non commercial license http://www.freesound.org/people/ShadyDave/sounds/262259/ -> used in the sound : backSoundLoop.wav
+Book reading by Tristan_Lohengrin is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/Tristan_Lohengrin/sounds/233438/ -> used in the sound : bookRead.wav
+jumping_1.wav by ShaneF91 is licensed under Creative Commons 1.0 Universal license http://freesound.org/people/ShaneF91/sounds/386572/ -> used in the sound : fall.wav
+145 pizzicati strings loop.wav by Thrisk is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/Thirsk/sounds/121040/ -> used in the sound : mainSound.wav
+Soft Piano Loop#2 by ispeakwaves is licensed under Creative Commons Unported 3.0 license http://freesound.org/people/ispeakwaves/sounds/384935/ -> used in the sound : movieSound.wav
+Cracking Earthquake by uagadugu is licensed under Creative Commons 0 1.0 Universal license https://freesound.org/people/uagadugu/sounds/222521/ -> used in the sound : rotBlock.wav
+cincerblockmove by j1987 is licensed under Creative Commons 0 1.0 Universal license https://freesound.org/people/j1987/sounds/95000/ -> used in the sound : moveBlock.wav
+01702 boom with bouncing by Robinhood76 is licensed Creative commons non commercial 3.0 license http://freesound.org/people/Robinhood76/sounds/99773/ -> used in the sound : fallBlock.wav

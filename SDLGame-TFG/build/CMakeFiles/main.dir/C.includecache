@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/src/GraphicEngine/icon.c
+
+/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/src/GraphicEngine/material/stb_image.c
+stb_image.h
+/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/src/GraphicEngine/material/stb_image.h
+math.h
+-
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+memory.h
+-
+assert.h
+-
+stdarg.h
+-
+
+/home/antoniolm/workspaces/TFM-Napmare/SDLGame-TFG/src/GraphicEngine/material/stb_image.h
+stdio.h
+-
+
