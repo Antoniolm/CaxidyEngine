@@ -22,7 +22,6 @@
 	uniform vec3 lightPosVertex;
 	uniform vec3 viewPosVertex;
 	uniform mat4 lightSpaceMatrix;
-	uniform mat4 spaceMatrix;
 
 	void main(void)
 	{
@@ -43,5 +42,4 @@
     	TangentFragPos  = TBN * FragPos;
     	
 		FragPosLightSpace= lightSpaceMatrix * vec4(FragPos,1.0);
-		FragPosCameraSpace= spaceMatrix * vec4(FragPos,1.0);
 	}

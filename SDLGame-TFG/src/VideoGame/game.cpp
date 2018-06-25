@@ -164,6 +164,7 @@ void Game::loop(){
     else if(resolution.first==1400)
         window->resizeWindow(800,1200);
     ////
+    Shader * pruebShader=new Shader("resources/shaders/celShading.vs","resources/shaders/celShading.fs");
 
     //Show our window.
     window->showScreen();
@@ -277,17 +278,43 @@ void Game::loop(){
             shadowManager->generateShadow(gameState);
 
             //2- Cel Shading renderer
+            glCullFace(GL_FRONT);
 
             context.celShading_mode=true;
 
+            glViewport(0, 0, window->getWidth(), window->getHeight());
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            celShading->generateCelTexture(gameState);
+
+            // glUseProgram(pruebShader->getProgram()); //We use the program now
+
+            // gameState.camera->activateCamera(pruebShader->getProgram());
+            // gameState.camera->activatePerspecProjection(pruebShader->getProgram());
+
+            // gameState.rootMap->visualization(context);
+
+            glUseProgram(pruebShader->getProgram()); //We use the program now
+            gameState.camera->activateCamera(pruebShader->getProgram());
+            gameState.rootMap->activatedLight(pruebShader->getProgram());
+
+            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "diffuseMap"), 0);
+            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "normalMap"), 1);
+            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "shadowMap"), 2);
+            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "depthMap"), 3);
+
+            glUniform3f(glGetUniformLocation(pruebShader->getProgram(), "lightPosVertex"),posHero.x-1.0, posHero.y+5.0f,posHero.z-2.0);
+            glUniformMatrix4fv(glGetUniformLocation(pruebShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, shadowManager->getLightSpace().getMatrix());
+
+            shadowManager->activateShadowTexture();
+            gameState.camera->activatePerspecProjection(pruebShader->getProgram());
+            gameState.rootMap->visualization(context);
+
+            glCullFace(GL_BACK);
 
             context.celShading_mode=false;
 
             //3- Normal render of our scene
-            glViewport(0, 0, window->getWidth(), window->getHeight());
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            // glViewport(0, 0, window->getWidth(), window->getHeight());
+            // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             glUseProgram(context.currentShader->getProgram()); //We use the program now
             gameState.camera->activateCamera(context.currentShader->getProgram());
             gameState.rootMap->activatedLight(context.currentShader->getProgram());
@@ -296,14 +323,11 @@ void Game::loop(){
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "normalMap"), 1);
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "shadowMap"), 2);
             glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "depthMap"), 3);
-            glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "celMap"), 4);
 
             glUniform3f(glGetUniformLocation(context.currentShader->getProgram(), "lightPosVertex"),posHero.x-1.0, posHero.y+5.0f,posHero.z-2.0);
             glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, shadowManager->getLightSpace().getMatrix());
-            glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "spaceMatrix"), 1, GL_FALSE,  celShading->getCameraSpace().getMatrix());
 
             shadowManager->activateShadowTexture();
-            celShading->activateTexture();
             gameState.camera->activatePerspecProjection(context.currentShader->getProgram());
             gameState.rootMap->visualization(context);
 
