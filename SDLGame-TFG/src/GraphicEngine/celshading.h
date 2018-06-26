@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@
 #include "gamestate.h"
 #include "celtexture.h"
 #include "context/shader.h"
+#include "context/context.h"
 #include "matrix/matrix4f.h"
 #include "camera.h"
 #include "matrix/structdata.h"
@@ -57,37 +58,12 @@ class CelShading
         //////////////////////////////////////////////////////////////////////////
         Shader * getShader();
 
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *   It will generate the shadow of our scene
-        *   \param & gameState
-        *   \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void generateCelTexture(GameState & gameState);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *   It will activate the shadow texture of our scene
-        *   \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void activateTexture();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *   It will get the light space of the cel shading
-        *   \return Matrix4f &
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Matrix4f & getCameraSpace();
+        void generateSilhouette(GameState & gameState);
 
     protected:
 
     private:
         Shader * shader;               //Shader for shadow generation
-        Matrix4f cameraSpace;          //Space of the light to generate shadow
-        CelTexture * celTexture;  //Texture with the depth of the scene
 };
 
 #endif // CELSHADING_H

@@ -26,20 +26,4 @@
 	void main(void)
 	{
 		gl_Position = projection * view * transform * vec4(position * 1.1,1.0f);
-
-		FragPos = vec3(transform * vec4(position, 1.0f));
-		Normal= mat3(transpose(inverse(transform))) * normal;
-		TextCoord=textCoord;
-
-		mat3 NormalShadow=transpose(inverse(mat3(transform)));
-    	vec3 T = normalize(mat3(transform) * tangent);
-    	vec3 B = normalize(mat3(transform) * bitangent);
-    	vec3 N = normalize(mat3(transform) * normal);
-    	mat3 TBN = transpose(mat3(T, B, N));
-
-    	TangentLightPos = TBN * lightPosVertex;
-    	TangentViewPos  = TBN * viewPosVertex;
-    	TangentFragPos  = TBN * FragPos;
-    	
-		FragPosLightSpace= lightSpaceMatrix * vec4(FragPos,1.0);
 	}

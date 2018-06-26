@@ -278,43 +278,12 @@ void Game::loop(){
             shadowManager->generateShadow(gameState);
 
             //2- Cel Shading renderer
-            glCullFace(GL_FRONT);
-
-            context.celShading_mode=true;
-
             glViewport(0, 0, window->getWidth(), window->getHeight());
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            // glUseProgram(pruebShader->getProgram()); //We use the program now
-
-            // gameState.camera->activateCamera(pruebShader->getProgram());
-            // gameState.camera->activatePerspecProjection(pruebShader->getProgram());
-
-            // gameState.rootMap->visualization(context);
-
-            glUseProgram(pruebShader->getProgram()); //We use the program now
-            gameState.camera->activateCamera(pruebShader->getProgram());
-            gameState.rootMap->activatedLight(pruebShader->getProgram());
-
-            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "diffuseMap"), 0);
-            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "normalMap"), 1);
-            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "shadowMap"), 2);
-            glUniform1i(glGetUniformLocation(pruebShader->getProgram(), "depthMap"), 3);
-
-            glUniform3f(glGetUniformLocation(pruebShader->getProgram(), "lightPosVertex"),posHero.x-1.0, posHero.y+5.0f,posHero.z-2.0);
-            glUniformMatrix4fv(glGetUniformLocation(pruebShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, shadowManager->getLightSpace().getMatrix());
-
-            shadowManager->activateShadowTexture();
-            gameState.camera->activatePerspecProjection(pruebShader->getProgram());
-            gameState.rootMap->visualization(context);
-
-            glCullFace(GL_BACK);
-
-            context.celShading_mode=false;
+            celShading->generateSilhouette(gameState);
 
             //3- Normal render of our scene
-            // glViewport(0, 0, window->getWidth(), window->getHeight());
-            // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             glUseProgram(context.currentShader->getProgram()); //We use the program now
             gameState.camera->activateCamera(context.currentShader->getProgram());
             gameState.rootMap->activatedLight(context.currentShader->getProgram());

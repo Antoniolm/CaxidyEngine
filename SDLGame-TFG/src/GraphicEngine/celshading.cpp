@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -22,7 +22,6 @@
 CelShading::CelShading(Shader * aShader)
 {
     shader=aShader;
-    celTexture=new CelTexture(2048,2048);
 }
 
 //**********************************************************************//
@@ -30,7 +29,6 @@ CelShading::CelShading(Shader * aShader)
 CelShading::~CelShading()
 {
     delete shader;
-    delete celTexture;
 }
 
 //**********************************************************************//
@@ -47,31 +45,23 @@ Shader * CelShading::getShader(){
 
 //**********************************************************************//
 
-void CelShading::generateCelTexture(GameState & gameState){
-    cameraSpace.setMatrix(gameState.camera->getView());
-    cameraSpace.product(gameState.camera->getPersProyection().getMatrix());
+void CelShading::generateSilhouette(GameState & gameState){
 
     Context context;
-    context.shadow_mode=true;
     context.currentShader=shader;
+
+    glCullFace(GL_FRONT);
+        context.celShading_mode=true;
+
     glUseProgram(context.currentShader->getProgram());
-    glUniform1i(glGetUniformLocation(context.currentShader->getProgram(), "normalMap"), 1);
-    glUniformMatrix4fv(glGetUniformLocation(context.currentShader->getProgram(), "lightSpaceMatrix"), 1, GL_FALSE, cameraSpace.getMatrix());
+    
+    gameState.camera->activateCamera(context.currentShader->getProgram());
+    gameState.rootMap->activatedLight(context.currentShader->getProgram());
 
-    celTexture->setBuffer(true);
+    gameState.camera->activatePerspecProjection(context.currentShader->getProgram());
+
     gameState.rootMap->visualization(context);
-    celTexture->setBuffer(false);
-}
 
-//**********************************************************************//
-
-void CelShading::activateTexture(){
-    glActiveTexture(GL_TEXTURE4);
-    celTexture->bindTexture();
-}
-
-//**********************************************************************//
-
-Matrix4f & CelShading::getCameraSpace(){
-    return cameraSpace;
+    glCullFace(GL_BACK);
+    context.celShading_mode=false;
 }
