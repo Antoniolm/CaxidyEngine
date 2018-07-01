@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include "../GraphicEngine/object3d.h"
+#include "GraphicEngine/object3d.h"
 
 
 enum ItemIndex{

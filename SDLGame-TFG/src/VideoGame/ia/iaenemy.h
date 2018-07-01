@@ -20,11 +20,11 @@
 #ifndef IAENEMY_H
 #define IAENEMY_H
 
-#include "../../GraphicEngine/matrix/structdata.h"
+#include "GraphicEngine/matrix/structdata.h"
 #include <iostream>
 #include <math.h>
-#include "../enemylist.h"
-#include "../avatar/enemy.h"
+#include "VideoGame/enemylist.h"
+#include "VideoGame/avatar/enemy.h"
 
 using namespace std;
 

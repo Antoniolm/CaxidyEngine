@@ -21,10 +21,10 @@
 #define MELEEENEMY_H
 
 #include "enemy.h"
-#include "../resources/lib/rapidjson/document.h"
-#include "../ia/iameleeenemy.h"
-#include "../enemylist.h"
-#include "../equipment.h"
+#include "rapidjson/document.h"
+#include "VideoGame/ia/iameleeenemy.h"
+#include "VideoGame/enemylist.h"
+#include "VideoGame/equipment.h"
 
 using namespace rapidjson;
 

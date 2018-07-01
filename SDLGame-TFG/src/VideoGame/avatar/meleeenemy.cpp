@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "meleeenemy.h"
-#include "../rootmapgame.h"
+#include "VideoGame/rootmapgame.h"
 
 MeleeEnemy::MeleeEnemy(const Value & enemyFeatures)
 {

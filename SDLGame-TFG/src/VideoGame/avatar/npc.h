@@ -20,14 +20,14 @@
 #ifndef NPC_H
 #define NPC_H
 
-#include "../ia/ianpc.h"
-#include "../../GraphicEngine/avatar/avatar.h"
-#include "../../GraphicEngine/mesh/mesh.h"
-#include "../../GraphicEngine/collection/meshcollection.h"
-#include "../../GraphicEngine/text.h"
-#include "../../GraphicEngine/matrix/structdata.h"
-#include "../../GraphicEngine/animation/scriptlmd.h"
-#include "../../../resources/lib/rapidjson/document.h"
+#include "VideoGame/ia/ianpc.h"
+#include "GraphicEngine/avatar/avatar.h"
+#include "GraphicEngine/mesh/mesh.h"
+#include "GraphicEngine/collection/meshcollection.h"
+#include "GraphicEngine/text.h"
+#include "GraphicEngine/matrix/structdata.h"
+#include "GraphicEngine/animation/scriptlmd.h"
+#include "rapidjson/document.h"
 #include "SDL2/SDL_ttf.h"
 
 using namespace rapidjson;

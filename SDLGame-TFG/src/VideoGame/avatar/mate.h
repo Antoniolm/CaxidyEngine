@@ -20,19 +20,19 @@
 #ifndef MATE_H
 #define MATE_H
 
-#include "../../GraphicEngine/object3d.h"
-#include "../../GraphicEngine/nodescenegraph.h"
-#include "../../GraphicEngine/material/material.h"
-#include "../../GraphicEngine/matrix/matrix4f.h"
-#include "../../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../../GraphicEngine/collection/meshcollection.h"
-#include "../../GraphicEngine/collection/soundcollection.h"
-#include "../../GraphicEngine/matrix/axisrotation.h"
-#include "../../GraphicEngine/sound/sound.h"
-#include "../../GraphicEngine/text.h"
-#include "../../GraphicEngine/animation/animationlist.h"
-#include "../../../resources/lib/rapidjson/document.h"
-#include "../../GraphicEngine/avatar/avatar.h"
+#include "GraphicEngine/object3d.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "GraphicEngine/material/material.h"
+#include "GraphicEngine/matrix/matrix4f.h"
+#include "GraphicEngine/matrix/matrix4fdynamic.h"
+#include "GraphicEngine/collection/meshcollection.h"
+#include "GraphicEngine/collection/soundcollection.h"
+#include "GraphicEngine/matrix/axisrotation.h"
+#include "GraphicEngine/sound/sound.h"
+#include "GraphicEngine/text.h"
+#include "GraphicEngine/animation/animationlist.h"
+#include "rapidjson/document.h"
+#include "GraphicEngine/avatar/avatar.h"
 
 using namespace rapidjson;
 

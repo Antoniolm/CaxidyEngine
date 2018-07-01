@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 #ifndef ROOTMAPGAME_H
 #define ROOTMAPGAME_H
 
-#include "../GraphicEngine/rootmap.h"
+#include "GraphicEngine/rootmap.h"
 #include "avatar/hero.h"
 #include "avatar/npc.h"
 #include "avatar/enemy.h"
@@ -30,9 +30,9 @@
 #include "soulcarrier.h"
 #include "door.h"
 #include "spiketrap.h"
-#include "../GraphicEngine/voxels/trapdoor.h"
-#include "../GraphicEngine/voxels/rottenvoxel.h"
-#include "../GraphicEngine/voxels/slidetrap.h"
+#include "GraphicEngine/voxels/trapdoor.h"
+#include "GraphicEngine/voxels/rottenvoxel.h"
+#include "GraphicEngine/voxels/slidetrap.h"
 #include "movablevoxel.h"
 #include "respawnvoxel.h"
 #include "jumpbutton.h"

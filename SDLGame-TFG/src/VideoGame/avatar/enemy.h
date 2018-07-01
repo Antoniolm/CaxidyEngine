@@ -21,19 +21,19 @@
 #define ENEMY_H
 
 
-#include "../../GraphicEngine/avatar/avatar.h"
-#include "../../GraphicEngine/avatar/avatarmove.h"
-#include "../../GraphicEngine/mesh/mesh.h"
-#include "../../GraphicEngine/collection/meshcollection.h"
-#include "../../GraphicEngine/animation/scriptlmd.h"
-#include "../../GraphicEngine/animation/animationlist.h"
-#include "../../GraphicEngine/context/context.h"
-#include "../../GraphicEngine/matrix/matrixscript.h"
-#include "../../GraphicEngine/rootmap.h"
-#include "../../GraphicEngine/matrix/matrix4f.h"
-#include "../../GraphicEngine/matrix/acceleratedmovement.h"
-#include "../../GraphicEngine/sound/sound.h"
-#include "../../GraphicEngine/text.h"
+#include "GraphicEngine/avatar/avatar.h"
+#include "GraphicEngine/avatar/avatarmove.h"
+#include "GraphicEngine/mesh/mesh.h"
+#include "GraphicEngine/collection/meshcollection.h"
+#include "GraphicEngine/animation/scriptlmd.h"
+#include "GraphicEngine/animation/animationlist.h"
+#include "GraphicEngine/context/context.h"
+#include "GraphicEngine/matrix/matrixscript.h"
+#include "GraphicEngine/rootmap.h"
+#include "GraphicEngine/matrix/matrix4f.h"
+#include "GraphicEngine/matrix/acceleratedmovement.h"
+#include "GraphicEngine/sound/sound.h"
+#include "GraphicEngine/text.h"
 #include <stdlib.h>
 
 #include <vector>

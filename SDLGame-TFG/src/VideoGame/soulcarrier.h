@@ -20,14 +20,14 @@
 #ifndef SOULCARRIER_H
 #define SOULCARRIER_H
 
-#include "../GraphicEngine/object3d.h"
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/matrix/matrix4f.h"
-#include "../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../GraphicEngine/collection/meshcollection.h"
-#include "../GraphicEngine/collection/materialcollection.h"
-#include "../GraphicEngine/matrix/axisrotation.h"
-#include "../../resources/lib/rapidjson/document.h"
+#include "GraphicEngine/object3d.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "GraphicEngine/matrix/matrix4f.h"
+#include "GraphicEngine/matrix/matrix4fdynamic.h"
+#include "GraphicEngine/collection/meshcollection.h"
+#include "GraphicEngine/collection/materialcollection.h"
+#include "GraphicEngine/matrix/axisrotation.h"
+#include "rapidjson/document.h"
 #include "soul.h"
 
 using namespace rapidjson;

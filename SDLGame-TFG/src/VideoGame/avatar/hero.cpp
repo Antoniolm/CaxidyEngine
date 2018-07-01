@@ -18,9 +18,9 @@
 // *********************************************************************
 
 #include "hero.h"
-#include "../equipment.h"
-#include "../rootmapgame.h"
-#include "../projectile.h"
+#include "VideoGame/equipment.h"
+#include "VideoGame/rootmapgame.h"
+#include "VideoGame/projectile.h"
 
 Hero::Hero(const rapidjson::Value & heroFeatures)
 {

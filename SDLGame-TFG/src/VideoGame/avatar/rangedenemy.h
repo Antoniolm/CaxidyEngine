@@ -21,11 +21,11 @@
 #define RANGEDENEMY_H
 
 #include "enemy.h"
-#include "../resources/lib/rapidjson/document.h"
-#include "../ia/iarangedenemy.h"
-#include "../ia/iameleeenemy.h"
-#include "../projectile.h"
-#include "../equipment.h"
+#include "rapidjson/document.h"
+#include "VideoGame/ia/iarangedenemy.h"
+#include "VideoGame/ia/iameleeenemy.h"
+#include "VideoGame/projectile.h"
+#include "VideoGame/equipment.h"
 #include <vector>
 
 using namespace rapidjson;

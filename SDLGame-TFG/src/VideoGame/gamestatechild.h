@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 #ifndef GAMESTATECHILD_H
 #define GAMESTATECHILD_H
 
-#include "../GraphicEngine/gamestate.h"
+#include "GraphicEngine/gamestate.h"
 
 class GameStateChild : public GameState
 {

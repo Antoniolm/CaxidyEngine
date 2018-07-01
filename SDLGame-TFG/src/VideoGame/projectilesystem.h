@@ -21,12 +21,12 @@
 #define PROJECTILESYSTEM_H
 
 #include "projectile.h"
-#include "../GraphicEngine/nodescenegraph.h"
+#include "GraphicEngine/nodescenegraph.h"
 #include <string>
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/rootmap.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "GraphicEngine/rootmap.h"
 #include <list>
-#include "../../resources/lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 
 
 class Projectile;

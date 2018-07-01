@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
 #ifndef INVENTORYMENUGAME_H
 #define INVENTORYMENUGAME_H
 
-#include "../GraphicEngine/menu/inventorymenu.h"
-#include "../GraphicEngine/text.h"
+#include "GraphicEngine/menu/inventorymenu.h"
+#include "GraphicEngine/text.h"
 
 class InventoryMenuGame : public InventoryMenu
 {

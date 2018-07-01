@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -21,15 +21,15 @@
 #define COIN_H
 
 #include "item.h"
-#include "../GraphicEngine/object3d.h"
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/material/material.h"
-#include "../GraphicEngine/matrix/matrix4f.h"
-#include "../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../GraphicEngine/collection/meshcollection.h"
-#include "../GraphicEngine/collection/soundcollection.h"
-#include "../GraphicEngine/matrix/axisrotation.h"
-#include "../GraphicEngine/sound/sound.h"
+#include "GraphicEngine/object3d.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "GraphicEngine/material/material.h"
+#include "GraphicEngine/matrix/matrix4f.h"
+#include "GraphicEngine/matrix/matrix4fdynamic.h"
+#include "GraphicEngine/collection/meshcollection.h"
+#include "GraphicEngine/collection/soundcollection.h"
+#include "GraphicEngine/matrix/axisrotation.h"
+#include "GraphicEngine/sound/sound.h"
 
 class Coin : public Item
 {

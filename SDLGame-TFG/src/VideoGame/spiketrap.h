@@ -20,16 +20,16 @@
 #ifndef SPIKETRAP_H
 #define SPIKETRAP_H
 
-#include "../GraphicEngine/object3d.h"
+#include "GraphicEngine/object3d.h"
 #include "enemylist.h"
 #include "avatar/enemy.h"
-#include "../GraphicEngine/nodescenegraph.h"
-#include "../GraphicEngine/matrix/matrix4f.h"
-#include "../GraphicEngine/matrix/matrix4fdynamic.h"
-#include "../GraphicEngine/collection/meshcollection.h"
-#include "../GraphicEngine/collection/materialcollection.h"
-#include "../GraphicEngine/collection/soundcollection.h"
-#include "../../resources/lib/rapidjson/document.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "GraphicEngine/matrix/matrix4f.h"
+#include "GraphicEngine/matrix/matrix4fdynamic.h"
+#include "GraphicEngine/collection/meshcollection.h"
+#include "GraphicEngine/collection/materialcollection.h"
+#include "GraphicEngine/collection/soundcollection.h"
+#include "rapidjson/document.h"
 
 using namespace rapidjson;
 
