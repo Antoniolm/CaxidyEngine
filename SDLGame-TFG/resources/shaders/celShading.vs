@@ -6,22 +6,9 @@
 	layout(location=3) in vec3 tangent;
 	layout(location=4) in vec3 bitangent;
 
-	out vec3 FragPos;
-	out vec3 Normal;
-	out vec2 TextCoord;
-	out vec3 TangentLightPos;
-	out vec3 TangentViewPos;
-	out vec3 TangentFragPos;
-	out vec4 FragPosLightSpace;
-
-	out vec4 FragPosCameraSpace;
-
 	uniform mat4 transform;
 	uniform mat4 view;
 	uniform mat4 projection;
-	uniform vec3 lightPosVertex;
-	uniform vec3 viewPosVertex;
-	uniform mat4 lightSpaceMatrix;
 
 	void main(void)
 	{

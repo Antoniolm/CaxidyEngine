@@ -21,7 +21,6 @@
 #define CELSHADING_H
 
 #include "gamestate.h"
-#include "celtexture.h"
 #include "context/shader.h"
 #include "context/context.h"
 #include "matrix/matrix4f.h"
