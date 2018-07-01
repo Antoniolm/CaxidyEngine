@@ -20,11 +20,11 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 
-#include "../matrix/structdata.h"
-#include "../context/shader.h"
+#include "matrix/structdata.h"
+#include "context/shader.h"
 #include <string>
 #include <cstdlib>
-#include "../../../resources/lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 
 class Light
 {

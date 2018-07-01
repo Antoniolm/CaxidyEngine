@@ -21,8 +21,8 @@
 #define SCRIPTLMD_H
 
 #include "scriptanimation.h"
-#include "../matrix/matrix4fdynamic.h"
-#include "../matrix/matrixscript.h"
+#include "matrix/matrix4fdynamic.h"
+#include "matrix/matrixscript.h"
 #include <vector>
 
 using namespace std;

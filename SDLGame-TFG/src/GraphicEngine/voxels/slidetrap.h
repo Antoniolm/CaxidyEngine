@@ -20,16 +20,16 @@
 #ifndef SLIDETRAP_H
 #define SLIDETRAP_H
 
-#include "../objectscene.h"
-#include "../nodescenegraph.h"
-#include "../matrix/matrix4f.h"
-#include "../matrix/matrix4fdynamic.h"
-#include "../matrix/acceleratedmovement.h"
-#include "../collection/meshcollection.h"
-#include "../collection/materialcollection.h"
-#include "../collection/soundcollection.h"
-#include "../../../resources/lib/rapidjson/document.h"
-#include "../avatar/avatar.h"
+#include "GraphicEngine/objectscene.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "matrix/matrix4f.h"
+#include "matrix/matrix4fdynamic.h"
+#include "matrix/acceleratedmovement.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
+#include "rapidjson/document.h"
+#include "avatar/avatar.h"
 
 using namespace rapidjson;
 

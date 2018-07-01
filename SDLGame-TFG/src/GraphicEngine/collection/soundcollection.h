@@ -20,9 +20,9 @@
 #ifndef SOUNDCOLLECTION_H
 #define SOUNDCOLLECTION_H
 
-#include "../sound/sound.h"
-#include "../sound/effect.h"
-#include "../sound/music.h"
+#include "sound/sound.h"
+#include "sound/effect.h"
+#include "sound/music.h"
 #include <vector>
 #include <map>
 #include <string>

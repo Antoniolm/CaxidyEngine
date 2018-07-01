@@ -20,7 +20,7 @@
 #ifndef MATERIALSTACK_H
 #define MATERIALSTACK_H
 
-#include "../material/material.h"
+#include "material/material.h"
 #include <vector>
 
 class MaterialStack

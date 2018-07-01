@@ -23,12 +23,12 @@
 #include "object3d.h"
 #include "nodescenegraph.h"
 #include "context/context.h"
-#include "./collection/materialcollection.h"
+#include "collection/materialcollection.h"
 #include "rootmap.h"
 #include <list>
 #include "particle.h"
 #include <string>
-#include "../../resources/lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 
 class Particle;
 class ParticleSystem : public Object3D

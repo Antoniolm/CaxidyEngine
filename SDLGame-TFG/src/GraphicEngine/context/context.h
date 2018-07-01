@@ -21,11 +21,11 @@
 #define CONTEXT_H
 
 #include "matrixstack.h"
-#include "../matrix/structdata.h"
-#include "../collection/materialcollection.h"
-#include "../object3d.h"
+#include "matrix/structdata.h"
+#include "collection/materialcollection.h"
+#include "GraphicEngine/object3d.h"
 #include "materialstack.h"
-#include "../light/light.h"
+#include "light/light.h"
 #include "shader.h"
 #include <vector>
 

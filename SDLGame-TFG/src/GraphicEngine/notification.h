@@ -25,7 +25,7 @@
 #include "nodescenegraph.h"
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
-#include "../../resources/lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 #include "gamestate.h"
 
 using namespace rapidjson;

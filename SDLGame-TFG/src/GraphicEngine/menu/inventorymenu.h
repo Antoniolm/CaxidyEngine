@@ -22,22 +22,22 @@
 
 #include <iostream>
 #include <vector>
-#include "../../VideoGame/savedmanager.h"
-#include "../object3d.h"
-#include "../rootmap.h"
-#include "../context/context.h"
-#include "../mesh/mesh.h"
-#include "../nodescenegraph.h"
-#include "../material/texture.h"
-#include "../material/material.h"
-#include "../sound/sound.h"
+#include "VideoGame/savedmanager.h"
+#include "GraphicEngine/object3d.h"
+#include "GraphicEngine/rootmap.h"
+#include "context/context.h"
+#include "mesh/mesh.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "material/texture.h"
+#include "material/material.h"
+#include "sound/sound.h"
 #include "menu.h"
-#include "../profile.h"
+#include "GraphicEngine/profile.h"
 #include "mainmenu.h"
-#include "../collection/materialcollection.h"
-#include "../collection/soundcollection.h"
-#include "../../VideoGame/inventory.h"
-#include "../../VideoGame/equipment.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
+#include "VideoGame/inventory.h"
+#include "VideoGame/equipment.h"
 #include <string>
 
 using namespace std;

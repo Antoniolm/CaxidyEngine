@@ -22,7 +22,7 @@
 
 #include "region.h"
 #include "gamestate.h"
-#include "../../resources/lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 
 using namespace rapidjson;
 

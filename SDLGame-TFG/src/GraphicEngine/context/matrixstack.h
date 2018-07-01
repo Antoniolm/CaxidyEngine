@@ -20,7 +20,7 @@
 #ifndef MATRIXSTACK_H
 #define MATRIXSTACK_H
 
-#include "../matrix/matrix4f.h"
+#include "matrix/matrix4f.h"
 #include <vector>
 #include "shader.h"
 

@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "moviescreen.h"
-#include "../gamestate.h"
+#include "GraphicEngine/gamestate.h"
 
 MovieScreen::MovieScreen(const Value & movieFeatures)
 {

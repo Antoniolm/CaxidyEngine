@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -21,16 +21,16 @@
 #define GAMESTATE_H
 
 #include "controller/controllermanager.h"
-#include "./menu/menu.h"
-#include "./menu/pausemenu.h"
-#include "./menu/mainmenu.h"
-#include "./menu/deadmenu.h"
-#include "./menu/creditscreen.h"
-#include "./menu/optionmenu.h"
-#include "./menu/controlmenu.h"
-#include "./menu/loadingscreen.h"
-#include "./menu/moviescreen.h"
-#include "./menu/inventorymenu.h"
+#include "menu/menu.h"
+#include "menu/pausemenu.h"
+#include "menu/mainmenu.h"
+#include "menu/deadmenu.h"
+#include "menu/creditscreen.h"
+#include "menu/optionmenu.h"
+#include "menu/controlmenu.h"
+#include "menu/loadingscreen.h"
+#include "menu/moviescreen.h"
+#include "menu/inventorymenu.h"
 #include "speakingsketch.h"
 #include "rootmap.h"
 #include "camera.h"

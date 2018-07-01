@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David L�pez Machado
+// ** Copyright (C) 2016-2018 Antonio David L�pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -17,44 +17,16 @@
 // **
 // *********************************************************************
 
-#include "inventorymenu.h"
-#include "VideoGame/inventory.h"
-#include "GraphicEngine/text.h"
-#include "collection/meshcollection.h"
+#include "SkinLoader.h"
 
-
-
-InventoryMenu::InventoryMenu(){
-
+SkinLoader::SkinLoader()
+{
+    //ctor
 }
 
 //**********************************************************************//
 
-InventoryMenu::~InventoryMenu(){
-    delete root;
-
-    delete currentMaterial;
-    delete materialBack;
-    delete confirmMaterial;
-    delete materialEquipped;
-
-    delete inventory;
-}
-
-//**********************************************************************//
-
-void InventoryMenu::visualization(Context & cv){
-
-}
-
-//**********************************************************************//
-
-void InventoryMenu::updateState(GameState & gameState){
-
-}
-
-//**********************************************************************//
-
-void InventoryMenu::clearInventory(){
+SkinningData SkinLoader::extractSkinData()
+{
 
 }

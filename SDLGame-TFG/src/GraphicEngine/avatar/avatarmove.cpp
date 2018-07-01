@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "avatarmove.h"
-#include "../rootmap.h"
+#include "GraphicEngine/rootmap.h"
 
 AvatarMove::~AvatarMove(){
 }

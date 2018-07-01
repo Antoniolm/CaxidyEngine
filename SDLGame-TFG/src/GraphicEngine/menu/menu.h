@@ -20,7 +20,7 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "../object3d.h"
+#include "GraphicEngine/object3d.h"
 
 class NodeSceneGraph;
 class Mesh;

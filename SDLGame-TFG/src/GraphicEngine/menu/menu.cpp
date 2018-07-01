@@ -18,14 +18,14 @@
 // *********************************************************************
 
 #include "menu.h"
-#include "../gamestate.h"
-#include "../context/context.h"
-#include "../mesh/mesh.h"
-#include "../nodescenegraph.h"
-#include "../material/texture.h"
-#include "../material/material.h"
-#include "../profile.h"
-#include "../sound/sound.h"
+#include "GraphicEngine/gamestate.h"
+#include "context/context.h"
+#include "mesh/mesh.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "material/texture.h"
+#include "material/material.h"
+#include "GraphicEngine/profile.h"
+#include "sound/sound.h"
 
 Menu::~Menu()
 {

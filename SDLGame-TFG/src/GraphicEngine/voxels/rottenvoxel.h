@@ -20,14 +20,14 @@
 #ifndef ROTTENVOXEL_H
 #define ROTTENVOXEL_H
 
-#include "../objectscene.h"
-#include "../nodescenegraph.h"
-#include "../matrix/matrix4f.h"
-#include "../matrix/matrix4fdynamic.h"
-#include "../collection/meshcollection.h"
-#include "../collection/materialcollection.h"
-#include "../collection/soundcollection.h"
-#include "../../../resources/lib/rapidjson/document.h"
+#include "GraphicEngine/objectscene.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "matrix/matrix4f.h"
+#include "matrix/matrix4fdynamic.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
+#include "rapidjson/document.h"
 
 using namespace rapidjson;
 

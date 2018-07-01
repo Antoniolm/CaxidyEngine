@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -22,11 +22,11 @@
 
 #include "object3d.h"
 #include "nodescenegraph.h"
-#include "./matrix/matrix4f.h"
-#include "./matrix/matrix4fdynamic.h"
-#include "./animation/scriptlmd.h"
-#include "./collection/meshcollection.h"
-#include "./collection/materialcollection.h"
+#include "matrix/matrix4f.h"
+#include "matrix/matrix4fdynamic.h"
+#include "animation/scriptlmd.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
 
 class SpeakingSketch : public Object3D
 {

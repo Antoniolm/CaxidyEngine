@@ -21,10 +21,10 @@
 #define MOVIESCREEN_H
 
 #include "menu.h"
-#include "../collection/meshcollection.h"
-#include "../collection/materialcollection.h"
-#include "../collection/soundcollection.h"
-#include "../../../resources/lib/rapidjson/document.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
+#include "rapidjson/document.h"
 
 using namespace rapidjson;
 

@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "mainmenu.h"
-#include "../../VideoGame/game.h"
+#include "VideoGame/game.h"
 
 MainMenu::MainMenu(vec3f initPos,string fileName)
 {

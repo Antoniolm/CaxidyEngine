@@ -21,10 +21,10 @@
 #define AVATARMOVE_H
 
 #include "avatar.h"
-#include "../../GraphicEngine/matrix/matrix4f.h"
-#include "../../GraphicEngine/matrix/acceleratedmovement.h"
-#include "../../GraphicEngine/matrix/linearmovement.h"
-#include "../../GraphicEngine/objectscene.h"
+#include "matrix/matrix4f.h"
+#include "matrix/acceleratedmovement.h"
+#include "matrix/linearmovement.h"
+#include "GraphicEngine/objectscene.h"
 
 class RootMap;
 class AvatarMove: public Avatar

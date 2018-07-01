@@ -21,7 +21,7 @@
 #define VOXELGROUP_H
 
 #include "objectscene.h"
-#include "../../resources/lib/rapidjson/document.h"
+#include "rapidjson/document.h"
 #include "nodescenegraph.h"
 #include "object3d.h"
 #include "matrix/matrix4f.h"

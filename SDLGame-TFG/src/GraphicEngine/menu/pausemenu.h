@@ -20,20 +20,20 @@
 #ifndef PAUSEMENU_H
 #define PAUSEMENU_H
 
-#include "../object3d.h"
-#include "../rootmap.h"
-#include "../context/context.h"
-#include "../mesh/mesh.h"
-#include "../nodescenegraph.h"
-#include "../material/texture.h"
-#include "../material/material.h"
-#include "../sound/sound.h"
+#include "GraphicEngine/object3d.h"
+#include "GraphicEngine/rootmap.h"
+#include "context/context.h"
+#include "mesh/mesh.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "material/texture.h"
+#include "material/material.h"
+#include "sound/sound.h"
 #include "menu.h"
-#include "../profile.h"
+#include "GraphicEngine/profile.h"
 #include "mainmenu.h"
-#include "../collection/meshcollection.h"
-#include "../collection/materialcollection.h"
-#include "../collection/soundcollection.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
 #include <string>
 
 enum PauseMenuOption{

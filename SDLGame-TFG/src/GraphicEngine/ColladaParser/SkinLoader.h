@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David L�pez Machado
+// ** Copyright (C) 2016-2018 Antonio David L�pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -16,37 +16,27 @@
 // ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // **
 // *********************************************************************
-////////////////////////////////////////
 
-#ifndef SCRIPTANIMATION_H
-#define SCRIPTANIMATION_H
+#ifndef SKINLOADER_H
+#define SKINLOADER_H
 
-#include "matrix/matrix4f.h"
+#include "ColladaData.h"
 
-class ScriptAnimation
+class SkinLoader
 {
     public:
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will update the state of all our Matrix4xfDinamic. That change need the
-        *    current time in our application
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        virtual void updateState(float time)=0;
 
         //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will return one of our Matrix4fDinamic.
-        *    \param index -> The position in the vector of our return Matrix
-        *    \return Matrix4f
-        */
+        /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual Matrix4f readMatrix(int index)=0;
+        SkinLoader();
+
+        SkinningData extractSkinData();
+
     protected:
 
     private:
-        float initialTime;
+	    int maxWeights;
 };
 
-#endif // SCRIPTANIMATION_H
+#endif // SKINLOADER_H

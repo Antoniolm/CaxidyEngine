@@ -22,19 +22,19 @@
 
 #include <vector>
 #include <string>
-#include "../context/context.h"
-#include "../object3d.h"
+#include "context/context.h"
+#include "GraphicEngine/object3d.h"
 #include "GL/glew.h"
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_opengl.h"
 #include <GL/glu.h>
 #include <GL/gl.h>
 #include <fstream>
-#include "../matrix/matrix4f.h"
+#include "matrix/matrix4f.h"
 #include <iostream>
-#include "../matrix/structdata.h"
-#include "../rootmap.h"
-#include "../context/shader.h"
+#include "matrix/structdata.h"
+#include "GraphicEngine/rootmap.h"
+#include "context/shader.h"
 #include "file_obj.h"
 
 using namespace std;

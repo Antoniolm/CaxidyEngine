@@ -21,8 +21,8 @@
 #define LOADINGSCREEN_H
 
 #include "menu.h"
-#include "../collection/meshcollection.h"
-#include "../collection/materialcollection.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
 #include <string>
 
 using namespace std;

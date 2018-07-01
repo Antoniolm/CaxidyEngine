@@ -21,9 +21,9 @@
 #ifndef OBJECTGROUP_H
 #define OBJECTGROUP_H
 
-#include "../collection/materialcollection.h"
-#include "../nodescenegraph.h"
-#include "../collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "GraphicEngine/nodescenegraph.h"
+#include "collection/meshcollection.h"
 
 class ObjectGroup : public Object3D
 {

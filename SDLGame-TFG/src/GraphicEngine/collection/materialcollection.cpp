@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "materialcollection.h"
-#include "../material/material.h"
+#include "material/material.h"
 
 MaterialCollection* MaterialCollection::instance = NULL;
 
