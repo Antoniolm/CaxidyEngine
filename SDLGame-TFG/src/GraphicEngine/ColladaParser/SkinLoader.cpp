@@ -18,10 +18,34 @@
 // *********************************************************************
 
 #include "SkinLoader.h"
+#include <string.h>
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+#include "XmlParserUtils.cxx"
 
 SkinLoader::SkinLoader()
 {
-    //ctor
+    xml_document<> doc;
+	xml_node<> * root_node;
+	// Read the xml file into a vector
+	ifstream file ("resources/geometries/model.dae");
+	vector<char> buffer((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
+	buffer.push_back('\0');
+	// Parse the buffer using the xml file parsing library into doc 
+	doc.parse<0>(&buffer[0]);
+	// Find our root node
+	root_node = doc.first_node("COLLADA");
+    cout<< "test"<<endl;
+
+    xml_node<> * skin_node = root_node->first_node("library_controllers")->first_node("controller")->first_node("skin");
+
+    xml_node<> * input_node = skin_node->first_node("vertex_weights");
+    std::cout<< "Joint:" << utils::getChildWithAttribute(input_node, "input", "semantic", "JOINT")->first_attribute("source")->value() << std::endl;
+
+    cout<< "testEnd"<<endl;
 }
 
 //**********************************************************************//

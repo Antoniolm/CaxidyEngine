@@ -17,30 +17,32 @@
 // **
 // *********************************************************************
 
-#ifndef SKINLOADER_H
-#define SKINLOADER_H
+#ifndef XMLPARSERUTILS_CXX
+#define XMLPARSERUTILS_CXX
 
-#include "ColladaData.h"
 #include "rapidxml/rapidxml.hpp"
+#include <string.h>
 
-using namespace rapidxml;
 using namespace std;
 
-class SkinLoader
+namespace utils {
+
+rapidxml::xml_node<> * getChildWithAttribute(rapidxml::xml_node<> *parent, 
+    const string & type, 
+    const string & attribute, 
+    const string & value)
 {
-    public:
+    rapidxml::xml_node<> *node = parent->first_node( type.c_str());
+    while (node)
+    {
+        rapidxml::xml_attribute<> *attr = node->first_attribute( attribute.c_str());
+        if ( attr && value == attr->value()) return node;
+        node = node->next_sibling( type.c_str());
+    }
+    return node;
+}
 
-        //////////////////////////////////////////////////////////////////////////
-        /** Constructor */
-        //////////////////////////////////////////////////////////////////////////
-        SkinLoader();
+} // utils
 
-        SkinningData extractSkinData();
 
-    protected:
-
-    private:
-	    int maxWeights;
-};
-
-#endif // SKINLOADER_H
+#endif
