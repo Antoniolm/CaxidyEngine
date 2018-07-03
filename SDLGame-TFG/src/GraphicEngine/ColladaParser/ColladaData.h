@@ -21,6 +21,7 @@
 #define COLLADADATA_H
 
 #include <math.h>
+#include <string>
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -75,6 +76,14 @@ struct VertexSkinData{
 		    }
 		}
 	}
+
+	string to_string(){
+		string result= "";
+		for(int i=0;i<weights.size();i++){
+			result += "item(" +std::to_string(i)+ ")= [ "+ std::to_string(joint_ids[i])+ "," + std::to_string(weights[i])+ "] \n";
+		}
+		return result;
+	}
 };
 
 /////////////////////////////////////////////////////////////////////////
@@ -85,6 +94,10 @@ struct VertexSkinData{
 struct SkinningData{
     vector<string> joint_order_;
     vector<VertexSkinData> vertices_skin_data_;
+
+	SkinningData(){
+
+	}
 
     SkinningData(const vector<string> & joint_order, const vector<VertexSkinData> & vertices_skin_data){
         joint_order_ = joint_order;

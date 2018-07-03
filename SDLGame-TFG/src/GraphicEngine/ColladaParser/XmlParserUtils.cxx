@@ -22,6 +22,7 @@
 
 #include "rapidxml/rapidxml.hpp"
 #include <string.h>
+#include <sstream>
 
 using namespace std;
 
@@ -40,6 +41,17 @@ rapidxml::xml_node<> * getChildWithAttribute(rapidxml::xml_node<> *parent,
         node = node->next_sibling( type.c_str());
     }
     return node;
+}
+
+vector<string> extract(const string& stoextract) {
+    vector<string> aListofWords;
+    stringstream sstoext(stoextract);
+    string sWordBuf;
+
+    while (sstoext >> sWordBuf)
+        aListofWords.push_back(sWordBuf);
+
+    return aListofWords;
 }
 
 } // utils

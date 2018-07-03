@@ -33,13 +33,14 @@ class SkinLoader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        SkinLoader();
+        SkinLoader(xml_node<> &library_controllers_node);
 
-        SkinningData extractSkinData();
+        SkinningData & extractSkinData();
 
     protected:
 
     private:
+        SkinningData skinning_data_;
 	    int maxWeights;
 };
 
