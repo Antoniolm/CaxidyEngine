@@ -24,39 +24,34 @@
 #include <fstream>
 #include <vector>
 
-#include "XmlParserUtils.cxx"
+#include "XmlParserUtils.h"
 
-SkinLoader::SkinLoader(xml_node<> &library_controllers_node):
+SkinLoader::SkinLoader(xml_node<> &library_controllers_node, int maxWeights):
 	skinning_data_()
 {
+	XmlParserUtils xml_parser;
     xml_node<> * skin_node = library_controllers_node.first_node("controller")->first_node("skin");
-
+	maxWeights_ = maxWeights;
 	///////////////
 	// JoinList
 	//////////////
     xml_node<> * input_node = skin_node->first_node("vertex_weights");
-	string jointId= utils::getChildWithAttribute(input_node, "input", "semantic", "JOINT")->first_attribute("source")->value();
+	string jointId= xml_parser.getChildWithAttribute(input_node, "input", "semantic", "JOINT")->first_attribute("source")->value();
 	jointId = jointId.substr(jointId.find("#")+1);
-    std::cout<< "Joint:" << jointId << std::endl;
 
-	xml_node<> * joints_node = utils::getChildWithAttribute(skin_node, "source", "id", jointId)->first_node("Name_array");
+	xml_node<> * joints_node = xml_parser.getChildWithAttribute(skin_node, "source", "id", jointId)->first_node("Name_array");
 
-	cout << joints_node->value() << endl;
-
-	vector<string> jointsList = utils::extract(joints_node->value());
+	vector<string> jointsList = xml_parser.extract(joints_node->value());
 
 	///////////////
 	// Weights
 	//////////////
-	string weightsDataId= utils::getChildWithAttribute(input_node, "input", "semantic", "WEIGHT")->first_attribute("source")->value();
+	string weightsDataId= xml_parser.getChildWithAttribute(input_node, "input", "semantic", "WEIGHT")->first_attribute("source")->value();
 	weightsDataId = weightsDataId.substr(weightsDataId.find("#")+1);
-    std::cout<< "Joint:" << weightsDataId << std::endl;
 
-	xml_node<> * weights_node = utils::getChildWithAttribute(skin_node, "source", "id", weightsDataId)->first_node("float_array");
+	xml_node<> * weights_node = xml_parser.getChildWithAttribute(skin_node, "source", "id", weightsDataId)->first_node("float_array");
 
-	cout << weights_node->value() << endl;
-
-	vector<string> weights = utils::extract(weights_node->value());
+	vector<string> weights = xml_parser.extract(weights_node->value());
 	vector<float> weights_list;
 
 	for(int i=0;i < weights.size();i++)
@@ -65,7 +60,7 @@ SkinLoader::SkinLoader(xml_node<> &library_controllers_node):
 	///////////////
 	// Effective joints
 	//////////////
-	vector<string> vcountList = utils::extract(input_node->first_node("vcount")->value());
+	vector<string> vcountList = xml_parser.extract(input_node->first_node("vcount")->value());
 	vector<int> vcounts;
 
 	for (int i = 0; i < vcountList.size(); i++) {
@@ -75,7 +70,7 @@ SkinLoader::SkinLoader(xml_node<> &library_controllers_node):
 	///////////////
 	// Create skin_data
 	//////////////
-	vector<string> vList = utils::extract(input_node->first_node("v")->value());
+	vector<string> vList = xml_parser.extract(input_node->first_node("v")->value());
 	vector<VertexSkinData> skinningData;
 
 	int pointer = 0;
@@ -88,6 +83,7 @@ SkinLoader::SkinLoader(xml_node<> &library_controllers_node):
 				weight_id = stoi(vList[pointer++]);
 				skinData.addJoint(joint_id, weights_list[weight_id]);
 		}
+		skinData.limitJointNumber(maxWeights_);
 		skinningData.push_back(skinData);
 	}
 

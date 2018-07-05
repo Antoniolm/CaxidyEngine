@@ -17,31 +17,38 @@
 // **
 // *********************************************************************
 
-#ifndef SKINLOADER_H
-#define SKINLOADER_H
+#ifndef XMLPARSERUTILS_CPP
+#define XMLPARSERUTILS_CPP
 
-#include "ColladaData.h"
-#include "rapidxml/rapidxml.hpp"
+#include "XmlParserUtils.h"
 
-using namespace rapidxml;
 using namespace std;
 
-class SkinLoader
+rapidxml::xml_node<> * XmlParserUtils::getChildWithAttribute(
+    rapidxml::xml_node<> *parent, 
+    const string & type, 
+    const string & attribute, 
+    const string & value)
 {
-    public:
+    rapidxml::xml_node<> *node = parent->first_node( type.c_str());
+    while (node)
+    {
+        rapidxml::xml_attribute<> *attr = node->first_attribute( attribute.c_str());
+        if ( attr && value == attr->value()) return node;
+        node = node->next_sibling( type.c_str());
+    }
+    return node;
+}
 
-        //////////////////////////////////////////////////////////////////////////
-        /** Constructor */
-        //////////////////////////////////////////////////////////////////////////
-        SkinLoader(xml_node<> &library_controllers_node, int maxWeights);
+vector<string> XmlParserUtils::extract(const string& stoextract) {
+    vector<string> aListofWords;
+    stringstream sstoext(stoextract);
+    string sWordBuf;
 
-        SkinningData & extractSkinData();
+    while (sstoext >> sWordBuf)
+        aListofWords.push_back(sWordBuf);
 
-    protected:
+    return aListofWords;
+}
 
-    private:
-        SkinningData skinning_data_;
-	    int maxWeights_;
-};
-
-#endif // SKINLOADER_H
+#endif // XMLPARSERUTILS_CPP

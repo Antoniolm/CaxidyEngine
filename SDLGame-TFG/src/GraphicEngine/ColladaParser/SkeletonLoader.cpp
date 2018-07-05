@@ -17,31 +17,26 @@
 // **
 // *********************************************************************
 
-#ifndef SKINLOADER_H
-#define SKINLOADER_H
+#include "SkeletonLoader.h"
+#include <string.h>
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
 
-#include "ColladaData.h"
-#include "rapidxml/rapidxml.hpp"
+ #include "XmlParserUtils.h"
 
-using namespace rapidxml;
-using namespace std;
-
-class SkinLoader
+SkeletonLoader::SkeletonLoader(xml_node<> & visual_scene_node, vector<string> joint_orders)
 {
-    public:
+    XmlParserUtils xml_parser;
+    current_matrix.identity();
+    current_matrix.rotation(-90,1.0,0.0,0.0);
 
-        //////////////////////////////////////////////////////////////////////////
-        /** Constructor */
-        //////////////////////////////////////////////////////////////////////////
-        SkinLoader(xml_node<> &library_controllers_node, int maxWeights);
+    GLfloat * test = current_matrix.getMatrix();
+    // string weightsDataId= xml_parser.getChildWithAttribute(visual_scene_node, "input", "semantic", "WEIGHT")->first_attribute("source")->value();
 
-        SkinningData & extractSkinData();
-
-    protected:
-
-    private:
-        SkinningData skinning_data_;
-	    int maxWeights_;
-};
-
-#endif // SKINLOADER_H
+    cout<< test[0]<< " "<< test[1]<< " "<< test[2]<< " "<< test[3]<< " "<< endl; 
+    cout<< test[4]<< " "<< test[5]<< " "<< test[6]<< " "<< test[7]<< " "<< endl;
+    cout<< test[8]<< " "<< test[9]<< " "<< test[10]<< " "<< test[11]<< " "<< endl;
+    cout<< test[12]<< " "<< test[13]<< " "<< test[14]<< " "<< test[15]<< " "<< endl;
+}

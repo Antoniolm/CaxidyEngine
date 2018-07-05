@@ -104,6 +104,8 @@ add_executable(main src/main.cpp
     src/GraphicEngine/voxels/trapdoor.cpp
 
     src/GraphicEngine/ColladaParser/SkinLoader.cpp
+    src/GraphicEngine/ColladaParser/XmlParserUtils.cpp
+    src/GraphicEngine/ColladaParser/SkeletonLoader.cpp
 
     src/VideoGame/coin.cpp
     src/VideoGame/door.cpp

@@ -17,31 +17,30 @@
 // **
 // *********************************************************************
 
-#ifndef SKINLOADER_H
-#define SKINLOADER_H
+#ifndef SKELETONLOADER_H
+#define SKELETONLOADER_H
 
+#include "matrix/matrix4f.h"
+#include <string>
 #include "ColladaData.h"
 #include "rapidxml/rapidxml.hpp"
 
 using namespace rapidxml;
 using namespace std;
 
-class SkinLoader
+class SkeletonLoader
 {
     public:
 
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        SkinLoader(xml_node<> &library_controllers_node, int maxWeights);
-
-        SkinningData & extractSkinData();
+        SkeletonLoader(xml_node<> & visual_scene_node, vector<string> joint_orders);
 
     protected:
 
     private:
-        SkinningData skinning_data_;
-	    int maxWeights_;
+        Matrix4f current_matrix; // Matrix 4x4
 };
 
-#endif // SKINLOADER_H
+#endif // SKELETONLOADER_H
