@@ -24,6 +24,9 @@
 #include <string>
 #include <vector>
 #include <iostream>
+
+#include "matrix/matrix4f.h"
+
 using namespace std;
 
 /////////////////////////////////////////////////////////////////////////
@@ -102,6 +105,52 @@ struct SkinningData{
     SkinningData(const vector<string> & joint_order, const vector<VertexSkinData> & vertices_skin_data){
         joint_order_ = joint_order;
 		vertices_skin_data_ = vertices_skin_data;
+    }
+};
+
+/////////////////////////////////////////////////////////////////////////
+/**
+*    Struct --> This struct will let us make a Vertex skin data
+*/
+//////////////////////////////////////////////////////////////////////////
+struct JointData {
+
+	int index_;
+	string name_id_;
+	Matrix4f bind_local_transform_;
+
+	vector<JointData> children;
+
+	JointData(){}
+	
+	JointData(int index, string nameId, Matrix4f bindLocalTransform) {
+		index_ = index;
+		name_id_ = nameId;
+		bind_local_transform_ = bindLocalTransform;
+	}
+
+	void addChild(JointData child) {
+		children.push_back(child);
+	}
+};
+/////////////////////////////////////////////////////////////////////////
+/**
+*    Struct --> This struct will let us make a Vertex skin data
+*/
+//////////////////////////////////////////////////////////////////////////
+struct SkeletonData{
+    int joint_count_;
+	JointData head_joint_;
+
+	SkeletonData() :
+		head_joint_()
+	{
+
+	}
+
+    SkeletonData(int joint_count, const JointData & head_joint){
+        joint_count_ = joint_count;
+		head_joint_ = head_joint;
     }
 };
 

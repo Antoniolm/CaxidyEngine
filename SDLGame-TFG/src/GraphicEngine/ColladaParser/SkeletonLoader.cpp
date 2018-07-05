@@ -33,7 +33,7 @@ SkeletonLoader::SkeletonLoader(xml_node<> & visual_scene_node, vector<string> jo
     current_matrix.rotation(-90,1.0,0.0,0.0);
 
     GLfloat * test = current_matrix.getMatrix();
-    // string weightsDataId= xml_parser.getChildWithAttribute(visual_scene_node, "input", "semantic", "WEIGHT")->first_attribute("source")->value();
+    string weightsDataId= xml_parser.getChildWithAttribute(visual_scene_node, "node", "id", "Armature");
 
     cout<< test[0]<< " "<< test[1]<< " "<< test[2]<< " "<< test[3]<< " "<< endl; 
     cout<< test[4]<< " "<< test[5]<< " "<< test[6]<< " "<< test[7]<< " "<< endl;
