@@ -25,6 +25,8 @@
 #include "ColladaData.h"
 #include "rapidxml/rapidxml.hpp"
 
+#include "XmlParserUtils.h"
+
 using namespace rapidxml;
 using namespace std;
 
@@ -35,12 +37,16 @@ class SkeletonLoader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        SkeletonLoader(xml_node<> & visual_scene_node, vector<string> joint_orders);
+        SkeletonLoader(xml_node<> & visual_scene_node,const vector<string> & joint_orders);
+
+        JointData load_joint_data(xml_node<> * node,bool root);
 
     protected:
 
     private:
+        vector<string> joint_orders_;
         Matrix4f current_matrix; // Matrix 4x4
+        XmlParserUtils xml_parser;
 };
 
 #endif // SKELETONLOADER_H

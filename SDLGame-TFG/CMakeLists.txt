@@ -141,7 +141,6 @@ add_executable(main src/main.cpp
     src/VideoGame/ia/iameleeenemy.cpp
     src/VideoGame/ia/ianpc.cpp
     src/VideoGame/ia/iarangedenemy.cpp
-
 )
 
 target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIR}
@@ -154,10 +153,12 @@ ${GLEW_INCLUDE_DIR}
 "${CMAKE_SOURCE_DIR}/src/VideoGame"
 "${CMAKE_SOURCE_DIR}/resources/lib"
 )
+
 target_link_libraries(main 
     ${SDL2_LIBRARIES} 
     ${SDL2_MIXER_LIBRARIES} 
     ${SDL2TTF_LIBRARY}
     ${OPENGL_LIBRARIES}  
     ${GLEW_LIBRARIES}
-    Threads::Threads)
+    Threads::Threads
+)

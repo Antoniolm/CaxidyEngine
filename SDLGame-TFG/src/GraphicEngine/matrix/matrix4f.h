@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 
 #include "GL/glew.h"
 #include <math.h>
+#include <vector>
 #include <iostream>
 #include "structdata.h"
 
@@ -40,6 +41,11 @@ class Matrix4f
         /** Copy constructor */
         //////////////////////////////////////////////////////////////////////////
         Matrix4f(const Matrix4f & aMatrix);
+
+        //////////////////////////////////////////////////////////////////////////
+        /** Copy constructor */
+        //////////////////////////////////////////////////////////////////////////
+        Matrix4f(const vector<std::string> & aMatrix);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */

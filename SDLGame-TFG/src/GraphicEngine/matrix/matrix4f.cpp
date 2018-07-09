@@ -18,6 +18,7 @@
 // *********************************************************************
 
 #include "matrix4f.h"
+#include <stdio.h>
 
 Matrix4f::Matrix4f(){
     matrix=new GLfloat[16];
@@ -28,6 +29,18 @@ Matrix4f::Matrix4f(){
 Matrix4f::~Matrix4f(){
     delete [] matrix;
 }
+
+//**********************************************************************//
+
+Matrix4f::Matrix4f(const vector<std::string> & aMatrix)
+{
+    matrix=new GLfloat[16];
+    for(int i=0;i<16;i++){
+        matrix[i]=stof(aMatrix[i]);
+    }
+}
+
+//**********************************************************************//
 
 Matrix4f::Matrix4f(const Matrix4f & aMatrix){
     matrix=new GLfloat[16];

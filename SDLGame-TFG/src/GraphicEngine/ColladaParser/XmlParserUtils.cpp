@@ -51,4 +51,14 @@ vector<string> XmlParserUtils::extract(const string& stoextract) {
     return aListofWords;
 }
 
+int XmlParserUtils::indexOf(const vector<string> & elements, const string & value)
+{
+    int index = -1;
+    for(int i=0;i<elements.size();i++){
+        if(elements[i] == value)
+            index = i;
+    }
+    return index;
+}
+
 #endif // XMLPARSERUTILS_CPP

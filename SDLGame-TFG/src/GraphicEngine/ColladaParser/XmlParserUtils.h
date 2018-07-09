@@ -39,6 +39,8 @@ rapidxml::xml_node<> * getChildWithAttribute(
 
 vector<string> extract(const string& stoextract);
 
+int indexOf(const vector<string> & elements, const string & value);
+
 };
 
 #endif // XMLPARSERUTILS_H
