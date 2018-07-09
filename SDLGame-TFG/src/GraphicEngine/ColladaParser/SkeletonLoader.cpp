@@ -55,7 +55,7 @@ JointData SkeletonLoader::load_joint_data(xml_node<> * node, bool root)
 		current_matrix.product(matrix.getMatrix());
 	}
     else {
-        current_matrix = Matrix4f(matrix);
+        current_matrix.setMatrix(matrix.getMatrix());
     }
 
     std::cout<< id << "->"<< node->first_attribute("id")->value() <<std::endl;
