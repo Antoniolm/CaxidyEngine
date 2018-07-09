@@ -39,7 +39,7 @@ class SkeletonLoader
         //////////////////////////////////////////////////////////////////////////
         SkeletonLoader(xml_node<> & visual_scene_node,const vector<string> & joint_orders);
 
-        JointData load_joint_data(xml_node<> * node,bool root);
+        JointData & load_joint_data(xml_node<> * node,bool root);
 
     protected:
 

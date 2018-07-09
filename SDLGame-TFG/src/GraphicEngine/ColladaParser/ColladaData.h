@@ -123,10 +123,10 @@ struct JointData {
 
 	JointData(){}
 	
-	JointData(int index, string nameId, Matrix4f bindLocalTransform) {
+	JointData(int index, string nameId, Matrix4f & bindLocalTransform) {
 		index_ = index;
 		name_id_ = nameId;
-		bind_local_transform_ = bindLocalTransform;
+		bind_local_transform_.setMatrix(bindLocalTransform.getMatrix());
 	}
 
 	void addChild(JointData child) {

@@ -41,14 +41,13 @@ SkeletonLoader::SkeletonLoader(xml_node<> & visual_scene_node, const vector<stri
     
     xml_node<> * head_node = armature_data->first_node("node");
 
-    load_joint_data(head_node,true);
+    JointData joint = load_joint_data(head_node,true);
 }
 
-JointData SkeletonLoader::load_joint_data(xml_node<> * node, bool root)
+JointData & SkeletonLoader::load_joint_data(xml_node<> * node, bool root)
 {
-    JointData joint;
-
-    int id = xml_parser.indexOf(joint_orders_, node->first_attribute("id")->value());
+    string name =node->first_attribute("id")->value();
+    int id = xml_parser.indexOf(joint_orders_, name);
     Matrix4f matrix(xml_parser.extract(node->first_node("matrix")->value()));
 
     if(root){
@@ -58,13 +57,14 @@ JointData SkeletonLoader::load_joint_data(xml_node<> * node, bool root)
         current_matrix.setMatrix(matrix.getMatrix());
     }
 
-    std::cout<< id << "->"<< node->first_attribute("id")->value() <<std::endl;
+    std::cout<< id << "->"<< name <<std::endl;
     GLfloat * test = current_matrix.getMatrix();
     cout<< test[0]<< " "<< test[1]<< " "<< test[2]<< " "<< test[3]<< " "<< endl; 
     cout<< test[4]<< " "<< test[5]<< " "<< test[6]<< " "<< test[7]<< " "<< endl;
     cout<< test[8]<< " "<< test[9]<< " "<< test[10]<< " "<< test[11]<< " "<< endl;
     cout<< test[12]<< " "<< test[13]<< " "<< test[14]<< " "<< test[15]<< " "<< endl;
 
+    JointData joint(id,name,current_matrix);
     for(xml_node<> * loop_node = node->first_node("node"); loop_node; loop_node = loop_node->next_sibling("node")){
         joint.addChild(load_joint_data(loop_node,false));
     }
