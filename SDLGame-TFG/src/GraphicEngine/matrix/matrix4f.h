@@ -128,6 +128,8 @@ class Matrix4f
         //////////////////////////////////////////////////////////////////////////
         const GLfloat * getMatrixc()const;
 
+        std::string to_string();
+
 
     protected:
 

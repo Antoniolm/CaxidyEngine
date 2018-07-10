@@ -39,7 +39,9 @@ class SkeletonLoader
         //////////////////////////////////////////////////////////////////////////
         SkeletonLoader(xml_node<> & visual_scene_node,const vector<string> & joint_orders);
 
-        JointData & load_joint_data(xml_node<> * node,bool root);
+        JointData * load_joint_data(xml_node<> * node,bool root);
+
+        SkeletonData & get_skeleton();
 
     protected:
 
@@ -47,6 +49,8 @@ class SkeletonLoader
         vector<string> joint_orders_;
         Matrix4f current_matrix; // Matrix 4x4
         XmlParserUtils xml_parser;
+        SkeletonData * skeleton_data_;
+        JointData joint_;
 };
 
 #endif // SKELETONLOADER_H

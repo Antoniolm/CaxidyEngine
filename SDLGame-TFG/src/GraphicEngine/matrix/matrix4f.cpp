@@ -136,5 +136,17 @@ const GLfloat * Matrix4f::getMatrixc() const{
     return matrix;
 }
 
+//**********************************************************************//
 
+std::string Matrix4f::to_string(){
+    string result = "";
+
+    for(int i=0;i<16;i++){
+        result += std::to_string(matrix[i])+" ";
+        if((i+1)%4 == 0) 
+            result += "\n";
+    }
+    
+    return result;
+}
 
