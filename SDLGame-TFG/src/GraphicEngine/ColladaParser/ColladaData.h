@@ -26,6 +26,7 @@
 #include <iostream>
 
 #include "matrix/matrix4f.h"
+#include "matrix/structdata.h"
 
 using namespace std;
 
@@ -133,6 +134,7 @@ struct JointData {
 		children.push_back(child);
 	}
 };
+
 /////////////////////////////////////////////////////////////////////////
 /**
 *    Struct --> This struct will let us make a Vertex skin data
@@ -153,5 +155,105 @@ struct SkeletonData{
 		head_joint_ = head_joint;
     }
 };
+
+/////////////////////////////////////////////////////////////////////////
+/**
+*    Struct --> This struct will let us make a Vertex skin data
+*/
+//////////////////////////////////////////////////////////////////////////
+struct Vertex{
+    	
+	static int NO_INDEX;
+	
+	vec3f position_;
+	int texture_index_;
+	int normal_index_;
+	struct Vertex * duplicate_vertex_;
+	int index_;
+	float length_;
+	vector<vec3f> tangents_;
+	vec3f averaged_tangent_;
+	
+	VertexSkinData weights_data_;
+
+	Vertex(int index,const vec3f & position, const VertexSkinData & weightsData){
+		NO_INDEX = -1;
+		texture_index_ = NO_INDEX;
+		normal_index_ = NO_INDEX;
+		duplicate_vertex_ = NULL;
+		index_ = index;
+		weights_data_ = weightsData;
+		position_ = position;
+		length_ = position_.length();
+		std::cout<< "Test: "<< length_ <<std::endl;
+	}
+	
+	VertexSkinData getWeightsData(){
+		return weights_data_;
+	}
+	
+	void addTangent(vec3f tangent){
+		tangents_.push_back(tangent);
+	}
+	
+	void averageTangents(){
+		if(tangents_.empty()){
+			return;
+		}
+		for(vec3f tangent : tangents_){
+			averaged_tangent_ = averaged_tangent_+ tangent;
+		}
+		averaged_tangent_.normalize();
+	}
+	
+	vec3f getAverageTangent(){
+		return averaged_tangent_;
+	}
+	
+	int getIndex(){
+		return index_;
+	}
+	
+	float getLength(){
+		return length_;
+	}
+	
+	bool is_set(){
+		return texture_index_!=NO_INDEX && normal_index_!=NO_INDEX;
+	}
+	
+	bool has_same_texture_and_normal(int textureIndexOther,int normalIndexOther){
+		return textureIndexOther==texture_index_ && normalIndexOther==normal_index_;
+	}
+	
+	void setTextureIndex(int texture_index){
+		texture_index_ = texture_index;
+	}
+	
+	void setNormalIndex(int normal_index){
+		normal_index_ = normal_index;
+	}
+
+	vec3f getPosition() {
+		return position_;
+	}
+
+	int getTextureIndex() {
+		return texture_index_;
+	}
+
+	int getNormalIndex() {
+		return normal_index_;
+	}
+
+	Vertex * getDuplicateVertex() {
+		return duplicate_vertex_;
+	}
+
+	void setDuplicateVertex(Vertex * duplicate_vertex) {
+		duplicate_vertex_ = duplicate_vertex;
+	}
+};
+
 
 #endif // COLLADADATA_H
