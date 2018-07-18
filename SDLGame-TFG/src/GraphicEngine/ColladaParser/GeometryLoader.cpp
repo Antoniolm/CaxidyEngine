@@ -26,5 +26,15 @@
 
 GeometryLoader::GeometryLoader(xml_node<> & geometry_node,const vector<VertexSkinData> & vertex_weights)
 {
+    meshData = geometry_node.first_node("geometry")->first_node("mesh");
+    vertex_weights_ = vertex_weights;
 
+    GLfloat * manual_matrix = new GLfloat[16];
+
+    manual_matrix[0]=0.99999994;  manual_matrix[1]=0.0;          manual_matrix[2]=0.0;           manual_matrix[3]=0.0;   
+    manual_matrix[4]=0.0;         manual_matrix[5]=-4.371139e-8; manual_matrix[6]=1.0;           manual_matrix[7]=0.0;
+    manual_matrix[8]=0.0;         manual_matrix[9]=-1.0;         manual_matrix[10]=-4.371139e-8; manual_matrix[11]=0.0;
+    manual_matrix[12]=0.0;        manual_matrix[13]=0.0;         manual_matrix[14]=0.0;          manual_matrix[15]=1.0;
+
+    current_matrix_.setMatrix(manual_matrix);
 }

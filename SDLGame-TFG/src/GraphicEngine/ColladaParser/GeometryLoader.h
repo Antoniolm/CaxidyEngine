@@ -44,17 +44,17 @@ class GeometryLoader
     private:
         xml_node<> *  meshData;
 
-        Matrix4f current_matrix; // Matrix 4x4
+        Matrix4f current_matrix_; // Matrix 4x4
         XmlParserUtils xml_parser;
 
-        vector<VertexSkinData> vertexWeights;
+        vector<VertexSkinData> vertex_weights_;
         
-        vector<float> verticesArray;
-        vector<float> normalsArray;
-        vector<float> texturesArray;
-        vector<int> indicesArray;
-        vector<int> jointIdsArray;
-        vector<float> weightsArray;
+        vector<float> vertices_array_;
+        vector<float> normals_array_;
+        vector<float> textures_array_;
+        vector<int> indices_array_;
+        vector<int> jointIds_array_;
+        vector<float> weights_array_;
 
         vector<Vertex> vertices;
         vector<vec2f> textures;
