@@ -39,6 +39,8 @@ class GeometryLoader
         //////////////////////////////////////////////////////////////////////////
         GeometryLoader(xml_node<> & geometry_node,const vector<VertexSkinData> & vertex_weights);
 
+        void read_data();
+
     protected:
 
     private:

@@ -38,3 +38,18 @@ GeometryLoader::GeometryLoader(xml_node<> & geometry_node,const vector<VertexSki
 
     current_matrix_.setMatrix(manual_matrix);
 }
+
+void GeometryLoader::read_data()
+{
+    XmlParserUtils xml_parser;
+
+    std::string aux_pos_id = meshData->first_node("vertices")->first_node("input")->first_attribute("source")->value();
+    std::string positions_id = aux_pos_id.substr(aux_pos_id.find("#")+1);
+    std::cout<< positions_id <<std::endl;
+    xml_node<> * positionsData = xml_parser.getChildWithAttribute(meshData, "source", "id", positions_id)->first_node("float_array");
+
+    int count = stoi(positionsData->first_attribute("count")->value());
+    std::cout<< count <<std::endl;
+
+    vector<string> pos_data = xml_parser.extract(positionsData->value());
+}
