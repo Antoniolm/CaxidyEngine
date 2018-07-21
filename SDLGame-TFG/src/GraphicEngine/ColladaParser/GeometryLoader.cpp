@@ -58,4 +58,12 @@ void GeometryLoader::read_data()
 	}
 
     // Read normals
+    std::string normals_id = xml_parser.getChildWithAttribute(meshData->first_node("polylist"), "input", "semantic", "NORMAL")->first_attribute("source")->value();
+    normals_id = normals_id.substr(normals_id.find("#")+1);
+    std::cout<< normals_id << std::endl;
+
+    xml_node<> * normalsData = xml_parser.getChildWithAttribute(meshData,"source", "id", normals_id)->first_node("float_array");
+	count = stoi(normalsData->first_attribute("count")->value());
+    std::cout<< count << std::endl;
+
 }
