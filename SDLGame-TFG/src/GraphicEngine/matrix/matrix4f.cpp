@@ -92,6 +92,15 @@ void Matrix4f::identity(){
 
 //**********************************************************************//
 
+void Matrix4f::change_axis(){
+    matrix[0]=0.99999994;  matrix[1]=0.0;          matrix[2]=0.0;           matrix[3]=0.0;   
+    matrix[4]=0.0;         matrix[5]=-4.371139e-8; matrix[6]=1.0;           matrix[7]=0.0;
+    matrix[8]=0.0;         matrix[9]=-1.0;         matrix[10]=-4.371139e-8; matrix[11]=0.0;
+    matrix[12]=0.0;        matrix[13]=0.0;         matrix[14]=0.0;          matrix[15]=1.0;
+}
+
+//**********************************************************************//
+
 void Matrix4f::product(const GLfloat * aMatrix){
         GLfloat * newMatrix=new GLfloat[16];
         for(int j=0;j<16;j=j+4){

@@ -163,7 +163,7 @@ struct SkeletonData{
 //////////////////////////////////////////////////////////////////////////
 struct Vertex{
     	
-	static int NO_INDEX;
+	int NO_INDEX;
 	
 	vec3f position_;
 	int texture_index_;
@@ -185,7 +185,6 @@ struct Vertex{
 		weights_data_ = weightsData;
 		position_ = position;
 		length_ = position_.length();
-		std::cout<< "Test: "<< length_ <<std::endl;
 	}
 	
 	VertexSkinData getWeightsData(){

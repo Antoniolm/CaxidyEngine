@@ -23,26 +23,21 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 
 GeometryLoader::GeometryLoader(xml_node<> & geometry_node,const vector<VertexSkinData> & vertex_weights)
 {
     meshData = geometry_node.first_node("geometry")->first_node("mesh");
     vertex_weights_ = vertex_weights;
 
-    GLfloat * manual_matrix = new GLfloat[16];
-
-    manual_matrix[0]=0.99999994;  manual_matrix[1]=0.0;          manual_matrix[2]=0.0;           manual_matrix[3]=0.0;   
-    manual_matrix[4]=0.0;         manual_matrix[5]=-4.371139e-8; manual_matrix[6]=1.0;           manual_matrix[7]=0.0;
-    manual_matrix[8]=0.0;         manual_matrix[9]=-1.0;         manual_matrix[10]=-4.371139e-8; manual_matrix[11]=0.0;
-    manual_matrix[12]=0.0;        manual_matrix[13]=0.0;         manual_matrix[14]=0.0;          manual_matrix[15]=1.0;
-
-    current_matrix_.setMatrix(manual_matrix);
+    current_matrix_.change_axis();
 }
 
 void GeometryLoader::read_data()
 {
     XmlParserUtils xml_parser;
 
+    // Read positions
     std::string aux_pos_id = meshData->first_node("vertices")->first_node("input")->first_attribute("source")->value();
     std::string positions_id = aux_pos_id.substr(aux_pos_id.find("#")+1);
     std::cout<< positions_id <<std::endl;
@@ -52,4 +47,15 @@ void GeometryLoader::read_data()
     std::cout<< count <<std::endl;
 
     vector<string> pos_data = xml_parser.extract(positionsData->value());
+    for (int i = 0; i < count/3; i++) {
+			vec4f position(
+                stof(pos_data[i * 3]), 
+                stof(pos_data[i * 3 + 1]), 
+                stof(pos_data[i * 3 + 2]), 
+                1.0f);
+            position.transform(current_matrix_.getMatrix());
+			vertices.push_back(Vertex(vertices.size(), vec3f(position.x, position.y, position.z), vertex_weights_[vertices.size()]));
+	}
+
+    // Read normals
 }

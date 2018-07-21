@@ -20,6 +20,7 @@
 #ifndef STRUCTDATA_H
 #define STRUCTDATA_H
 
+#include "GL/glew.h"
 #include <math.h>
 #include <iostream>
 using namespace std;
@@ -56,6 +57,18 @@ struct vec4f{
                 w=value;
             break;
         }
+    }
+
+    void transform(GLfloat * matrix){
+        float ax = matrix[0] * x + matrix[4] * y + matrix[8] * z + matrix[12] * w;
+		float ay = matrix[1] * x + matrix[5] * y + matrix[9] * z + matrix[13] * w;
+		float az = matrix[2] * x + matrix[6] * y + matrix[10] * z + matrix[14] * w;
+		float aw = matrix[3] * x + matrix[7] * y + matrix[11] * z + matrix[15] * w;
+
+        x=ax;
+        y=-ay;
+        z=-az;
+        w=aw;
     }
 };
 
