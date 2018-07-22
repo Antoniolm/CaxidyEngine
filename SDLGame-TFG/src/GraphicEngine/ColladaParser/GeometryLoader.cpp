@@ -65,5 +65,16 @@ void GeometryLoader::read_data()
     xml_node<> * normalsData = xml_parser.getChildWithAttribute(meshData,"source", "id", normals_id)->first_node("float_array");
 	count = stoi(normalsData->first_attribute("count")->value());
     std::cout<< count << std::endl;
+    vector<string> norm_data = xml_parser.extract(normalsData->value());
+		for (int i = 0; i < count/3; i++) {
+            vec4f normal(
+                    stof(norm_data[i * 3]), 
+                    stof(norm_data[i * 3 + 1]), 
+                    stof(norm_data[i * 3 + 2]), 
+                    0.0f);
 
+            normal.transform(current_matrix_.getMatrix());    
+            std::cout<< normal.x<< " "<< normal.y<< " "<< normal.z<< std::endl;
+			normals.push_back(vec3f(normal.x, normal.y, normal.z));
+		}
 }
