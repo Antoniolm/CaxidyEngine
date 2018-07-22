@@ -60,11 +60,10 @@ void GeometryLoader::read_data()
     // Read normals
     std::string normals_id = xml_parser.getChildWithAttribute(meshData->first_node("polylist"), "input", "semantic", "NORMAL")->first_attribute("source")->value();
     normals_id = normals_id.substr(normals_id.find("#")+1);
-    std::cout<< normals_id << std::endl;
 
     xml_node<> * normalsData = xml_parser.getChildWithAttribute(meshData,"source", "id", normals_id)->first_node("float_array");
 	count = stoi(normalsData->first_attribute("count")->value());
-    std::cout<< count << std::endl;
+
     vector<string> norm_data = xml_parser.extract(normalsData->value());
 		for (int i = 0; i < count/3; i++) {
             vec4f normal(
@@ -74,7 +73,20 @@ void GeometryLoader::read_data()
                     0.0f);
 
             normal.transform(current_matrix_.getMatrix());    
-            std::cout<< normal.x<< " "<< normal.y<< " "<< normal.z<< std::endl;
 			normals.push_back(vec3f(normal.x, normal.y, normal.z));
 		}
+
+    // Read texture coords
+    std::string text_id = xml_parser.getChildWithAttribute(meshData->first_node("polylist"), "input", "semantic", "TEXCOORD")->first_attribute("source")->value();
+    text_id = text_id.substr(text_id.find("#")+1);
+
+    xml_node<> * texCoordsData = xml_parser.getChildWithAttribute(meshData,"source", "id", text_id)->first_node("float_array");
+    count = stoi(texCoordsData->first_attribute("count")->value());
+
+    vector<string> tex_data = xml_parser.extract(texCoordsData->value());
+    for (int i = 0; i < count/2; i++) {
+    	textures.push_back(vec2f(
+            stof(tex_data[i * 2]),
+            stof(tex_data[i * 2 + 1])));
+    }
 }
