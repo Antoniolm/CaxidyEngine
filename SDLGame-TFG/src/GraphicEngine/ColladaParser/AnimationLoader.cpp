@@ -27,5 +27,21 @@
 
 AnimationLoader::AnimationLoader(xml_node<> & animation_node, xml_node<> & joint_node)
 {
-    
+    xml_node<> * skeleton = xml_parser.getChildWithAttribute(joint_node.first_node("visual_scene"), "node", "id", "Armature");
+    std::string root_id= skeleton->first_node("node")->first_attribute("id")->value();
+
+    xml_node<> * timeData = animation_node.first_node("animation")->first_node("source")->first_node("float_array");
+    vector<string> raw_times = xml_parser.extract(timeData->value());
+    vector<float> times;
+
+    for(int i=0;i<raw_times.size();i++){
+        times.push_back(stof(raw_times[i]));
+    }
+
+    float duration = times[times.size()-1];
+
+    vector<KeyFrameData> frames;
+    for(int i=0;i<times.size();i++){
+        frames.push_back(KeyFrameData(times[i]));
+    }
 }

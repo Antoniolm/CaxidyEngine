@@ -107,6 +107,7 @@ add_executable(main src/main.cpp
     src/GraphicEngine/ColladaParser/XmlParserUtils.cpp
     src/GraphicEngine/ColladaParser/SkeletonLoader.cpp
     src/GraphicEngine/ColladaParser/GeometryLoader.cpp
+    src/GraphicEngine/ColladaParser/AnimationLoader.cpp
 
     src/VideoGame/coin.cpp
     src/VideoGame/door.cpp

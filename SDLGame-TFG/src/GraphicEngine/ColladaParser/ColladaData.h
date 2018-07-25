@@ -259,7 +259,7 @@ struct JointTransformData {
 	string joint_name_id_;
 	Matrix4f current_matrix_;
 
-	JointTransformData(string joint_name_id,const  Matrix4f & current_matrix) {
+	JointTransformData(string joint_name_id, Matrix4f & current_matrix) {
 		joint_name_id_ = joint_name_id;
 		current_matrix_.setMatrix(current_matrix.getMatrix());
 	}

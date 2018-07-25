@@ -20,6 +20,7 @@
 #ifndef ANIMATIONLOADER_H
 #define ANIMATIONLOADER_H
 
+#include "GL/glew.h"
 #include "matrix/matrix4f.h"
 #include <string>
 #include "ColladaData.h"
