@@ -254,5 +254,45 @@ struct Vertex{
 	}
 };
 
+struct JointTransformData {
+
+	string joint_name_id_;
+	Matrix4f current_matrix_;
+
+	JointTransformData(string joint_name_id,const  Matrix4f & current_matrix) {
+		joint_name_id_ = joint_name_id;
+		current_matrix_.setMatrix(current_matrix.getMatrix());
+	}
+};
+
+struct KeyFrameData {
+
+	float time_;
+	vector<JointTransformData> joint_transforms;
+	
+	KeyFrameData(float time){
+		time_ = time;
+	}
+	
+	void addJointTransform(JointTransformData transform){
+		joint_transforms.push_back(transform);
+	}
+	
+};
+
+/////////////////////////////////////////////////////////////////////////
+/**
+*    Struct --> This struct will let us make a animation data
+*/
+//////////////////////////////////////////////////////////////////////////
+struct AnimationData{
+	float length_seconds_;
+	vector<KeyFrameData> key_frames_;
+
+	AnimationData(float length_seconds, const vector<KeyFrameData> & key_frames) {
+		length_seconds_ = length_seconds;
+		key_frames_ = key_frames;
+	}
+};
 
 #endif // COLLADADATA_H
