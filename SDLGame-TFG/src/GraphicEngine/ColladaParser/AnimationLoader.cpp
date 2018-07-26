@@ -44,4 +44,31 @@ AnimationLoader::AnimationLoader(xml_node<> & animation_node, xml_node<> & joint
     for(int i=0;i<times.size();i++){
         frames.push_back(KeyFrameData(times[i]));
     }
+
+    std::string joint_id, data_id;
+    rapidxml::xml_node<> * channel_node;
+    rapidxml::xml_node<> * node;
+    rapidxml::xml_node<> * transform_data;
+    rapidxml::xml_node<> * joint_nodes = animation_node.first_node("animation");
+    while (joint_nodes)
+    {
+        channel_node = joint_nodes->first_node("channel");
+		joint_id = channel_node->first_attribute("target")->value();
+        joint_id = joint_id.substr(0,joint_id.find("/"));
+    
+        node = xml_parser.getChildWithAttribute(joint_nodes->first_node("sampler"), "input", "semantic", "OUTPUT");
+        data_id = node->first_attribute("source")->value();
+        data_id = data_id.substr(data_id.find("#")+1);
+    
+        transform_data = xml_parser.getChildWithAttribute(joint_nodes, "source", "id", data_id);
+        vector<string> rawData = xml_parser.extract(transform_data->first_node("float_array")->value());
+
+        joint_nodes = joint_nodes->next_sibling("animation");
+    }
+
+    // List<XmlNode> animationNodes = animationData.getChildren("animation");
+	// 	for(XmlNode jointNode : animationNodes){
+	// 		loadJointTransforms(keyFrames, jointNode, rootNode);
+	// 	}
+	// return new AnimationData(duration, keyFrames);
 }
