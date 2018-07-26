@@ -23,8 +23,12 @@
 #include "GL/glew.h"
 #include "matrix/matrix4f.h"
 #include <string>
-#include "ColladaData.h"
 #include "rapidxml/rapidxml.hpp"
+#include "SkinLoader.h"
+#include "SkeletonLoader.h"
+#include "GeometryLoader.h"
+#include "AnimationLoader.h"
+#include "ColladaData.h"
 
 #include "XmlParserUtils.h"
 
@@ -38,7 +42,7 @@ class ColladaLoader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        ColladaLoader();
+        ColladaLoader(std::string file_name);
 
     protected:
 

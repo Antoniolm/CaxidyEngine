@@ -25,6 +25,29 @@
 #include <vector>
 #include <iomanip>
 
-ColladaLoader::ColladaLoader()
+ColladaLoader::ColladaLoader(std::string file_name)
 {
+     xml_document<> doc;
+	xml_node<> * root_node;
+	// Read the xml file into a vector
+	ifstream file (file_name.c_str()); //"resources/geometries/model.dae"
+	vector<char> buffer((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
+	buffer.push_back('\0');
+	// Parse the buffer using the xml file parsing library into doc 
+	doc.parse<0>(&buffer[0]);
+	// Find our root node
+	root_node = doc.first_node("COLLADA");
+
+    SkinLoader skinloader(*root_node->first_node("library_controllers"),10);
+    SkinningData skinningData = skinloader.extractSkinData();
+    
+	SkeletonLoader skeletonloader(*root_node->first_node("library_visual_scenes")->first_node("visual_scene"), skinloader.extractSkinData().joint_order_);
+    SkeletonData joints_data =  skeletonloader.get_skeleton();
+
+	GeometryLoader geometry_loader(*root_node->first_node("library_geometries"),skinningData.vertices_skin_data_);
+	geometry_loader.read_data();
+
+	AnimationLoader animation_loader;
+	animation_loader.getAnimation(*root_node->first_node("library_animations"),*root_node->first_node("library_visual_scenes"));
+
 }
