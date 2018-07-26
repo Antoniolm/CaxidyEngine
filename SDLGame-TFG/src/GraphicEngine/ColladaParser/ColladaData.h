@@ -295,4 +295,50 @@ struct AnimationData{
 	}
 };
 
+/////////////////////////////////////////////////////////////////////////
+/**
+*    Struct --> This struct will let us make a mesh data
+*/
+//////////////////////////////////////////////////////////////////////////
+struct MeshData{
+	vector<float> vertices_;
+	vector<float> textureCoords_;
+	vector<float> normals_;
+	vector<int>   indices_;
+	vector<int>   jointIds_;
+	vector<float> vertexWeights_;
+	
+	MeshData()
+	{
+		
+	}
+
+	MeshData(const vector<float> & vertices,const  vector<float> & textureCoords, const vector<float> & normals, const vector<int> & indices,
+			const vector<int> & jointIds, const vector<float> & vertexWeights)
+	{
+		vertices_ = vertices;
+		textureCoords_ = textureCoords;
+		normals_ = normals;
+		indices_ = indices;
+		jointIds_ = jointIds;
+		vertexWeights_ = vertexWeights;
+	}
+};
+
+/////////////////////////////////////////////////////////////////////////
+/**
+*    Struct --> This struct will let us make an animated model data
+*/
+//////////////////////////////////////////////////////////////////////////
+struct AnimatedModelData{
+	SkeletonData joints_;
+	MeshData mesh_;
+
+	AnimatedModelData(const MeshData & mesh, const SkeletonData & joints)
+	{
+		joints_ = joints;
+		mesh_ = mesh;
+	}
+};
+
 #endif // COLLADADATA_H
