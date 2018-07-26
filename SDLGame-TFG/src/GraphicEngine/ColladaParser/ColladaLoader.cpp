@@ -46,6 +46,7 @@ ColladaLoader::ColladaLoader(std::string file_name)
 
 	GeometryLoader geometry_loader(*root_node->first_node("library_geometries"),skinningData.vertices_skin_data_);
 	geometry_loader.read_data();
+    MeshData mesh = geometry_loader.getMesh();
 
 	AnimationLoader animation_loader;
 	animation_loader.getAnimation(*root_node->first_node("library_animations"),*root_node->first_node("library_visual_scenes"));

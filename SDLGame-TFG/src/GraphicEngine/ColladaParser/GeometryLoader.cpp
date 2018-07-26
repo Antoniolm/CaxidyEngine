@@ -89,3 +89,8 @@ void GeometryLoader::read_data()
             stof(tex_data[i * 2 + 1])));
     }
 }
+
+MeshData GeometryLoader::getMesh()
+{
+    return MeshData(vertices_array_, textures_array_, normals_array_, indices_array_, jointIds_array_, weights_array_);
+}

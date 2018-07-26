@@ -41,6 +41,8 @@ class GeometryLoader
 
         void read_data();
 
+        MeshData getMesh();
+
     protected:
 
     private:
