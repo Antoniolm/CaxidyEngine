@@ -49,6 +49,6 @@ ColladaLoader::ColladaLoader(std::string file_name)
     MeshData mesh = geometry_loader.getMesh();
 
 	AnimationLoader animation_loader;
-	animation_loader.getAnimation(*root_node->first_node("library_animations"),*root_node->first_node("library_visual_scenes"));
+	AnimationData animation_data = animation_loader.getAnimation(*root_node->first_node("library_animations"),*root_node->first_node("library_visual_scenes"));
 
 }
