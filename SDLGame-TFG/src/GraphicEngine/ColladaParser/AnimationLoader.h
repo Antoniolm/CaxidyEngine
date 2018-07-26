@@ -38,7 +38,9 @@ class AnimationLoader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        AnimationLoader(xml_node<> & animation_node, xml_node<> & joint_node);
+        AnimationLoader();
+
+        AnimationData getAnimation(xml_node<> & animation_node, xml_node<> & joint_node);
 
     protected:
 

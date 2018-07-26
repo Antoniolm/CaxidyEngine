@@ -25,7 +25,11 @@
 #include <vector>
 #include <iomanip>
 
-AnimationLoader::AnimationLoader(xml_node<> & animation_node, xml_node<> & joint_node)
+AnimationLoader::AnimationLoader()
+{
+}
+
+AnimationData AnimationLoader::getAnimation(xml_node<> & animation_node, xml_node<> & joint_node)
 {
     xml_node<> * skeleton = xml_parser.getChildWithAttribute(joint_node.first_node("visual_scene"), "node", "id", "Armature");
     std::string root_id= skeleton->first_node("node")->first_attribute("id")->value();
@@ -66,9 +70,6 @@ AnimationLoader::AnimationLoader(xml_node<> & animation_node, xml_node<> & joint
         joint_nodes = joint_nodes->next_sibling("animation");
     }
 
-    // List<XmlNode> animationNodes = animationData.getChildren("animation");
-	// 	for(XmlNode jointNode : animationNodes){
-	// 		loadJointTransforms(keyFrames, jointNode, rootNode);
-	// 	}
-	// return new AnimationData(duration, keyFrames);
+    return AnimationData(duration, frames);
+
 }
