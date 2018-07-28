@@ -18,11 +18,8 @@
 // *********************************************************************
 
 #include "inventorymenu.h"
-#include "VideoGame/inventory.h"
 #include "GraphicEngine/text.h"
 #include "collection/meshcollection.h"
-
-
 
 InventoryMenu::InventoryMenu(){
 
@@ -37,8 +34,6 @@ InventoryMenu::~InventoryMenu(){
     delete materialBack;
     delete confirmMaterial;
     delete materialEquipped;
-
-    delete inventory;
 }
 
 //**********************************************************************//

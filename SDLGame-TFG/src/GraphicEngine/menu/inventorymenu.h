@@ -22,7 +22,6 @@
 
 #include <iostream>
 #include <vector>
-#include "VideoGame/savedmanager.h"
 #include "GraphicEngine/object3d.h"
 #include "GraphicEngine/rootmap.h"
 #include "context/context.h"
@@ -36,13 +35,10 @@
 #include "mainmenu.h"
 #include "collection/materialcollection.h"
 #include "collection/soundcollection.h"
-#include "VideoGame/inventory.h"
-#include "VideoGame/equipment.h"
 #include <string>
 
 using namespace std;
 
-class Inventory;
 class Text;
 class MeshCollection;
 class InventoryMenu : public Menu
@@ -99,14 +95,7 @@ class InventoryMenu : public Menu
         int currentItemX;                    // Current X cell of the inventory
         int currentItemY;                    // Current Y cell of the inventory
 
-        Inventory * inventory;               // Logistic inventory of the interface
-        Material * itemView[3][6];           // Matrix of material of the items in the inventory
-        Matrix4f * equippedItem[3];          // Array of matrix4f that adjust the position of the equipped icon
-
         bool isConfirming;                   // Flag to know if the user is confirming a removement of a item or not
-
-        Equipment * lastSelection;           // Pointer to know the last selected
-                                             // position was empty or has an equip
 
     private:
 

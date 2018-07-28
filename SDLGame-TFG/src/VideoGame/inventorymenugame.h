@@ -22,7 +22,11 @@
 
 #include "GraphicEngine/menu/inventorymenu.h"
 #include "GraphicEngine/text.h"
+#include "VideoGame/inventory.h"
+#include "VideoGame/equipment.h"
+#include "VideoGame/savedmanager.h"
 
+class Inventory;
 class InventoryMenuGame : public InventoryMenu
 {
     public:
@@ -144,6 +148,13 @@ class InventoryMenuGame : public InventoryMenu
         int currentLife;                     // Current life of the hero
         int currentDmg;                      // Current damage of the hero
         int currentArmour;                   // Current armour of the hero
+
+        Equipment * lastSelection;           // Pointer to know the last selected
+                                             // position was empty or has an equip
+
+        Inventory * inventory;               // Logistic inventory of the interface
+        Material * itemView[3][6];           // Matrix of material of the items in the inventory
+        Matrix4f * equippedItem[3];          // Array of matrix4f that adjust the position of the equipped icon
 };
 
 #endif // INVENTORYMENUGAME_H

@@ -203,6 +203,7 @@ InventoryMenuGame::~InventoryMenuGame()
     delete lifeText;
     delete damageText;
     delete armourText;
+    delete inventory;
 }
 
 //**********************************************************************//

@@ -150,7 +150,6 @@ void MainMenu::updateState(GameState & gameState){
 
         //If the user push an option
         if(controller->checkButton(cACTION) && menuDelay<(time-300)){ //If the user push the action intro
-            SavedManager * saveManager;
             switch(actionOption[currentOption]){
                 case START: //Start Game
                     ambientSound->stop();
