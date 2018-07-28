@@ -245,7 +245,13 @@ struct AnimationData{
 	float length_seconds_;
 	vector<KeyFrameData> key_frames_;
 
-	AnimationData(float length_seconds, const vector<KeyFrameData> & key_frames) {
+	AnimationData()
+	{
+
+	}
+
+	AnimationData(float length_seconds, const vector<KeyFrameData> & key_frames)
+	{
 		length_seconds_ = length_seconds;
 		key_frames_ = key_frames;
 	}
@@ -289,6 +295,11 @@ struct MeshData{
 struct AnimatedModelData{
 	SkeletonData joints_;
 	MeshData mesh_;
+
+	AnimatedModelData()
+	{
+		
+	}
 
 	AnimatedModelData(const MeshData & mesh, const SkeletonData & joints)
 	{

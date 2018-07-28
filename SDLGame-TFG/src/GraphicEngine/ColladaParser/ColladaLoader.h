@@ -47,6 +47,8 @@ class ColladaLoader
     protected:
 
     private:
+        AnimatedModelData model_data_;
+        AnimationData animation_data_;
 
 };
 

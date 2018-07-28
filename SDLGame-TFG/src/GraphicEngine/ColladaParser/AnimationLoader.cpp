@@ -29,7 +29,7 @@ AnimationLoader::AnimationLoader()
 {
 }
 
-AnimationData AnimationLoader::getAnimation(xml_node<> & animation_node, xml_node<> & joint_node)
+AnimationData & AnimationLoader::getAnimation(xml_node<> & animation_node, xml_node<> & joint_node)
 {
     xml_node<> * skeleton = xml_parser.getChildWithAttribute(joint_node.first_node("visual_scene"), "node", "id", "Armature");
     std::string root_id= skeleton->first_node("node")->first_attribute("id")->value();
@@ -70,6 +70,7 @@ AnimationData AnimationLoader::getAnimation(xml_node<> & animation_node, xml_nod
         joint_nodes = joint_nodes->next_sibling("animation");
     }
 
-    return AnimationData(duration, frames);
+    animation_data_=AnimationData(duration, frames);
+    return animation_data_;
 
 }

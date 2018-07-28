@@ -40,7 +40,7 @@ class AnimationLoader
         //////////////////////////////////////////////////////////////////////////
         AnimationLoader();
 
-        AnimationData getAnimation(xml_node<> & animation_node, xml_node<> & joint_node);
+        AnimationData & getAnimation(xml_node<> & animation_node, xml_node<> & joint_node);
 
     protected:
 
@@ -51,6 +51,8 @@ class AnimationLoader
         XmlParserUtils xml_parser;
 
         vector<VertexSkinData> vertex_weights_;
+
+        AnimationData animation_data_;
 };
 
 #endif // ANIMATIONLOADER_H
