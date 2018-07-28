@@ -41,6 +41,8 @@ class GeometryLoader
 
         void read_data();
 
+        void process_data();
+
         MeshData getMesh();
 
     protected:
@@ -63,8 +65,6 @@ class GeometryLoader
         vector<Vertex> vertices;
         vector<vec2f> textures;
         vector<vec3f> normals;
-        vector<int> indices;
-        
 };
 
 #endif // GEOMETRYLOADER_H

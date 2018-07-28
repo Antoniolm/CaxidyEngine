@@ -90,6 +90,49 @@ void GeometryLoader::read_data()
     }
 }
 
+void GeometryLoader::process_data(){ 
+    xml_node<> * poly = meshData->first_node("polylist");
+
+    vector<string> index_data = xml_parser.extract(poly->first_node("p")->value());
+
+    for(int i=0;i<index_data.size()/4;i++){
+        int positionIndex = stoi(index_data[i * 4]);
+        int normalIndex = stoi(index_data[i * 4 + 1]);
+        int texCoordIndex = stoi(index_data[i * 4 + 2]);
+
+        Vertex current_vertex = vertices[positionIndex];
+        if(!current_vertex.is_set()){
+            current_vertex.texture_index_=texCoordIndex;
+            current_vertex.normal_index_=normalIndex;
+            indices_array_.push_back(positionIndex);
+        }
+    }
+   
+    for (int i = 0; i < vertices.size(); i++) {
+        vertices_array_.push_back(vertices[i].position_.x);
+        vertices_array_.push_back(vertices[i].position_.y);
+        vertices_array_.push_back(vertices[i].position_.z);
+
+        textures_array_.push_back(textures[vertices[i].texture_index_].x);
+        textures_array_.push_back( 1 - textures[vertices[i].texture_index_].y);
+        
+        normals_array_.push_back(normals[vertices[i].normal_index_].x);
+        normals_array_.push_back(normals[vertices[i].normal_index_].y);
+        normals_array_.push_back(normals[vertices[i].normal_index_].z);
+
+        VertexSkinData weights = vertices[i].weights_data_;
+
+        jointIds_array_.push_back(weights.joint_ids[0]);
+        jointIds_array_.push_back(weights.joint_ids[1]);
+        jointIds_array_.push_back(weights.joint_ids[2]);
+
+        weights_array_.push_back(weights.weights[0]);
+        weights_array_.push_back(weights.weights[1]);
+        weights_array_.push_back(weights.weights[2]);
+    }
+
+}
+
 MeshData GeometryLoader::getMesh()
 {
     return MeshData(vertices_array_, textures_array_, normals_array_, indices_array_, jointIds_array_, weights_array_);

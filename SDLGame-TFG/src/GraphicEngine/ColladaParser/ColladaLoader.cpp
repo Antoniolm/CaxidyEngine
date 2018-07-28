@@ -30,7 +30,7 @@ ColladaLoader::ColladaLoader(std::string file_name)
      xml_document<> doc;
 	xml_node<> * root_node;
 	// Read the xml file into a vector
-	ifstream file (file_name.c_str()); //"resources/geometries/model.dae"
+	ifstream file (file_name.c_str());
 	vector<char> buffer((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
 	buffer.push_back('\0');
 	// Parse the buffer using the xml file parsing library into doc 
@@ -46,6 +46,7 @@ ColladaLoader::ColladaLoader(std::string file_name)
 
 	GeometryLoader geometry_loader(*root_node->first_node("library_geometries"),skinningData.vertices_skin_data_);
 	geometry_loader.read_data();
+	geometry_loader.process_data();
     MeshData mesh = geometry_loader.getMesh();
 
 	AnimationLoader animation_loader;
