@@ -30,6 +30,7 @@
 #include "soulcarrier.h"
 #include "door.h"
 #include "spiketrap.h"
+#include "textregion.h"
 #include "GraphicEngine/voxels/trapdoor.h"
 #include "GraphicEngine/voxels/rottenvoxel.h"
 #include "GraphicEngine/voxels/slidetrap.h"

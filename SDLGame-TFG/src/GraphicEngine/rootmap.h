@@ -49,7 +49,7 @@
 #include "sound/music.h"
 #include "controller/controller.h"
 #include "controller/keyboardcontroller.h"
-#include "../VideoGame/textregion.h"
+#include "region.h"
 #include "endmapregion.h"
 #include "notification.h"
 #include "loaderthread.h"

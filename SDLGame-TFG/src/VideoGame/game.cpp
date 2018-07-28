@@ -202,6 +202,9 @@ void Game::loop(){
         if(gameState.mainMenu->isActivate()){
             gameState.updateMenu(context.currentShader->getProgram());
 
+            if(!gameState.mainMenu->isActivate() && gameState.mainMenu->getOptionSelected())
+                setClose(true);
+
             if(!gameState.mainMenu->isActivate())
                 createRootMap(gameState.mainMenu->getOptionSelected());
 

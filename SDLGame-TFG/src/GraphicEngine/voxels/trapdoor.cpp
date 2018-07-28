@@ -18,7 +18,6 @@
 // *********************************************************************
 
 #include "trapdoor.h"
-#include "VideoGame/rootmapgame.h"
 
 TrapDoor::TrapDoor(const Value & trapDoorFeatures, int id){
     position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat()+0.1f,1.0);

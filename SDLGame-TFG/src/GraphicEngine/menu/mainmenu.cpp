@@ -18,7 +18,6 @@
 // *********************************************************************
 
 #include "mainmenu.h"
-#include "VideoGame/game.h"
 
 MainMenu::MainMenu(vec3f initPos,string fileName)
 {
@@ -175,7 +174,7 @@ void MainMenu::updateState(GameState & gameState){
                 break;
                 case EXIT: //Exit
                     (Profile::getInstance())->showResult();
-                    Game::getInstance()->setClose(true);
+                    activateMenu=false;
                 break;
 
             }
