@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -87,9 +87,6 @@ void MovableVoxel::updateState(GameState & gameState){
     vec4f pos=transActivate->product(vec4f());
     position.y=pos.y;
 
-    //If the hero repawn the movable voxel
-    vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
-
     if(respawn->isActivated() && ((int)position.x!=(int)defaultPosition.x || (int)position.z!=(int)defaultPosition.z)){
         gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
 
@@ -107,7 +104,6 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case FRONT
         if(hero->getDirection()==FORWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z+1.0f))==0
-           && !checkEnemies(vec3f(position.x,position.y,position.z+1.0f),enemies)
            && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
 
                 currentDir=FORWARD;
@@ -116,7 +112,6 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case BACK
         if(hero->getDirection()==BACKWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z-1.0f))==0
-           && !checkEnemies(vec3f(position.x,position.y,position.z-1.0f),enemies)
            && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
 
                 currentDir=BACKWARD;
@@ -125,7 +120,6 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case LEFT
         if(hero->getDirection()==LEFTWARD && gameState.rootMap->collision(vec3f(position.x-1.0f,position.y,position.z))==0
-           && !checkEnemies(vec3f(position.x-1.0f,position.y,position.z),enemies)
            && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
 
                 currentDir=LEFTWARD;
@@ -134,7 +128,6 @@ void MovableVoxel::updateState(GameState & gameState){
 
         // Case RIGHT
         if(hero->getDirection()==RIGHTWARD && gameState.rootMap->collision(vec3f(position.x+1.0f,position.y,position.z))==0
-           && !checkEnemies(vec3f(position.x+1.0f,position.y,position.z),enemies)
            && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
 
                 currentDir=RIGHTWARD;

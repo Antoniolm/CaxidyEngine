@@ -18,7 +18,6 @@
 // *********************************************************************
 
 #include "hero.h"
-#include "VideoGame/equipment.h"
 #include "VideoGame/rootmapgame.h"
 #include "VideoGame/projectile.h"
 
@@ -50,22 +49,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     MeshCollection * meshCollect =MeshCollection::getInstance();
     MaterialCollection * materialCollect =MaterialCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
-
-    //////////////////////////////////////////////////////
-    /////           Initialize weapons               /////
-    //////////////////////////////////////////////////////
-    currentWeapon=new Equipment(heroFeatures["weaponMelee"]);
-    currentWeapon->addLink();
-
-    meleeWeapon=new Equipment(heroFeatures["weaponMelee"]);
-    meleeWeapon->addLink();
-
-    rangedWeapon=new Equipment(heroFeatures["weaponRanged"]);
-    rangedWeapon->addLink();
-
-    shieldEquipment=new Equipment(heroFeatures["shield"]);
-    shieldEquipment->addLink();
-
 
     //////////////////////////////////////////////////////
     /////              All the sounds                /////
@@ -204,7 +187,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     handRight->add(moveElbowTRight);
     handRight->add(transHand);
     handRight->add(meshCollect->getMesh(heroFeatures["handRight"].GetString()));
-    handRight->add(currentWeapon);
 
     NodeSceneGraph * handLeft=new NodeSceneGraph();
     handLeft->add(transElbowSecond);
@@ -213,7 +195,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     handLeft->add(transHandLeft);
     handLeft->add(rotateYHand);
     handLeft->add(meshCollect->getMesh(heroFeatures["handLeft"].GetString()));
-    handLeft->add(shieldEquipment);
 
     //Shoulder
     NodeSceneGraph * shoulderLeft=new NodeSceneGraph();
@@ -474,11 +455,7 @@ void Hero::updateState(GameState & gameState){
         hitDelay=time;
     }
     else { // If hero is not hitting -> resetAnimation
-        if(hitDelay<(time-250) && currentWeapon->getEquipType()==MELEE){
-            hitDelay=time;
-            isHitting=false;
-        }
-        else if(hitDelay<(time-750) && currentWeapon->getEquipType()==RANGED){
+        if(hitDelay<(time-250)){
             hitDelay=time;
             isHitting=false;
         }
@@ -494,19 +471,6 @@ void Hero::updateState(GameState & gameState){
     }
     else { //if not
         isShielded=false;
-    }
-
-    //Case-> Push Q bottom to swap weapon
-    if(controller->checkButton(cSWAPWEAPON) && !isHitting && swapDelay<(time-500) ){ //If hero is shielding
-        switch(currentWeapon->getEquipType()){
-            case MELEE:
-                currentWeapon->setEquip((*rangedWeapon));
-            break;
-            case RANGED:
-                currentWeapon->setEquip((*meleeWeapon));
-            break;
-        }
-        swapDelay=time;
     }
 
     //Move the body
@@ -548,51 +512,6 @@ void Hero::updateState(GameState & gameState){
         impactMove(time);
     }
 
-    //Check enemies for attack
-    if(isHitting){
-        vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
-        vec3f posEnemy;float distance;
-        int currentIndexAnimation;
-
-        //Check the type of weapon
-        switch(currentWeapon->getEquipType()){
-            case MELEE: //If is the sword
-
-                animations.activate(1);
-                currentIndexAnimation=(animations.getAnimation())->getScriptState(7);
-                if((currentIndexAnimation==0 || currentIndexAnimation==2 || currentIndexAnimation==4) && swordDelay<(time-250)){
-
-                    //if the hero is in a hit animation not a rest animation
-                    for(unsigned i=0;i<enemies.size();i++){ //Loop for all the enemies
-                        posEnemy=enemies[i]->getPosition(); //Calculate the distance
-                        distance=sqrt(pow(position.x-posEnemy.x,2.0)+pow(position.z-posEnemy.z,2.0));
-
-                        if(distance<=1.0 && (position.y>posEnemy.y-1 && position.y<posEnemy.y+1)){//If is near
-                            enemies[i]->takeDamage(position,direction,position,-(damage+currentWeapon->getDamage()
-                                                                               +shieldEquipment->getDamage()),enemies); //Hit enemy
-                        }
-                    }
-                    channelSound[4]=heroSound[4]->play();
-                    swordDelay=time;
-                }
-
-            break;
-
-            case RANGED: //if is the crossbow
-
-                animations.activate(6);
-                ScriptLMD * animationHit=animations.getAnimation();
-                if(animationHit->getScriptState(6)==1 && shootDelay<(time-700)){
-                    shootDelay=time;
-                    projectiles.push_back(createProjectile(-(damage+currentWeapon->getDamage()
-                                                           +shieldEquipment->getDamage())));
-                    channelSound[3]=heroSound[3]->play();
-                }
-            break;
-        }
-    }
-
-
     //Update our vec4f position
     position=moveAvatar->product(vec4f());
 
@@ -604,16 +523,6 @@ void Hero::updateState(GameState & gameState){
     }
     if(!isMoving && !isFalling && !isJumping && !isHitting && !isImpacted && !isShielded){
         animations.activate(-1);
-    }
-    if(isHitting){
-        switch(currentWeapon->getEquipType()){
-            case MELEE: animations.activate(1);
-            break;
-            case RANGED: animations.activate(6);
-            break;
-            case eSHIELD:
-            break;
-        }
     }
 
     if(animations.getState()!=-1){
@@ -727,26 +636,6 @@ void Hero::addExperience(int value){
         armour+=2;
     }
 }
-//**********************************************************************//
-
-void Hero::setEquipment(Equipment * anEquip){
-
-    if(anEquip->getEquipType()==RANGED){
-        rangedWeapon->setEquip(*anEquip);
-    }
-
-    else if(anEquip->getEquipType()==MELEE){
-        meleeWeapon->setEquip(*anEquip);
-    }
-    else
-        shieldEquipment->setEquip(*anEquip);
-
-
-    if(currentWeapon->getEquipType()==anEquip->getEquipType())
-        currentWeapon->setEquip(*anEquip);
-
-
-}
 
 //**********************************************************************//
 
@@ -820,36 +709,6 @@ int Hero::getArmour(){
 
 //**********************************************************************//
 
- Equipment * Hero::getEquip(int aType){
-    Equipment * equip=0;
-
-    switch((EquipmentType)aType){
-        case RANGED:
-            equip=rangedWeapon;
-            break;
-
-        case MELEE:
-            equip=meleeWeapon;
-            break;
-
-        case eSHIELD:
-            equip=shieldEquipment;
-            break;
-    }
-
-    return equip;
-
- }
-
-//**********************************************************************//
-
- Equipment * Hero::getCurrentWeapon(){
-    return currentWeapon;
- }
-
-
-//**********************************************************************//
-
  void Hero::addCoin(int value){
     currentCoin+=value;
     int lastValue;
@@ -881,7 +740,6 @@ int Hero::getArmour(){
     if(detectHit(posAvatar,dirAvatar)&& dmgDelay<(currentTime-700) && !canShield && distance<1.0){
 
         //Calculate the damage that the hero will take
-        value+=(armour+currentWeapon->getArmour()+shieldEquipment->getArmour());
         addLife(value);
 
         stringstream convert;

@@ -35,8 +35,6 @@
 #include "GraphicEngine/objectscene.h"
 #include "GraphicEngine/sound/sound.h"
 #include "GraphicEngine/text.h"
-#include "avatar/enemy.h"
-#include "enemylist.h"
 
 #include <vector>
 

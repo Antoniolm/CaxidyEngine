@@ -93,9 +93,6 @@ Game::Game(){
     //Create controlMenu
     gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"resources/textures/mainBackMenu.png");
 
-    //Create inventoryMenu
-    gameState.inventoryMenu=new InventoryMenuGame(vec3f(0.0f,-1.23,-2.0),vec3f(0.207f,0.288f,0.0f),"resources/textures/inventory.png");
-
     //Create speakingSketch
     gameState.speakingSketch=new SpeakingSketch(vec3f(0.0f,-1.23,-2.0),"mSPEAK");
 
@@ -262,8 +259,7 @@ void Game::loop(){
             posHero=gameState.refPoint;
 
             gameState.camera->update(gameState,context.currentShader->getProgram(),
-                          (gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate() || gameState.mainMenu->isActivate()
-                           || gameState.inventoryMenu->isActivate()));
+                          (gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate() || gameState.mainMenu->isActivate()));
 
             notiGamePad->updateState(gameState);
 
@@ -306,7 +302,6 @@ void Game::loop(){
             gameState.camera->activateOrthoProjection(context.currentShader->getProgram());
             heroState->visualization(context);
             gameState.pauseMenu->visualization(context);
-            gameState.inventoryMenu->visualization(context);
             gameState.deadMenu->visualization(context);
             gameState.speakingSketch->visualization(context);
             gameState.movie->visualization(context);
@@ -350,18 +345,12 @@ void Game::loop(){
 void Game::createRootMap(MainMenuOption option){
     SavedManager * saveManager;
     string fileLoad;
-    InventoryMenuGame * inv=dynamic_cast<InventoryMenuGame*>(gameState.inventoryMenu);
 
     switch(option){
         case START: //Start Game
 
             if(gameState.rootMap!=0)
                 delete gameState.rootMap;
-
-            //Added the initial equipment of the hero
-            inv->addEquip(new Equipment(vec3f(0.0,-0.2,0.0),RANGED,true,20,25,5,"mARCHENEMY","CBOW","mARCHENEMY","Bow"));
-            inv->addEquip(new Equipment(vec3f(0.025,-0.05,0.34),MELEE,true,25,25,5,"mSWORD","SWORD","mSWORD","Sword"));
-            inv->addEquip(new Equipment(vec3f(-0.1375,0.0,0.0),eSHIELD,true,0,0,10,"mSHIELDPR","SHIELD","mSHIELD","Shield"));
 
             SavedManager::getInstance()->save("",gameState,0);
             gameState.rootMap=new RootMapGame("resources/maps/map00.json",true);
@@ -372,8 +361,6 @@ void Game::createRootMap(MainMenuOption option){
             //Catch the saved progress and load the map
             saveManager=SavedManager::getInstance();
             saveManager->load(true);
-
-            inv->setInventory(saveManager->getInv(),saveManager->getPosInv());
 
             fileLoad=saveManager->getMap();
 

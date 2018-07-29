@@ -2,13 +2,9 @@
 add_executable(main 
     "${CMAKE_SOURCE_DIR}/src/main.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/coin.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/enemylist.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/equipment.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/game.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gamestatechild.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/herostate.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/inventory.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/inventorymenugame.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/item.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/jumpbutton.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/movablevoxel.cpp"
@@ -19,15 +15,9 @@ add_executable(main
     "${CMAKE_CURRENT_SOURCE_DIR}/rootmapgame.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/savedmanager.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/spiketrap.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/avatar/enemy.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/avatar/hero.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/avatar/meleeenemy.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/avatar/npc.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/avatar/rangedenemy.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ia/iaenemy.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ia/iameleeenemy.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/ia/ianpc.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/ia/iarangedenemy.cpp"
     $<TARGET_OBJECTS:GraphicEngine>
 )
 

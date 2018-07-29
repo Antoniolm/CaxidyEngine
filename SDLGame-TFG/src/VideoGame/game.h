@@ -42,12 +42,10 @@
 #include "GraphicEngine/shadowtexture.h"
 #include "GraphicEngine/shadowmanager.h"
 #include "GraphicEngine/celshading.h"
-#include "inventory.h"
 #include "projectile.h"
 #include "savedmanager.h"
 #include "avatar/hero.h"
 #include "GraphicEngine/menu/mainmenu.h"
-#include "inventorymenugame.h"
 #include <sstream>
 class Game
 {

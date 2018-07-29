@@ -31,7 +31,6 @@
 #include "GraphicEngine/collection/soundcollection.h"
 #include "rapidjson/document.h"
 #include "avatar/enemy.h"
-#include "enemylist.h"
 
 using namespace rapidjson;
 

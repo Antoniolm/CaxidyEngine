@@ -37,7 +37,6 @@
 #include "GraphicEngine/animation/animationlist.h"
 #include "GraphicEngine/controller/controller.h"
 #include "rapidjson/document.h"
-#include "VideoGame/equipment.h"
 #include <stdlib.h>
 
 
@@ -46,7 +45,6 @@
 using namespace std;
 class RootMap;
 class Text;
-class Equipment;
 class Soul;
 class Projectile;
 class Hero: public AvatarMove
@@ -153,15 +151,6 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will set a new equipment of the hero
-        *    @param anEquip -> the new equipment that the hero will be use
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setEquipment(Equipment * anEquip);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    The method will reset animations because the hero isn't in movement
         *    \return void
         */
@@ -250,23 +239,6 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return the equipment that has the same type of the parameter
-        *    @param aType -> type of equipment that the hero will return
-        *    \return Equipment *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Equipment * getEquip(int aType);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will return the current equipped weapon
-        *    \return Equipment *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Equipment * getCurrentWeapon();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    The method will add a new coin to our current coins
         *    @param value -> Adding to our courrent coint the value
         *    \return void
@@ -323,11 +295,6 @@ class Hero: public AvatarMove
         AnimationList animations;           // List of animations of the hero
         vector<Text *> texts;               // Vector of texts
         vector<bool> activatedTexts;        // Vector of state of texts
-
-        Equipment * currentWeapon;          // Current weapon of the hero
-        Equipment * meleeWeapon;            // Close weapon of the hero
-        Equipment * rangedWeapon;           // Ranged weapon of the hero
-        Equipment * shieldEquipment;           // Shield equipment of the hero
 
         //Some delays for action of the hero
         float jumpDelay,hitDelay,coinDelay,shieldDelay,swapDelay,shootDelay,swordDelay;

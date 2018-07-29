@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -91,21 +91,6 @@ void Projectile::updateState(GameState & gameState){
     if(distance<=0.4 && live && (position.y>posHero.y-1 && position.y<posHero.y+1)){
         hero->takeDamage(position,direction,damage);
         live=false;
-    }
-
-
-    //Check if the projectile has hit with some enemy
-    vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
-    vec3f posEnemy;
-    float enemyDistance;
-    for(unsigned i=0;i<enemies.size() && live;i++){
-        posEnemy=enemies[i]->getPosition(); //Calculate the distance
-        enemyDistance=sqrt(pow(posHead.x-posEnemy.x,2.0)+pow(posHead.z-posEnemy.z,2.0));
-
-        if(enemyDistance<=0.4 && (position.y>posEnemy.y-1 && position.y<posEnemy.y+1)){//If is near
-            enemies[i]->takeDamage(position,direction,posHero,damage,enemies);
-            live=false;
-        }
     }
 
     if(live) //if not collision with something

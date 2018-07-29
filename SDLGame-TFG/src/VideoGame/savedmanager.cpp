@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "savedmanager.h"
-#include "equipment.h"
-#include "inventorymenugame.h"
 
 SavedManager* SavedManager::instance = NULL;
 
@@ -56,14 +54,6 @@ void SavedManager::load(bool forceLoad){
         maxExp=document["maxExp"].GetInt();
         level=document["level"].GetInt();
 
-
-        const rapidjson::Value & equipFeature=document["equip"];
-        equip.clear(); equipPosition.clear();
-        for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
-            equip.push_back(new Equipment(equipFeature[currentEquip]));
-            equipPosition.push_back(vec2f(equipFeature[currentEquip]["posInv"][0].GetInt(),equipFeature[currentEquip]["posInv"][1].GetInt()));
-        }
-
         fclose(fp);
     }
 }
@@ -78,18 +68,6 @@ std::string SavedManager::getMap(){
 
 int SavedManager::getCoin(){
     return coins;
-}
-
-//**********************************************************************//
-
-vector<Equipment *> & SavedManager::getInv(){
-    return equip;
-}
-
-//**********************************************************************//
-
-vector<vec2f> & SavedManager::getPosInv(){
-    return equipPosition;
 }
 
 //**********************************************************************//
@@ -129,47 +107,6 @@ void SavedManager::save(std::string fileMap,GameState & gameState, int coin,int 
     savedFile << " \"level\":"<< level <<", \n";
 
     savedFile << "\"equip\": [\n";
-
-    Inventory * inv=(dynamic_cast<InventoryMenuGame*>(gameState.inventoryMenu))->getInventory();
-    int countItems=0;
-    int totalItem=inv->getNumItems();
-    Equipment * equip;
-    
-    for(int i=0;i<inv->getSizeY() && countItems!=totalItem;i++){
-        for(int j=0;j<inv->getSizeX() && countItems!=totalItem;j++){
-            equip=inv->getItem(j,i);
-            if(equip!=0){
-                vec3f position=vec3f(equip->getPosInAvatar());
-
-                savedFile << " { \"posInAvatar\":["<< position.x<<","<<position.y<<","<< position.z<<"],\n";
-                savedFile << " \"posInScene\":["<< 0.0<<","<<0.0<<","<< 0.0<<"],\n";
-
-                savedFile << "  \"posInv\": ["<< j <<","<< i <<"],\n" <<
-                    "  \"type\":"<< equip->getEquipType() <<",\n";
-
-                if(equip->isEquipped())
-                    savedFile << "  \"equipped\":true ,\n";
-                else
-                    savedFile << "  \"equipped\":false ,\n";
-
-                savedFile<< "  \"name\":\""<< equip->getName() << "\",\n"<<
-                    "  \"material\":\""<< equip->getMaterial() <<"\",\n" <<
-                    "  \"geometry\":\""<< equip->getMesh() << "\",\n" <<
-                    "  \"imgProfile\":\""<< equip->getImageProfile() << "\",\n"<<
-
-                    "  \"damage\":"<< equip->getDamage() << ",\n"<<
-                    "  \"life\":"<< equip->getLife() << ",\n"<<
-                    "  \"armour\": "<< equip->getArmour() <<" \n }";
-
-                countItems++;
-                if(countItems!=totalItem)
-                    savedFile<< ",\n";
-                else{
-                    savedFile<< " \n";
-                }
-            }
-        }
-    }
 
     savedFile << "] \n }\n";
 

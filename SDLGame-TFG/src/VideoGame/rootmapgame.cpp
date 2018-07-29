@@ -19,7 +19,6 @@
 
 #include "rootmapgame.h"
 #include "GraphicEngine/mesh/objectgroup.h"
-#include "enemylist.h"
 
 RootMapGame::RootMapGame()
 {
@@ -239,15 +238,6 @@ void RootMapGame::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
-    // Add equipment to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading equipments >"<< endl;
-    const rapidjson::Value & equipFeature=document["equip"];
-    for(unsigned currentEquip=0;currentEquip<equipFeature.Size();currentEquip++){
-        elements.push_back(new Equipment(equipFeature[currentEquip]));
-    }
-
-    /////////////////////////////////////////
     // Add voxelGroup to our map
     /////////////////////////////////////////
     cout<< "< Game is loading the scene >"<< endl;
@@ -297,9 +287,6 @@ void RootMapGame::initialize(string fileMap){
     // Add enemy of our map
     cout<< "< Game is loading enemies >"<< endl;
     const rapidjson::Value & enemies=document["enemies"];
-
-    enemyList=new EnemyList(enemies);
-    elements.push_back(enemyList);
 
     ////////////////////////////////////////
     //Create the indexMap;

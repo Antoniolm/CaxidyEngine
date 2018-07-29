@@ -27,11 +27,9 @@
 #include <fstream>
 #include <sstream>
 #include "../GraphicEngine/gamestate.h"
-#include "inventory.h"
 
 using namespace rapidjson;
 
-class Equipment;
 class SavedManager
 {
     public:
@@ -65,7 +63,6 @@ class SavedManager
         //////////////////////////////////////////////////////////////////////////
         int getCoin();
 
-        vector<Equipment *> & getInv();
         vector<vec2f> & getPosInv();
 
         int getCurrentExp();
@@ -101,9 +98,6 @@ class SavedManager
         int currentExp;
         int maxExp;
         int level;
-
-        vector<Equipment *> equip;
-        vector<vec2f> equipPosition;
 
         bool wasLoaded; // Variable to know if the current information was loaded
 };

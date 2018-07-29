@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -82,11 +82,8 @@ void SpikeTrap::updateState(GameState & gameState ){
     vec3f posHero=hero->getPosition();
     float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
 
-    vector<Enemy *> enemies=dynamic_cast<RootMapGame*>(gameState.rootMap)->getEnemyList()->getEnemies();
-    std::vector<int> enemiesIn=checkEnemies(enemies);
-
     //if hero is near of a disactivated trap
-    if(!activated && ((distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y)) || !enemiesIn.empty() ) ){
+    if(!activated && ((distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y))) ){
         activated=true;
         delayActivated=true;
         delayTime=time;
@@ -97,7 +94,7 @@ void SpikeTrap::updateState(GameState & gameState ){
         activatedTrap->play(distance);
     }
 
-    if(activated && desactivatedDelay<(time-2100) && (distance>0.75 || !enemiesIn.empty() )){ //if hero is far of an activated trap
+    if(activated && desactivatedDelay<(time-2100) && (distance>0.75 )){ //if hero is far of an activated trap
         activated=false;
         delayActivated=false;
         animationSound->play(distance);
@@ -111,15 +108,6 @@ void SpikeTrap::updateState(GameState & gameState ){
             if(distance<=0.75 && (position.y>posHero.y-1 && position.y<posHero.y) && hitDelay<(time-400)){
                 hero->takeDamage(damage);
                 updateHitDelay=true;
-            }
-
-            //Check enemy
-            if(!enemiesIn.empty() && hitDelay<(time-400)){
-                updateHitDelay=true;
-
-                for(int i=0;i<enemiesIn.size();i++){
-                    enemies[enemiesIn[i]]->takeDamage(damage,posHero);
-                }
             }
 
             if(updateHitDelay) //Update hitdelay
@@ -199,24 +187,4 @@ void SpikeTrap::initAnimation(){
     scriptDown->add(0.5,notMove);
 
     animationDown->add(scriptDown);
-}
-
-//**********************************************************************//
-std::vector<int> SpikeTrap::checkEnemies(std::vector<Enemy *> & enemies){
-
-    float distance;
-    vec3f posEnemy;
-
-    std::vector<int> result;
-
-    for(int i=0;i<enemies.size();i++){
-        posEnemy=enemies[i]->getPosition();
-        distance=sqrt(pow(position.x-posEnemy.x,2.0)+pow(position.z-posEnemy.z,2.0));
-
-        if(distance<=0.75 && (position.y>posEnemy.y-1 && position.y<posEnemy.y)){
-            result.push_back(i);
-        }
-    }
-
-    return result;
 }
