@@ -142,49 +142,6 @@ void RootMapGame::initialize(string fileMap){
     }
 
     /////////////////////////////////////////
-    // Add text region to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading text region>"<< endl;
-    const rapidjson::Value & regionFeature=document["textRegion"];
-    for(unsigned currentRegion=0;currentRegion<regionFeature.Size();currentRegion++){
-        regions.push_back(new TextRegion(regionFeature[currentRegion]));
-    }
-
-    /////////////////////////////////////////
-    // Add soulCarriers to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading soul carriers >"<< endl;
-    vector<SoulCarrier *> soulCarriers; // Vector of souls carriers
-    const rapidjson::Value & soulCarrierFeature=document["soulCarrier"];
-    for(unsigned currentSoulC=0;currentSoulC<soulCarrierFeature.Size();currentSoulC++){
-        SoulCarrier * soulC=new SoulCarrier(soulCarrierFeature[currentSoulC]);
-        soulCarriers.push_back(soulC);
-        elements.push_back(soulC);
-    }
-
-    /////////////////////////////////////////
-    // Add souls to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading souls >"<< endl;
-    const rapidjson::Value & soulFeature=document["souls"];
-    for(unsigned currentSoul=0;currentSoul<soulFeature.Size();currentSoul++){
-        elements.push_back(new Soul(soulFeature[currentSoul]));
-    }
-
-    /////////////////////////////////////////
-    // Add doors to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading doors >"<< endl;
-    const rapidjson::Value & doorFeature=document["door"];
-    for(unsigned currentDoor=0;currentDoor<doorFeature.Size();currentDoor++){
-        Door * door=new Door(doorFeature[currentDoor],soulCarriers,currentDoor);
-        door->addLink();door->addLink();door->addLink();
-        elements.push_back(door);
-        objs.push_back(door);
-    }
-    soulCarriers.clear();
-
-    /////////////////////////////////////////
     // Add spikes to our map
     /////////////////////////////////////////
     cout<< "< Game is loading spike traps >"<< endl;
@@ -321,13 +278,6 @@ void RootMapGame::initialize(string fileMap){
         }
     }
 
-    /////////////////////////////////////////
-    // Add mate to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading our mate >"<< endl;
-    mate=new Mate(document["mate"]);
-    elements.push_back(mate);
-
     ////////////////////////////////////////////
     // Background
     Matrix4f * transObj=new Matrix4f();
@@ -420,11 +370,6 @@ Hero * RootMapGame::getHero(){
     return hero;
 }
 
-//**********************************************************************//
-
-Mate * RootMapGame::getMate(){
-    return mate;
-}
 //**********************************************************************//
 
 EnemyList * RootMapGame::getEnemyList(){

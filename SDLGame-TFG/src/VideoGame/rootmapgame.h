@@ -24,13 +24,8 @@
 #include "avatar/hero.h"
 #include "avatar/npc.h"
 #include "avatar/enemy.h"
-#include "avatar/mate.h"
 #include "projectilesystem.h"
-#include "soul.h"
-#include "soulcarrier.h"
-#include "door.h"
 #include "spiketrap.h"
-#include "textregion.h"
 #include "GraphicEngine/voxels/trapdoor.h"
 #include "GraphicEngine/voxels/rottenvoxel.h"
 #include "GraphicEngine/voxels/slidetrap.h"
@@ -46,9 +41,6 @@ class EnemyList;
 class Hero;
 class Npc;
 class ProjectileSystem;
-class Soul;
-class SoulCarrier;
-class Door;
 class SpikeTrap;
 class TrapDoor;
 class RottenVoxel;
@@ -96,14 +88,6 @@ class RootMapGame : public RootMap
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will return the mate of our game
-        *    \return hero *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Mate * getMate();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    The method will return the enemyList of our map
         *    \return EnemyList *
         */
@@ -123,7 +107,6 @@ class RootMapGame : public RootMap
 
     private:
         Hero * hero;                                // Hero in the map
-        Mate * mate;                                // Mate in the map
         EnemyList * enemyList;                      // List of enemies in the map
 };
 

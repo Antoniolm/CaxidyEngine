@@ -27,7 +27,6 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     acceleratedMove=new AcceleratedMovement();
     acceleratedMove->resetState();
     direction=FORWARD;
-    soul=0;
     isMoving=false;
     isMoveCollision=false;
     isFalling=false;
@@ -466,7 +465,7 @@ void Hero::updateState(GameState & gameState){
     }
 
     //Case-> Push L bottom to hit
-    if(controller->checkButton(cATTACK) && !isShielded && soul==0){ //If hero is hitting
+    if(controller->checkButton(cATTACK) && !isShielded){ //If hero is hitting
         if(!isHitting){
             animations.resetAnimation(1);
             animations.resetAnimation(5);
@@ -486,7 +485,7 @@ void Hero::updateState(GameState & gameState){
     }
 
     //Case-> Push W bottom to shield
-    if(controller->checkButton(cSHIELD) && !isHitting && soul==0){ //If hero is shielding
+    if(controller->checkButton(cSHIELD) && !isHitting){ //If hero is shielding
         isShielded=true;
         if(hasMove)
             animations.activate(3); //Activate animation
@@ -616,12 +615,6 @@ void Hero::updateState(GameState & gameState){
             break;
         }
     }
-    if(soul!=0){
-        if(hasMove)
-            animations.activate(8);
-        else
-            animations.activate(7);
-    }
 
     if(animations.getState()!=-1){
         animations.update(time-currentTime);
@@ -696,12 +689,6 @@ void Hero::activateDialog(bool value,int index){
 
 void Hero::setCoin(int value){
     currentCoin=value;
-}
-
-//**********************************************************************//
-
-void Hero::setSoul(Soul * aSoul){
-    soul=aSoul;
 }
 
 //**********************************************************************//
@@ -830,12 +817,6 @@ int Hero::getDamage(){
 int Hero::getArmour(){
     return armour;
 }
-
-//**********************************************************************//
-
-Soul * Hero::getSoul(){
-    return soul;
- }
 
 //**********************************************************************//
 

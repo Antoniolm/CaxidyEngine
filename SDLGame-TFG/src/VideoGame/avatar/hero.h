@@ -38,7 +38,6 @@
 #include "GraphicEngine/controller/controller.h"
 #include "rapidjson/document.h"
 #include "VideoGame/equipment.h"
-#include "VideoGame/soul.h"
 #include <stdlib.h>
 
 
@@ -121,15 +120,6 @@ class Hero: public AvatarMove
         */
         //////////////////////////////////////////////////////////////////////////
         void setCoin(int value);
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will set if the hero take a soul in his arm
-        *    @param aSoul -> the current soul that our hero has taken
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        void setSoul(Soul * aSoul);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -260,14 +250,6 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    The method will get the soul that the hero take in his arm
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Soul * getSoul();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    It will return the equipment that has the same type of the parameter
         *    @param aType -> type of equipment that the hero will return
         *    \return Equipment *
@@ -341,7 +323,6 @@ class Hero: public AvatarMove
         AnimationList animations;           // List of animations of the hero
         vector<Text *> texts;               // Vector of texts
         vector<bool> activatedTexts;        // Vector of state of texts
-        Soul * soul;                        // Soul catch in the arms of the hero
 
         Equipment * currentWeapon;          // Current weapon of the hero
         Equipment * meleeWeapon;            // Close weapon of the hero
