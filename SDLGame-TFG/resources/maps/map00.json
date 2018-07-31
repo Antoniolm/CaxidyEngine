@@ -107,8 +107,7 @@
         }
     ],
 
-
-    "hero":{    "position":[4,3.0,-10],
+    "hero":{    "position":[4,3.0,-2],
                 "life":100,
                 "damage":10,
                 "armour":5,
@@ -123,56 +122,8 @@
                 "handLeft":"HANDS",
                 "handRight":"HAND",
                 "legLeft":"KNEE2",
-                "legRight":"KNEE",
-                
-                "weaponMelee":{  "posInAvatar":[0.05,-0.1,0.68],
-                            "posInScene":[0.0,0.0,0.0],
-                            "type":1,
-                            "equipped":false,
-                            "name":"melee",
-                            "material":"mSWORD", 
-                            "geometry":"SWORD", 
-                            "imgProfile":"mSWORD",
-                            "damage":-25,
-                            "life":25,
-                            "armour":25
-                        },
-
-                "weaponRanged":{  "posInAvatar":[0.0,-0.4,0.0],
-                            "posInScene":[0.0,0.0,0.0],
-                            "type":0,
-                            "equipped":false,
-                            "name":"ranged",
-                            "material":"mARCHENEMY", 
-                            "geometry":"CBOW", 
-                            "imgProfile":"mARCHENEMY",
-                            "damage":-20,
-                            "life":25,
-                            "armour":25
-                        },
-
-                "shield":{  "posInAvatar":[-0.275,0.0,0.0],
-                            "posInScene":[0.0,0.0,0.0],
-                            "type":2,
-                            "equipped":false,
-                            "name":"shield",
-                            "material":"mSHIELD", 
-                            "geometry":"SHIELD", 
-                            "imgProfile":"mSHIELDPR",
-                            "damage":0,
-                            "life":0,
-                            "armour":25
-                        }
+                "legRight":"KNEE"
             },
-
-    "mate":{    
-        "position":[4,3.0,-8],
-        "textFont":"resources/font/Xolonium-Regular.ttf",
-        "textSize":20,
-        "material":"mMATE",
-        "head":"MATEHEAD",
-        "hand":"MATEHAND"  
-    },
     "npcs":[
             {   "position":[12.5,2.0,-4.5],
                 "textPosition":[0.0,1.2,0.0],
@@ -213,87 +164,6 @@
                         ]
             }
 
-    ],
-
-    "enemies":[
-            {   
-                "life":20,
-                "exp":50,
-                "position":[75.5,5.5,-40.5],
-                "radioActivity":[2.0,2.0,2.0],
-                "type":"melee",
-                "textFont":"resources/font/Xolonium-Regular.ttf",
-                "textSize":40,
-                "material":"mENEMY",
-                "head":"EHEAD",
-                "body":"ECHEST",
-                "hand":"EHAND",
-                "leg":"EFOOT",
-                "weapon":{  "posInAvatar":[0.0,-0.1,0.4],
-                            "posInScene":[0.0,0.0,0.0],
-                            "type":1,
-                            "equipped":false,
-                            "name":"WeaponEnemy",
-                            "material":"mENEMY", 
-                            "geometry":"CLUB", 
-                            "imgProfile":"mENEMY",
-                            "damage":-25,
-                            "life":25,
-                            "armour":25
-                        }
-            },  
-            {   
-                "life":20,
-                "exp":50,
-                "position":[77.5,5.5,-40.5],
-                "radioActivity":[2.0,2.0,2.0],
-                "type":"melee",
-                "textFont":"resources/font/Xolonium-Regular.ttf",
-                "textSize":40,
-                "material":"mENEMY",
-                "head":"EHEAD",
-                "body":"ECHEST",
-                "hand":"EHAND",
-                "leg":"EFOOT",
-                "weapon":{  "posInAvatar":[0.0,-0.1,0.4],
-                            "posInScene":[0.0,0.0,0.0],
-                            "type":1,
-                            "equipped":false,
-                            "name":"WeaponEnemy",
-                            "material":"mENEMY", 
-                            "geometry":"CLUB", 
-                            "imgProfile":"mENEMY",
-                            "damage":-25,
-                            "life":25,
-                            "armour":25
-                        }
-            },
-            {   
-                "life":20,
-                "exp":100,
-                "position":[79.5,5.5,-40.5],
-                "radioActivity":[2.0,2.0,2.0],
-                "type":"melee",
-                "textFont":"resources/font/Xolonium-Regular.ttf",
-                "textSize":40,
-                "material":"mENEMY",
-                "head":"EHEAD",
-                "body":"ECHEST",
-                "hand":"EHAND",
-                "leg":"EFOOT",
-                "weapon":{  "posInAvatar":[0.0,-0.1,0.4],
-                            "posInScene":[0.0,0.0,0.0],
-                            "type":1,
-                            "equipped":false,
-                            "name":"WeaponEnemy",
-                            "material":"mENEMY", 
-                            "geometry":"CLUB", 
-                            "imgProfile":"mENEMY",
-                            "damage":-25,
-                            "life":25,
-                            "armour":25
-                        }
-            }
     ],
 
     "potion":[
@@ -350,81 +220,6 @@
                 "value":1}
     ],
 
-    "equip":[
-        {   "posInScene":[3.5,1.5,-4.5],
-            "posInAvatar":[0.0,0.0,0.0],
-                "type":0,
-                "equipped":false,
-                "name":"Type - 0",
-                "material":"mTORCH", 
-                "geometry":"BARREL",
-                "imgProfile":"mTORCH",
-                "damage":-25,
-                "life":25,
-                "armour":25},
-        {   "posInScene":[3.5,1.5,-2.5],
-            "posInAvatar":[0.0,0.0,0.0],
-                "type":1,
-                "equipped":false,
-                "name":"Type - 1",
-                "material":"mWOOD", 
-                "geometry":"LADDER", 
-                "imgProfile":"mWOOD", 
-                "damage":-25,
-                "life":25,
-                "armour":25},
-        {   "posInScene":[4.5,1.5,-2.5],  
-            "posInAvatar":[0.0,0.0,0.0],
-                "type":2,
-                "equipped":false,
-                "name":"Type - 2",
-                "material":"mSWORD", 
-                "geometry":"SWORD",
-                "imgProfile":"mSWORD", 
-                "damage":-25,
-                "life":25,
-                "armour":25}
-    ],
-
-    "souls":[
-    ],
-
-    "soulCarrier":[
-    ],
-
-    "door":[
-    ],
-
-    "textRegion":[
-            {   "position":[50,8.0,-27],
-                "radioActivity":[2.0,3.0,2.0],
-                "timeBWstate":3000.0,
-                "dialog":[{"speaker":2,
-                           "string":"Poor ghost wall!"},
-                          {"speaker":2,
-                           "string":"She died so soon"},
-                          {"speaker":2,
-                           "string":"I knew his father. He was a greatful wall"},
-                          {"speaker":1,
-                           "string":"Shut up!, I need to concentrate in the arrows"}
-                        ]
-            },
-            {   "position":[5,0.5,-3],
-                "radioActivity":[3.0,3.0,3.0],
-                "timeBWstate":3000.0,
-                "dialog":[{"speaker":2,
-                           "string":"oh little pig!"},
-                          {"speaker":2,
-                           "string":"Do you remember me?"},
-                          {"speaker":1,
-                           "string":"What? Who is talking?"},
-                          {"speaker":2,
-                           "string":"It's me the wizard that you killed"}
-                        ]
-            }
-    ],
-
-
     "spikes":[
             {   "position":[50.5,4.5,-26.5],
                 "damage":-25
@@ -432,7 +227,8 @@
     ],
 
     "trapDoor":[
-            
+        {   "position":[5.5,2.5,-6.5]
+        }
     ],
 
     "rottVoxel":[
@@ -479,12 +275,12 @@
                 "position":[1,0.5,1],
                 "YNumber":1,        
                 "XNumber":9,         
-                "ZNumber":14,         
+                "ZNumber":2,         
                 "materialTop":"mCUBE_DUNG",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
                 "damage":0.0 },
-            {   "position":[2,4.5,14],
+            {   "position":[2,4.5,2],
                 "YNumber":4,  
                 "XNumber":7,    
                 "ZNumber":1,
@@ -493,22 +289,6 @@
                 "mesh":"CUBE", 
                 "damage":0.0  },
             {   "position":[1,4.5,1],
-                "YNumber":4,        
-                "XNumber":1,         
-                "ZNumber":14,         
-                "materialTop":"mCUBE_WALL",
-                "materialMiddle":"mCUBE_WALL", 
-                "mesh":"CUBE", 
-                "damage":0.0 },
-            {   "position":[9,4.5,5],
-                "YNumber":4,        
-                "XNumber":1,         
-                "ZNumber":10,         
-                "materialTop":"mCUBE_WALL",
-                "materialMiddle":"mCUBE_WALL", 
-                "mesh":"CUBE", 
-                "damage":0.0 },
-             {   "position":[9,4.5,1],
                 "YNumber":4,        
                 "XNumber":1,         
                 "ZNumber":2,         
@@ -525,41 +305,19 @@
                 "mesh":"CUBE", 
                 "damage":0.0 },
 
-
-
-
-
-
-
             {   "//":"ROOM 2 - First contact",                
                 "position":[10,0.5,2],
                 "YNumber":1,        
                 "XNumber":13,         
-                "ZNumber":11,         
+                "ZNumber":2,         
                 "materialTop":"mCUBE_DUNG",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
                 "damage":0.0 },
-            {   "position":[10,4.5,12],
-                "YNumber":1,        
+            {   "position":[10,4.5,3],
+                "YNumber":4,        
                 "XNumber":13,        
                 "ZNumber":1,         
-                "materialTop":"mCUBE_WALL",
-                "materialMiddle":"mCUBE_WALL", 
-                "mesh":"CUBE", 
-                "damage":0.0 },
-            {   "position":[22,4.5,9],
-                "YNumber":4,        
-                "XNumber":1,        
-                "ZNumber":4,         
-                "materialTop":"mCUBE_WALL",
-                "materialMiddle":"mCUBE_WALL", 
-                "mesh":"CUBE", 
-                "damage":0.0 },
-            {   "position":[22,4.5,2],
-                "YNumber":4,        
-                "XNumber":1,        
-                "ZNumber":4,         
                 "materialTop":"mCUBE_WALL",
                 "materialMiddle":"mCUBE_WALL", 
                 "mesh":"CUBE", 
@@ -572,8 +330,6 @@
                 "materialMiddle":"mVOID", 
                 "mesh":"CUBE", 
                 "damage":0.0 },    
-
-
 
 
 

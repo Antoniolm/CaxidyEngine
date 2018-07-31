@@ -905,7 +905,6 @@ Projectile * Hero::createProjectile(float damage){
     ArmScriptTRight->add(0.5,notMove);
     ElbowScriptTRight->add(0.5,notMove);
 
-
     //Add the script to our animation
     animation->add(ElbowScriptRight);
     animation->add(ElbowScriptTRight);
@@ -914,7 +913,6 @@ Projectile * Hero::createProjectile(float damage){
     animation->add(ArmScriptRight);
     animation->add(ArmScriptTRight);
     animation->add(ArmScriptLeft);
-
 
     ///////////////////
     // BODY

@@ -161,7 +161,7 @@ void HeroState::updateState(GameState & gameState){
     int heroCoin=hero->getCoin();
     int heroLevel=hero->getLevel();
 
-    if(gameState.inventoryMenu->isActivate() || gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
+    if(gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
        || gameState.camera->isSpeakMode() || gameState.camera->isMoveSpeakMode())
         visibleState=false;
 

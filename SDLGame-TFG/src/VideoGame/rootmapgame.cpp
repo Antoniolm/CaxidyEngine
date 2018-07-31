@@ -283,11 +283,6 @@ void RootMapGame::initialize(string fileMap){
     objNode->add(meshCollect->getMesh(BACKGROUND));
     background= new ObjectScene(objNode);
 
-    /////////////////////////////////////////
-    // Add enemy of our map
-    cout<< "< Game is loading enemies >"<< endl;
-    const rapidjson::Value & enemies=document["enemies"];
-
     ////////////////////////////////////////
     //Create the indexMap;
     Context cv;

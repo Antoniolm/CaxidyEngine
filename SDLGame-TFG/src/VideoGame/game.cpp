@@ -89,7 +89,9 @@ Game::Game(){
     gameState.optionMenu->add("resources/textures/optionSave.png");
     gameState.optionMenu->add("resources/textures/optionQuit.png");
 
-    
+    // Create inventory menu
+    gameState.inventoryMenu=new InventoryMenu();
+
     //Create controlMenu
     gameState.controlMenu=new ControlMenu(vec3f(0.0f,6.70f,11.0f),"resources/textures/mainBackMenu.png");
 
