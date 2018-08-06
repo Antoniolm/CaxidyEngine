@@ -1,5 +1,5 @@
 project(tfm-project)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.3.2) 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/resources/cmake")

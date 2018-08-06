@@ -18,7 +18,6 @@ add_executable(main
     "${CMAKE_CURRENT_SOURCE_DIR}/avatar/hero.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/avatar/npc.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/ia/ianpc.cpp"
-    $<TARGET_OBJECTS:GraphicEngine>
 )
 
 target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIR}
@@ -39,4 +38,5 @@ target_link_libraries(main
     ${OPENGL_LIBRARIES}  
     ${GLEW_LIBRARIES}
     Threads::Threads
+    GraphicEngine
 )
