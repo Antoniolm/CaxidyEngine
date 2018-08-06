@@ -47,57 +47,9 @@
     ],
 
     "projectileSystem":[
-        {   "radioActivity":[10.0,5.0,12.0],
-            "position":[51.5,7.5,-35.5],
-            "velocity":[0.0,0.0,4.0],
-            "direction":0,
-            "delay":4000,
-            "material":"mARCHENEMY",
-            "mesh":"ARROW"
-        },
-        {   "radioActivity":[10.0,5.0,12.0],
-            "position":[51.5,6.5,-35.5],
-            "velocity":[0.0,0.0,4.0],
-            "direction":0,
-            "delay":4000,
-            "material":"mARCHENEMY",
-            "mesh":"ARROW"
-        },
-        {   "radioActivity":[10.0,5.0,12.0],
-            "position":[51.5,5.5,-35.5],
-            "velocity":[0.0,0.0,4.0],
-            "direction":0,
-            "delay":4000,
-            "material":"mARCHENEMY",
-            "mesh":"ARROW"
-        },
-        {   "radioActivity":[10.0,5.0,12.0],
-            "position":[53.5,7.5,-35.5],
-            "velocity":[0.0,0.0,4.0],
-            "direction":0,
-            "delay":4000,
-            "material":"mARCHENEMY",
-            "mesh":"ARROW"
-        },
-        {   "radioActivity":[10.0,5.0,12.0],
-            "position":[53.5,6.5,-35.5],
-            "velocity":[0.0,0.0,4.0],
-            "direction":0,
-            "delay":4000,
-            "material":"mARCHENEMY",
-            "mesh":"ARROW"
-        },
-        {   "radioActivity":[10.0,5.0,12.0],
-            "position":[53.5,5.5,-35.5],
-            "velocity":[0.0,0.0,4.0],
-            "direction":0,
-            "delay":4000,
-            "material":"mARCHENEMY",
-            "mesh":"ARROW"
-        }
     ],
 
-    "hero":{    "position":[4,3.0,-2],
+    "hero":{    "position":[3,2.0,-1.5],
                 "life":100,
                 "damage":10,
                 "armour":5,
@@ -115,96 +67,55 @@
                 "legRight":"KNEE"
             },
     "npcs":[
-            {   "position":[12.5,2.0,-4.5],
+            {   "position":[5.5,2.0,-1.5],
                 "textPosition":[0.0,1.2,0.0],
                 "material":"mBUTLER",
                 "mesh":"BUTLER",
                 "textSize":20,
                 "textFont":"resources/font/Xolonium-Regular.ttf",
                 "dialog":[{"speaker":0,
-                           "string":"Oh!! Young warrior, you waked up"},
+                           "string":"This is a introduction of the demo"},
                           {"speaker":1,
-                           "string":"You have been sleeping for 400 years!"},
+                           "string":"I am the hero of this game"},
                           {"speaker":0,
-                           "string":"If you don't remember me, I'm Jame the buttler"},
+                           "string":"I am the main npc of the game"},
                           {"speaker":0,
-                           "string":"The castle cursed your soul while you was slepping"},
+                           "string":"And all that is our world"},
                           {"speaker":1,
-                           "string":"But don't be scared"},
-                          {"speaker":0,
-                           "string":"If you obtain all the fragment of cursed crystal"},
-                          {"speaker":0,
-                           "string":"you would purify your soul"}
-                        ]
-            },
-            {   "position":[25.0,5.2,-18.0],
-                "textPosition":[0.0,1.2,0.0],
-                "material":"mBUTLER",
-                "mesh":"BUTLER",
-                "textSize":20,
-                "textFont":"resources/font/Xolonium-Regular.ttf",
-                "dialog":[{"speaker":0,
-                           "string":"You have to be careful with the green water"},
-                          {"speaker":0,
-                           "string":"Can hurt your soul"},
-                          {"speaker":0,
-                           "string":"And yes, I am a ghost"},
-                          {"speaker":0,
-                           "string":"I can run through the walls"}
+                           "string":"We need to avoid all the obstacles"}
                         ]
             }
-
     ],
 
     "potion":[
-        {   "position":[52.5,5.5,-34.5],
-                "material":"mPOTION", 
-                "geometry":"POTION", 
-                "value":25}
     ],
 
     "coin":[
-        {   "position":[34.5,5.5,-19.5],
+        {   "position":[8.5,1.5,-1.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1},
-        {   "position":[32.5,5.5,-18.5],
+        {   "position":[13.5,2.5,-2.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1},
-        {   "position":[36.5,5.5,-20.5],
+        {   "position":[20.5,4.5,-1.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1},
-        {   "position":[24.5,2.5,-11.5],
+        {   "position":[24.5,7.5,-1.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1},
-        {   "position":[25.5,3.5,-12.5],
+        {   "position":[32.5,6.5,-1.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1},
-        {   "position":[24.5,4.5,-13.5],
+        {   "position":[41.5,6.5,-2.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1},
-        {   "position":[50.5,5.5,-26.5],
-                "material":"mCRYSTAL", 
-                "geometry":"COIN", 
-                "value":1},
-        {   "position":[54.5,5.5,-26.5],
-                "material":"mCRYSTAL", 
-                "geometry":"COIN", 
-                "value":1},
-        {   "position":[52.5,5.5,-30.5],
-                "material":"mCRYSTAL", 
-                "geometry":"COIN", 
-                "value":1},
-        {   "position":[50.5,5.5,-34.5],
-                "material":"mCRYSTAL", 
-                "geometry":"COIN", 
-                "value":1},
-        {   "position":[54.5,5.5,-34.5],
+        {   "position":[48.5,6.5,-2.5],
                 "material":"mCRYSTAL", 
                 "geometry":"COIN", 
                 "value":1}
@@ -222,34 +133,31 @@
     ],
 
     "rottVoxel":[
-            {   "position":[5.5,1.5,-6.5],
-                "position":[5.5,1.5,-6.5],
-                "position":[5.5,1.5,-6.5]
-            }  
+            {   "position":[33.5,6.5,-1.5]
+            },
+            {   "position":[34.5,6.5,-1.5]
+            },
+            {   "position":[35.5,6.5,-1.5]
+            }
     ],
 
     "movVoxel":[
-            {   "position":[6.5,3.5,-6.5],
+            {   "position":[28.5,6.5,-1.5],
                 "respawn":0
-            },
-            {   "position":[7.5,4.5,-9.5],
-                "respawn":0
-            },
-            {   "position":[8.5,2.5,-4.5],
-                "respawn":1
             }
     ],
 
     "resVoxel":[
-            {   "position":[4.5,1.1,-6.5]
-            },
-            {   "position":[3.5,1.1,-6.5]
+            {   "position":[26.5,6.1,-1.5]
             }
-
     ],
 
     "slideTrap":[
-            {   "position":[2.5,1.5,-2.5],
+            {   "position":[42.5,5.5,-3.5],
+                "delay":2000,
+                "direction":0
+            },
+            {   "position":[44.5,5.5,-3.5],
                 "delay":3000,
                 "direction":0
             }
@@ -389,12 +297,12 @@
                 "materialTop":"mCUBE_DUNG",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
-                "damage":0.0},
+                "damage":-25},
             {   "position":[20,2.5,1],
                 "YNumber":2,        
                 "XNumber":1,         
                 "ZNumber":1,         
-                "materialTop":"mCUBE_DUNG",
+                "materialTop":"mCUBE_SPIKE",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
                 "damage":0.0},
@@ -405,7 +313,7 @@
                 "materialTop":"mCUBE_DUNG",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
-                "damage":0.0},
+                "damage":-25},
             {   "position":[22,2.5,1],
                 "YNumber":2,        
                 "XNumber":3,         
@@ -447,7 +355,7 @@
                 "materialTop":"mCUBE_DUNG",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
-                "damage":0.0},
+                "damage":-25},
             {   "position":[32,5.5,1],
                 "YNumber":1,       
                 "XNumber":1,         
@@ -497,7 +405,7 @@
                 "materialTop":"mCUBE_DUNG",
                 "materialMiddle":"mCUBE_DUNGB", 
                 "mesh":"CUBE", 
-                "damage":0.0},
+                "damage":-25},
             {   "position":[46,5.5,2],
                 "YNumber":1,       
                 "XNumber":5,         
@@ -534,10 +442,12 @@
     ],
 
     "decorationObject":[        
-            {   "position":[52.5,3.5,-30.45],
+            {   "position":[20.5,2.5,-1.5,
+                            30.5,5.5,-1.5,
+                            34.5,5.5,-1.5],
                 "transforms":[
                     {   "type":"scale",
-                        "values":[9.0,1.0,11.0]
+                        "values":[3.0,1.0,1.0]
                     }
                 ],       
                 "material":"mDWATER",
@@ -545,10 +455,10 @@
                 "collision": false,
                 "shadow":false
             },
-            {   "position":[34.5,3.75,-20],
+            {   "position":[43.5,5.5,-2.5],
                 "transforms":[
                     {   "type":"scale",
-                        "values":[6.8,1.15,4.5]
+                        "values":[5,1.0,1.0]
                     }
                 ],       
                 "material":"mDWATER",
