@@ -93,3 +93,29 @@ target_include_directories(GraphicEngine PRIVATE
     "${CMAKE_SOURCE_DIR}/src/VideoGame"
     "${CMAKE_SOURCE_DIR}/resources/lib"
 )
+
+# Set configuration variables
+set(version_config "${CMAKE_CURRENT_BINARY_DIR}/generated/${PROJECT_NAME}ConfigVersion.cmake")
+set(project_config "${CMAKE_CURRENT_BINARY_DIR}/generated/${PROJECT_NAME}Config.cmake")
+
+# Write configuration version file
+write_basic_package_version_file(
+    "${version_config}" COMPATIBILITY SameMajorVersion
+)
+
+# Create a config file of the library
+configure_package_config_file(
+    "resources/cmake/Config.cmake.in"
+    "${project_config}"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}"
+)
+
+# Install target
+install(TARGETS GraphicEngine
+    EXPORT "${TARGETS_EXPORT_NAME}"
+    LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+    RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+    INCLUDES DESTINATION ${CMAKE_INSTALL_PREFIX}/include
+)
+
