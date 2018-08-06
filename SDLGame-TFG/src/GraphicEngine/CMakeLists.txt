@@ -1,5 +1,10 @@
+cmake_minimum_required(VERSION 3.3.2) 
 
-add_library(GraphicEngine OBJECT 
+project(GraphicEngine VERSION 1.0)
+
+include(CMakePackageConfigHelpers)  
+
+add_library(GraphicEngine 
     "${CMAKE_CURRENT_SOURCE_DIR}/camera.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/celshading.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/decorationobject.cpp"
@@ -82,14 +87,91 @@ add_library(GraphicEngine OBJECT
     "${CMAKE_CURRENT_SOURCE_DIR}/ColladaParser/ColladaLoader.cpp"
 )
 
-target_include_directories(GraphicEngine PRIVATE 
+target_include_directories(GraphicEngine PUBLIC 
     ${SDL2_INCLUDE_DIR}
     ${SDL2_MIXER_INCLUDE_DIR}
     ${SDL2TTF_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${GLEW_INCLUDE_DIR}
-    "${CMAKE_SOURCE_DIR}/src"
-    "${CMAKE_SOURCE_DIR}/src/GraphicEngine"
-    "${CMAKE_SOURCE_DIR}/src/VideoGame"
-    "${CMAKE_SOURCE_DIR}/resources/lib"
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/GraphicEngine>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/VideoGame>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/resources/lib>
+)
+
+target_link_libraries(GraphicEngine 
+    ${SDL2_LIBRARIES} 
+    ${SDL2_MIXER_LIBRARIES} 
+    ${SDL2TTF_LIBRARY}
+    ${OPENGL_LIBRARIES}  
+    ${GLEW_LIBRARIES}
+    Threads::Threads
+)
+
+# Set configuration variables
+set(version_config "${CMAKE_CURRENT_BINARY_DIR}/generated/${PROJECT_NAME}ConfigVersion.cmake")
+set(project_config "${CMAKE_CURRENT_BINARY_DIR}/generated/${PROJECT_NAME}Config.cmake")
+set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
+
+# Write configuration version file
+write_basic_package_version_file(
+    "${version_config}" COMPATIBILITY SameMajorVersion
+)
+
+# Create a config file of the library
+configure_package_config_file(
+    "resources/cmake/Config.cmake.in"
+    "${project_config}"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}"
+)
+
+# Install target
+install(TARGETS GraphicEngine
+    EXPORT "${TARGETS_EXPORT_NAME}"
+    LIBRARY DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
+    ARCHIVE DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
+    RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin"
+    OBJECTS DESTINATION "${CMAKE_INSTALL_PREFIX}/bin"
+    INCLUDES DESTINATION "${CMAKE_INSTALL_PREFIX}/include"
+)
+
+# Add header files
+FILE(GLOB children RELATIVE animation/ animation/*)
+
+FOREACH(child ${children})
+    IF(IS_DIRECTORY animation/ ${child})
+        message(INSTERESTING ${child})
+    ENDIF()
+ENDFOREACH()
+
+FILE(GLOB header_files 
+    "${CMAKE_CURRENT_SOURCE_DIR}/animation/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/avatar/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/ColladaParser/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/collection/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/context/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/controller/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/light/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/material/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/matrix/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/menu/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/sound/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/voxels/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+)
+
+install(
+    FILES "${header_files}"
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/include/"
+)
+
+install(
+    FILES "${project_config}" "${version_config}"
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}"
+)
+
+install(
+    EXPORT "${TARGETS_EXPORT_NAME}"
+    NAMESPACE "${PROJECT_NAME}::"
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}"
 )
