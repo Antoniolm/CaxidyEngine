@@ -355,7 +355,7 @@ void Game::createRootMap(MainMenuOption option){
                 delete gameState.rootMap;
 
             SavedManager::getInstance()->save("",gameState,0);
-            gameState.rootMap=new RootMapGame("resources/maps/map00.json",true);
+            gameState.rootMap=new RootMapGame("resources/maps/BasicMap00.json",true);
             checkUserProgress();
 
         break;

@@ -18,15 +18,20 @@
 // *********************************************************************
 
 #include <stdio.h>
-#include "VideoGame/game.h"
+#include "game.h"
 #include <iostream>
 #include "SDL2/SDL_mixer.h"
+#include "GraphicEngine/ColladaParser/ColladaData.h"
+#include "GraphicEngine/ColladaParser/ColladaLoader.h"
 
 int main(int argc, char* args[])
 {
+    // ColladaLoader collada_loader("resources/geometries/model.dae");
     Game * game=Game::getInstance();
     game->loop();
     delete game;
     cout<< "The game was deleted"<<endl;
+
 	return 0;
 }
+

@@ -1,6 +1,6 @@
 
 add_executable(BasicVideoGame 
-    "${CMAKE_SOURCE_DIR}/src/main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/coin.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/game.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gamestatechild.cpp"
