@@ -1,0 +1,20 @@
+project(tfm-project)
+cmake_minimum_required(VERSION 3.3.2) 
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/resources/cmake")
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
+INCLUDE(FindPkgConfig)
+INCLUDE(resources/cmake/FindSDL2_mixer.cmake)
+INCLUDE(resources/cmake/FindSDL2TTF.cmake)
+find_package(SDL2 REQUIRED)
+find_package(SDL2_mixer REQUIRED)
+find_package(SDL2TTF REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(OpenGL REQUIRED)
+
+add_subdirectory("src/GraphicEngine")
+add_subdirectory("examples/VideoGame")
+add_subdirectory("examples/BasicVideoGame")

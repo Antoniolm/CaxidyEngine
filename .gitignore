@@ -1,6 +1,3 @@
 *.o
-*.exe
-*.exe
-SDLGame-TFG/build
-SDLGame-TFG/VideoGame/movablevoxel.cpp.save-failed
+build/
 *.save-failed
