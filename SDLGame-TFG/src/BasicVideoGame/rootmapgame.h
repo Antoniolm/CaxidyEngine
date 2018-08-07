@@ -23,7 +23,6 @@
 #include "GraphicEngine/rootmap.h"
 #include "avatar/hero.h"
 #include "avatar/npc.h"
-#include "avatar/enemy.h"
 #include "projectilesystem.h"
 #include "spiketrap.h"
 #include "GraphicEngine/voxels/trapdoor.h"

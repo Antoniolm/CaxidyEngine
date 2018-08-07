@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "npc.h"
-#include "VideoGame/rootmapgame.h"
+#include "BasicVideoGame/rootmapgame.h"
 
 Npc::Npc(){}
 

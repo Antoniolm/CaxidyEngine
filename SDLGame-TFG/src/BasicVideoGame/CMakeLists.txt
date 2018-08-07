@@ -1,5 +1,5 @@
 
-add_executable(main 
+add_executable(BasicVideoGame 
     "${CMAKE_SOURCE_DIR}/src/main.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/coin.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/game.cpp"
@@ -20,18 +20,18 @@ add_executable(main
     "${CMAKE_CURRENT_SOURCE_DIR}/ia/ianpc.cpp"
 )
 
-target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIR}
+target_include_directories(BasicVideoGame PRIVATE ${SDL2_INCLUDE_DIR}
     ${SDL2_MIXER_INCLUDE_DIR}
     ${SDL2TTF_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${GLEW_INCLUDE_DIR}
     "${CMAKE_SOURCE_DIR}/src"
     "${CMAKE_SOURCE_DIR}/src/GraphicEngine"
-    "${CMAKE_SOURCE_DIR}/src/VideoGame"
+    "${CMAKE_SOURCE_DIR}/src/BaiscVideoGame"
     "${CMAKE_SOURCE_DIR}/resources/lib"
 )
 
-target_link_libraries(main 
+target_link_libraries(BasicVideoGame 
     ${SDL2_LIBRARIES} 
     ${SDL2_MIXER_LIBRARIES} 
     ${SDL2TTF_LIBRARY}

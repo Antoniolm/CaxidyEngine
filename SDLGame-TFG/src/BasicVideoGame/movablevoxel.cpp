@@ -286,25 +286,6 @@ void MovableVoxel::initAnimation(){
 }
 
 //**********************************************************************//
-
-bool MovableVoxel::checkEnemies(vec3f newPos,vector<Enemy *> &enemies){
-    vec3f posEnemy;
-
-    bool result=false;
-
-    for(int i=0;i<enemies.size();i++){
-        posEnemy=enemies[i]->getPosition();
-
-        if((int)posEnemy.x == (int)newPos.x && (int)posEnemy.z == (int)newPos.z
-           && (newPos.y>posEnemy.y-1 && newPos.y<posEnemy.y+1)){
-            result=true;
-        }
-    }
-
-    return result;
-}
-
-//**********************************************************************//
 ObjectScene * MovableVoxel::gravity(GameState & gameState){
     ObjectScene * hasCollision=0;
 

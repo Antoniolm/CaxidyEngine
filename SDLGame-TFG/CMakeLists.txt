@@ -16,4 +16,4 @@ find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 
 add_subdirectory("src/GraphicEngine")
-add_subdirectory("src/VideoGame")
+add_subdirectory("src/BasicVideoGame")

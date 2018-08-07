@@ -20,7 +20,7 @@
 #ifndef NPC_H
 #define NPC_H
 
-#include "VideoGame/ia/ianpc.h"
+#include "BasicVideoGame/ia/ianpc.h"
 #include "GraphicEngine/avatar/avatar.h"
 #include "GraphicEngine/mesh/mesh.h"
 #include "GraphicEngine/collection/meshcollection.h"

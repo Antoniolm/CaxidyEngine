@@ -29,8 +29,8 @@
 #include "GraphicEngine/collection/meshcollection.h"
 #include "GraphicEngine/collection/materialcollection.h"
 #include "GraphicEngine/collection/soundcollection.h"
+#include "GraphicEngine/avatar/avatarmove.h"
 #include "rapidjson/document.h"
-#include "avatar/enemy.h"
 
 using namespace rapidjson;
 
@@ -89,14 +89,6 @@ class MovableVoxel : public ObjectScene
         */
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    Check the enemies that can be obstruct the movable voxel movement
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool checkEnemies(vec3f newPos,vector<Enemy *> &enemies);
 
         //////////////////////////////////////////////////////////////////////////
         /**

@@ -18,15 +18,14 @@
 // *********************************************************************
 
 #include "hero.h"
-#include "weapon.h"
-#include "projectile.h"
+#include "BasicVideoGame/rootmapgame.h"
+#include "BasicVideoGame/projectile.h"
 
-Hero::Hero(vec3f aPos)
+Hero::Hero(const rapidjson::Value & heroFeatures)
 {
     acceleratedMove=new AcceleratedMovement();
     acceleratedMove->resetState();
     direction=FORWARD;
-    soul=0;
     isMoving=false;
     isMoveCollision=false;
     isFalling=false;
@@ -34,22 +33,22 @@ Hero::Hero(vec3f aPos)
     isHitting=false;
     isImpacted=false;
     isShielded=false;
-    life=100;
-    maxLife=100;
-    position=vec4f(aPos.x,aPos.y,aPos.z,1.0);
+
+    life=heroFeatures["life"].GetFloat();
+    maxLife=heroFeatures["life"].GetFloat();
+    damage=heroFeatures["damage"].GetFloat();
+    armour=heroFeatures["armour"].GetFloat();
+
+    currentExp=0;
+    level=1;
+    maxExperience=100;
+
+    position=vec4f(heroFeatures["position"][0].GetFloat(),heroFeatures["position"][1].GetFloat(),heroFeatures["position"][2].GetFloat(),1.0);
     limitBottom=0.5;
     currentCoin=0;
     MeshCollection * meshCollect =MeshCollection::getInstance();
     MaterialCollection * materialCollect =MaterialCollection::getInstance();
     SoundCollection * soundCollect =SoundCollection::getInstance();
-
-    //////////////////////////////////////////////////////
-    /////           Initialize weapons               /////
-    //////////////////////////////////////////////////////
-    currentWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,SWORD,mSWORD);
-    meleeWeapon=new Weapon(vec3f(0.05,-0.1,0.68),MELEE,-25,SWORD,mSWORD);
-    rangedWeapon=new Weapon(vec3f(0.0,-0.4,0.0),RANGED,-20,CBOW,mARCHENEMY);
-
 
     //////////////////////////////////////////////////////
     /////              All the sounds                /////
@@ -60,6 +59,7 @@ Hero::Hero(vec3f aPos)
     heroSound.push_back(soundCollect->getSound(SHOOT));
     heroSound.push_back(soundCollect->getSound(sSWORD));
     heroSound.push_back(soundCollect->getSound(sJUMP));
+    heroSound.push_back(soundCollect->getSound(sFALL));
 
     for(unsigned i=0;i<heroSound.size();i++)
         channelSound.push_back(-1);
@@ -99,24 +99,22 @@ Hero::Hero(vec3f aPos)
     moveMatrix.push_back(moveLegLeft);
 
     Matrix4f *transLeg=new Matrix4f();
-    transLeg->translation(0.0,-0.6,0.0);
+    transLeg->translation(0.0,-0.3,0.0);
 
     Matrix4f *transLegSecond=new Matrix4f();
-    transLegSecond->translation(0.0,-0.6,0.0);
+    transLegSecond->translation(0.0,-0.3,0.0);
 
     //Leg Left
     NodeSceneGraph * legLeft=new NodeSceneGraph();
     legLeft->add(moveLegLeft);
     legLeft->add(transLeg);
-    legLeft->add(materialCollect->getMaterial(mHERO));
-    legLeft->add(meshCollect->getMesh(KNEE2));
+    legLeft->add(meshCollect->getMesh(heroFeatures["legLeft"].GetString()));
 
     //Leg Right
     NodeSceneGraph * legRight=new NodeSceneGraph();
     legRight->add(moveLegRight);
     legRight->add(transLegSecond);
-    legRight->add(materialCollect->getMaterial(mHERO));
-    legRight->add(meshCollect->getMesh(KNEE));
+    legRight->add(meshCollect->getMesh(heroFeatures["legRight"].GetString()));
 
     //////////////////////////////////////////////////////
     /////                  Arms                      /////
@@ -156,10 +154,10 @@ Hero::Hero(vec3f aPos)
     scaleHandInvert->scale(1.0,1.0,-1.0);
 
     Matrix4f * transHand=new Matrix4f();
-    transHand->translation(-0.15,-0.2,0.0);
+    transHand->translation(-0.075,-0.1,0.0);
 
     Matrix4f * transHandLeft=new Matrix4f();
-    transHandLeft->translation(0.15,-0.2,0.0);
+    transHandLeft->translation(0.075,-0.1,0.0);
 
     Matrix4f * rotateXHand=new Matrix4f();
     rotateXHand->rotation(30,1,0,0);
@@ -171,22 +169,16 @@ Hero::Hero(vec3f aPos)
     rotateShoulder->rotation(180,0.0,1.0,0.0);
 
     Matrix4f * transElbow=new Matrix4f();
-    transElbow->translation(0.0,-0.4,0.0);
+    transElbow->translation(0.0,-0.2,0.0);
 
     Matrix4f * transElbowSecond=new Matrix4f();
-    transElbowSecond->translation(0.0,-0.4,0.0);
+    transElbowSecond->translation(0.0,-0.2,0.0);
 
     Matrix4f * transArms=new Matrix4f();
-    transArms->translation(0.0,-0.5,-0.2);
+    transArms->translation(0.0,-0.25,-0.1);
 
     Matrix4f * transArmsSecond=new Matrix4f();
-    transArmsSecond->translation(0.0,-0.5,-0.2);
-
-    Matrix4f * tranSword=new Matrix4f();
-    tranSword->translation(0.05,-0.1,0.68);
-
-    Matrix4f * tranShield=new Matrix4f();
-    tranShield->translation(-0.275,0.0,0.0);
+    transArmsSecond->translation(0.0,-0.25,-0.1);
 
     //Arms
     NodeSceneGraph * handRight=new NodeSceneGraph();
@@ -194,8 +186,7 @@ Hero::Hero(vec3f aPos)
     handRight->add(moveElbowRight);
     handRight->add(moveElbowTRight);
     handRight->add(transHand);
-    handRight->add(meshCollect->getMesh(HAND));
-    handRight->add(currentWeapon);
+    handRight->add(meshCollect->getMesh(heroFeatures["handRight"].GetString()));
 
     NodeSceneGraph * handLeft=new NodeSceneGraph();
     handLeft->add(transElbowSecond);
@@ -203,18 +194,15 @@ Hero::Hero(vec3f aPos)
     handLeft->add(moveElbowTLeft);
     handLeft->add(transHandLeft);
     handLeft->add(rotateYHand);
-    handLeft->add(meshCollect->getMesh(HANDS));
-    handLeft->add(tranShield);
-    handLeft->add(materialCollect->getMaterial(mSHIELD));
-    handLeft->add(meshCollect->getMesh(SHIELD));
+    handLeft->add(meshCollect->getMesh(heroFeatures["handLeft"].GetString()));
 
     //Shoulder
     NodeSceneGraph * shoulderLeft=new NodeSceneGraph();
-    shoulderLeft->add(meshCollect->getMesh(TOPARM));
+    shoulderLeft->add(meshCollect->getMesh(heroFeatures["arm"].GetString()));
 
     NodeSceneGraph * shoulderRight=new NodeSceneGraph();
     shoulderRight->add(rotateShoulder);
-    shoulderRight->add(meshCollect->getMesh(TOPARM));
+    shoulderRight->add(meshCollect->getMesh(heroFeatures["arm"].GetString()));
 
     //Arm left
     NodeSceneGraph * ArmLeft=new NodeSceneGraph();
@@ -222,7 +210,6 @@ Hero::Hero(vec3f aPos)
     ArmLeft->add(moveArmLeft);
     ArmLeft->add(handLeft);
     ArmLeft->add(shoulderLeft);
-
 
     //Arm Right
     NodeSceneGraph * ArmRight=new NodeSceneGraph();
@@ -252,43 +239,42 @@ Hero::Hero(vec3f aPos)
     root->add(moveAvatar);
 
     Matrix4f *transLegScene=new Matrix4f();
-    transLegScene->translation(-0.5,0.0,0.0);
+    transLegScene->translation(-0.25,0.0,0.0);
 
     Matrix4f *transLegSceneI=new Matrix4f();
-    transLegSceneI->translation(0.25,0.0,0.0);
+    transLegSceneI->translation(0.125,0.0,0.0);
 
     Matrix4f * scaleHero=new Matrix4f();
     scaleHero->scale(0.5,0.5,0.5);
 
     Matrix4f * trasnArms=new Matrix4f();
-    trasnArms->translation(-1.0,0.0,0.0);
+    trasnArms->translation(-0.5,0.0,0.0);
 
     Matrix4f *trasnArmsI=new Matrix4f();
-    trasnArmsI->translation(0.5,0.83,0.2);
+    trasnArmsI->translation(0.25,0.415,0.1);
 
     Matrix4f *transHead=new Matrix4f();
-    transHead->translation(0.0,1.4,0.0);
+    transHead->translation(0.0,0.7,0.0);
 
     Matrix4f *transChest=new Matrix4f();
-    transChest->translation(0.0,0.1,0.0);
+    transChest->translation(0.0,0.05,0.0);
 
     NodeSceneGraph * headNode=new NodeSceneGraph();
     headNode->add(transHead);
-    headNode->add(meshCollect->getMesh(HEAD));
+    headNode->add(meshCollect->getMesh(heroFeatures["head"].GetString()));
 
     NodeSceneGraph * chest_Arms_HeadNode=new NodeSceneGraph();
     chest_Arms_HeadNode->add(transChest);
     chest_Arms_HeadNode->add(moveTBodyHead);
     chest_Arms_HeadNode->add(moveBodyHead);
     chest_Arms_HeadNode->add(headNode);
-    chest_Arms_HeadNode->add(meshCollect->getMesh(CHEST));
+    chest_Arms_HeadNode->add(meshCollect->getMesh(heroFeatures["body"].GetString()));
     chest_Arms_HeadNode->add(trasnArmsI);
     chest_Arms_HeadNode->add(ArmLeft);
     chest_Arms_HeadNode->add(trasnArms);
     chest_Arms_HeadNode->add(ArmRight);
 
-    root->add(scaleHero);
-    root->add(materialCollect->getMaterial(mHERO));
+    root->add(materialCollect->getMaterial(heroFeatures["material"].GetString()));
     root->add(chest_Arms_HeadNode);
     root->add(transLegSceneI);
     root->add(legLeft);
@@ -319,15 +305,6 @@ Hero::~Hero()
         delete (*it);
     }
 
-    switch(currentWeapon->getType()){
-        case RANGED:
-            delete meleeWeapon;
-        break;
-        case MELEE:
-            delete rangedWeapon;
-        break;
-    }
-
     delete root;
 }
 
@@ -352,8 +329,8 @@ void Hero::visualization(Context & cv){
     }
 
     //Update visual range
-    cv.minVisualPosition=vec3f(position.x-8,position.y-8,position.z);
-    cv.maxVisualPosition=vec3f(position.x+8,position.y+8,position.z);
+    cv.minVisualPosition=vec3f(position.x-11,position.y-11,position.z);
+    cv.maxVisualPosition=vec3f(position.x+11,position.y+11,position.z);
 }
 
 //**********************************************************************//
@@ -362,7 +339,7 @@ void Hero::updateState(GameState & gameState){
     bool hasMove=true;
 
     avatarDirection heroDir=direction;
-    vec3f moveHero,velocityHero,accelerationHero;
+    vec3f moveHero;
     currentMap=gameState.rootMap;
     ControllerManager * controller=gameState.controller;
 
@@ -463,13 +440,13 @@ void Hero::updateState(GameState & gameState){
 
     //Case-> Push S bottom to jump
     if(controller->checkButton(cJUMP) && !isJumping && !isFalling && !isImpacted && !isShielded && jumpDelay<(time-600) ){
-        activeJump(vec3f(velocityHero.x,15.0,velocityHero.y),vec3f(accelerationHero.x,5.0,accelerationHero.z));
+        activeJump(vec3f(0.0f,15.0,0.0f),vec3f(0.0f,5.0f,0.0f));
         jumpDelay=time;
         channelSound[5]=heroSound[5]->play();
     }
 
     //Case-> Push L bottom to hit
-    if(controller->checkButton(cATTACK) && !isShielded && soul==0){ //If hero is hitting
+    if(controller->checkButton(cATTACK) && !isShielded){ //If hero is hitting
         if(!isHitting){
             animations.resetAnimation(1);
             animations.resetAnimation(5);
@@ -478,18 +455,14 @@ void Hero::updateState(GameState & gameState){
         hitDelay=time;
     }
     else { // If hero is not hitting -> resetAnimation
-        if(hitDelay<(time-250) && currentWeapon->getType()==MELEE){
-            hitDelay=time;
-            isHitting=false;
-        }
-        else if(hitDelay<(time-750) && currentWeapon->getType()==RANGED){
+        if(hitDelay<(time-250)){
             hitDelay=time;
             isHitting=false;
         }
     }
 
     //Case-> Push W bottom to shield
-    if(controller->checkButton(cSHIELD) && !isHitting && soul==0){ //If hero is shielding
+    if(controller->checkButton(cSHIELD) && !isHitting){ //If hero is shielding
         isShielded=true;
         if(hasMove)
             animations.activate(3); //Activate animation
@@ -498,19 +471,6 @@ void Hero::updateState(GameState & gameState){
     }
     else { //if not
         isShielded=false;
-    }
-
-    //Case-> Push Q bottom to swap weapon
-    if(controller->checkButton(cSWAPWEAPON) && !isHitting && swapDelay<(time-500) ){ //If hero is shielding
-        switch(currentWeapon->getType()){
-            case MELEE:
-                currentWeapon->setWeapon((*rangedWeapon));
-            break;
-            case RANGED:
-                currentWeapon->setWeapon((*meleeWeapon));
-            break;
-        }
-        swapDelay=time;
     }
 
     //Move the body
@@ -522,7 +482,7 @@ void Hero::updateState(GameState & gameState){
         if(isShielded)
             changeDirection(lastDir);
     }
-    //heroSound[0]->updateVolume(channelSound[0],2.0);
+
     //If the jump is activate
     if(isJumping){
         jump(time);
@@ -532,59 +492,25 @@ void Hero::updateState(GameState & gameState){
     }
     //If the jump is not activate
     else {
+        bool isFallAux=isFalling;
         ObjectScene * object=gravity(time);
+
         if(!isShielded){
             animations.activate(5);
         }
-        if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-200)){ //If the object do damage
+        if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-400)){ //If the object do damage
             takeDamage(object->getDamage());
             dmgDelay=time;
         }
+
+        if(object!=0 && isFallAux)
+            channelSound[6]=heroSound[6]->play();
     }
 
     //If the jump is activate
     if(isImpacted){
         impactMove(time);
     }
-
-    //Check enemies
-    if(isHitting){
-        vector<Enemy *> enemies=rootMap->getEnemyList()->getEnemies();
-        vec3f posEnemy;float distance;
-        int currentIndexAnimation;
-        switch(currentWeapon->getType()){
-            case MELEE: //If is the sword
-
-                animations.activate(1);
-                currentIndexAnimation=(animations.getAnimation())->getScriptState(7);
-                if((currentIndexAnimation==0 || currentIndexAnimation==2 || currentIndexAnimation==4) && swordDelay<(time-250)){
-                    //if the hero is in a hit animation not a rest animation
-                    for(unsigned i=0;i<enemies.size();i++){ //Loop for all the enemies
-                        posEnemy=enemies[i]->getPosition(); //Calculate the distance
-                        distance=sqrt(pow(position.x-posEnemy.x,2.0)+pow(position.z-posEnemy.z,2.0));
-
-                        if(distance<=1.0 && (position.y>posEnemy.y-1 && position.y<posEnemy.y+1)){//If is near
-                            enemies[i]->takeDamage(position,direction,position,currentWeapon->getDamage(),enemies); //Hit enemy
-                        }
-                    }
-                    channelSound[4]=heroSound[4]->play();
-                    swordDelay=time;
-                }
-
-            break;
-            case RANGED: //if is the crossbow
-
-                animations.activate(6);
-                ScriptLMD * animationHit=animations.getAnimation();
-                if(animationHit->getScriptState(6)==1 && shootDelay<(time-700)){
-                    shootDelay=time;
-                    projectiles.push_back(createProjectile(currentWeapon->getDamage()));
-                    channelSound[3]=heroSound[3]->play();
-                }
-            break;
-        }
-    }
-
 
     //Update our vec4f position
     position=moveAvatar->product(vec4f());
@@ -597,20 +523,6 @@ void Hero::updateState(GameState & gameState){
     }
     if(!isMoving && !isFalling && !isJumping && !isHitting && !isImpacted && !isShielded){
         animations.activate(-1);
-    }
-    if(isHitting){
-        switch(currentWeapon->getType()){
-            case MELEE: animations.activate(1);
-            break;
-            case RANGED: animations.activate(6);
-            break;
-        }
-    }
-    if(soul!=0){
-        if(hasMove)
-            animations.activate(8);
-        else
-            animations.activate(7);
     }
 
     if(animations.getState()!=-1){
@@ -626,7 +538,7 @@ void Hero::updateState(GameState & gameState){
     ////////////////////////////
     for(unsigned i=0;i<texts.size();i++)
         if(activatedTexts[i])
-            texts[i]->setPosition(vec3f(position.x,position.y+2.0f,position.z));
+            texts[i]->setPosition(vec3f(position.x,position.y+1.75f,position.z));
 
     //If hero does not take a coin in the last 300 ms
     if(coinDelay<time-700)
@@ -666,7 +578,7 @@ void Hero::enableSound(bool value){
 //**********************************************************************//
 
 void Hero::setDialog(string message,int index){
-    texts[index]->setPosition(vec3f(position.x,position.y+2.0f,position.z));
+    texts[index]->setPosition(vec3f(position.x,position.y+1.75f,position.z));
     texts[index]->setMessage(message);
     texts[index]->init();
 
@@ -690,8 +602,39 @@ void Hero::setCoin(int value){
 
 //**********************************************************************//
 
-void Hero::setSoul(Soul * aSoul){
-    soul=aSoul;
+void Hero::setLevelParameters(int cExp, int maxExp,int lvl){
+    currentExp=cExp;
+    maxExperience=maxExp;
+    level=lvl;
+
+    maxLife+=(level-1)*10;
+    life=maxLife;
+    damage+=(level-1)*2;
+    armour+=(level-1)*2;
+}
+
+//**********************************************************************//
+
+void Hero::setInfoParameters(int clife, int cDamage,int cArmour){
+    maxLife=clife;
+    damage=cDamage;
+    armour=cArmour;
+}
+
+//**********************************************************************//
+
+void Hero::addExperience(int value){
+    currentExp+=value;
+    if(currentExp>=maxExperience){
+        currentExp=currentExp%maxExperience;
+        level++;
+        maxExperience=level*100;
+
+        maxLife+=10;
+        life=maxLife;
+        damage+=2;
+        armour+=2;
+    }
 }
 
 //**********************************************************************//
@@ -712,6 +655,18 @@ bool Hero::isHit(){
 
 //**********************************************************************//
 
+bool Hero::isJump(){
+    return isJumping;
+}
+
+//**********************************************************************//
+
+bool Hero::isFall(){
+    return isFalling;
+}
+
+//**********************************************************************//
+
  float Hero::getLife(){
     return life;
  }
@@ -724,9 +679,34 @@ bool Hero::isHit(){
 
 //**********************************************************************//
 
-Soul * Hero::getSoul(){
-    return soul;
- }
+int Hero::getExp(){
+    return currentExp;
+}
+
+//**********************************************************************//
+
+int Hero::getMaxExp(){
+    return maxExperience;
+}
+
+//**********************************************************************//
+
+int Hero::getLevel(){
+    return level;
+}
+
+//**********************************************************************//
+
+int Hero::getDamage(){
+    return damage;
+}
+
+//**********************************************************************//
+
+int Hero::getArmour(){
+    return armour;
+}
+
 //**********************************************************************//
 
  void Hero::addCoin(int value){
@@ -758,7 +738,10 @@ Soul * Hero::getSoul(){
     float distance=sqrt(pow(position.x-posAvatar.x,2.0)+pow(position.z-posAvatar.z,2.0));
 
     if(detectHit(posAvatar,dirAvatar)&& dmgDelay<(currentTime-700) && !canShield && distance<1.0){
+
+        //Calculate the damage that the hero will take
         addLife(value);
+
         stringstream convert;
         if(activatedTexts[3]){ //if is activate the text ->//Join values
             int lastValue;
@@ -806,6 +789,61 @@ Soul * Hero::getSoul(){
     if(life>0)
         channelSound[1]=heroSound[1]->play();
  }
+
+//**********************************************************************//
+
+Projectile * Hero::createProjectile(float damage){
+    vec3f posProject;
+    vec3f velocityProject;
+    avatarDirection dirProject=RIGHTWARD;
+
+    switch(direction){
+        case FORWARD:
+                posProject=vec3f(position.x,position.y,position.z+0.5);
+                velocityProject=vec3f(0.0,0.0,4.0);
+                dirProject=FORWARD;
+            break;
+        case BACKWARD:
+                posProject=vec3f(position.x,position.y,position.z-0.5);
+                velocityProject=vec3f(0.0,0.0,-4.0);
+                dirProject=BACKWARD;
+            break;
+        case LEFTWARD:
+                posProject=vec3f(position.x-0.5,position.y,position.z);
+                velocityProject=vec3f(-4.0,0.0,0.0);
+                dirProject=LEFTWARD;
+            break;
+        case RIGHTWARD:
+                posProject=vec3f(position.x+0.5,position.y,position.z);
+                velocityProject=vec3f(4.0,0.0,0.0);
+                dirProject=RIGHTWARD;
+            break;
+        case FOR_LEFTWARD:
+                posProject=vec3f(position.x-0.5,position.y,position.z+0.5);
+                velocityProject=vec3f(-4.0,0.0,4.0);
+                dirProject=FOR_LEFTWARD;
+            break;
+        case FOR_RIGHTWARD:
+                posProject=vec3f(position.x+0.5,position.y,position.z+0.5);
+                velocityProject=vec3f(4.0,0.0,4.0);
+                dirProject=FOR_RIGHTWARD;
+            break;
+        case BACK_LEFTWARD:
+                posProject=vec3f(position.x-0.5,position.y,position.z-0.5);
+                velocityProject=vec3f(-4.0,0.0,-4.0);
+                dirProject=BACK_LEFTWARD;
+            break;
+        case BACK_RIGHTWARD:
+                posProject=vec3f(position.x+0.5,position.y,position.z-0.5);
+                velocityProject=vec3f(4.0,0.0,-4.0);
+                dirProject=BACK_RIGHTWARD;
+
+            break;
+    }
+
+    return new Projectile(posProject,velocityProject,dirProject,damage,"ARROW","mARCHENEMY");
+}
+
 
 //**********************************************************************//
 //                              PRIVATE                                 //
@@ -867,7 +905,6 @@ Soul * Hero::getSoul(){
     ArmScriptTRight->add(0.5,notMove);
     ElbowScriptTRight->add(0.5,notMove);
 
-
     //Add the script to our animation
     animation->add(ElbowScriptRight);
     animation->add(ElbowScriptTRight);
@@ -876,7 +913,6 @@ Soul * Hero::getSoul(){
     animation->add(ArmScriptRight);
     animation->add(ArmScriptTRight);
     animation->add(ArmScriptLeft);
-
 
     ///////////////////
     // BODY
@@ -1073,7 +1109,7 @@ Soul * Hero::getSoul(){
     rotateElbow->rotation(60,0.0,0.0,1.0);
 
     Matrix4f * TransElbow=new Matrix4f();
-    TransElbow->translation(-0.5,-0.3,-0.3);
+    TransElbow->translation(-0.25,-0.15,-0.15);
 
     staticShoulder=new MatrixStatic(*rotateShoulder);
     staticElbow=new MatrixStatic(*rotateElbow);
@@ -1164,7 +1200,7 @@ Soul * Hero::getSoul(){
     rotateElbow->rotation(60,0.0,0.0,1.0);
 
     TransElbow=new Matrix4f();
-    TransElbow->translation(-0.5,-0.3,-0.3);
+    TransElbow->translation(-0.25,-0.15,-0.15);
 
     staticShoulder=new MatrixStatic(*rotateShoulder);
     staticElbow=new MatrixStatic(*rotateElbow);
