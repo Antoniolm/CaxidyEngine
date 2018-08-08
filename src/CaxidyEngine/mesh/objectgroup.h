@@ -25,8 +25,6 @@
 #include "CaxidyEngine/nodescenegraph.h"
 #include "collection/meshcollection.h"
 
-namespace CaxidyEngine {
-    
 class ObjectGroup : public Object3D
 {
     public:
@@ -85,16 +83,14 @@ class ObjectGroup : public Object3D
     protected:
 
     private:
-        std::vector<vec3f> vertex;       // Vector of vertex
-        std::vector<GLushort> triangles; // Vector of triangles
-        std::vector<vec3f> normals;      // Vector of normals
-        std::vector<vec2f> textureCord;  // Vector of coordinate texture
-        std::vector<vec3f> tangent;      // Vector of tangents
-        std::vector<vec3f> biTangent;    // Vector of bitangents
+        vector<vec3f> vertex;       // Vector of vertex
+        vector<GLushort> triangles; // Vector of triangles
+        vector<vec3f> normals;      // Vector of normals
+        vector<vec2f> textureCord;  // Vector of coordinate texture
+        vector<vec3f> tangent;      // Vector of tangents
+        vector<vec3f> biTangent;    // Vector of bitangents
         NodeSceneGraph * root;      // Root of the group of objects
         Mesh * mesh;                // Mesh of the group of objects
 };
-
-} // CaxidyEngine
 
 #endif // OBJECTGROUP_H

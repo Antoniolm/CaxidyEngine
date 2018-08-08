@@ -24,8 +24,6 @@
 #include "context/context.h"
 #include "CaxidyEngine/nodescenegraph.h"
 
-namespace CaxidyEngine {
-    
 enum avatarDirection
 {
 	FORWARD,       //0
@@ -115,7 +113,5 @@ class Avatar: public Object3D
     private:
 
 };
-
-} // CaxidyEngine
 
 #endif // AVATAR_H

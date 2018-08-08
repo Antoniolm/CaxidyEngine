@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "texture.h"
 
-namespace CaxidyEngine {
-    
 Texture::Texture(){
 
 }
@@ -114,5 +112,3 @@ void Texture::setTexture(const Texture & aTexture){
     fileName= aTexture.fileName;
     texture= aTexture.texture;
 }
-
-} // CaxidyEngine

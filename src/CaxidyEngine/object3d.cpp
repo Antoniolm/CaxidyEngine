@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -21,8 +21,6 @@
 #include "rootmap.h"
 #include "gamestate.h"
 
-namespace CaxidyEngine {
-    
 Object3D::Object3D()
 {
     countLink=0;
@@ -86,5 +84,3 @@ int Object3D::getCountLink(){
 bool Object3D::isDeleting(){
     return false;
 }
-
-} // CaxidyEngine 

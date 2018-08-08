@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,8 +20,6 @@
 
 #include "nodescenegraph.h"
 
-namespace CaxidyEngine {
-    
 NodeSceneGraph::NodeSceneGraph(bool aInvert,bool nolight)
 {
     invert=aInvert;
@@ -44,7 +42,7 @@ NodeSceneGraph::NodeSceneGraph(const NodeSceneGraph & aNode){
 
 NodeSceneGraph::~NodeSceneGraph()
 {
-    std::vector<EntryNGE>::iterator it;
+    vector<EntryNGE>::iterator it;
     for(it=entrance.begin();it!=entrance.end();it++){
         switch((*it).type){
             case 0: //Object3d
@@ -75,7 +73,7 @@ void NodeSceneGraph::visualization(Context & cv){
     int contMaterial=0;
     vec4f pos;
     cv.matrixStack.push();
-    std::vector<EntryNGE>::iterator it;
+    vector<EntryNGE>::iterator it;
     for(it=entrance.begin();it!=entrance.end();it++){
             switch((*it).type){
             case 0: //Object3d
@@ -144,7 +142,7 @@ void NodeSceneGraph::add(Material * aMaterial){
 //**********************************************************************//
 
 BoundingBox NodeSceneGraph::getBoundingBox(){
-    std::vector<EntryNGE>::iterator it;
+    vector<EntryNGE>::iterator it;
     BoundingBox auxBox;
     for(it=entrance.begin();it!=entrance.end();it++){
             switch((*it).type){
@@ -168,7 +166,7 @@ void NodeSceneGraph::obtainPosition(Context & cv){
     int contMaterial=0;
     vec4f pos;
     cv.matrixStack.push();
-    std::vector<EntryNGE>::iterator it;
+    vector<EntryNGE>::iterator it;
     for(it=entrance.begin();it!=entrance.end();it++){
             switch((*it).type){
             case 0: //Object3d
@@ -191,6 +189,4 @@ void NodeSceneGraph::obtainPosition(Context & cv){
     cv.currentTransf.setMatrix(cv.matrixStack.getMatrix().getMatrix());
     cv.matrixStack.pop(contMatrix);
 }
-
-} // CaxidyEngine 
 

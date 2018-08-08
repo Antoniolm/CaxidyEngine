@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "pointlight.h"
-
-namespace CaxidyEngine {
 
 PointLight::PointLight()
 {
@@ -48,8 +46,7 @@ PointLight::PointLight(const PointLight & aLight){
 
 //**********************************************************************//
 
-PointLight::PointLight(const vec3f & aPos,const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,
-    float aConstant,float aLinear,float aQuadratic, std::string nlight){
+PointLight::PointLight(const vec3f & aPos,const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aConstant,float aLinear,float aQuadratic,string nlight){
     position=aPos;
     ambient=anAmbient;
     diffuse=aDiffuse;
@@ -119,5 +116,3 @@ float PointLight::getlinear(){
 float PointLight::getQuadratic(){
     return quadratic;
 }
-
-} // CaxidyEngine

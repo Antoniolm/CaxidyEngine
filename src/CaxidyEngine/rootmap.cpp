@@ -21,8 +21,6 @@
 #include "mesh/objectgroup.h"
 #include <stdlib.h>
 
-namespace CaxidyEngine {
-
 RootMap::RootMap(){
 }
 
@@ -57,7 +55,7 @@ RootMap::~RootMap()
 
 //**********************************************************************//
 
-void RootMap::initialize(std::string fileMap){
+void RootMap::initialize(string fileMap){
 
 }
 
@@ -97,7 +95,7 @@ void RootMap::updateState(GameState & gameState){
     if(!gameState.movie->isActivated() && !gameState.mainMenu->isActivate() && !gameState.pauseMenu->isActivate()
        && !gameState.deadMenu->isActivate() && !gameState.inventoryMenu->isActivate() && !gameState.camera->isViewMode()){
 
-        std::vector<Object3D * >::iterator it=elements.begin();
+        vector<Object3D * >::iterator it=elements.begin();
 
         while(it!=elements.end()){
             (*it)->updateState(gameState);
@@ -154,8 +152,8 @@ ObjectScene * RootMap::collision(const vec3f & indexObj){
     BoundingBox box;
     int tam=indexMap[(int)indexObj.x][(int)indexObj.z*-1].size();
 
-    std::vector<int>::iterator it=indexMap[(int)indexObj.x][(int)indexObj.z*-1].begin();
-    std::vector<int>::iterator endIt=indexMap[(int)indexObj.x][(int)indexObj.z*-1].end();
+    vector<int>::iterator it=indexMap[(int)indexObj.x][(int)indexObj.z*-1].begin();
+    vector<int>::iterator endIt=indexMap[(int)indexObj.x][(int)indexObj.z*-1].end();
 
     if(tam!=0 ){
         for(;it!=endIt && !hasCollision;it++){ //if There are object in that position (x,z)
@@ -180,8 +178,8 @@ ObjectScene * RootMap::collision(const vec3f & posFirst, const vec3f & posSecond
     BoundingBox box;
     int tam=indexMap[(int)posFirst.x][(int)posFirst.z*-1].size();
 
-    std::vector<int>::iterator it=indexMap[(int)posFirst.x][(int)posFirst.z*-1].begin();
-    std::vector<int>::iterator endIt=indexMap[(int)posFirst.x][(int)posFirst.z*-1].end();
+    vector<int>::iterator it=indexMap[(int)posFirst.x][(int)posFirst.z*-1].begin();
+    vector<int>::iterator endIt=indexMap[(int)posFirst.x][(int)posFirst.z*-1].end();
 
     if(tam!=0 ){
         for(;it!=endIt && !hasCollision;it++){ //if There are object in that position (x,z)
@@ -221,8 +219,8 @@ void RootMap::removeCollision(vec2f voxelPosition,int objID){
     int tam=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].size();
     bool deleted=false;
 
-    std::vector<int>::iterator it=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].begin();
-    std::vector<int>::iterator endIt=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].end();
+    vector<int>::iterator it=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].begin();
+    vector<int>::iterator endIt=indexMap[(int)voxelPosition.x][(int)voxelPosition.y*-1].end();
 
     if(tam!=0 ){
         while(it!=endIt && !deleted){ //if There are object in that position (x,z)
@@ -255,7 +253,7 @@ bool RootMap::isFinished(){
 
 //**********************************************************************//
 
-std::string RootMap::getNextMap(){
+string RootMap::getNextMap(){
     return nextMapFile;
 }
 
@@ -288,5 +286,3 @@ void RootMap::deleteObject3d(Object3D * obj){
         delete obj;
     }
 }
-
-} // CaxidyEngine 

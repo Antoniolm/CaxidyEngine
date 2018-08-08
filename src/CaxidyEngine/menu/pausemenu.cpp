@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,9 +19,7 @@
 
 #include "pausemenu.h"
 
-namespace CaxidyEngine {
-
-PauseMenu::PauseMenu(vec3f initPos, std::string fileName)
+PauseMenu::PauseMenu(vec3f initPos,string fileName)
 {
     currentOption=0;
     activateMenu=false;
@@ -69,7 +67,7 @@ PauseMenu::~PauseMenu()
 {
     delete root;
 
-    for(std::vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
+    for(vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
         if((*it)->getFile()!=currentMaterial->getTexture()->getFile())
             delete (*it);
     }
@@ -172,12 +170,10 @@ void PauseMenu::updateState(GameState & gameState){
 
 //**********************************************************************//
 
-void PauseMenu::add(std::string fileName,PauseMenuOption aOption){
+void PauseMenu::add(string fileName,PauseMenuOption aOption){
     addOption(new Texture(fileName.c_str()));
     actionOption.push_back(aOption);
 
     if(actionOption.size()==1)
         currentMaterial->setTexture(options[0]);
 }
-
-} // CaxidyEngine

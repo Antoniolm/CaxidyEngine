@@ -29,7 +29,7 @@
 #include "collection/soundcollection.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class RottenVoxel : public ObjectScene
 {
@@ -41,7 +41,7 @@ class RottenVoxel : public ObjectScene
         *   @param ID -> ID of the rotten voxel
         */
         //////////////////////////////////////////////////////////////////////////
-        RottenVoxel(const rapidjson::Value & rottenFeatures, int id);
+        RottenVoxel(const Value & rottenFeatures, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -110,7 +110,5 @@ class RottenVoxel : public ObjectScene
         Sound * activatedVoxel;     // Sound for its activation
         int voxelID;                // Id of the rotten voxel
 };
-
-} // CaxidyEngine
 
 #endif // ROTTENVOXEL_H

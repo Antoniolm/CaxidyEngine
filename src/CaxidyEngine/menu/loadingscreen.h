@@ -25,15 +25,14 @@
 #include "collection/materialcollection.h"
 #include <string>
 
-namespace CaxidyEngine {
-    
+using namespace std;
 class LoadingScreen : public Menu
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        LoadingScreen(vec3f initPosition, float delay, std::string fileName);
+        LoadingScreen(vec3f initPosition,float delay,string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -63,7 +62,7 @@ class LoadingScreen : public Menu
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void add(std::string fileName);
+        void add(string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -86,7 +85,5 @@ class LoadingScreen : public Menu
     private:
         float animationDelay;  // Delay between animations
 };
-
-} // CaxidyEngine
 
 #endif // LOADINGSCREEN_H

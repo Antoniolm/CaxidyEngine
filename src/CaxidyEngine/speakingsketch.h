@@ -28,15 +28,13 @@
 #include "collection/meshcollection.h"
 #include "collection/materialcollection.h"
 
-namespace CaxidyEngine {
-
 class SpeakingSketch : public Object3D
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        SpeakingSketch(vec3f aPos, std::string material);
+        SpeakingSketch(vec3f aPos, string material);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -90,7 +88,5 @@ class SpeakingSketch : public Object3D
         bool activated;             // Flag to activation
         bool visibleState;
 };
-
-} // CaxidyEngine 
 
 #endif // SPEAKINGSKETCH_H

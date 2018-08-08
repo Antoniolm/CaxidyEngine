@@ -30,8 +30,6 @@
 #include <string>
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
-    
 class Particle;
 class ParticleSystem : public Object3D
 {
@@ -44,7 +42,7 @@ class ParticleSystem : public Object3D
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with parameters*/
         //////////////////////////////////////////////////////////////////////////
-        ParticleSystem(int numParticle, std::string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime);
+        ParticleSystem(int numParticle,string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime);
 
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with json*/
@@ -89,7 +87,7 @@ class ParticleSystem : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void setParameters(int numParticle, std::string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime);
+        void setParameters(int numParticle,string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -158,7 +156,7 @@ class ParticleSystem : public Object3D
     protected:
 
     private:
-        std::list<Particle *> particles; // List of particles in the system
+        list<Particle *> particles; // List of particles in the system
         int nParticles;             // Total number of particles that the system has to have with life
         int currentParticles;       // Number of live particles in the system
         vec3f maxPos;               // Max position for the particles
@@ -169,7 +167,5 @@ class ParticleSystem : public Object3D
         float maxTime;              // Max time of life for the particles
         Material * material;        // Material applied in the particles
 };
-
-} // CaxidyEngine 
 
 #endif // PARTICLESYSTEM_H

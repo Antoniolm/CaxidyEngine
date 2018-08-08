@@ -24,25 +24,23 @@
 #include <fstream>
 #include <vector>
 
-namespace CaxidyEngine {
-
-SkeletonLoader::SkeletonLoader(rapidxml::xml_node<> & visual_scene_node, const std::vector<std::string> & joint_orders)
+SkeletonLoader::SkeletonLoader(xml_node<> & visual_scene_node, const vector<string> & joint_orders)
 {
     joint_orders_ = joint_orders;
 
     current_matrix.change_axis();
 
-    rapidxml::xml_node<> * armature_data = xml_parser.getChildWithAttribute(&visual_scene_node, "node", "id", "Armature");
+    xml_node<> * armature_data = xml_parser.getChildWithAttribute(&visual_scene_node, "node", "id", "Armature");
     
-    rapidxml::xml_node<> * head_node = armature_data->first_node("node");
+    xml_node<> * head_node = armature_data->first_node("node");
 
     joint_ = *load_joint_data(head_node,true);
     skeleton_data_ = new SkeletonData(2,joint_);
 }
 
-JointData * SkeletonLoader::load_joint_data(rapidxml::xml_node<> * node, bool root)
+JointData * SkeletonLoader::load_joint_data(xml_node<> * node, bool root)
 {
-    std::string name =node->first_attribute("id")->value();
+    string name =node->first_attribute("id")->value();
     int id = xml_parser.indexOf(joint_orders_, name);
     Matrix4f matrix(xml_parser.extract(node->first_node("matrix")->value()));
 
@@ -54,7 +52,7 @@ JointData * SkeletonLoader::load_joint_data(rapidxml::xml_node<> * node, bool ro
     }
 
     JointData * joint = new JointData(id,name,current_matrix);
-    for(rapidxml::xml_node<> * loop_node = node->first_node("node"); loop_node; loop_node = loop_node->next_sibling("node")){
+    for(xml_node<> * loop_node = node->first_node("node"); loop_node; loop_node = loop_node->next_sibling("node")){
         joint->addChild(*load_joint_data(loop_node,false));
     }
     return joint;
@@ -64,5 +62,3 @@ SkeletonData & SkeletonLoader::get_skeleton()
 {
     return *skeleton_data_;
 }
-
-} // CaxidyEngine

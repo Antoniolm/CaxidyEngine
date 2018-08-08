@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "gamepadcontroller.h"
 
-namespace CaxidyEngine {
-
 GamepadController::GamepadController()
 {
     for(int i=0;i<12;i++){
@@ -32,7 +30,7 @@ GamepadController::GamepadController()
     for(int i=0;i<SDL_NumJoysticks();i++){
         if(SDL_IsGameController(i)){
             controller=SDL_GameControllerOpen(i);
-            std::cout<< "---Gamepad connected---"<<std::endl;
+            cout<< "---Gamepad connected---"<<endl;
             if( controller ) {
                 joy = SDL_GameControllerGetJoystick( controller );
             }
@@ -198,7 +196,7 @@ void GamepadController::updateJoystickMove(Sint16 x,Sint16 y){
 void GamepadController::addGamepad(int id){
     if(SDL_IsGameController(id)){
         controller=SDL_GameControllerOpen(id);
-        std::cout<< "---Gamepad connected---"<<std::endl;
+        cout<< "---Gamepad connected---"<<endl;
         if( controller ) {
             joy = SDL_GameControllerGetJoystick( controller );
         }
@@ -208,9 +206,7 @@ void GamepadController::addGamepad(int id){
 //**********************************************************************//
 
 void GamepadController::removeGamepad(){
-    std::cout<< "---Gamepad disconnected---"<<std::endl;
+    cout<< "---Gamepad disconnected---"<<endl;
     SDL_GameControllerClose(controller);
     controller=0; joy=0;
 }
-
-} // CaxidyEngine

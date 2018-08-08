@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "profile.h"
 
-namespace CaxidyEngine {
-    
 Profile* Profile::instance = NULL;
 
 Profile::Profile()
@@ -63,12 +61,10 @@ void Profile::incrementFrames(){
 void Profile::showResult(){
     float totalTime=SDL_GetTicks()-initialTime;
     totalTime=totalTime/1000; // second
-    std::cout<< std::endl<<"-------PROFILE-------"<<std::endl;
-    std::cout<< "Average update time-> "<< totalUpdateTime/nFrame<< " miliseconds"<<std::endl;
-    std::cout<< "Average visualization time-> "<< totalVisualTime/nFrame<< " miliseconds"<<std::endl;
-    std::cout<< "Average fps-> "<< nFrame/totalTime<< " fps"<<std::endl;
-    std::cout<< "Total time-> "<< totalTime<< " seconds"<<std::endl;
-    std::cout<< "-----END_PROFILE-----"<<std::endl;
+    cout<< endl<<"-------PROFILE-------"<<endl;
+    cout<< "Average update time-> "<< totalUpdateTime/nFrame<< " miliseconds"<<endl;
+    cout<< "Average visualization time-> "<< totalVisualTime/nFrame<< " miliseconds"<<endl;
+    cout<< "Average fps-> "<< nFrame/totalTime<< " fps"<<endl;
+    cout<< "Total time-> "<< totalTime<< " seconds"<<endl;
+    cout<< "-----END_PROFILE-----"<<endl;
 }
-
-} // CaxidyEngine 

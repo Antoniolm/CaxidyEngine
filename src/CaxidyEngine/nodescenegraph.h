@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 #include <vector>
 #include "SDL2/SDL.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 /////////////////////////////////////////////////////////////////////////
 /**
@@ -158,11 +158,9 @@ class NodeSceneGraph : public Object3D
     protected:
 
     private:
-        std::vector<EntryNGE> entrance;  // Vector of nodes
+        vector<EntryNGE> entrance;  // Vector of nodes
         bool invert;                // Flag of invert normal
         bool noLight;               // Flag of don't apply light in the node
 };
-
-} // CaxidyEngine 
 
 #endif // NODESCENEGRAPH_H

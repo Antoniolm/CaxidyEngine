@@ -23,7 +23,8 @@
 #include "ColladaData.h"
 #include "rapidxml/rapidxml.hpp"
 
-namespace CaxidyEngine {
+using namespace rapidxml;
+using namespace std;
 
 class SkinLoader
 {
@@ -32,7 +33,7 @@ class SkinLoader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        SkinLoader(rapidxml::xml_node<> &library_controllers_node, int maxWeights);
+        SkinLoader(xml_node<> &library_controllers_node, int maxWeights);
 
         SkinningData & extractSkinData();
 
@@ -42,7 +43,5 @@ class SkinLoader
         SkinningData skinning_data_;
 	    int maxWeights_;
 };
-
-} // CaxidyEngine
 
 #endif // SKINLOADER_H

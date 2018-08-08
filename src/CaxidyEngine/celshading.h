@@ -27,8 +27,6 @@
 #include "camera.h"
 #include "matrix/structdata.h"
 
-namespace CaxidyEngine {
-    
 class CelShading
 {
     public:
@@ -66,7 +64,5 @@ class CelShading
     private:
         Shader * shader;               //Shader for shadow generation
 };
-
-} // CaxidyEngine 
 
 #endif // CELSHADING_H

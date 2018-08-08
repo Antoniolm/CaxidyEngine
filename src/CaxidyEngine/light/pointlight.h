@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,8 +23,6 @@
 
 #include "light.h"
 
-namespace CaxidyEngine {
-
 class PointLight : public Light
 {
     public:
@@ -41,8 +39,7 @@ class PointLight : public Light
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with parameters */
         //////////////////////////////////////////////////////////////////////////
-        PointLight(const vec3f & aPos,const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,
-            float aConstant,float aLinear,float aQuadratic, std::string nlight="0");
+        PointLight(const vec3f & aPos,const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aConstant,float aLinear,float aQuadratic,string nlight="0");
 
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with json */
@@ -100,9 +97,7 @@ class PointLight : public Light
         float constant;   // Constant component
         float linear;     // linear component
         float quadratic;  // Quadratic component
-        std::string nLight;    // Number of light
+        string nLight;    // Number of light
 };
-
-} // CaxidyEngine
 
 #endif // POINTLIGHT_H

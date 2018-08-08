@@ -35,8 +35,6 @@
 #include "rootmap.h"
 #include "camera.h"
 
-namespace CaxidyEngine {
-    
 class DeadMenu;
 class CreditScreen;
 class LoadingScreen;
@@ -127,7 +125,5 @@ class GameState
 
     private:
 };
-
-} // CaxidyEngine 
 
 #endif // GAMESTATE_H

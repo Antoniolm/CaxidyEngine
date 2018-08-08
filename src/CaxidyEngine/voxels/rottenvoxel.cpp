@@ -19,9 +19,7 @@
 
 #include "rottenvoxel.h"
 
-namespace CaxidyEngine {
-
-RottenVoxel::RottenVoxel(const rapidjson::Value & rottenFeatures, int id){
+RottenVoxel::RottenVoxel(const Value & rottenFeatures, int id){
     position=vec4f(rottenFeatures["position"][0].GetFloat(),rottenFeatures["position"][1].GetFloat(),rottenFeatures["position"][2].GetFloat()+0.1f,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -141,5 +139,3 @@ void RottenVoxel::initAnimation(){
 bool RottenVoxel::isDeleting(){
     return disappear;
 }
-
-} // CaxidyEngine

@@ -29,7 +29,7 @@
 #include "collection/soundcollection.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class JumpButton : public Object3D
 {
@@ -47,7 +47,7 @@ class JumpButton : public Object3D
         *   @param buttonFeatures -> the value json that contain all the information of the jump button object
         */
         //////////////////////////////////////////////////////////////////////////
-        JumpButton(const rapidjson::Value & buttonFeatures);
+        JumpButton(const Value & buttonFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -100,7 +100,5 @@ class JumpButton : public Object3D
         void initAnimation();
 
 };
-
-} // CaxidyEngine
 
 #endif // JUMPBUTTON_H

@@ -36,8 +36,6 @@
 #include "collection/soundcollection.h"
 #include <string>
 
-namespace CaxidyEngine {
-    
 enum PauseMenuOption{
     pRESUME,
     pQUIT
@@ -49,7 +47,7 @@ class PauseMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        PauseMenu(vec3f initPos, std::string fileName);
+        PauseMenu(vec3f initPos,string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -79,7 +77,7 @@ class PauseMenu : public Menu
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void add(std::string fileName,PauseMenuOption aOption);
+        void add(string fileName,PauseMenuOption aOption);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -92,13 +90,11 @@ class PauseMenu : public Menu
 
     private:
         vec3f initialPosition;                  // Initial position of the menu
-        std::vector<PauseMenuOption> actionOption;   // Vector of options of the menu
+        vector<PauseMenuOption> actionOption;   // Vector of options of the menu
         Sound * openSound;                      // Sound for open an option
         Sound * moveSound;                      // Sound for movement
         int channelOpen;                        // Channel of open sound
         int channelMove;                        // Channel of move sound
 };
-
-} // CaxidyEngine
 
 #endif // PAUSEMENU_H

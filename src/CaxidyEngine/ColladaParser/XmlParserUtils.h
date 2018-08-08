@@ -25,7 +25,7 @@
 #include <sstream>
 #include <vector>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class XmlParserUtils{
 
@@ -33,16 +33,14 @@ public:
 
 rapidxml::xml_node<> * getChildWithAttribute(
     rapidxml::xml_node<> *parent, 
-    const std::string & type, 
-    const std::string & attribute, 
-    const std::string & value);
+    const string & type, 
+    const string & attribute, 
+    const string & value);
 
-std::vector<std::string> extract(const std::string& stoextract);
+vector<string> extract(const string& stoextract);
 
-int indexOf(const std::vector<std::string> & elements, const std::string & value);
+int indexOf(const vector<string> & elements, const string & value);
 
 };
-
-} // CaxidyEngine
 
 #endif // XMLPARSERUTILS_H

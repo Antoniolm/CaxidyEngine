@@ -20,15 +20,13 @@
 #include "movablevoxel.h"
 #include "rootmap.h"
 
-namespace CaxidyEngine {
-
 MovableVoxel::MovableVoxel(){
 
 }
 
 //**********************************************************************//
 
-MovableVoxel::MovableVoxel(const rapidjson::Value & movableFeatures, const std::vector<RespawnVoxel*> & respawns , int id){
+MovableVoxel::MovableVoxel(const Value & movableFeatures, const vector<RespawnVoxel*> & respawns , int id){
     position=vec4f(movableFeatures["position"][0].GetFloat(),movableFeatures["position"][1].GetFloat(),movableFeatures["position"][2].GetFloat()+0.1f,1.0);
     defaultPosition=position;
     respawn=respawns[movableFeatures["respawn"].GetFloat()];
@@ -179,5 +177,3 @@ ObjectScene * MovableVoxel::gravity(GameState & gameState){
 
     return hasCollision;
 }
-
-} // CaxidyEngine

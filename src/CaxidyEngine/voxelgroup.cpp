@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "voxelgroup.h"
 
-namespace CaxidyEngine {
-
 VoxelGroup::VoxelGroup()
 {
     //ctor
@@ -28,7 +26,7 @@ VoxelGroup::VoxelGroup()
 
 //**********************************************************************//
 
-VoxelGroup::VoxelGroup(const rapidjson::Value & voxelGFeature, std::vector<ObjectScene *> & objs){
+VoxelGroup::VoxelGroup(const rapidjson::Value & voxelGFeature,vector<ObjectScene *> & objs){
     //For each group
     int tamX=voxelGFeature["XNumber"].GetInt();
     int tamY=voxelGFeature["YNumber"].GetInt();
@@ -36,7 +34,7 @@ VoxelGroup::VoxelGroup(const rapidjson::Value & voxelGFeature, std::vector<Objec
     int initialX=voxelGFeature["position"][0].GetFloat();
     float initialY=voxelGFeature["position"][1].GetFloat();
     int initialZ=-voxelGFeature["position"][2].GetFloat();
-    std::string material;
+    string material;
 
     for(int x=0;x<tamX;x++){
         for(int z=0;z<tamZ;z++){
@@ -58,5 +56,3 @@ VoxelGroup::~VoxelGroup()
 {
     //dtor
 }
-
-} // CaxidyEngine 

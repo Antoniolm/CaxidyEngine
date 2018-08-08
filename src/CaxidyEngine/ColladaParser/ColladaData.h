@@ -28,7 +28,7 @@
 #include "matrix/matrix4f.h"
 #include "matrix/structdata.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 /////////////////////////////////////////////////////////////////////////
 /**
@@ -36,8 +36,8 @@ namespace CaxidyEngine {
 */
 //////////////////////////////////////////////////////////////////////////
 struct VertexSkinData{
-    std::vector<int> joint_ids;
-    std::vector<float> weights;
+    vector<int> joint_ids;
+    vector<float> weights;
 
     VertexSkinData(){
     }
@@ -55,7 +55,7 @@ struct VertexSkinData{
 	
 	void limitJointNumber(int max){
 		if(joint_ids.size() > max){
-            std::vector<float> topWeights;
+            vector<float> topWeights;
             topWeights.resize(max);
             
             float total = 0;
@@ -66,7 +66,7 @@ struct VertexSkinData{
             
             weights.clear();
 		    for(int i=0;i<topWeights.size();i++){
-			    weights.push_back(std::min((float)(topWeights[i]/(float)total), 1.0f));
+			    weights.push_back(min((float)(topWeights[i]/(float)total), 1.0f));
 		    }
 
             while(joint_ids.size() > max){
@@ -81,8 +81,8 @@ struct VertexSkinData{
 		}
 	}
 
-	std::string to_string(){
-		std::string result= "";
+	string to_string(){
+		string result= "";
 		for(int i=0;i<weights.size();i++){
 			result += "item(" +std::to_string(i)+ ")= [ "+ std::to_string(joint_ids[i])+ "," + std::to_string(weights[i])+ "] \n";
 		}
@@ -96,14 +96,14 @@ struct VertexSkinData{
 */
 //////////////////////////////////////////////////////////////////////////
 struct SkinningData{
-    std::vector<std::string> joint_order_;
-    std::vector<VertexSkinData> vertices_skin_data_;
+    vector<string> joint_order_;
+    vector<VertexSkinData> vertices_skin_data_;
 
 	SkinningData(){
 
 	}
 
-    SkinningData(const std::vector<std::string> & joint_order, const std::vector<VertexSkinData> & vertices_skin_data){
+    SkinningData(const vector<string> & joint_order, const vector<VertexSkinData> & vertices_skin_data){
         joint_order_ = joint_order;
 		vertices_skin_data_ = vertices_skin_data;
     }
@@ -117,14 +117,14 @@ struct SkinningData{
 struct JointData {
 
 	int index_;
-	std::string name_id_;
+	string name_id_;
 	Matrix4f bind_local_transform_;
 
-	std::vector<JointData> children;
+	vector<JointData> children;
 
 	JointData(){}
 	
-	JointData(int index, std::string nameId, Matrix4f & bindLocalTransform) {
+	JointData(int index, string nameId, Matrix4f & bindLocalTransform) {
 		index_ = index;
 		name_id_ = nameId;
 		bind_local_transform_.setMatrix(bindLocalTransform.getMatrix());
@@ -171,7 +171,7 @@ struct Vertex{
 	struct Vertex * duplicate_vertex_;
 	int index_;
 	float length_;
-	std::vector<vec3f> tangents_;
+	vector<vec3f> tangents_;
 	vec3f averaged_tangent_;
 	
 	VertexSkinData weights_data_;
@@ -212,10 +212,10 @@ struct Vertex{
 
 struct JointTransformData {
 
-	std::string joint_name_id_;
+	string joint_name_id_;
 	Matrix4f current_matrix_;
 
-	JointTransformData(std::string joint_name_id, Matrix4f & current_matrix) {
+	JointTransformData(string joint_name_id, Matrix4f & current_matrix) {
 		joint_name_id_ = joint_name_id;
 		current_matrix_.setMatrix(current_matrix.getMatrix());
 	}
@@ -224,7 +224,7 @@ struct JointTransformData {
 struct KeyFrameData {
 
 	float time_;
-	std::vector<JointTransformData> joint_transforms;
+	vector<JointTransformData> joint_transforms;
 	
 	KeyFrameData(float time){
 		time_ = time;
@@ -243,14 +243,14 @@ struct KeyFrameData {
 //////////////////////////////////////////////////////////////////////////
 struct AnimationData{
 	float length_seconds_;
-	std::vector<KeyFrameData> key_frames_;
+	vector<KeyFrameData> key_frames_;
 
 	AnimationData()
 	{
 
 	}
 
-	AnimationData(float length_seconds, const std::vector<KeyFrameData> & key_frames)
+	AnimationData(float length_seconds, const vector<KeyFrameData> & key_frames)
 	{
 		length_seconds_ = length_seconds;
 		key_frames_ = key_frames;
@@ -263,20 +263,20 @@ struct AnimationData{
 */
 //////////////////////////////////////////////////////////////////////////
 struct MeshData{
-	std::vector<float> vertices_;
-	std::vector<float> textureCoords_;
-	std::vector<float> normals_;
-	std::vector<int>   indices_;
-	std::vector<int>   jointIds_;
-	std::vector<float> vertexWeights_;
+	vector<float> vertices_;
+	vector<float> textureCoords_;
+	vector<float> normals_;
+	vector<int>   indices_;
+	vector<int>   jointIds_;
+	vector<float> vertexWeights_;
 	
 	MeshData()
 	{
 		
 	}
 
-	MeshData(const std::vector<float> & vertices,const  std::vector<float> & textureCoords, const std::vector<float> & normals, const std::vector<int> & indices,
-			const std::vector<int> & jointIds, const std::vector<float> & vertexWeights)
+	MeshData(const vector<float> & vertices,const  vector<float> & textureCoords, const vector<float> & normals, const vector<int> & indices,
+			const vector<int> & jointIds, const vector<float> & vertexWeights)
 	{
 		vertices_ = vertices;
 		textureCoords_ = textureCoords;
@@ -307,7 +307,5 @@ struct AnimatedModelData{
 		mesh_ = mesh;
 	}
 };
-
-} // CaxidyEngine
 
 #endif // COLLADADATA_H

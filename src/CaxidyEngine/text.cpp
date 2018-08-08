@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "text.h"
-
-namespace CaxidyEngine {
 
 Text::Text()
 {
@@ -88,12 +86,12 @@ void Text::setParameters(MaterialIndex material,TTF_Font * aFont,SDL_Color aColo
 
 //**********************************************************************//
 
-void Text::setMessage(const std::string & aMessage){
+void Text::setMessage(const string & aMessage){
     message=aMessage;
 }
 
 //**********************************************************************//
-std::string Text::getMessage(){
+string Text::getMessage(){
     return message;
 }
 
@@ -159,5 +157,3 @@ void Text::setScaleDialog(vec3f value){
 void Text::setScaleText(vec3f value){
     scaleText->scale(value.x,value.y,value.z);
 }
-
-} // CaxidyEngine 

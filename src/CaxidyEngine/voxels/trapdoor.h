@@ -29,7 +29,7 @@
 #include "collection/soundcollection.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class TrapDoor : public ObjectScene
 {
@@ -41,7 +41,7 @@ class TrapDoor : public ObjectScene
         *    @param ID -> ID of the trapDoor
         */
         //////////////////////////////////////////////////////////////////////////
-        TrapDoor(const rapidjson::Value & trapDoorFeatures, int id);
+        TrapDoor(const Value & trapDoorFeatures, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -99,7 +99,5 @@ class TrapDoor : public ObjectScene
         int trapID;                 // Id of the trap door
 
 };
-
-} // CaxidyEngine
 
 #endif // TRAPDOOR_H

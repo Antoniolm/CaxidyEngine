@@ -31,7 +31,7 @@
 #include "rapidjson/document.h"
 #include "avatar/avatar.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class SlideTrap : public ObjectScene
 {
@@ -43,7 +43,7 @@ class SlideTrap : public ObjectScene
         *    @param ID -> ID of the slide trap
         */
         //////////////////////////////////////////////////////////////////////////
-        SlideTrap(const rapidjson::Value & slideFeatures, int id);
+        SlideTrap(const Value & slideFeatures, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -94,7 +94,5 @@ class SlideTrap : public ObjectScene
 
     private:
 };
-
-} // CaxidyEngine
 
 #endif // SLIDETRAP_H

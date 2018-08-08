@@ -20,8 +20,6 @@
 #include "matrix4f.h"
 #include <stdio.h>
 
-namespace CaxidyEngine {
-
 Matrix4f::Matrix4f(){
     matrix=new GLfloat[16];
 }
@@ -34,11 +32,11 @@ Matrix4f::~Matrix4f(){
 
 //**********************************************************************//
 
-Matrix4f::Matrix4f(const std::vector<std::string> & aMatrix)
+Matrix4f::Matrix4f(const vector<std::string> & aMatrix)
 {
     matrix=new GLfloat[16];
     for(int i=0;i<16;i++){
-        matrix[i]=std::stof(aMatrix[i]);
+        matrix[i]=stof(aMatrix[i]);
     }
 }
 
@@ -150,7 +148,7 @@ const GLfloat * Matrix4f::getMatrixc() const{
 //**********************************************************************//
 
 std::string Matrix4f::to_string(){
-    std::string result = "";
+    string result = "";
 
     for(int i=0;i<16;i++){
         result += std::to_string(matrix[i])+" ";
@@ -161,4 +159,3 @@ std::string Matrix4f::to_string(){
     return result;
 }
 
-} // CaxidyEngine

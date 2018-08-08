@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2017-2018 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,9 +19,7 @@
 
 #include "slidetrap.h"
 
-namespace CaxidyEngine {
-
-SlideTrap::SlideTrap(const rapidjson::Value & slideFeatures, int id){
+SlideTrap::SlideTrap(const Value & slideFeatures, int id){
     position=vec4f(slideFeatures["position"][0].GetFloat(),slideFeatures["position"][1].GetFloat(),slideFeatures["position"][2].GetFloat()+0.1f,1.0);
     timeState=slideFeatures["delay"].GetFloat();
     currentDir=(avatarDirection)slideFeatures["direction"].GetFloat();
@@ -229,6 +227,3 @@ void SlideTrap::initAnimation(){
 
     animation->add(scriptRight);
 }
-
-} // CaxidyEngine
-

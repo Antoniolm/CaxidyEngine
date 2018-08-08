@@ -19,9 +19,7 @@
 
 #include "mainmenu.h"
 
-namespace CaxidyEngine {
-
-MainMenu::MainMenu(vec3f initPos, std::string fileName)
+MainMenu::MainMenu(vec3f initPos,string fileName)
 {
     currentOption=0;
     activateMenu=false;
@@ -85,7 +83,7 @@ MainMenu::~MainMenu()
 {
     delete root;
 
-    for(std::vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
+    for(vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
         if((*it)->getFile()!=currentMaterial->getTexture()->getFile())
             delete (*it);
     }
@@ -106,7 +104,7 @@ void MainMenu::visualization(Context & cv){
 
 void MainMenu::updateState(GameState & gameState){
     vec3f position;
-    std::string fileLoad;
+    string fileLoad;
 
     float time=gameState.time;
     ControllerManager * controller=gameState.controller;
@@ -190,7 +188,7 @@ void MainMenu::updateState(GameState & gameState){
 
 //**********************************************************************//
 
-void MainMenu::add(std::string fileName,MainMenuOption aOption){
+void MainMenu::add(string fileName,MainMenuOption aOption){
     addOption(new Texture(fileName.c_str()));
     actionOption.push_back(aOption);
 }
@@ -215,4 +213,3 @@ MainMenuOption MainMenu::getOptionSelected(){
     return actionOption[currentOption];
 }
 
-} // CaxidyEngine

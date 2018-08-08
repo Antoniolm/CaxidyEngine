@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "scriptlmd.h"
-
-namespace CaxidyEngine {
 
 ScriptLMD::ScriptLMD()
 {
@@ -40,7 +38,7 @@ ScriptLMD::~ScriptLMD(){
 //**********************************************************************//
 
 void ScriptLMD::updateState(float time){
-    std::vector<MatrixScript*>::iterator it;
+    vector<MatrixScript*>::iterator it;
 
     for(it=script.begin();it!=script.end();it++){
         (*it)->updateState(time);
@@ -62,7 +60,7 @@ int ScriptLMD::getScriptState(int index){
 //**********************************************************************//
 
 void ScriptLMD::resetState(){
-    std::vector<MatrixScript *>::iterator it;
+    vector<MatrixScript *>::iterator it;
     for(it=script.begin();it!=script.end();it++){
         (*it)->resetState();
     }
@@ -73,5 +71,3 @@ void ScriptLMD::resetState(){
 int ScriptLMD::getNumState(){
     return script.size();
 }
-
-} // CaxidyEngine

@@ -19,9 +19,7 @@
 
 #include "loadingscreen.h"
 
-namespace CaxidyEngine {
-    
-LoadingScreen::LoadingScreen(vec3f initPosition, float delay, std::string fileName)
+LoadingScreen::LoadingScreen(vec3f initPosition,float delay,string fileName)
 {
     currentOption=0;
     animationDelay=delay;
@@ -88,7 +86,7 @@ void LoadingScreen::updateState(GameState & gameState){
 
 //**********************************************************************//
 
-void LoadingScreen::add(std::string fileName){
+void LoadingScreen::add(string fileName){
     addOption(new Texture(fileName.c_str()));
 }
 
@@ -103,5 +101,3 @@ void LoadingScreen::setDelay(float aniDelay){
 float LoadingScreen::getDelay(){
     return animationDelay;
 }
-
-} // CaxidyEngine

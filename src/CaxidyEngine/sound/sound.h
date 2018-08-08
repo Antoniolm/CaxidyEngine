@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -26,8 +26,7 @@
 #include <unistd.h>
 
 #define MAX_CHANNEl 16
-
-namespace CaxidyEngine {
+using namespace std;
 
 class Sound
 {
@@ -45,7 +44,7 @@ class Sound
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        virtual bool loadSound(const std::string & aFile,int aVolume=128 ,int aChannel=-1, int aloop=-1)=0;
+        virtual bool loadSound(const string & aFile,int aVolume=128 ,int aChannel=-1, int aloop=-1)=0;
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -104,7 +103,7 @@ class Sound
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
-        std::string & getFile();
+        string & getFile();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -137,13 +136,11 @@ class Sound
         int loop;                 // Number of loop in a reproduction
         int volume;               // Initial volume of the sound
         int currentVolume;        // Current volume of the sound
-        std::string file;              // File of the sound (wav extension)
+        string file;              // File of the sound (wav extension)
 
     private:
 
 
 };
-
-} // CaxidyEngine
 
 #endif // SOUND_H

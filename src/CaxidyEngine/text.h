@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -34,8 +34,7 @@
 #include "material/texture.h"
 #include "material/material.h"
 
-namespace CaxidyEngine {
-
+using namespace std;
 class NodeSceneGraph;
 class Text : public Object3D
 {
@@ -74,7 +73,7 @@ class Text : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void setMessage(const std::string & aMessage);
+        void setMessage(const string & aMessage);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -82,7 +81,7 @@ class Text : public Object3D
         *    \return string -> it is the new message that our text will show
         */
         //////////////////////////////////////////////////////////////////////////
-        std::string getMessage();
+        string getMessage();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -147,8 +146,8 @@ class Text : public Object3D
         Matrix4f * scaleBack;       // Scale of the background Text object
         SDL_Surface * surface;      // Text object generator
         bool hasDialog;             // Flag if the text has background Text object or not
-        std::string fileTexture;         // File with the texture of background text
-        std::string message;             // Message in the text object
+        string fileTexture;         // File with the texture of background text
+        string message;             // Message in the text object
         GLuint textureText;         // Texture with the text
         TTF_Font* font;             // Font of the text
         SDL_Color color;            // Color of the text
@@ -156,6 +155,5 @@ class Text : public Object3D
         NodeSceneGraph * backNode;  // Node of the background text object
 };
 
-} // CaxidyEngine 
-
 #endif // TEXT_H
+

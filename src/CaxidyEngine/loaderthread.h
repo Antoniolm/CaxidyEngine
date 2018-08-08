@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 #include "context/shader.h"
 #include <string>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class LoaderThread
 {
@@ -33,7 +33,7 @@ class LoaderThread
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        LoaderThread(RootMap * aRootMap, std::string aFileMap);
+        LoaderThread(RootMap * aRootMap,string aFileMap);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -61,9 +61,7 @@ class LoaderThread
     private:
         std::thread * loader;       // Thread that will load the map
         static RootMap * rootMap;   // Object where the map will be load
-        static std::string fileMap;      // File that contains the map to load
+        static string fileMap;      // File that contains the map to load
 };
-
-} // CaxidyEngine 
 
 #endif // LOADERTHREAD_H

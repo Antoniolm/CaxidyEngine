@@ -26,7 +26,7 @@
 #include <iostream>
 #include "structdata.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 class Matrix4f
 {
@@ -45,7 +45,7 @@ class Matrix4f
         //////////////////////////////////////////////////////////////////////////
         /** Copy constructor */
         //////////////////////////////////////////////////////////////////////////
-        Matrix4f(const std::vector<std::string> & aMatrix);
+        Matrix4f(const vector<std::string> & aMatrix);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -143,7 +143,5 @@ class Matrix4f
     private:
         GLfloat * matrix;   // Matrix 4x4
 };
-
-} // CaxidyEngine
 
 #endif // MATRIX4F_H

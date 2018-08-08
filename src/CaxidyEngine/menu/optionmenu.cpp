@@ -20,9 +20,7 @@
 #include "optionmenu.h"
 #include "CaxidyEngine/text.h"
 
-namespace CaxidyEngine {
-
-OptionMenu::OptionMenu(vec3f posMenu, std::string mat, std::string currentMat, std::string matBack)
+OptionMenu::OptionMenu(vec3f posMenu,string mat,string currentMat, string matBack)
 {
     currentOption=0;
     activateMenu=false;
@@ -40,9 +38,9 @@ OptionMenu::OptionMenu(vec3f posMenu, std::string mat, std::string currentMat, s
     volText=new Text(mVOID,font);
 
     //Initialize options
-    resolution.push_back(std::pair<int,int> (800,600));
-    resolution.push_back(std::pair<int,int> (1200,800));
-    resolution.push_back(std::pair<int,int> (1400,800));
+    resolution.push_back(pair<int,int> (800,600));
+    resolution.push_back(pair<int,int> (1200,800));
+    resolution.push_back(pair<int,int> (1400,800));
 
     //Setting the current setting
     initOptions();
@@ -119,7 +117,7 @@ OptionMenu::~OptionMenu()
 {
     delete root;
 
-    for(std::vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
+    for(vector<Texture *>::iterator it = options.begin() ; it != options.end(); ++it){
         if((*it)->getFile()!=currentMaterial->getTexture()->getFile())
             delete (*it);
     }
@@ -144,8 +142,8 @@ void OptionMenu::visualization(Context & cv){
 
 void OptionMenu::updateState(GameState & gameState){
     vec3f position;
-    std::string newOptionStr;
-    std::stringstream sStream;
+    string newOptionStr;
+    stringstream sStream;
 
 
     float time=gameState.time;
@@ -313,13 +311,13 @@ void OptionMenu::activate(){
 
 //**********************************************************************//
 
-void OptionMenu::add(std::string fileName){
+void OptionMenu::add(string fileName){
     addOption(new Texture(fileName.c_str()));
 }
 
 //**********************************************************************//
 
-void OptionMenu::updateOption(int option, std::string value){
+void OptionMenu::updateOption(int option,string value){
     switch(option){
         case 0: //Exit
             resolText->setMessage(value);
@@ -349,7 +347,7 @@ void OptionMenu::updateOption(int option, std::string value){
 
 void OptionMenu::initOptions(){
     OptionManager * options=OptionManager::getInstance();
-    std::pair<int,int> currentResolution=options->getResolution();
+    pair<int,int> currentResolution=options->getResolution();
     window=options->getWindow();
     volume=options->getVolume();
 
@@ -358,21 +356,19 @@ void OptionMenu::initOptions(){
         if(currentResolution==resolution[i])
             indexResolution=i;
 
-    std::stringstream strResolution;
+    stringstream strResolution;
     strResolution<< resolution[indexResolution].first<< "x"<< resolution[indexResolution].second;
 
     //WindowOption
-    std::string strWindow = "FullScreen";
+    string strWindow = "FullScreen";
     if(window)
         strWindow = "Window";
 
     //VolumeOption
-    std::stringstream strVolume;
+    stringstream strVolume;
     strVolume << volume;
 
     updateOption(0,strResolution.str());
     updateOption(1,strWindow);
     updateOption(2,strVolume.str());
 }
-
-} // CaxidyEngine

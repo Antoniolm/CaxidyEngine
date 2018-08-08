@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -27,8 +27,6 @@
 #include "controller/controllermanager.h"
 #include "SDL2/SDL.h"
 
-namespace CaxidyEngine {
-    
 class Context;
 class RootMap;
 class GameState;
@@ -146,7 +144,5 @@ class Object3D
 
 
 };
-
-} // CaxidyEngine 
 
 #endif // OBJECT3D_H

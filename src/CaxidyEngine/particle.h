@@ -28,8 +28,6 @@
 #include "collection/materialcollection.h"
 #include <stdlib.h>
 
-namespace CaxidyEngine {
-
 class NodeSceneGraph;
 class Particle : public Object3D
 {
@@ -84,7 +82,5 @@ class Particle : public Object3D
         Matrix4f * transMatrix; // Matrix 4x4 with the transformation in the particle
         float remainingTime;    // Time of life of the particle
 };
-
-} // CaxidyEngine 
 
 #endif // PARTICLE_H

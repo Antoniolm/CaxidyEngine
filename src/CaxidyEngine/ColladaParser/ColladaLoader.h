@@ -32,7 +32,8 @@
 
 #include "XmlParserUtils.h"
 
-namespace CaxidyEngine {
+using namespace rapidxml;
+using namespace std;
 
 class ColladaLoader
 {
@@ -50,7 +51,5 @@ class ColladaLoader
         AnimationData animation_data_;
 
 };
-
-} // CaxidyEngine
 
 #endif // COLLADALOADER_H

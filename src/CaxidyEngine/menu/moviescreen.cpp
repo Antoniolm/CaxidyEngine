@@ -20,9 +20,7 @@
 #include "moviescreen.h"
 #include "CaxidyEngine/gamestate.h"
 
-namespace CaxidyEngine {
-
-MovieScreen::MovieScreen(const rapidjson::Value & movieFeatures)
+MovieScreen::MovieScreen(const Value & movieFeatures)
 {
     currentOption=0;
     MeshCollection * meshCollect =MeshCollection::getInstance();
@@ -144,5 +142,3 @@ void MovieScreen::activateAllTexture(){
         currentMaterial->setTexture(options[0]);
     }
 }
-
-} // CaxidyEngine

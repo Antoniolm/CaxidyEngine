@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,9 +19,7 @@
 
 #include "endmapregion.h"
 
-namespace CaxidyEngine {
-
-EndMapRegion::EndMapRegion(const rapidjson::Value & regionFeatures){
+EndMapRegion::EndMapRegion(const Value & regionFeatures){
 
     position=vec3f(regionFeatures["position"][0].GetFloat(),regionFeatures["position"][1].GetFloat(),regionFeatures["position"][2].GetFloat());
     radioActivity=vec3f(regionFeatures["radioActivity"][0].GetFloat(),regionFeatures["radioActivity"][1].GetFloat(),regionFeatures["radioActivity"][2].GetFloat());
@@ -50,6 +48,3 @@ void EndMapRegion::updateState(GameState & gameState){
     }
 
 }
-
-} // CaxidyEngine 
-

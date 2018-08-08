@@ -29,7 +29,7 @@
 #include "collection/soundcollection.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class RespawnVoxel : public Object3D
 {
@@ -47,7 +47,7 @@ class RespawnVoxel : public Object3D
         *   @param respawnFeatures -> the value json that contain all the information of the RespawnVoxel object
         */
         //////////////////////////////////////////////////////////////////////////
-        RespawnVoxel(const rapidjson::Value & respawnFeatures);
+        RespawnVoxel(const Value & respawnFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -98,7 +98,5 @@ class RespawnVoxel : public Object3D
 
         
 };
-
-} // CaxidyEngine
 
 #endif // RESPAWNVOXEL_H

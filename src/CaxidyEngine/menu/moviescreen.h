@@ -26,7 +26,7 @@
 #include "collection/soundcollection.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class GameState;
 class MovieScreen : public Menu
@@ -35,7 +35,7 @@ class MovieScreen : public Menu
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        MovieScreen(const rapidjson::Value & movieFeatures);
+        MovieScreen(const Value & movieFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -87,12 +87,10 @@ class MovieScreen : public Menu
     protected:
 
     private:
-        std::vector<std::string> textures;    // Vector of textures of the movie screen
+        vector<string> textures;    // Vector of textures of the movie screen
         Sound * actionSound;        // Action sound of the screen
         Sound * ambientSound;       // Ambient sound of the screen
 };
-
-} // CaxidyEngine
 
 #endif // MOVIESCREEN_H
 

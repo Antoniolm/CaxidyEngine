@@ -25,20 +25,18 @@
 #include <vector>
 #include <iomanip>
 
-namespace CaxidyEngine {
-    
 AnimationLoader::AnimationLoader()
 {
 }
 
-AnimationData & AnimationLoader::getAnimation(rapidxml::xml_node<> & animation_node, rapidxml::xml_node<> & joint_node)
+AnimationData & AnimationLoader::getAnimation(xml_node<> & animation_node, xml_node<> & joint_node)
 {
-    rapidxml::xml_node<> * skeleton = xml_parser.getChildWithAttribute(joint_node.first_node("visual_scene"), "node", "id", "Armature");
+    xml_node<> * skeleton = xml_parser.getChildWithAttribute(joint_node.first_node("visual_scene"), "node", "id", "Armature");
     std::string root_id= skeleton->first_node("node")->first_attribute("id")->value();
 
-    rapidxml::xml_node<> * timeData = animation_node.first_node("animation")->first_node("source")->first_node("float_array");
-    std::vector<std::string> raw_times = xml_parser.extract(timeData->value());
-    std::vector<float> times;
+    xml_node<> * timeData = animation_node.first_node("animation")->first_node("source")->first_node("float_array");
+    vector<string> raw_times = xml_parser.extract(timeData->value());
+    vector<float> times;
 
     for(int i=0;i<raw_times.size();i++){
         times.push_back(stof(raw_times[i]));
@@ -46,7 +44,7 @@ AnimationData & AnimationLoader::getAnimation(rapidxml::xml_node<> & animation_n
 
     float duration = times[times.size()-1];
 
-    std::vector<KeyFrameData> frames;
+    vector<KeyFrameData> frames;
     for(int i=0;i<times.size();i++){
         frames.push_back(KeyFrameData(times[i]));
     }
@@ -67,13 +65,12 @@ AnimationData & AnimationLoader::getAnimation(rapidxml::xml_node<> & animation_n
         data_id = data_id.substr(data_id.find("#")+1);
     
         transform_data = xml_parser.getChildWithAttribute(joint_nodes, "source", "id", data_id);
-        std::vector<std::string> rawData = xml_parser.extract(transform_data->first_node("float_array")->value());
+        vector<string> rawData = xml_parser.extract(transform_data->first_node("float_array")->value());
 
         joint_nodes = joint_nodes->next_sibling("animation");
     }
 
     animation_data_=AnimationData(duration, frames);
     return animation_data_;
-}
 
-} // CaxidyEngine
+}

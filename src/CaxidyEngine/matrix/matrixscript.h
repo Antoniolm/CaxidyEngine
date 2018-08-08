@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,8 +23,6 @@
 #include <vector>
 #include "matrix4fdynamic.h"
 
-namespace CaxidyEngine {
-    
 class MatrixScript : public Matrix4fDynamic
 {
     public:
@@ -93,9 +91,7 @@ class MatrixScript : public Matrix4fDynamic
     private:
         float currentTime;                              //Current time of the application
         int currentMove;                                //Current movement of the script
-        std::vector<std::pair<float,Matrix4fDynamic *> > script;  //Vector of movements
+        vector<pair<float,Matrix4fDynamic *> > script;  //Vector of movements
 };
-
-} // CaxidyEngine
 
 #endif // MATRIXSCRIPT_H

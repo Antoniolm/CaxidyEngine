@@ -26,7 +26,8 @@
 #include "texture.h"
 #include "context/shader.h"
 
-namespace CaxidyEngine {
+using namespace std;
+
 
 class Material
 {
@@ -44,9 +45,7 @@ class Material
         //////////////////////////////////////////////////////////////////////////
         /** Constructor with parameters*/
         //////////////////////////////////////////////////////////////////////////
-        Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,
-            const std::string & aFileTextur,const std::string & aFileBumpTextur="",const std::string & aFileParallaxTextur="",
-            MaterialIndex aIndex=mVOID);
+        Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const string & aFileTextur,const string & aFileBumpTextur="",const string & aFileParallaxTextur="",MaterialIndex aIndex=mVOID);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -99,7 +98,7 @@ class Material
         *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void setTexture(const std::string & aFileTextur);
+        void setTexture(const string & aFileTextur);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -189,7 +188,5 @@ class Material
 
         MaterialIndex index;        // Index of the material
 };
-
-} // CaxidyEngine
 
 #endif // MATERIAL_H

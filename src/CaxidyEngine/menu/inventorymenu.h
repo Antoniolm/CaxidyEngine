@@ -37,7 +37,7 @@
 #include "collection/soundcollection.h"
 #include <string>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class Text;
 class MeshCollection;
@@ -100,7 +100,5 @@ class InventoryMenu : public Menu
     private:
 
 };
-
-} // CaxidyEngine
 
 #endif // INVENTORYMENU_H

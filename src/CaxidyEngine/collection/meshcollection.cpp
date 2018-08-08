@@ -19,13 +19,12 @@
 
 #include "meshcollection.h"
 
-namespace CaxidyEngine {
-    
 MeshCollection* MeshCollection::instance = NULL;
+
 
 MeshCollection::MeshCollection()
 {
-    std::cout<< "Game is loading -> geometries"<< std::endl;
+    cout<< "Game is loading -> geometries"<< endl;
     //Mesh 0
     Mesh * element=new Mesh("resources/geometries/cube.obj",true);
     element->addLink();
@@ -377,8 +376,6 @@ Mesh * MeshCollection::getMesh(MeshIndex element){
 
 //**********************************************************************//
 
-Mesh * MeshCollection::getMesh(std::string element){
+Mesh * MeshCollection::getMesh(string element){
     return collection.getElement(element);
 }
-
-} // CaxidyEngine

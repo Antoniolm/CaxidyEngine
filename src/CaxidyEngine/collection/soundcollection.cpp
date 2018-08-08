@@ -19,15 +19,13 @@
 
 #include "soundcollection.h"
 
-namespace CaxidyEngine {
-
 SoundCollection* SoundCollection::instance = NULL;
 
 //**********************************************************************//
 
 SoundCollection::SoundCollection()
 {
-    std::cout<< "Game is loading -> sounds"<< std::endl;
+    cout<< "Game is loading -> sounds"<< endl;
     collection.addElement(new Effect("resources/sounds/coin.wav",30,-1,0));
     collection.addElement(new Effect("resources/sounds/openSound.wav",40,-1,0));
     collection.addElement(new Effect("resources/sounds/enemyHit.wav",50,-1,0));
@@ -84,7 +82,7 @@ Sound* SoundCollection::getSound(SoundIndex element){
 
 //**********************************************************************//
 
-Sound* SoundCollection::getSound(std::string element){
+Sound* SoundCollection::getSound(string element){
     return collection.getElement(element);
 }
 
@@ -95,5 +93,3 @@ void SoundCollection::updateVolume(float percentage){
     for(int i=0;i<tam;i++)
         collection.getElement((SoundIndex)i)->changeVolume(percentage);
 }
-
-} // CaxidyEngine

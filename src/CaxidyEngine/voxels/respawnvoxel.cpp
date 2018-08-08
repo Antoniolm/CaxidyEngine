@@ -19,15 +19,13 @@
 
 #include "respawnvoxel.h"
 
-namespace CaxidyEngine {
-
 RespawnVoxel::RespawnVoxel(){
 
 }
 
 //**********************************************************************//
 
-RespawnVoxel::RespawnVoxel(const rapidjson::Value & respawnFeatures){
+RespawnVoxel::RespawnVoxel(const Value & respawnFeatures){
     position=vec4f(respawnFeatures["position"][0].GetFloat(),respawnFeatures["position"][1].GetFloat(),respawnFeatures["position"][2].GetFloat(),1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -157,5 +155,3 @@ void RespawnVoxel::initAnimation(){
     animationDown->add(scriptDown);
 
 }
-
-} // CaxidyEngine

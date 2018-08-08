@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,14 +19,12 @@
 
 #include "voxel.h"
 
-namespace CaxidyEngine {
-
 Voxel::Voxel()
 {
     //ctor
 }
 
-Voxel::Voxel(const rapidjson::Value & voxelFeature,vec3f posVoxel, std::string material){
+Voxel::Voxel(const rapidjson::Value & voxelFeature,vec3f posVoxel,string material){
     MeshCollection * meshCollect= MeshCollection::getInstance();
     MaterialCollection * materialCollect= MaterialCollection::getInstance();
 
@@ -48,5 +46,3 @@ Voxel::~Voxel()
 {
     //dtor
 }
-
-} // CaxidyEngine

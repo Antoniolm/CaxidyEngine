@@ -19,8 +19,6 @@
 
 #include "gamestate.h"
 
-namespace CaxidyEngine {
-
 GameState::GameState()
 {
     rootMap=0;
@@ -94,5 +92,3 @@ void GameState::updateMenu(GLuint shaderID){
 
     camera->activateOrthoProjection(shaderID);
 }
-
-} // CaxidyEngine 

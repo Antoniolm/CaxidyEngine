@@ -28,8 +28,6 @@
 #include "collection/materialcollection.h"
 #include "collection/meshcollection.h"
 
-namespace CaxidyEngine {
-
 class DecorationObject : public ObjectScene
 {
     public:
@@ -63,7 +61,5 @@ class DecorationObject : public ObjectScene
 
     private:
 };
-
-} // CaxidyEngine 
 
 #endif // DECORATIONOBJECT_H

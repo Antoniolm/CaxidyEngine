@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,8 +20,6 @@
 
 #include "directionallight.h"
 
-namespace CaxidyEngine {
-    
 DirectionalLight::DirectionalLight()
 {
     //ctor
@@ -81,4 +79,3 @@ void DirectionalLight::setParameters(const vec3f & aDir,const vec3f & anAmbient,
     specular=aSpecular;
 }
 
-} // CaxidyEngine

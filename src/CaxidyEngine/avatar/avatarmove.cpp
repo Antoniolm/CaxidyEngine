@@ -20,8 +20,6 @@
 #include "avatarmove.h"
 #include "CaxidyEngine/rootmap.h"
 
-namespace CaxidyEngine {
-    
 AvatarMove::~AvatarMove(){
 }
 
@@ -568,5 +566,3 @@ void AvatarMove::visualization(Context & cv){
 //**********************************************************************//
 
 void AvatarMove::updateState(GameState & gameState){}
-
-} // CaxidyEngine

@@ -168,7 +168,7 @@ void HeroState::updateState(GameState & gameState){
         scaleLife->scale((float)heroLife/(float)hero->getMaxLife(),1.0,1.0);
     }
 
-
+    
      if(delayTime<(time-1500)){
         isLevelUp=false;
      }

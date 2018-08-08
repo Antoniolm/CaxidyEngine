@@ -24,8 +24,6 @@
 #include <vector>
 #include "shader.h"
 
-namespace CaxidyEngine {
-    
 class MatrixStack
 {
     public:
@@ -132,7 +130,5 @@ class MatrixStack
         Matrix4f currentMatrix;          // Current Matrix 4x4 in the stack
         std::vector<Matrix4f> mainStack; // Matrix
 };
-
-} // CaxidyEngine
 
 #endif // MATRIXSTACK_H

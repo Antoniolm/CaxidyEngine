@@ -20,8 +20,6 @@
 
 #include "objectgroup.h"
 
-namespace CaxidyEngine {
-    
 ObjectGroup::ObjectGroup(MaterialIndex materialIndex){
     MaterialCollection *materialCollect=MaterialCollection::getInstance();
     root=new NodeSceneGraph();
@@ -39,12 +37,12 @@ ObjectGroup::~ObjectGroup()
 //**********************************************************************//
 
 void ObjectGroup::addObject(vec3f position,MeshIndex meshIndex){
-    std::vector<vec3f> currentVertex;
-    std::vector<GLushort> currentTriangles;
-    std::vector<vec3f> currentNormals;
-    std::vector<vec2f> currentTextureCord;
-    std::vector<vec3f> currentTangent;
-    std::vector<vec3f> currentBitTangent;
+    vector<vec3f> currentVertex;
+    vector<GLushort> currentTriangles;
+    vector<vec3f> currentNormals;
+    vector<vec2f> currentTextureCord;
+    vector<vec3f> currentTangent;
+    vector<vec3f> currentBitTangent;
     MeshCollection * meshCollect =MeshCollection::getInstance();
     Mesh * mesh=meshCollect->getMesh(meshIndex);
 
@@ -100,5 +98,3 @@ void ObjectGroup::updateState(GameState & gameState){
 Mesh * ObjectGroup::getMesh(){
     return mesh;
 }
-
-} // CaxidyEngine

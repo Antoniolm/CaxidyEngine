@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #include "collection.cpp"
 #include <string>
 
-namespace CaxidyEngine {
+using namespace std;
 
 enum MaterialIndex{
     mCUBE_DUNG,     //2
@@ -116,7 +116,7 @@ class MaterialCollection
         *    \return Material *
         */
         //////////////////////////////////////////////////////////////////////////
-        Material * getMaterial(std::string element);
+        Material * getMaterial(string element);
 
     protected:
 
@@ -129,7 +129,5 @@ class MaterialCollection
         static MaterialCollection* instance;           // Instance of MaterialCollection
         Collection<Material,MaterialIndex> collection; // Collection object
 };
-
-} // CaxidyEngine
 
 #endif // MATERIALCOLLECTION_H

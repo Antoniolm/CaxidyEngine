@@ -24,7 +24,7 @@
 #include "gamestate.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class EndMapRegion : public Region
 {
@@ -35,7 +35,7 @@ class EndMapRegion : public Region
         *   @param regionFeatures -> the value json that contain all the information of our endMapRegion object
         */
         //////////////////////////////////////////////////////////////////////////
-        EndMapRegion(const rapidjson::Value & regionFeatures);
+        EndMapRegion(const Value & regionFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -56,7 +56,5 @@ class EndMapRegion : public Region
 
     private:
 };
-
-} // CaxidyEngine 
 
 #endif // ENDMAPREGION_H

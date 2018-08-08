@@ -27,7 +27,6 @@
 #include <fstream>
 #include <sstream>
 
-namespace CaxidyEngine {
 
 class OptionManager
 {
@@ -98,7 +97,5 @@ class OptionManager
         bool window;                    // Current mode (full screen or  window)
         int volume;                     // Current volume of the video game
 };
-
-} // CaxidyEngine 
 
 #endif // OPTIONMANAGER_H

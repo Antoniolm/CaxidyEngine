@@ -36,8 +36,6 @@
 #include "collection/soundcollection.h"
 #include <string>
 
-namespace CaxidyEngine {
-    
 class DeadMenu : public Menu
 {
     public:
@@ -47,7 +45,7 @@ class DeadMenu : public Menu
         *    @param fileName -> the name of the file with the texture of our menu
         */
         //////////////////////////////////////////////////////////////////////////
-        DeadMenu(vec3f initialPos, std::string fileName);
+        DeadMenu(vec3f initialPos,string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -88,7 +86,7 @@ class DeadMenu : public Menu
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void add(std::string fileName);
+        void add(string fileName);
 
     protected:
 
@@ -97,7 +95,5 @@ class DeadMenu : public Menu
         Sound * openSound;     // Sound for open an option
         Sound * moveSound;     // Sound for movement
 };
-
-} // CaxidyEngine
 
 #endif // DEADMENU_H

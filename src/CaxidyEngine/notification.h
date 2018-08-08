@@ -28,7 +28,7 @@
 #include "rapidjson/document.h"
 #include "gamestate.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class Notification : public Object3D
 {
@@ -41,7 +41,7 @@ class Notification : public Object3D
         //////////////////////////////////////////////////////////////////////////
         /** Json constructor */
         //////////////////////////////////////////////////////////////////////////
-        Notification(const rapidjson::Value & notificationFeatures);
+        Notification(const Value & notificationFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -103,7 +103,5 @@ class Notification : public Object3D
         bool activatedNoti;     // Flag of the notification was activated
 
 };
-
-} // CaxidyEngine 
 
 #endif // NOTIFICATION_H

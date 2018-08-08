@@ -21,8 +21,6 @@
 #include "CaxidyEngine/text.h"
 #include "collection/meshcollection.h"
 
-namespace CaxidyEngine {
-    
 InventoryMenu::InventoryMenu(){
 
 }
@@ -55,5 +53,3 @@ void InventoryMenu::updateState(GameState & gameState){
 void InventoryMenu::clearInventory(){
 
 }
-
-} // CaxidyEngine

@@ -19,8 +19,6 @@
 
 #include "celshading.h"
 
-namespace CaxidyEngine {
-    
 CelShading::CelShading(Shader * aShader)
 {
     shader=aShader;
@@ -67,5 +65,3 @@ void CelShading::generateSilhouette(GameState & gameState){
     glCullFace(GL_BACK);
     context.celShading_mode=false;
 }
-
-} // CaxidyEngine 

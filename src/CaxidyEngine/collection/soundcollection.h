@@ -29,8 +29,6 @@
 #include "collection.h"
 #include "collection.cpp"
 
-namespace CaxidyEngine {
-
 enum SoundIndex{
     sCoin, //0
     sOpen,
@@ -82,7 +80,7 @@ class SoundCollection
         *    \return Sound *
         */
         //////////////////////////////////////////////////////////////////////////
-        Sound * getSound(std::string element);
+        Sound * getSound(string element);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -103,7 +101,5 @@ class SoundCollection
         static SoundCollection* instance;        // Instance of soundCollection
         Collection<Sound,SoundIndex> collection; // Collection object
 };
-
-} // CaxidyEngine
 
 #endif // SOUNDCOLLECTION_H

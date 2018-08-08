@@ -19,8 +19,6 @@
 
 #include "optionmanager.h"
 
-namespace CaxidyEngine {
-
 OptionManager* OptionManager::instance = NULL;
 
 OptionManager::OptionManager()
@@ -102,4 +100,3 @@ void OptionManager::save(std::pair<int,int>aResolution,bool wind,int aVolume){
     savedFile.close();
 }
 
-} // CaxidyEngine 

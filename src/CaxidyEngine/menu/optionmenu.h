@@ -38,8 +38,7 @@
 #include "CaxidyEngine/window.h"
 #include <cstdlib>
 
-namespace CaxidyEngine {
-    
+using namespace std;
 class Text;
 class OptionMenu : public Menu
 {
@@ -47,7 +46,7 @@ class OptionMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        OptionMenu(vec3f posMenu, std::string mat, std::string currentMat, std::string matBack);
+        OptionMenu(vec3f posMenu,string mat,string currentMat, string matBack);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -94,7 +93,7 @@ class OptionMenu : public Menu
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void add(std::string fileName);
+        void add(string fileName);
 
     protected:
 
@@ -106,7 +105,7 @@ class OptionMenu : public Menu
         *   @param value -> the new value of that option
         */
         //////////////////////////////////////////////////////////////////////////
-        void updateOption(int option, std::string value);
+        void updateOption(int option,string value);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -116,7 +115,7 @@ class OptionMenu : public Menu
         //////////////////////////////////////////////////////////////////////////
         void initOptions();
 
-        std::vector<std::pair<int,int> > resolution; //Vector of resolutions
+        vector<pair<int,int> > resolution; //Vector of resolutions
         int indexResolution;    // Index for the current resolution
         bool window;            // False -> full screen
         int volume;             // Current volume
@@ -127,7 +126,5 @@ class OptionMenu : public Menu
         Sound * moveSound;      // Sound for movement
         Material * material;    // Material for background
 };
-
-} // CaxidyEngine
 
 #endif // OPTIONMENU_H

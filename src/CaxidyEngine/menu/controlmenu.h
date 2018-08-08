@@ -36,7 +36,7 @@
 #include "collection/soundcollection.h"
 #include <string>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class ControlMenu : public Menu
 {
@@ -47,7 +47,7 @@ class ControlMenu : public Menu
         *    @param fileName -> the name of the file of our background
         */
         //////////////////////////////////////////////////////////////////////////
-        ControlMenu(vec3f position, std::string fileName);
+        ControlMenu(vec3f position,string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -87,7 +87,5 @@ class ControlMenu : public Menu
         Sound * moveSound;      // Sound for movement
         Material * material;    // Material for background
 };
-
-} // CaxidyEngine
 
 #endif // CONTROLMENU_H

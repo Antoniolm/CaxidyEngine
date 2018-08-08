@@ -26,8 +26,6 @@
 #include <cstdlib>
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
-    
 class Light
 {
     public:
@@ -101,7 +99,5 @@ class Light
     private:
 
 };
-
-} // CaxidyEngine
 
 #endif // LIGHT_H

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 #include <vector>
 #include "scriptlmd.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 class AnimationList
 {
@@ -101,10 +101,8 @@ class AnimationList
     protected:
 
     private:
-        std::vector<ScriptLMD *> animations;
+        vector<ScriptLMD *> animations;
         int currentAnimation;
 };
-
-} // CaxidyEngine
 
 #endif // ANIMATIONLIST_H

@@ -19,9 +19,7 @@
 
 #include "trapdoor.h"
 
-namespace CaxidyEngine {
-
-TrapDoor::TrapDoor(const rapidjson::Value & trapDoorFeatures, int id){
+TrapDoor::TrapDoor(const Value & trapDoorFeatures, int id){
     position=vec4f(trapDoorFeatures["position"][0].GetFloat(),trapDoorFeatures["position"][1].GetFloat(),trapDoorFeatures["position"][2].GetFloat()+0.1f,1.0);
 
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -194,5 +192,3 @@ void TrapDoor::initAnimation(){
 
     animationDown->add(script);
 }
-
-} // CaxidyEngine

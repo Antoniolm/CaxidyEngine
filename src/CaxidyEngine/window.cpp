@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "window.h"
 #include "mesh/file_obj.h"
-
-namespace CaxidyEngine {
 
 Window* Window::instance = NULL;
 
@@ -46,7 +44,7 @@ Window::~Window(){
 
 //**********************************************************************//
 
-void Window::setParameters(const std::string & aTitle,int aHeight,int aWidth){
+void Window::setParameters(const string & aTitle,int aHeight,int aWidth){
     title=aTitle;
     height=aHeight;
     width=aWidth;
@@ -79,7 +77,7 @@ bool Window::createWindow(){
 		else {
             //Initialize SDL_mixer
             if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 512 ) == -1 ){
-                    std::cout<< "SDL_mixer could not initialize!"<<std::endl;
+                    cout<< "SDL_mixer could not initialize!"<<endl;
                     salida = false;
             }
 			context = SDL_GL_CreateContext(window);
@@ -87,7 +85,7 @@ bool Window::createWindow(){
 	}
 
     if ( TTF_Init( )== -1 ){
-        std::cout << "SDL_ttf could not initialize! SDL_ttf Error:"<< std::endl;
+        cout << "SDL_ttf could not initialize! SDL_ttf Error:"<< endl;
         salida=false;
     }
 
@@ -174,14 +172,14 @@ int Window::getHeight(){
 
 //**********************************************************************//
 
-void Window::setTitle(std::string aTitle){
+void Window::setTitle(string aTitle){
     title=aTitle;
     SDL_SetWindowTitle(window,title.c_str());
 }
 
 //**********************************************************************//
 
-std::string Window::getTitle(){
+string Window::getTitle(){
     return title;
 }
 
@@ -200,5 +198,3 @@ void Window::fullScreen(bool value){
 bool Window::getIsFullScreen(){
     return fullScreenMode;
 }
-
-} // CaxidyEngine 

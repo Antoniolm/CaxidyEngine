@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "sound.h"
-
-namespace CaxidyEngine {
 
 Sound::~Sound(){
 
@@ -57,13 +55,13 @@ bool Sound::isPause(int currentChannel){
 
 //**********************************************************************//
 
-bool Sound::loadSound(const std::string & aFile,int aVolume,int aChannel,int aloop){
+bool Sound::loadSound(const string & aFile,int aVolume,int aChannel,int aloop){
     return false;
 }
 
 //**********************************************************************//
 
-std::string & Sound::getFile(){
+string & Sound::getFile(){
     return file;
 }
 
@@ -97,5 +95,3 @@ int Sound::calculateVolume(float distance){
 
     return resultVolume;
 }
-
-} // CaxidyEngine

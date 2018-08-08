@@ -27,8 +27,6 @@
 #include "CaxidyEngine/profile.h"
 #include "sound/sound.h"
 
-namespace CaxidyEngine {
-    
 Menu::~Menu()
 {
     //dtor
@@ -59,5 +57,3 @@ void Menu::updateState(GameState & gameState){}
 bool Menu::isActivate(){
     return activateMenu;
 }
-
-} // CaxidyEngine

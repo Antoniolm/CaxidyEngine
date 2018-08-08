@@ -28,7 +28,8 @@
 
 #include "XmlParserUtils.h"
 
-namespace CaxidyEngine {
+using namespace rapidxml;
+using namespace std;
 
 class AnimationLoader
 {
@@ -39,21 +40,19 @@ class AnimationLoader
         //////////////////////////////////////////////////////////////////////////
         AnimationLoader();
 
-        AnimationData & getAnimation(rapidxml::xml_node<> & animation_node, rapidxml::xml_node<> & joint_node);
+        AnimationData & getAnimation(xml_node<> & animation_node, xml_node<> & joint_node);
 
     protected:
 
     private:
-        rapidxml::xml_node<> *  meshData;
+        xml_node<> *  meshData;
 
         Matrix4f current_matrix_; // Matrix 4x4
         XmlParserUtils xml_parser;
 
-        std::vector<VertexSkinData> vertex_weights_;
+        vector<VertexSkinData> vertex_weights_;
 
         AnimationData animation_data_;
 };
-
-} // CaxidyEngine
 
 #endif // ANIMATIONLOADER_H

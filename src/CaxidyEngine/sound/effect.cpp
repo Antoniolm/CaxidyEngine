@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "effect.h"
 
-namespace CaxidyEngine {
-    
 Effect::Effect()
 {
     file="";
@@ -45,14 +43,14 @@ Effect::Effect(const Effect & aSound){
 
 
     effect= Mix_LoadWAV(&file[0u]);
-    if( effect == NULL) std::cout<< "Unable to load the effect ->"<< file<< std::endl;
+    if( effect == NULL) cout<< "Unable to load the effect ->"<< file<<endl;
 
 }
 
 //**********************************************************************//
 
-Effect::Effect(const std::string & aFile,int aVolume,int aChannel,int aloop){
-    std::cout<< "Sound ->"<< aFile<<std::endl;
+Effect::Effect(const string & aFile,int aVolume,int aChannel,int aloop){
+    cout<< "Sound ->"<< aFile<<endl;
     file=aFile;
     channel=aChannel;
     loop=aloop;
@@ -61,7 +59,7 @@ Effect::Effect(const std::string & aFile,int aVolume,int aChannel,int aloop){
 
 
     effect= Mix_LoadWAV(&file[0u]);
-    if( effect == NULL) std::cout<< "Unable to load the effect ->"<< file<<std::endl;
+    if( effect == NULL) cout<< "Unable to load the effect ->"<< file<<endl;
 
 }
 
@@ -146,7 +144,7 @@ bool Effect::isPause(int currentChannel){
 
 //**********************************************************************//
 
-bool Effect::loadSound(const std::string & aFile,int aVolume,int aChannel,int aloop){
+bool Effect::loadSound(const string & aFile,int aVolume,int aChannel,int aloop){
     file=aFile;
     channel=aChannel;
     loop=aloop;
@@ -157,7 +155,7 @@ bool Effect::loadSound(const std::string & aFile,int aVolume,int aChannel,int al
 
     effect= Mix_LoadWAV(&file[0u]);
     if( effect == NULL){
-        std::cout<< "Unable to load the effect ->"<< file<<std::endl;
+        cout<< "Unable to load the effect ->"<< file<<endl;
         result=false;
     }
 
@@ -166,7 +164,7 @@ bool Effect::loadSound(const std::string & aFile,int aVolume,int aChannel,int al
 
 //**********************************************************************//
 
-std::string & Effect::getFile(){
+string & Effect::getFile(){
     return file;
 }
 
@@ -177,5 +175,3 @@ void Effect::updateVolume(int currentChannel,float distance){
         Mix_Volume(currentChannel,calculateVolume(distance));
     }
 }
-
-} // CaxidyEngine

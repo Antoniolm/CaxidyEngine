@@ -22,8 +22,6 @@
 
 #include "CaxidyEngine/object3d.h"
 
-namespace CaxidyEngine {
-    
 class NodeSceneGraph;
 class Mesh;
 class GameState;
@@ -87,7 +85,7 @@ class Menu : public Object3D
         NodeSceneGraph * root;      // Root of the object
         Matrix4f * positionMenu;    // Position of the menu
         bool activateMenu;          // Flag for activated menu
-        std::vector<Texture *> options;  // Vector of options
+        vector<Texture *> options;  // Vector of options
         int currentOption;          // Current option
         Material * currentMaterial; // Current material
         Material * materialBack;    // Material back
@@ -96,7 +94,5 @@ class Menu : public Object3D
     private:
 
 };
-
-} // CaxidyEngine
 
 #endif // MENU_H

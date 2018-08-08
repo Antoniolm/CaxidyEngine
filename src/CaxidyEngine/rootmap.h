@@ -43,7 +43,7 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/filereadstream.h"
 #include "decorationobject.h"
-#include "voxels/voxel.h"
+#include "voxel.h"
 #include "voxelgroup.h"
 #include "sound/sound.h"
 #include "sound/music.h"
@@ -55,7 +55,8 @@
 #include "loaderthread.h"
 #include "menu/moviescreen.h"
 
-namespace CaxidyEngine {
+
+using namespace std;
 
 class ObjectGroup;
 class ParticleSystem;
@@ -83,7 +84,7 @@ class RootMap : public Object3D
         *    \return void
         */
         /////////////////////////////////////////////////////////////////////////
-        virtual void initialize(std::string fileMap);
+        virtual void initialize(string fileMap);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -185,7 +186,7 @@ class RootMap : public Object3D
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
-        std::string getNextMap();
+        string getNextMap();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -197,26 +198,24 @@ class RootMap : public Object3D
 
     protected:
 
-        std::vector<int> indexMap[500][500];             // Array of vector for spacial indexation
-        std::vector<ObjectScene *> objs;                 // Vector of objects scene
-        std::vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
-        std::vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
-        std::vector<Object3D *> elements;                // Vector with all the elements of the game
-        std::vector<Region *> regions;               // Vector of regions
-        std::vector<Light *> lights;                     // Vector of lights
+        vector<int> indexMap[500][500];             // Array of vector for spacial indexation
+        vector<ObjectScene *> objs;                 // Vector of objects scene
+        vector<ObjectGroup *> objectGroup;          // Vector of groups of objects
+        vector<ObjectScene *> decorationObjs;       // Vector of decorations objects
+        vector<Object3D *> elements;                // Vector with all the elements of the game
+        vector<Region *> regions;               // Vector of regions
+        vector<Light *> lights;                     // Vector of lights
         EndMapRegion * endMapRegion;                // End region of the map
         Notification * title;                       // Title of the map
         ObjectScene * background;                   // Background of the map
         Sound * backSound;                          // back sound of the map
         MovieScreen * movie;                        // Screen of movie of the map
-        std::string nextMapFile;                         // Next map
+        string nextMapFile;                         // Next map
         LoaderThread * loader;                      // Loader of map
         bool loading;                               // Flag the map is loading
 
     private:
         void deleteObject3d(Object3D * obj);
 };
-
-} // CaxidyEngine 
 
 #endif // ROOTMAP_H

@@ -15,6 +15,6 @@ find_package(SDL2TTF REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 
-add_subdirectory("src/GraphicEngine")
+add_subdirectory("src/CaxidyEngine")
 add_subdirectory("examples/VideoGame")
 add_subdirectory("examples/BasicVideoGame")

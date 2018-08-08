@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 #include "controller.h"
 #include <iostream>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class GamepadController : public Controller
 {
@@ -91,7 +91,5 @@ class GamepadController : public Controller
         SDL_GameController * controller;    // Game pad of the controller
         SDL_Joystick *joy;                  // Joystick of the game pad
 };
-
-} // CaxidyEngine
 
 #endif // GAMEPADCONTROLLER_H

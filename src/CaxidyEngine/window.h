@@ -30,8 +30,7 @@
 #include <string>
 #include "sound/sound.h"
 
-namespace CaxidyEngine {
-
+using namespace std;
 class Window
 {
     public:
@@ -48,7 +47,7 @@ class Window
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void setParameters(const std::string & aTitle,int aHeight,int aWidth);
+        void setParameters(const string & aTitle,int aHeight,int aWidth);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -129,7 +128,7 @@ class Window
         *    @param title -> the new title of the window
         */
         //////////////////////////////////////////////////////////////////////////
-        void setTitle(std::string aTitle);
+        void setTitle(string aTitle);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -137,7 +136,7 @@ class Window
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
-        std::string getTitle();
+        string getTitle();
 
         static Window * getInstance(){
             if(instance == NULL)
@@ -181,11 +180,9 @@ class Window
         SDL_Window * window;        // Window of the object
         SDL_GLContext context;      // OpenGL context of the object
         bool fullScreenMode;        // Flag of window mode
-        std::string title;               // Title of the window
+        string title;               // Title of the window
         int height;                 // Height of the window
         int width;                  // Width of the window
 };
-
-} // CaxidyEngine 
 
 #endif // WINDOW_H

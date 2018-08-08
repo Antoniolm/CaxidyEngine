@@ -36,8 +36,6 @@
 #include "collection/soundcollection.h"
 #include <string>
 
-namespace CaxidyEngine {
-
 enum MainMenuOption{
     START,
     CONTINUE,
@@ -46,13 +44,15 @@ enum MainMenuOption{
     EXIT
 };
 
+using namespace std;
+
 class MainMenu : public Menu
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        MainMenu(vec3f initPos, std::string fileName);
+        MainMenu(vec3f initPos,string fileName);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -82,7 +82,7 @@ class MainMenu : public Menu
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void add(std::string fileName,MainMenuOption aOption);
+        void add(string fileName,MainMenuOption aOption);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -111,13 +111,11 @@ class MainMenu : public Menu
     protected:
 
     private:
-        std::vector<MainMenuOption> actionOption; // Vector of option of the menu
+        vector<MainMenuOption> actionOption; // Vector of option of the menu
         Sound * openSound;                   // Sound for open an option
         Sound * moveSound;                   // Sound for movement
         Sound * ambientSound;                   // Sound for movement
         bool hasSave;
 };
-
-} // CaxidyEngine
 
 #endif // MAINMENU_H

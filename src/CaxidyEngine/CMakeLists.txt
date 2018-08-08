@@ -26,7 +26,7 @@ add_library(CaxidyEngine
     "${CMAKE_CURRENT_SOURCE_DIR}/shadowtexture.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/speakingsketch.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/text.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/voxels/voxel.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/voxel.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/voxelgroup.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/window.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/animation/animationlist.cpp"

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,8 +23,6 @@
 #include "matrix4fdynamic.h"
 #include "structdata.h"
 
-namespace CaxidyEngine {
-    
 class AxisRotation : public Matrix4fDynamic
 {
     public:
@@ -111,7 +109,5 @@ class AxisRotation : public Matrix4fDynamic
         vec3f axis;             // Direction of the movement
         float currentGrade;     // Current grade of the movement
 };
-
-} // CaxidyEngine
 
 #endif // AXISROTATION_H

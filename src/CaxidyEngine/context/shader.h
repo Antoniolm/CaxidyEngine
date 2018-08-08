@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 #include <iostream>
 #include <fstream>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class Shader
 {
@@ -38,7 +38,7 @@ class Shader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        Shader(const std::string & aVertexfile,const std::string & aFragmentfile);
+        Shader(const string & aVertexfile,const string & aFragmentfile);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -51,7 +51,7 @@ class Shader
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void setFiles(const std::string & aVertexfile,const std::string & aFragmentfile);
+        void setFiles(const string & aVertexfile,const string & aFragmentfile);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -60,7 +60,7 @@ class Shader
         *                 false-> fragmentShaders was not  compiled successfully
         */
         //////////////////////////////////////////////////////////////////////////
-        bool compileFragmentShaders(const std::string & aFragmentfile="");
+        bool compileFragmentShaders(const string & aFragmentfile="");
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -69,7 +69,7 @@ class Shader
         *                 false-> VertexShaders was not  compiled successfully
         */
         //////////////////////////////////////////////////////////////////////////
-        bool compileVertexShaders(const std::string & aVertexfile="");
+        bool compileVertexShaders(const string & aVertexfile="");
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -87,7 +87,7 @@ class Shader
         *                 false-> Program don't created successfully
         */
         //////////////////////////////////////////////////////////////////////////
-        bool createProgram(const std::string & aVertexfile="",const std::string & aFragmentfile="");
+        bool createProgram(const string & aVertexfile="",const string & aFragmentfile="");
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -100,8 +100,8 @@ class Shader
     protected:
 
     private:
-        std::string vertexfile;      // File of the vertex shader
-        std::string fragmentfile;    // File of the fragment shader
+        string vertexfile;      // File of the vertex shader
+        string fragmentfile;    // File of the fragment shader
         GLuint programID;       // Id of the program shader
         GLuint fragmentID;      // Id of the compiled fragment shader
         GLuint vertexID;        // Id of the compiled vertex shader
@@ -113,9 +113,7 @@ class Shader
         *    \return string -> That string contains the text in the file
         */
         //////////////////////////////////////////////////////////////////////////
-        std::string LoadFileTxt(const std::string & file);
+        string LoadFileTxt(const string & file);
 };
-
-} // CaxidyEngine
 
 #endif // SHADER_H

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,9 +19,7 @@
 
 #include "creditscreen.h"
 
-namespace CaxidyEngine {
-    
-CreditScreen::CreditScreen(vec3f initialPos, std::string fileName)
+CreditScreen::CreditScreen(vec3f initialPos,string fileName)
 {
     currentOption=0;
     activateMenu=false;
@@ -109,8 +107,6 @@ void CreditScreen::activate(){
 
 //**********************************************************************//
 
-void CreditScreen::add(std::string fileName){
+void CreditScreen::add(string fileName){
     currentMaterial->setTexture(fileName.c_str());
 }
-
-} // CaxidyEngine

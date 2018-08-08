@@ -23,8 +23,6 @@
 
 #include "matrix/matrix4f.h"
 
-namespace CaxidyEngine {
-    
 class ScriptAnimation
 {
     public:
@@ -50,7 +48,5 @@ class ScriptAnimation
     private:
         float initialTime;
 };
-
-} // CaxidyEngine
 
 #endif // SCRIPTANIMATION_H

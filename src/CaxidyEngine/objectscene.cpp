@@ -20,8 +20,6 @@
 #include "objectscene.h"
 #include "gamestate.h"
 
-namespace CaxidyEngine {
-    
 ObjectScene::ObjectScene()
 {
     //ctor
@@ -91,7 +89,7 @@ void ObjectScene::generateBoundingbox(){
     matrixBounding.setMatrix(mat);
 
     //generate vertex
-    std::vector<vec4f> vertex;
+    vector<vec4f> vertex;
 
     vertex.push_back(vec4f(boundingBox.minValue.x,boundingBox.maxValue.y,boundingBox.maxValue.z,1.0));   vertex.push_back(vec4f(boundingBox.minValue.x,boundingBox.minValue.y,boundingBox.maxValue.z,1.0));
     vertex.push_back(vec4f(boundingBox.maxValue.x,boundingBox.maxValue.y,boundingBox.maxValue.z,1.0));   vertex.push_back(vec4f(boundingBox.maxValue.x,boundingBox.minValue.y,boundingBox.maxValue.z,1.0));
@@ -156,5 +154,3 @@ bool ObjectScene::isShadow(){
 bool ObjectScene::isDeleting(){
     return false;
 }
-
-} // CaxidyEngine 

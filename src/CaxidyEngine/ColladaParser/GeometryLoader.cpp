@@ -25,9 +25,7 @@
 #include <vector>
 #include <iomanip>
 
-namespace CaxidyEngine {
-
-GeometryLoader::GeometryLoader(rapidxml::xml_node<> & geometry_node,const std::vector<VertexSkinData> & vertex_weights)
+GeometryLoader::GeometryLoader(xml_node<> & geometry_node,const vector<VertexSkinData> & vertex_weights)
 {
     meshData = geometry_node.first_node("geometry")->first_node("mesh");
     vertex_weights_ = vertex_weights;
@@ -43,16 +41,16 @@ void GeometryLoader::read_data()
     std::string aux_pos_id = meshData->first_node("vertices")->first_node("input")->first_attribute("source")->value();
     std::string positions_id = aux_pos_id.substr(aux_pos_id.find("#")+1);
     
-    rapidxml::xml_node<> * positionsData = xml_parser.getChildWithAttribute(meshData, "source", "id", positions_id)->first_node("float_array");
+    xml_node<> * positionsData = xml_parser.getChildWithAttribute(meshData, "source", "id", positions_id)->first_node("float_array");
 
-    int count = std::stoi(positionsData->first_attribute("count")->value());
+    int count = stoi(positionsData->first_attribute("count")->value());
 
-    std::vector<std::string> pos_data = xml_parser.extract(positionsData->value());
+    vector<string> pos_data = xml_parser.extract(positionsData->value());
     for (int i = 0; i < count/3; i++) {
 			vec4f position(
-                std::stof(pos_data[i * 3]), 
-                std::stof(pos_data[i * 3 + 1]), 
-                std::stof(pos_data[i * 3 + 2]), 
+                stof(pos_data[i * 3]), 
+                stof(pos_data[i * 3 + 1]), 
+                stof(pos_data[i * 3 + 2]), 
                 1.0f);
             position.transform(current_matrix_.getMatrix());
 			vertices.push_back(Vertex(vertices.size(), vec3f(position.x, position.y, position.z), vertex_weights_[vertices.size()]));
@@ -62,15 +60,15 @@ void GeometryLoader::read_data()
     std::string normals_id = xml_parser.getChildWithAttribute(meshData->first_node("polylist"), "input", "semantic", "NORMAL")->first_attribute("source")->value();
     normals_id = normals_id.substr(normals_id.find("#")+1);
 
-    rapidxml::xml_node<> * normalsData = xml_parser.getChildWithAttribute(meshData,"source", "id", normals_id)->first_node("float_array");
-	count = std::stoi(normalsData->first_attribute("count")->value());
+    xml_node<> * normalsData = xml_parser.getChildWithAttribute(meshData,"source", "id", normals_id)->first_node("float_array");
+	count = stoi(normalsData->first_attribute("count")->value());
 
-    std::vector<std::string> norm_data = xml_parser.extract(normalsData->value());
+    vector<string> norm_data = xml_parser.extract(normalsData->value());
 		for (int i = 0; i < count/3; i++) {
             vec4f normal(
-                    std::stof(norm_data[i * 3]), 
-                    std::stof(norm_data[i * 3 + 1]), 
-                    std::stof(norm_data[i * 3 + 2]), 
+                    stof(norm_data[i * 3]), 
+                    stof(norm_data[i * 3 + 1]), 
+                    stof(norm_data[i * 3 + 2]), 
                     0.0f);
 
             normal.transform(current_matrix_.getMatrix());    
@@ -81,26 +79,26 @@ void GeometryLoader::read_data()
     std::string text_id = xml_parser.getChildWithAttribute(meshData->first_node("polylist"), "input", "semantic", "TEXCOORD")->first_attribute("source")->value();
     text_id = text_id.substr(text_id.find("#")+1);
 
-    rapidxml::xml_node<> * texCoordsData = xml_parser.getChildWithAttribute(meshData,"source", "id", text_id)->first_node("float_array");
-    count = std::stoi(texCoordsData->first_attribute("count")->value());
+    xml_node<> * texCoordsData = xml_parser.getChildWithAttribute(meshData,"source", "id", text_id)->first_node("float_array");
+    count = stoi(texCoordsData->first_attribute("count")->value());
 
-    std::vector<std::string> tex_data = xml_parser.extract(texCoordsData->value());
+    vector<string> tex_data = xml_parser.extract(texCoordsData->value());
     for (int i = 0; i < count/2; i++) {
     	textures.push_back(vec2f(
-            std::stof(tex_data[i * 2]),
-            std::stof(tex_data[i * 2 + 1])));
+            stof(tex_data[i * 2]),
+            stof(tex_data[i * 2 + 1])));
     }
 }
 
 void GeometryLoader::process_data(){ 
-    rapidxml::xml_node<> * poly = meshData->first_node("polylist");
+    xml_node<> * poly = meshData->first_node("polylist");
 
-    std::vector<std::string> index_data = xml_parser.extract(poly->first_node("p")->value());
+    vector<string> index_data = xml_parser.extract(poly->first_node("p")->value());
 
     for(int i=0;i<index_data.size()/4;i++){
-        int positionIndex = std::stoi(index_data[i * 4]);
-        int normalIndex = std::stoi(index_data[i * 4 + 1]);
-        int texCoordIndex = std::stoi(index_data[i * 4 + 2]);
+        int positionIndex = stoi(index_data[i * 4]);
+        int normalIndex = stoi(index_data[i * 4 + 1]);
+        int texCoordIndex = stoi(index_data[i * 4 + 2]);
 
         Vertex current_vertex = vertices[positionIndex];
         if(!current_vertex.is_set()){
@@ -139,5 +137,3 @@ MeshData GeometryLoader::getMesh()
 {
     return MeshData(vertices_array_, textures_array_, normals_array_, indices_array_, jointIds_array_, weights_array_);
 }
-
-} // CaxidyEngine

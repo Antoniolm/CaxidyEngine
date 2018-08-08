@@ -19,15 +19,13 @@
 
 #include "jumpbutton.h"
 
-namespace CaxidyEngine {
-    
 JumpButton::JumpButton(){
 
 }
 
 //**********************************************************************//
 
-JumpButton::JumpButton(const rapidjson::Value & buttonFeatures){
+JumpButton::JumpButton(const Value & buttonFeatures){
     position=vec4f(buttonFeatures["position"][0].GetFloat(),buttonFeatures["position"][1].GetFloat(),buttonFeatures["position"][2].GetFloat(),1.0);
     velocity=vec4f(buttonFeatures["velocity"][0].GetFloat(),buttonFeatures["velocity"][1].GetFloat(),buttonFeatures["velocity"][2].GetFloat(),1.0);
     acceleration=vec4f(buttonFeatures["acceleration"][0].GetFloat(),buttonFeatures["acceleration"][1].GetFloat(),buttonFeatures["acceleration"][2].GetFloat(),1.0);
@@ -125,5 +123,3 @@ void JumpButton::initAnimation(){
 
     animationDown->add(scriptDown);
 }
-
-} // CaxidyEngine

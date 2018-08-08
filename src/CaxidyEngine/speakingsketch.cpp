@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2017-2018 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,9 +19,7 @@
 
 #include "speakingsketch.h"
 
-namespace CaxidyEngine {
-
-SpeakingSketch::SpeakingSketch(vec3f aPos, std::string material){
+SpeakingSketch::SpeakingSketch(vec3f aPos, string material){
 
     initialPosition=aPos;
     MeshCollection * meshCollect= MeshCollection::getInstance();
@@ -87,5 +85,3 @@ void SpeakingSketch::setActivate(bool value){
 bool SpeakingSketch::isActivated(){
     return activated;
 }
-
-} // CaxidyEngine 

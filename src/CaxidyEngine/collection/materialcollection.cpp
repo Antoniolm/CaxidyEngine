@@ -20,13 +20,11 @@
 #include "materialcollection.h"
 #include "material/material.h"
 
-namespace CaxidyEngine {
-
 MaterialCollection* MaterialCollection::instance = NULL;
 
 MaterialCollection::MaterialCollection()
 {
-    std::cout<< "Game is loading -> materials"<< std::endl;
+    cout<< "Game is loading -> materials"<< endl;
     collection.addElement(new Material(vec3f(1.5f, 1.5f, 1.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/cubeDungeon.png","resources/textures/cubeDungeonBump.png","",mCUBE_DUNG));
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/cubeDungeonB.png","","",mCUBE_DUNGB));
@@ -214,8 +212,6 @@ Material* MaterialCollection::getMaterial(MaterialIndex element){
 
 //**********************************************************************//
 
-Material* MaterialCollection::getMaterial(std::string element){
+Material* MaterialCollection::getMaterial(string element){
     return collection.getElement(element);
 }
-
-} // CaxidyEngine

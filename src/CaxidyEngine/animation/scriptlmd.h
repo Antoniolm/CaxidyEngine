@@ -25,7 +25,7 @@
 #include "matrix/matrixscript.h"
 #include <vector>
 
-namespace CaxidyEngine {
+using namespace std;
 
 class ScriptLMD : public ScriptAnimation
 {
@@ -94,11 +94,9 @@ class ScriptLMD : public ScriptAnimation
     protected:
 
     private:
-        std::vector<MatrixScript *> script;  // Vector of matrixScript *
+        vector<MatrixScript *> script;  // Vector of matrixScript *
         float currentTime;              // Current time of the script
 
 };
-
-} // CaxidyEngine
 
 #endif // SCRIPTLMD_H

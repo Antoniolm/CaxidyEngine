@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "matrixstatic.h"
 
-namespace CaxidyEngine {
-    
 MatrixStatic::MatrixStatic()
 {
     currentMatrix.identity();
@@ -51,5 +49,3 @@ Matrix4f &  MatrixStatic::updateState(float time){
 void MatrixStatic::resetState(){
 
 }
-
-} // CaxidyEngine

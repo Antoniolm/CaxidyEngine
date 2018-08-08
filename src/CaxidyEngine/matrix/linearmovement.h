@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -25,8 +25,6 @@
 #include "structdata.h"
 #include "SDL2/SDL.h"
 
-namespace CaxidyEngine {
-    
 class LinearMovement : public Matrix4fDynamic {
 
     public:
@@ -96,7 +94,5 @@ class LinearMovement : public Matrix4fDynamic {
         vec3f velocity;     // Velocity of the movement
         float currentTime;  // Current time of the movement
 };
-
-} // CaxidyEngine
 
 #endif // LINEARMOVEMENT_H

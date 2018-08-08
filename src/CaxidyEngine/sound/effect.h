@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -23,10 +23,9 @@
 #include "sound.h"
 #include <unistd.h>
 
+
 #define MAX_CHANNEl 16
-
-namespace CaxidyEngine {
-
+using namespace std;
 class Effect : public Sound
 {
     public:
@@ -46,7 +45,7 @@ class Effect : public Sound
         *    \param aType -> int with the type of element(music or effect)
         */
         //////////////////////////////////////////////////////////////////////////
-        Effect(const std::string & aFile,int aVolume=128,int aChannel=-1, int aloop=-1);
+        Effect(const string & aFile,int aVolume=128,int aChannel=-1, int aloop=-1);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -61,7 +60,7 @@ class Effect : public Sound
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        bool loadSound(const std::string & aFile,int aVolume=128 ,int aChannel=-1, int aloop=-1);
+        bool loadSound(const string & aFile,int aVolume=128 ,int aChannel=-1, int aloop=-1);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -120,7 +119,7 @@ class Effect : public Sound
         *    \return string
         */
         //////////////////////////////////////////////////////////////////////////
-        std::string & getFile();
+        string & getFile();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -136,7 +135,5 @@ class Effect : public Sound
     private:
         Mix_Chunk * effect; // Effect object
 };
-
-} // CaxidyEngine
 
 #endif // EFFECT_H

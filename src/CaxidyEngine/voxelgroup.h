@@ -28,8 +28,6 @@
 #include "collection/materialcollection.h"
 #include "collection/meshcollection.h"
 
-namespace CaxidyEngine {
-
 class VoxelGroup : public Object3D
 {
     public:
@@ -41,7 +39,7 @@ class VoxelGroup : public Object3D
         //////////////////////////////////////////////////////////////////////////
         /** Constructor json */
         //////////////////////////////////////////////////////////////////////////
-        VoxelGroup(const rapidjson::Value & voxelGFeature,std::vector<ObjectScene *> & objs);
+        VoxelGroup(const rapidjson::Value & voxelGFeature,vector<ObjectScene *> & objs);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -52,7 +50,5 @@ class VoxelGroup : public Object3D
 
     private:
 };
-
-} // CaxidyEngine 
 
 #endif // VOXELGROUP_H

@@ -23,8 +23,6 @@
 #include "material/material.h"
 #include <vector>
 
-namespace CaxidyEngine {
-    
 class MaterialStack
 {
     public:
@@ -68,7 +66,5 @@ class MaterialStack
     private:
         std::vector<Material*> mainStack;   //Stack of material
 };
-
-} // CaxidyEngine
 
 #endif // MATERIALSTACK_H

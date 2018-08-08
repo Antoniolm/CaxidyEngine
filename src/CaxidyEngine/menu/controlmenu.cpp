@@ -19,9 +19,7 @@
 
 #include "controlmenu.h"
 
-namespace CaxidyEngine {
-    
-ControlMenu::ControlMenu(vec3f position, std::string fileName)
+ControlMenu::ControlMenu(vec3f position,string fileName)
 {
     currentOption=0;
     activateMenu=false;
@@ -138,5 +136,3 @@ void ControlMenu::updateState(GameState & gameState){
 void ControlMenu::activate(){
     activateMenu=true;
 }
-
-} // CaxidyEngine

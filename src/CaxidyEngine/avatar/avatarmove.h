@@ -26,8 +26,6 @@
 #include "matrix/linearmovement.h"
 #include "CaxidyEngine/objectscene.h"
 
-namespace CaxidyEngine {
-    
 class RootMap;
 class AvatarMove: public Avatar
 {
@@ -173,7 +171,5 @@ class AvatarMove: public Avatar
         float impactTime; // Time for an impact
     private:
 };
-
-} // CaxidyEngine
 
 #endif // AVATARMOVE_H

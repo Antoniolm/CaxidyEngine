@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "particlesystem.h"
 
-namespace CaxidyEngine {
-
 ParticleSystem::ParticleSystem()
 {
     //ctor
@@ -28,7 +26,7 @@ ParticleSystem::ParticleSystem()
 
 //**********************************************************************//
 
-ParticleSystem::ParticleSystem(int numParticle, std::string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime)
+ParticleSystem::ParticleSystem(int numParticle,string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime)
 {
     vec3f pos=(aMaxPos-aMinPos)/2;
     position=vec4f(pos.x,pos.y,pos.z,1.0);
@@ -74,14 +72,14 @@ ParticleSystem::ParticleSystem(const rapidjson::Value & particleFeature){
 
 ParticleSystem::~ParticleSystem()
 {
-    for(std::list<Particle *>::iterator it = particles.begin() ; it != particles.end(); ++it)
+    for(list<Particle *>::iterator it = particles.begin() ; it != particles.end(); ++it)
         delete (*it);
 }
 
 //**********************************************************************//
 
 void ParticleSystem::visualization(Context & cv){
-    std::list<Particle *>::iterator it;
+    list<Particle *>::iterator it;
     for(it=particles.begin();it!=particles.end();it++){
         (*it)->visualization(cv);
     }
@@ -95,7 +93,7 @@ void ParticleSystem::updateState(GameState & gameState){
     if(time-currentTime>200)
         currentTime=time-50;
 
-    std::list<Particle *>::iterator it=particles.begin();
+    list<Particle *>::iterator it=particles.begin();
     while(it!=particles.end()){ //loop about our particle and update them
         (*it)->updateState(gameState);
         if((*it)->getRemainingTime()<=0.0){
@@ -118,7 +116,7 @@ void ParticleSystem::updateState(GameState & gameState){
 }
 
 //**********************************************************************//
-void ParticleSystem::setParameters(int numParticle, std::string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime){
+void ParticleSystem::setParameters(int numParticle,string aMaterial,vec3f aScale,vec3f aMinPos,vec3f aMaxPos,vec3f aVelocity,float aMinTime,float aMaxTime){
     vec3f pos=(aMaxPos-aMinPos)/2;
     position=vec4f(pos.x,pos.y,pos.z,1.0);
 
@@ -184,5 +182,3 @@ float ParticleSystem::getMinTime(){
 float ParticleSystem::getMaxTime(){
     return maxTime;
 }
-
-} // CaxidyEngine 

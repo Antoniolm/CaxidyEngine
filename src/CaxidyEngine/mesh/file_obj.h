@@ -31,7 +31,7 @@
 #include <math.h>
 #include "matrix/structdata.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 class FileObj{
     public :
@@ -42,7 +42,7 @@ class FileObj{
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void readMesh(const char * fileName, std::vector<vec3f> & vertex,std::vector<GLushort> & triangles);
+        void readMesh(const char * fileName,std::vector<vec3f> & vertex,std::vector<GLushort> & triangles);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -95,7 +95,5 @@ class FileObj{
         static FileObj* instance;   //Instance of the fileObj
 
 };
-
-} // CaxidyEngine
 
 #endif // FILE_OBJ_H

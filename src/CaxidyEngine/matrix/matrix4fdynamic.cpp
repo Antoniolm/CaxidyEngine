@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "matrix4fdynamic.h"
-
-namespace CaxidyEngine {
 
 Matrix4fDynamic::~Matrix4fDynamic(){
 
@@ -42,5 +40,3 @@ void Matrix4fDynamic::resetState(){
 Matrix4f & Matrix4fDynamic::getMatrix(){
     return currentMatrix;
 }
-
-} // CaxidyEngine

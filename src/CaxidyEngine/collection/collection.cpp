@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,8 +20,6 @@
 #define COLLECTION_CPP
 
 #include "collection.h"
-
-namespace CaxidyEngine {
 
 template <class T,class T2>
 Collection<T,T2>::Collection()
@@ -49,8 +47,8 @@ void Collection<T,T2>::addElement(T * element){
 //**********************************************************************//
 
 template <class T,class T2>
-void Collection<T,T2>::addIndex(std::string index,T2 value){
-    enumMap.insert(std::pair<std::string,T2> (index,value));
+void Collection<T,T2>::addIndex(string index,T2 value){
+    enumMap.insert(pair<string,T2> (index,value));
 }
 
 //**********************************************************************//
@@ -63,7 +61,7 @@ T * Collection<T,T2>::getElement(T2 value){
 //**********************************************************************//
 
 template <class T,class T2>
-T * Collection<T,T2>::getElement(std::string index){
+T * Collection<T,T2>::getElement(string index){
     return collection[(enumMap.find(index))->second];
 }
 
@@ -73,7 +71,5 @@ template <class T,class T2>
 int Collection<T,T2>::getSize(){
     return collection.size();
 }
-
-} // CaxidyEngine
 
 #endif // COLLECTION_CPP

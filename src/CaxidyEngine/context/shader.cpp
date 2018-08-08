@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "shader.h"
 
-namespace CaxidyEngine {
-
 Shader::Shader()
 {
     //ctor
@@ -28,7 +26,7 @@ Shader::Shader()
 
 //**********************************************************************//
 
-Shader::Shader(const std::string & aVertexfile,const std::string  & aFragmentfile){
+Shader::Shader(const string & aVertexfile,const string  & aFragmentfile){
     vertexfile=aVertexfile;
     fragmentfile=aFragmentfile;
     createProgram();
@@ -43,14 +41,14 @@ Shader::~Shader()
 
 //**********************************************************************//
 
-void Shader::setFiles(const std::string & aVertexfile,const std::string & aFragmentfile){
+void Shader::setFiles(const string & aVertexfile,const string & aFragmentfile){
     vertexfile=aVertexfile;
     fragmentfile=aFragmentfile;
 }
 
 //**********************************************************************//
 
-bool Shader::compileFragmentShaders(const std::string & aFragmentfile){
+bool Shader::compileFragmentShaders(const string & aFragmentfile){
     //Check the parameters
     if(aFragmentfile!="")
         fragmentfile=aFragmentfile;
@@ -58,7 +56,7 @@ bool Shader::compileFragmentShaders(const std::string & aFragmentfile){
     //Initialize local variable
     bool result=true;
     GLint isShaderCompiled;
-    std::string fShaderCode = LoadFileTxt(fragmentfile);
+    string fShaderCode = LoadFileTxt(fragmentfile);
 
 
 	//Compiling our FragmentShader
@@ -70,7 +68,7 @@ bool Shader::compileFragmentShaders(const std::string & aFragmentfile){
 	glGetShaderiv(fragmentID, GL_COMPILE_STATUS, &isShaderCompiled);
     if(!isShaderCompiled)
     {
-        std::cout<< "Unable to compile Fragment shader"<< fragmentfile<<std::endl;
+        cout<< "Unable to compile Fragment shader"<< fragmentfile<<endl;
         result = false;
     }
 
@@ -79,7 +77,7 @@ bool Shader::compileFragmentShaders(const std::string & aFragmentfile){
 
 //**********************************************************************//
 
-bool Shader::compileVertexShaders(const std::string & aVertexfile){
+bool Shader::compileVertexShaders(const string & aVertexfile){
     //Check the parameters
     if(aVertexfile!="")
         vertexfile=aVertexfile;
@@ -87,7 +85,7 @@ bool Shader::compileVertexShaders(const std::string & aVertexfile){
     //Initialize local variable
     bool result=true;
     GLint isShaderCompiled;
-    std::string vShaderCode = LoadFileTxt(vertexfile);
+    string vShaderCode = LoadFileTxt(vertexfile);
 
     //Compiling our vertexShader
     vertexID = glCreateShader(GL_VERTEX_SHADER);
@@ -98,7 +96,7 @@ bool Shader::compileVertexShaders(const std::string & aVertexfile){
     glGetShaderiv( vertexID, GL_COMPILE_STATUS, &isShaderCompiled );
     if(!isShaderCompiled)
     {
-        std::cout<< "Unable to compile vertex shader"<< vertexfile<<std::endl;
+        cout<< "Unable to compile vertex shader"<< vertexfile<<endl;
         result = false;
     }
 
@@ -120,7 +118,7 @@ bool Shader::linkShaders(){
     //Check the program
 	glGetProgramiv(programID, GL_LINK_STATUS, &isProgramRight);
 	if (!isProgramRight){
-        std::cout<< "Unable to link the program"<<std::endl;
+        cout<< "Unable to link the program"<<endl;
         result = false;
 	}
 
@@ -133,7 +131,7 @@ bool Shader::linkShaders(){
 
 //**********************************************************************//
 
-bool Shader::createProgram(const std::string & aVertexfile,const std::string & aFragmentfile){
+bool Shader::createProgram(const string & aVertexfile,const string & aFragmentfile){
     //Check the parameters
     if(aVertexfile!="" && aFragmentfile!=""){
         vertexfile=aVertexfile;
@@ -157,20 +155,18 @@ GLuint Shader::getProgram(){
 //**********************************************************************//
 //* Private Methods
 
-std::string Shader::LoadFileTxt(const std::string & file){
+string Shader::LoadFileTxt(const string & file){
 
-    std::string content="";
-    std::ifstream sourceFile(file.c_str(),std::ifstream::in);
+    string content="";
+    ifstream sourceFile(file.c_str(),ifstream::in);
 
     if( sourceFile.is_open() ){
-        content.assign( ( std::istreambuf_iterator< char >( sourceFile ) ), std::istreambuf_iterator< char >() );
+        content.assign( ( istreambuf_iterator< char >( sourceFile ) ), istreambuf_iterator< char >() );
         sourceFile.close();
 	}
     else{
-        std::cout<<"Unable to access the file : "+ file<<std::endl;
+        cout<<"Unable to access the file : "+ file<<endl;
     }
 
     return content;
 }
-
-} // CaxidyEngine

@@ -26,35 +26,33 @@
 
 #include "XmlParserUtils.h"
 
-namespace CaxidyEngine {
-
-SkinLoader::SkinLoader(rapidxml::xml_node<> &library_controllers_node, int maxWeights):
+SkinLoader::SkinLoader(xml_node<> &library_controllers_node, int maxWeights):
 	skinning_data_()
 {
 	XmlParserUtils xml_parser;
-    rapidxml::xml_node<> * skin_node = library_controllers_node.first_node("controller")->first_node("skin");
+    xml_node<> * skin_node = library_controllers_node.first_node("controller")->first_node("skin");
 	maxWeights_ = maxWeights;
 	///////////////
 	// JoinList
 	//////////////
-    rapidxml::xml_node<> * input_node = skin_node->first_node("vertex_weights");
-	std::string jointId= xml_parser.getChildWithAttribute(input_node, "input", "semantic", "JOINT")->first_attribute("source")->value();
+    xml_node<> * input_node = skin_node->first_node("vertex_weights");
+	string jointId= xml_parser.getChildWithAttribute(input_node, "input", "semantic", "JOINT")->first_attribute("source")->value();
 	jointId = jointId.substr(jointId.find("#")+1);
 
-	rapidxml::xml_node<> * joints_node = xml_parser.getChildWithAttribute(skin_node, "source", "id", jointId)->first_node("Name_array");
+	xml_node<> * joints_node = xml_parser.getChildWithAttribute(skin_node, "source", "id", jointId)->first_node("Name_array");
 
-	std::vector<std::string> jointsList = xml_parser.extract(joints_node->value());
+	vector<string> jointsList = xml_parser.extract(joints_node->value());
 
 	///////////////
 	// Weights
 	//////////////
-	std::string weightsDataId= xml_parser.getChildWithAttribute(input_node, "input", "semantic", "WEIGHT")->first_attribute("source")->value();
+	string weightsDataId= xml_parser.getChildWithAttribute(input_node, "input", "semantic", "WEIGHT")->first_attribute("source")->value();
 	weightsDataId = weightsDataId.substr(weightsDataId.find("#")+1);
 
-	rapidxml::xml_node<> * weights_node = xml_parser.getChildWithAttribute(skin_node, "source", "id", weightsDataId)->first_node("float_array");
+	xml_node<> * weights_node = xml_parser.getChildWithAttribute(skin_node, "source", "id", weightsDataId)->first_node("float_array");
 
-	std::vector<std::string> weights = xml_parser.extract(weights_node->value());
-	std::vector<float> weights_list;
+	vector<string> weights = xml_parser.extract(weights_node->value());
+	vector<float> weights_list;
 
 	for(int i=0;i < weights.size();i++)
 		weights_list.push_back(stof(weights[i]));
@@ -62,8 +60,8 @@ SkinLoader::SkinLoader(rapidxml::xml_node<> &library_controllers_node, int maxWe
 	///////////////
 	// Effective joints
 	//////////////
-	std::vector<std::string> vcountList = xml_parser.extract(input_node->first_node("vcount")->value());
-	std::vector<int> vcounts;
+	vector<string> vcountList = xml_parser.extract(input_node->first_node("vcount")->value());
+	vector<int> vcounts;
 
 	for (int i = 0; i < vcountList.size(); i++) {
 		vcounts.push_back(stoi(vcountList[i]));
@@ -72,8 +70,8 @@ SkinLoader::SkinLoader(rapidxml::xml_node<> &library_controllers_node, int maxWe
 	///////////////
 	// Create skin_data
 	//////////////
-	std::vector<std::string> vList = xml_parser.extract(input_node->first_node("v")->value());
-	std::vector<VertexSkinData> skinningData;
+	vector<string> vList = xml_parser.extract(input_node->first_node("v")->value());
+	vector<VertexSkinData> skinningData;
 
 	int pointer = 0;
 	VertexSkinData skinData;
@@ -99,5 +97,3 @@ SkinningData & SkinLoader::extractSkinData()
 {
 	return skinning_data_;
 }
-
-} // CaxidyEngine

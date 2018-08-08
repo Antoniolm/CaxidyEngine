@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "file_obj.h"
 
-namespace CaxidyEngine {
-    
 FileObj* FileObj::instance = NULL;
 
 //**********************************************************************//
@@ -34,26 +32,26 @@ FileObj::FileObj(){
 void FileObj::readMesh(const char * fileName,std::vector<vec3f> & vertex,std::vector<GLushort> & triangles){
     int value;
     float x,y,z;
-    std::string aux;
-    std::istringstream * stream;
-    std::ifstream in(fileName, std::ios::in);
+    string aux;
+    istringstream * stream;
+    ifstream in(fileName, ios::in);
     if (!in)
     {
-        std::cout<< "Cannot open " << fileName << std::endl;
+        cout<< "Cannot open " << fileName << endl;
     }
 
-    std::string line;
+    string line;
     while (getline(in, line))
     {
         if (line.substr(0,2) == "v ") { //Extract vertex
-            stream=new std::istringstream(line.substr(2));
+            stream=new istringstream(line.substr(2));
             (*stream) >> x;
             (*stream) >> y;
             (*stream) >> z;
             vertex.push_back(vec3f(x,y,z));
         }
         else if (line.substr(0,2) == "f "){ //Extract face
-            stream=new std::istringstream(line.substr(2));
+            stream=new istringstream(line.substr(2));
             for(int i=0;i<3;i++){
                 (*stream) >> value;
                 triangles.push_back((GLushort)--value);
@@ -71,34 +69,34 @@ void FileObj::readEverything(const char * fileName,std::vector<vec3f> & vertex,s
     int value;
     char charValue;
     float x,y,z;
-    std::istringstream * stream;
+    istringstream * stream;
     std::vector<vec3f> vertexAux;
     std::vector<vec3f> normalsVertex;
     std::vector<vec2f> textureVertex;
     std::vector<GLushort> trianglesIndex;
     std::vector<int> normalFaces;
     std::vector<int> textureFaces;
-    std::ifstream in(fileName, std::ios::in);
+    ifstream in(fileName, ios::in);
     if (!in)
     {
-        std::cout<< "Cannot open " << fileName << std::endl;
+        cout<< "Cannot open " << fileName << endl;
     }
     else{
-        std::cout<< "Geometry ->"<< fileName<< std::endl;
+        cout<< "Geometry ->"<< fileName<< endl;
     }
 
-    std::string line;
+    string line;
     while (getline(in, line))
     {
         if (line.substr(0,2) == "v "){ //Extract vertex
-            stream=new std::istringstream(line.substr(2));
+            stream=new istringstream(line.substr(2));
             (*stream) >> x;
             (*stream) >> y;
             (*stream) >> z;
             vertexAux.push_back(vec3f(x,y,z));
         }
         else if (line.substr(0,3) == "vn "){ //Extract normal face
-            stream=new std::istringstream(line.substr(3));
+            stream=new istringstream(line.substr(3));
             (*stream) >> x;
             (*stream) >> y;
             (*stream) >> z;
@@ -106,14 +104,14 @@ void FileObj::readEverything(const char * fileName,std::vector<vec3f> & vertex,s
 
         }
         else if (line.substr(0,3) == "vt "){ //Extract texture Coord
-            stream=new std::istringstream(line.substr(3));
+            stream=new istringstream(line.substr(3));
             (*stream) >> x;
             (*stream) >> y;
             textureVertex.push_back(vec2f(x,y));
 
         }
         else if (line.substr(0,2) == "f "){
-            stream=new std::istringstream(line.substr(2));
+            stream=new istringstream(line.substr(2));
             for(int i=0;i<3;i++){
                 //Extract the triangle face
                 (*stream) >> value;
@@ -258,4 +256,5 @@ void FileObj::calculate_bump(std::vector<vec3f> & vertex,std::vector<GLushort> &
 	}
 }
 
-} // CaxidyEngine
+
+

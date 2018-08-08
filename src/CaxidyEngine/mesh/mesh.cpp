@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include "mesh.h"
 
-namespace CaxidyEngine {
-
 Mesh::Mesh()
 {
     //ctor
@@ -28,7 +26,7 @@ Mesh::Mesh()
 
 //**********************************************************************//
 
-Mesh::Mesh(const std::string & aFile,bool save){
+Mesh::Mesh(const string & aFile,bool save){
     objFile=aFile;
     numIndex=0;
     saveInfo=save;
@@ -37,8 +35,8 @@ Mesh::Mesh(const std::string & aFile,bool save){
 
 //**********************************************************************//
 
-Mesh::Mesh(const std::vector<vec3f> & vertex, const std::vector<GLushort> & triangles,const std::vector<vec3f> & normals,const std::vector<vec2f> & textureCord,
-           const std::vector<vec3f> & tangent,const std::vector<vec3f> & biTangent,bool save){
+Mesh::Mesh(const vector<vec3f> & vertex, const vector<GLushort> & triangles,const vector<vec3f> & normals,const vector<vec2f> & textureCord,
+           const vector<vec3f> & tangent,const vector<vec3f> & biTangent,bool save){
     init(vertex,triangles,normals,textureCord,tangent,biTangent);
 }
 
@@ -58,12 +56,12 @@ Mesh::~Mesh()
 //**********************************************************************//
 
 void Mesh::init(){
-    std::vector<GLushort> aTriangles;
-    std::vector<vec3f> aVertex;
-    std::vector<vec3f> aNormals;
-    std::vector<vec2f> aTextureCord;
-    std::vector<vec3f> aTangent;
-    std::vector<vec3f> aBiTangent;
+    vector<GLushort> aTriangles;
+    vector<vec3f> aVertex;
+    vector<vec3f> aNormals;
+    vector<vec2f> aTextureCord;
+    vector<vec3f> aTangent;
+    vector<vec3f> aBiTangent;
 
     FileObj * obj=FileObj::getInstance();
     obj->readEverything(objFile.c_str(),aVertex,aTriangles,aNormals,aTextureCord,aTangent,aBiTangent,true,true);
@@ -85,8 +83,8 @@ void Mesh::init(){
 
 //**********************************************************************//
 
-void Mesh::init(const std::vector<vec3f> & aVertex, const std::vector<GLushort> & aTriangles,const std::vector<vec3f> & aNormals,const std::vector<vec2f> & aTextureCord
-                ,const std::vector<vec3f> & aTangent,const std::vector<vec3f> & aBiTangent){
+void Mesh::init(const vector<vec3f> & aVertex, const vector<GLushort> & aTriangles,const vector<vec3f> & aNormals,const vector<vec2f> & aTextureCord
+                ,const vector<vec3f> & aTangent,const vector<vec3f> & aBiTangent){
     generateBoundingBox(aVertex);
     numIndex=aTriangles.size();
 
@@ -124,43 +122,43 @@ BoundingBox Mesh::getBoundingBox(){
 
 //**********************************************************************//
 
-std::vector<vec3f> & Mesh::getVertex(){
+vector<vec3f> & Mesh::getVertex(){
     return vertex;
 }
 
 //**********************************************************************//
 
-std::vector<GLushort> & Mesh::getTriangles(){
+vector<GLushort> & Mesh::getTriangles(){
     return triangles;
 }
 
 //**********************************************************************//
 
-std::vector<vec3f> & Mesh::getNormals(){
+vector<vec3f> & Mesh::getNormals(){
     return normals;
 }
 
 //**********************************************************************//
 
-std::vector<vec2f> & Mesh::getTextCoord(){
+vector<vec2f> & Mesh::getTextCoord(){
     return textureCord;
 }
 
 //**********************************************************************//
 
-std::vector<vec3f> & Mesh::getTangent(){
+vector<vec3f> & Mesh::getTangent(){
     return tangent;
 }
 
 //**********************************************************************//
 
-std::vector<vec3f> & Mesh::getBitTangent(){
+vector<vec3f> & Mesh::getBitTangent(){
     return bitTangent;
 }
 
 //**********************************************************************//
 
-void Mesh::generateBoundingBox(const std::vector<vec3f> & vertex){
+void Mesh::generateBoundingBox(const vector<vec3f> & vertex){
     float maxX,maxY,maxZ,minX,minY,minZ;
     maxX=vertex[0].x;  maxY=vertex[0].y;  maxZ=vertex[0].z;
     minX=vertex[0].x;  minY=vertex[0].y;  minZ=vertex[0].z;
@@ -182,8 +180,8 @@ void Mesh::generateBoundingBox(const std::vector<vec3f> & vertex){
 
 //**********************************************************************//
 
-void Mesh::loadMesh(const std::vector<vec3f> & vertex, const std::vector<GLushort> & triangles,const std::vector<vec3f> & normals,const std::vector<vec2f> & textureCord
-                    ,const std::vector<vec3f> & tangent,const std::vector<vec3f> & bitTangent){
+void Mesh::loadMesh(const vector<vec3f> & vertex, const vector<GLushort> & triangles,const vector<vec3f> & normals,const vector<vec2f> & textureCord
+                    ,const vector<vec3f> & tangent,const vector<vec3f> & bitTangent){
     glGenVertexArrays(1, &vertexArrayObject);
 	glBindVertexArray(vertexArrayObject);
 
@@ -227,4 +225,3 @@ void Mesh::loadMesh(const std::vector<vec3f> & vertex, const std::vector<GLushor
     glBindVertexArray(0);
 }
 
-} // CaxidyEngine

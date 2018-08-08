@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -20,8 +20,6 @@
 #include "camera.h"
 #include "rootmap.h"
 
-namespace CaxidyEngine {
-    
 Camera::Camera(){
     viewMode=false;
     finishViewMode=false;
@@ -311,5 +309,3 @@ void Camera::setPosition(vec3f aPosition,GLuint shaderID){
     glUniformMatrix4fv(glGetUniformLocation(shaderID,"view"),1,GL_FALSE,camera.getMatrix());
     glUniform3f(glGetUniformLocation(shaderID, "viewPos"), position.x, position.y, position.z);
 }
-
-} // CaxidyEngine 

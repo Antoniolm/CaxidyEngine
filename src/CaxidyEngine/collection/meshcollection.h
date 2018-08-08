@@ -23,10 +23,9 @@
 #include "mesh/mesh.h"
 #include "collection.h"
 #include "collection.cpp"
-
-namespace CaxidyEngine {
-
 class Mesh;
+
+using namespace std;
 
 enum MeshIndex{
     CUBE,       //0
@@ -120,7 +119,7 @@ class MeshCollection
         *    \return Mesh *
         */
         //////////////////////////////////////////////////////////////////////////
-        Mesh * getMesh(std::string element);
+        Mesh * getMesh(string element);
 
     protected:
 
@@ -133,7 +132,5 @@ class MeshCollection
         static MeshCollection* instance;       // Instance of MeshCollection
         Collection<Mesh,MeshIndex> collection; // Collection object
 };
-
-} // CaxidyEngine
 
 #endif // MESHCOLLECTION_H

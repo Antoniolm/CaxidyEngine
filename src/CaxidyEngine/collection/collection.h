@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 #include <vector>
 #include <string>
 
-namespace CaxidyEngine {
+using namespace std;
 
 template <class T,class T2>
 class Collection
@@ -57,7 +57,7 @@ class Collection
         *   \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void addIndex(std::string index,T2 value);
+        void addIndex(string index,T2 value);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -75,7 +75,7 @@ class Collection
         *    \return T *
         */
         //////////////////////////////////////////////////////////////////////////
-        T * getElement(std::string index);
+        T * getElement(string index);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -88,11 +88,9 @@ class Collection
     protected:
 
     private:
-        std::vector<T *> collection; // Vector of elements
-        std::map<std::string,T2> enumMap; // Map of elements
+        vector<T *> collection; // Vector of elements
+        map<string,T2> enumMap; // Map of elements
 
 };
-
-} // CaxidyEngine
 
 #endif // COLLECTION_H

@@ -29,8 +29,6 @@
 #include "shader.h"
 #include <vector>
 
-namespace CaxidyEngine {
-    
 class MaterialStack;
 class Object3D;
 class Context
@@ -64,7 +62,5 @@ class Context
 
     private:
 };
-
-} // CaxidyEngine
 
 #endif // CONTEXT_H

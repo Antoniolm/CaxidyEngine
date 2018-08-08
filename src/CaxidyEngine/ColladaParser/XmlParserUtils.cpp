@@ -22,13 +22,13 @@
 
 #include "XmlParserUtils.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 rapidxml::xml_node<> * XmlParserUtils::getChildWithAttribute(
     rapidxml::xml_node<> *parent, 
-    const std::string & type, 
-    const std::string & attribute, 
-    const std::string & value)
+    const string & type, 
+    const string & attribute, 
+    const string & value)
 {
     rapidxml::xml_node<> *node = parent->first_node( type.c_str());
     while (node)
@@ -40,10 +40,10 @@ rapidxml::xml_node<> * XmlParserUtils::getChildWithAttribute(
     return node;
 }
 
-std::vector<std::string> XmlParserUtils::extract(const std::string& stoextract) {
-    std::vector<std::string> aListofWords;
-    std::stringstream sstoext(stoextract);
-    std::string sWordBuf;
+vector<string> XmlParserUtils::extract(const string& stoextract) {
+    vector<string> aListofWords;
+    stringstream sstoext(stoextract);
+    string sWordBuf;
 
     while (sstoext >> sWordBuf)
         aListofWords.push_back(sWordBuf);
@@ -51,7 +51,7 @@ std::vector<std::string> XmlParserUtils::extract(const std::string& stoextract) 
     return aListofWords;
 }
 
-int XmlParserUtils::indexOf(const std::vector<std::string> & elements, const std::string & value)
+int XmlParserUtils::indexOf(const vector<string> & elements, const string & value)
 {
     int index = -1;
     for(int i=0;i<elements.size();i++){
@@ -60,7 +60,5 @@ int XmlParserUtils::indexOf(const std::vector<std::string> & elements, const std
     }
     return index;
 }
-
-} // CaxidyEngine
 
 #endif // XMLPARSERUTILS_CPP

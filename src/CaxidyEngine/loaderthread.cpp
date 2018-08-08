@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -19,12 +19,10 @@
 
 #include "loaderthread.h"
 
-namespace CaxidyEngine {
-
 RootMap* LoaderThread::rootMap;
-std::string LoaderThread::fileMap="";
+string LoaderThread::fileMap="";
 
-LoaderThread::LoaderThread(RootMap * aRootMap, std::string aFileMap)
+LoaderThread::LoaderThread(RootMap * aRootMap,string aFileMap)
 {
     LoaderThread::rootMap=aRootMap;
     LoaderThread::fileMap=aFileMap;
@@ -48,5 +46,3 @@ void LoaderThread::initialize(){
 void LoaderThread::run(){
     loader=new std::thread([this] { this->initialize(); });
 }
-
-} // CaxidyEngine 

@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "music.h"
-
-namespace CaxidyEngine {
 
 Music::Music()
 {
@@ -44,13 +42,13 @@ Music::Music(Music & aSound){
     currentVolume=volume;
 
     music= Mix_LoadMUS(&file[0u]);
-    if( music == NULL ) std::cout<< "Unable to load the background music ->"<< file<<std::endl;
+    if( music == NULL ) cout<< "Unable to load the background music ->"<< file<<endl;
 }
 
 //**********************************************************************//
 
-Music::Music(const std::string & aFile,int aVolume,int aChannel,int aloop){
-    std::cout<< "Music ->"<< aFile<<std::endl;
+Music::Music(const string & aFile,int aVolume,int aChannel,int aloop){
+    cout<< "Music ->"<< aFile<<endl;
     file=aFile;
     channel=aChannel;
     loop=aloop;
@@ -58,7 +56,7 @@ Music::Music(const std::string & aFile,int aVolume,int aChannel,int aloop){
     currentVolume=volume;
 
     music= Mix_LoadMUS(&file[0u]);
-    if( music == NULL ) std::cout<< "Unable to load the background music ->"<< file<<std::endl;
+    if( music == NULL ) cout<< "Unable to load the background music ->"<< file<<endl;
 }
 
 //**********************************************************************//
@@ -119,7 +117,7 @@ bool Music::isPause(int currentChannel){
 
 //**********************************************************************//
 
-bool Music::loadSound(const std::string & aFile,int aVolume,int aChannel,int aloop){
+bool Music::loadSound(const string & aFile,int aVolume,int aChannel,int aloop){
     file=aFile;
     channel=aChannel;
     loop=aloop;
@@ -130,11 +128,10 @@ bool Music::loadSound(const std::string & aFile,int aVolume,int aChannel,int alo
 
     music= Mix_LoadMUS(&file[0u]);
     if( music == NULL ){
-        std::cout<< "Unable to load the background music ->"<< file<<std::endl;
+        cout<< "Unable to load the background music ->"<< file<<endl;
         result=false;
     }
 
     return result;
 }
 
-} // CaxidyEngine

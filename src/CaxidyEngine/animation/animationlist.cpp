@@ -19,8 +19,6 @@
 
 #include "animationlist.h"
 
-namespace CaxidyEngine {
-
 AnimationList::AnimationList()
 {
   currentAnimation=0;
@@ -75,5 +73,3 @@ ScriptLMD * AnimationList::getAnimation(){
 int AnimationList::getNumAnimation(){
     return animations.size();
 }
-
-} // CaxidyEngine

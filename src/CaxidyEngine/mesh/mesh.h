@@ -37,7 +37,7 @@
 #include "context/shader.h"
 #include "file_obj.h"
 
-namespace CaxidyEngine {
+using namespace std;
 
 enum MeshBufferPositions
 {
@@ -60,13 +60,13 @@ class Mesh : public Object3D
         //////////////////////////////////////////////////////////////////////////
         /**  Constructor */
         /////////////////////////////////////////////////////////////////////////
-        Mesh(const std::string & aFile,bool save=false);
+        Mesh(const string & aFile,bool save=false);
 
         //////////////////////////////////////////////////////////////////////////
         /**  Constructor */
         /////////////////////////////////////////////////////////////////////////
-        Mesh(const std::vector<vec3f> & vertex, const std::vector<GLushort> & triangles,const std::vector<vec3f> & normals
-             ,const std::vector<vec2f> & textureCord,const std::vector<vec3f> & tangent,const std::vector<vec3f> & biTangent,bool save=false);
+        Mesh(const vector<vec3f> & vertex, const vector<GLushort> & triangles,const vector<vec3f> & normals
+             ,const vector<vec2f> & textureCord,const vector<vec3f> & tangent,const vector<vec3f> & biTangent,bool save=false);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -104,7 +104,7 @@ class Mesh : public Object3D
         *    \return vector<vec3f> &
         */
         //////////////////////////////////////////////////////////////////////////
-        std::vector<vec3f> & getVertex();
+        vector<vec3f> & getVertex();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -112,7 +112,7 @@ class Mesh : public Object3D
         *    \return vector<GLushort> &
         */
         //////////////////////////////////////////////////////////////////////////
-        std::vector<GLushort> & getTriangles();
+        vector<GLushort> & getTriangles();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -120,7 +120,7 @@ class Mesh : public Object3D
         *    \return vector<vec3f> &
         */
         //////////////////////////////////////////////////////////////////////////
-        std::vector<vec3f> & getNormals();
+        vector<vec3f> & getNormals();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -128,7 +128,7 @@ class Mesh : public Object3D
         *    \return vector<vec2f> &
         */
         //////////////////////////////////////////////////////////////////////////
-        std::vector<vec2f> & getTextCoord();
+        vector<vec2f> & getTextCoord();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -136,7 +136,7 @@ class Mesh : public Object3D
         *    \return vector<vec3f> &
         */
         //////////////////////////////////////////////////////////////////////////
-        std::vector<vec3f> & getTangent();
+        vector<vec3f> & getTangent();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -144,7 +144,7 @@ class Mesh : public Object3D
         *    \return vector<vec3f> &
         */
         //////////////////////////////////////////////////////////////////////////
-        std::vector<vec3f> & getBitTangent();
+        vector<vec3f> & getBitTangent();
 
 
     protected:
@@ -164,8 +164,8 @@ class Mesh : public Object3D
         *    \return void
         */
         /////////////////////////////////////////////////////////////////////////
-        void init(const std::vector<vec3f> & vertex, const std::vector<GLushort> & triangles,const std::vector<vec3f> & normals,const std::vector<vec2f> & textureCord
-                ,const std::vector<vec3f> & tangent,const std::vector<vec3f> & biTangent);
+        void init(const vector<vec3f> & vertex, const vector<GLushort> & triangles,const vector<vec3f> & normals,const vector<vec2f> & textureCord
+                ,const vector<vec3f> & tangent,const vector<vec3f> & biTangent);
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -173,8 +173,8 @@ class Mesh : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void loadMesh(const std::vector<vec3f> & vertex, const std::vector<GLushort> & triangles,const std::vector<vec3f> & normals,const std::vector<vec2f> & textureCord,
-                      const std::vector<vec3f> & tangent=std::vector<vec3f>(),const std::vector<vec3f> & bitTangent=std::vector<vec3f>());
+        void loadMesh(const vector<vec3f> & vertex, const vector<GLushort> & triangles,const vector<vec3f> & normals,const vector<vec2f> & textureCord,
+                      const vector<vec3f> & tangent=vector<vec3f>(),const vector<vec3f> & bitTangent=vector<vec3f>());
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -182,22 +182,20 @@ class Mesh : public Object3D
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void generateBoundingBox(const std::vector<vec3f> & vertex);
+        void generateBoundingBox(const vector<vec3f> & vertex);
 
-        static const unsigned int NUM_BUFFERS = 6;      // Number of buffers
-        GLuint vertexArrayBuffers[NUM_BUFFERS];         // Vertex Array buffer
-        GLuint vertexArrayObject;                       // Vertex Array Object
-        std::string objFile;                            // File with the model 3D
-        int numIndex;                                   // number of index
-        bool saveInfo;                                  // Flag to save or not the info of its model
-        std::vector<vec3f> vertex;                      // Vector of vertex
-        std::vector<GLushort> triangles;                // Vector of triangles
-        std::vector<vec3f> normals;                     // Vector of normals
-        std::vector<vec2f> textureCord;                 // Vector of coordinate of texture
-        std::vector<vec3f> bitTangent;                  // Vector of bitangent
-        std::vector<vec3f> tangent;                     // Vector of tangent
+        static const unsigned int NUM_BUFFERS = 6; // Number of buffers
+        GLuint vertexArrayBuffers[NUM_BUFFERS];    // Vertex Array buffer
+        GLuint vertexArrayObject;                  // Vertex Array Object
+        string objFile;                            // File with the model 3D
+        int numIndex;                              // number of index
+        bool saveInfo;                             // Flag to save or not the info of its model
+        vector<vec3f> vertex;                      // Vector of vertex
+        vector<GLushort> triangles;                // Vector of triangles
+        vector<vec3f> normals;                     // Vector of normals
+        vector<vec2f> textureCord;                 // Vector of coordinate of texture
+        vector<vec3f> bitTangent;                  // Vector of bitangent
+        vector<vec3f> tangent;                     // Vector of tangent
 };
-
-} // CaxidyEngine
 
 #endif // MESH_H

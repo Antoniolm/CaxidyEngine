@@ -27,7 +27,8 @@
 
 #include "XmlParserUtils.h"
 
-namespace CaxidyEngine {
+using namespace rapidxml;
+using namespace std;
 
 class GeometryLoader
 {
@@ -36,7 +37,7 @@ class GeometryLoader
         //////////////////////////////////////////////////////////////////////////
         /** Constructor */
         //////////////////////////////////////////////////////////////////////////
-        GeometryLoader(rapidxml::xml_node<> & geometry_node,const std::vector<VertexSkinData> & vertex_weights);
+        GeometryLoader(xml_node<> & geometry_node,const vector<VertexSkinData> & vertex_weights);
 
         void read_data();
 
@@ -47,25 +48,23 @@ class GeometryLoader
     protected:
 
     private:
-        rapidxml::xml_node<> *  meshData;
+        xml_node<> *  meshData;
 
         Matrix4f current_matrix_; // Matrix 4x4
         XmlParserUtils xml_parser;
 
-        std::vector<VertexSkinData> vertex_weights_;
+        vector<VertexSkinData> vertex_weights_;
         
-        std::vector<float> vertices_array_;
-        std::vector<float> normals_array_;
-        std::vector<float> textures_array_;
-        std::vector<int> indices_array_;
-        std::vector<int> jointIds_array_;
-        std::vector<float> weights_array_;
+        vector<float> vertices_array_;
+        vector<float> normals_array_;
+        vector<float> textures_array_;
+        vector<int> indices_array_;
+        vector<int> jointIds_array_;
+        vector<float> weights_array_;
 
-        std::vector<Vertex> vertices;
-        std::vector<vec2f> textures;
-        std::vector<vec3f> normals;
+        vector<Vertex> vertices;
+        vector<vec2f> textures;
+        vector<vec3f> normals;
 };
-
-} // CaxidyEngine
 
 #endif // GEOMETRYLOADER_H

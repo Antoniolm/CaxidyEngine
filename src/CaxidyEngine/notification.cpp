@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "notification.h"
-
-namespace CaxidyEngine {
 
 Notification::Notification(vec3f aPosition,vec3f aScale,float aVisibleTime,MaterialIndex material)
 {
@@ -52,7 +50,7 @@ Notification::Notification(vec3f aPosition,vec3f aScale,float aVisibleTime,Mater
 
 //**********************************************************************//
 
-Notification::Notification(const rapidjson::Value & notificationFeatures)
+Notification::Notification(const Value & notificationFeatures)
 {
     position=vec4f(notificationFeatures["position"][0].GetFloat(),notificationFeatures["position"][1].GetFloat(),notificationFeatures["position"][2].GetFloat(),1.0);
     activatedNoti=true;
@@ -134,5 +132,3 @@ void Notification::setInitialTime(float value){
 float Notification::getInitialTime(){
     return initialTime;
 }
-
-} // CaxidyEngine 

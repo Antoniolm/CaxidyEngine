@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@
 // *********************************************************************
 
 #include "material.h"
-
-namespace CaxidyEngine {
 
 Material::Material()
 {
@@ -60,8 +58,7 @@ Material::Material(const Material & aMaterial){
 
 //**********************************************************************//
 
-Material::Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const std::string & aFileTextur,
-    const std::string & aFileBumpTextur,const std::string & aFileParallaxTextur,MaterialIndex aIndex){
+Material::Material(const vec3f & anAmbient,const vec3f & aDiffuse,const vec3f &aSpecular,float aShini,const string & aFileTextur,const string & aFileBumpTextur,const string & aFileParallaxTextur,MaterialIndex aIndex){
     ambient=anAmbient;
     diffuse=aDiffuse;
     specular=aSpecular;
@@ -147,7 +144,7 @@ void Material::setShininess(float aShini){
 
 //**********************************************************************//
 
-void Material::setTexture(const std::string & aFileTextur){
+void Material::setTexture(const string & aFileTextur){
     texture=0;
     if(aFileTextur!="")
         texture=new Texture(aFileTextur);
@@ -232,5 +229,3 @@ void Material::setMaterial(const Material & material){
     index=material.index;
 
 }
-
-} // CaxidyEngine

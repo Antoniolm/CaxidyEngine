@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
+// ** Copyright (C) 2016-2017 Antonio David López Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -22,8 +22,6 @@
 
 #include "matrix/structdata.h"
 
-namespace CaxidyEngine {
-    
 class GameState;
 class Region
 {
@@ -90,7 +88,5 @@ class Region
     private:
 
 };
-
-} // CaxidyEngine 
 
 #endif // REGION_H

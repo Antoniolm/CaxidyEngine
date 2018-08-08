@@ -32,7 +32,7 @@
 #include "avatar/avatarmove.h"
 #include "rapidjson/document.h"
 
-namespace CaxidyEngine {
+using namespace rapidjson;
 
 class RespawnVoxel;
 class MovableVoxel : public ObjectScene
@@ -54,7 +54,7 @@ class MovableVoxel : public ObjectScene
         *    @param ID -> ID of the movable voxel
         */
         //////////////////////////////////////////////////////////////////////////
-        MovableVoxel(const rapidjson::Value & movableFeatures,const std::vector<RespawnVoxel*> & respawns, int id);
+        MovableVoxel(const Value & movableFeatures,const vector<RespawnVoxel*> & respawns, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
@@ -119,7 +119,5 @@ class MovableVoxel : public ObjectScene
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();        
 };
-
-} // CaxidyEngine
 
 #endif // MOVABLEVOXEL_H
