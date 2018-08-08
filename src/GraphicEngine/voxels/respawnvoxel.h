@@ -17,35 +17,42 @@
 // **
 // *********************************************************************
 
-#ifndef JUMPBUTTON_H
-#define JUMPBUTTON_H
+#ifndef RESPAWNVOXEL_H
+#define RESPAWNVOXEL_H
 
-#include "GraphicEngine/object3d.h"
-#include "GraphicEngine/nodescenegraph.h"
-#include "GraphicEngine/matrix/matrix4f.h"
-#include "GraphicEngine/matrix/matrix4fdynamic.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/collection/materialcollection.h"
-#include "GraphicEngine/collection/soundcollection.h"
+#include "object3d.h"
+#include "nodescenegraph.h"
+#include "matrix/matrix4f.h"
+#include "matrix/matrix4fdynamic.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
 #include "rapidjson/document.h"
 
 using namespace rapidjson;
 
-class JumpButton : public Object3D
+class RespawnVoxel : public Object3D
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /**
         *   Constructor
-        *   @param buttonFeatures -> the value json that contain all the information of the jump button object
         */
         //////////////////////////////////////////////////////////////////////////
-        JumpButton(const Value & buttonFeatures);
+        RespawnVoxel();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   Constructor
+        *   @param respawnFeatures -> the value json that contain all the information of the RespawnVoxel object
+        */
+        //////////////////////////////////////////////////////////////////////////
+        RespawnVoxel(const Value & respawnFeatures);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~JumpButton();
+        virtual ~RespawnVoxel();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -68,31 +75,28 @@ class JumpButton : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return if the jump button is activated or not
+        *    It will return if the respawn voxel is activated or not
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
         bool isActivated();
     protected:
-
+        NodeSceneGraph * root;      // Root of the object
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the respawn voxel
+        ScriptLMD * animationUp;    // Up animation of the respawn voxel
+        ScriptLMD * animationDown;  // Down animation of the respawn voxel
+        bool activated;             // Flag to activation
+        Sound * activatedButton;      // Sound for its activation
     private:
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will initialize the animation of the jump button
+        *    It will initialize the animation of the respawn voxel
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
-        NodeSceneGraph * root;      // Root of the object
-        vec3f velocity;             // Initial velocity of the jump
-        vec3f acceleration;         // Initial acceleration of the jump
-        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the respawn voxel
-        ScriptLMD * animationUp;    // Up animation of the respawn voxel
-        ScriptLMD * animationDown;  // Down animation of the respawn voxel
-        bool activated;             // Flag to activation
-        bool jumping;               // Flag to know if the hero is jumping
-        Sound * activatedButton;    // Sound for its activation
+        
 };
 
-#endif // JUMPBUTTON_H
+#endif // RESPAWNVOXEL_H

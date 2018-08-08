@@ -17,44 +17,32 @@
 // **
 // *********************************************************************
 
-#ifndef RESPAWNVOXEL_H
-#define RESPAWNVOXEL_H
+#ifndef MOVABLEVOXELGAME_H
+#define MOVABLEVOXELGAME_H
 
-#include "GraphicEngine/object3d.h"
-#include "GraphicEngine/nodescenegraph.h"
-#include "GraphicEngine/matrix/matrix4f.h"
-#include "GraphicEngine/matrix/matrix4fdynamic.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/collection/materialcollection.h"
-#include "GraphicEngine/collection/soundcollection.h"
+#include "GraphicEngine/voxels/movablevoxel.h"
 #include "rapidjson/document.h"
+#include "avatar/enemy.h"
+#include "enemylist.h"
 
 using namespace rapidjson;
 
-class RespawnVoxel : public Object3D
+class MovableVoxelGame : public MovableVoxel
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /**
         *   Constructor
-        *   @param respawnFeatures -> the value json that contain all the information of the RespawnVoxel object
+        *   @param movableFeatures -> the value json that contain all the information of our movable voxel object
+        *    @param ID -> ID of the movable voxel
         */
         //////////////////////////////////////////////////////////////////////////
-        RespawnVoxel(const Value & respawnFeatures);
+        MovableVoxelGame(const Value & movableFeatures,const vector<RespawnVoxel*> & respawns, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~RespawnVoxel();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    The method will show the object in our interface
-        *    @param cv -> the context of our visualization
-        *    \return void
-        */
-        //////////////////////////////////////////////////////////////////////////
-        virtual void visualization(Context & cv);
+        virtual ~MovableVoxelGame();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -66,30 +54,18 @@ class RespawnVoxel : public Object3D
         //////////////////////////////////////////////////////////////////////////
         virtual void updateState(GameState & gameState);
 
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will return if the respawn voxel is activated or not
-        *    \return bool
-        */
-        //////////////////////////////////////////////////////////////////////////
-        bool isActivated();
     protected:
 
     private:
+
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will initialize the animation of the respawn voxel
-        *    \return void
+        *    Check the enemies that can be obstruct the movable voxel movement
+        *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
-        void initAnimation();
+        bool checkEnemies(vec3f newPos,vector<Enemy *> &enemies);
 
-        NodeSceneGraph * root;      // Root of the object
-        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the respawn voxel
-        ScriptLMD * animationUp;    // Up animation of the respawn voxel
-        ScriptLMD * animationDown;  // Down animation of the respawn voxel
-        bool activated;             // Flag to activation
-        Sound * activatedButton;      // Sound for its activation
 };
 
-#endif // RESPAWNVOXEL_H
+#endif // MOVABLEVOXELGAME_H

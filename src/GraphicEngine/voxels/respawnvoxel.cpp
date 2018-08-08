@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -18,6 +18,12 @@
 // *********************************************************************
 
 #include "respawnvoxel.h"
+
+RespawnVoxel::RespawnVoxel(){
+
+}
+
+//**********************************************************************//
 
 RespawnVoxel::RespawnVoxel(const Value & respawnFeatures){
     position=vec4f(respawnFeatures["position"][0].GetFloat(),respawnFeatures["position"][1].GetFloat(),respawnFeatures["position"][2].GetFloat(),1.0);

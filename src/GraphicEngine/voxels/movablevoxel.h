@@ -17,35 +17,49 @@
 // **
 // *********************************************************************
 
-#ifndef JUMPBUTTON_H
-#define JUMPBUTTON_H
+#ifndef MOVABLEVOXEL_H
+#define MOVABLEVOXEL_H
 
-#include "GraphicEngine/object3d.h"
-#include "GraphicEngine/nodescenegraph.h"
-#include "GraphicEngine/matrix/matrix4f.h"
-#include "GraphicEngine/matrix/matrix4fdynamic.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/collection/materialcollection.h"
-#include "GraphicEngine/collection/soundcollection.h"
+#include "objectscene.h"
+#include "respawnvoxel.h"
+#include "nodescenegraph.h"
+#include "matrix/matrix4f.h"
+#include "matrix/matrix4fdynamic.h"
+#include "matrix/acceleratedmovement.h"
+#include "collection/meshcollection.h"
+#include "collection/materialcollection.h"
+#include "collection/soundcollection.h"
+#include "avatar/avatarmove.h"
 #include "rapidjson/document.h"
 
 using namespace rapidjson;
 
-class JumpButton : public Object3D
+class RespawnVoxel;
+class MovableVoxel : public ObjectScene
 {
     public:
         //////////////////////////////////////////////////////////////////////////
         /**
         *   Constructor
-        *   @param buttonFeatures -> the value json that contain all the information of the jump button object
+        *   @param movableFeatures -> the value json that contain all the information of our movable voxel object
+        *    @param ID -> ID of the movable voxel
         */
         //////////////////////////////////////////////////////////////////////////
-        JumpButton(const Value & buttonFeatures);
+        MovableVoxel();
+
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *   Constructor
+        *   @param movableFeatures -> the value json that contain all the information of our movable voxel object
+        *    @param ID -> ID of the movable voxel
+        */
+        //////////////////////////////////////////////////////////////////////////
+        MovableVoxel(const Value & movableFeatures,const vector<RespawnVoxel*> & respawns, int id);
 
         //////////////////////////////////////////////////////////////////////////
         /** Destructor */
         //////////////////////////////////////////////////////////////////////////
-        virtual ~JumpButton();
+        virtual ~MovableVoxel();
 
         //////////////////////////////////////////////////////////////////////////
         /**
@@ -68,31 +82,42 @@ class JumpButton : public Object3D
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will return if the jump button is activated or not
+        *    It will return if the movable voxel is activated or not
         *    \return bool
         */
         //////////////////////////////////////////////////////////////////////////
         bool isActivated();
-    protected:
 
-    private:
+    protected:
+        vec4f defaultPosition;      // The initial position of the movable voxel
+        RespawnVoxel * respawn;     // Respawn Voxel linked with the Movable voxel
+        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the movable voxel
+        ScriptLMD * animation;      // animation of the movable voxel
+        float delayTime;            // Delay time
+        bool activated;             // Flag to activation
+        bool isFalling;             // Flag to know if is falling or not
+        avatarDirection currentDir; // Current direction of the movement
+        AcceleratedMovement * acceleratedMove;  // Accelerated movement
+        Sound * activatedVoxel;     // Sound for its activation
+        Sound * fallSound;     // Sound for its falling
+        int voxelID;                // Id of the movable voxel
+
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will initialize the animation of the jump button
+        *    The method will create the gravity for the movable voxel
         *    \return void
         */
         //////////////////////////////////////////////////////////////////////////
-        void initAnimation();
-
-        NodeSceneGraph * root;      // Root of the object
-        vec3f velocity;             // Initial velocity of the jump
-        vec3f acceleration;         // Initial acceleration of the jump
-        Matrix4f * transActivate;   // Matrix 4x4 for the activaction of the respawn voxel
-        ScriptLMD * animationUp;    // Up animation of the respawn voxel
-        ScriptLMD * animationDown;  // Down animation of the respawn voxel
-        bool activated;             // Flag to activation
-        bool jumping;               // Flag to know if the hero is jumping
-        Sound * activatedButton;    // Sound for its activation
+        ObjectScene * gravity(GameState & gameState);
+        
+    private:
+        //////////////////////////////////////////////////////////////////////////
+        /**
+        *    It will initialize the animation of the movable voxel
+        *    \return void
+        */
+        //////////////////////////////////////////////////////////////////////////
+        void initAnimation();        
 };
 
-#endif // JUMPBUTTON_H
+#endif // MOVABLEVOXEL_H

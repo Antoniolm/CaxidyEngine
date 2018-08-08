@@ -18,7 +18,13 @@
 // *********************************************************************
 
 #include "movablevoxel.h"
-#include "rootmapgame.h"
+#include "rootmap.h"
+
+MovableVoxel::MovableVoxel(){
+
+}
+
+//**********************************************************************//
 
 MovableVoxel::MovableVoxel(const Value & movableFeatures, const vector<RespawnVoxel*> & respawns , int id){
     position=vec4f(movableFeatures["position"][0].GetFloat(),movableFeatures["position"][1].GetFloat(),movableFeatures["position"][2].GetFloat()+0.1f,1.0);
@@ -70,158 +76,8 @@ void MovableVoxel::visualization(Context & cv){
 
 void MovableVoxel::updateState(GameState & gameState){
     float time=gameState.time;
-    Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
-
+    
     if(time-currentTime>200) currentTime=time-50;
-
-    vec3f posHero=hero->getPosition();
-    float distance=sqrt(pow(position.x-posHero.x,2.0)+pow(position.z-posHero.z,2.0));
-
-    bool auxFalling=isFalling;
-    gravity(gameState);
-
-    //If the flag change its state of fallen
-    if(auxFalling && !isFalling)
-        fallSound->play(distance);
-
-    vec4f pos=transActivate->product(vec4f());
-    position.y=pos.y;
-
-    if(respawn->isActivated() && ((int)position.x!=(int)defaultPosition.x || (int)position.z!=(int)defaultPosition.z)){
-        gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-
-        position=defaultPosition;
-
-        transActivate->translation(position.x,position.y,position.z);
-        gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
-    }
-
-    //if hero is near of a movable voxel and he push E -> Hero push the voxel in his arms
-    if( !activated && !hero->isFall() && !hero->isJump() && gameState.controller->checkButton(cACTION) && distance<=1.3&&
-       (position.y>posHero.y-0.5 && position.y<posHero.y+0.5)){
-
-        animation->resetState();
-
-        // Case FRONT
-        if(hero->getDirection()==FORWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z+1.0f))==0
-           && position.z>posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
-
-                currentDir=FORWARD;
-                activated=true;
-        }
-
-        // Case BACK
-        if(hero->getDirection()==BACKWARD && gameState.rootMap->collision(vec3f(position.x,position.y,position.z-1.0f))==0
-           && position.z<posHero.z && (position.x>=posHero.x-0.4 && position.x<=posHero.x+0.4)){
-
-                currentDir=BACKWARD;
-                activated=true;
-        }
-
-        // Case LEFT
-        if(hero->getDirection()==LEFTWARD && gameState.rootMap->collision(vec3f(position.x-1.0f,position.y,position.z))==0
-           && position.x<posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
-
-                currentDir=LEFTWARD;
-                activated=true;
-        }
-
-        // Case RIGHT
-        if(hero->getDirection()==RIGHTWARD && gameState.rootMap->collision(vec3f(position.x+1.0f,position.y,position.z))==0
-           && position.x>posHero.x && (position.z>=posHero.z-0.4 && position.z<=posHero.z+0.4)){
-
-                currentDir=RIGHTWARD;
-                activated=true;
-        }
-        if(activated){
-            gameState.controller->consumeButtons();
-            activatedVoxel->play();
-        }
-    }
-
-    ////////////////////////////////
-    // Updated animation
-    if(activated){
-
-        switch(currentDir){
-        case FORWARD:
-            animation->updateState(time-currentTime);
-            transActivate->product(animation->readMatrix(0).getMatrix());
-
-            if(animation->getScriptState(0)==1)
-                activated=false;
-
-            break;
-
-        case BACKWARD:
-            animation->updateState(time-currentTime);
-            transActivate->product(animation->readMatrix(1).getMatrix());
-
-            if(animation->getScriptState(1)==1)
-                activated=false;
-
-            break;
-
-        case LEFTWARD:
-            animation->updateState(time-currentTime);
-            transActivate->product(animation->readMatrix(2).getMatrix());
-
-            if(animation->getScriptState(2)==1)
-                activated=false;
-
-            break;
-
-        case RIGHTWARD:
-            animation->updateState(time-currentTime);
-            transActivate->product(animation->readMatrix(3).getMatrix());
-
-            if(animation->getScriptState(3)==1)
-                activated=false;
-
-            break;
-        }
-
-        if(!activated){
-            switch(currentDir){
-                case FORWARD:
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-
-                    position.z=position.z+1.0f;
-                    transActivate->translation(position.x,position.y,position.z);
-                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
-                    break;
-
-                case BACKWARD:
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-
-                    position.z=position.z-1.0f;
-                    transActivate->translation(position.x,position.y,position.z);
-                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
-
-                    break;
-
-                case LEFTWARD:
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-
-                    position.x=position.x-1.0f;
-                    transActivate->translation(position.x,position.y,position.z);
-                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
-
-                    break;
-
-                case RIGHTWARD:
-                    gameState.rootMap->removeCollision(vec2f(position.x,position.z),voxelID);
-
-                    position.x=position.x+1.0f;
-                    transActivate->translation(position.x,position.y,position.z);
-                    gameState.rootMap->addCollision(vec2f(position.x,position.z),voxelID);
-
-                    break;
-            }
-
-        }
-
-    }
 
     currentTime+=time-currentTime;
 

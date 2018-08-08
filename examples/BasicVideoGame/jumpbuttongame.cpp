@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2017-2018 Antonio David López Machado
+// ** Copyright (C) 2017-2018 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -17,61 +17,23 @@
 // **
 // *********************************************************************
 
-#include "jumpbutton.h"
+#include "jumpbuttongame.h"
 #include "rootmapgame.h"
 
-JumpButton::JumpButton(const Value & buttonFeatures){
-    position=vec4f(buttonFeatures["position"][0].GetFloat(),buttonFeatures["position"][1].GetFloat(),buttonFeatures["position"][2].GetFloat(),1.0);
-    velocity=vec4f(buttonFeatures["velocity"][0].GetFloat(),buttonFeatures["velocity"][1].GetFloat(),buttonFeatures["velocity"][2].GetFloat(),1.0);
-    acceleration=vec4f(buttonFeatures["acceleration"][0].GetFloat(),buttonFeatures["acceleration"][1].GetFloat(),buttonFeatures["acceleration"][2].GetFloat(),1.0);
-
-    MeshCollection * meshCollect= MeshCollection::getInstance();
-    MaterialCollection * materialCollect= MaterialCollection::getInstance();
-    SoundCollection * soundCollect= SoundCollection::getInstance();
-
-    activatedButton=soundCollect->getSound(sATRAP);
-
-    Matrix4f * transObject=new Matrix4f();
-    transObject->translation(position.x,position.y,position.z);
-    Matrix4f * transButton=new Matrix4f();
-    transButton->translation(0.0f,0.2f,0.0f);
-
-    transActivate=new Matrix4f();
-    transActivate->identity();
-
-    NodeSceneGraph * button=new NodeSceneGraph();
-    button->add(transActivate);
-    button->add(transButton);
-    button->add(meshCollect->getMesh(JUMP));
-
-    root=new NodeSceneGraph();
-    root->add(transObject);
-    root->add(materialCollect->getMaterial(mJUMP));
-    root->add(button);
-    root->add(meshCollect->getMesh(BUTTONB));
-
-    currentTime=SDL_GetTicks();
-    activated=false;
-    jumping=false;
-
-    initAnimation();
+JumpButtonGame::JumpButtonGame(const Value & buttonFeatures)
+    : JumpButton(buttonFeatures)
+{
 }
 
 //**********************************************************************//
 
-JumpButton::~JumpButton(){
+JumpButtonGame::~JumpButtonGame(){
     delete root;
 }
 
 //**********************************************************************//
 
-void JumpButton::visualization(Context & cv){
-    root->visualization(cv);
-}
-
-//**********************************************************************//
-
-void JumpButton::updateState(GameState & gameState){
+void JumpButtonGame::updateState(GameState & gameState){
     float time=gameState.time;
     Hero * hero=dynamic_cast<RootMapGame*>(gameState.rootMap)->getHero();
 
@@ -121,44 +83,4 @@ void JumpButton::updateState(GameState & gameState){
     }
 
     currentTime+=time-currentTime;
-}
-
-//**********************************************************************//
-
-bool JumpButton::isActivated(){
-    return activated;
-}
-
-//**********************************************************************//
-
-void JumpButton::initAnimation(){
-    //////////////////////////////////////
-    //Animation up
-    animationUp=new ScriptLMD();
-
-    MatrixStatic * notMove=new MatrixStatic();
-
-    MatrixScript * scriptUp=new MatrixScript();
-    MatrixScript * scriptUpJump=new MatrixScript();
-
-    scriptUp->add(0.08,new LinearMovement(0.0,1.0,0.0));
-    scriptUp->add(0.5,notMove);
-
-    scriptUpJump->add(0.4,new LinearMovement(0.0,1.0,0.0));
-    scriptUpJump->add(0.5,notMove);
-
-    animationUp->add(scriptUp);
-    animationUp->add(scriptUpJump);
-
-
-    /////////////////////////////
-    //Animation down
-    animationDown=new ScriptLMD();
-
-    MatrixScript * scriptDown=new MatrixScript();
-
-    scriptDown->add(0.08,new LinearMovement(0.0,-1.0,0.0));
-    scriptDown->add(0.5,notMove);
-
-    animationDown->add(scriptDown);
 }

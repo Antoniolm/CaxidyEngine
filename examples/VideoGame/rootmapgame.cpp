@@ -224,7 +224,7 @@ void RootMapGame::initialize(string fileMap){
     vector<RespawnVoxel *> respawns; // Vector of respawn voxels
     const rapidjson::Value & resFeature=document["resVoxel"];
     for(unsigned currentRes=0;currentRes<resFeature.Size();currentRes++){
-        RespawnVoxel * respVox=new RespawnVoxel(resFeature[currentRes]);
+        RespawnVoxel * respVox=new RespawnVoxelGame(resFeature[currentRes]);
         respawns.push_back(respVox);
         elements.push_back(respVox);
     }
@@ -235,7 +235,7 @@ void RootMapGame::initialize(string fileMap){
     cout<< "< Game is loading movable voxels >"<< endl;
     const rapidjson::Value & movFeature=document["movVoxel"];
     for(unsigned currentMov=0;currentMov<movFeature.Size();currentMov++){
-        MovableVoxel * movVox=new MovableVoxel(movFeature[currentMov],respawns,objs.size());
+        MovableVoxel * movVox=new MovableVoxelGame(movFeature[currentMov],respawns,objs.size());
         movVox->addLink();movVox->addLink();
         elements.push_back(movVox);
         objs.push_back(movVox);
@@ -260,7 +260,7 @@ void RootMapGame::initialize(string fileMap){
     cout<< "< Game is loading jump button >"<< endl;
     const rapidjson::Value & jumpFeature=document["jumpButton"];
     for(unsigned currentButton=0;currentButton<jumpFeature.Size();currentButton++){
-        elements.push_back(new JumpButton(jumpFeature[currentButton]));
+        elements.push_back(new JumpButtonGame(jumpFeature[currentButton]));
     }
 
     /////////////////////////////////////////
