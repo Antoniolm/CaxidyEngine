@@ -20,7 +20,7 @@
 #ifndef JUMPBUTTONGAME_H
 #define JUMPBUTTONGAME_H
 
-#include "GraphicEngine/voxels/jumpbutton.h"
+#include "CaxidyEngine/voxels/jumpbutton.h"
 #include "rapidjson/document.h"
 
 using namespace rapidjson;

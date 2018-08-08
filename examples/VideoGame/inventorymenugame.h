@@ -20,8 +20,8 @@
 #ifndef INVENTORYMENUGAME_H
 #define INVENTORYMENUGAME_H
 
-#include "GraphicEngine/menu/inventorymenu.h"
-#include "GraphicEngine/text.h"
+#include "CaxidyEngine/menu/inventorymenu.h"
+#include "CaxidyEngine/text.h"
 #include "inventory.h"
 #include "equipment.h"
 #include "savedmanager.h"

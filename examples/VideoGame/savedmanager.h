@@ -26,7 +26,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "../GraphicEngine/gamestate.h"
+#include "../CaxidyEngine/gamestate.h"
 #include "inventory.h"
 
 using namespace rapidjson;

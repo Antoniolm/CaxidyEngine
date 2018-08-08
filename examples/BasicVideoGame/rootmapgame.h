@@ -20,14 +20,13 @@
 #ifndef ROOTMAPGAME_H
 #define ROOTMAPGAME_H
 
-#include "GraphicEngine/rootmap.h"
+#include "CaxidyEngine/rootmap.h"
 #include "avatar/hero.h"
 #include "avatar/npc.h"
-#include "projectilesystem.h"
 #include "spiketrap.h"
-#include "GraphicEngine/voxels/trapdoor.h"
-#include "GraphicEngine/voxels/rottenvoxel.h"
-#include "GraphicEngine/voxels/slidetrap.h"
+#include "CaxidyEngine/voxels/trapdoor.h"
+#include "CaxidyEngine/voxels/rottenvoxel.h"
+#include "CaxidyEngine/voxels/slidetrap.h"
 #include "movablevoxelgame.h"
 #include "respawnvoxelgame.h"
 #include "jumpbuttongame.h"
@@ -39,14 +38,7 @@ class ObjectGroup;
 class EnemyList;
 class Hero;
 class Npc;
-class ProjectileSystem;
 class SpikeTrap;
-class TrapDoor;
-class RottenVoxel;
-class MovableVoxel;
-class RespawnVoxel;
-class SlideTrap;
-class JumpButton;
 class Item;
 class Potion;
 class Coin;

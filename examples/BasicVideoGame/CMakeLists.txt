@@ -9,8 +9,6 @@ add_executable(BasicVideoGame
     "${CMAKE_CURRENT_SOURCE_DIR}/jumpbuttongame.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/movablevoxelgame.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/potion.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/projectile.cpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/projectilesystem.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/respawnvoxelgame.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/rootmapgame.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/savedmanager.cpp"
@@ -26,7 +24,7 @@ target_include_directories(BasicVideoGame PRIVATE ${SDL2_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${GLEW_INCLUDE_DIR}
     "${CMAKE_SOURCE_DIR}/src"
-    "${CMAKE_SOURCE_DIR}/src/GraphicEngine"
+    "${CMAKE_SOURCE_DIR}/src/CaxidyEngine"
     "${CMAKE_SOURCE_DIR}/examples/BasicVideoGame"
     "${CMAKE_SOURCE_DIR}/resources/lib"
 )
@@ -38,5 +36,5 @@ target_link_libraries(BasicVideoGame
     ${OPENGL_LIBRARIES}  
     ${GLEW_LIBRARIES}
     Threads::Threads
-    GraphicEngine
+    CaxidyEngine
 )

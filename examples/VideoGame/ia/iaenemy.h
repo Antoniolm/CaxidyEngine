@@ -20,7 +20,7 @@
 #ifndef IAENEMY_H
 #define IAENEMY_H
 
-#include "GraphicEngine/matrix/structdata.h"
+#include "CaxidyEngine/matrix/structdata.h"
 #include <iostream>
 #include <math.h>
 #include "enemylist.h"

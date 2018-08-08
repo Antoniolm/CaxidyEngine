@@ -20,7 +20,7 @@
 #ifndef MOVABLEVOXELGAME_H
 #define MOVABLEVOXELGAME_H
 
-#include "GraphicEngine/voxels/movablevoxel.h"
+#include "CaxidyEngine/voxels/movablevoxel.h"
 #include "rapidjson/document.h"
 
 using namespace rapidjson;

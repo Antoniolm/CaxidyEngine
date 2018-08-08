@@ -20,10 +20,10 @@
 #ifndef HEROSTATE_H
 #define HEROSTATE_H
 
-#include "GraphicEngine/object3d.h"
-#include "GraphicEngine/text.h"
-#include "GraphicEngine/collection/materialcollection.h"
-#include "GraphicEngine/collection/meshcollection.h"
+#include "CaxidyEngine/object3d.h"
+#include "CaxidyEngine/text.h"
+#include "CaxidyEngine/collection/materialcollection.h"
+#include "CaxidyEngine/collection/meshcollection.h"
 #include "rootmapgame.h"
 #include <sstream>
 

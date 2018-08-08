@@ -20,7 +20,7 @@
 #ifndef RESPAWNVOXELGAME_H
 #define RESPAWNVOXELGAME_H
 
-#include "GraphicEngine/voxels/respawnvoxel.h"
+#include "CaxidyEngine/voxels/respawnvoxel.h"
 #include "rapidjson/document.h"
 
 using namespace rapidjson;

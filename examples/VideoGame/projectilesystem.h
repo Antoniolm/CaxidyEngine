@@ -21,10 +21,10 @@
 #define PROJECTILESYSTEM_H
 
 #include "projectile.h"
-#include "GraphicEngine/nodescenegraph.h"
+#include "CaxidyEngine/nodescenegraph.h"
 #include <string>
-#include "GraphicEngine/nodescenegraph.h"
-#include "GraphicEngine/rootmap.h"
+#include "CaxidyEngine/nodescenegraph.h"
+#include "CaxidyEngine/rootmap.h"
 #include <list>
 #include "rapidjson/document.h"
 

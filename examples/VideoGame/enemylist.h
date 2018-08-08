@@ -24,8 +24,8 @@
 
 #include "avatar/npc.h"
 #include "avatar/hero.h"
-#include "GraphicEngine/nodescenegraph.h"
-#include "GraphicEngine/object3d.h"
+#include "CaxidyEngine/nodescenegraph.h"
+#include "CaxidyEngine/object3d.h"
 #include "rapidjson/document.h"
 
 #include <vector>

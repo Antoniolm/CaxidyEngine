@@ -20,8 +20,8 @@
 #ifndef TEXTREGION_H
 #define TEXTREGION_H
 
-#include "GraphicEngine/region.h"
-#include "GraphicEngine/matrix/structdata.h"
+#include "CaxidyEngine/region.h"
+#include "CaxidyEngine/matrix/structdata.h"
 #include "SDL2/SDL.h"
 #include "ia/ianpc.h"
 #include "rapidjson/document.h"

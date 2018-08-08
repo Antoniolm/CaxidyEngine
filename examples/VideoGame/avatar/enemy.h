@@ -21,19 +21,19 @@
 #define ENEMY_H
 
 
-#include "GraphicEngine/avatar/avatar.h"
-#include "GraphicEngine/avatar/avatarmove.h"
-#include "GraphicEngine/mesh/mesh.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/animation/scriptlmd.h"
-#include "GraphicEngine/animation/animationlist.h"
-#include "GraphicEngine/context/context.h"
-#include "GraphicEngine/matrix/matrixscript.h"
-#include "GraphicEngine/rootmap.h"
-#include "GraphicEngine/matrix/matrix4f.h"
-#include "GraphicEngine/matrix/acceleratedmovement.h"
-#include "GraphicEngine/sound/sound.h"
-#include "GraphicEngine/text.h"
+#include "CaxidyEngine/avatar/avatar.h"
+#include "CaxidyEngine/avatar/avatarmove.h"
+#include "CaxidyEngine/mesh/mesh.h"
+#include "CaxidyEngine/collection/meshcollection.h"
+#include "CaxidyEngine/animation/scriptlmd.h"
+#include "CaxidyEngine/animation/animationlist.h"
+#include "CaxidyEngine/context/context.h"
+#include "CaxidyEngine/matrix/matrixscript.h"
+#include "CaxidyEngine/rootmap.h"
+#include "CaxidyEngine/matrix/matrix4f.h"
+#include "CaxidyEngine/matrix/acceleratedmovement.h"
+#include "CaxidyEngine/sound/sound.h"
+#include "CaxidyEngine/text.h"
 #include <stdlib.h>
 
 #include <vector>

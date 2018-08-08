@@ -21,7 +21,7 @@
 #ifndef GAMESTATECHILD_H
 #define GAMESTATECHILD_H
 
-#include "GraphicEngine/gamestate.h"
+#include "CaxidyEngine/gamestate.h"
 
 class GameStateChild : public GameState
 {

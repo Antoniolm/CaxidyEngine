@@ -18,7 +18,7 @@
 // *********************************************************************
 
 #include "rootmapgame.h"
-#include "GraphicEngine/mesh/objectgroup.h"
+#include "CaxidyEngine/mesh/objectgroup.h"
 
 RootMapGame::RootMapGame()
 {
@@ -129,15 +129,6 @@ void RootMapGame::initialize(string fileMap){
     const rapidjson::Value & particleFeature=document["particleSystem"];
     for(unsigned currentPSys=0;currentPSys<particleFeature.Size();currentPSys++){
         elements.push_back(new ParticleSystem(particleFeature[currentPSys]));
-    }
-
-    /////////////////////////////////////////
-    // Add projectileSystem to our map
-    /////////////////////////////////////////
-    cout<< "< Game is loading proyectile system >"<< endl;
-    const rapidjson::Value & projectileFeature=document["projectileSystem"];
-    for(unsigned currentPSys=0;currentPSys<projectileFeature.Size();currentPSys++){
-        elements.push_back(new ProjectileSystem(projectileFeature[currentPSys]));
     }
 
     /////////////////////////////////////////

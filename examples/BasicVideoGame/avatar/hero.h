@@ -20,33 +20,30 @@
 #ifndef HERO_H
 #define HERO_H
 
-#include "GraphicEngine/avatar/avatar.h"
-#include "GraphicEngine/avatar/avatarmove.h"
-#include "GraphicEngine/mesh/mesh.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/collection/materialcollection.h"
-#include "GraphicEngine/collection/soundcollection.h"
-#include "GraphicEngine/animation/scriptlmd.h"
-#include "GraphicEngine/context/context.h"
-#include "GraphicEngine/matrix/matrixscript.h"
-#include "GraphicEngine/rootmap.h"
-#include "GraphicEngine/matrix/matrix4f.h"
-#include "GraphicEngine/matrix/acceleratedmovement.h"
-#include "GraphicEngine/sound/sound.h"
-#include "GraphicEngine/text.h"
-#include "GraphicEngine/animation/animationlist.h"
-#include "GraphicEngine/controller/controller.h"
+#include "CaxidyEngine/avatar/avatar.h"
+#include "CaxidyEngine/avatar/avatarmove.h"
+#include "CaxidyEngine/mesh/mesh.h"
+#include "CaxidyEngine/collection/meshcollection.h"
+#include "CaxidyEngine/collection/materialcollection.h"
+#include "CaxidyEngine/collection/soundcollection.h"
+#include "CaxidyEngine/animation/scriptlmd.h"
+#include "CaxidyEngine/context/context.h"
+#include "CaxidyEngine/matrix/matrixscript.h"
+#include "CaxidyEngine/rootmap.h"
+#include "CaxidyEngine/matrix/matrix4f.h"
+#include "CaxidyEngine/matrix/acceleratedmovement.h"
+#include "CaxidyEngine/sound/sound.h"
+#include "CaxidyEngine/text.h"
+#include "CaxidyEngine/animation/animationlist.h"
+#include "CaxidyEngine/controller/controller.h"
 #include "rapidjson/document.h"
 #include <stdlib.h>
-
 
 #include <vector>
 
 using namespace std;
 class RootMap;
 class Text;
-class Soul;
-class Projectile;
 class Hero: public AvatarMove
 {
     public:
@@ -199,46 +196,6 @@ class Hero: public AvatarMove
 
         //////////////////////////////////////////////////////////////////////////
         /**
-        *    It will get return the current experience of the hero
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getExp();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will get return the max experience of the current level
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getMaxExp();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will get return the current level of the hero
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getLevel();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will get return the damage of the hero
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getDamage();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will get return the armour of the hero
-        *    \return int
-        */
-        //////////////////////////////////////////////////////////////////////////
-        int getArmour();
-
-        //////////////////////////////////////////////////////////////////////////
-        /**
         *    The method will add a new coin to our current coins
         *    @param value -> Adding to our courrent coint the value
         *    \return void
@@ -266,15 +223,6 @@ class Hero: public AvatarMove
         //////////////////////////////////////////////////////////////////////////
         void takeDamage(float value);
 
-        //////////////////////////////////////////////////////////////////////////
-        /**
-        *    It will create a projectile
-        *    @param damage -> the damage of the created projectile
-        *    \return Projectile *
-        */
-        //////////////////////////////////////////////////////////////////////////
-        Projectile * createProjectile(float damage);
-
     protected:
 
     private:
@@ -286,7 +234,6 @@ class Hero: public AvatarMove
         //////////////////////////////////////////////////////////////////////////
         void initAnimation();
 
-        vector<Projectile *> projectiles;   // Vector of projectiles
         vector<Matrix4f *> moveMatrix;      // Vector of movements
 
         vector<Sound *> heroSound;          // Vector of sounds

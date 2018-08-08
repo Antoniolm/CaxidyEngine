@@ -21,12 +21,12 @@
 #define NPC_H
 
 #include "ia/ianpc.h"
-#include "GraphicEngine/avatar/avatar.h"
-#include "GraphicEngine/mesh/mesh.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/text.h"
-#include "GraphicEngine/matrix/structdata.h"
-#include "GraphicEngine/animation/scriptlmd.h"
+#include "CaxidyEngine/avatar/avatar.h"
+#include "CaxidyEngine/mesh/mesh.h"
+#include "CaxidyEngine/collection/meshcollection.h"
+#include "CaxidyEngine/text.h"
+#include "CaxidyEngine/matrix/structdata.h"
+#include "CaxidyEngine/animation/scriptlmd.h"
 #include "rapidjson/document.h"
 #include "SDL2/SDL_ttf.h"
 

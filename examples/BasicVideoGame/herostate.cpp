@@ -157,9 +157,7 @@ void HeroState::updateState(GameState & gameState){
     levelUp->setPosition(vec3f(posHero.x-0.59,posHero.y+7.3,posHero.z+10.65));
 
     int heroLife=hero->getLife();
-    int heroExp=hero->getExp();
     int heroCoin=hero->getCoin();
-    int heroLevel=hero->getLevel();
 
     if(gameState.pauseMenu->isActivate() || gameState.deadMenu->isActivate()
        || gameState.camera->isSpeakMode() || gameState.camera->isMoveSpeakMode())
@@ -170,18 +168,6 @@ void HeroState::updateState(GameState & gameState){
         scaleLife->scale((float)heroLife/(float)hero->getMaxLife(),1.0,1.0);
     }
 
-    //If the experience value was changes
-    if(currentExp!=heroExp || currentLevel!=heroLevel){
-
-        if(currentLevel!=heroLevel){
-            isLevelUp=true;
-            delayTime=currentTime;
-        }
-
-        currentMaxExp=hero->getMaxExp();
-
-        scaleExp->scale((float)heroExp/(float)currentMaxExp,0.7,1.0);
-    }
 
      if(delayTime<(time-1500)){
         isLevelUp=false;
@@ -196,9 +182,7 @@ void HeroState::updateState(GameState & gameState){
     }
 
     currentLife=heroLife;
-    currentExp=heroExp;
     currentCoin=heroCoin;
-    currentLevel=heroLevel;
 
     currentTime+=time-currentTime;
 }

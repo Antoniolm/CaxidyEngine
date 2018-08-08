@@ -20,13 +20,13 @@
 #ifndef DOOR_H
 #define DOOR_H
 
-#include "GraphicEngine/objectscene.h"
-#include "GraphicEngine/nodescenegraph.h"
-#include "GraphicEngine/matrix/matrix4f.h"
-#include "GraphicEngine/matrix/matrix4fdynamic.h"
-#include "GraphicEngine/animation/scriptlmd.h"
-#include "GraphicEngine/collection/meshcollection.h"
-#include "GraphicEngine/collection/materialcollection.h"
+#include "CaxidyEngine/objectscene.h"
+#include "CaxidyEngine/nodescenegraph.h"
+#include "CaxidyEngine/matrix/matrix4f.h"
+#include "CaxidyEngine/matrix/matrix4fdynamic.h"
+#include "CaxidyEngine/animation/scriptlmd.h"
+#include "CaxidyEngine/collection/meshcollection.h"
+#include "CaxidyEngine/collection/materialcollection.h"
 #include "soulcarrier.h"
 #include "rapidjson/document.h"
 

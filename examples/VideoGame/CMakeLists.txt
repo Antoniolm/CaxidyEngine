@@ -41,7 +41,7 @@ target_include_directories(main PRIVATE ${SDL2_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${GLEW_INCLUDE_DIR}
     "${CMAKE_SOURCE_DIR}/src"
-    "${CMAKE_SOURCE_DIR}/src/GraphicEngine"
+    "${CMAKE_SOURCE_DIR}/src/CaxidyEngine"
     "${CMAKE_SOURCE_DIR}/examples/VideoGame"
     "${CMAKE_SOURCE_DIR}/resources/lib"
 )
@@ -53,5 +53,5 @@ target_link_libraries(main
     ${OPENGL_LIBRARIES}  
     ${GLEW_LIBRARIES}
     Threads::Threads
-    GraphicEngine
+    CaxidyEngine
 )

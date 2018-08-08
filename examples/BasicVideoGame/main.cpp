@@ -21,8 +21,8 @@
 #include "game.h"
 #include <iostream>
 #include "SDL2/SDL_mixer.h"
-#include "GraphicEngine/ColladaParser/ColladaData.h"
-#include "GraphicEngine/ColladaParser/ColladaLoader.h"
+#include "CaxidyEngine/ColladaParser/ColladaData.h"
+#include "CaxidyEngine/ColladaParser/ColladaLoader.h"
 
 int main(int argc, char* args[])
 {

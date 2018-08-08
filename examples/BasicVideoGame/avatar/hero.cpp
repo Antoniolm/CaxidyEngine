@@ -19,7 +19,6 @@
 
 #include "hero.h"
 #include "rootmapgame.h"
-#include "projectile.h"
 
 Hero::Hero(const rapidjson::Value & heroFeatures)
 {
@@ -301,10 +300,6 @@ Hero::~Hero()
         delete (*it);
     }
 
-    for(vector<Projectile *>::iterator it = projectiles.begin() ; it != projectiles.end(); ++it){
-        delete (*it);
-    }
-
     delete root;
 }
 
@@ -319,14 +314,6 @@ void Hero::visualization(Context & cv){
     for(unsigned i=0;i<texts.size();i++)
         if(activatedTexts[i])
             texts[i]->visualization(cv);
-
-    ////////////////////////////
-    //DRAW PROJECTILES
-    ////////////////////////////
-    vector<Projectile *>::iterator it;
-    for(it=projectiles.begin();it!=projectiles.end();it++){
-        (*it)->visualization(cv);
-    }
 
     //Update visual range
     cv.minVisualPosition=vec3f(position.x-11,position.y-11,position.z);
@@ -445,34 +432,6 @@ void Hero::updateState(GameState & gameState){
         channelSound[5]=heroSound[5]->play();
     }
 
-    //Case-> Push L bottom to hit
-    if(controller->checkButton(cATTACK) && !isShielded){ //If hero is hitting
-        if(!isHitting){
-            animations.resetAnimation(1);
-            animations.resetAnimation(5);
-        }
-        isHitting=true;
-        hitDelay=time;
-    }
-    else { // If hero is not hitting -> resetAnimation
-        if(hitDelay<(time-250)){
-            hitDelay=time;
-            isHitting=false;
-        }
-    }
-
-    //Case-> Push W bottom to shield
-    if(controller->checkButton(cSHIELD) && !isHitting){ //If hero is shielding
-        isShielded=true;
-        if(hasMove)
-            animations.activate(3); //Activate animation
-        else
-            animations.activate(2); //Activate animation
-    }
-    else { //if not
-        isShielded=false;
-    }
-
     //Move the body
     if(hasMove && !isImpacted && !isHitting){
         avatarDirection lastDir=direction;
@@ -495,9 +454,6 @@ void Hero::updateState(GameState & gameState){
         bool isFallAux=isFalling;
         ObjectScene * object=gravity(time);
 
-        if(!isShielded){
-            animations.activate(5);
-        }
         if(object!=0 && object->getDamage()!=0.0 && dmgDelay<(time-400)){ //If the object do damage
             takeDamage(object->getDamage());
             dmgDelay=time;
@@ -548,21 +504,6 @@ void Hero::updateState(GameState & gameState){
     //If hero does not take a coin in the last 300 ms
     if(dmgDelay<time-1200)
         activateDialog(false,3);
-
-    ////////////////////////////
-    //UPDATE PROJECTILES
-    ////////////////////////////
-    vector<Projectile *>::iterator it=projectiles.begin();
-
-    while(it!=projectiles.end()){
-
-        (*it)->updateState(gameState);
-        if(!(*it)->isLive()){
-            it=projectiles.erase(it);
-        }
-        else
-            it++;
-    }
 }
 
 //**********************************************************************//
@@ -679,36 +620,6 @@ bool Hero::isFall(){
 
 //**********************************************************************//
 
-int Hero::getExp(){
-    return currentExp;
-}
-
-//**********************************************************************//
-
-int Hero::getMaxExp(){
-    return maxExperience;
-}
-
-//**********************************************************************//
-
-int Hero::getLevel(){
-    return level;
-}
-
-//**********************************************************************//
-
-int Hero::getDamage(){
-    return damage;
-}
-
-//**********************************************************************//
-
-int Hero::getArmour(){
-    return armour;
-}
-
-//**********************************************************************//
-
  void Hero::addCoin(int value){
     currentCoin+=value;
     int lastValue;
@@ -789,61 +700,6 @@ int Hero::getArmour(){
     if(life>0)
         channelSound[1]=heroSound[1]->play();
  }
-
-//**********************************************************************//
-
-Projectile * Hero::createProjectile(float damage){
-    vec3f posProject;
-    vec3f velocityProject;
-    avatarDirection dirProject=RIGHTWARD;
-
-    switch(direction){
-        case FORWARD:
-                posProject=vec3f(position.x,position.y,position.z+0.5);
-                velocityProject=vec3f(0.0,0.0,4.0);
-                dirProject=FORWARD;
-            break;
-        case BACKWARD:
-                posProject=vec3f(position.x,position.y,position.z-0.5);
-                velocityProject=vec3f(0.0,0.0,-4.0);
-                dirProject=BACKWARD;
-            break;
-        case LEFTWARD:
-                posProject=vec3f(position.x-0.5,position.y,position.z);
-                velocityProject=vec3f(-4.0,0.0,0.0);
-                dirProject=LEFTWARD;
-            break;
-        case RIGHTWARD:
-                posProject=vec3f(position.x+0.5,position.y,position.z);
-                velocityProject=vec3f(4.0,0.0,0.0);
-                dirProject=RIGHTWARD;
-            break;
-        case FOR_LEFTWARD:
-                posProject=vec3f(position.x-0.5,position.y,position.z+0.5);
-                velocityProject=vec3f(-4.0,0.0,4.0);
-                dirProject=FOR_LEFTWARD;
-            break;
-        case FOR_RIGHTWARD:
-                posProject=vec3f(position.x+0.5,position.y,position.z+0.5);
-                velocityProject=vec3f(4.0,0.0,4.0);
-                dirProject=FOR_RIGHTWARD;
-            break;
-        case BACK_LEFTWARD:
-                posProject=vec3f(position.x-0.5,position.y,position.z-0.5);
-                velocityProject=vec3f(-4.0,0.0,-4.0);
-                dirProject=BACK_LEFTWARD;
-            break;
-        case BACK_RIGHTWARD:
-                posProject=vec3f(position.x+0.5,position.y,position.z-0.5);
-                velocityProject=vec3f(4.0,0.0,-4.0);
-                dirProject=BACK_RIGHTWARD;
-
-            break;
-    }
-
-    return new Projectile(posProject,velocityProject,dirProject,damage,"ARROW","mARCHENEMY");
-}
-
 
 //**********************************************************************//
 //                              PRIVATE                                 //
@@ -1336,7 +1192,6 @@ Projectile * Hero::createProjectile(float damage){
 
     animations.add(animation);
 
-
     /////////////////////////////////
     // 5- ANIMATION GRAVITY
     /////////////////////////////////
@@ -1413,274 +1268,6 @@ Projectile * Hero::createProjectile(float damage){
     bodyTScript=new MatrixScript();
     bodyTScript->add(0.15,notMove);
 
-
-    animation->add(bodyScript);
-    animation->add(bodyTScript);
-
-    animations.add(animation);
-
-
-    /////////////////////////////////
-    // 6- ANIMATION HIT-RANGED
-    /////////////////////////////////
-    animation=new ScriptLMD();
-    oscillateLeg=new OscillateRotation(true,40,0,1,150,vec3f(1,0,0),2);
-    oscillateLegSecond=new OscillateRotation(false,0,-20,1,50,vec3f(1,0,0),1);
-    notMove=new MatrixStatic();
-
-    //Movement to the first leg
-    LegScriptLeft=new MatrixScript();
-    LegScriptLeft->add(0.5,notMove);
-    LegScriptLeft->add(0.5,notMove);
-
-
-    //Movement to the second leg
-    LegScriptRight=new MatrixScript();
-    LegScriptRight->add(0.5,notMove);
-    LegScriptRight->add(0.5,notMove);
-
-    //Add the script to our animation
-    animation->add(LegScriptRight);
-    animation->add(LegScriptLeft);
-
-    //Matrix4fDinamic
-    ///////////////////
-    // ARM
-    //////////////////
-    shoulderCharge=new OscillateRotation(true,160,90,90,500,vec3f(1.0,0.0,0),1);
-    Matrix4f * rotShoulder=new Matrix4f();
-    rotShoulder->rotation(90,1.0,0.0,0.0);
-
-    staticShoulder=new MatrixStatic(*rotShoulder);
-
-    //Movement to the first arm
-    ElbowScriptLeft=new MatrixScript();
-    ArmScriptLeft=new MatrixScript();
-    ElbowScriptLeft->add(0.5,notMove);
-    ElbowScriptLeft->add(0.5,notMove);
-    ArmScriptLeft->add(0.5,notMove);
-    ArmScriptLeft->add(0.5,notMove);
-
-    //Movement to the second arm
-    ElbowScriptRight=new MatrixScript();
-    ArmScriptRight=new MatrixScript();
-    ElbowScriptTRight=new MatrixScript();
-
-    ElbowScriptRight->add(0.65,notMove);
-    ElbowScriptTRight->add(0.65,notMove);
-    ArmScriptRight->add(0.5,staticShoulder);
-    ArmScriptRight->add(0.25,shoulderCharge);
-    ArmScriptRight->add(0.25,staticShoulder);
-
-    //Add the script to our animation
-    animation->add(ElbowScriptRight);  //2
-    animation->add(ElbowScriptTRight); //3
-    animation->add(ElbowScriptLeft);   //4
-    animation->add(ElbowScriptTLeft);  //5
-    animation->add(ArmScriptRight);    //6
-    animation->add(ArmScriptTRight);
-    animation->add(ArmScriptLeft);     //7
-
-
-    ///////////////////
-    // BODY
-    //////////////////
-    //Movement to the first arm
-    bodyScript=new MatrixScript();
-    bodyScript->add(0.3,notMove);
-
-    bodyTScript=new MatrixScript();
-    bodyTScript->add(0.3,notMove);
-
-    animation->add(bodyScript);
-    animation->add(bodyTScript);
-
-    animations.add(animation);
-
-
-    /////////////////////////////////
-    // 7- ANIMATION SOUL IN ARMS - NO WALK
-    /////////////////////////////////
-    animation=new ScriptLMD();
-    ///////////////////
-    // LEG
-    //////////////////
-    oscillateLeg=new OscillateRotation(true,30,0,1,150,vec3f(1,0,0),2);
-    oscillateLegSecond=new OscillateRotation(false,0,-30,1,150,vec3f(1,0,0),1);
-
-    //Movement to the first leg
-    LegScriptLeft=new MatrixScript();
-    LegScriptLeft->add(0.3,notMove);
-
-
-    //Movement to the second leg
-    LegScriptRight=new MatrixScript();
-    LegScriptRight->add(0.3,notMove);
-
-    //Add the script to our animation
-    animation->add(LegScriptRight);
-    animation->add(LegScriptLeft);
-
-    ///////////////////
-    // ARM
-    //////////////////
-    //Matrix4fDinamic
-    rotateShoulder=new Matrix4f();
-    rotateShoulder->rotation(70,1.0,0.0,0.0);
-
-    Matrix4f * rotateShoulderYLeft=new Matrix4f();
-    rotateShoulderYLeft->rotation(20,0.0,0.0,1.0);
-    rotateShoulderYLeft->product(rotateShoulder->getMatrix());
-
-    Matrix4f * rotateShoulderYRight=new Matrix4f();
-    rotateShoulderYRight->rotation(-20,0.0,0.0,1.0);
-    rotateShoulderYRight->product(rotateShoulder->getMatrix());
-
-    MatrixStatic * staticShoulderLeft=new MatrixStatic(*rotateShoulderYLeft);
-    MatrixStatic * staticShoulderRight=new MatrixStatic(*rotateShoulderYRight);
-
-    //Movement to the first arm
-    ElbowScriptLeft=new MatrixScript();
-    ArmScriptLeft=new MatrixScript();
-    ElbowScriptTLeft=new MatrixScript();
-    ElbowScriptLeft->add(0.5,notMove);
-    ArmScriptLeft->add(0.5,staticShoulderLeft);
-    ElbowScriptTLeft->add(0.5,notMove);
-
-    //Movement to the second arm
-    ElbowScriptRight=new MatrixScript();
-    ArmScriptRight=new MatrixScript();
-    ArmScriptTRight=new MatrixScript();
-    ElbowScriptTRight=new MatrixScript();
-    ElbowScriptRight->add(0.5,notMove);
-    ArmScriptRight->add(0.5,staticShoulderRight);
-    ArmScriptTRight->add(0.5,notMove);
-    ElbowScriptTRight->add(0.5,notMove);
-
-
-    //Add the script to our animation
-    animation->add(ElbowScriptRight);
-    animation->add(ElbowScriptTRight);
-    animation->add(ElbowScriptLeft);
-    animation->add(ElbowScriptTLeft);
-    animation->add(ArmScriptRight);
-    animation->add(ArmScriptTRight);
-    animation->add(ArmScriptLeft);
-
-
-    ///////////////////
-    // BODY
-    //////////////////
-    //Movement body
-    bodyScript=new MatrixScript();
-    bodyScript->add(0.3,notMove);
-
-    bodyTScript=new MatrixScript();
-    bodyTScript->add(0.3,notMove);
-
-    animation->add(bodyScript);
-    animation->add(bodyTScript);
-
-    animations.add(animation);
-
-
-    /////////////////////////////////
-    // 8- ANIMATION SOUL IN ARMS - WALK
-    /////////////////////////////////
-    animation=new ScriptLMD();
-    ///////////////////
-    // LEG
-    //////////////////
-    oscillateLeg=new OscillateRotation(true,30,0,1,150,vec3f(1,0,0),2);
-    oscillateLegSecond=new OscillateRotation(false,0,-30,1,150,vec3f(1,0,0),1);
-
-    //Movement to the first leg
-    LegScriptLeft=new MatrixScript();
-    LegScriptLeft->add(0.3,oscillateLeg);
-    LegScriptLeft->add(0.3,oscillateLegSecond);
-
-
-    //Movement to the second leg
-    LegScriptRight=new MatrixScript();
-    LegScriptRight->add(0.3,oscillateLegSecond);
-    LegScriptRight->add(0.3,oscillateLeg);
-
-    //Add the script to our animation
-    animation->add(LegScriptRight);
-    animation->add(LegScriptLeft);
-
-    ///////////////////
-    // ARM
-    //////////////////
-    //Matrix4fDinamic
-    rotateShoulder=new Matrix4f();
-    rotateShoulder->rotation(70,1.0,0.0,0.0);
-
-    rotateShoulderYLeft=new Matrix4f();
-    rotateShoulderYLeft->rotation(20,0.0,0.0,1.0);
-    rotateShoulderYLeft->product(rotateShoulder->getMatrix());
-
-    rotateShoulderYRight=new Matrix4f();
-    rotateShoulderYRight->rotation(-20,0.0,0.0,1.0);
-    rotateShoulderYRight->product(rotateShoulder->getMatrix());
-
-    staticShoulderLeft=new MatrixStatic(*rotateShoulderYLeft);
-    staticShoulderRight=new MatrixStatic(*rotateShoulderYRight);
-
-    //Movement to the first arm
-    ElbowScriptLeft=new MatrixScript();
-    ArmScriptLeft=new MatrixScript();
-    ElbowScriptTLeft=new MatrixScript();
-    ElbowScriptLeft->add(0.5,notMove);
-    ArmScriptLeft->add(0.5,staticShoulderLeft);
-    ElbowScriptTLeft->add(0.5,notMove);
-
-    //Movement to the second arm
-    ElbowScriptRight=new MatrixScript();
-    ArmScriptRight=new MatrixScript();
-    ArmScriptTRight=new MatrixScript();
-    ElbowScriptTRight=new MatrixScript();
-    ElbowScriptRight->add(0.5,notMove);
-    ArmScriptRight->add(0.5,staticShoulderRight);
-    ArmScriptTRight->add(0.5,notMove);
-    ElbowScriptTRight->add(0.5,notMove);
-
-
-    //Add the script to our animation
-    animation->add(ElbowScriptRight);
-    animation->add(ElbowScriptTRight);
-    animation->add(ElbowScriptLeft);
-    animation->add(ElbowScriptTLeft);
-    animation->add(ArmScriptRight);
-    animation->add(ArmScriptTRight);
-    animation->add(ArmScriptLeft);
-
-
-    ///////////////////
-    // BODY
-    //////////////////
-    //Matrix4fDinamic
-    oscillateBody=new OscillateRotation(true,5,0,1,25,vec3f(0,1,0),1);
-    oscillateBodySecond=new OscillateRotation(false,0,-5,1,25,vec3f(0,1,0),1);
-
-    transBody=new Matrix4f();
-    transBody->translation(0,0.05,0);
-    staticBody=new MatrixStatic(*transBody);
-
-    transBodySecond=new Matrix4f();
-    transBodySecond->translation(0,-0.05,0);
-    staticBodySecond=new MatrixStatic(*transBodySecond);
-
-    //Movement body
-    bodyScript=new MatrixScript();
-    bodyScript->add(0.3,oscillateBody);
-    bodyScript->add(0.3,oscillateBodySecond);
-
-    bodyTScript=new MatrixScript();
-    bodyTScript->add(0.15,staticBody);
-    bodyTScript->add(0.15,staticBodySecond);
-    bodyTScript->add(0.15,staticBody);
-    bodyTScript->add(0.15,staticBodySecond);
 
     animation->add(bodyScript);
     animation->add(bodyTScript);
