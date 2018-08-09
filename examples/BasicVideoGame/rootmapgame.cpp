@@ -277,22 +277,22 @@ void RootMapGame::initialize(string fileMap){
     ////////////////////////////////////////
     //Create the indexMap;
     Context cv;
-    objectGroup.push_back(new ObjectGroup(mCUBE_DUNG));
+    objectGroup.push_back(new ObjectGroup(mCUBE_GRASS));
     objectGroup.push_back(new ObjectGroup(mCUBE_WALL));
-    objectGroup.push_back(new ObjectGroup(mCUBE_DUNGB));
+    objectGroup.push_back(new ObjectGroup(mCUBE_LAND));
     objectGroup.push_back(new ObjectGroup(mCUBE_TRAP));
     objectGroup.push_back(new ObjectGroup(mCUBE_SPIKE));
 
     for(unsigned i=0;i<objs.size();i++){
         objs[i]->obtainPosition(cv);
         switch(objs[i]->getMaterialIndex()){
-            case mCUBE_DUNG:
+            case mCUBE_GRASS:
                 objectGroup[0]->addObject(objs[i]->getPosition(),CUBE);
             break;
             case mCUBE_WALL:
                 objectGroup[1]->addObject(objs[i]->getPosition(),CUBE);
             break;
-            case mCUBE_DUNGB:
+            case mCUBE_LAND:
                 objectGroup[2]->addObject(objs[i]->getPosition(),CUBE);
             break;
             case mCUBE_TRAP:

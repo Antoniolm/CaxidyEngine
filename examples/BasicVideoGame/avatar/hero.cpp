@@ -153,10 +153,10 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     scaleHandInvert->scale(1.0,1.0,-1.0);
 
     Matrix4f * transHand=new Matrix4f();
-    transHand->translation(-0.075,-0.1,0.0);
+    transHand->translation(-0.025,-0.1,0.0);
 
     Matrix4f * transHandLeft=new Matrix4f();
-    transHandLeft->translation(0.075,-0.1,0.0);
+    transHandLeft->translation(0.025,-0.1,0.0);
 
     Matrix4f * rotateXHand=new Matrix4f();
     rotateXHand->rotation(30,1,0,0);
@@ -250,13 +250,13 @@ Hero::Hero(const rapidjson::Value & heroFeatures)
     trasnArms->translation(-0.5,0.0,0.0);
 
     Matrix4f *trasnArmsI=new Matrix4f();
-    trasnArmsI->translation(0.25,0.415,0.1);
+    trasnArmsI->translation(0.25,0.2,0.2);
 
     Matrix4f *transHead=new Matrix4f();
-    transHead->translation(0.0,0.7,0.0);
+    transHead->translation(0.0,0.4,0.2);
 
     Matrix4f *transChest=new Matrix4f();
-    transChest->translation(0.0,0.05,0.0);
+    transChest->translation(0.0,0.3,-0.1);
 
     NodeSceneGraph * headNode=new NodeSceneGraph();
     headNode->add(transHead);

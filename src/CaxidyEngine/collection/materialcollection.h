@@ -1,6 +1,6 @@
 // *********************************************************************
 // **
-// ** Copyright (C) 2016-2017 Antonio David López Machado
+// ** Copyright (C) 2016-2017 Antonio David Lï¿½pez Machado
 // **
 // ** This program is free software: you can redistribute it and/or modify
 // ** it under the terms of the GNU General Public License as published by
@@ -83,7 +83,9 @@ enum MaterialIndex{
     mBUTTON,
     mSPEAK,
     mEQUIPPED,
-    mSHIELDPR
+    mSHIELDPR,
+    mCUBE_TOY,
+    mCUBE_GRASS
 };
 
 class Material;

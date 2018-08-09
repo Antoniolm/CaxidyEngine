@@ -29,7 +29,7 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/cubeDungeonB.png","","",mCUBE_DUNGB));
 
-    collection.addElement(new Material(vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/toy_box_diff.png","resources/textures/toy_box_normal.png","resources/textures/toy_box_disp.png",mCUBE_WALL));
+    collection.addElement(new Material(vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/cubeWall.png","resources/textures/cubeWallBump.png","",mCUBE_WALL));
 
     collection.addElement(new Material(vec3f(0.7f, 0.7f, 0.7f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/invisiblecubeWall.png","","",mINVICUBE_WALL));
 
@@ -140,6 +140,10 @@ MaterialCollection::MaterialCollection()
 
     collection.addElement(new Material(vec3f(1.0f, 1.0f, 1.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/shieldProfile.png","","",mSHIELDPR));
 
+    collection.addElement(new Material(vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/toy_box_diff.png","resources/textures/toy_box_normal.png","resources/textures/toy_box_disp.png",mCUBE_TOY));
+
+    collection.addElement(new Material(vec3f(4.0f, 4.0f, 4.0f),vec3f(0.5f, 0.5f, 0.5f),vec3f(0.5f, 0.5f, 0.5f),16.0f,"resources/textures/cubeGrass.png","","",mCUBE_GRASS));
+
     //Create our map
     collection.addIndex("mCUBE_DUNG",mCUBE_DUNG);
     collection.addIndex("mCUBE_DUNGB",mCUBE_DUNGB);
@@ -196,6 +200,8 @@ MaterialCollection::MaterialCollection()
     collection.addIndex("mSPEAK",mSPEAK);
     collection.addIndex("mEQUIPPED",mEQUIPPED);
     collection.addIndex("mSHIELDPR",mSHIELDPR);
+    collection.addIndex("mCUBE_TOY",mCUBE_TOY);
+    collection.addIndex("mCUBE_GRASS",mCUBE_GRASS);
 }
 
 //**********************************************************************//
