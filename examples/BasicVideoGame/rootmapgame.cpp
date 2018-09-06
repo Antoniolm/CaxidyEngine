@@ -282,6 +282,7 @@ void RootMapGame::initialize(string fileMap){
     objectGroup.push_back(new ObjectGroup(mCUBE_LAND));
     objectGroup.push_back(new ObjectGroup(mCUBE_TRAP));
     objectGroup.push_back(new ObjectGroup(mCUBE_SPIKE));
+    objectGroup.push_back(new ObjectGroup(mCUBE_DUNG));
 
     for(unsigned i=0;i<objs.size();i++){
         objs[i]->obtainPosition(cv);
@@ -300,6 +301,9 @@ void RootMapGame::initialize(string fileMap){
             break;
             case mCUBE_SPIKE:
                 objectGroup[4]->addObject(objs[i]->getPosition(),CUBE);
+            break;
+            case mCUBE_DUNG:
+                objectGroup[5]->addObject(objs[i]->getPosition(),CUBE);
             break;
             default:
             break;
