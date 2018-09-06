@@ -356,66 +356,6 @@ void Hero::updateState(GameState & gameState){
         }
         heroDir=RIGHTWARD;
     }
-    //Case-> Push Up bottom
-    else if(controller->checkButton(cUP) && !controller->checkButton(cLEFT) && !controller->checkButton(cRIGHT)){
-        if(!isJumping && !isFalling){
-            moveHero.x=0.0;moveHero.z=-3.0;
-        }
-        else{
-            moveHero.x=0.0;moveHero.z=-4.0;
-        }
-        heroDir=BACKWARD;
-    }
-    //Case-> Push Down bottom
-    else if(controller->checkButton(cDOWN) && !controller->checkButton(cLEFT) && !controller->checkButton(cRIGHT)){
-        if(!isJumping && !isFalling){
-            moveHero.x=0.0;moveHero.z=3.0;
-        }
-        else{
-            moveHero.x=0.0;moveHero.z=4.0;
-        }
-        heroDir=FORWARD;
-    }
-    //Case-> Push Dowm-Left bottoms
-    else if(controller->checkButton(cDOWN) && controller->checkButton(cLEFT) ){
-        if(!isJumping && !isFalling){
-            moveHero.x=-2.0;moveHero.z=2.0;
-        }
-        else{
-            moveHero.x=-3.0;moveHero.z=3.0;
-        }
-        heroDir=FOR_LEFTWARD;
-    }
-    //Case-> Push Dowm-Right bottoms
-    else if(controller->checkButton(cDOWN) && controller->checkButton(cRIGHT) ){
-        if(!isJumping && !isFalling){
-            moveHero.x=2.0;moveHero.z=2.0;
-        }
-        else{
-            moveHero.x=3.0;moveHero.z=3.0;
-        }
-        heroDir=FOR_RIGHTWARD;
-    }
-    //Case-> Push Up-Left bottoms
-    else if(controller->checkButton(cUP) && controller->checkButton(cLEFT)){
-        if(!isJumping && !isFalling){
-            moveHero.x=-2.0;moveHero.z=-2.0;
-        }
-        else{
-            moveHero.x=-3.0;moveHero.z=-3.0;
-        }
-        heroDir=BACK_LEFTWARD;
-    }
-    //Case-> Push Up-Right bottoms
-    else if(controller->checkButton(cUP) && controller->checkButton(cRIGHT) ){
-        if(!isJumping && !isFalling){
-            moveHero.x=2.0;moveHero.z=-2.0;
-        }
-        else{
-            moveHero.x=3.0;moveHero.z=-3.0;
-        }
-        heroDir=BACK_RIGHTWARD;
-    }
     else{ //Case-> If not move
         hasMove=false;
         if(!isJumping && !isFalling){
